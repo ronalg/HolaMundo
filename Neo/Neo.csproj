@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34980FFB-3571-4A11-99D5-13EEE5E44E09}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Neo</RootNamespace>
+    <AssemblyName>Neo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DsNeo.cs">
+      <DependentUpon>DsNeo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsNeo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsNeo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoCategoria.Designer.cs">
+      <DependentUpon>FrmMtoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoContacto.Designer.cs">
+      <DependentUpon>FrmMtoContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoEmpresa.Designer.cs">
+      <DependentUpon>FrmMtoEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoIdentificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoIdentificacion.Designer.cs">
+      <DependentUpon>FrmMtoIdentificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoMoneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoMoneda.Designer.cs">
+      <DependentUpon>FrmMtoMoneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoPais.Designer.cs">
+      <DependentUpon>FrmMtoPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoProveedor.Designer.cs">
+      <DependentUpon>FrmMtoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoProvincia.Designer.cs">
+      <DependentUpon>FrmMtoProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoSucursal.Designer.cs">
+      <DependentUpon>FrmMtoSucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoTipoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoTipoCategoria.Designer.cs">
+      <DependentUpon>FrmMtoTipoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoTipoContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoTipoContacto.Designer.cs">
+      <DependentUpon>FrmMtoTipoContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoTrabajo.Designer.cs">
+      <DependentUpon>FrmMtoTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidad.cs" />
+    <EmbeddedResource Include="FrmMtoCategoria.resx">
+      <DependentUpon>FrmMtoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoContacto.resx">
+      <DependentUpon>FrmMtoContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoEmpresa.resx">
+      <DependentUpon>FrmMtoEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoIdentificacion.resx">
+      <DependentUpon>FrmMtoIdentificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoMoneda.resx">
+      <DependentUpon>FrmMtoMoneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoPais.resx">
+      <DependentUpon>FrmMtoPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoProveedor.resx">
+      <DependentUpon>FrmMtoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoProvincia.resx">
+      <DependentUpon>FrmMtoProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoSucursal.resx">
+      <DependentUpon>FrmMtoSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoTipoCategoria.resx">
+      <DependentUpon>FrmMtoTipoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoTipoContacto.resx">
+      <DependentUpon>FrmMtoTipoContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoTrabajo.resx">
+      <DependentUpon>FrmMtoTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DsNeo.xsc">
+      <DependentUpon>DsNeo.xsd</DependentUpon>
+    </None>
+    <None Include="DsNeo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsNeo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsNeo.xss">
+      <DependentUpon>DsNeo.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
