@@ -44,6 +44,11 @@ namespace Neo
             lblUsuario.Text = Utilidad.nombreUsuario;
             lblEquipo.Text = Environment.MachineName;
             lblGrabada.Text = DateTime.Today.ToShortDateString();
+            cboIdentificacion.SelectedIndex = -1;
+            cboTipoCategoria.SelectedIndex = -1;
+            cboCategoria.SelectedIndex = -1;
+            dsNeo.tbProveedorSucursal.Rows.Clear();
+            dsNeo.tbProveedorSucursalContacto.Rows.Clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -63,13 +68,49 @@ namespace Neo
 
                 if (!btnNuevo.Available)
                 {
-                    taProveedor.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, short.Parse(lblCodigo.Text), cboIdentificacion.Text, cboCategoria.Text, cboTipoCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), txtIdentificacion.Text.Trim(), txtCuenta.Text.Trim(), txtSitioWeb.Text.Trim(), lblGrabada.Text, lblUsuario.Text, lblEquipo.Text, chkActivo.Checked);
+                    taProveedor.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, short.Parse(lblCodigo.Text), cboIdentificacion.Text, cboCategoria.Text, cboTipoCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), txtIdentificacion.Text.Trim(), txtCuenta.Text.Trim(), txtSitioWeb.Text.Trim(), lblGrabada.Text, lblUsuario.Text, lblEquipo.Text, chkActivo.Checked);                   
                     ConfiguraBoton(true);
                 }
                 else
                 {
                     taProveedor.Edita(cboIdentificacion.Text, cboCategoria.Text, cboTipoCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), txtIdentificacion.Text, txtCuenta.Text.Trim(), txtSitioWeb.Text.Trim(), chkActivo.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, short.Parse(lblCodigo.Text)); 
                 }
+
+                short proveedor = short.Parse(lblCodigo.Text);
+
+                foreach (DataGridViewRow dgvr in grdSucursal.Rows)
+                {                    
+                    short codigo = short.Parse(dgvr.Cells["sCodigo"].Value.ToString());
+                    string pais = dgvr.Cells["sCodigoPais"].Value.ToString();
+                    string provincia = dgvr.Cells["sProvincia"].Value.ToString();
+                    string nombre = dgvr.Cells["sNombre"].Value.ToString();
+                    string codigoPostal = dgvr.Cells["sCodigoPostal"].Value.ToString();
+                    string direccion = dgvr.Cells["sDireccion"].Value.ToString();
+                    string representante = dgvr.Cells["sRepresentante"].Value.ToString();
+                    DsNeo ds = new DsNeo();
+                    taProveedorSucursal.FillByCodigoSucursal(ds.tbProveedorSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, proveedor, codigo);
+                    if (ds.tbProveedorSucursal.Rows.Count == 0)
+                        taProveedorSucursal.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, proveedor, codigo, pais, provincia, nombre, codigoPostal, direccion, representante);
+                    else
+                        taProveedorSucursal.Edita(pais, provincia, nombre, codigoPostal, direccion, representante, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, proveedor, codigo);
+                }
+
+                foreach (DataGridViewRow dgvr in grdContacto.Rows)
+                {
+                    short secuencia = short.Parse(dgvr.Cells["cOrden"].Value.ToString());
+                    short codigoSucursal = short.Parse(dgvr.Cells["cSucursal"].Value.ToString());
+                    string tipo = dgvr.Cells["cTipo"].Value.ToString();
+                    string nombreContacto = dgvr.Cells["cNombre"].Value.ToString();
+                    string contacto = dgvr.Cells["cContacto"].Value.ToString();
+                    DsNeo ds = new DsNeo();
+                    taProveedorSucursalContacto.FillBySecuencia(ds.tbProveedorSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, proveedor, codigoSucursal, secuencia);
+                    if (ds.tbProveedorSucursalContacto.Rows.Count == 0)
+                        taProveedorSucursalContacto.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, proveedor, codigoSucursal, secuencia, tipo, nombreContacto, contacto);
+                    else
+                        taProveedorSucursalContacto.Edita(tipo, nombreContacto, contacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, proveedor, codigoSucursal, secuencia);
+                }
+
+                return;
             }
             catch (NoNullAllowedException nullEx)
             {
@@ -96,7 +137,10 @@ namespace Neo
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.textoCuadroMensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        taProveedor.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, short.Parse(lblCodigo.Text));
+                        short codigoProveedor = short.Parse(lblCodigo.Text);
+                        taProveedor.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor);
+                        taProveedorSucursal.EliminaProveedor(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor);
+                        taProveedorSucursalContacto.EliminarProveedor(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
                     }
                 }
@@ -118,7 +162,6 @@ namespace Neo
             {
                 this.Cursor = Cursors.Default;
             }
-
         }
 
         private void FrmMtoProveedor_FormClosed(object sender, FormClosedEventArgs e)
@@ -139,69 +182,55 @@ namespace Neo
             cboTipoCategoria.SelectedIndex = -1;
             taCategoria.Fill(dsNeo.tbCategoria, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taProveedor.Fill(dsNeo.tbProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            if (!string.IsNullOrEmpty(lblCodigo.Text))
+            {
+                short codigo = short.Parse(lblCodigo.Text);
+                taProveedorSucursal.FillByCodigo(dsNeo.tbProveedorSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                taProveedorSucursalContacto.FillByProveedor(dsNeo.tbProveedorSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+            }
         }
 
         private void cboTipoCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             taCategoria.FillByTipo(dsNeo.tbCategoria, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "CLIENTE");
-            //cboCategoria.SelectedIndex = -1;
+            cboCategoria.SelectedIndex = -1;
         }
 
         private void btnNuevoSucursal_Click(object sender, EventArgs e)
         {
-            DataGridViewComboBoxCell cb = grdSucursal.CurrentRow.Cells["sPais"] as DataGridViewComboBoxCell;
-            taPais.Fill(dsNeo.tbPais, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            foreach (DataRow dr in dsNeo.tbPais)
-            {
-                string nombre = dr["Nombre"].ToString();
-                cb.Items.Add(nombre);
-            }            
+            short codigoProveedor = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text);
+            grdSucursal.CurrentRow.Cells["sTrabajo"].Value = Utilidad.codigoTrabajo;
+            grdSucursal.CurrentRow.Cells["sEmpresa"].Value = Utilidad.codigoEmpresa;
+            grdSucursal.CurrentRow.Cells["sProveedor"].Value = codigoProveedor;
+            DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+            short codigo = cp.fnSiguienteProveedorSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor).Value;
+            grdSucursal.CurrentRow.Cells["sCodigo"].Value = codigo;
         }
 
         private void grdSucursal_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string nombre = grdSucursal.Columns[e.ColumnIndex].Name;
-            if (nombre == "sProvincia")
-            {
-                DataGridViewComboBoxCell cb = grdSucursal.CurrentRow.Cells["sProvincia"] as DataGridViewComboBoxCell;
-                cb.Items.Clear();
-                nombre = grdSucursal.CurrentRow.Cells["sPais"].Value.ToString();
-                taPais.FillByNombre(dsNeo.tbPais, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
-                string codigo = dsNeo.tbPais.Rows[0]["CodigoPais"].ToString();
-                taProvincia.FillByPais(dsNeo.tbProvincia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
-                foreach (DataRow dr in dsNeo.tbProvincia.Rows)
-                {
-                    nombre = dr["NombreProvincia"].ToString();
-                    cb.Items.Add(nombre);
-                }
-            }
         }
 
         private void btnNuevoContacto_Click(object sender, EventArgs e)
         {
-            DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cNombre"] as DataGridViewComboBoxCell;
-            taContacto.Fill(dsNeo.tbContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            foreach (DataRow dr in dsNeo.tbContacto)
+            if (grdSucursal.CurrentRow != null)
             {
-                string nombre = dr["NombreContacto"].ToString();
-                cb.Items.Add(nombre);
-            }
-        }
-
-        private void grdContacto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            string nombre = grdContacto.Columns[e.ColumnIndex].Name;
-            if (nombre == "cTipo")
-            {
-                DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cTipo"] as DataGridViewComboBoxCell;
-                cb.Items.Clear();
-                nombre = grdContacto.CurrentRow.Cells["cNombre"].Value.ToString();
-                taTipoContacto.FillByContacto(dsNeo.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
-                foreach (DataRow dr in dsNeo.tbTipoContacto)
+                DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cNombre"] as DataGridViewComboBoxCell;
+                taContacto.Fill(dsNeo.tbContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+                foreach (DataRow dr in dsNeo.tbContacto)
                 {
-                    nombre = dr["NombreTipoContacto"].ToString();
+                    string nombre = dr["NombreContacto"].ToString();
                     cb.Items.Add(nombre);
                 }
+                short codigoProveedor = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text);
+                short codigoSucursal = short.Parse(grdSucursal.CurrentRow.Cells["sCodigo"].Value.ToString());
+                DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+                short orden = cp.fnSiguienteProveedorSucursalContacto(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal).Value;
+                //grdContacto.CurrentRow.Cells["cTrabajo"].Value = Utilidad.codigoTrabajo;
+                grdContacto.CurrentRow.Cells["cEmpresa"].Value = Utilidad.codigoEmpresa;                
+                grdContacto.CurrentRow.Cells["cSucursal"].Value = codigoSucursal;
+                grdContacto.CurrentRow.Cells["cProveedor"].Value = codigoProveedor;
+                grdContacto.CurrentRow.Cells["cOrden"].Value = orden;
             }
         }
 
@@ -217,10 +246,207 @@ namespace Neo
 
         private void grdSucursal_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (grdSucursal.CurrentRow != null && grdSucursal.CurrentRow.Cells["sProvincia"].Value != null && grdSucursal.CurrentRow.Cells["sPais"].Selected == true)
+            if (grdSucursal.CurrentRow != null && grdSucursal.CurrentRow.Cells["sNombrePais"].Selected == true)
             {
                 DataGridViewComboBoxCell cb = grdSucursal.CurrentRow.Cells["sProvincia"] as DataGridViewComboBoxCell;
+                string nombrePais = grdSucursal.CurrentRow.Cells["sNombrePais"].Value.ToString();
+                DsNeo ds = new DsNeo();
+                taPais.FillByNombre(ds.tbPais, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombrePais);
+                string codigoPais = ds.tbPais.Rows[0]["CodigoPais"].ToString();
+                grdSucursal.CurrentRow.Cells["sCodigoPais"].Value = codigoPais;
+                taProvincia.FillByPais(ds.tbProvincia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoPais);
                 cb.Items.Clear();
+                foreach (DataRow dr in ds.tbProvincia.Rows)
+                {
+                    string nombreProvincia = dr["NombreProvincia"].ToString();
+                    cb.Items.Add(nombreProvincia);
+                }
+            }
+        }
+
+        private void btnEliminarSucursal_Click(object sender, EventArgs e)
+        {
+            if (grdSucursal.CurrentRow != null)
+            {
+                short codigoSucursal = short.Parse(grdSucursal.CurrentRow.Cells["sCodigo"].Value.ToString());
+                short codigoProveedor = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text);
+                DsNeo ds = new DsNeo();
+                taProveedorSucursal.FillByCodigoSucursal(ds.tbProveedorSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal);
+                if (ds.tbProveedorSucursal.Rows.Count > 0)
+                {
+                    DialogResult dr = new DialogResult();
+                    dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombreUsuario, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (dr == DialogResult.Yes)
+                    {
+                        taProveedorSucursalContacto.EliminaSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal);
+                        taProveedorSucursal.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal);
+                        grdSucursal.Rows.Remove(grdSucursal.CurrentRow);
+                    }                                        
+                }
+                else
+                {
+                    grdSucursal.Rows.Remove(grdSucursal.CurrentRow);
+                }
+            }
+        }
+
+        private void btnEliminarContacto_Click(object sender, EventArgs e)
+        {
+            if (grdContacto.CurrentRow != null)
+            {
+                DsNeo ds = new DsNeo();
+                short secuencia = short.Parse(grdContacto.CurrentRow.Cells["cOrden"].Value.ToString());
+                short codigoSucursal = short.Parse(grdContacto.CurrentRow.Cells["cSucursal"].Value.ToString());
+                short codigoProveedor = short.Parse(lblCodigo.Text);
+                taProveedorSucursalContacto.FillBySecuencia(ds.tbProveedorSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal, secuencia);
+
+                if (ds.tbProveedorSucursalContacto.Rows.Count > 0)
+                {
+                    DialogResult dr = new DialogResult();
+                    dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombreUsuario, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (dr == DialogResult.Yes)
+                    {
+                        taProveedorSucursalContacto.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal, secuencia);
+                        grdContacto.Rows.Remove(grdContacto.CurrentRow);
+                    }
+                }
+                else
+                {
+                    grdContacto.Rows.Remove(grdContacto.CurrentRow);
+                }                
+            }
+        }
+       
+
+        private void grdSucursal_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            string nombreColumna = grdSucursal.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name;
+            if (nombreColumna == "sNombrePais")
+            {
+                DataGridViewComboBoxCell cb = grdSucursal.CurrentRow.Cells[nombreColumna] as DataGridViewComboBoxCell;
+                if (cb.Items.Count == 0)
+                {
+                    DsNeo ds = new DsNeo();
+                    taPais.Fill(ds.tbPais, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+                    //cb.Items.Clear();
+                    foreach (DataRow dr in ds.tbPais)
+                    {
+                        string nombrePais = dr["Nombre"].ToString();
+                        cb.Items.Add(nombrePais);
+                    }
+
+                    if (!string.IsNullOrEmpty(lblCodigo.Text) && !string.IsNullOrEmpty(grdSucursal.CurrentRow.Cells["sCodigoPais"].Value.ToString()))
+                    {
+                        string codigoPais = grdSucursal.CurrentRow.Cells["sCodigoPais"].Value.ToString();
+                        taPais.FillByCodigo(ds.tbPais, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoPais);
+                        string nombre = ds.tbPais.Rows[0]["Nombre"].ToString();
+                        grdSucursal.CurrentRow.Cells["sNombrePais"].Value = nombre;
+                    }
+                }
+            }
+            else if (nombreColumna == "sProvincia" && !string.IsNullOrEmpty(lblCodigo.Text) && !string.IsNullOrEmpty(grdSucursal.CurrentRow.Cells["sCodigoPais"].Value.ToString()))
+            {
+                short codigoProveedor = short.Parse(lblCodigo.Text);
+                short codigoSucursal = short.Parse(grdSucursal.CurrentRow.Cells["sCodigo"].Value.ToString());
+                DsNeo ds = new DsNeo();
+                taProveedorSucursal.FillByCodigoSucursal(ds.tbProveedorSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal);
+                if (ds.tbProveedorSucursal.Rows.Count > 0)
+                {
+                    string codigoPais = grdSucursal.CurrentRow.Cells["sCodigoPais"].Value.ToString();
+                    taProvincia.FillByPais(ds.tbProvincia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoPais);
+                    DataGridViewComboBoxCell cb = grdSucursal.CurrentRow.Cells["sProvincia"] as DataGridViewComboBoxCell;
+                    int i = cb.Items.Count;
+                    int j = ds.tbProvincia.Rows.Count;
+                    if (i != j)
+                    {
+                        foreach (DataRow dr in ds.tbProvincia.Rows)
+                        {
+                            string nombrePronvincia = dr["NombreProvincia"].ToString();
+                            cb.Items.Add(nombrePronvincia);
+                        }
+                    }
+                    string nombreProvincia = ds.tbProveedorSucursal.Rows[0]["NombreProvincia"].ToString();
+                    //grdSucursal.CurrentRow.Cells["sProvincia"].Value = nombreProvincia;
+                }
+            }
+        }
+
+        private void grdContacto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            string nombre = grdContacto.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name;
+            if (nombre == "cNombre")
+            {
+                DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cNombre"] as DataGridViewComboBoxCell;
+                if (cb.Items.Count == 0)
+                {
+                    taContacto.Fill(dsNeo.tbContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+                    //cb.Items.Clear();
+                    foreach (DataRow dr in dsNeo.tbContacto)
+                    {
+                        nombre = dr["NombreContacto"].ToString();
+                        cb.Items.Add(nombre);
+                    }
+
+                    cb = grdContacto.Rows[e.RowIndex].Cells["cTipo"] as DataGridViewComboBoxCell;
+                    string contacto = grdContacto.Rows[e.RowIndex].Cells["cNombre"].ToString();
+                    taTipoContacto.FillByContacto(dsNeo.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, contacto);
+
+                    //cb.Items.Clear();
+                    /*foreach (DataRow dr in dsNeo.tbTipoContacto)
+                    {
+                        nombre = dr["NombreTipoContacto"].ToString();
+                        cb.Items.Add(nombre);
+                    }*/
+                }
+            }
+            else if (nombre == "cTipo")
+            {
+                string contacto = grdContacto.Rows[e.RowIndex].Cells["cNombre"].Value.ToString();
+                DsNeo ds = new DsNeo();
+                taTipoContacto.FillByContacto(ds.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, contacto);
+                DataGridViewComboBoxCell cb = grdContacto.Rows[e.RowIndex].Cells["cTipo"] as DataGridViewComboBoxCell;
+                int i = cb.Items.Count;
+                int j = ds.tbTipoContacto.Rows.Count;
+
+                if (i != j)
+                {
+                    foreach (DataRow dr in ds.tbTipoContacto.Rows)
+                    {
+                        string n = dr["NombreTipoContacto"].ToString();
+                        cb.Items.Add(n);
+                    }
+                }
+            }
+        }
+
+        private void grdContacto_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (grdContacto.CurrentRow != null && grdContacto.CurrentRow.Cells["cNombre"].Selected == true)
+            {
+                DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cTipo"] as DataGridViewComboBoxCell;
+                DsNeo ds = new DsNeo();
+                string nombreContacto = grdContacto.CurrentRow.Cells["cNombre"].Value.ToString();
+                taTipoContacto.FillByContacto(ds.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombreContacto);
+                //cb.Items.Clear();
+                foreach (DataRow dr in ds.tbTipoContacto.Rows)
+                {
+                    string nombreTipo = dr["NombreTipoContacto"].ToString();
+                    cb.Items.Add(nombreTipo);
+                }
+            }
+        }
+
+        private void grdMto_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdMto.CurrentRow != null)
+            {
+                short codigoProveedor = short.Parse(grdMto.CurrentRow.Cells["pCodigo"].Value.ToString());
+                taProveedorSucursal.FillByProveedor(dsNeo.tbProveedorSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor);
+                if (dsNeo.tbProveedorSucursal.Rows.Count > 0)
+                {
+                    short codigoSucursal = short.Parse(dsNeo.tbProveedorSucursal.Rows[0]["CodigoProveedorSucursal"].ToString());
+                    taProveedorSucursalContacto.FillByProveedorSucursal(dsNeo.tbProveedorSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal);
+                }
             }
         }
     }
