@@ -9,6 +9,8 @@ namespace Neo
     class Utilidad
     {
         //formularios mantenimientos
+        public static FrmMtoPrecioVenta mtoPrecioVenta = null;
+        public static FrmMtoUnidad mtoUnidad = null;
         public static FrmMtoTipoContacto mtoTipoContacto = null;
         public static FrmMtoContacto mtoContacto = null;
         public static FrmMtoProveedor mtoProveedor = null;
