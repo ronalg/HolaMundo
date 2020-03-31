@@ -39,6 +39,9 @@ namespace Neo
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             ConfiguraBoton(false);
+            DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+            int codigo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, 0, "empresa").Value;
+            lblCodigo.Text = codigo.ToString();
             txtNombre.Focus();
             lblUsuario.Text = Utilidad.nombreUsuario;
             lblGrabada.Text = DateTime.Today.ToShortDateString();
@@ -48,6 +51,48 @@ namespace Neo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                txtNombre.Focus();
+                ep.SetError(txtNombre, Utilidad.campoVacio);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtRazonSocial.Text.Trim()))
+            {
+                txtRazonSocial.Focus();
+                ep.SetError(txtRazonSocial, Utilidad.campoVacio);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtAbreviatura.Text.Trim()))
+            {
+                txtAbreviatura.Focus();
+                ep.SetError(txtAbreviatura, Utilidad.campoVacio);
+                return;
+            }
+
+            if (cboIdentificacion.SelectedIndex == -1)
+            {
+                cboIdentificacion.Focus();
+                ep.SetError(cboIdentificacion, Utilidad.listaVacia);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtIdentificacion.Text.Trim()))
+            {
+                txtIdentificacion.Focus();
+                ep.SetError(txtIdentificacion, Utilidad.campoVacio);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtDescripcion.Text.Trim()))
+            {
+                txtDescripcion.Focus();
+                ep.SetError(txtDescripcion, Utilidad.campoVacio);
+                return;
+            }
+
             try
             {                
                 this.Validate();

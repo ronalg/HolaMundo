@@ -47,14 +47,14 @@
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.lblEquipo = new System.Windows.Forms.Label();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
             this.lblGrabada = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTrabajo = new System.Windows.Forms.Label();
-            this.btnBorrar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnBuscar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label3 = new System.Windows.Forms.Label();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -107,6 +107,7 @@
             this.ofdLogo = new System.Windows.Forms.OpenFileDialog();
             this.taIdentificacion = new Neo.DsNeoTableAdapters.taIdentificacion();
             this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             codigoEmpresaLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
@@ -129,6 +130,7 @@
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // codigoEmpresaLabel
@@ -266,6 +268,8 @@
             this.pnl6.AutoScroll = true;
             this.pnl6.BackColor = System.Drawing.Color.White;
             this.pnl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl6.Controls.Add(this.btnBorrar);
+            this.pnl6.Controls.Add(this.btnBuscar);
             this.pnl6.Controls.Add(equipoLabel);
             this.pnl6.Controls.Add(this.lblEquipo);
             this.pnl6.Controls.Add(grabadaLabel);
@@ -274,8 +278,6 @@
             this.pnl6.Controls.Add(this.lblUsuario);
             this.pnl6.Controls.Add(codigoTrabajoLabel);
             this.pnl6.Controls.Add(this.lblTrabajo);
-            this.pnl6.Controls.Add(this.btnBorrar);
-            this.pnl6.Controls.Add(this.btnBuscar);
             this.pnl6.Controls.Add(this.label3);
             this.pnl6.Controls.Add(this.chkActivo);
             this.pnl6.Controls.Add(logoLabel);
@@ -303,6 +305,28 @@
             this.pnl6.Name = "pnl6";
             this.pnl6.Size = new System.Drawing.Size(577, 408);
             this.pnl6.TabIndex = 6;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Location = new System.Drawing.Point(458, 144);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(59, 23);
+            this.btnBorrar.TabIndex = 33;
+            this.btnBorrar.Text = "Eliminar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(395, 144);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(59, 23);
+            this.btnBuscar.TabIndex = 32;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblEquipo
             // 
@@ -358,24 +382,6 @@
             this.lblTrabajo.TabIndex = 25;
             this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(395, 202);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(54, 25);
-            this.btnBorrar.TabIndex = 24;
-            this.btnBorrar.Values.Text = "Eliminar";
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(508, 202);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(54, 25);
-            this.btnBuscar.TabIndex = 23;
-            this.btnBuscar.Values.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -404,7 +410,7 @@
             this.pbLogo.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.bsMto, "Logo", true));
             this.pbLogo.Location = new System.Drawing.Point(395, 28);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(167, 168);
+            this.pbLogo.Size = new System.Drawing.Size(122, 110);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 19;
             this.pbLogo.TabStop = false;
@@ -856,11 +862,30 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.taArticulo = null;
+            this.tableAdapterManager.taArticuloMultimedia = null;
+            this.tableAdapterManager.taCategoria = null;
+            this.tableAdapterManager.taContacto = null;
+            this.tableAdapterManager.taDepartamento = null;
             this.tableAdapterManager.taEmpresa = this.taEmpresa;
             this.tableAdapterManager.taIdentificacion = this.taIdentificacion;
+            this.tableAdapterManager.taMoneda = null;
             this.tableAdapterManager.taPais = null;
+            this.tableAdapterManager.taPrecioVenta = null;
+            this.tableAdapterManager.taProveedor = null;
+            this.tableAdapterManager.taProveedorSucursal = null;
+            this.tableAdapterManager.taProveedorSucursalContacto = null;
+            this.tableAdapterManager.taProvincia = null;
+            this.tableAdapterManager.taSucursal = null;
+            this.tableAdapterManager.taTipoCategoria = null;
+            this.tableAdapterManager.taTipoContacto = null;
             this.tableAdapterManager.taTrabajo = null;
+            this.tableAdapterManager.taUnidad = null;
             this.tableAdapterManager.UpdateOrder = Neo.DsNeoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
             // 
             // FrmMtoEmpresa
             // 
@@ -888,6 +913,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -923,8 +949,6 @@
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblCodigo;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnBorrar;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnBuscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.PictureBox pbLogo;
@@ -956,5 +980,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn grabadaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }
