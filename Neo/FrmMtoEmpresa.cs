@@ -40,8 +40,9 @@ namespace Neo
         {
             ConfiguraBoton(false);
             DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
-            int codigo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, 0, "empresa").Value;
+            int codigo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, 0, "empresa").Value;            
             lblCodigo.Text = codigo.ToString();
+            cboIdentificacion.SelectedIndex = -1;
             txtNombre.Focus();
             lblUsuario.Text = Utilidad.nombreUsuario;
             lblGrabada.Text = DateTime.Today.ToShortDateString();

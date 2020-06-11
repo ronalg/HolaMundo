@@ -33,9 +33,9 @@
             System.Windows.Forms.Label codigoPaisLabel;
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label codigoEmpresaLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoProvincia));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoProvincia));
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -49,6 +49,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
+            this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.pTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pCodigoPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pNombreProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
@@ -67,11 +72,7 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.taProvincia = new Neo.DsNeoTableAdapters.taProvincia();
             this.taPais = new Neo.DsNeoTableAdapters.taPais();
-            this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.pTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pCodigoPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pNombreProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             nombreProvinciaLabel = new System.Windows.Forms.Label();
             codigoPaisLabel = new System.Windows.Forms.Label();
             codigoTrabajoLabel = new System.Windows.Forms.Label();
@@ -81,10 +82,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.pnl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMto)).BeginInit();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreProvinciaLabel
@@ -138,7 +140,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(528, 379);
+            this.pnl3.Size = new System.Drawing.Size(547, 379);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -159,7 +161,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(293, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(228, 367);
+            this.pnl6.Size = new System.Drawing.Size(247, 367);
             this.pnl6.TabIndex = 6;
             // 
             // lblEmpresa
@@ -254,12 +256,68 @@
             this.pnl4.Size = new System.Drawing.Size(278, 367);
             this.pnl4.TabIndex = 4;
             // 
+            // grdMto
+            // 
+            this.grdMto.AllowUserToAddRows = false;
+            this.grdMto.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdMto.AutoGenerateColumns = false;
+            this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pTrabajo,
+            this.pEmpresa,
+            this.pCodigoPais,
+            this.pNombreProvincia});
+            this.grdMto.DataSource = this.bsMto;
+            this.grdMto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdMto.Location = new System.Drawing.Point(0, 0);
+            this.grdMto.Name = "grdMto";
+            this.grdMto.ReadOnly = true;
+            this.grdMto.Size = new System.Drawing.Size(276, 365);
+            this.grdMto.TabIndex = 4;
+            this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
+            // 
+            // pTrabajo
+            // 
+            this.pTrabajo.DataPropertyName = "CodigoTrabajo";
+            this.pTrabajo.HeaderText = "CodigoTrabajo";
+            this.pTrabajo.Name = "pTrabajo";
+            this.pTrabajo.ReadOnly = true;
+            this.pTrabajo.Visible = false;
+            // 
+            // pEmpresa
+            // 
+            this.pEmpresa.DataPropertyName = "CodigoEmpresa";
+            this.pEmpresa.HeaderText = "CodigoEmpresa";
+            this.pEmpresa.Name = "pEmpresa";
+            this.pEmpresa.ReadOnly = true;
+            this.pEmpresa.Visible = false;
+            // 
+            // pCodigoPais
+            // 
+            this.pCodigoPais.DataPropertyName = "CodigoPais";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pCodigoPais.DefaultCellStyle = dataGridViewCellStyle2;
+            this.pCodigoPais.HeaderText = "País";
+            this.pCodigoPais.Name = "pCodigoPais";
+            this.pCodigoPais.ReadOnly = true;
+            this.pCodigoPais.Width = 40;
+            // 
+            // pNombreProvincia
+            // 
+            this.pNombreProvincia.DataPropertyName = "NombreProvincia";
+            this.pNombreProvincia.HeaderText = "Nombre";
+            this.pNombreProvincia.Name = "pNombreProvincia";
+            this.pNombreProvincia.ReadOnly = true;
+            this.pNombreProvincia.Width = 165;
+            // 
             // pnl2
             // 
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(528, 10);
+            this.pnl2.Size = new System.Drawing.Size(547, 10);
             this.pnl2.TabIndex = 6;
             // 
             // btnSalir
@@ -287,7 +345,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(528, 28);
+            this.pnl1.Size = new System.Drawing.Size(547, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -319,7 +377,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(526, 25);
+            this.bnMto.Size = new System.Drawing.Size(545, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -417,67 +475,15 @@
             // 
             this.taPais.ClearBeforeFill = true;
             // 
-            // grdMto
+            // ep
             // 
-            this.grdMto.AllowUserToAddRows = false;
-            this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.grdMto.AutoGenerateColumns = false;
-            this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pTrabajo,
-            this.pEmpresa,
-            this.pCodigoPais,
-            this.pNombreProvincia});
-            this.grdMto.DataSource = this.bsMto;
-            this.grdMto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdMto.Location = new System.Drawing.Point(0, 0);
-            this.grdMto.Name = "grdMto";
-            this.grdMto.ReadOnly = true;
-            this.grdMto.Size = new System.Drawing.Size(276, 365);
-            this.grdMto.TabIndex = 4;
-            this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
-            // 
-            // pTrabajo
-            // 
-            this.pTrabajo.DataPropertyName = "CodigoTrabajo";
-            this.pTrabajo.HeaderText = "CodigoTrabajo";
-            this.pTrabajo.Name = "pTrabajo";
-            this.pTrabajo.ReadOnly = true;
-            this.pTrabajo.Visible = false;
-            // 
-            // pEmpresa
-            // 
-            this.pEmpresa.DataPropertyName = "CodigoEmpresa";
-            this.pEmpresa.HeaderText = "CodigoEmpresa";
-            this.pEmpresa.Name = "pEmpresa";
-            this.pEmpresa.ReadOnly = true;
-            this.pEmpresa.Visible = false;
-            // 
-            // pCodigoPais
-            // 
-            this.pCodigoPais.DataPropertyName = "CodigoPais";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pCodigoPais.DefaultCellStyle = dataGridViewCellStyle2;
-            this.pCodigoPais.HeaderText = "País";
-            this.pCodigoPais.Name = "pCodigoPais";
-            this.pCodigoPais.ReadOnly = true;
-            this.pCodigoPais.Width = 40;
-            // 
-            // pNombreProvincia
-            // 
-            this.pNombreProvincia.DataPropertyName = "NombreProvincia";
-            this.pNombreProvincia.HeaderText = "Nombre";
-            this.pNombreProvincia.Name = "pNombreProvincia";
-            this.pNombreProvincia.ReadOnly = true;
-            this.pNombreProvincia.Width = 165;
+            this.ep.ContainerControl = this;
             // 
             // FrmMtoProvincia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 417);
+            this.ClientSize = new System.Drawing.Size(547, 417);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
@@ -492,12 +498,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.pnl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdMto)).EndInit();
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,5 +547,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn pCodigoPais;
         private System.Windows.Forms.DataGridViewTextBoxColumn pNombreProvincia;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }

@@ -33,7 +33,7 @@
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label codigoEmpresaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoPrecioVenta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
@@ -48,6 +48,9 @@
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.pvTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pvEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pvCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -64,9 +67,6 @@
             this.btnUltimo = new System.Windows.Forms.ToolStripButton();
             this.spd3 = new System.Windows.Forms.ToolStripSeparator();
             this.taPrecioVenta = new Neo.DsNeoTableAdapters.taPrecioVenta();
-            this.pvTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pvEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pvCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             codigoPrecioVentaLabel = new System.Windows.Forms.Label();
             codigoTrabajoLabel = new System.Windows.Forms.Label();
             codigoEmpresaLabel = new System.Windows.Forms.Label();
@@ -132,7 +132,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(520, 225);
+            this.pnl3.Size = new System.Drawing.Size(512, 225);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -151,7 +151,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(201, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(312, 213);
+            this.pnl6.Size = new System.Drawing.Size(304, 213);
             this.pnl6.TabIndex = 6;
             // 
             // lblEmpresa
@@ -188,7 +188,6 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoPrecioVenta", true));
             this.txtCodigo.Location = new System.Drawing.Point(63, 30);
             this.txtCodigo.MaxLength = 20;
@@ -238,8 +237,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -255,12 +254,36 @@
             this.grdMto.TabIndex = 3;
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
             // 
+            // pvTrabajo
+            // 
+            this.pvTrabajo.DataPropertyName = "CodigoTrabajo";
+            this.pvTrabajo.HeaderText = "CodigoTrabajo";
+            this.pvTrabajo.Name = "pvTrabajo";
+            this.pvTrabajo.ReadOnly = true;
+            this.pvTrabajo.Visible = false;
+            // 
+            // pvEmpresa
+            // 
+            this.pvEmpresa.DataPropertyName = "CodigoEmpresa";
+            this.pvEmpresa.HeaderText = "CodigoEmpresa";
+            this.pvEmpresa.Name = "pvEmpresa";
+            this.pvEmpresa.ReadOnly = true;
+            this.pvEmpresa.Visible = false;
+            // 
+            // pvCodigo
+            // 
+            this.pvCodigo.DataPropertyName = "CodigoPrecioVenta";
+            this.pvCodigo.HeaderText = "Código";
+            this.pvCodigo.Name = "pvCodigo";
+            this.pvCodigo.ReadOnly = true;
+            this.pvCodigo.Width = 120;
+            // 
             // pnl2
             // 
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(520, 10);
+            this.pnl2.Size = new System.Drawing.Size(512, 10);
             this.pnl2.TabIndex = 6;
             // 
             // btnEliminar
@@ -288,7 +311,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(520, 28);
+            this.pnl1.Size = new System.Drawing.Size(512, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -320,7 +343,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(518, 25);
+            this.bnMto.Size = new System.Drawing.Size(510, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -405,40 +428,16 @@
             // 
             this.taPrecioVenta.ClearBeforeFill = true;
             // 
-            // pvTrabajo
-            // 
-            this.pvTrabajo.DataPropertyName = "CodigoTrabajo";
-            this.pvTrabajo.HeaderText = "CodigoTrabajo";
-            this.pvTrabajo.Name = "pvTrabajo";
-            this.pvTrabajo.ReadOnly = true;
-            this.pvTrabajo.Visible = false;
-            // 
-            // pvEmpresa
-            // 
-            this.pvEmpresa.DataPropertyName = "CodigoEmpresa";
-            this.pvEmpresa.HeaderText = "CodigoEmpresa";
-            this.pvEmpresa.Name = "pvEmpresa";
-            this.pvEmpresa.ReadOnly = true;
-            this.pvEmpresa.Visible = false;
-            // 
-            // pvCodigo
-            // 
-            this.pvCodigo.DataPropertyName = "CodigoPrecioVenta";
-            this.pvCodigo.HeaderText = "Código";
-            this.pvCodigo.Name = "pvCodigo";
-            this.pvCodigo.ReadOnly = true;
-            this.pvCodigo.Width = 120;
-            // 
             // FrmMtoPrecioVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 263);
+            this.ClientSize = new System.Drawing.Size(512, 263);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmMtoPrecioVenta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Precios de Venta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMtoPrecioVenta_FormClosed);
             this.Load += new System.EventHandler(this.FrmMtoPrecioVenta_Load);

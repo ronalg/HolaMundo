@@ -32,13 +32,13 @@
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label codigoEmpresaLabel;
             System.Windows.Forms.Label nombreCategoriaLabel;
-            System.Windows.Forms.Label nombreTipoCategoriaLabel;
+            System.Windows.Forms.Label nombreDepartamentoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoCategoria));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
-            this.cboTipo = new System.Windows.Forms.ComboBox();
+            this.cboDepartamento = new System.Windows.Forms.ComboBox();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -52,7 +52,6 @@
             this.cTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl1 = new System.Windows.Forms.Panel();
@@ -70,11 +69,12 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
-            this.taTipoCategoria = new Neo.DsNeoTableAdapters.taTipoCategoria();
+            this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             codigoTrabajoLabel = new System.Windows.Forms.Label();
             codigoEmpresaLabel = new System.Windows.Forms.Label();
             nombreCategoriaLabel = new System.Windows.Forms.Label();
-            nombreTipoCategoriaLabel = new System.Windows.Forms.Label();
+            nombreDepartamentoLabel = new System.Windows.Forms.Label();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
@@ -84,12 +84,13 @@
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // codigoTrabajoLabel
             // 
             codigoTrabajoLabel.AutoSize = true;
-            codigoTrabajoLabel.Location = new System.Drawing.Point(18, 107);
+            codigoTrabajoLabel.Location = new System.Drawing.Point(43, 106);
             codigoTrabajoLabel.Name = "codigoTrabajoLabel";
             codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
             codigoTrabajoLabel.TabIndex = 6;
@@ -98,7 +99,7 @@
             // codigoEmpresaLabel
             // 
             codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(13, 133);
+            codigoEmpresaLabel.Location = new System.Drawing.Point(38, 132);
             codigoEmpresaLabel.Name = "codigoEmpresaLabel";
             codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
             codigoEmpresaLabel.TabIndex = 7;
@@ -107,20 +108,20 @@
             // nombreCategoriaLabel
             // 
             nombreCategoriaLabel.AutoSize = true;
-            nombreCategoriaLabel.Location = new System.Drawing.Point(17, 29);
+            nombreCategoriaLabel.Location = new System.Drawing.Point(42, 29);
             nombreCategoriaLabel.Name = "nombreCategoriaLabel";
             nombreCategoriaLabel.Size = new System.Drawing.Size(47, 13);
             nombreCategoriaLabel.TabIndex = 8;
             nombreCategoriaLabel.Text = "Nombre:";
             // 
-            // nombreTipoCategoriaLabel
+            // nombreDepartamentoLabel
             // 
-            nombreTipoCategoriaLabel.AutoSize = true;
-            nombreTipoCategoriaLabel.Location = new System.Drawing.Point(33, 78);
-            nombreTipoCategoriaLabel.Name = "nombreTipoCategoriaLabel";
-            nombreTipoCategoriaLabel.Size = new System.Drawing.Size(31, 13);
-            nombreTipoCategoriaLabel.TabIndex = 9;
-            nombreTipoCategoriaLabel.Text = "Tipo:";
+            nombreDepartamentoLabel.AutoSize = true;
+            nombreDepartamentoLabel.Location = new System.Drawing.Point(12, 78);
+            nombreDepartamentoLabel.Name = "nombreDepartamentoLabel";
+            nombreDepartamentoLabel.Size = new System.Drawing.Size(77, 13);
+            nombreDepartamentoLabel.TabIndex = 10;
+            nombreDepartamentoLabel.Text = "Departamento:";
             // 
             // btnSalir
             // 
@@ -141,7 +142,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(520, 260);
+            this.pnl3.Size = new System.Drawing.Size(597, 260);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -149,8 +150,8 @@
             this.pnl6.AutoScroll = true;
             this.pnl6.BackColor = System.Drawing.Color.White;
             this.pnl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl6.Controls.Add(nombreTipoCategoriaLabel);
-            this.pnl6.Controls.Add(this.cboTipo);
+            this.pnl6.Controls.Add(nombreDepartamentoLabel);
+            this.pnl6.Controls.Add(this.cboDepartamento);
             this.pnl6.Controls.Add(nombreCategoriaLabel);
             this.pnl6.Controls.Add(this.txtNombre);
             this.pnl6.Controls.Add(codigoEmpresaLabel);
@@ -162,21 +163,21 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(293, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(220, 248);
+            this.pnl6.Size = new System.Drawing.Size(297, 248);
             this.pnl6.TabIndex = 6;
             // 
-            // cboTipo
+            // cboDepartamento
             // 
-            this.cboTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreTipoCategoria", true));
-            this.cboTipo.DataSource = this.dsNeo;
-            this.cboTipo.DisplayMember = "tbTipoCategoria.NombreTipoCategoria";
-            this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(66, 75);
-            this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(121, 21);
-            this.cboTipo.TabIndex = 10;
-            this.cboTipo.ValueMember = "tbTipoCategoria.NombreTipoCategoria";
+            this.cboDepartamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreDepartamento", true));
+            this.cboDepartamento.DataSource = this.dsNeo;
+            this.cboDepartamento.DisplayMember = "tbDepartamento.Nombre";
+            this.cboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDepartamento.FormattingEnabled = true;
+            this.cboDepartamento.Location = new System.Drawing.Point(91, 75);
+            this.cboDepartamento.Name = "cboDepartamento";
+            this.cboDepartamento.Size = new System.Drawing.Size(178, 21);
+            this.cboDepartamento.TabIndex = 11;
+            this.cboDepartamento.ValueMember = "tbDepartamento.Nombre";
             // 
             // bsMto
             // 
@@ -191,9 +192,9 @@
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreCategoria", true));
-            this.txtNombre.Location = new System.Drawing.Point(66, 26);
+            this.txtNombre.Location = new System.Drawing.Point(91, 26);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(121, 20);
+            this.txtNombre.Size = new System.Drawing.Size(178, 20);
             this.txtNombre.TabIndex = 9;
             // 
             // lblEmpresa
@@ -201,9 +202,9 @@
             this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
             this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
-            this.lblEmpresa.Location = new System.Drawing.Point(66, 130);
+            this.lblEmpresa.Location = new System.Drawing.Point(91, 129);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(121, 20);
+            this.lblEmpresa.Size = new System.Drawing.Size(178, 20);
             this.lblEmpresa.TabIndex = 8;
             this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -212,9 +213,9 @@
             this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
-            this.lblTrabajo.Location = new System.Drawing.Point(66, 104);
+            this.lblTrabajo.Location = new System.Drawing.Point(91, 103);
             this.lblTrabajo.Name = "lblTrabajo";
-            this.lblTrabajo.Size = new System.Drawing.Size(121, 20);
+            this.lblTrabajo.Size = new System.Drawing.Size(178, 20);
             this.lblTrabajo.TabIndex = 7;
             this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -260,15 +261,14 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cTrabajo,
             this.cEmpresa,
-            this.cNombre,
-            this.cTipo});
+            this.cNombre});
             this.grdMto.DataSource = this.bsMto;
             this.grdMto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdMto.Location = new System.Drawing.Point(0, 0);
@@ -300,22 +300,14 @@
             this.cNombre.HeaderText = "Nombre";
             this.cNombre.Name = "cNombre";
             this.cNombre.ReadOnly = true;
-            this.cNombre.Width = 110;
-            // 
-            // cTipo
-            // 
-            this.cTipo.DataPropertyName = "NombreTipoCategoria";
-            this.cTipo.HeaderText = "Tipo";
-            this.cTipo.Name = "cTipo";
-            this.cTipo.ReadOnly = true;
-            this.cTipo.Width = 105;
+            this.cNombre.Width = 220;
             // 
             // pnl2
             // 
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(520, 10);
+            this.pnl2.Size = new System.Drawing.Size(597, 10);
             this.pnl2.TabIndex = 6;
             // 
             // spd4
@@ -330,7 +322,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(520, 28);
+            this.pnl1.Size = new System.Drawing.Size(597, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -362,7 +354,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(518, 25);
+            this.bnMto.Size = new System.Drawing.Size(595, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -465,15 +457,19 @@
             // 
             this.taCategoria.ClearBeforeFill = true;
             // 
-            // taTipoCategoria
+            // taDepartamento
             // 
-            this.taTipoCategoria.ClearBeforeFill = true;
+            this.taDepartamento.ClearBeforeFill = true;
+            // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
             // 
             // FrmMtoCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 298);
+            this.ClientSize = new System.Drawing.Size(597, 298);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
@@ -494,6 +490,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,15 +523,15 @@
         private System.Windows.Forms.ToolStripSeparator spd3;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.Label lblTrabajo;
+        private DsNeoTableAdapters.taCategoria taCategoria;
+        private System.Windows.Forms.ComboBox cboDepartamento;
+        private DsNeoTableAdapters.taDepartamento taDepartamento;
+        private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTipo;
-        private DsNeoTableAdapters.taCategoria taCategoria;
-        private DsNeoTableAdapters.taTipoCategoria taTipoCategoria;
     }
 }

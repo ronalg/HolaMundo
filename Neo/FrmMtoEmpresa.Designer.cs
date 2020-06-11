@@ -877,7 +877,6 @@
             this.tableAdapterManager.taProveedorSucursalContacto = null;
             this.tableAdapterManager.taProvincia = null;
             this.tableAdapterManager.taSucursal = null;
-            this.tableAdapterManager.taTipoCategoria = null;
             this.tableAdapterManager.taTipoContacto = null;
             this.tableAdapterManager.taTrabajo = null;
             this.tableAdapterManager.taUnidad = null;

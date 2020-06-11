@@ -40,8 +40,7 @@
             System.Windows.Forms.Label usuarioLabel;
             System.Windows.Forms.Label equipoLabel;
             System.Windows.Forms.Label cuentaContableLabel;
-            System.Windows.Forms.Label nombreTipoCategoriaLabel;
-            System.Windows.Forms.Label nombreCategoriaLabel;
+            System.Windows.Forms.Label categoriaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoProveedor));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,14 +52,13 @@
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcProveedor = new System.Windows.Forms.TabControl();
-            this.tpGlobal = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tpPerfil = new System.Windows.Forms.TabPage();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
-            this.cboTipoCategoria = new System.Windows.Forms.ComboBox();
             this.cboIdentificacion = new System.Windows.Forms.ComboBox();
             this.txtCuenta = new System.Windows.Forms.TextBox();
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
@@ -135,6 +133,19 @@
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoIdentificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.identificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentaContableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sitioWebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grabadaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
@@ -152,7 +163,6 @@
             this.spd3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.taProveedor = new Neo.DsNeoTableAdapters.taProveedor();
-            this.taTipoCategoria = new Neo.DsNeoTableAdapters.taTipoCategoria();
             this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
             this.taIdentificacion = new Neo.DsNeoTableAdapters.taIdentificacion();
             this.taProveedorSucursal = new Neo.DsNeoTableAdapters.taProveedorSucursal();
@@ -161,21 +171,8 @@
             this.taProvincia = new Neo.DsNeoTableAdapters.taProvincia();
             this.taContacto = new Neo.DsNeoTableAdapters.taContacto();
             this.taTipoContacto = new Neo.DsNeoTableAdapters.taTipoContacto();
-            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoIdentificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreTipoCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.identificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentaContableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sitioWebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grabadaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             nombreLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
             sitioWebLabel = new System.Windows.Forms.Label();
@@ -187,12 +184,11 @@
             usuarioLabel = new System.Windows.Forms.Label();
             equipoLabel = new System.Windows.Forms.Label();
             cuentaContableLabel = new System.Windows.Forms.Label();
-            nombreTipoCategoriaLabel = new System.Windows.Forms.Label();
-            nombreCategoriaLabel = new System.Windows.Forms.Label();
+            categoriaLabel = new System.Windows.Forms.Label();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             this.tcProveedor.SuspendLayout();
-            this.tpGlobal.SuspendLayout();
+            this.tpPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.tpSucursal.SuspendLayout();
@@ -217,6 +213,7 @@
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreLabel
@@ -249,7 +246,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(368, 147);
+            activoLabel.Location = new System.Drawing.Point(377, 87);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 11;
@@ -258,7 +255,7 @@
             // codigoTrabajoLabel
             // 
             codigoTrabajoLabel.AutoSize = true;
-            codigoTrabajoLabel.Location = new System.Drawing.Point(363, 172);
+            codigoTrabajoLabel.Location = new System.Drawing.Point(372, 112);
             codigoTrabajoLabel.Name = "codigoTrabajoLabel";
             codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
             codigoTrabajoLabel.TabIndex = 12;
@@ -267,7 +264,7 @@
             // codigoEmpresaLabel
             // 
             codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(358, 199);
+            codigoEmpresaLabel.Location = new System.Drawing.Point(367, 139);
             codigoEmpresaLabel.Name = "codigoEmpresaLabel";
             codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
             codigoEmpresaLabel.TabIndex = 14;
@@ -276,7 +273,7 @@
             // codigoProveedorLabel
             // 
             codigoProveedorLabel.AutoSize = true;
-            codigoProveedorLabel.Location = new System.Drawing.Point(366, 227);
+            codigoProveedorLabel.Location = new System.Drawing.Point(375, 167);
             codigoProveedorLabel.Name = "codigoProveedorLabel";
             codigoProveedorLabel.Size = new System.Drawing.Size(43, 13);
             codigoProveedorLabel.TabIndex = 16;
@@ -285,7 +282,7 @@
             // grabadaLabel
             // 
             grabadaLabel.AutoSize = true;
-            grabadaLabel.Location = new System.Drawing.Point(358, 253);
+            grabadaLabel.Location = new System.Drawing.Point(367, 193);
             grabadaLabel.Name = "grabadaLabel";
             grabadaLabel.Size = new System.Drawing.Size(51, 13);
             grabadaLabel.TabIndex = 18;
@@ -294,7 +291,7 @@
             // usuarioLabel
             // 
             usuarioLabel.AutoSize = true;
-            usuarioLabel.Location = new System.Drawing.Point(363, 280);
+            usuarioLabel.Location = new System.Drawing.Point(372, 220);
             usuarioLabel.Name = "usuarioLabel";
             usuarioLabel.Size = new System.Drawing.Size(46, 13);
             usuarioLabel.TabIndex = 20;
@@ -303,7 +300,7 @@
             // equipoLabel
             // 
             equipoLabel.AutoSize = true;
-            equipoLabel.Location = new System.Drawing.Point(366, 307);
+            equipoLabel.Location = new System.Drawing.Point(375, 247);
             equipoLabel.Name = "equipoLabel";
             equipoLabel.Size = new System.Drawing.Size(43, 13);
             equipoLabel.TabIndex = 22;
@@ -312,29 +309,20 @@
             // cuentaContableLabel
             // 
             cuentaContableLabel.AutoSize = true;
-            cuentaContableLabel.Location = new System.Drawing.Point(365, 36);
+            cuentaContableLabel.Location = new System.Drawing.Point(378, 36);
             cuentaContableLabel.Name = "cuentaContableLabel";
             cuentaContableLabel.Size = new System.Drawing.Size(44, 13);
             cuentaContableLabel.TabIndex = 25;
             cuentaContableLabel.Text = "Cuenta:";
             // 
-            // nombreTipoCategoriaLabel
+            // categoriaLabel
             // 
-            nombreTipoCategoriaLabel.AutoSize = true;
-            nombreTipoCategoriaLabel.Location = new System.Drawing.Point(328, 90);
-            nombreTipoCategoriaLabel.Name = "nombreTipoCategoriaLabel";
-            nombreTipoCategoriaLabel.Size = new System.Drawing.Size(81, 13);
-            nombreTipoCategoriaLabel.TabIndex = 27;
-            nombreTipoCategoriaLabel.Text = "Tipo Categoría:";
-            // 
-            // nombreCategoriaLabel
-            // 
-            nombreCategoriaLabel.AutoSize = true;
-            nombreCategoriaLabel.Location = new System.Drawing.Point(352, 119);
-            nombreCategoriaLabel.Name = "nombreCategoriaLabel";
-            nombreCategoriaLabel.Size = new System.Drawing.Size(57, 13);
-            nombreCategoriaLabel.TabIndex = 29;
-            nombreCategoriaLabel.Text = "Categoría:";
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new System.Drawing.Point(60, 142);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new System.Drawing.Size(58, 13);
+            categoriaLabel.TabIndex = 27;
+            categoriaLabel.Text = " Categoria:";
             // 
             // btnSalir
             // 
@@ -355,7 +343,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(1493, 622);
+            this.pnl3.Size = new System.Drawing.Size(1370, 622);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -367,83 +355,71 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(293, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(1193, 610);
+            this.pnl6.Size = new System.Drawing.Size(1070, 610);
             this.pnl6.TabIndex = 6;
             // 
             // tcProveedor
             // 
-            this.tcProveedor.Controls.Add(this.tpGlobal);
+            this.tcProveedor.Controls.Add(this.tpPerfil);
             this.tcProveedor.Controls.Add(this.tpSucursal);
             this.tcProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcProveedor.Location = new System.Drawing.Point(0, 0);
             this.tcProveedor.Name = "tcProveedor";
             this.tcProveedor.SelectedIndex = 0;
-            this.tcProveedor.Size = new System.Drawing.Size(1191, 608);
+            this.tcProveedor.Size = new System.Drawing.Size(1068, 608);
             this.tcProveedor.TabIndex = 32;
             // 
-            // tpGlobal
+            // tpPerfil
             // 
-            this.tpGlobal.Controls.Add(this.label1);
-            this.tpGlobal.Controls.Add(this.cboCategoria);
-            this.tpGlobal.Controls.Add(this.txtNombre);
-            this.tpGlobal.Controls.Add(nombreCategoriaLabel);
-            this.tpGlobal.Controls.Add(nombreLabel);
-            this.tpGlobal.Controls.Add(nombreTipoCategoriaLabel);
-            this.tpGlobal.Controls.Add(this.txtRazonSocial);
-            this.tpGlobal.Controls.Add(this.cboTipoCategoria);
-            this.tpGlobal.Controls.Add(razonSocialLabel);
-            this.tpGlobal.Controls.Add(cuentaContableLabel);
-            this.tpGlobal.Controls.Add(this.cboIdentificacion);
-            this.tpGlobal.Controls.Add(this.txtCuenta);
-            this.tpGlobal.Controls.Add(this.txtIdentificacion);
-            this.tpGlobal.Controls.Add(this.label3);
-            this.tpGlobal.Controls.Add(equipoLabel);
-            this.tpGlobal.Controls.Add(this.txtSitioWeb);
-            this.tpGlobal.Controls.Add(this.lblEquipo);
-            this.tpGlobal.Controls.Add(sitioWebLabel);
-            this.tpGlobal.Controls.Add(usuarioLabel);
-            this.tpGlobal.Controls.Add(this.label2);
-            this.tpGlobal.Controls.Add(this.lblUsuario);
-            this.tpGlobal.Controls.Add(this.chkActivo);
-            this.tpGlobal.Controls.Add(grabadaLabel);
-            this.tpGlobal.Controls.Add(activoLabel);
-            this.tpGlobal.Controls.Add(this.lblGrabada);
-            this.tpGlobal.Controls.Add(this.lblTrabajo);
-            this.tpGlobal.Controls.Add(codigoProveedorLabel);
-            this.tpGlobal.Controls.Add(codigoTrabajoLabel);
-            this.tpGlobal.Controls.Add(this.lblCodigo);
-            this.tpGlobal.Controls.Add(this.lblEmpresa);
-            this.tpGlobal.Controls.Add(codigoEmpresaLabel);
-            this.tpGlobal.Location = new System.Drawing.Point(4, 22);
-            this.tpGlobal.Name = "tpGlobal";
-            this.tpGlobal.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGlobal.Size = new System.Drawing.Size(1183, 582);
-            this.tpGlobal.TabIndex = 0;
-            this.tpGlobal.Text = "Global";
-            this.tpGlobal.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Datos Generales";
+            this.tpPerfil.Controls.Add(categoriaLabel);
+            this.tpPerfil.Controls.Add(this.cboCategoria);
+            this.tpPerfil.Controls.Add(this.label1);
+            this.tpPerfil.Controls.Add(this.txtNombre);
+            this.tpPerfil.Controls.Add(nombreLabel);
+            this.tpPerfil.Controls.Add(this.txtRazonSocial);
+            this.tpPerfil.Controls.Add(razonSocialLabel);
+            this.tpPerfil.Controls.Add(cuentaContableLabel);
+            this.tpPerfil.Controls.Add(this.cboIdentificacion);
+            this.tpPerfil.Controls.Add(this.txtCuenta);
+            this.tpPerfil.Controls.Add(this.txtIdentificacion);
+            this.tpPerfil.Controls.Add(this.label3);
+            this.tpPerfil.Controls.Add(equipoLabel);
+            this.tpPerfil.Controls.Add(this.txtSitioWeb);
+            this.tpPerfil.Controls.Add(this.lblEquipo);
+            this.tpPerfil.Controls.Add(sitioWebLabel);
+            this.tpPerfil.Controls.Add(usuarioLabel);
+            this.tpPerfil.Controls.Add(this.label2);
+            this.tpPerfil.Controls.Add(this.lblUsuario);
+            this.tpPerfil.Controls.Add(this.chkActivo);
+            this.tpPerfil.Controls.Add(grabadaLabel);
+            this.tpPerfil.Controls.Add(activoLabel);
+            this.tpPerfil.Controls.Add(this.lblGrabada);
+            this.tpPerfil.Controls.Add(this.lblTrabajo);
+            this.tpPerfil.Controls.Add(codigoProveedorLabel);
+            this.tpPerfil.Controls.Add(codigoTrabajoLabel);
+            this.tpPerfil.Controls.Add(this.lblCodigo);
+            this.tpPerfil.Controls.Add(this.lblEmpresa);
+            this.tpPerfil.Controls.Add(codigoEmpresaLabel);
+            this.tpPerfil.Location = new System.Drawing.Point(4, 22);
+            this.tpPerfil.Name = "tpPerfil";
+            this.tpPerfil.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPerfil.Size = new System.Drawing.Size(1060, 582);
+            this.tpPerfil.TabIndex = 0;
+            this.tpPerfil.Text = "Perfil";
+            this.tpPerfil.UseVisualStyleBackColor = true;
             // 
             // cboCategoria
             // 
-            this.cboCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreCategoria", true));
-            this.cboCategoria.DataSource = this.dsNeo;
-            this.cboCategoria.DisplayMember = "tbCategoria.NombreCategoria";
+            this.cboCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Categoria", true));
             this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(411, 116);
+            this.cboCategoria.Items.AddRange(new object[] {
+            "COORPORATIVO",
+            "PERSONAL"});
+            this.cboCategoria.Location = new System.Drawing.Point(124, 139);
             this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoria.TabIndex = 31;
-            this.cboCategoria.ValueMember = "tbCategoria.NombreCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(182, 21);
+            this.cboCategoria.TabIndex = 28;
             // 
             // bsMto
             // 
@@ -455,6 +431,16 @@
             this.dsNeo.DataSetName = "DsNeo";
             this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Datos Generales";
+            // 
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Nombre", true));
@@ -463,6 +449,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(182, 20);
             this.txtNombre.TabIndex = 7;
+            this.txtNombre.Validated += new System.EventHandler(this.txtNombre_Validated);
             // 
             // txtRazonSocial
             // 
@@ -472,20 +459,6 @@
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(182, 20);
             this.txtRazonSocial.TabIndex = 8;
-            // 
-            // cboTipoCategoria
-            // 
-            this.cboTipoCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreTipoCategoria", true));
-            this.cboTipoCategoria.DataSource = this.dsNeo;
-            this.cboTipoCategoria.DisplayMember = "tbTipoCategoria.NombreTipoCategoria";
-            this.cboTipoCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoCategoria.FormattingEnabled = true;
-            this.cboTipoCategoria.Location = new System.Drawing.Point(411, 87);
-            this.cboTipoCategoria.Name = "cboTipoCategoria";
-            this.cboTipoCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboTipoCategoria.TabIndex = 28;
-            this.cboTipoCategoria.ValueMember = "tbTipoCategoria.NombreTipoCategoria";
-            this.cboTipoCategoria.SelectedIndexChanged += new System.EventHandler(this.cboTipoCategoria_SelectedIndexChanged);
             // 
             // cboIdentificacion
             // 
@@ -503,7 +476,7 @@
             // txtCuenta
             // 
             this.txtCuenta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CuentaContable", true));
-            this.txtCuenta.Location = new System.Drawing.Point(411, 33);
+            this.txtCuenta.Location = new System.Drawing.Point(424, 33);
             this.txtCuenta.MaxLength = 12;
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(121, 20);
@@ -522,7 +495,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(327, 11);
+            this.label3.Location = new System.Drawing.Point(340, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 24;
@@ -543,7 +516,7 @@
             this.lblEquipo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblEquipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEquipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Equipo", true));
-            this.lblEquipo.Location = new System.Drawing.Point(411, 304);
+            this.lblEquipo.Location = new System.Drawing.Point(420, 244);
             this.lblEquipo.Name = "lblEquipo";
             this.lblEquipo.Size = new System.Drawing.Size(121, 20);
             this.lblEquipo.TabIndex = 23;
@@ -553,7 +526,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(327, 63);
+            this.label2.Location = new System.Drawing.Point(340, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 6;
@@ -564,7 +537,7 @@
             this.lblUsuario.BackColor = System.Drawing.Color.Gainsboro;
             this.lblUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Usuario", true));
-            this.lblUsuario.Location = new System.Drawing.Point(411, 277);
+            this.lblUsuario.Location = new System.Drawing.Point(420, 217);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(121, 20);
             this.lblUsuario.TabIndex = 21;
@@ -573,7 +546,7 @@
             // chkActivo
             // 
             this.chkActivo.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Activo", true));
-            this.chkActivo.Location = new System.Drawing.Point(414, 142);
+            this.chkActivo.Location = new System.Drawing.Point(423, 82);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(37, 24);
             this.chkActivo.TabIndex = 12;
@@ -584,7 +557,7 @@
             this.lblGrabada.BackColor = System.Drawing.Color.Gainsboro;
             this.lblGrabada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGrabada.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Grabada", true));
-            this.lblGrabada.Location = new System.Drawing.Point(411, 250);
+            this.lblGrabada.Location = new System.Drawing.Point(420, 190);
             this.lblGrabada.Name = "lblGrabada";
             this.lblGrabada.Size = new System.Drawing.Size(121, 20);
             this.lblGrabada.TabIndex = 19;
@@ -595,7 +568,7 @@
             this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
-            this.lblTrabajo.Location = new System.Drawing.Point(411, 169);
+            this.lblTrabajo.Location = new System.Drawing.Point(420, 109);
             this.lblTrabajo.Name = "lblTrabajo";
             this.lblTrabajo.Size = new System.Drawing.Size(121, 20);
             this.lblTrabajo.TabIndex = 13;
@@ -606,7 +579,7 @@
             this.lblCodigo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoProveedor", true));
-            this.lblCodigo.Location = new System.Drawing.Point(411, 224);
+            this.lblCodigo.Location = new System.Drawing.Point(420, 164);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(121, 20);
             this.lblCodigo.TabIndex = 17;
@@ -617,7 +590,7 @@
             this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
             this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
-            this.lblEmpresa.Location = new System.Drawing.Point(411, 196);
+            this.lblEmpresa.Location = new System.Drawing.Point(420, 136);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(121, 20);
             this.lblEmpresa.TabIndex = 15;
@@ -630,7 +603,7 @@
             this.tpSucursal.Location = new System.Drawing.Point(4, 22);
             this.tpSucursal.Name = "tpSucursal";
             this.tpSucursal.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSucursal.Size = new System.Drawing.Size(1183, 582);
+            this.tpSucursal.Size = new System.Drawing.Size(1060, 582);
             this.tpSucursal.TabIndex = 1;
             this.tpSucursal.Text = "Sucursal";
             this.tpSucursal.UseVisualStyleBackColor = true;
@@ -643,7 +616,7 @@
             this.pnl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl9.Location = new System.Drawing.Point(3, 295);
             this.pnl9.Name = "pnl9";
-            this.pnl9.Size = new System.Drawing.Size(1177, 284);
+            this.pnl9.Size = new System.Drawing.Size(1054, 284);
             this.pnl9.TabIndex = 1;
             // 
             // pnl10
@@ -654,7 +627,7 @@
             this.pnl10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl10.Location = new System.Drawing.Point(0, 17);
             this.pnl10.Name = "pnl10";
-            this.pnl10.Size = new System.Drawing.Size(1175, 265);
+            this.pnl10.Size = new System.Drawing.Size(1052, 265);
             this.pnl10.TabIndex = 8;
             // 
             // pnl14
@@ -663,7 +636,7 @@
             this.pnl14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl14.Location = new System.Drawing.Point(0, 28);
             this.pnl14.Name = "pnl14";
-            this.pnl14.Size = new System.Drawing.Size(1173, 235);
+            this.pnl14.Size = new System.Drawing.Size(1050, 235);
             this.pnl14.TabIndex = 9;
             // 
             // grdContacto
@@ -684,10 +657,9 @@
             this.cEmpresa,
             this.cProveedor});
             this.grdContacto.DataSource = this.bsContacto;
-            this.grdContacto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdContacto.Location = new System.Drawing.Point(0, 0);
             this.grdContacto.Name = "grdContacto";
-            this.grdContacto.Size = new System.Drawing.Size(1173, 235);
+            this.grdContacto.Size = new System.Drawing.Size(1050, 235);
             this.grdContacto.TabIndex = 8;
             this.grdContacto.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdContacto_CellFormatting);
             this.grdContacto.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdContacto_CellValueChanged);
@@ -775,7 +747,7 @@
             this.pnl13.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl13.Location = new System.Drawing.Point(0, 0);
             this.pnl13.Name = "pnl13";
-            this.pnl13.Size = new System.Drawing.Size(1173, 28);
+            this.pnl13.Size = new System.Drawing.Size(1050, 28);
             this.pnl13.TabIndex = 8;
             // 
             // bnContacto
@@ -804,7 +776,7 @@
             this.bnContacto.MovePreviousItem = this.toolStripButton4;
             this.bnContacto.Name = "bnContacto";
             this.bnContacto.PositionItem = this.toolStripTextBox1;
-            this.bnContacto.Size = new System.Drawing.Size(1171, 25);
+            this.bnContacto.Size = new System.Drawing.Size(1048, 25);
             this.bnContacto.TabIndex = 5;
             this.bnContacto.Text = "bindingNavigator1";
             // 
@@ -904,7 +876,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1175, 17);
+            this.label5.Size = new System.Drawing.Size(1052, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Contacto";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -917,7 +889,7 @@
             this.pnl7.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl7.Location = new System.Drawing.Point(3, 3);
             this.pnl7.Name = "pnl7";
-            this.pnl7.Size = new System.Drawing.Size(1177, 292);
+            this.pnl7.Size = new System.Drawing.Size(1054, 292);
             this.pnl7.TabIndex = 0;
             // 
             // pnl8
@@ -928,7 +900,7 @@
             this.pnl8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl8.Location = new System.Drawing.Point(0, 17);
             this.pnl8.Name = "pnl8";
-            this.pnl8.Size = new System.Drawing.Size(1175, 273);
+            this.pnl8.Size = new System.Drawing.Size(1052, 273);
             this.pnl8.TabIndex = 7;
             // 
             // pnl12
@@ -937,7 +909,7 @@
             this.pnl12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl12.Location = new System.Drawing.Point(0, 28);
             this.pnl12.Name = "pnl12";
-            this.pnl12.Size = new System.Drawing.Size(1173, 243);
+            this.pnl12.Size = new System.Drawing.Size(1050, 243);
             this.pnl12.TabIndex = 8;
             // 
             // grdSucursal
@@ -964,7 +936,7 @@
             this.grdSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdSucursal.Location = new System.Drawing.Point(0, 0);
             this.grdSucursal.Name = "grdSucursal";
-            this.grdSucursal.Size = new System.Drawing.Size(1173, 243);
+            this.grdSucursal.Size = new System.Drawing.Size(1050, 243);
             this.grdSucursal.TabIndex = 7;
             this.grdSucursal.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdSucursal_CellFormatting);
             this.grdSucursal.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdSucursal_CellValueChanged);
@@ -1070,7 +1042,7 @@
             this.pnl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl11.Location = new System.Drawing.Point(0, 0);
             this.pnl11.Name = "pnl11";
-            this.pnl11.Size = new System.Drawing.Size(1173, 28);
+            this.pnl11.Size = new System.Drawing.Size(1050, 28);
             this.pnl11.TabIndex = 7;
             // 
             // bnSucursal
@@ -1099,7 +1071,7 @@
             this.bnSucursal.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnSucursal.Name = "bnSucursal";
             this.bnSucursal.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnSucursal.Size = new System.Drawing.Size(1171, 25);
+            this.bnSucursal.Size = new System.Drawing.Size(1048, 25);
             this.bnSucursal.TabIndex = 5;
             this.bnSucursal.Text = "bindingNavigator1";
             // 
@@ -1199,7 +1171,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1175, 17);
+            this.label4.Size = new System.Drawing.Size(1052, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Datos Generales";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1235,8 +1207,6 @@
             this.codigoEmpresaDataGridViewTextBoxColumn,
             this.pCodigo,
             this.codigoIdentificacionDataGridViewTextBoxColumn,
-            this.nombreCategoriaDataGridViewTextBoxColumn,
-            this.nombreTipoCategoriaDataGridViewTextBoxColumn,
             this.pNombre,
             this.razonSocialDataGridViewTextBoxColumn,
             this.identificacionDataGridViewTextBoxColumn,
@@ -1255,12 +1225,116 @@
             this.grdMto.TabIndex = 3;
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
             // 
+            // codigoTrabajoDataGridViewTextBoxColumn
+            // 
+            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
+            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codigoEmpresaDataGridViewTextBoxColumn
+            // 
+            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
+            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pCodigo
+            // 
+            this.pCodigo.DataPropertyName = "CodigoProveedor";
+            this.pCodigo.HeaderText = "CodigoProveedor";
+            this.pCodigo.Name = "pCodigo";
+            this.pCodigo.ReadOnly = true;
+            this.pCodigo.Visible = false;
+            // 
+            // codigoIdentificacionDataGridViewTextBoxColumn
+            // 
+            this.codigoIdentificacionDataGridViewTextBoxColumn.DataPropertyName = "CodigoIdentificacion";
+            this.codigoIdentificacionDataGridViewTextBoxColumn.HeaderText = "CodigoIdentificacion";
+            this.codigoIdentificacionDataGridViewTextBoxColumn.Name = "codigoIdentificacionDataGridViewTextBoxColumn";
+            this.codigoIdentificacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoIdentificacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pNombre
+            // 
+            this.pNombre.DataPropertyName = "Nombre";
+            this.pNombre.HeaderText = "Nombre";
+            this.pNombre.Name = "pNombre";
+            this.pNombre.ReadOnly = true;
+            this.pNombre.Width = 210;
+            // 
+            // razonSocialDataGridViewTextBoxColumn
+            // 
+            this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "RazonSocial";
+            this.razonSocialDataGridViewTextBoxColumn.HeaderText = "RazonSocial";
+            this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
+            this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
+            this.razonSocialDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // identificacionDataGridViewTextBoxColumn
+            // 
+            this.identificacionDataGridViewTextBoxColumn.DataPropertyName = "Identificacion";
+            this.identificacionDataGridViewTextBoxColumn.HeaderText = "Identificacion";
+            this.identificacionDataGridViewTextBoxColumn.Name = "identificacionDataGridViewTextBoxColumn";
+            this.identificacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.identificacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cuentaContableDataGridViewTextBoxColumn
+            // 
+            this.cuentaContableDataGridViewTextBoxColumn.DataPropertyName = "CuentaContable";
+            this.cuentaContableDataGridViewTextBoxColumn.HeaderText = "CuentaContable";
+            this.cuentaContableDataGridViewTextBoxColumn.Name = "cuentaContableDataGridViewTextBoxColumn";
+            this.cuentaContableDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cuentaContableDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sitioWebDataGridViewTextBoxColumn
+            // 
+            this.sitioWebDataGridViewTextBoxColumn.DataPropertyName = "SitioWeb";
+            this.sitioWebDataGridViewTextBoxColumn.HeaderText = "SitioWeb";
+            this.sitioWebDataGridViewTextBoxColumn.Name = "sitioWebDataGridViewTextBoxColumn";
+            this.sitioWebDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sitioWebDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // grabadaDataGridViewTextBoxColumn
+            // 
+            this.grabadaDataGridViewTextBoxColumn.DataPropertyName = "Grabada";
+            this.grabadaDataGridViewTextBoxColumn.HeaderText = "Grabada";
+            this.grabadaDataGridViewTextBoxColumn.Name = "grabadaDataGridViewTextBoxColumn";
+            this.grabadaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.grabadaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuarioDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // equipoDataGridViewTextBoxColumn
+            // 
+            this.equipoDataGridViewTextBoxColumn.DataPropertyName = "Equipo";
+            this.equipoDataGridViewTextBoxColumn.HeaderText = "Equipo";
+            this.equipoDataGridViewTextBoxColumn.Name = "equipoDataGridViewTextBoxColumn";
+            this.equipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.equipoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // activoDataGridViewCheckBoxColumn
+            // 
+            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "Activo";
+            this.activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
+            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
+            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.activoDataGridViewCheckBoxColumn.Visible = false;
+            // 
             // pnl2
             // 
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(1493, 10);
+            this.pnl2.Size = new System.Drawing.Size(1370, 10);
             this.pnl2.TabIndex = 6;
             // 
             // spd4
@@ -1284,7 +1358,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(1493, 28);
+            this.pnl1.Size = new System.Drawing.Size(1370, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -1316,7 +1390,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(1491, 25);
+            this.bnMto.Size = new System.Drawing.Size(1368, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -1410,10 +1484,6 @@
             // 
             this.taProveedor.ClearBeforeFill = true;
             // 
-            // taTipoCategoria
-            // 
-            this.taTipoCategoria.ClearBeforeFill = true;
-            // 
             // taCategoria
             // 
             this.taCategoria.ClearBeforeFill = true;
@@ -1446,131 +1516,50 @@
             // 
             this.taTipoContacto.ClearBeforeFill = true;
             // 
-            // codigoTrabajoDataGridViewTextBoxColumn
+            // tableAdapterManager
             // 
-            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
-            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.taArticulo = null;
+            this.tableAdapterManager.taArticuloMultimedia = null;
+            this.tableAdapterManager.taCategoria = this.taCategoria;
+            this.tableAdapterManager.taCliente = null;
+            this.tableAdapterManager.taClienteSucursal = null;
+            this.tableAdapterManager.taClienteSucursalContacto = null;
+            this.tableAdapterManager.taContacto = this.taContacto;
+            this.tableAdapterManager.taDepartamento = null;
+            this.tableAdapterManager.taEmpresa = null;
+            this.tableAdapterManager.taEstado = null;
+            this.tableAdapterManager.taFinanciera = null;
+            this.tableAdapterManager.taFormaPago = null;
+            this.tableAdapterManager.taIdentificacion = this.taIdentificacion;
+            this.tableAdapterManager.taMoneda = null;
+            this.tableAdapterManager.taNacionalidad = null;
+            this.tableAdapterManager.taOcupacion = null;
+            this.tableAdapterManager.taPais = this.taPais;
+            this.tableAdapterManager.taPrecioVenta = null;
+            this.tableAdapterManager.taProveedor = this.taProveedor;
+            this.tableAdapterManager.taProveedorSucursal = this.taProveedorSucursal;
+            this.tableAdapterManager.taProveedorSucursalContacto = this.taProveedorSucursalContacto;
+            this.tableAdapterManager.taProvincia = this.taProvincia;
+            this.tableAdapterManager.taSucursal = null;
+            this.tableAdapterManager.taTipoContacto = this.taTipoContacto;
+            this.tableAdapterManager.taTipoFinanciera = null;
+            this.tableAdapterManager.taTipoTributo = null;
+            this.tableAdapterManager.taTrabajo = null;
+            this.tableAdapterManager.taTributo = null;
+            this.tableAdapterManager.taUnidad = null;
+            this.tableAdapterManager.taUsuario = null;
+            this.tableAdapterManager.UpdateOrder = Neo.DsNeoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // codigoEmpresaDataGridViewTextBoxColumn
+            // ep
             // 
-            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
-            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // pCodigo
-            // 
-            this.pCodigo.DataPropertyName = "CodigoProveedor";
-            this.pCodigo.HeaderText = "CodigoProveedor";
-            this.pCodigo.Name = "pCodigo";
-            this.pCodigo.ReadOnly = true;
-            this.pCodigo.Visible = false;
-            // 
-            // codigoIdentificacionDataGridViewTextBoxColumn
-            // 
-            this.codigoIdentificacionDataGridViewTextBoxColumn.DataPropertyName = "CodigoIdentificacion";
-            this.codigoIdentificacionDataGridViewTextBoxColumn.HeaderText = "CodigoIdentificacion";
-            this.codigoIdentificacionDataGridViewTextBoxColumn.Name = "codigoIdentificacionDataGridViewTextBoxColumn";
-            this.codigoIdentificacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoIdentificacionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreCategoriaDataGridViewTextBoxColumn
-            // 
-            this.nombreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "NombreCategoria";
-            this.nombreCategoriaDataGridViewTextBoxColumn.HeaderText = "NombreCategoria";
-            this.nombreCategoriaDataGridViewTextBoxColumn.Name = "nombreCategoriaDataGridViewTextBoxColumn";
-            this.nombreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreCategoriaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreTipoCategoriaDataGridViewTextBoxColumn
-            // 
-            this.nombreTipoCategoriaDataGridViewTextBoxColumn.DataPropertyName = "NombreTipoCategoria";
-            this.nombreTipoCategoriaDataGridViewTextBoxColumn.HeaderText = "NombreTipoCategoria";
-            this.nombreTipoCategoriaDataGridViewTextBoxColumn.Name = "nombreTipoCategoriaDataGridViewTextBoxColumn";
-            this.nombreTipoCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreTipoCategoriaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // pNombre
-            // 
-            this.pNombre.DataPropertyName = "Nombre";
-            this.pNombre.HeaderText = "Nombre";
-            this.pNombre.Name = "pNombre";
-            this.pNombre.ReadOnly = true;
-            this.pNombre.Width = 210;
-            // 
-            // razonSocialDataGridViewTextBoxColumn
-            // 
-            this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "RazonSocial";
-            this.razonSocialDataGridViewTextBoxColumn.HeaderText = "RazonSocial";
-            this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
-            this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
-            this.razonSocialDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // identificacionDataGridViewTextBoxColumn
-            // 
-            this.identificacionDataGridViewTextBoxColumn.DataPropertyName = "Identificacion";
-            this.identificacionDataGridViewTextBoxColumn.HeaderText = "Identificacion";
-            this.identificacionDataGridViewTextBoxColumn.Name = "identificacionDataGridViewTextBoxColumn";
-            this.identificacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.identificacionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cuentaContableDataGridViewTextBoxColumn
-            // 
-            this.cuentaContableDataGridViewTextBoxColumn.DataPropertyName = "CuentaContable";
-            this.cuentaContableDataGridViewTextBoxColumn.HeaderText = "CuentaContable";
-            this.cuentaContableDataGridViewTextBoxColumn.Name = "cuentaContableDataGridViewTextBoxColumn";
-            this.cuentaContableDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cuentaContableDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sitioWebDataGridViewTextBoxColumn
-            // 
-            this.sitioWebDataGridViewTextBoxColumn.DataPropertyName = "SitioWeb";
-            this.sitioWebDataGridViewTextBoxColumn.HeaderText = "SitioWeb";
-            this.sitioWebDataGridViewTextBoxColumn.Name = "sitioWebDataGridViewTextBoxColumn";
-            this.sitioWebDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sitioWebDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // grabadaDataGridViewTextBoxColumn
-            // 
-            this.grabadaDataGridViewTextBoxColumn.DataPropertyName = "Grabada";
-            this.grabadaDataGridViewTextBoxColumn.HeaderText = "Grabada";
-            this.grabadaDataGridViewTextBoxColumn.Name = "grabadaDataGridViewTextBoxColumn";
-            this.grabadaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.grabadaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // usuarioDataGridViewTextBoxColumn
-            // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usuarioDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // equipoDataGridViewTextBoxColumn
-            // 
-            this.equipoDataGridViewTextBoxColumn.DataPropertyName = "Equipo";
-            this.equipoDataGridViewTextBoxColumn.HeaderText = "Equipo";
-            this.equipoDataGridViewTextBoxColumn.Name = "equipoDataGridViewTextBoxColumn";
-            this.equipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.equipoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // activoDataGridViewCheckBoxColumn
-            // 
-            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "Activo";
-            this.activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
-            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
-            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.activoDataGridViewCheckBoxColumn.Visible = false;
+            this.ep.ContainerControl = this;
             // 
             // FrmMtoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1493, 660);
+            this.ClientSize = new System.Drawing.Size(1370, 660);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
@@ -1581,8 +1570,8 @@
             this.pnl3.ResumeLayout(false);
             this.pnl6.ResumeLayout(false);
             this.tcProveedor.ResumeLayout(false);
-            this.tpGlobal.ResumeLayout(false);
-            this.tpGlobal.PerformLayout();
+            this.tpPerfil.ResumeLayout(false);
+            this.tpPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.tpSucursal.ResumeLayout(false);
@@ -1613,6 +1602,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1624,7 +1614,6 @@
         private System.Windows.Forms.Panel pnl6;
         private System.Windows.Forms.BindingSource bsMto;
         private DsNeo dsNeo;
-        private System.Windows.Forms.ComboBox cboTipoCategoria;
         private System.Windows.Forms.TextBox txtCuenta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblEquipo;
@@ -1661,12 +1650,10 @@
         private System.Windows.Forms.ToolStripSeparator spd3;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private DsNeoTableAdapters.taProveedor taProveedor;
-        private DsNeoTableAdapters.taTipoCategoria taTipoCategoria;
         private DsNeoTableAdapters.taCategoria taCategoria;
         private DsNeoTableAdapters.taIdentificacion taIdentificacion;
-        private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.TabControl tcProveedor;
-        private System.Windows.Forms.TabPage tpGlobal;
+        private System.Windows.Forms.TabPage tpPerfil;
         private System.Windows.Forms.TabPage tpSucursal;
         private System.Windows.Forms.BindingSource bsSucursal;
         private DsNeoTableAdapters.taProveedorSucursal taProveedorSucursal;
@@ -1735,8 +1722,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoIdentificacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCategoriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreTipoCategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn razonSocialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn identificacionDataGridViewTextBoxColumn;
@@ -1746,5 +1731,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private DsNeoTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }

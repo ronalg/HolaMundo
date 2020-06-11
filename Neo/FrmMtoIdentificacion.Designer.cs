@@ -32,7 +32,7 @@
             System.Windows.Forms.Label codigoIdentificacionLabel;
             System.Windows.Forms.Label nombreLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoIdentificacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -65,6 +65,7 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.taIdentificacion = new Neo.DsNeoTableAdapters.taIdentificacion();
             this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             codigoIdentificacionLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             this.pnl3.SuspendLayout();
@@ -76,12 +77,13 @@
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // codigoIdentificacionLabel
             // 
             codigoIdentificacionLabel.AutoSize = true;
-            codigoIdentificacionLabel.Location = new System.Drawing.Point(18, 32);
+            codigoIdentificacionLabel.Location = new System.Drawing.Point(22, 32);
             codigoIdentificacionLabel.Name = "codigoIdentificacionLabel";
             codigoIdentificacionLabel.Size = new System.Drawing.Size(43, 13);
             codigoIdentificacionLabel.TabIndex = 1;
@@ -90,7 +92,7 @@
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(14, 58);
+            nombreLabel.Location = new System.Drawing.Point(19, 58);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 3;
@@ -115,7 +117,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(494, 240);
+            this.pnl3.Size = new System.Drawing.Size(578, 240);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -130,7 +132,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(234, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(253, 228);
+            this.pnl6.Size = new System.Drawing.Size(337, 228);
             this.pnl6.TabIndex = 6;
             // 
             // txtNombre
@@ -139,7 +141,7 @@
             this.txtNombre.Location = new System.Drawing.Point(67, 55);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(152, 20);
+            this.txtNombre.Size = new System.Drawing.Size(226, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // bsMto
@@ -159,7 +161,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(67, 29);
             this.txtCodigo.MaxLength = 10;
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(152, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(226, 20);
             this.txtCodigo.TabIndex = 2;
             // 
             // label1
@@ -194,8 +196,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -240,7 +242,7 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(494, 10);
+            this.pnl2.Size = new System.Drawing.Size(578, 10);
             this.pnl2.TabIndex = 6;
             // 
             // spd4
@@ -264,7 +266,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(494, 28);
+            this.pnl1.Size = new System.Drawing.Size(578, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -296,7 +298,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(492, 25);
+            this.bnMto.Size = new System.Drawing.Size(576, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -393,23 +395,44 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.taArticulo = null;
+            this.tableAdapterManager.taArticuloMultimedia = null;
+            this.tableAdapterManager.taCategoria = null;
+            this.tableAdapterManager.taContacto = null;
+            this.tableAdapterManager.taDepartamento = null;
             this.tableAdapterManager.taEmpresa = null;
+            this.tableAdapterManager.taFormaPago = null;
             this.tableAdapterManager.taIdentificacion = this.taIdentificacion;
+            this.tableAdapterManager.taMoneda = null;
             this.tableAdapterManager.taPais = null;
+            this.tableAdapterManager.taPrecioVenta = null;
+            this.tableAdapterManager.taProveedor = null;
+            this.tableAdapterManager.taProveedorSucursal = null;
+            this.tableAdapterManager.taProveedorSucursalContacto = null;
+            this.tableAdapterManager.taProvincia = null;
+            this.tableAdapterManager.taSucursal = null;
+            this.tableAdapterManager.taTipoContacto = null;
             this.tableAdapterManager.taTrabajo = null;
+            this.tableAdapterManager.taUnidad = null;
             this.tableAdapterManager.UpdateOrder = Neo.DsNeoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
             // 
             // FrmMtoIdentificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 278);
+            this.ClientSize = new System.Drawing.Size(578, 278);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmMtoIdentificacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Identidades";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMtoIdentificacion_FormClosed);
+            this.Load += new System.EventHandler(this.FrmMtoIdentificacion_Load);
             this.pnl3.ResumeLayout(false);
             this.pnl6.ResumeLayout(false);
             this.pnl6.PerformLayout();
@@ -422,6 +445,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -459,5 +483,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNombre;
         private DsNeoTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }

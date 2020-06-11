@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Design, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ComponentFactory.Krypton.Design.dll</HintPath>
-    </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ComponentFactory.Krypton.Toolkit.dll</HintPath>
@@ -62,11 +58,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsNeo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DsNeo1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsNeo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIniSsn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIniSsn.Designer.cs">
+      <DependentUpon>FrmIniSsn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoArticulo.Designer.cs">
+      <DependentUpon>FrmMtoArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMtoCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMtoCategoria.Designer.cs">
       <DependentUpon>FrmMtoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoCliente.Designer.cs">
+      <DependentUpon>FrmMtoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMtoContacto.cs">
       <SubType>Form</SubType>
@@ -74,11 +93,29 @@
     <Compile Include="FrmMtoContacto.Designer.cs">
       <DependentUpon>FrmMtoContacto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMtoDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoDepartamento.Designer.cs">
+      <DependentUpon>FrmMtoDepartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMtoEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMtoEmpresa.Designer.cs">
       <DependentUpon>FrmMtoEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoFinanciera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoFinanciera.Designer.cs">
+      <DependentUpon>FrmMtoFinanciera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoFormaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoFormaPago.Designer.cs">
+      <DependentUpon>FrmMtoFormaPago.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMtoIdentificacion.cs">
       <SubType>Form</SubType>
@@ -92,11 +129,29 @@
     <Compile Include="FrmMtoMoneda.Designer.cs">
       <DependentUpon>FrmMtoMoneda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMtoNacionalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoNacionalidad.Designer.cs">
+      <DependentUpon>FrmMtoNacionalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoOcupacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoOcupacion.Designer.cs">
+      <DependentUpon>FrmMtoOcupacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMtoPais.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMtoPais.Designer.cs">
       <DependentUpon>FrmMtoPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoPrecioVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoPrecioVenta.Designer.cs">
+      <DependentUpon>FrmMtoPrecioVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMtoProveedor.cs">
       <SubType>Form</SubType>
@@ -116,17 +171,29 @@
     <Compile Include="FrmMtoSucursal.Designer.cs">
       <DependentUpon>FrmMtoSucursal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMtoTipoCategoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMtoTipoCategoria.Designer.cs">
-      <DependentUpon>FrmMtoTipoCategoria.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmMtoTipoContacto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMtoTipoContacto.Designer.cs">
       <DependentUpon>FrmMtoTipoContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoEstado.Designer.cs">
+      <DependentUpon>FrmMtoEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoTipoFinanciera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoTipoFinanciera.Designer.cs">
+      <DependentUpon>FrmMtoTipoFinanciera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoTipoTributo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoTipoTributo.Designer.cs">
+      <DependentUpon>FrmMtoTipoTributo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMtoTrabajo.cs">
       <SubType>Form</SubType>
@@ -134,17 +201,53 @@
     <Compile Include="FrmMtoTrabajo.Designer.cs">
       <DependentUpon>FrmMtoTrabajo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMtoTributo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoTributo.Designer.cs">
+      <DependentUpon>FrmMtoTributo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoUnidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoUnidad.Designer.cs">
+      <DependentUpon>FrmMtoUnidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrm.Designer.cs">
+      <DependentUpon>FrmPrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidad.cs" />
+    <EmbeddedResource Include="FrmIniSsn.resx">
+      <DependentUpon>FrmIniSsn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoArticulo.resx">
+      <DependentUpon>FrmMtoArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoCategoria.resx">
       <DependentUpon>FrmMtoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoCliente.resx">
+      <DependentUpon>FrmMtoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoContacto.resx">
       <DependentUpon>FrmMtoContacto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoDepartamento.resx">
+      <DependentUpon>FrmMtoDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoEmpresa.resx">
       <DependentUpon>FrmMtoEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoFinanciera.resx">
+      <DependentUpon>FrmMtoFinanciera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoFormaPago.resx">
+      <DependentUpon>FrmMtoFormaPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoIdentificacion.resx">
       <DependentUpon>FrmMtoIdentificacion.cs</DependentUpon>
@@ -152,8 +255,17 @@
     <EmbeddedResource Include="FrmMtoMoneda.resx">
       <DependentUpon>FrmMtoMoneda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoNacionalidad.resx">
+      <DependentUpon>FrmMtoNacionalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoOcupacion.resx">
+      <DependentUpon>FrmMtoOcupacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoPais.resx">
       <DependentUpon>FrmMtoPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoPrecioVenta.resx">
+      <DependentUpon>FrmMtoPrecioVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoProveedor.resx">
       <DependentUpon>FrmMtoProveedor.cs</DependentUpon>
@@ -164,14 +276,29 @@
     <EmbeddedResource Include="FrmMtoSucursal.resx">
       <DependentUpon>FrmMtoSucursal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMtoTipoCategoria.resx">
-      <DependentUpon>FrmMtoTipoCategoria.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoTipoContacto.resx">
       <DependentUpon>FrmMtoTipoContacto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoEstado.resx">
+      <DependentUpon>FrmMtoEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoTipoFinanciera.resx">
+      <DependentUpon>FrmMtoTipoFinanciera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoTipoTributo.resx">
+      <DependentUpon>FrmMtoTipoTributo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoTrabajo.resx">
       <DependentUpon>FrmMtoTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoTributo.resx">
+      <DependentUpon>FrmMtoTributo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoUnidad.resx">
+      <DependentUpon>FrmMtoUnidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrm.resx">
+      <DependentUpon>FrmPrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -188,7 +315,7 @@
     <None Include="DsNeo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsNeo.Designer.cs</LastGenOutput>
+      <LastGenOutput>DsNeo1.Designer.cs</LastGenOutput>
     </None>
     <None Include="DsNeo.xss">
       <DependentUpon>DsNeo.xsd</DependentUpon>

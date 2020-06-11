@@ -41,26 +41,40 @@ namespace Neo
         {
             ConfiguraBoton(false);
             txtNombre.Focus();
-            cboTipo.SelectedIndex = -1;
+            cboDepartamento.SelectedIndex = -1;
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
             lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                txtNombre.Focus();
+                ep.SetError(txtNombre, Utilidad.campoVacio);
+                return;
+            }            
+
+            if (cboDepartamento.SelectedIndex == -1)
+            {
+                cboDepartamento.Focus();
+                ep.SetError(cboDepartamento, Utilidad.listaVacia);
+                return;
+            }
+
             try
             {
                 this.Validate();
                 this.bsMto.EndEdit();
                 if (!btnNuevo.Available)
                 {
-                    taCategoria.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtNombre.Text.Trim(), cboTipo.Text);
+                    taCategoria.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtNombre.Text.Trim(), cboDepartamento.Text);
                     ConfiguraBoton(true);
                     nombre = txtNombre.Text.Trim();
                 }
                 else
                 {
-                    taCategoria.Edita(txtNombre.Text.Trim(), cboTipo.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                    taCategoria.Edita(txtNombre.Text.Trim(), cboDepartamento.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -119,8 +133,7 @@ namespace Neo
 
         private void FrmMtoCategoria_Load(object sender, EventArgs e)
         {
-            taTipoCategoria.Fill(dsNeo.tbTipoCategoria, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            cboTipo.SelectedIndex = -1;
+            taDepartamento.Fill(dsNeo.tbDepartamento, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taCategoria.Fill(dsNeo.tbCategoria, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
         }
 

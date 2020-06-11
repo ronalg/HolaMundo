@@ -47,6 +47,20 @@ namespace Neo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtCodigo.Text.Trim()))
+            {
+                txtCodigo.Focus();
+                ep.SetError(txtCodigo, Utilidad.campoVacio);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                txtNombre.Focus();
+                ep.SetError(txtNombre, Utilidad.campoVacio);
+                return;
+            }
+
             try
             {
                 this.Validate();
@@ -123,7 +137,7 @@ namespace Neo
 
         private void FrmMtoMoneda_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Utilidad.mtoMonea = null;
+            Utilidad.mtoMoneda = null;
         }
 
         private void grdMto_SelectionChanged(object sender, EventArgs e)

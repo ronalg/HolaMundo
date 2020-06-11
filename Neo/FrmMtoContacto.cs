@@ -52,6 +52,13 @@ namespace Neo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                txtNombre.Focus();
+                errorProvider.SetError(txtNombre, Utilidad.campoVacio);
+                return;
+            }
+
             try
             {
                 this.Validate();

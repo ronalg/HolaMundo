@@ -1,0 +1,331 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Neo
+{
+    public partial class FrmMtoArticulo : Form
+    {
+        public FrmMtoArticulo()
+        {
+            InitializeComponent();
+        }
+
+        private void ConfiguraBoton(bool configura)
+        {
+            btnPrimero.Available = configura;
+            btnAnterior.Available = configura;
+            spd1.Available = configura;
+            txtPosicion.Available = configura;
+            lblRegistro.Available = configura;
+            spd2.Available = configura;
+            btnSiguiente.Available = configura;
+            btnUltimo.Available = configura;
+            spd3.Available = configura;
+            btnNuevo.Available = configura;
+            spd4.Available = configura;
+            btnSalir.Available = configura;
+            pnl4.Visible = configura;
+        }
+
+        private void FrmMtoArticulo_Load(object sender, EventArgs e)
+        {
+            taUnidad.Fill(dsNeo.tbUnidad, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taDepartamento.Fill(dsNeo.tbDepartamento, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taArticulo.Fill(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            if (grdMto.CurrentRow == null)
+            {
+                taArticuloPrecioVenta.Fill(dsNeo.tbArticuloPrecioVenta, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
+                taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            ConfiguraBoton(false);
+            txtId.Focus();
+            txtCoste.Text = "0.0000";
+            taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
+            lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
+            lblEmpresa.Text = Utilidad.codigoTrabajo.ToString();
+            cboUnidad.SelectedIndex = -1;
+            cboDepartamento.SelectedIndex = -1;
+            cboCategoria.SelectedIndex = -1;
+            dsNeo.tbArticuloMultimedia.Rows.Clear();
+            lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
+            lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
+            lblApertura.Text = DateTime.Today.ToShortDateString();
+            lblUsuario.Text = Utilidad.nombreUsuario;
+            lblEquipo.Text = Environment.MachineName;            
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtId.Text.Trim()))
+            {
+                txtId.Focus();
+                ep.SetError(txtId, Utilidad.campoVacio);
+                return;
+            }
+
+            if (cboUnidad.SelectedIndex == -1)
+            {
+                cboUnidad.Focus();
+                ep.SetError(cboUnidad, Utilidad.listaVacia);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtDescripcion.Text.Trim()))
+            {
+                txtDescripcion.Focus();
+                ep.SetError(txtDescripcion, Utilidad.campoVacio);
+                return;
+            }
+
+            if (cboDepartamento.SelectedIndex == -1)
+            {
+                cboDepartamento.Focus();
+                ep.SetError(cboDepartamento, Utilidad.listaVacia);
+                return;
+            }
+
+            if (cboCategoria.SelectedIndex == -1)
+            {
+                cboCategoria.Focus();
+                ep.SetError(cboCategoria, Utilidad.listaVacia);
+                return;
+            }
+
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                int codigoArticulo;
+                decimal coste = Convert.ToDecimal(txtCoste.Text);
+                if (!btnNuevo.Available)
+                {
+                    DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+                    codigoArticulo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "articulo").Value;
+                    lblCodigo.Text = codigoArticulo.ToString();
+                }
+                else
+                {
+                    codigoArticulo = Convert.ToInt32(lblCodigo.Text);
+                }
+
+                this.Validate();
+                this.bsMto.EndEdit();
+
+                byte[] caratula = null;
+                if (pbCaratula.Image != null)
+                {
+                    Image img = pbCaratula.Image;
+                    ImageConverter ic = new ImageConverter();
+                    caratula = (byte[])ic.ConvertTo(img, typeof(byte[]));
+                }
+
+                decimal? existencia = null;
+                if (!string.IsNullOrEmpty(txtExistencia.Text))
+                    existencia = Convert.ToDecimal(txtExistencia.Text);
+
+                if (!btnNuevo.Available)
+                {
+                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), coste, caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked);
+                    ConfiguraBoton(true);
+                }
+                else
+                {
+                    taArticulo.Edita(cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), coste, caratula, existencia, chkInventario.Checked, chkActivo.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
+                }
+
+                DsNeo ds = new DsNeo();
+                foreach (DataRow dr in dsNeo.tbArticuloPrecioVenta)
+                {
+                    string codigoPrecioVenta = dr["CodigoPrecioVenta"].ToString();
+                    decimal precio = Convert.ToDecimal(dr["Precio"].ToString());
+                    taArticuloPrecioVenta.FillByCodigoPrecioVenta(ds.tbArticuloPrecioVenta, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoPrecioVenta);
+                    if (ds.tbArticuloPrecioVenta.Rows.Count == 0)
+                        taArticuloPrecioVenta.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoPrecioVenta, precio);
+                    else
+                        taArticuloPrecioVenta.Edita(precio, Utilidad.codigoEmpresa, Utilidad.codigoTrabajo, codigoArticulo, codigoPrecioVenta);
+                }
+
+                DsNeoTableAdapters.consultasProgramadas cpm = new DsNeoTableAdapters.consultasProgramadas();
+                foreach (DataRow dr in dsNeo.tbArticuloMultimedia)
+                {
+                    short codigoMultimedia = short.Parse(dr["CodigoMultimedia"].ToString());
+                    taArticuloMultimedia.FillByCodigo(ds.tbArticuloMultimedia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoMultimedia);
+                    if (ds.tbArticuloMultimedia.Rows.Count == 0)
+                    {
+                        byte[] imagen = null;
+                        if (pbCaratula.Image != null)
+                        {
+                            ///Image img = dr["Imagen"];
+                            ImageConverter ic = new ImageConverter();
+                            imagen = (byte[])ic.ConvertTo(dr["Imagen"], typeof(byte[]));
+                        }
+                        codigoMultimedia = cpm.fnSiguienteArticuloMultimedia(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo).Value;
+                        taArticuloMultimedia.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoMultimedia, imagen);
+                    }
+                }
+
+                foreach (DataRow dr in dsNeo.tbArticuloProveedor)
+                {
+                    bool aplica = Convert.ToBoolean(dr["Aplica"].ToString());
+                    short codigoProveedor = short.Parse(dr["CodigoProveedor"].ToString());
+                    if (aplica)
+                    {
+                        taArticuloProveedor.FillByProveedor(ds.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor);
+                        if (ds.tbArticuloProveedor.Rows.Count == 0)
+                            taArticuloProveedor.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor);
+                    }
+                    else
+                    {
+                        taArticuloProveedor.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor);
+                    }
+                }
+            }
+            catch (NoNullAllowedException nullEx)
+            {
+                MessageBox.Show(nullEx.Message, Utilidad.textoCuadroMensaje, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message, Utilidad.textoCuadroMensaje, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Utilidad.textoCuadroMensaje, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (btnNuevo.Available && grdMto.CurrentRow != null)
+                {
+                    DialogResult dr = new DialogResult();
+                    dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.textoCuadroMensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (dr == DialogResult.Yes)
+                    {
+                        int codigo = Convert.ToInt32(lblCodigo.Text);
+                        taArticuloMultimedia.EliminaArticulo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                        taArticuloPrecioVenta.EliminaArticulo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                        taArticuloProveedor.EliminaArticulo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                        taArticulo.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                        grdMto.Rows.Remove(grdMto.CurrentRow);
+                    }
+                }
+                else if (grdMto.CurrentRow != null)
+                {
+                    grdMto.Rows.Remove(grdMto.CurrentRow);
+                    ConfiguraBoton(true);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message, Utilidad.textoCuadroMensaje, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Utilidad.textoCuadroMensaje, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmMtoArticulo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utilidad.mtoArticulo = null;
+        }
+
+        private void cboDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboDepartamento.SelectedIndex > -1)
+            {
+                taCategoria.FillByDepartamento(dsNeo.tbCategoria, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboDepartamento.Text);
+                cboCategoria.SelectedIndex = -1;
+            }
+        }
+
+        private void grdMto_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdMto.CurrentRow != null && !string.IsNullOrEmpty(grdMto.CurrentRow.Cells["aId"].Value.ToString()))
+            {
+                short codigoArticulo = short.Parse(grdMto.CurrentRow.Cells["aId"].Value.ToString());
+                taArticuloPrecioVenta.Fill(dsNeo.tbArticuloPrecioVenta, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
+                taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);                
+            }
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            cargaImagen(pbCaratula);
+        }
+
+        private void cargaImagen(PictureBox pb)
+        {
+            OpenFileDialog of = new OpenFileDialog();
+            of.Filter = "Imagenes (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
+            if (of.ShowDialog() == DialogResult.OK)
+                pbCaratula.ImageLocation = of.FileName;
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            pbCaratula.Image = null;
+        }
+
+        private void btnNuevoMultimedia_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog of = new OpenFileDialog();
+            of.Filter = "Imagenes (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
+            if (of.ShowDialog() == DialogResult.OK)
+            {
+                DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas(); 
+                Bitmap bmp = (Bitmap)Bitmap.FromFile(of.FileName);
+                DataGridViewImageColumn iCell = new DataGridViewImageColumn();
+                iCell.Image = bmp;
+                int i = iCell.Image.Width;
+                grdMultimedia.CurrentRow.Cells["mCodigo"].Value = 0;
+                grdMultimedia.CurrentRow.Cells["mImagen"].Value = iCell;
+            }
+        }
+
+        private void grdMultimedia_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        public byte[] ReadImageFile(string imageLocation)
+        {
+            byte[] imageData = null;
+            FileInfo fileInfo = new FileInfo(imageLocation);
+            long imageFileLength = fileInfo.Length;
+            FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            imageData = br.ReadBytes((int)imageFileLength);
+            return imageData;
+        }
+    }
+}

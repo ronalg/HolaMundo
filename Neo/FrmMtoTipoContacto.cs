@@ -46,6 +46,20 @@ namespace Neo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                txtNombre.Focus();
+                errorProvider.SetError(txtNombre, Utilidad.campoVacio);
+                return;
+            }
+
+            if (cboContacto.SelectedIndex == -1)
+            {
+                cboContacto.Focus();
+                errorProvider.SetError(cboContacto, Utilidad.listaVacia);
+                return;
+            }
+
             try
             {
                 this.Validate();
@@ -125,8 +139,8 @@ namespace Neo
         {
             if (grdMto.CurrentRow != null)
             {
-                contacto = grdMto.CurrentRow.Cells["tcContacto"].Value.ToString();
-                nombre = grdMto.CurrentRow.Cells["tcNombre"].Value.ToString();
+                nombre = grdMto.CurrentRow.Cells["tcContacto"].Value.ToString();
+                contacto = grdMto.CurrentRow.Cells["tcNombre"].Value.ToString();
             }
         }
 

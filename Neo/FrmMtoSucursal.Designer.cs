@@ -67,6 +67,18 @@
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoPaisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoPostalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grabadaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
@@ -86,18 +98,7 @@
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
             this.taPais = new Neo.DsNeoTableAdapters.taPais();
             this.taProvincia = new Neo.DsNeoTableAdapters.taProvincia();
-            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoPaisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoPostalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grabadaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             codigoTrabajoLabel = new System.Windows.Forms.Label();
             codigoEmpresaLabel = new System.Windows.Forms.Label();
             codigoSucursalLabel = new System.Windows.Forms.Label();
@@ -119,6 +120,7 @@
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // codigoTrabajoLabel
@@ -249,7 +251,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(593, 393);
+            this.pnl3.Size = new System.Drawing.Size(611, 393);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -287,7 +289,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(293, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(293, 381);
+            this.pnl6.Size = new System.Drawing.Size(311, 381);
             this.pnl6.TabIndex = 6;
             // 
             // cboProvincia
@@ -504,12 +506,110 @@
             this.grdMto.TabIndex = 3;
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
             // 
+            // codigoTrabajoDataGridViewTextBoxColumn
+            // 
+            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
+            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codigoEmpresaDataGridViewTextBoxColumn
+            // 
+            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
+            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codigoSucursalDataGridViewTextBoxColumn
+            // 
+            this.codigoSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoSucursal";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
+            this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoSucursalDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // codigoPaisDataGridViewTextBoxColumn
+            // 
+            this.codigoPaisDataGridViewTextBoxColumn.DataPropertyName = "CodigoPais";
+            this.codigoPaisDataGridViewTextBoxColumn.HeaderText = "CodigoPais";
+            this.codigoPaisDataGridViewTextBoxColumn.Name = "codigoPaisDataGridViewTextBoxColumn";
+            this.codigoPaisDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoPaisDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sProvincia
+            // 
+            this.sProvincia.DataPropertyName = "NombreProvincia";
+            this.sProvincia.HeaderText = "NombreProvincia";
+            this.sProvincia.Name = "sProvincia";
+            this.sProvincia.ReadOnly = true;
+            this.sProvincia.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codigoPostalDataGridViewTextBoxColumn
+            // 
+            this.codigoPostalDataGridViewTextBoxColumn.DataPropertyName = "CodigoPostal";
+            this.codigoPostalDataGridViewTextBoxColumn.HeaderText = "CodigoPostal";
+            this.codigoPostalDataGridViewTextBoxColumn.Name = "codigoPostalDataGridViewTextBoxColumn";
+            this.codigoPostalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoPostalDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuarioDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // grabadaDataGridViewTextBoxColumn
+            // 
+            this.grabadaDataGridViewTextBoxColumn.DataPropertyName = "Grabada";
+            this.grabadaDataGridViewTextBoxColumn.HeaderText = "Grabada";
+            this.grabadaDataGridViewTextBoxColumn.Name = "grabadaDataGridViewTextBoxColumn";
+            this.grabadaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.grabadaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // equipoDataGridViewTextBoxColumn
+            // 
+            this.equipoDataGridViewTextBoxColumn.DataPropertyName = "Equipo";
+            this.equipoDataGridViewTextBoxColumn.HeaderText = "Equipo";
+            this.equipoDataGridViewTextBoxColumn.Name = "equipoDataGridViewTextBoxColumn";
+            this.equipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.equipoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // activoDataGridViewCheckBoxColumn
+            // 
+            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "Activo";
+            this.activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
+            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
+            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.activoDataGridViewCheckBoxColumn.Visible = false;
+            // 
             // pnl2
             // 
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(593, 10);
+            this.pnl2.Size = new System.Drawing.Size(611, 10);
             this.pnl2.TabIndex = 6;
             // 
             // spd4
@@ -533,7 +633,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(593, 28);
+            this.pnl1.Size = new System.Drawing.Size(611, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -565,7 +665,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(591, 25);
+            this.bnMto.Size = new System.Drawing.Size(609, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -667,113 +767,20 @@
             // 
             this.taProvincia.ClearBeforeFill = true;
             // 
-            // codigoTrabajoDataGridViewTextBoxColumn
+            // ep
             // 
-            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
-            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // codigoEmpresaDataGridViewTextBoxColumn
-            // 
-            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
-            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // codigoSucursalDataGridViewTextBoxColumn
-            // 
-            this.codigoSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoSucursal";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "Código";
-            this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
-            this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoSucursalDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // codigoPaisDataGridViewTextBoxColumn
-            // 
-            this.codigoPaisDataGridViewTextBoxColumn.DataPropertyName = "CodigoPais";
-            this.codigoPaisDataGridViewTextBoxColumn.HeaderText = "CodigoPais";
-            this.codigoPaisDataGridViewTextBoxColumn.Name = "codigoPaisDataGridViewTextBoxColumn";
-            this.codigoPaisDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoPaisDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sProvincia
-            // 
-            this.sProvincia.DataPropertyName = "NombreProvincia";
-            this.sProvincia.HeaderText = "NombreProvincia";
-            this.sProvincia.Name = "sProvincia";
-            this.sProvincia.ReadOnly = true;
-            this.sProvincia.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 160;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.direccionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // codigoPostalDataGridViewTextBoxColumn
-            // 
-            this.codigoPostalDataGridViewTextBoxColumn.DataPropertyName = "CodigoPostal";
-            this.codigoPostalDataGridViewTextBoxColumn.HeaderText = "CodigoPostal";
-            this.codigoPostalDataGridViewTextBoxColumn.Name = "codigoPostalDataGridViewTextBoxColumn";
-            this.codigoPostalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoPostalDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // usuarioDataGridViewTextBoxColumn
-            // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usuarioDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // grabadaDataGridViewTextBoxColumn
-            // 
-            this.grabadaDataGridViewTextBoxColumn.DataPropertyName = "Grabada";
-            this.grabadaDataGridViewTextBoxColumn.HeaderText = "Grabada";
-            this.grabadaDataGridViewTextBoxColumn.Name = "grabadaDataGridViewTextBoxColumn";
-            this.grabadaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.grabadaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // equipoDataGridViewTextBoxColumn
-            // 
-            this.equipoDataGridViewTextBoxColumn.DataPropertyName = "Equipo";
-            this.equipoDataGridViewTextBoxColumn.HeaderText = "Equipo";
-            this.equipoDataGridViewTextBoxColumn.Name = "equipoDataGridViewTextBoxColumn";
-            this.equipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.equipoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // activoDataGridViewCheckBoxColumn
-            // 
-            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "Activo";
-            this.activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
-            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
-            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.activoDataGridViewCheckBoxColumn.Visible = false;
+            this.ep.ContainerControl = this;
             // 
             // FrmMtoSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 431);
+            this.ClientSize = new System.Drawing.Size(611, 431);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmMtoSucursal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sucursales";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMtoSucursal_FormClosed);
             this.Load += new System.EventHandler(this.FrmMtoSucursal_Load);
@@ -789,6 +796,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -849,5 +857,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn grabadaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }

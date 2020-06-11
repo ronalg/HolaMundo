@@ -29,23 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoMoneda));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label codigoMonedaLabel;
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label codigoEmpresaLabel;
             System.Windows.Forms.Label activoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoMoneda));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.lblTrabajo = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.mTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
@@ -63,16 +73,7 @@
             this.spd3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.taMoneda = new Neo.DsNeoTableAdapters.taMoneda();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblTrabajo = new System.Windows.Forms.Label();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.chkActivo = new System.Windows.Forms.CheckBox();
-            this.mTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             codigoMonedaLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             codigoTrabajoLabel = new System.Windows.Forms.Label();
@@ -87,7 +88,53 @@
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
+            // 
+            // codigoMonedaLabel
+            // 
+            codigoMonedaLabel.AutoSize = true;
+            codigoMonedaLabel.Location = new System.Drawing.Point(20, 29);
+            codigoMonedaLabel.Name = "codigoMonedaLabel";
+            codigoMonedaLabel.Size = new System.Drawing.Size(43, 13);
+            codigoMonedaLabel.TabIndex = 6;
+            codigoMonedaLabel.Text = "Código:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(16, 55);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 7;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // codigoTrabajoLabel
+            // 
+            codigoTrabajoLabel.AutoSize = true;
+            codigoTrabajoLabel.Location = new System.Drawing.Point(21, 128);
+            codigoTrabajoLabel.Name = "codigoTrabajoLabel";
+            codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
+            codigoTrabajoLabel.TabIndex = 8;
+            codigoTrabajoLabel.Text = "Trabajo:";
+            // 
+            // codigoEmpresaLabel
+            // 
+            codigoEmpresaLabel.AutoSize = true;
+            codigoEmpresaLabel.Location = new System.Drawing.Point(16, 153);
+            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
+            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
+            codigoEmpresaLabel.TabIndex = 9;
+            codigoEmpresaLabel.Text = "Empresa:";
+            // 
+            // activoLabel
+            // 
+            activoLabel.AutoSize = true;
+            activoLabel.Location = new System.Drawing.Point(23, 103);
+            activoLabel.Name = "activoLabel";
+            activoLabel.Size = new System.Drawing.Size(40, 13);
+            activoLabel.TabIndex = 10;
+            activoLabel.Text = "Activo:";
             // 
             // btnSalir
             // 
@@ -108,7 +155,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(518, 231);
+            this.pnl3.Size = new System.Drawing.Size(533, 231);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -131,8 +178,17 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(293, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(218, 219);
+            this.pnl6.Size = new System.Drawing.Size(233, 219);
             this.pnl6.TabIndex = 6;
+            // 
+            // chkActivo
+            // 
+            this.chkActivo.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Activo", true));
+            this.chkActivo.Location = new System.Drawing.Point(69, 98);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(136, 24);
+            this.chkActivo.TabIndex = 11;
+            this.chkActivo.UseVisualStyleBackColor = true;
             // 
             // bsMto
             // 
@@ -143,6 +199,45 @@
             // 
             this.dsNeo.DataSetName = "DsNeo";
             this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
+            this.lblEmpresa.Location = new System.Drawing.Point(69, 150);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(132, 20);
+            this.lblEmpresa.TabIndex = 10;
+            // 
+            // lblTrabajo
+            // 
+            this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
+            this.lblTrabajo.Location = new System.Drawing.Point(69, 125);
+            this.lblTrabajo.Name = "lblTrabajo";
+            this.lblTrabajo.Size = new System.Drawing.Size(132, 20);
+            this.lblTrabajo.TabIndex = 9;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Nombre", true));
+            this.txtNombre.Location = new System.Drawing.Point(69, 52);
+            this.txtNombre.MaxLength = 30;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(132, 20);
+            this.txtNombre.TabIndex = 1;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoMoneda", true));
+            this.txtCodigo.Location = new System.Drawing.Point(69, 26);
+            this.txtCodigo.MaxLength = 3;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(132, 20);
+            this.txtCodigo.TabIndex = 0;
             // 
             // label2
             // 
@@ -186,8 +281,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -205,12 +300,52 @@
             this.grdMto.TabIndex = 3;
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
             // 
+            // mTrabajo
+            // 
+            this.mTrabajo.DataPropertyName = "CodigoTrabajo";
+            this.mTrabajo.HeaderText = "CodigoTrabajo";
+            this.mTrabajo.Name = "mTrabajo";
+            this.mTrabajo.ReadOnly = true;
+            this.mTrabajo.Visible = false;
+            // 
+            // mEmpresa
+            // 
+            this.mEmpresa.DataPropertyName = "CodigoEmpresa";
+            this.mEmpresa.HeaderText = "CodigoEmpresa";
+            this.mEmpresa.Name = "mEmpresa";
+            this.mEmpresa.ReadOnly = true;
+            this.mEmpresa.Visible = false;
+            // 
+            // mCodigo
+            // 
+            this.mCodigo.DataPropertyName = "CodigoMoneda";
+            this.mCodigo.HeaderText = "Código";
+            this.mCodigo.Name = "mCodigo";
+            this.mCodigo.ReadOnly = true;
+            this.mCodigo.Width = 50;
+            // 
+            // mNombre
+            // 
+            this.mNombre.DataPropertyName = "Nombre";
+            this.mNombre.HeaderText = "Nombre";
+            this.mNombre.Name = "mNombre";
+            this.mNombre.ReadOnly = true;
+            this.mNombre.Width = 160;
+            // 
+            // mActivo
+            // 
+            this.mActivo.DataPropertyName = "Activo";
+            this.mActivo.HeaderText = "Activo";
+            this.mActivo.Name = "mActivo";
+            this.mActivo.ReadOnly = true;
+            this.mActivo.Visible = false;
+            // 
             // pnl2
             // 
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(518, 10);
+            this.pnl2.Size = new System.Drawing.Size(533, 10);
             this.pnl2.TabIndex = 6;
             // 
             // spd4
@@ -234,7 +369,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(518, 28);
+            this.pnl1.Size = new System.Drawing.Size(533, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -266,7 +401,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(516, 25);
+            this.bnMto.Size = new System.Drawing.Size(531, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -360,149 +495,20 @@
             // 
             this.taMoneda.ClearBeforeFill = true;
             // 
-            // codigoMonedaLabel
+            // ep
             // 
-            codigoMonedaLabel.AutoSize = true;
-            codigoMonedaLabel.Location = new System.Drawing.Point(20, 29);
-            codigoMonedaLabel.Name = "codigoMonedaLabel";
-            codigoMonedaLabel.Size = new System.Drawing.Size(43, 13);
-            codigoMonedaLabel.TabIndex = 6;
-            codigoMonedaLabel.Text = "Código:";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoMoneda", true));
-            this.txtCodigo.Location = new System.Drawing.Point(69, 26);
-            this.txtCodigo.MaxLength = 3;
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 0;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(16, 55);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 7;
-            nombreLabel.Text = "Nombre:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Nombre", true));
-            this.txtNombre.Location = new System.Drawing.Point(69, 52);
-            this.txtNombre.MaxLength = 30;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // codigoTrabajoLabel
-            // 
-            codigoTrabajoLabel.AutoSize = true;
-            codigoTrabajoLabel.Location = new System.Drawing.Point(21, 128);
-            codigoTrabajoLabel.Name = "codigoTrabajoLabel";
-            codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
-            codigoTrabajoLabel.TabIndex = 8;
-            codigoTrabajoLabel.Text = "Trabajo:";
-            // 
-            // lblTrabajo
-            // 
-            this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
-            this.lblTrabajo.Location = new System.Drawing.Point(69, 125);
-            this.lblTrabajo.Name = "lblTrabajo";
-            this.lblTrabajo.Size = new System.Drawing.Size(100, 20);
-            this.lblTrabajo.TabIndex = 9;
-            // 
-            // codigoEmpresaLabel
-            // 
-            codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(16, 153);
-            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
-            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
-            codigoEmpresaLabel.TabIndex = 9;
-            codigoEmpresaLabel.Text = "Empresa:";
-            // 
-            // lblEmpresa
-            // 
-            this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
-            this.lblEmpresa.Location = new System.Drawing.Point(69, 150);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(100, 20);
-            this.lblEmpresa.TabIndex = 10;
-            // 
-            // activoLabel
-            // 
-            activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(23, 103);
-            activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 10;
-            activoLabel.Text = "Activo:";
-            // 
-            // chkActivo
-            // 
-            this.chkActivo.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Activo", true));
-            this.chkActivo.Location = new System.Drawing.Point(69, 98);
-            this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(104, 24);
-            this.chkActivo.TabIndex = 11;
-            this.chkActivo.UseVisualStyleBackColor = true;
-            // 
-            // mTrabajo
-            // 
-            this.mTrabajo.DataPropertyName = "CodigoTrabajo";
-            this.mTrabajo.HeaderText = "CodigoTrabajo";
-            this.mTrabajo.Name = "mTrabajo";
-            this.mTrabajo.ReadOnly = true;
-            this.mTrabajo.Visible = false;
-            // 
-            // mEmpresa
-            // 
-            this.mEmpresa.DataPropertyName = "CodigoEmpresa";
-            this.mEmpresa.HeaderText = "CodigoEmpresa";
-            this.mEmpresa.Name = "mEmpresa";
-            this.mEmpresa.ReadOnly = true;
-            this.mEmpresa.Visible = false;
-            // 
-            // mCodigo
-            // 
-            this.mCodigo.DataPropertyName = "CodigoMoneda";
-            this.mCodigo.HeaderText = "Código";
-            this.mCodigo.Name = "mCodigo";
-            this.mCodigo.ReadOnly = true;
-            this.mCodigo.Width = 50;
-            // 
-            // mNombre
-            // 
-            this.mNombre.DataPropertyName = "Nombre";
-            this.mNombre.HeaderText = "Nombre";
-            this.mNombre.Name = "mNombre";
-            this.mNombre.ReadOnly = true;
-            this.mNombre.Width = 160;
-            // 
-            // mActivo
-            // 
-            this.mActivo.DataPropertyName = "Activo";
-            this.mActivo.HeaderText = "Activo";
-            this.mActivo.Name = "mActivo";
-            this.mActivo.ReadOnly = true;
-            this.mActivo.Visible = false;
+            this.ep.ContainerControl = this;
             // 
             // FrmMtoMoneda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 269);
+            this.ClientSize = new System.Drawing.Size(533, 269);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmMtoMoneda";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Monedas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMtoMoneda_FormClosed);
             this.Load += new System.EventHandler(this.FrmMtoMoneda_Load);
@@ -518,6 +524,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -561,5 +568,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn mNombre;
         private System.Windows.Forms.DataGridViewCheckBoxColumn mActivo;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }

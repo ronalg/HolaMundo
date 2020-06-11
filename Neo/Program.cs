@@ -16,7 +16,7 @@ namespace Neo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMtoProveedor());
+            Application.Run(new FrmIniSsn());
         }
     }
 }

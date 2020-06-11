@@ -29,19 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoContacto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label nombreContactoLabel;
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label codigoEmpresaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoContacto));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.bsMto = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
+            this.lblTrabajo = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
@@ -58,28 +66,49 @@
             this.btnUltimo = new System.Windows.Forms.ToolStripButton();
             this.spd3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsMto = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
             this.taContacto = new Neo.DsNeoTableAdapters.taContacto();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblTrabajo = new System.Windows.Forms.Label();
-            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             nombreContactoLabel = new System.Windows.Forms.Label();
             codigoTrabajoLabel = new System.Windows.Forms.Label();
             codigoEmpresaLabel = new System.Windows.Forms.Label();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMto)).BeginInit();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nombreContactoLabel
+            // 
+            nombreContactoLabel.AutoSize = true;
+            nombreContactoLabel.Location = new System.Drawing.Point(8, 29);
+            nombreContactoLabel.Name = "nombreContactoLabel";
+            nombreContactoLabel.Size = new System.Drawing.Size(47, 13);
+            nombreContactoLabel.TabIndex = 6;
+            nombreContactoLabel.Text = "Nombre:";
+            // 
+            // codigoTrabajoLabel
+            // 
+            codigoTrabajoLabel.AutoSize = true;
+            codigoTrabajoLabel.Location = new System.Drawing.Point(13, 83);
+            codigoTrabajoLabel.Name = "codigoTrabajoLabel";
+            codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
+            codigoTrabajoLabel.TabIndex = 7;
+            codigoTrabajoLabel.Text = "Trabajo:";
+            // 
+            // codigoEmpresaLabel
+            // 
+            codigoEmpresaLabel.AutoSize = true;
+            codigoEmpresaLabel.Location = new System.Drawing.Point(8, 110);
+            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
+            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
+            codigoEmpresaLabel.TabIndex = 8;
+            codigoEmpresaLabel.Text = "Empresa:";
             // 
             // btnSalir
             // 
@@ -121,6 +150,47 @@
             this.pnl6.Name = "pnl6";
             this.pnl6.Size = new System.Drawing.Size(270, 244);
             this.pnl6.TabIndex = 6;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
+            this.lblEmpresa.Location = new System.Drawing.Point(61, 107);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(171, 20);
+            this.lblEmpresa.TabIndex = 9;
+            this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bsMto
+            // 
+            this.bsMto.DataMember = "tbContacto";
+            this.bsMto.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblTrabajo
+            // 
+            this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
+            this.lblTrabajo.Location = new System.Drawing.Point(61, 80);
+            this.lblTrabajo.Name = "lblTrabajo";
+            this.lblTrabajo.Size = new System.Drawing.Size(171, 20);
+            this.lblTrabajo.TabIndex = 8;
+            this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreContacto", true));
+            this.txtNombre.Location = new System.Drawing.Point(61, 26);
+            this.txtNombre.MaxLength = 20;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(171, 20);
+            this.txtNombre.TabIndex = 7;
             // 
             // label2
             // 
@@ -180,6 +250,30 @@
             this.grdMto.Size = new System.Drawing.Size(225, 242);
             this.grdMto.TabIndex = 3;
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
+            // 
+            // codigoTrabajoDataGridViewTextBoxColumn
+            // 
+            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
+            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codigoEmpresaDataGridViewTextBoxColumn
+            // 
+            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
+            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cNombre
+            // 
+            this.cNombre.DataPropertyName = "NombreContacto";
+            this.cNombre.HeaderText = "Nombre";
+            this.cNombre.Name = "cNombre";
+            this.cNombre.ReadOnly = true;
+            this.cNombre.Width = 160;
             // 
             // pnl2
             // 
@@ -332,101 +426,13 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // codigoTrabajoDataGridViewTextBoxColumn
-            // 
-            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
-            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // codigoEmpresaDataGridViewTextBoxColumn
-            // 
-            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
-            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cNombre
-            // 
-            this.cNombre.DataPropertyName = "NombreContacto";
-            this.cNombre.HeaderText = "Nombre";
-            this.cNombre.Name = "cNombre";
-            this.cNombre.ReadOnly = true;
-            this.cNombre.Width = 160;
-            // 
-            // bsMto
-            // 
-            this.bsMto.DataMember = "tbContacto";
-            this.bsMto.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // taContacto
             // 
             this.taContacto.ClearBeforeFill = true;
             // 
-            // nombreContactoLabel
+            // errorProvider
             // 
-            nombreContactoLabel.AutoSize = true;
-            nombreContactoLabel.Location = new System.Drawing.Point(8, 29);
-            nombreContactoLabel.Name = "nombreContactoLabel";
-            nombreContactoLabel.Size = new System.Drawing.Size(47, 13);
-            nombreContactoLabel.TabIndex = 6;
-            nombreContactoLabel.Text = "Nombre:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreContacto", true));
-            this.txtNombre.Location = new System.Drawing.Point(61, 26);
-            this.txtNombre.MaxLength = 20;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(171, 20);
-            this.txtNombre.TabIndex = 7;
-            // 
-            // codigoTrabajoLabel
-            // 
-            codigoTrabajoLabel.AutoSize = true;
-            codigoTrabajoLabel.Location = new System.Drawing.Point(13, 83);
-            codigoTrabajoLabel.Name = "codigoTrabajoLabel";
-            codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
-            codigoTrabajoLabel.TabIndex = 7;
-            codigoTrabajoLabel.Text = "Trabajo:";
-            // 
-            // lblTrabajo
-            // 
-            this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
-            this.lblTrabajo.Location = new System.Drawing.Point(61, 80);
-            this.lblTrabajo.Name = "lblTrabajo";
-            this.lblTrabajo.Size = new System.Drawing.Size(171, 20);
-            this.lblTrabajo.TabIndex = 8;
-            this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // codigoEmpresaLabel
-            // 
-            codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(8, 110);
-            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
-            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
-            codigoEmpresaLabel.TabIndex = 8;
-            codigoEmpresaLabel.Text = "Empresa:";
-            // 
-            // lblEmpresa
-            // 
-            this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
-            this.lblEmpresa.Location = new System.Drawing.Point(61, 107);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(171, 20);
-            this.lblEmpresa.TabIndex = 9;
-            this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.errorProvider.ContainerControl = this;
             // 
             // FrmMtoContacto
             // 
@@ -437,12 +443,15 @@
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmMtoContacto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Contactos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMtoContacto_FormClosed);
             this.Load += new System.EventHandler(this.FrmMtoContacto_Load);
             this.pnl3.ResumeLayout(false);
             this.pnl6.ResumeLayout(false);
             this.pnl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMto)).EndInit();
             this.pnl1.ResumeLayout(false);
@@ -450,8 +459,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,5 +499,6 @@
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.Label lblTrabajo;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -34,8 +34,8 @@
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label codigoEmpresaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoPais));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnMto = new System.Windows.Forms.BindingNavigator(this.components);
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
@@ -66,11 +66,12 @@
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.taPais = new Neo.DsNeoTableAdapters.taPais();
             this.pTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taPais = new Neo.DsNeoTableAdapters.taPais();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             codigoPaisLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             codigoTrabajoLabel = new System.Windows.Forms.Label();
@@ -84,6 +85,7 @@
             this.pnl6.SuspendLayout();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // codigoPaisLabel
@@ -129,7 +131,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(552, 28);
+            this.pnl1.Size = new System.Drawing.Size(581, 28);
             this.pnl1.TabIndex = 2;
             // 
             // bnMto
@@ -161,7 +163,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(550, 25);
+            this.bnMto.Size = new System.Drawing.Size(579, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -289,7 +291,7 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(552, 10);
+            this.pnl2.Size = new System.Drawing.Size(581, 10);
             this.pnl2.TabIndex = 3;
             // 
             // pnl3
@@ -302,7 +304,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(552, 257);
+            this.pnl3.Size = new System.Drawing.Size(581, 257);
             this.pnl3.TabIndex = 4;
             // 
             // pnl6
@@ -323,7 +325,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(293, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(252, 245);
+            this.pnl6.Size = new System.Drawing.Size(281, 245);
             this.pnl6.TabIndex = 6;
             // 
             // lblEmpresa
@@ -372,7 +374,7 @@
             this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoPais", true));
             this.txtCodigo.Location = new System.Drawing.Point(63, 25);
-            this.txtCodigo.MaxLength = 3;
+            this.txtCodigo.MaxLength = 2;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(178, 20);
             this.txtCodigo.TabIndex = 3;
@@ -409,8 +411,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -426,10 +428,6 @@
             this.grdMto.Size = new System.Drawing.Size(276, 243);
             this.grdMto.TabIndex = 3;
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
-            // 
-            // taPais
-            // 
-            this.taPais.ClearBeforeFill = true;
             // 
             // pTrabajo
             // 
@@ -450,8 +448,8 @@
             // pCodigo
             // 
             this.pCodigo.DataPropertyName = "CodigoPais";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pCodigo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pCodigo.DefaultCellStyle = dataGridViewCellStyle4;
             this.pCodigo.HeaderText = "Código";
             this.pCodigo.Name = "pCodigo";
             this.pCodigo.ReadOnly = true;
@@ -465,11 +463,19 @@
             this.pNombre.ReadOnly = true;
             this.pNombre.Width = 165;
             // 
+            // taPais
+            // 
+            this.taPais.ClearBeforeFill = true;
+            // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
+            // 
             // FrmMtoPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 295);
+            this.ClientSize = new System.Drawing.Size(581, 295);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
@@ -490,6 +496,7 @@
             this.pnl6.PerformLayout();
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -531,5 +538,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn pCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn pNombre;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }

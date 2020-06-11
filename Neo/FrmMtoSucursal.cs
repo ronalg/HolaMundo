@@ -55,6 +55,34 @@ namespace Neo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                txtNombre.Focus();
+                ep.SetError(txtNombre, Utilidad.campoVacio);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtDireccion.Text.Trim()))
+            {
+                txtDireccion.Focus();
+                ep.SetError(txtDireccion, Utilidad.campoVacio);
+                return;
+            }
+
+            if (cboPais.SelectedIndex == -1)
+            {
+                cboPais.Focus();
+                ep.SetError(cboPais, Utilidad.listaVacia);
+                return;
+            }
+
+            if (cboProvincia.SelectedIndex == -1)
+            {
+                cboProvincia.Focus();
+                ep.SetError(cboProvincia, Utilidad.listaVacia);
+                return;
+            }
+
             try
             {
                 this.Validate();
