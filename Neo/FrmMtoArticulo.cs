@@ -52,7 +52,6 @@ namespace Neo
         {
             ConfiguraBoton(false);
             txtId.Focus();
-            txtCoste.Text = "0.0000";
             taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
             lblEmpresa.Text = Utilidad.codigoTrabajo.ToString();
@@ -60,6 +59,8 @@ namespace Neo
             cboDepartamento.SelectedIndex = -1;
             cboCategoria.SelectedIndex = -1;
             dsNeo.tbArticuloMultimedia.Rows.Clear();
+            foreach (DataRow dr in dsNeo.tbArticuloPrecioVenta)
+                dr["Precio"] = DBNull.Value;            
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
             lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
             lblApertura.Text = DateTime.Today.ToShortDateString();
@@ -108,10 +109,9 @@ namespace Neo
             {
                 this.Cursor = Cursors.WaitCursor;
                 int codigoArticulo;
-                decimal coste = Convert.ToDecimal(txtCoste.Text);
                 if (!btnNuevo.Available)
                 {
-                    DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+                    DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
                     codigoArticulo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "articulo").Value;
                     lblCodigo.Text = codigoArticulo.ToString();
                 }
@@ -137,12 +137,12 @@ namespace Neo
 
                 if (!btnNuevo.Available)
                 {
-                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), coste, caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked);
+                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked, chkOrdenPedido.Checked);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taArticulo.Edita(cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), coste, caratula, existencia, chkInventario.Checked, chkActivo.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
+                    taArticulo.Edita(cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, existencia, chkInventario.Checked, chkActivo.Checked, chkOrdenPedido.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
                 }
 
                 DsNeo ds = new DsNeo();
@@ -157,7 +157,7 @@ namespace Neo
                         taArticuloPrecioVenta.Edita(precio, Utilidad.codigoEmpresa, Utilidad.codigoTrabajo, codigoArticulo, codigoPrecioVenta);
                 }
 
-                DsNeoTableAdapters.consultasProgramadas cpm = new DsNeoTableAdapters.consultasProgramadas();
+                DsNeoTableAdapters.ConsultasProgramadas cpm = new DsNeoTableAdapters.ConsultasProgramadas();
                 foreach (DataRow dr in dsNeo.tbArticuloMultimedia)
                 {
                     short codigoMultimedia = short.Parse(dr["CodigoMultimedia"].ToString());
@@ -176,19 +176,16 @@ namespace Neo
                     }
                 }
 
+                taArticuloProveedor.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
                 foreach (DataRow dr in dsNeo.tbArticuloProveedor)
                 {
-                    bool aplica = Convert.ToBoolean(dr["Aplica"].ToString());
                     short codigoProveedor = short.Parse(dr["CodigoProveedor"].ToString());
-                    if (aplica)
+                    string c = dr["Costo"].ToString();
+                    decimal? costo = null;
+                    if (!string.IsNullOrEmpty(c))
                     {
-                        taArticuloProveedor.FillByProveedor(ds.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor);
-                        if (ds.tbArticuloProveedor.Rows.Count == 0)
-                            taArticuloProveedor.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor);
-                    }
-                    else
-                    {
-                        taArticuloProveedor.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor);
+                        costo = Convert.ToDecimal(c);
+                        taArticuloProveedor.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor, costo);
                     }
                 }
             }
@@ -224,7 +221,7 @@ namespace Neo
                         int codigo = Convert.ToInt32(lblCodigo.Text);
                         taArticuloMultimedia.EliminaArticulo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                         taArticuloPrecioVenta.EliminaArticulo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
-                        taArticuloProveedor.EliminaArticulo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                        taArticuloProveedor.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                         taArticulo.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
                     }
@@ -302,7 +299,7 @@ namespace Neo
             of.Filter = "Imagenes (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
             if (of.ShowDialog() == DialogResult.OK)
             {
-                DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas(); 
+                DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas(); 
                 Bitmap bmp = (Bitmap)Bitmap.FromFile(of.FileName);
                 DataGridViewImageColumn iCell = new DataGridViewImageColumn();
                 iCell.Image = bmp;

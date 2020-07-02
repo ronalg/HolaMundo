@@ -58,11 +58,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsNeo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DsNeo1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsNeo.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FrmIniSsn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +214,12 @@
     <Compile Include="FrmPrm.Designer.cs">
       <DependentUpon>FrmPrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTscOrdenPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTscOrdenPedido.Designer.cs">
+      <DependentUpon>FrmTscOrdenPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidad.cs" />
@@ -300,6 +301,9 @@
     <EmbeddedResource Include="FrmPrm.resx">
       <DependentUpon>FrmPrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTscOrdenPedido.resx">
+      <DependentUpon>FrmTscOrdenPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -315,7 +319,7 @@
     <None Include="DsNeo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsNeo1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DsNeo.Designer.cs</LastGenOutput>
     </None>
     <None Include="DsNeo.xss">
       <DependentUpon>DsNeo.xsd</DependentUpon>

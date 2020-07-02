@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrm));
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
-            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoPerfilArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -80,6 +80,8 @@
             this.taTrabajo = new Neo.DsNeoTableAdapters.taTrabajo();
             this.dsNeo = new Neo.DsNeo();
             this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
+            this.mnuTransacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscOrdenPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -90,16 +92,17 @@
             // 
             this.mnuPrincipal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenu});
+            this.mnuMantenimiento,
+            this.mnuTransacion});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
             this.mnuPrincipal.Size = new System.Drawing.Size(1119, 24);
             this.mnuPrincipal.TabIndex = 0;
             this.mnuPrincipal.Text = "MenuStrip";
             // 
-            // fileMenu
+            // mnuMantenimiento
             // 
-            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMtoArticulo,
             this.toolStripSeparator4,
             this.mnuMtoCliente,
@@ -122,10 +125,10 @@
             this.mnuMtoSucursal,
             this.mnuMtoEmpresa,
             this.mnuMtoFinanciera});
-            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
-            this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(106, 20);
-            this.fileMenu.Text = "Mantenimientos";
+            this.mnuMantenimiento.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
+            this.mnuMantenimiento.Name = "mnuMantenimiento";
+            this.mnuMantenimiento.Size = new System.Drawing.Size(106, 20);
+            this.mnuMantenimiento.Text = "Mantenimientos";
             // 
             // mnuMtoArticulo
             // 
@@ -143,20 +146,20 @@
             // 
             this.mnuMtoPerfilArticulo.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilArticulo.Image")));
             this.mnuMtoPerfilArticulo.Name = "mnuMtoPerfilArticulo";
-            this.mnuMtoPerfilArticulo.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoPerfilArticulo.Size = new System.Drawing.Size(165, 22);
             this.mnuMtoPerfilArticulo.Text = "Perfil";
             this.mnuMtoPerfilArticulo.Click += new System.EventHandler(this.mnuMtoPerfilArticulo_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(162, 6);
             // 
             // mnuPrecioVenta
             // 
             this.mnuPrecioVenta.Image = ((System.Drawing.Image)(resources.GetObject("mnuPrecioVenta.Image")));
             this.mnuPrecioVenta.Name = "mnuPrecioVenta";
-            this.mnuPrecioVenta.Size = new System.Drawing.Size(180, 22);
+            this.mnuPrecioVenta.Size = new System.Drawing.Size(165, 22);
             this.mnuPrecioVenta.Text = "Precios de Ventas";
             this.mnuPrecioVenta.Click += new System.EventHandler(this.mnuPrecioVenta_Click);
             // 
@@ -164,7 +167,7 @@
             // 
             this.mnuMtoUnidad.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoUnidad.Image")));
             this.mnuMtoUnidad.Name = "mnuMtoUnidad";
-            this.mnuMtoUnidad.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoUnidad.Size = new System.Drawing.Size(165, 22);
             this.mnuMtoUnidad.Text = "Unidades";
             this.mnuMtoUnidad.Click += new System.EventHandler(this.mnuMtoUnidad_Click);
             // 
@@ -189,27 +192,27 @@
             // 
             this.mnuMtoPerfilCliente.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilCliente.Image")));
             this.mnuMtoPerfilCliente.Name = "mnuMtoPerfilCliente";
-            this.mnuMtoPerfilCliente.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoPerfilCliente.Size = new System.Drawing.Size(155, 22);
             this.mnuMtoPerfilCliente.Text = "Perfil";
             this.mnuMtoPerfilCliente.Click += new System.EventHandler(this.mnuMtoPerfilCliente_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(152, 6);
             // 
             // mnuMtoEstadoCivil
             // 
             this.mnuMtoEstadoCivil.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoEstadoCivil.Image")));
             this.mnuMtoEstadoCivil.Name = "mnuMtoEstadoCivil";
-            this.mnuMtoEstadoCivil.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoEstadoCivil.Size = new System.Drawing.Size(155, 22);
             this.mnuMtoEstadoCivil.Text = "Estado Civil";
             // 
             // mnuMtoNacionalidad
             // 
             this.mnuMtoNacionalidad.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoNacionalidad.Image")));
             this.mnuMtoNacionalidad.Name = "mnuMtoNacionalidad";
-            this.mnuMtoNacionalidad.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoNacionalidad.Size = new System.Drawing.Size(155, 22);
             this.mnuMtoNacionalidad.Text = "Nacionalidades";
             this.mnuMtoNacionalidad.Click += new System.EventHandler(this.mnuMtoNacionalidad_Click);
             // 
@@ -485,6 +488,20 @@
             // 
             this.taEmpresa.ClearBeforeFill = true;
             // 
+            // mnuTransacion
+            // 
+            this.mnuTransacion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTscOrdenPedido});
+            this.mnuTransacion.Name = "mnuTransacion";
+            this.mnuTransacion.Size = new System.Drawing.Size(92, 20);
+            this.mnuTransacion.Text = "Transacciones";
+            // 
+            // mnuTscOrdenPedido
+            // 
+            this.mnuTscOrdenPedido.Name = "mnuTscOrdenPedido";
+            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscOrdenPedido.Text = "Ordenes de Pedidos";
+            // 
             // FrmPrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,7 +534,7 @@
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
-        private System.Windows.Forms.ToolStripMenuItem fileMenu;
+        private System.Windows.Forms.ToolStripMenuItem mnuMantenimiento;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoArticulo;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoPerfilArticulo;
@@ -563,6 +580,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMtoFinanciera;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoPerfilFinanciera;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoTipoFinanciera;
+        private System.Windows.Forms.ToolStripMenuItem mnuTransacion;
+        private System.Windows.Forms.ToolStripMenuItem mnuTscOrdenPedido;
     }
 }
 

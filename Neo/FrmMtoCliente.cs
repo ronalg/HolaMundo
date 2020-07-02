@@ -37,7 +37,7 @@ namespace Neo
 
         private void tpPerfil_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void FrmMtoCliente_Load(object sender, EventArgs e)
@@ -358,8 +358,8 @@ namespace Neo
             grdSucursal.CurrentRow.Cells["sTrabajo"].Value = Utilidad.codigoTrabajo;
             grdSucursal.CurrentRow.Cells["sEmpresa"].Value = Utilidad.codigoEmpresa;
             grdSucursal.CurrentRow.Cells["sCliente"].Value = codigoCliente;
-            DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
-            short codigo = cp.fnSiguienteClienteSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente).Value;
+            DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
+            short codigo = 0;
             grdSucursal.CurrentRow.Cells["sCodigo"].Value = codigo;
         }
 

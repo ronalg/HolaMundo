@@ -93,7 +93,7 @@ namespace Neo
                 
                 if (!btnNuevo.Available)
                 {
-                    DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+                    DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
                     int codigo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "proveedor").Value;
                     lblCodigo.Text = codigo.ToString();
                 }
@@ -172,7 +172,7 @@ namespace Neo
                     if (dr == DialogResult.Yes)
                     {
                         short codigoProveedor = short.Parse(lblCodigo.Text);
-                        taProveedorSucursalContacto.EliminarProveedor(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor);
+                        taProveedorSucursalContacto.EliminaProveedor(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor);
                         taProveedorSucursal.EliminaProveedor(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor);
                         taProveedor.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor);                        
                         grdMto.Rows.Remove(grdMto.CurrentRow);
@@ -228,7 +228,7 @@ namespace Neo
             grdSucursal.CurrentRow.Cells["sTrabajo"].Value = Utilidad.codigoTrabajo;
             grdSucursal.CurrentRow.Cells["sEmpresa"].Value = Utilidad.codigoEmpresa;
             grdSucursal.CurrentRow.Cells["sProveedor"].Value = codigoProveedor;
-            DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+            DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
             short codigo = cp.fnSiguienteProveedorSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor).Value;
             grdSucursal.CurrentRow.Cells["sCodigo"].Value = codigo;
         }
@@ -252,7 +252,7 @@ namespace Neo
                     }
                     short codigoProveedor = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text);
                     short codigoSucursal = short.Parse(grdSucursal.CurrentRow.Cells["sCodigo"].Value.ToString());
-                    DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+                    DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
                     short orden = cp.fnSiguienteProveedorSucursalContacto(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoProveedor, codigoSucursal).Value;
                     grdContacto.CurrentRow.Cells["cEmpresa"].Value = Utilidad.codigoEmpresa;
                     grdContacto.CurrentRow.Cells["cSucursal"].Value = codigoSucursal;

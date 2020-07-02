@@ -39,7 +39,7 @@ namespace Neo
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             ConfiguraBoton(false);
-            DsNeoTableAdapters.consultasProgramadas cp = new DsNeoTableAdapters.consultasProgramadas();
+            DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
             int codigo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, 0, "empresa").Value;            
             lblCodigo.Text = codigo.ToString();
             cboIdentificacion.SelectedIndex = -1;

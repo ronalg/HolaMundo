@@ -52,7 +52,11 @@ namespace Neo
 
         private void FrmIniSsn_Load(object sender, EventArgs e)
         {
-            Neo.Properties.Settings.Default["NeoConnectionString"] = "Data Source=groovestudio.database.windows.net;Initial Catalog=NeoDesarrollo;User ID=administrador;Password=Emmanuel2612%;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+            Neo.Properties.Settings.Default["csNeo"] = "Data Source=groovestudio.database.windows.net;Initial Catalog=NeoDesarrollo;User ID=administrador;Password=Emmanuel2612%;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+            txtUsuario.Text = "hamlert";
+            txtContrasena.Text = "hamlert%";
+            btnIniciar_Click(sender, EventArgs.Empty);
+            this.Hide();
         }
     }
 }
