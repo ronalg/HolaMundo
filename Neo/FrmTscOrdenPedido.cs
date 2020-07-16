@@ -24,16 +24,44 @@ namespace Neo
         {
             if (e.KeyCode == Keys.Enter && grdCliente.Rows.Count > 0)
             {
-                codigoCliente = Convert.ToInt16(grdCliente.CurrentRow.Cells["cCodigo"].Value.ToString());
-                string nombre = grdCliente.CurrentRow.Cells["cNombre"].Value.ToString();
-                txtNombre.Text = nombre;
-                taCliente.FillByCodigo(dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente);
+                grdCliente_DoubleClick(sender, EventArgs.Empty);
             }
             else if (e.KeyCode == Keys.Escape)
             {
                 grdCliente.Visible = false;
                 txtNombre.Focus();
                 txtNombre.SelectAll();
+            }
+        }
+
+        private void grdCliente_DoubleClick(object sender, EventArgs e)
+        {
+            codigoCliente = Convert.ToInt16(grdCliente.CurrentRow.Cells["cCodigo"].Value.ToString());
+            string nombre = grdCliente.CurrentRow.Cells["cNombre"].Value.ToString();
+            txtNombre.Text = nombre;
+            taCliente.FillByCodigo(dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente);
+            lblId.Text = dsNeo.tbCliente.Rows[0]["IdCliente"].ToString();
+            lblNombre.Text = dsNeo.tbCliente.Rows[0]["Nombre"].ToString();
+            lblRazonSocial.Text = dsNeo.tbCliente.Rows[0]["RazonSocial"].ToString();
+            lblLimiteCredito.Text = dsNeo.tbCliente.Rows[0]["LimiteCredito"].ToString();
+            grdCliente.Visible = false;
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string nombre = txtNombre.Text.Trim();
+                taCliente.FillByNombre(dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                if (dsNeo.tbCliente.Rows.Count == 1)
+                {
+                    grdCliente_DoubleClick(sender, EventArgs.Empty);
+                }
+                else
+                {
+                    grdCliente.Visible = true;
+                    grdCliente.Focus();
+                }
             }
         }
     }

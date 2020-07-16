@@ -75,17 +75,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
-            this.limiteCreditoLabel1 = new System.Windows.Forms.Label();
-            this.razonSocialLabel1 = new System.Windows.Forms.Label();
-            this.nombreLabel1 = new System.Windows.Forms.Label();
-            this.idClienteLabel1 = new System.Windows.Forms.Label();
+            this.lblLimiteCredito = new System.Windows.Forms.Label();
+            this.lblRazonSocial = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dsNeo = new Neo.DsNeo();
             this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
             this.grdCliente = new System.Windows.Forms.DataGridView();
-            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,6 +108,7 @@
             this.formatoFacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formatoReciboIngresoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formatoOrdenPedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             idClienteLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
@@ -236,6 +236,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -578,13 +579,13 @@
             this.pnl4.AutoScroll = true;
             this.pnl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl4.Controls.Add(limiteCreditoLabel);
-            this.pnl4.Controls.Add(this.limiteCreditoLabel1);
+            this.pnl4.Controls.Add(this.lblLimiteCredito);
             this.pnl4.Controls.Add(razonSocialLabel);
-            this.pnl4.Controls.Add(this.razonSocialLabel1);
+            this.pnl4.Controls.Add(this.lblRazonSocial);
             this.pnl4.Controls.Add(nombreLabel);
-            this.pnl4.Controls.Add(this.nombreLabel1);
+            this.pnl4.Controls.Add(this.lblNombre);
             this.pnl4.Controls.Add(idClienteLabel);
-            this.pnl4.Controls.Add(this.idClienteLabel1);
+            this.pnl4.Controls.Add(this.lblId);
             this.pnl4.Controls.Add(this.txtNombre);
             this.pnl4.Controls.Add(this.label2);
             this.pnl4.Controls.Add(this.label1);
@@ -594,41 +595,41 @@
             this.pnl4.Size = new System.Drawing.Size(386, 161);
             this.pnl4.TabIndex = 0;
             // 
-            // limiteCreditoLabel1
+            // lblLimiteCredito
             // 
-            this.limiteCreditoLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.limiteCreditoLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limiteCreditoLabel1.Location = new System.Drawing.Point(88, 128);
-            this.limiteCreditoLabel1.Name = "limiteCreditoLabel1";
-            this.limiteCreditoLabel1.Size = new System.Drawing.Size(281, 20);
-            this.limiteCreditoLabel1.TabIndex = 10;
+            this.lblLimiteCredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblLimiteCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLimiteCredito.Location = new System.Drawing.Point(88, 128);
+            this.lblLimiteCredito.Name = "lblLimiteCredito";
+            this.lblLimiteCredito.Size = new System.Drawing.Size(281, 20);
+            this.lblLimiteCredito.TabIndex = 10;
             // 
-            // razonSocialLabel1
+            // lblRazonSocial
             // 
-            this.razonSocialLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.razonSocialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.razonSocialLabel1.Location = new System.Drawing.Point(88, 102);
-            this.razonSocialLabel1.Name = "razonSocialLabel1";
-            this.razonSocialLabel1.Size = new System.Drawing.Size(281, 20);
-            this.razonSocialLabel1.TabIndex = 8;
+            this.lblRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRazonSocial.Location = new System.Drawing.Point(88, 102);
+            this.lblRazonSocial.Name = "lblRazonSocial";
+            this.lblRazonSocial.Size = new System.Drawing.Size(281, 20);
+            this.lblRazonSocial.TabIndex = 8;
             // 
-            // nombreLabel1
+            // lblNombre
             // 
-            this.nombreLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nombreLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreLabel1.Location = new System.Drawing.Point(88, 77);
-            this.nombreLabel1.Name = "nombreLabel1";
-            this.nombreLabel1.Size = new System.Drawing.Size(281, 20);
-            this.nombreLabel1.TabIndex = 6;
+            this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(88, 77);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(281, 20);
+            this.lblNombre.TabIndex = 6;
             // 
-            // idClienteLabel1
+            // lblId
             // 
-            this.idClienteLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idClienteLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idClienteLabel1.Location = new System.Drawing.Point(88, 53);
-            this.idClienteLabel1.Name = "idClienteLabel1";
-            this.idClienteLabel1.Size = new System.Drawing.Size(281, 20);
-            this.idClienteLabel1.TabIndex = 4;
+            this.lblId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(88, 53);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(281, 20);
+            this.lblId.TabIndex = 4;
             // 
             // txtNombre
             // 
@@ -637,6 +638,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(281, 20);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // label2
             // 
@@ -701,19 +703,15 @@
             this.formatoReciboIngresoDataGridViewTextBoxColumn,
             this.formatoOrdenPedidoDataGridViewTextBoxColumn});
             this.grdCliente.DataSource = this.bsCliente;
-            this.grdCliente.Location = new System.Drawing.Point(96, 83);
+            this.grdCliente.Location = new System.Drawing.Point(95, 83);
             this.grdCliente.Name = "grdCliente";
             this.grdCliente.ReadOnly = true;
             this.grdCliente.RowHeadersVisible = false;
-            this.grdCliente.Size = new System.Drawing.Size(422, 163);
+            this.grdCliente.Size = new System.Drawing.Size(422, 149);
             this.grdCliente.TabIndex = 6;
             this.grdCliente.Visible = false;
+            this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
             this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
-            // 
-            // bsCliente
-            // 
-            this.bsCliente.DataMember = "tbCliente";
-            this.bsCliente.DataSource = this.dsNeo;
             // 
             // codigoTrabajoDataGridViewTextBoxColumn
             // 
@@ -900,6 +898,11 @@
             this.formatoOrdenPedidoDataGridViewTextBoxColumn.ReadOnly = true;
             this.formatoOrdenPedidoDataGridViewTextBoxColumn.Visible = false;
             // 
+            // bsCliente
+            // 
+            this.bsCliente.DataMember = "tbCliente";
+            this.bsCliente.DataSource = this.dsNeo;
+            // 
             // FrmTscOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -960,10 +963,10 @@
         private System.Windows.Forms.Panel pnl5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label limiteCreditoLabel1;
-        private System.Windows.Forms.Label razonSocialLabel1;
-        private System.Windows.Forms.Label nombreLabel1;
-        private System.Windows.Forms.Label idClienteLabel1;
+        private System.Windows.Forms.Label lblLimiteCredito;
+        private System.Windows.Forms.Label lblRazonSocial;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Panel pnl7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cboPrecio;
