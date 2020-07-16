@@ -11,6 +11,7 @@ namespace Neo
         //formulario transacciones
         public static FrmTscOrdenPedido tscOrdenPedido = null;
         //formularios mantenimientos
+        public static FrmMtoFrecuencia mtoFrecuencia = null;
         public static FrmMtoCliente mtoCliente = null;
         public static FrmMtoFinanciera mtoFinanciera = null;
         public static FrmMtoTipoFinanciera mtoTipoFinanciera = null;

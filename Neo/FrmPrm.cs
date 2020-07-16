@@ -306,5 +306,28 @@ namespace Neo
             Utilidad.mtoCliente.BringToFront();
             Utilidad.mtoCliente.Show();
         }
+
+        private void mnuMtoFrecuencia_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoFrecuencia == null)
+            {
+                Utilidad.mtoFrecuencia = new FrmMtoFrecuencia();
+                Utilidad.mtoFrecuencia.MdiParent = this;
+            }
+            Utilidad.mtoFrecuencia.BringToFront();
+            Utilidad.mtoFrecuencia.Show();
+        }
+
+        private void mnuTscOrdenPedido_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.tscOrdenPedido == null)
+            {
+                Utilidad.tscOrdenPedido = new FrmTscOrdenPedido();
+                Utilidad.tscOrdenPedido.WindowState = FormWindowState.Maximized;
+                Utilidad.tscOrdenPedido.MdiParent = this;                
+            }
+            Utilidad.tscOrdenPedido.BringToFront();
+            Utilidad.tscOrdenPedido.Show();
+        }
     }
 }

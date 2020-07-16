@@ -112,6 +112,12 @@
     <Compile Include="FrmMtoFormaPago.Designer.cs">
       <DependentUpon>FrmMtoFormaPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMtoFrecuencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoFrecuencia.Designer.cs">
+      <DependentUpon>FrmMtoFrecuencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMtoIdentificacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoFormaPago.resx">
       <DependentUpon>FrmMtoFormaPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoFrecuencia.resx">
+      <DependentUpon>FrmMtoFrecuencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoIdentificacion.resx">
       <DependentUpon>FrmMtoIdentificacion.cs</DependentUpon>
