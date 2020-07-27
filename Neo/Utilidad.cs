@@ -45,5 +45,6 @@ namespace Neo
         public const string mensajeElimina = "¿Esta seguro de eliminar?";
         public const string campoVacio = "Ingrese valor";
         public const string listaVacia = "Seleccione un valor";
+        public const string nombrePrograma = "Neo";
     }
 }

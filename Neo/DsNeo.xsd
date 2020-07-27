@@ -3872,7 +3872,7 @@ AND (CodigoCliente = @codigoCliente)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbCliente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillById" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="FillById">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbCliente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillById" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillById">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, CodigoCliente, CodigoSucursal, NombreEstadoCivil, TipoEstado, IdUserWeb, IdCliente, Categoria, Nombre, RazonSocial, Nacimiento, Apertura, Sexo, CuentaContable, Nota, Activo, Usuario, 
@@ -3888,7 +3888,7 @@ AND (IdCliente = @idCliente)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="Neo.dbo.tbCliente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNombre" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNombre" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByNombre">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="Neo.dbo.tbCliente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNombre" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNombre" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillByNombre">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT Activo, Apertura, Categoria, CodigoCliente, CodigoEmpresa, CodigoSucursal, CodigoTrabajo, CuentaContable, Equipo, FormatoFactura, FormatoOrdenPedido, FormatoReciboIngreso, IdCliente, IdUserWeb, LimiteCredito, Nacimiento, Nombre, NombreEstadoCivil, Nota, RazonSocial, Sexo, TipoEstado, Usuario FROM tbCliente WHERE (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (Nombre LIKE '%' + @nombre + '%')</CommandText>
@@ -3900,7 +3900,7 @@ AND (IdCliente = @idCliente)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Inserta">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="Inserta">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO tbCliente
@@ -4428,6 +4428,448 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@nombreFrecuencia,@cantidad)</Comma
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="taClienteDomicilio" GeneratorDataComponentClassName="taClienteDomicilio" Name="tbClienteDomicilio" UserDataComponentName="taClienteDomicilio">
+            <MainSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	cs.CodigoTrabajo, cs.CodigoEmpresa, cs.CodigoCliente, cs.CodigoClienteSucursal, p.Nombre AS NombrePais, 
+	cs.NombreProvincia, cs.Nombre, cs.CodigoPostal, cs.Direccion, cs.Representante, 
+	cs.Direccion + ', ' + cs.CodigoPostal + ', ' + cs.NombreProvincia + ', ' + p.Nombre AS Domicilio
+FROM
+	tbCliente c
+		INNER JOIN tbClienteSucursal cs
+			ON c.CodigoTrabajo = cs.CodigoTrabajo
+				AND c.CodigoEmpresa = cs.CodigoEmpresa
+				AND c.CodigoCliente = cs.CodigoCliente
+		INNER JOIN tbPais p
+			ON c.CodigoTrabajo = p.CodigoTrabajo
+				AND c.CodigoEmpresa = p.CodigoEmpresa
+WHERE cs.CodigoTrabajo = @codigoTrabajo
+AND cs.CodigoEmpresa = @codigoEmpresa
+AND cs.CodigoCliente = @codigoCliente
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbClienteSucursal" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbClienteSucursal" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoCliente" ColumnName="CodigoCliente" DataSourceName="NeoDesarrollo.dbo.tbClienteSucursal" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodigoTrabajo" DataSetColumn="CodigoTrabajo" />
+              <Mapping SourceColumn="CodigoEmpresa" DataSetColumn="CodigoEmpresa" />
+              <Mapping SourceColumn="CodigoCliente" DataSetColumn="CodigoCliente" />
+              <Mapping SourceColumn="CodigoClienteSucursal" DataSetColumn="CodigoClienteSucursal" />
+              <Mapping SourceColumn="NombrePais" DataSetColumn="NombrePais" />
+              <Mapping SourceColumn="NombreProvincia" DataSetColumn="NombreProvincia" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="CodigoPostal" DataSetColumn="CodigoPostal" />
+              <Mapping SourceColumn="Direccion" DataSetColumn="Direccion" />
+              <Mapping SourceColumn="Representante" DataSetColumn="Representante" />
+              <Mapping SourceColumn="Domicilio" DataSetColumn="Domicilio" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="taOrdenPedido" GeneratorDataComponentClassName="taOrdenPedido" Name="tbOrdenPedido" UserDataComponentName="taOrdenPedido">
+            <MainSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbOrdenPedido" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbOrdenPedido] WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([NumeroOrdenPedido] = @Original_NumeroOrdenPedido) AND ([CodigoCliente] = @Original_CodigoCliente) AND ([CodigoMoneda] = @Original_CodigoMoneda) AND ([Usuario] = @Original_Usuario) AND ([Apertura] = @Original_Apertura) AND ([Fecha] = @Original_Fecha) AND ([Hora] = @Original_Hora) AND ([DescripcionEquipo] = @Original_DescripcionEquipo) AND ([Descuento] = @Original_Descuento) AND ((@IsNull_Nota = 1 AND [Nota] IS NULL) OR ([Nota] = @Original_Nota)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_NumeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_CodigoMoneda" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="CodigoMoneda" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Usuario" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Apertura" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Apertura" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_Hora" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Hora" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DescripcionEquipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescripcionEquipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Descuento" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Nota" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Nota" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Nota" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nota" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbOrdenPedido] ([CodigoTrabajo], [CodigoEmpresa], [CodigoSucursal], [NumeroOrdenPedido], [CodigoCliente], [CodigoMoneda], [Usuario], [Apertura], [Fecha], [Hora], [DescripcionEquipo], [Descuento], [Nota]) VALUES (@CodigoTrabajo, @CodigoEmpresa, @CodigoSucursal, @NumeroOrdenPedido, @CodigoCliente, @CodigoMoneda, @Usuario, @Apertura, @Fecha, @Hora, @DescripcionEquipo, @Descuento, @Nota);
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoCliente, CodigoMoneda, Usuario, Apertura, Fecha, Hora, DescripcionEquipo, Descuento, Nota FROM tbOrdenPedido WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (NumeroOrdenPedido = @NumeroOrdenPedido)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@NumeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@CodigoMoneda" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="CodigoMoneda" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Usuario" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Apertura" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Apertura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Hora" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Hora" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DescripcionEquipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescripcionEquipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Descuento" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Nota" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoCliente, CodigoMoneda, Usuario, Apertura, Fecha, Hora, DescripcionEquipo, Descuento, Nota
+FROM            tbOrdenPedido
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbOrdenPedido] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoEmpresa] = @CodigoEmpresa, [CodigoSucursal] = @CodigoSucursal, [NumeroOrdenPedido] = @NumeroOrdenPedido, [CodigoCliente] = @CodigoCliente, [CodigoMoneda] = @CodigoMoneda, [Usuario] = @Usuario, [Apertura] = @Apertura, [Fecha] = @Fecha, [Hora] = @Hora, [DescripcionEquipo] = @DescripcionEquipo, [Descuento] = @Descuento, [Nota] = @Nota WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([NumeroOrdenPedido] = @Original_NumeroOrdenPedido) AND ([CodigoCliente] = @Original_CodigoCliente) AND ([CodigoMoneda] = @Original_CodigoMoneda) AND ([Usuario] = @Original_Usuario) AND ([Apertura] = @Original_Apertura) AND ([Fecha] = @Original_Fecha) AND ([Hora] = @Original_Hora) AND ([DescripcionEquipo] = @Original_DescripcionEquipo) AND ([Descuento] = @Original_Descuento) AND ((@IsNull_Nota = 1 AND [Nota] IS NULL) OR ([Nota] = @Original_Nota)));
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoCliente, CodigoMoneda, Usuario, Apertura, Fecha, Hora, DescripcionEquipo, Descuento, Nota FROM tbOrdenPedido WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (NumeroOrdenPedido = @NumeroOrdenPedido)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@NumeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@CodigoMoneda" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="CodigoMoneda" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Usuario" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Apertura" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Apertura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Hora" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Hora" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DescripcionEquipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescripcionEquipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Descuento" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Nota" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_NumeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_CodigoMoneda" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="CodigoMoneda" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Usuario" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Apertura" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Apertura" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_Hora" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Hora" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DescripcionEquipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescripcionEquipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Descuento" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Nota" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Nota" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Nota" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nota" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodigoTrabajo" DataSetColumn="CodigoTrabajo" />
+              <Mapping SourceColumn="CodigoEmpresa" DataSetColumn="CodigoEmpresa" />
+              <Mapping SourceColumn="CodigoSucursal" DataSetColumn="CodigoSucursal" />
+              <Mapping SourceColumn="NumeroOrdenPedido" DataSetColumn="NumeroOrdenPedido" />
+              <Mapping SourceColumn="CodigoCliente" DataSetColumn="CodigoCliente" />
+              <Mapping SourceColumn="CodigoMoneda" DataSetColumn="CodigoMoneda" />
+              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
+              <Mapping SourceColumn="Apertura" DataSetColumn="Apertura" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Hora" DataSetColumn="Hora" />
+              <Mapping SourceColumn="DescripcionEquipo" DataSetColumn="DescripcionEquipo" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
+              <Mapping SourceColumn="Nota" DataSetColumn="Nota" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Edita" Modifier="Public" Name="Edita" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Edita">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       tbOrdenPedido
+SET                CodigoCliente = @codigoCliente, CodigoMoneda = @codigoMoneda, Fecha = @fecha, Descuento = @descuento, Nota = @nota
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoCliente" ColumnName="CodigoCliente" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoMoneda" ColumnName="CodigoMoneda" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="char(3)" DbType="AnsiString" Direction="Input" ParameterName="@codigoMoneda" Precision="0" ProviderType="Char" Scale="0" Size="3" SourceColumn="CodigoMoneda" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fecha" ColumnName="Fecha" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@fecha" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="descuento" ColumnName="Descuento" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@descuento" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="nota" ColumnName="Nota" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="varchar(500)" DbType="AnsiString" Direction="Input" ParameterName="@nota" Precision="0" ProviderType="VarChar" Scale="0" Size="500" SourceColumn="Nota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="NumeroOrdenPedido" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="char(7)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="Char" Scale="0" Size="7" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Elimina" Modifier="Public" Name="Elimina" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Elimina">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM tbOrdenPedido
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="NumeroOrdenPedido" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="char(7)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="Char" Scale="0" Size="7" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbOrdenPedido" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNumero" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNumero" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByNumero">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoCliente, CodigoMoneda, Usuario, Apertura, Fecha, Hora, DescripcionEquipo, Descuento, Nota
+FROM            tbOrdenPedido
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)
+AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="NumeroOrdenPedido" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="char(7)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="Char" Scale="0" Size="7" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Inserta">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO tbOrdenPedido
+                         (CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoCliente, CodigoMoneda, Usuario, Apertura, Fecha, Hora, DescripcionEquipo, Descuento, Nota)
+VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroOrdenPedido,@codigoCliente,@codigoMoneda,@usuario,@apertura,@fecha,@hora,@descripcionEquipo,@descuento,@nota)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numeroOrdenPedido" ColumnName="NumeroOrdenPedido" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="char(7)" DbType="AnsiString" Direction="Input" ParameterName="@numeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="7" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoCliente" ColumnName="CodigoCliente" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoMoneda" ColumnName="CodigoMoneda" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="char(3)" DbType="AnsiString" Direction="Input" ParameterName="@codigoMoneda" Precision="0" ProviderType="Char" Scale="0" Size="3" SourceColumn="CodigoMoneda" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="usuario" ColumnName="Usuario" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@usuario" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="Usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="apertura" ColumnName="Apertura" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@apertura" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Apertura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fecha" ColumnName="Fecha" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@fecha" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="hora" ColumnName="Hora" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="char(5)" DbType="AnsiString" Direction="Input" ParameterName="@hora" Precision="0" ProviderType="Char" Scale="0" Size="5" SourceColumn="Hora" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="descripcionEquipo" ColumnName="DescripcionEquipo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="varchar(200)" DbType="AnsiString" Direction="Input" ParameterName="@descripcionEquipo" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumn="DescripcionEquipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="descuento" ColumnName="Descuento" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@descuento" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="nota" ColumnName="Nota" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedido" DataTypeServer="varchar(500)" DbType="AnsiString" Direction="Input" ParameterName="@nota" Precision="0" ProviderType="VarChar" Scale="0" Size="500" SourceColumn="Nota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="taBuscaArticulo" GeneratorDataComponentClassName="taBuscaArticulo" Name="tbBuscaArticulo" UserDataComponentName="taBuscaArticulo">
+            <MainSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.fnArticuloOrdenPedido" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+CodigoArticulo, CodigoUnidad, NombreCategoria, NombreDepartamento, IdArticulo, Descripcion, Caratula, CodigoPrecioVenta, Precio
+FROM 
+dbo.fnArticuloOrdenPedido(@codigoTrabajo, @codigoEmpresa, @descripcion)
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="" DataSourceName="" DataTypeServer="smallint" DbType="Int32" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="" DataSourceName="" DataTypeServer="smallint" DbType="Int32" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="descripcion" ColumnName="" DataSourceName="" DataTypeServer="varchar(60)" DbType="AnsiString" Direction="Input" ParameterName="@descripcion" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodigoArticulo" DataSetColumn="CodigoArticulo" />
+              <Mapping SourceColumn="CodigoUnidad" DataSetColumn="CodigoUnidad" />
+              <Mapping SourceColumn="NombreCategoria" DataSetColumn="NombreCategoria" />
+              <Mapping SourceColumn="NombreDepartamento" DataSetColumn="NombreDepartamento" />
+              <Mapping SourceColumn="IdArticulo" DataSetColumn="IdArticulo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Caratula" DataSetColumn="Caratula" />
+              <Mapping SourceColumn="CodigoPrecioVenta" DataSetColumn="CodigoPrecioVenta" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="taOrdenPedidoArticulo" GeneratorDataComponentClassName="taOrdenPedidoArticulo" Name="tbOrdenPedidoArticulo" UserDataComponentName="taOrdenPedidoArticulo">
+            <MainSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbOrdenPedidoArticulo] WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([NumeroOrdenPedido] = @Original_NumeroOrdenPedido) AND ([CodigoArticulo] = @Original_CodigoArticulo) AND ([Descripcion] = @Original_Descripcion) AND ([Coste] = @Original_Coste) AND ([Cantidad] = @Original_Cantidad) AND ([Precio] = @Original_Precio) AND ([Descuento] = @Original_Descuento) AND ((@IsNull_Importe = 1 AND [Importe] IS NULL) OR ([Importe] = @Original_Importe)) AND ((@IsNull_Beneficio = 1 AND [Beneficio] IS NULL) OR ([Beneficio] = @Original_Beneficio)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_NumeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CodigoArticulo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CodigoArticulo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Coste" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Coste" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Cantidad" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Cantidad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Precio" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Precio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Descuento" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Importe" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Importe" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Importe" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="Importe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Beneficio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Beneficio" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Beneficio" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="Beneficio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbOrdenPedidoArticulo] ([CodigoTrabajo], [CodigoEmpresa], [CodigoSucursal], [NumeroOrdenPedido], [CodigoArticulo], [Descripcion], [Coste], [Cantidad], [Precio], [Descuento]) VALUES (@CodigoTrabajo, @CodigoEmpresa, @CodigoSucursal, @NumeroOrdenPedido, @CodigoArticulo, @Descripcion, @Coste, @Cantidad, @Precio, @Descuento);
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoArticulo, Descripcion, Coste, Cantidad, Precio, Descuento, Importe, Beneficio FROM tbOrdenPedidoArticulo WHERE (CodigoArticulo = @CodigoArticulo) AND (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (NumeroOrdenPedido = @NumeroOrdenPedido)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@NumeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CodigoArticulo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CodigoArticulo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Coste" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Coste" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Cantidad" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Precio" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Precio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Descuento" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoArticulo, Descripcion, Coste, Cantidad, Precio, Descuento, Importe, Beneficio
+FROM            tbOrdenPedidoArticulo
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbOrdenPedidoArticulo] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoEmpresa] = @CodigoEmpresa, [CodigoSucursal] = @CodigoSucursal, [NumeroOrdenPedido] = @NumeroOrdenPedido, [CodigoArticulo] = @CodigoArticulo, [Descripcion] = @Descripcion, [Coste] = @Coste, [Cantidad] = @Cantidad, [Precio] = @Precio, [Descuento] = @Descuento WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([NumeroOrdenPedido] = @Original_NumeroOrdenPedido) AND ([CodigoArticulo] = @Original_CodigoArticulo) AND ([Descripcion] = @Original_Descripcion) AND ([Coste] = @Original_Coste) AND ([Cantidad] = @Original_Cantidad) AND ([Precio] = @Original_Precio) AND ([Descuento] = @Original_Descuento) AND ((@IsNull_Importe = 1 AND [Importe] IS NULL) OR ([Importe] = @Original_Importe)) AND ((@IsNull_Beneficio = 1 AND [Beneficio] IS NULL) OR ([Beneficio] = @Original_Beneficio)));
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoArticulo, Descripcion, Coste, Cantidad, Precio, Descuento, Importe, Beneficio FROM tbOrdenPedidoArticulo WHERE (CodigoArticulo = @CodigoArticulo) AND (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (NumeroOrdenPedido = @NumeroOrdenPedido)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@NumeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CodigoArticulo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CodigoArticulo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Coste" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Coste" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Cantidad" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Precio" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Precio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Descuento" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_NumeroOrdenPedido" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CodigoArticulo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CodigoArticulo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Coste" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Coste" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Cantidad" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Cantidad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Precio" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Precio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Descuento" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Importe" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Importe" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Importe" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="Importe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Beneficio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Beneficio" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Beneficio" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="Beneficio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodigoTrabajo" DataSetColumn="CodigoTrabajo" />
+              <Mapping SourceColumn="CodigoEmpresa" DataSetColumn="CodigoEmpresa" />
+              <Mapping SourceColumn="CodigoSucursal" DataSetColumn="CodigoSucursal" />
+              <Mapping SourceColumn="NumeroOrdenPedido" DataSetColumn="NumeroOrdenPedido" />
+              <Mapping SourceColumn="CodigoArticulo" DataSetColumn="CodigoArticulo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Coste" DataSetColumn="Coste" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
+              <Mapping SourceColumn="Importe" DataSetColumn="Importe" />
+              <Mapping SourceColumn="Beneficio" DataSetColumn="Beneficio" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Edita" Modifier="Public" Name="Edita" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Edita">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       tbOrdenPedidoArticulo
+SET                Descripcion = @descripcion, Coste = @coste, Cantidad = @cantidad, Precio = @precio, Descuento = @descuento
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero) AND (CodigoArticulo = @codigoArticulo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="descripcion" ColumnName="Descripcion" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="coste" ColumnName="Coste" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@coste" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="Coste" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cantidad" ColumnName="Cantidad" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@cantidad" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="Cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="precio" ColumnName="Precio" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@precio" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="Precio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="descuento" ColumnName="Descuento" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@descuento" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="NumeroOrdenPedido" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="char(7)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="Char" Scale="0" Size="7" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoArticulo" ColumnName="CodigoArticulo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigoArticulo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CodigoArticulo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Elimina" Modifier="Public" Name="Elimina" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Elimina">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM tbOrdenPedidoArticulo
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero) AND (CodigoArticulo = @codigoArticulo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="NumeroOrdenPedido" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="char(7)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="Char" Scale="0" Size="7" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoArticulo" ColumnName="CodigoArticulo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigoArticulo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CodigoArticulo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNumero" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNumero" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByNumero">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoArticulo, Descripcion, Coste, Cantidad, Precio, Descuento, Importe, Beneficio
+FROM            tbOrdenPedidoArticulo
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)
+AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero)
+AND (CodigoArticulo = @codigoArticulo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="NumeroOrdenPedido" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="char(7)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="Char" Scale="0" Size="7" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoArticulo" ColumnName="CodigoArticulo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigoArticulo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CodigoArticulo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Inserta">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO tbOrdenPedidoArticulo
+                         (CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoArticulo, Descripcion, Coste, Cantidad, Precio, Descuento)
+VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@codigoArticulo,@descripcion,@coste,@cantidad,@precio,@descuento)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="NumeroOrdenPedido" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="char(7)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="Char" Scale="0" Size="7" SourceColumn="NumeroOrdenPedido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoArticulo" ColumnName="CodigoArticulo" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigoArticulo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CodigoArticulo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="descripcion" ColumnName="Descripcion" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="coste" ColumnName="Coste" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@coste" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="Coste" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cantidad" ColumnName="Cantidad" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@cantidad" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="Cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="precio" ColumnName="Precio" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@precio" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="Precio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="descuento" ColumnName="Descuento" DataSourceName="NeoDesarrollo.dbo.tbOrdenPedidoArticulo" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@descuento" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="Descuento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.fnSiguienteArticuloMultimedia" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="fnSiguienteArticuloMultimedia" MethodsParameterType="CLR" Modifier="Public" Name="fnSiguienteArticuloMultimedia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="fnSiguienteArticuloMultimedia">
@@ -4499,13 +4941,14 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@nombreFrecuencia,@cantidad)</Comma
           </DbSource>
           <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.fnSiguienteNumero" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="fnSiguienteNumero" MethodsParameterType="CLR" Modifier="Public" Name="fnSiguienteNumero" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="fnSiguienteNumero">
             <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="true">
                 <CommandText>dbo.fnSiguienteNumero</CommandText>
                 <Parameters>
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="5" ProviderType="SmallInt" Scale="0" Size="2" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="5" ProviderType="SmallInt" Scale="0" Size="2" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@tabla" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="5" ProviderType="SmallInt" Scale="0" Size="2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="5" ProviderType="SmallInt" Scale="0" Size="2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@tabla" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="5" ProviderType="SmallInt" Scale="0" Size="2" SourceColumnNullMapping="false" SourceVersion="Current" />
                 </Parameters>
               </DbCommand>
             </SelectCommand>
@@ -5567,6 +6010,203 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@nombreFrecuencia,@cantidad)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tbClienteDomicilio" msprop:Generator_TableClassName="tbClienteDomicilioDataTable" msprop:Generator_TableVarName="tabletbClienteDomicilio" msprop:Generator_RowChangedName="tbClienteDomicilioRowChanged" msprop:Generator_TablePropName="tbClienteDomicilio" msprop:Generator_RowDeletingName="tbClienteDomicilioRowDeleting" msprop:Generator_RowChangingName="tbClienteDomicilioRowChanging" msprop:Generator_RowEvHandlerName="tbClienteDomicilioRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteDomicilioRowDeleted" msprop:Generator_RowClassName="tbClienteDomicilioRow" msprop:Generator_UserTableName="tbClienteDomicilio" msprop:Generator_RowEvArgName="tbClienteDomicilioRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
+              <xs:element name="CodigoEmpresa" msprop:Generator_ColumnVarNameInTable="columnCodigoEmpresa" msprop:Generator_ColumnPropNameInRow="CodigoEmpresa" msprop:Generator_ColumnPropNameInTable="CodigoEmpresaColumn" msprop:Generator_UserColumnName="CodigoEmpresa" type="xs:short" />
+              <xs:element name="CodigoCliente" msprop:Generator_ColumnVarNameInTable="columnCodigoCliente" msprop:Generator_ColumnPropNameInRow="CodigoCliente" msprop:Generator_ColumnPropNameInTable="CodigoClienteColumn" msprop:Generator_UserColumnName="CodigoCliente" type="xs:short" />
+              <xs:element name="CodigoClienteSucursal" msprop:Generator_ColumnVarNameInTable="columnCodigoClienteSucursal" msprop:Generator_ColumnPropNameInRow="CodigoClienteSucursal" msprop:Generator_ColumnPropNameInTable="CodigoClienteSucursalColumn" msprop:Generator_UserColumnName="CodigoClienteSucursal" type="xs:short" />
+              <xs:element name="NombrePais" msprop:Generator_ColumnVarNameInTable="columnNombrePais" msprop:Generator_ColumnPropNameInRow="NombrePais" msprop:Generator_ColumnPropNameInTable="NombrePaisColumn" msprop:Generator_UserColumnName="NombrePais">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreProvincia" msprop:Generator_ColumnVarNameInTable="columnNombreProvincia" msprop:Generator_ColumnPropNameInRow="NombreProvincia" msprop:Generator_ColumnPropNameInTable="NombreProvinciaColumn" msprop:Generator_UserColumnName="NombreProvincia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoPostal" msprop:Generator_ColumnVarNameInTable="columnCodigoPostal" msprop:Generator_ColumnPropNameInRow="CodigoPostal" msprop:Generator_ColumnPropNameInTable="CodigoPostalColumn" msprop:Generator_UserColumnName="CodigoPostal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Direccion" msprop:Generator_ColumnVarNameInTable="columnDireccion" msprop:Generator_ColumnPropNameInRow="Direccion" msprop:Generator_ColumnPropNameInTable="DireccionColumn" msprop:Generator_UserColumnName="Direccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Representante" msprop:Generator_ColumnVarNameInTable="columnRepresentante" msprop:Generator_ColumnPropNameInRow="Representante" msprop:Generator_ColumnPropNameInTable="RepresentanteColumn" msprop:Generator_UserColumnName="Representante" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Domicilio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDomicilio" msprop:Generator_ColumnPropNameInRow="Domicilio" msprop:Generator_ColumnPropNameInTable="DomicilioColumn" msprop:Generator_UserColumnName="Domicilio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="168" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aplica" msprop:Generator_ColumnVarNameInTable="columnAplica" msprop:Generator_ColumnPropNameInRow="Aplica" msprop:Generator_ColumnPropNameInTable="AplicaColumn" msprop:Generator_UserColumnName="Aplica" type="xs:boolean" default="false" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbOrdenPedido" msprop:Generator_TableClassName="tbOrdenPedidoDataTable" msprop:Generator_TableVarName="tabletbOrdenPedido" msprop:Generator_RowChangedName="tbOrdenPedidoRowChanged" msprop:Generator_TablePropName="tbOrdenPedido" msprop:Generator_RowDeletingName="tbOrdenPedidoRowDeleting" msprop:Generator_RowChangingName="tbOrdenPedidoRowChanging" msprop:Generator_RowEvHandlerName="tbOrdenPedidoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOrdenPedidoRowDeleted" msprop:Generator_RowClassName="tbOrdenPedidoRow" msprop:Generator_UserTableName="tbOrdenPedido" msprop:Generator_RowEvArgName="tbOrdenPedidoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
+              <xs:element name="CodigoEmpresa" msdata:Caption="Empresa" msprop:Generator_ColumnVarNameInTable="columnCodigoEmpresa" msprop:Generator_ColumnPropNameInRow="CodigoEmpresa" msprop:Generator_ColumnPropNameInTable="CodigoEmpresaColumn" msprop:Generator_UserColumnName="CodigoEmpresa" type="xs:short" />
+              <xs:element name="CodigoSucursal" msdata:Caption="Sucursal" msprop:Generator_ColumnVarNameInTable="columnCodigoSucursal" msprop:Generator_ColumnPropNameInRow="CodigoSucursal" msprop:Generator_ColumnPropNameInTable="CodigoSucursalColumn" msprop:Generator_UserColumnName="CodigoSucursal" type="xs:short" />
+              <xs:element name="NumeroOrdenPedido" msdata:Caption="Número" msprop:Generator_ColumnVarNameInTable="columnNumeroOrdenPedido" msprop:Generator_ColumnPropNameInRow="NumeroOrdenPedido" msprop:Generator_ColumnPropNameInTable="NumeroOrdenPedidoColumn" msprop:Generator_UserColumnName="NumeroOrdenPedido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoCliente" msdata:Caption="Cliente" msprop:Generator_ColumnVarNameInTable="columnCodigoCliente" msprop:Generator_ColumnPropNameInRow="CodigoCliente" msprop:Generator_ColumnPropNameInTable="CodigoClienteColumn" msprop:Generator_UserColumnName="CodigoCliente" type="xs:short" />
+              <xs:element name="CodigoMoneda" msdata:Caption="Moneda" msprop:Generator_ColumnVarNameInTable="columnCodigoMoneda" msprop:Generator_ColumnPropNameInRow="CodigoMoneda" msprop:Generator_ColumnPropNameInTable="CodigoMonedaColumn" msprop:Generator_UserColumnName="CodigoMoneda">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apertura" msprop:Generator_ColumnVarNameInTable="columnApertura" msprop:Generator_ColumnPropNameInRow="Apertura" msprop:Generator_ColumnPropNameInTable="AperturaColumn" msprop:Generator_UserColumnName="Apertura" type="xs:dateTime" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="Hora" msprop:Generator_ColumnVarNameInTable="columnHora" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_ColumnPropNameInTable="HoraColumn" msprop:Generator_UserColumnName="Hora">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionEquipo" msdata:Caption="Descr. Equipo" msprop:Generator_ColumnVarNameInTable="columnDescripcionEquipo" msprop:Generator_ColumnPropNameInRow="DescripcionEquipo" msprop:Generator_ColumnPropNameInTable="DescripcionEquipoColumn" msprop:Generator_UserColumnName="DescripcionEquipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descuento" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" default="0" />
+              <xs:element name="Nota" msprop:Generator_ColumnVarNameInTable="columnNota" msprop:Generator_ColumnPropNameInRow="Nota" msprop:Generator_ColumnPropNameInTable="NotaColumn" msprop:Generator_UserColumnName="Nota" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbBuscaArticulo" msprop:Generator_TableClassName="tbBuscaArticuloDataTable" msprop:Generator_TableVarName="tabletbBuscaArticulo" msprop:Generator_RowChangedName="tbBuscaArticuloRowChanged" msprop:Generator_TablePropName="tbBuscaArticulo" msprop:Generator_RowDeletingName="tbBuscaArticuloRowDeleting" msprop:Generator_RowChangingName="tbBuscaArticuloRowChanging" msprop:Generator_RowEvHandlerName="tbBuscaArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="tbBuscaArticuloRowDeleted" msprop:Generator_RowClassName="tbBuscaArticuloRow" msprop:Generator_UserTableName="tbBuscaArticulo" msprop:Generator_RowEvArgName="tbBuscaArticuloRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoArticulo" msprop:Generator_ColumnVarNameInTable="columnCodigoArticulo" msprop:Generator_ColumnPropNameInRow="CodigoArticulo" msprop:Generator_ColumnPropNameInTable="CodigoArticuloColumn" msprop:Generator_UserColumnName="CodigoArticulo" type="xs:int" />
+              <xs:element name="CodigoUnidad" msprop:Generator_ColumnVarNameInTable="columnCodigoUnidad" msprop:Generator_ColumnPropNameInRow="CodigoUnidad" msprop:Generator_ColumnPropNameInTable="CodigoUnidadColumn" msprop:Generator_UserColumnName="CodigoUnidad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreCategoria" msprop:Generator_ColumnVarNameInTable="columnNombreCategoria" msprop:Generator_ColumnPropNameInRow="NombreCategoria" msprop:Generator_ColumnPropNameInTable="NombreCategoriaColumn" msprop:Generator_UserColumnName="NombreCategoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreDepartamento" msprop:Generator_ColumnVarNameInTable="columnNombreDepartamento" msprop:Generator_ColumnPropNameInRow="NombreDepartamento" msprop:Generator_ColumnPropNameInTable="NombreDepartamentoColumn" msprop:Generator_UserColumnName="NombreDepartamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdArticulo" msprop:Generator_ColumnVarNameInTable="columnIdArticulo" msprop:Generator_ColumnPropNameInRow="IdArticulo" msprop:Generator_ColumnPropNameInTable="IdArticuloColumn" msprop:Generator_UserColumnName="IdArticulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Caratula" msprop:Generator_ColumnVarNameInTable="columnCaratula" msprop:Generator_ColumnPropNameInRow="Caratula" msprop:Generator_ColumnPropNameInTable="CaratulaColumn" msprop:Generator_UserColumnName="Caratula" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CodigoPrecioVenta" msprop:Generator_ColumnVarNameInTable="columnCodigoPrecioVenta" msprop:Generator_ColumnPropNameInRow="CodigoPrecioVenta" msprop:Generator_ColumnPropNameInTable="CodigoPrecioVentaColumn" msprop:Generator_UserColumnName="CodigoPrecioVenta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbOrdenPedidoArticulo" msprop:Generator_TableClassName="tbOrdenPedidoArticuloDataTable" msprop:Generator_TableVarName="tabletbOrdenPedidoArticulo" msprop:Generator_RowChangedName="tbOrdenPedidoArticuloRowChanged" msprop:Generator_TablePropName="tbOrdenPedidoArticulo" msprop:Generator_RowDeletingName="tbOrdenPedidoArticuloRowDeleting" msprop:Generator_RowChangingName="tbOrdenPedidoArticuloRowChanging" msprop:Generator_RowEvHandlerName="tbOrdenPedidoArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOrdenPedidoArticuloRowDeleted" msprop:Generator_RowClassName="tbOrdenPedidoArticuloRow" msprop:Generator_UserTableName="tbOrdenPedidoArticulo" msprop:Generator_RowEvArgName="tbOrdenPedidoArticuloRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
+              <xs:element name="CodigoEmpresa" msprop:Generator_ColumnVarNameInTable="columnCodigoEmpresa" msprop:Generator_ColumnPropNameInRow="CodigoEmpresa" msprop:Generator_ColumnPropNameInTable="CodigoEmpresaColumn" msprop:Generator_UserColumnName="CodigoEmpresa" type="xs:short" />
+              <xs:element name="CodigoSucursal" msprop:Generator_ColumnVarNameInTable="columnCodigoSucursal" msprop:Generator_ColumnPropNameInRow="CodigoSucursal" msprop:Generator_ColumnPropNameInTable="CodigoSucursalColumn" msprop:Generator_UserColumnName="CodigoSucursal" type="xs:short" />
+              <xs:element name="NumeroOrdenPedido" msprop:Generator_ColumnVarNameInTable="columnNumeroOrdenPedido" msprop:Generator_ColumnPropNameInRow="NumeroOrdenPedido" msprop:Generator_ColumnPropNameInTable="NumeroOrdenPedidoColumn" msprop:Generator_UserColumnName="NumeroOrdenPedido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoArticulo" msprop:Generator_ColumnVarNameInTable="columnCodigoArticulo" msprop:Generator_ColumnPropNameInRow="CodigoArticulo" msprop:Generator_ColumnPropNameInTable="CodigoArticuloColumn" msprop:Generator_UserColumnName="CodigoArticulo" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Coste" msprop:Generator_ColumnVarNameInTable="columnCoste" msprop:Generator_ColumnPropNameInRow="Coste" msprop:Generator_ColumnPropNameInTable="CosteColumn" msprop:Generator_UserColumnName="Coste" type="xs:decimal" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" />
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
+              <xs:element name="Descuento" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" />
+              <xs:element name="Importe" msdata:ReadOnly="true" msdata:Expression="Cantidad * Precio - Descuento" msprop:Generator_ColumnVarNameInTable="columnImporte" msprop:Generator_ColumnPropNameInRow="Importe" msprop:Generator_ColumnPropNameInTable="ImporteColumn" msprop:Generator_UserColumnName="Importe" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Beneficio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBeneficio" msprop:Generator_ColumnPropNameInRow="Beneficio" msprop:Generator_ColumnPropNameInTable="BeneficioColumn" msprop:Generator_UserColumnName="Beneficio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CodigoUnidad" msprop:Generator_ColumnVarNameInTable="columnCodigoUnidad" msprop:Generator_ColumnPropNameInRow="CodigoUnidad" msprop:Generator_ColumnPropNameInTable="CodigoUnidadColumn" msprop:Generator_UserColumnName="CodigoUnidad" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -5768,6 +6408,32 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@nombreFrecuencia,@cantidad)</Comma
       <xs:field xpath="mstns:CodigoTrabajo" />
       <xs:field xpath="mstns:CodigoEmpresa" />
       <xs:field xpath="mstns:Nombre" />
+    </xs:unique>
+    <xs:unique name="tbClienteDomicilio_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbClienteDomicilio" />
+      <xs:field xpath="mstns:CodigoTrabajo" />
+      <xs:field xpath="mstns:CodigoEmpresa" />
+      <xs:field xpath="mstns:CodigoCliente" />
+      <xs:field xpath="mstns:CodigoClienteSucursal" />
+    </xs:unique>
+    <xs:unique name="tbOrdenPedido_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbOrdenPedido" />
+      <xs:field xpath="mstns:CodigoTrabajo" />
+      <xs:field xpath="mstns:CodigoEmpresa" />
+      <xs:field xpath="mstns:CodigoSucursal" />
+      <xs:field xpath="mstns:NumeroOrdenPedido" />
+    </xs:unique>
+    <xs:unique name="tbBuscaArticulo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbBuscaArticulo" />
+      <xs:field xpath="mstns:CodigoArticulo" />
+    </xs:unique>
+    <xs:unique name="tbOrdenPedidoArticulo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbOrdenPedidoArticulo" />
+      <xs:field xpath="mstns:CodigoTrabajo" />
+      <xs:field xpath="mstns:CodigoEmpresa" />
+      <xs:field xpath="mstns:CodigoSucursal" />
+      <xs:field xpath="mstns:NumeroOrdenPedido" />
+      <xs:field xpath="mstns:CodigoArticulo" />
     </xs:unique>
   </xs:element>
 </xs:schema>
