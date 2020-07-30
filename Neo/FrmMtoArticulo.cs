@@ -112,7 +112,7 @@ namespace Neo
                 if (!btnNuevo.Available)
                 {
                     DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
-                    codigoArticulo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "articulo").Value;
+                    codigoArticulo = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "articulo", null).Value;
                     lblCodigo.Text = codigoArticulo.ToString();
                 }
                 else

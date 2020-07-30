@@ -216,12 +216,18 @@ namespace Neo
             }
             else
             {
-                    
+                grdDetalle.CurrentRow.Cells["dCodigoArticulo"].Value = codigoArticulo;
+                grdDetalle.CurrentRow.Cells["dCantidad"].Value = txtCantidad.Text.Trim();
+                grdDetalle.CurrentRow.Cells["dCodigoUnidad"].Value = "UNI";
+                grdDetalle.CurrentRow.Cells["dDescripcion"].Value = txtDescripcion.Text.Trim();
+                grdDetalle.CurrentRow.Cells["dPrecio"].Value = txtPrecio.Text.Trim();
+                grdDetalle.CurrentRow.Cells["dDescuento"].Value = txtDescuento.Text.Trim();
+                pnl7.BackColor = Color.White;
             }
 
             limpiaArticulo();
-            lblTotal.Text = total().ToString("N2");
-            pnl7.BackColor = Color.White;
+            lblSubTotal.Text = total().ToString("N2");
+            lblTotal.Text = total().ToString("N2");            
         }
 
         private void btnMenos_Click(object sender, EventArgs e)
@@ -257,6 +263,7 @@ namespace Neo
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            cboEstado.SelectedIndex = -1;
             txtNombre.Clear();
             dsNeo.tbCliente.Rows.Clear();
             dsNeo.tbOrdenPedido.Rows.Clear();
@@ -286,13 +293,14 @@ namespace Neo
 
         private void grdDetalle_DoubleClick(object sender, EventArgs e)
         {
-            codigoArticulo = Convert.ToInt16(grdDetalle.CurrentRow.Cells["aCodigoArticulo"].Value.ToString());
-            string cantidad = grdDetalle.CurrentRow.Cells["aCantidad"].Value.ToString();
-            string descripcion = grdDetalle.CurrentRow.Cells["aDescripcion"].Value.ToString();
-            string precio = grdDetalle.CurrentRow.Cells["aPrecio"].Value.ToString();
-            string descuento = grdDetalle.CurrentRow.Cells["aDescuento"].Value.ToString();
-            string subTotal = grdDetalle.CurrentRow.Cells["aSubTotal"].Value.ToString();
-            string total = grdDetalle.CurrentRow.Cells["aTotal"].Value.ToString();
+            codigoArticulo = Convert.ToInt16(grdDetalle.CurrentRow.Cells["dCodigoArticulo"].Value.ToString());
+
+            string cantidad = grdDetalle.CurrentRow.Cells["dCantidad"].Value.ToString();
+            string descripcion = grdDetalle.CurrentRow.Cells["dDescripcion"].Value.ToString();
+            string precio = grdDetalle.CurrentRow.Cells["dPrecio"].Value.ToString();
+            string descuento = grdDetalle.CurrentRow.Cells["dDescuento"].Value.ToString();
+            string subTotal = grdDetalle.CurrentRow.Cells["dImporte"].Value.ToString();
+            string total = grdDetalle.CurrentRow.Cells["dImporte"].Value.ToString();
 
             txtCantidad.Text = cantidad;
             txtDescripcion.Text = descripcion;
@@ -377,6 +385,14 @@ namespace Neo
             {
                 MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        private void txtDesc_Validated(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDesc.Text))
+                txtDesc.Text = "0.00";
+            lblSubTotal.Text = total().ToString("N2");
+            lblTotal.Text = total().ToString("N2");
         }
     }
 }
