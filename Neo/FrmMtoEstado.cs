@@ -72,15 +72,16 @@ namespace Neo
             {
                 this.Validate();
                 this.bsMto.EndEdit();
+                taEstado.EditaInicio(false, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboTipo.Text);
                 if (!btnNuevo.Available)
                 {
-                    taEstado.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtNombre.Text.Trim(), cboTipo.Text);
+                    taEstado.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtNombre.Text.Trim(), cboTipo.Text, chkInicio.Checked);
                     ConfiguraBoton(true);
                     nombre = txtNombre.Text.Trim();
                 }
                 else
                 {
-                    taEstado.Edita(txtNombre.Text.Trim(), cboTipo.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre, tipo);
+                    taEstado.Edita(txtNombre.Text.Trim(), cboTipo.Text, chkInicio.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre, tipo);
                 }
             }
             catch (NoNullAllowedException nullEx)

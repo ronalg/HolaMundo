@@ -69,6 +69,7 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripDropDownButton();
             this.impresoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuImpresoraPersonal = new System.Windows.Forms.ToolStripMenuItem();
@@ -211,7 +212,6 @@
             this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
             this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             idClienteLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
@@ -418,7 +418,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -483,6 +482,14 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(62, 22);
+            this.btnBuscar.Text = "Buscar";
+            // 
             // btnImprimir
             // 
             this.btnImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -501,7 +508,7 @@
             this.mnuImpresoraPersonal,
             this.mnuImpresoraEmpresa});
             this.impresoraToolStripMenuItem.Name = "impresoraToolStripMenuItem";
-            this.impresoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.impresoraToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.impresoraToolStripMenuItem.Text = "Impresora";
             // 
             // mnuImpresoraPersonal
@@ -522,7 +529,7 @@
             this.mnuPantallaPersonal,
             this.mnuPantallaEmpresa});
             this.pantallaToolStripMenuItem.Name = "pantallaToolStripMenuItem";
-            this.pantallaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pantallaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.pantallaToolStripMenuItem.Text = "Pantalla";
             // 
             // mnuPantallaPersonal
@@ -540,7 +547,7 @@
             // xMLToolStripMenuItem
             // 
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.xMLToolStripMenuItem.Text = "XML";
             // 
             // toolStripSeparator1
@@ -571,7 +578,7 @@
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
             this.pnl2.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl2.Size = new System.Drawing.Size(1370, 629);
+            this.pnl2.Size = new System.Drawing.Size(1370, 612);
             this.pnl2.TabIndex = 1;
             // 
             // pnl10
@@ -588,7 +595,7 @@
             this.pnl10.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl10.Location = new System.Drawing.Point(1165, 486);
             this.pnl10.Name = "pnl10";
-            this.pnl10.Size = new System.Drawing.Size(198, 136);
+            this.pnl10.Size = new System.Drawing.Size(198, 119);
             this.pnl10.TabIndex = 6;
             // 
             // txtDesc
@@ -676,7 +683,7 @@
             this.pnl9.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl9.Location = new System.Drawing.Point(5, 486);
             this.pnl9.Name = "pnl9";
-            this.pnl9.Size = new System.Drawing.Size(258, 136);
+            this.pnl9.Size = new System.Drawing.Size(258, 119);
             this.pnl9.TabIndex = 5;
             // 
             // txtNota
@@ -687,7 +694,7 @@
             this.txtNota.MaxLength = 300;
             this.txtNota.Multiline = true;
             this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(256, 116);
+            this.txtNota.Size = new System.Drawing.Size(256, 99);
             this.txtNota.TabIndex = 2;
             // 
             // label23
@@ -1127,7 +1134,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl6.Location = new System.Drawing.Point(960, 0);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(379, 196);
+            this.pnl6.Size = new System.Drawing.Size(198, 196);
             this.pnl6.TabIndex = 4;
             // 
             // label9
@@ -1227,7 +1234,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(377, 18);
+            this.label3.Size = new System.Drawing.Size(196, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "Orden Pedido";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1910,20 +1917,12 @@
             // 
             this.taArticuloProveedor.ClearBeforeFill = true;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(62, 22);
-            this.btnBuscar.Text = "Buscar";
-            // 
             // FrmTscOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1370, 657);
+            this.ClientSize = new System.Drawing.Size(1370, 640);
             this.Controls.Add(this.grdArticulo);
             this.Controls.Add(this.grdCliente);
             this.Controls.Add(this.pnl2);

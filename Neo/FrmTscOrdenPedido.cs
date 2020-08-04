@@ -82,9 +82,10 @@ namespace Neo
 
         private void FrmTscOrdenPedido_Load(object sender, EventArgs e)
         {
-            taEstado.Fill(dsNeo.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taEstado.FillByTipo(dsNeo.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Orden Pedido");
             taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            
+            cboSucursal.SelectedIndex = -1;
+            cboEstado.SelectedIndex = -1;
         }
 
         private void txtDescripcion_KeyDown(object sender, KeyEventArgs e)
@@ -191,6 +192,20 @@ namespace Neo
 
         private void btnMas_Click(object sender, EventArgs e)
         {
+            if (cboSucursal.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione sucursal", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                cboSucursal.Focus();
+                return;
+            }
+
+            if (cboEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione estado", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                cboEstado.Focus();
+                return;
+            }
+
             if (codigoArticulo == 0)
             {
                 MessageBox.Show("Seleccione artículo", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -283,11 +298,30 @@ namespace Neo
             dsNeo.tbClienteDomicilio.Rows.Clear();
             lblNumero.Text = null;
             cboEstado.SelectedIndex = -1;
+            dtpFecha.Value = DateTime.Today.Date;
             limpiaArticulo();
             dsNeo.tbOrdenPedidoArticulo.Rows.Clear();
             txtNota.Clear();
+            txtDesc.Text = "0.00";                
             lblSubTotal.Text = null;
             lblTotal.Text = null;
+            lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
+            lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
+            DsNeo ds = new DsNeo();
+            taSucursal.FillByCodigo(ds.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
+            string nombre = ds.tbSucursal.Rows[0]["Nombre"].ToString();
+            cboSucursal.Text = nombre;
+            taEstado.FillByTipoInicio(ds.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Orden Pedido", true);
+            if (ds.tbEstado.Rows.Count > 0)
+            {
+                nombre = ds.tbEstado.Rows[0]["NombreEstado"].ToString();
+                cboEstado.Text = nombre;
+            }
+            else
+            {
+                cboEstado.SelectedIndex = -1;
+            }
+            txtNombre.Focus();
         }
 
         private void limpiaArticulo()
@@ -348,10 +382,10 @@ namespace Neo
                 return;
             }
 
-
             try
             {
-                int numero = 0;
+                this.Cursor = Cursors.WaitCursor;
+                string numero = null;
                 DsNeo ds = new DsNeo();
                 taCliente.FillById(ds.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, lblId.Text);
                 short codigoCliente = Convert.ToInt16(ds.tbCliente.Rows[0]["CodigoCliente"].ToString());
@@ -362,29 +396,31 @@ namespace Neo
                 {
                     
                     DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
-                    numero = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "ordenPedido", codigoSucursal).Value;
-                    lblNumero.Text = numero.ToString();
-                    taOrdenPedido.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero.ToString(), codigoCliente, "DOP", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), "05:30", Environment.MachineName, descuento, txtNota.Text.Trim());
-
+                    int number = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "ordenPedido", codigoSucursal).Value;
+                    numero = Utilidad.Ceros(number.ToString());
+                    lblNumero.Text = numero;
+                    taOrdenPedido.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero, codigoCliente, "DOP", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), "05:30", Environment.MachineName, descuento, txtNota.Text.Trim());
+                    
                     foreach (DataRow dr in dsNeo.tbOrdenPedidoArticulo.Rows)
                     {
-                        int codArticulo = Convert.ToInt32(dr["CodigoArticulo"].ToString());
+                        int codArt = Convert.ToInt32(dr["CodigoArticulo"].ToString());
                         decimal coste = Convert.ToDecimal(dr["Coste"].ToString());
                         decimal cantidad = Convert.ToDecimal(dr["Cantidad"].ToString());
                         decimal precio = Convert.ToDecimal(dr["Precio"].ToString());
                         descuento = Convert.ToDecimal(dr["Descuento"].ToString());
-                        taOrdenPedidoArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero.ToString(), codigoArticulo, dr["Descripcion"].ToString(), coste, cantidad, precio, descuento);
+                        taOrdenPedidoArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero, codArt, dr["Descripcion"].ToString(), coste, cantidad, precio, descuento);
                     }
                 }
                 else
                 {
-                    taOrdenPedido.Edita(codigoCliente, "DOP", dtpFecha.Value.ToShortDateString(), descuento, txtNota.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero.ToString());
+                    numero = lblNumero.Text;
+                    taOrdenPedido.Edita(codigoCliente, "DOP", dtpFecha.Value.ToShortDateString(), descuento, txtNota.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero);
                     foreach (DataRow dr in dsNeo.tbOrdenPedidoArticulo.Rows)
                     {
-                        int codArticulo = Convert.ToInt32(dr["CodigoArticulo"].ToString());
-                        decimal coste = Convert.ToDecimal(dr["Coste"].ToString());
+                        int codArticulo = Convert.ToInt32(dr["CodigoArticulo"].ToString());                        
                         decimal cantidad = Convert.ToDecimal(dr["Cantidad"].ToString());
                         decimal precio = Convert.ToDecimal(dr["Precio"].ToString());
+                        decimal coste = Convert.ToDecimal(dr["Coste"].ToString()) * cantidad;
                         descuento = Convert.ToDecimal(dr["Descuento"].ToString());
                         taOrdenPedidoArticulo.Edita(dr["Descripcion"].ToString(), coste, cantidad, precio, descuento, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero.ToString(), codigoArticulo);
                     }
@@ -397,6 +433,11 @@ namespace Neo
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+                MessageBox.Show(Utilidad.mensajeGuardado, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
         }
 

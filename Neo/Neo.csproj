@@ -58,6 +58,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsNeo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmBscOrdenPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBscOrdenPedido.Designer.cs">
+      <DependentUpon>FrmBscOrdenPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmIniSsn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidad.cs" />
+    <EmbeddedResource Include="FrmBscOrdenPedido.resx">
+      <DependentUpon>FrmBscOrdenPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmIniSsn.resx">
       <DependentUpon>FrmIniSsn.cs</DependentUpon>
     </EmbeddedResource>

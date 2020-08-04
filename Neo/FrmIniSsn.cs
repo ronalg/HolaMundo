@@ -34,7 +34,9 @@ namespace Neo
                 Utilidad.frmPrimario.Show();
                 Utilidad.codigoTrabajo = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoTrabajo"].ToString());
                 Utilidad.codigoEmpresa = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoEmpresa"].ToString());
-                Utilidad.nombreUsuario = dsNeo.tbUsuario.Rows[0]["Nombre"].ToString();
+                Utilidad.codigoUsuario = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoUsuario"].ToString());
+                Utilidad.codigoSucursal = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoSucursal"].ToString());
+                Utilidad.nombreUsuario = dsNeo.tbUsuario.Rows[0]["Usuario"].ToString();
                 this.Hide();
             }
             else

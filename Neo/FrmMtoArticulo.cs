@@ -182,10 +182,14 @@ namespace Neo
                     short codigoProveedor = short.Parse(dr["CodigoProveedor"].ToString());
                     string c = dr["Costo"].ToString();
                     decimal? costo = null;
+                    bool? actual = false;
+                    if (!string.IsNullOrEmpty(dr["Actual"].ToString()))
+                        actual = Convert.ToBoolean(dr["Actual"].ToString());
+
                     if (!string.IsNullOrEmpty(c))
                     {
                         costo = Convert.ToDecimal(c);
-                        taArticuloProveedor.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor, costo);
+                        taArticuloProveedor.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, codigoProveedor, costo, actual);
                     }
                 }
             }
@@ -323,6 +327,23 @@ namespace Neo
             BinaryReader br = new BinaryReader(fs);
             imageData = br.ReadBytes((int)imageFileLength);
             return imageData;
+        }
+
+        private void grdProveedor_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            string nombre = grdProveedor.CurrentRow.Cells[e.ColumnIndex].OwningColumn.Name;
+            if (nombre == "pActual")
+            {
+                bool actual = Convert.ToBoolean(grdProveedor.CurrentRow.Cells[nombre].Value.ToString());
+                if (actual)
+                {
+                    foreach (DataGridViewRow dgvr in grdProveedor.Rows)
+                    {
+                        if (dgvr != grdProveedor.CurrentRow)
+                            dgvr.Cells[nombre].Value = false;
+                    }
+                }
+            }
         }
     }
 }

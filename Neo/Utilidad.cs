@@ -39,13 +39,47 @@ namespace Neo
         public static FrmMtoTrabajo mtoTrabajo = null;
         public static FrmPrm frmPrimario = null;
         //variables de control
-        public static short codigoEmpresa = 1;
-        public static short codigoTrabajo = 1;
+        public static short codigoEmpresa = 0;
+        public static short codigoTrabajo = 0;
+        public static short codigoSucursal = 0;
+        public static short codigoUsuario = 0;
         public static string nombreUsuario = "Maximo";
         public const string textoCuadroMensaje = "Neo";
         public const string mensajeElimina = "¿Esta seguro de eliminar?";
         public const string campoVacio = "Ingrese valor";
         public const string listaVacia = "Seleccione un valor";
         public const string nombrePrograma = "Neo";
+        public const string mensajeGuardado = "Se han guardado exitosamente";
+
+        public static string Ceros (string valor)
+        {
+            string resultado = null;
+            switch (valor.Length)
+            {
+                case 1:
+                    resultado = string.Concat("000000", valor);
+                    break;
+                case 2:
+                    resultado = string.Concat("00000", valor);
+                    break;
+                case 3:
+                    resultado = string.Concat("0000", valor);
+                    break;
+                case 4:
+                    resultado = string.Concat("000", valor);
+                    break;
+                case 5:
+                    resultado = string.Concat("00", valor);
+                    break;
+                case 6:
+                    resultado = string.Concat("0", valor);
+                    break;
+                default:
+                    resultado = valor;
+                    break;
+            }
+
+            return resultado;
+        }
     }
 }

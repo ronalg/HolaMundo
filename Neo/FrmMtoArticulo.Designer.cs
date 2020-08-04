@@ -44,24 +44,25 @@
             System.Windows.Forms.Label equipoLabel;
             System.Windows.Forms.Label existenciaLabel;
             System.Windows.Forms.Label inventarioLabel;
+            System.Windows.Forms.Label aplica_Orden_PedidoLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoArticulo));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label aplica_Orden_PedidoLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcProveedor = new System.Windows.Forms.TabControl();
             this.tpPerfil = new System.Windows.Forms.TabPage();
-            this.chkInventario = new System.Windows.Forms.CheckBox();
+            this.chkOrdenPedido = new System.Windows.Forms.CheckBox();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
+            this.chkInventario = new System.Windows.Forms.CheckBox();
             this.txtExistencia = new System.Windows.Forms.TextBox();
             this.lblEquipo = new System.Windows.Forms.Label();
             this.cboDepartamento = new System.Windows.Forms.ComboBox();
@@ -99,9 +100,6 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tpProveedor = new System.Windows.Forms.TabPage();
             this.grdProveedor = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsProveedor = new System.Windows.Forms.BindingSource(this.components);
             this.tpMultimedia = new System.Windows.Forms.TabPage();
             this.grdMultimedia = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -164,7 +162,10 @@
             this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
             this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
-            this.chkOrdenPedido = new System.Windows.Forms.CheckBox();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pActual = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             idArticuloLabel = new System.Windows.Forms.Label();
             codigoUnidadLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -347,6 +348,15 @@
             inventarioLabel.TabIndex = 33;
             inventarioLabel.Text = "Inventario:";
             // 
+            // aplica_Orden_PedidoLabel
+            // 
+            aplica_Orden_PedidoLabel.AutoSize = true;
+            aplica_Orden_PedidoLabel.Location = new System.Drawing.Point(381, 88);
+            aplica_Orden_PedidoLabel.Name = "aplica_Orden_PedidoLabel";
+            aplica_Orden_PedidoLabel.Size = new System.Drawing.Size(107, 13);
+            aplica_Orden_PedidoLabel.TabIndex = 34;
+            aplica_Orden_PedidoLabel.Text = "Aplica Orden Pedido:";
+            // 
             // pnl3
             // 
             this.pnl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -433,13 +443,14 @@
             this.tpPerfil.Text = "Perfil";
             this.tpPerfil.UseVisualStyleBackColor = true;
             // 
-            // chkInventario
+            // chkOrdenPedido
             // 
-            this.chkInventario.Location = new System.Drawing.Point(342, 83);
-            this.chkInventario.Name = "chkInventario";
-            this.chkInventario.Size = new System.Drawing.Size(13, 24);
-            this.chkInventario.TabIndex = 34;
-            this.chkInventario.UseVisualStyleBackColor = true;
+            this.chkOrdenPedido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Aplica Orden Pedido", true));
+            this.chkOrdenPedido.Location = new System.Drawing.Point(494, 83);
+            this.chkOrdenPedido.Name = "chkOrdenPedido";
+            this.chkOrdenPedido.Size = new System.Drawing.Size(16, 24);
+            this.chkOrdenPedido.TabIndex = 35;
+            this.chkOrdenPedido.UseVisualStyleBackColor = true;
             // 
             // bsMto
             // 
@@ -450,6 +461,14 @@
             // 
             this.dsNeo.DataSetName = "DsNeo";
             this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // chkInventario
+            // 
+            this.chkInventario.Location = new System.Drawing.Point(342, 83);
+            this.chkInventario.Name = "chkInventario";
+            this.chkInventario.Size = new System.Drawing.Size(13, 24);
+            this.chkInventario.TabIndex = 34;
+            this.chkInventario.UseVisualStyleBackColor = true;
             // 
             // txtExistencia
             // 
@@ -833,39 +852,15 @@
             this.grdProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
             this.costoDataGridViewTextBoxColumn,
-            this.codigoProveedorDataGridViewTextBoxColumn});
+            this.codigoProveedorDataGridViewTextBoxColumn,
+            this.pActual});
             this.grdProveedor.DataSource = this.bsProveedor;
             this.grdProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdProveedor.Location = new System.Drawing.Point(3, 3);
             this.grdProveedor.Name = "grdProveedor";
             this.grdProveedor.Size = new System.Drawing.Size(523, 362);
             this.grdProveedor.TabIndex = 0;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // costoDataGridViewTextBoxColumn
-            // 
-            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
-            this.costoDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // codigoProveedorDataGridViewTextBoxColumn
-            // 
-            this.codigoProveedorDataGridViewTextBoxColumn.DataPropertyName = "CodigoProveedor";
-            this.codigoProveedorDataGridViewTextBoxColumn.HeaderText = "CodigoProveedor";
-            this.codigoProveedorDataGridViewTextBoxColumn.Name = "codigoProveedorDataGridViewTextBoxColumn";
-            this.codigoProveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoProveedorDataGridViewTextBoxColumn.Visible = false;
+            this.grdProveedor.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProveedor_CellValidated);
             // 
             // bsProveedor
             // 
@@ -1406,10 +1401,13 @@
             this.tableAdapterManager.taEstado = null;
             this.tableAdapterManager.taFinanciera = null;
             this.tableAdapterManager.taFormaPago = null;
+            this.tableAdapterManager.taFrecuencia = null;
             this.tableAdapterManager.taIdentificacion = null;
             this.tableAdapterManager.taMoneda = null;
             this.tableAdapterManager.taNacionalidad = null;
             this.tableAdapterManager.taOcupacion = null;
+            this.tableAdapterManager.taOrdenPedido = null;
+            this.tableAdapterManager.taOrdenPedidoArticulo = null;
             this.tableAdapterManager.taPais = null;
             this.tableAdapterManager.taPrecioVenta = null;
             this.tableAdapterManager.taProveedor = null;
@@ -1450,23 +1448,38 @@
             // 
             this.taArticuloProveedor.ClearBeforeFill = true;
             // 
-            // aplica_Orden_PedidoLabel
+            // nombreDataGridViewTextBoxColumn
             // 
-            aplica_Orden_PedidoLabel.AutoSize = true;
-            aplica_Orden_PedidoLabel.Location = new System.Drawing.Point(381, 88);
-            aplica_Orden_PedidoLabel.Name = "aplica_Orden_PedidoLabel";
-            aplica_Orden_PedidoLabel.Size = new System.Drawing.Size(107, 13);
-            aplica_Orden_PedidoLabel.TabIndex = 34;
-            aplica_Orden_PedidoLabel.Text = "Aplica Orden Pedido:";
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 200;
             // 
-            // chkOrdenPedido
+            // costoDataGridViewTextBoxColumn
             // 
-            this.chkOrdenPedido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Aplica Orden Pedido", true));
-            this.chkOrdenPedido.Location = new System.Drawing.Point(494, 83);
-            this.chkOrdenPedido.Name = "chkOrdenPedido";
-            this.chkOrdenPedido.Size = new System.Drawing.Size(16, 24);
-            this.chkOrdenPedido.TabIndex = 35;
-            this.chkOrdenPedido.UseVisualStyleBackColor = true;
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            this.costoDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // codigoProveedorDataGridViewTextBoxColumn
+            // 
+            this.codigoProveedorDataGridViewTextBoxColumn.DataPropertyName = "CodigoProveedor";
+            this.codigoProveedorDataGridViewTextBoxColumn.HeaderText = "CodigoProveedor";
+            this.codigoProveedorDataGridViewTextBoxColumn.Name = "codigoProveedorDataGridViewTextBoxColumn";
+            this.codigoProveedorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoProveedorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pActual
+            // 
+            this.pActual.DataPropertyName = "Actual";
+            this.pActual.HeaderText = "Actual";
+            this.pActual.Name = "pActual";
+            this.pActual.Width = 50;
             // 
             // FrmMtoArticulo
             // 
@@ -1632,9 +1645,10 @@
         private System.Windows.Forms.DataGridViewImageColumn mImagen;
         private System.Windows.Forms.CheckBox chkInventario;
         private System.Windows.Forms.TextBox txtExistencia;
+        private System.Windows.Forms.CheckBox chkOrdenPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoProveedorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.CheckBox chkOrdenPedido;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn pActual;
     }
 }
