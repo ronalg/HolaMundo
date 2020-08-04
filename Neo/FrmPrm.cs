@@ -329,5 +329,17 @@ namespace Neo
             Utilidad.tscOrdenPedido.BringToFront();
             Utilidad.tscOrdenPedido.Show();
         }
+
+        private void mnuTscFactura_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.tscFactura == null)
+            {
+                Utilidad.tscFactura = new FrmTscFactura();
+                Utilidad.tscFactura.WindowState = FormWindowState.Maximized;
+                Utilidad.tscFactura.MdiParent = this;
+            }
+            Utilidad.tscFactura.BringToFront();
+            Utilidad.tscFactura.Show();
+        }
     }
 }

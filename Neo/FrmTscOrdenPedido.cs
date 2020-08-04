@@ -198,36 +198,49 @@ namespace Neo
                 return;
             }
 
-            if (pnl7.BackColor == Color.White)
+            taArticulo.FillByCodigo(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
+            string codigoUnidad = dsNeo.tbArticulo.Rows[0]["CodigoUnidad"].ToString();
+            taArticuloProveedor.FillByActual(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, true);
+            if (dsNeo.tbArticuloProveedor.Rows.Count > 0)
             {
-                DataRow dr = dsNeo.tbOrdenPedidoArticulo.NewRow();
-                dr["CodigoTrabajo"] = Utilidad.codigoTrabajo;
-                dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;
-                dr["CodigoSucursal"] = cboSucursal.SelectedValue.ToString();
-                dr["NumeroOrdenPedido"] = string.IsNullOrEmpty(lblNumero.Text) ? "0" : lblNumero.Text;
-                dr["CodigoArticulo"] = codigoArticulo;
-                dr["Descripcion"] = txtDescripcion.Text.Trim();
-                dr["Coste"] = 0;
-                dr["Cantidad"] = txtCantidad.Text.Trim();
-                dr["Precio"] = txtPrecio.Text.Trim();
-                dr["Descuento"] = txtDescuento.Text.Trim();
-                dr["CodigoUnidad"] = "UNI";
-                dsNeo.tbOrdenPedidoArticulo.Rows.Add(dr);
+                coste = Convert.ToDecimal(dsNeo.tbArticuloProveedor.Rows[0]["Costo"].ToString());
+
+                if (pnl7.BackColor == Color.White)
+                {
+                    DataRow dr = dsNeo.tbOrdenPedidoArticulo.NewRow();
+                    dr["CodigoTrabajo"] = Utilidad.codigoTrabajo;
+                    dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;
+                    dr["CodigoSucursal"] = cboSucursal.SelectedValue.ToString();
+                    dr["NumeroOrdenPedido"] = string.IsNullOrEmpty(lblNumero.Text) ? "0" : lblNumero.Text;
+                    dr["CodigoArticulo"] = codigoArticulo;
+                    dr["Descripcion"] = txtDescripcion.Text.Trim();
+                    dr["Coste"] = 0;
+                    dr["Cantidad"] = txtCantidad.Text.Trim();
+                    dr["Precio"] = txtPrecio.Text.Trim();
+                    dr["Descuento"] = txtDescuento.Text.Trim();
+                    dr["CodigoUnidad"] = codigoUnidad;
+                    dr["Coste"] = coste;
+                    dsNeo.tbOrdenPedidoArticulo.Rows.Add(dr);
+                }
+                else
+                {
+                    grdDetalle.CurrentRow.Cells["dCodigoArticulo"].Value = codigoArticulo;
+                    grdDetalle.CurrentRow.Cells["dCantidad"].Value = txtCantidad.Text.Trim();
+                    grdDetalle.CurrentRow.Cells["dCodigoUnidad"].Value = "UNI";
+                    grdDetalle.CurrentRow.Cells["dDescripcion"].Value = txtDescripcion.Text.Trim();
+                    grdDetalle.CurrentRow.Cells["dPrecio"].Value = txtPrecio.Text.Trim();
+                    grdDetalle.CurrentRow.Cells["dDescuento"].Value = txtDescuento.Text.Trim();
+                    pnl7.BackColor = Color.White;
+                }
+
+                limpiaArticulo();
+                lblSubTotal.Text = total().ToString("N2");
+                lblTotal.Text = total().ToString("N2");
             }
             else
             {
-                grdDetalle.CurrentRow.Cells["dCodigoArticulo"].Value = codigoArticulo;
-                grdDetalle.CurrentRow.Cells["dCantidad"].Value = txtCantidad.Text.Trim();
-                grdDetalle.CurrentRow.Cells["dCodigoUnidad"].Value = "UNI";
-                grdDetalle.CurrentRow.Cells["dDescripcion"].Value = txtDescripcion.Text.Trim();
-                grdDetalle.CurrentRow.Cells["dPrecio"].Value = txtPrecio.Text.Trim();
-                grdDetalle.CurrentRow.Cells["dDescuento"].Value = txtDescuento.Text.Trim();
-                pnl7.BackColor = Color.White;
+                MessageBox.Show("Artículo no tiene proveedor actual", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
-
-            limpiaArticulo();
-            lblSubTotal.Text = total().ToString("N2");
-            lblTotal.Text = total().ToString("N2");            
         }
 
         private void btnMenos_Click(object sender, EventArgs e)
