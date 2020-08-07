@@ -41,7 +41,7 @@ namespace Neo
             }
             else
             {
-                MessageBox.Show("Cuenta de usuario invalida", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Cuenta de usuario invalida", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 txtContrasena.Focus();
             }
         }

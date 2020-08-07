@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
-            this.pnl2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdDomicilio = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.pnl3 = new System.Windows.Forms.Panel();
+            this.pnl2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl1.SuspendLayout();
-            this.pnl2.SuspendLayout();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDomicilio)).BeginInit();
+            this.pnl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl1
@@ -61,6 +61,37 @@
             this.pnl1.Padding = new System.Windows.Forms.Padding(5);
             this.pnl1.Size = new System.Drawing.Size(707, 440);
             this.pnl1.TabIndex = 0;
+            // 
+            // pnl4
+            // 
+            this.pnl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl4.Controls.Add(this.grdDomicilio);
+            this.pnl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl4.Location = new System.Drawing.Point(5, 69);
+            this.pnl4.Name = "pnl4";
+            this.pnl4.Size = new System.Drawing.Size(695, 364);
+            this.pnl4.TabIndex = 2;
+            // 
+            // grdDomicilio
+            // 
+            this.grdDomicilio.AllowUserToAddRows = false;
+            this.grdDomicilio.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdDomicilio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.grdDomicilio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDomicilio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdDomicilio.Location = new System.Drawing.Point(0, 0);
+            this.grdDomicilio.Name = "grdDomicilio";
+            this.grdDomicilio.Size = new System.Drawing.Size(693, 362);
+            this.grdDomicilio.TabIndex = 6;
+            // 
+            // pnl3
+            // 
+            this.pnl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl3.Location = new System.Drawing.Point(5, 59);
+            this.pnl3.Name = "pnl3";
+            this.pnl3.Size = new System.Drawing.Size(695, 10);
+            this.pnl3.TabIndex = 1;
             // 
             // pnl2
             // 
@@ -81,23 +112,56 @@
             this.pnl2.Size = new System.Drawing.Size(695, 54);
             this.pnl2.TabIndex = 0;
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Desde:";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(693, 14);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Filtros";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
+            // btnSalir
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(54, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Location = new System.Drawing.Point(623, 22);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(57, 23);
+            this.btnSalir.TabIndex = 7;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(560, 22);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(57, 23);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(337, 24);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(214, 20);
+            this.txtCliente.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(285, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Cliente:";
             // 
             // dateTimePicker2
             // 
@@ -117,85 +181,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Desde:";
             // 
-            // label3
+            // dateTimePicker1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(285, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Cliente:";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(54, 23);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(88, 20);
+            this.dateTimePicker1.TabIndex = 1;
             // 
-            // txtCliente
+            // label1
             // 
-            this.txtCliente.Location = new System.Drawing.Point(337, 24);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(214, 20);
-            this.txtCliente.TabIndex = 5;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(560, 22);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(57, 23);
-            this.btnBuscar.TabIndex = 6;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(623, 22);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(57, 23);
-            this.btnSalir.TabIndex = 7;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(693, 14);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Filtros";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnl3
-            // 
-            this.pnl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl3.Location = new System.Drawing.Point(5, 59);
-            this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(695, 10);
-            this.pnl3.TabIndex = 1;
-            // 
-            // pnl4
-            // 
-            this.pnl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl4.Controls.Add(this.grdDomicilio);
-            this.pnl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl4.Location = new System.Drawing.Point(5, 69);
-            this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(695, 364);
-            this.pnl4.TabIndex = 2;
-            // 
-            // grdDomicilio
-            // 
-            this.grdDomicilio.AllowUserToAddRows = false;
-            this.grdDomicilio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdDomicilio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.grdDomicilio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDomicilio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdDomicilio.Location = new System.Drawing.Point(0, 0);
-            this.grdDomicilio.Name = "grdDomicilio";
-            this.grdDomicilio.Size = new System.Drawing.Size(693, 362);
-            this.grdDomicilio.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Desde:";
             // 
             // FrmBscOrdenPedido
             // 
@@ -207,10 +209,10 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "Ordenes de Pedido";
             this.pnl1.ResumeLayout(false);
-            this.pnl2.ResumeLayout(false);
-            this.pnl2.PerformLayout();
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdDomicilio)).EndInit();
+            this.pnl2.ResumeLayout(false);
+            this.pnl2.PerformLayout();
             this.ResumeLayout(false);
 
         }
