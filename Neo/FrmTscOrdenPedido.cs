@@ -448,5 +448,16 @@ namespace Neo
             lblSubTotal.Text = total().ToString("N2");
             lblTotal.Text = total().ToString("N2");
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.bscOrdenPedido == null)
+            {
+                Utilidad.bscOrdenPedido = new FrmBscOrdenPedido();
+                Utilidad.bscOrdenPedido.StartPosition = FormStartPosition.CenterScreen;
+            }
+            Utilidad.bscOrdenPedido.BringToFront();
+            Utilidad.bscOrdenPedido.Show();
+        }
     }
 }

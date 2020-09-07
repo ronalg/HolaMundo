@@ -8,6 +8,8 @@ namespace Neo
 {
     class Utilidad
     {
+        //formulario de busquedad
+        public static FrmBscOrdenPedido bscOrdenPedido = null;
         //formulario transacciones
         public static FrmTscFactura tscFactura = null;
         public static FrmTscOrdenPedido tscOrdenPedido = null;

@@ -418,6 +418,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -489,6 +490,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(62, 22);
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnImprimir
             // 
@@ -1893,6 +1895,7 @@
             this.tableAdapterManager.taOcupacion = null;
             this.tableAdapterManager.taOrdenPedido = this.taOrdenPedido;
             this.tableAdapterManager.taOrdenPedidoArticulo = this.taOrdenPedidoArticulo;
+            this.tableAdapterManager.taOrdenPedidoEstado = null;
             this.tableAdapterManager.taPais = null;
             this.tableAdapterManager.taPrecioVenta = null;
             this.tableAdapterManager.taProveedor = null;

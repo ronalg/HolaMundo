@@ -3421,7 +3421,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EditaInicio" Modifier="Public" Name="EditaInicio" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="EditaInicio">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EditaInicio" Modifier="Public" Name="EditaInicio" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="EditaInicio">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE tbEstado
@@ -3436,7 +3436,7 @@ WHERE CodigoTrabajo = @codigoTrabajo AND CodigoEmpresa =@codigoEmpresa AND Tipo 
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Elimina" Modifier="Public" Name="Elimina" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Elimina">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Elimina" Modifier="Public" Name="Elimina" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Elimina">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM tbEstado
@@ -3450,7 +3450,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbEstado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTipo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByTipo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByTipo">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbEstado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTipo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByTipo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByTipo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT CodigoEmpresa, CodigoTrabajo, Inicio, NombreEstado, Tipo FROM tbEstado WHERE (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (Tipo = @tipo)</CommandText>
@@ -3462,7 +3462,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbEstado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTipoInicio" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByTipoInicio" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="FillByTipoInicio">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbEstado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTipoInicio" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByTipoInicio" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillByTipoInicio">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, NombreEstado, Tipo, Inicio
@@ -3478,7 +3478,7 @@ AND (Tipo = @tipo) AND (Inicio = @inicio)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Inserta">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="Inserta">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO tbEstado
@@ -5048,7 +5048,7 @@ SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, NombreTi
               <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Edita" Modifier="Public" Name="Edita" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Edita">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Edita" Modifier="Public" Name="Edita" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Edita">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       tbOrdenPedidoEstado
@@ -5084,7 +5084,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Inserta">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Inserta">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO tbOrdenPedidoEstado
@@ -5105,6 +5105,33 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
                 </InsertCommand>
               </DbSource>
             </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="taFnOrdenPedido" GeneratorDataComponentClassName="taFnOrdenPedido" Name="fnOrdenPedido" UserDataComponentName="taFnOrdenPedido">
+            <MainSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.fnOrdenPedido" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        NumeroOrdenPedido, Nombre, CodigoMoneda, Fecha, Hora
+FROM            dbo.fnOrdenPedido(@codigoTrabajo, @codigoEmpresa, @desde, @hasta, @nombreCliente) AS OrdenPedido</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="desde" ColumnName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@desde" Precision="0" ProviderType="DateTime" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="hasta" ColumnName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@hasta" Precision="0" ProviderType="DateTime" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="nombreCliente" ColumnName="" DataSourceName="" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@nombreCliente" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NumeroOrdenPedido" DataSetColumn="NumeroOrdenPedido" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="CodigoMoneda" DataSetColumn="CodigoMoneda" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Hora" DataSetColumn="Hora" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources>
@@ -6479,6 +6506,41 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="fnOrdenPedido" msprop:Generator_TableClassName="fnOrdenPedidoDataTable" msprop:Generator_TableVarName="tablefnOrdenPedido" msprop:Generator_TablePropName="fnOrdenPedido" msprop:Generator_RowDeletingName="fnOrdenPedidoRowDeleting" msprop:Generator_RowChangingName="fnOrdenPedidoRowChanging" msprop:Generator_RowEvHandlerName="fnOrdenPedidoRowChangeEventHandler" msprop:Generator_RowDeletedName="fnOrdenPedidoRowDeleted" msprop:Generator_UserTableName="fnOrdenPedido" msprop:Generator_RowChangedName="fnOrdenPedidoRowChanged" msprop:Generator_RowEvArgName="fnOrdenPedidoRowChangeEvent" msprop:Generator_RowClassName="fnOrdenPedidoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumeroOrdenPedido" msprop:Generator_ColumnVarNameInTable="columnNumeroOrdenPedido" msprop:Generator_ColumnPropNameInRow="NumeroOrdenPedido" msprop:Generator_ColumnPropNameInTable="NumeroOrdenPedidoColumn" msprop:Generator_UserColumnName="NumeroOrdenPedido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoMoneda" msprop:Generator_ColumnVarNameInTable="columnCodigoMoneda" msprop:Generator_ColumnPropNameInRow="CodigoMoneda" msprop:Generator_ColumnPropNameInTable="CodigoMonedaColumn" msprop:Generator_UserColumnName="CodigoMoneda">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="Hora" msprop:Generator_ColumnVarNameInTable="columnHora" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_ColumnPropNameInTable="HoraColumn" msprop:Generator_UserColumnName="Hora">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
