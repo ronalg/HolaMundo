@@ -29,23 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBscOrdenPedido));
             this.pnl1 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdPedido = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.pnl3 = new System.Windows.Forms.Panel();
-            this.pnl2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.numeroOrdenPedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoMonedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,8 +43,8 @@
             this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsOrdenPedido = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
-            this.taBuscaArticulo = new Neo.DsNeoTableAdapters.taBuscaArticulo();
-            this.taFnOrdenPedido = new Neo.DsNeoTableAdapters.taFnOrdenPedido();
+            this.pnl3 = new System.Windows.Forms.Panel();
+            this.pnl2 = new System.Windows.Forms.Panel();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.bnOrdenPedido = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -69,12 +59,22 @@
             this.btnVer = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.taBuscaArticulo = new Neo.DsNeoTableAdapters.taBuscaArticulo();
+            this.taFnOrdenPedido = new Neo.DsNeoTableAdapters.taFnOrdenPedido();
             this.pnl1.SuspendLayout();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPedido)).BeginInit();
-            this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrdenPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
+            this.pnl2.SuspendLayout();
             this.pnl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnOrdenPedido)).BeginInit();
             this.bnOrdenPedido.SuspendLayout();
@@ -90,7 +90,7 @@
             this.pnl1.Location = new System.Drawing.Point(5, 5);
             this.pnl1.Name = "pnl1";
             this.pnl1.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl1.Size = new System.Drawing.Size(710, 440);
+            this.pnl1.Size = new System.Drawing.Size(710, 472);
             this.pnl1.TabIndex = 0;
             // 
             // pnl4
@@ -100,15 +100,15 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl4.Location = new System.Drawing.Point(5, 98);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(698, 335);
+            this.pnl4.Size = new System.Drawing.Size(698, 367);
             this.pnl4.TabIndex = 2;
             // 
             // grdPedido
             // 
             this.grdPedido.AllowUserToAddRows = false;
             this.grdPedido.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdPedido.AutoGenerateColumns = false;
             this.grdPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -122,8 +122,63 @@
             this.grdPedido.Location = new System.Drawing.Point(0, 0);
             this.grdPedido.Name = "grdPedido";
             this.grdPedido.ReadOnly = true;
-            this.grdPedido.Size = new System.Drawing.Size(696, 333);
+            this.grdPedido.Size = new System.Drawing.Size(696, 365);
             this.grdPedido.TabIndex = 6;
+            // 
+            // numeroOrdenPedidoDataGridViewTextBoxColumn
+            // 
+            this.numeroOrdenPedidoDataGridViewTextBoxColumn.DataPropertyName = "NumeroOrdenPedido";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numeroOrdenPedidoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.numeroOrdenPedidoDataGridViewTextBoxColumn.HeaderText = "Número";
+            this.numeroOrdenPedidoDataGridViewTextBoxColumn.Name = "numeroOrdenPedidoDataGridViewTextBoxColumn";
+            this.numeroOrdenPedidoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroOrdenPedidoDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // codigoMonedaDataGridViewTextBoxColumn
+            // 
+            this.codigoMonedaDataGridViewTextBoxColumn.DataPropertyName = "CodigoMoneda";
+            this.codigoMonedaDataGridViewTextBoxColumn.HeaderText = "CodigoMoneda";
+            this.codigoMonedaDataGridViewTextBoxColumn.Name = "codigoMonedaDataGridViewTextBoxColumn";
+            this.codigoMonedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoMonedaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "d";
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // horaDataGridViewTextBoxColumn
+            // 
+            this.horaDataGridViewTextBoxColumn.DataPropertyName = "Hora";
+            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
+            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            this.horaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.horaDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // bsOrdenPedido
+            // 
+            this.bsOrdenPedido.DataMember = "fnOrdenPedido";
+            this.bsOrdenPedido.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnl3
             // 
@@ -151,6 +206,137 @@
             this.pnl2.Name = "pnl2";
             this.pnl2.Size = new System.Drawing.Size(698, 83);
             this.pnl2.TabIndex = 0;
+            // 
+            // pnl5
+            // 
+            this.pnl5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl5.Controls.Add(this.bnOrdenPedido);
+            this.pnl5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl5.Location = new System.Drawing.Point(0, 14);
+            this.pnl5.Name = "pnl5";
+            this.pnl5.Size = new System.Drawing.Size(696, 27);
+            this.pnl5.TabIndex = 9;
+            // 
+            // bnOrdenPedido
+            // 
+            this.bnOrdenPedido.AddNewItem = null;
+            this.bnOrdenPedido.BindingSource = this.bsOrdenPedido;
+            this.bnOrdenPedido.CountItem = this.bindingNavigatorCountItem;
+            this.bnOrdenPedido.DeleteItem = null;
+            this.bnOrdenPedido.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bnOrdenPedido.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.btnVer,
+            this.toolStripSeparator1,
+            this.btnSalir});
+            this.bnOrdenPedido.Location = new System.Drawing.Point(0, 0);
+            this.bnOrdenPedido.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bnOrdenPedido.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bnOrdenPedido.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bnOrdenPedido.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bnOrdenPedido.Name = "bnOrdenPedido";
+            this.bnOrdenPedido.PositionItem = this.bindingNavigatorPositionItem;
+            this.bnOrdenPedido.Size = new System.Drawing.Size(694, 25);
+            this.bnOrdenPedido.TabIndex = 8;
+            this.bnOrdenPedido.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnVer
+            // 
+            this.btnVer.Image = ((System.Drawing.Image)(resources.GetObject("btnVer.Image")));
+            this.btnVer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(43, 22);
+            this.btnVer.Text = "Ver";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(49, 22);
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label4
             // 
@@ -229,61 +415,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Desde:";
             // 
-            // numeroOrdenPedidoDataGridViewTextBoxColumn
-            // 
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.DataPropertyName = "NumeroOrdenPedido";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.HeaderText = "Número";
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.Name = "numeroOrdenPedidoDataGridViewTextBoxColumn";
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // codigoMonedaDataGridViewTextBoxColumn
-            // 
-            this.codigoMonedaDataGridViewTextBoxColumn.DataPropertyName = "CodigoMoneda";
-            this.codigoMonedaDataGridViewTextBoxColumn.HeaderText = "CodigoMoneda";
-            this.codigoMonedaDataGridViewTextBoxColumn.Name = "codigoMonedaDataGridViewTextBoxColumn";
-            this.codigoMonedaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoMonedaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // horaDataGridViewTextBoxColumn
-            // 
-            this.horaDataGridViewTextBoxColumn.DataPropertyName = "Hora";
-            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
-            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
-            this.horaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.horaDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // bsOrdenPedido
-            // 
-            this.bsOrdenPedido.DataMember = "fnOrdenPedido";
-            this.bsOrdenPedido.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // taBuscaArticulo
             // 
             this.taBuscaArticulo.ClearBeforeFill = true;
@@ -292,141 +423,11 @@
             // 
             this.taFnOrdenPedido.ClearBeforeFill = true;
             // 
-            // pnl5
-            // 
-            this.pnl5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl5.Controls.Add(this.bnOrdenPedido);
-            this.pnl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl5.Location = new System.Drawing.Point(0, 14);
-            this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(696, 27);
-            this.pnl5.TabIndex = 9;
-            // 
-            // bnOrdenPedido
-            // 
-            this.bnOrdenPedido.AddNewItem = null;
-            this.bnOrdenPedido.BindingSource = this.bsOrdenPedido;
-            this.bnOrdenPedido.CountItem = this.bindingNavigatorCountItem;
-            this.bnOrdenPedido.DeleteItem = null;
-            this.bnOrdenPedido.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bnOrdenPedido.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.btnVer,
-            this.toolStripSeparator1,
-            this.btnSalir});
-            this.bnOrdenPedido.Location = new System.Drawing.Point(0, 0);
-            this.bnOrdenPedido.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bnOrdenPedido.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bnOrdenPedido.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bnOrdenPedido.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bnOrdenPedido.Name = "bnOrdenPedido";
-            this.bnOrdenPedido.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnOrdenPedido.Size = new System.Drawing.Size(694, 25);
-            this.bnOrdenPedido.TabIndex = 8;
-            this.bnOrdenPedido.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnVer
-            // 
-            this.btnVer.Image = ((System.Drawing.Image)(resources.GetObject("btnVer.Image")));
-            this.btnVer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(43, 22);
-            this.btnVer.Text = "Ver";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(49, 22);
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // FrmBscOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 450);
+            this.ClientSize = new System.Drawing.Size(720, 482);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmBscOrdenPedido";
             this.Padding = new System.Windows.Forms.Padding(5);
@@ -436,10 +437,10 @@
             this.pnl1.ResumeLayout(false);
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdPedido)).EndInit();
-            this.pnl2.ResumeLayout(false);
-            this.pnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrdenPedido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
+            this.pnl2.ResumeLayout(false);
+            this.pnl2.PerformLayout();
             this.pnl5.ResumeLayout(false);
             this.pnl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnOrdenPedido)).EndInit();
