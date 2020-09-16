@@ -45,8 +45,8 @@
     <Shape ID="DesignTable:tbBuscaArticulo" ZOrder="12" X="2458" Y="469" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:tbOrdenPedidoArticulo" ZOrder="11" X="2459" Y="782" Height="381" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:tbOrdenPedidoEstado" ZOrder="2" X="2462" Y="1174" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
+    <Shape ID="DesignTable:fnOrdenPedido" ZOrder="1" X="2466" Y="1490" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignSources:ConsultasProgramadas" ZOrder="6" X="222" Y="1537" Height="143" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
-    <Shape ID="DesignTable:fnOrdenPedido" ZOrder="1" X="2466" Y="1490" Height="172" Width="289" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

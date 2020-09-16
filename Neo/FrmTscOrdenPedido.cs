@@ -14,7 +14,7 @@ namespace Neo
     public partial class FrmTscOrdenPedido : Form
     {
         short codigoArticulo = 0;
-        short codigoCliente = 0;
+        public short codigoCliente = 0;
         string codigoUnidad = null;
         decimal coste = 0.00M;
 

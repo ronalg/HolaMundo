@@ -13762,16 +13762,6 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbClienteDomicilioRow FindByCodigoTrabajoCodigoEmpresaCodigoClienteCodigoClienteSucursal(short CodigoTrabajo, short CodigoEmpresa, short CodigoCliente, short CodigoClienteSucursal) {
-                return ((tbClienteDomicilioRow)(this.Rows.Find(new object[] {
-                            CodigoTrabajo,
-                            CodigoEmpresa,
-                            CodigoCliente,
-                            CodigoClienteSucursal})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 tbClienteDomicilioDataTable cln = ((tbClienteDomicilioDataTable)(base.Clone()));
                 cln.InitVars();
@@ -13828,11 +13818,6 @@ namespace Neo {
                 base.Columns.Add(this.columnDomicilio);
                 this.columnAplica = new global::System.Data.DataColumn("Aplica", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAplica);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCodigoTrabajo,
-                                this.columnCodigoEmpresa,
-                                this.columnCodigoCliente,
-                                this.columnCodigoClienteSucursal}, true));
                 this.columnCodigoTrabajo.AllowDBNull = false;
                 this.columnCodigoEmpresa.AllowDBNull = false;
                 this.columnCodigoCliente.AllowDBNull = false;
@@ -15706,6 +15691,10 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnHora;
             
+            private global::System.Data.DataColumn columnCodigoCliente;
+            
+            private global::System.Data.DataColumn columnCodigoClienteSucursal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public fnOrdenPedidoDataTable() {
@@ -15781,6 +15770,22 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoClienteColumn {
+                get {
+                    return this.columnCodigoCliente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoClienteSucursalColumn {
+                get {
+                    return this.columnCodigoClienteSucursal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15816,14 +15821,16 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fnOrdenPedidoRow AddfnOrdenPedidoRow(string NumeroOrdenPedido, string Nombre, string CodigoMoneda, System.DateTime Fecha, string Hora) {
+            public fnOrdenPedidoRow AddfnOrdenPedidoRow(string NumeroOrdenPedido, string Nombre, string CodigoMoneda, System.DateTime Fecha, string Hora, short CodigoCliente, short CodigoClienteSucursal) {
                 fnOrdenPedidoRow rowfnOrdenPedidoRow = ((fnOrdenPedidoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NumeroOrdenPedido,
                         Nombre,
                         CodigoMoneda,
                         Fecha,
-                        Hora};
+                        Hora,
+                        CodigoCliente,
+                        CodigoClienteSucursal};
                 rowfnOrdenPedidoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfnOrdenPedidoRow);
                 return rowfnOrdenPedidoRow;
@@ -15851,6 +15858,8 @@ namespace Neo {
                 this.columnCodigoMoneda = base.Columns["CodigoMoneda"];
                 this.columnFecha = base.Columns["Fecha"];
                 this.columnHora = base.Columns["Hora"];
+                this.columnCodigoCliente = base.Columns["CodigoCliente"];
+                this.columnCodigoClienteSucursal = base.Columns["CodigoClienteSucursal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15866,6 +15875,10 @@ namespace Neo {
                 base.Columns.Add(this.columnFecha);
                 this.columnHora = new global::System.Data.DataColumn("Hora", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHora);
+                this.columnCodigoCliente = new global::System.Data.DataColumn("CodigoCliente", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoCliente);
+                this.columnCodigoClienteSucursal = new global::System.Data.DataColumn("CodigoClienteSucursal", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoClienteSucursal);
                 this.columnNumeroOrdenPedido.AllowDBNull = false;
                 this.columnNumeroOrdenPedido.MaxLength = 7;
                 this.columnNombre.AllowDBNull = false;
@@ -15875,6 +15888,7 @@ namespace Neo {
                 this.columnFecha.AllowDBNull = false;
                 this.columnHora.AllowDBNull = false;
                 this.columnHora.MaxLength = 5;
+                this.columnCodigoCliente.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19479,12 +19493,11 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string CodigoPostal {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbClienteDomicilio.CodigoPostalColumn]));
+                    if (this.IsCodigoPostalNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CodigoPostal\' de la tabla \'tbClienteDomicilio\' es DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tabletbClienteDomicilio.CodigoPostalColumn]));
                     }
                 }
                 set {
@@ -19496,11 +19509,11 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Direccion {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbClienteDomicilio.DireccionColumn]));
+                    if (this.IsDireccionNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Direccion\' de la tabla \'tbClienteDomicilio\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tabletbClienteDomicilio.DireccionColumn]));
                     }
                 }
                 set {
@@ -19512,12 +19525,11 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Representante {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbClienteDomicilio.RepresentanteColumn]));
+                    if (this.IsRepresentanteNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Representante\' de la tabla \'tbClienteDomicilio\' es DBNull" +
-                                ".", e);
+                    else {
+                        return ((string)(this[this.tabletbClienteDomicilio.RepresentanteColumn]));
                     }
                 }
                 set {
@@ -19529,11 +19541,11 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Domicilio {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbClienteDomicilio.DomicilioColumn]));
+                    if (this.IsDomicilioNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Domicilio\' de la tabla \'tbClienteDomicilio\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tabletbClienteDomicilio.DomicilioColumn]));
                     }
                 }
                 set {
@@ -20316,6 +20328,46 @@ namespace Neo {
                 set {
                     this[this.tablefnOrdenPedido.HoraColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short CodigoCliente {
+                get {
+                    return ((short)(this[this.tablefnOrdenPedido.CodigoClienteColumn]));
+                }
+                set {
+                    this[this.tablefnOrdenPedido.CodigoClienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short CodigoClienteSucursal {
+                get {
+                    try {
+                        return ((short)(this[this.tablefnOrdenPedido.CodigoClienteSucursalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CodigoClienteSucursal\' de la tabla \'fnOrdenPedido\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefnOrdenPedido.CodigoClienteSucursalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCodigoClienteSucursalNull() {
+                return this.IsNull(this.tablefnOrdenPedido.CodigoClienteSucursalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCodigoClienteSucursalNull() {
+                this[this.tablefnOrdenPedido.CodigoClienteSucursalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -37743,6 +37795,8 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
             tableMapping.ColumnMappings.Add("CodigoMoneda", "CodigoMoneda");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
             tableMapping.ColumnMappings.Add("Hora", "Hora");
+            tableMapping.ColumnMappings.Add("CodigoCliente", "CodigoCliente");
+            tableMapping.ColumnMappings.Add("CodigoClienteSucursal", "CodigoClienteSucursal");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -37759,12 +37813,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        NumeroOrdenPedido, Nombre, CodigoMoneda, Fecha, Hora\r\nFROM         " +
-                "   dbo.fnOrdenPedido(@codigoTrabajo, @codigoEmpresa, @desde, @hasta, @nombreClie" +
-                "nte) AS OrdenPedido";
+            this._commandCollection[0].CommandText = "SELECT        NumeroOrdenPedido, Nombre, CodigoMoneda, Fecha, Hora, CodigoCliente" +
+                ", CodigoClienteSucursal\r\nFROM            dbo.fnOrdenPedido(@codigoTrabajo, @codi" +
+                "goEmpresa, @desde, @hasta, @nombreCliente) AS OrdenPedido";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@desde", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreCliente", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -37774,14 +37828,14 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.fnOrdenPedidoDataTable dataTable, short codigoTrabajo, short codigoEmpresa, System.DateTime desde, System.DateTime hasta, string nombreCliente) {
+        public virtual int Fill(DsNeo.fnOrdenPedidoDataTable dataTable, int codigoTrabajo, int codigoEmpresa, System.DateTime desde, System.DateTime hasta, string nombreCliente) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
             this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(desde));
             this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(hasta));
             if ((nombreCliente == null)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("nombreCliente");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[4].Value = ((string)(nombreCliente));

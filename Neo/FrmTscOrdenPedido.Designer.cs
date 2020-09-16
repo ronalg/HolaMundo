@@ -1473,6 +1473,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(88, 26);
             this.txtNombre.MaxLength = 25;
+            this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(281, 20);
             this.txtNombre.TabIndex = 2;
@@ -1986,21 +1987,14 @@
         private System.Windows.Forms.Panel pnl2;
         private System.Windows.Forms.Panel pnl3;
         private System.Windows.Forms.Panel pnl4;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private DsNeo dsNeo;
-        private DsNeoTableAdapters.taCliente taCliente;
         private System.Windows.Forms.Panel pnl6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnl5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblLimiteCredito;
-        private System.Windows.Forms.Label lblRazonSocial;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Panel pnl7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
@@ -2044,9 +2038,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn formatoFacturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formatoReciboIngresoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formatoOrdenPedidoDataGridViewTextBoxColumn;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdDomicilio;
         private System.Windows.Forms.BindingSource bsDomicilio;
-        private DsNeoTableAdapters.taClienteDomicilio taClienteDomicilio;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripDropDownButton btnImprimir;
@@ -2130,5 +2122,14 @@
         private DsNeoTableAdapters.taArticulo taArticulo;
         private DsNeoTableAdapters.taArticuloProveedor taArticuloProveedor;
         private System.Windows.Forms.ToolStripButton btnBuscar;
+        public System.Windows.Forms.TextBox txtNombre;
+        public DsNeoTableAdapters.taCliente taCliente;
+        public System.Windows.Forms.Label lblLimiteCredito;
+        public System.Windows.Forms.Label lblRazonSocial;
+        public System.Windows.Forms.Label lblNombre;
+        public System.Windows.Forms.Label lblId;
+        public ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdDomicilio;
+        public DsNeoTableAdapters.taClienteDomicilio taClienteDomicilio;
+        public DsNeo dsNeo;
     }
 }

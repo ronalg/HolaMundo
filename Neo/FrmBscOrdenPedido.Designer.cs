@@ -30,17 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBscOrdenPedido));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBscOrdenPedido));
             this.pnl1 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdPedido = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoMonedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsOrdenPedido = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
             this.pnl3 = new System.Windows.Forms.Panel();
@@ -69,6 +64,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.taBuscaArticulo = new Neo.DsNeoTableAdapters.taBuscaArticulo();
             this.taFnOrdenPedido = new Neo.DsNeoTableAdapters.taFnOrdenPedido();
+            this.oNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oCodigoMoneda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oCodigoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oCodigoClienteSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl1.SuspendLayout();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPedido)).BeginInit();
@@ -90,7 +92,7 @@
             this.pnl1.Location = new System.Drawing.Point(5, 5);
             this.pnl1.Name = "pnl1";
             this.pnl1.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl1.Size = new System.Drawing.Size(710, 472);
+            this.pnl1.Size = new System.Drawing.Size(811, 472);
             this.pnl1.TabIndex = 0;
             // 
             // pnl4
@@ -100,7 +102,7 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl4.Location = new System.Drawing.Point(5, 98);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(698, 367);
+            this.pnl4.Size = new System.Drawing.Size(799, 367);
             this.pnl4.TabIndex = 2;
             // 
             // grdPedido
@@ -112,63 +114,20 @@
             this.grdPedido.AutoGenerateColumns = false;
             this.grdPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.codigoMonedaDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
-            this.horaDataGridViewTextBoxColumn});
+            this.oNumero,
+            this.oNombre,
+            this.oCodigoMoneda,
+            this.oFecha,
+            this.oHora,
+            this.oCodigoCliente,
+            this.oCodigoClienteSucursal});
             this.grdPedido.DataSource = this.bsOrdenPedido;
             this.grdPedido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdPedido.Location = new System.Drawing.Point(0, 0);
             this.grdPedido.Name = "grdPedido";
             this.grdPedido.ReadOnly = true;
-            this.grdPedido.Size = new System.Drawing.Size(696, 365);
+            this.grdPedido.Size = new System.Drawing.Size(797, 365);
             this.grdPedido.TabIndex = 6;
-            // 
-            // numeroOrdenPedidoDataGridViewTextBoxColumn
-            // 
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.DataPropertyName = "NumeroOrdenPedido";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.HeaderText = "Número";
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.Name = "numeroOrdenPedidoDataGridViewTextBoxColumn";
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroOrdenPedidoDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // codigoMonedaDataGridViewTextBoxColumn
-            // 
-            this.codigoMonedaDataGridViewTextBoxColumn.DataPropertyName = "CodigoMoneda";
-            this.codigoMonedaDataGridViewTextBoxColumn.HeaderText = "CodigoMoneda";
-            this.codigoMonedaDataGridViewTextBoxColumn.Name = "codigoMonedaDataGridViewTextBoxColumn";
-            this.codigoMonedaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoMonedaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // horaDataGridViewTextBoxColumn
-            // 
-            this.horaDataGridViewTextBoxColumn.DataPropertyName = "Hora";
-            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
-            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
-            this.horaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.horaDataGridViewTextBoxColumn.Width = 70;
             // 
             // bsOrdenPedido
             // 
@@ -185,7 +144,7 @@
             this.pnl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl3.Location = new System.Drawing.Point(5, 88);
             this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(698, 10);
+            this.pnl3.Size = new System.Drawing.Size(799, 10);
             this.pnl3.TabIndex = 1;
             // 
             // pnl2
@@ -204,7 +163,7 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(5, 5);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(698, 83);
+            this.pnl2.Size = new System.Drawing.Size(799, 83);
             this.pnl2.TabIndex = 0;
             // 
             // pnl5
@@ -214,7 +173,7 @@
             this.pnl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl5.Location = new System.Drawing.Point(0, 14);
             this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(696, 27);
+            this.pnl5.Size = new System.Drawing.Size(797, 27);
             this.pnl5.TabIndex = 9;
             // 
             // bnOrdenPedido
@@ -244,7 +203,7 @@
             this.bnOrdenPedido.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnOrdenPedido.Name = "bnOrdenPedido";
             this.bnOrdenPedido.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnOrdenPedido.Size = new System.Drawing.Size(694, 25);
+            this.bnOrdenPedido.Size = new System.Drawing.Size(795, 25);
             this.bnOrdenPedido.TabIndex = 8;
             this.bnOrdenPedido.Text = "bindingNavigator1";
             // 
@@ -323,6 +282,7 @@
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(43, 22);
             this.btnVer.Text = "Ver";
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // toolStripSeparator1
             // 
@@ -345,7 +305,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(696, 14);
+            this.label4.Size = new System.Drawing.Size(797, 14);
             this.label4.TabIndex = 8;
             this.label4.Text = "Filtros";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -423,11 +383,71 @@
             // 
             this.taFnOrdenPedido.ClearBeforeFill = true;
             // 
+            // oNumero
+            // 
+            this.oNumero.DataPropertyName = "NumeroOrdenPedido";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.oNumero.DefaultCellStyle = dataGridViewCellStyle2;
+            this.oNumero.HeaderText = "Número";
+            this.oNumero.Name = "oNumero";
+            this.oNumero.ReadOnly = true;
+            this.oNumero.Width = 80;
+            // 
+            // oNombre
+            // 
+            this.oNombre.DataPropertyName = "Nombre";
+            this.oNombre.HeaderText = "Nombre";
+            this.oNombre.Name = "oNombre";
+            this.oNombre.ReadOnly = true;
+            this.oNombre.Width = 400;
+            // 
+            // oCodigoMoneda
+            // 
+            this.oCodigoMoneda.DataPropertyName = "CodigoMoneda";
+            this.oCodigoMoneda.HeaderText = "CodigoMoneda";
+            this.oCodigoMoneda.Name = "oCodigoMoneda";
+            this.oCodigoMoneda.ReadOnly = true;
+            this.oCodigoMoneda.Visible = false;
+            // 
+            // oFecha
+            // 
+            this.oFecha.DataPropertyName = "Fecha";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "d";
+            this.oFecha.DefaultCellStyle = dataGridViewCellStyle3;
+            this.oFecha.HeaderText = "Fecha";
+            this.oFecha.Name = "oFecha";
+            this.oFecha.ReadOnly = true;
+            this.oFecha.Width = 80;
+            // 
+            // oHora
+            // 
+            this.oHora.DataPropertyName = "Hora";
+            this.oHora.HeaderText = "Hora";
+            this.oHora.Name = "oHora";
+            this.oHora.ReadOnly = true;
+            this.oHora.Width = 70;
+            // 
+            // oCodigoCliente
+            // 
+            this.oCodigoCliente.DataPropertyName = "CodigoCliente";
+            this.oCodigoCliente.HeaderText = "CodigoCliente";
+            this.oCodigoCliente.Name = "oCodigoCliente";
+            this.oCodigoCliente.ReadOnly = true;
+            this.oCodigoCliente.Visible = false;
+            // 
+            // oCodigoClienteSucursal
+            // 
+            this.oCodigoClienteSucursal.DataPropertyName = "CodigoClienteSucursal";
+            this.oCodigoClienteSucursal.HeaderText = "CodigoClienteSucursal";
+            this.oCodigoClienteSucursal.Name = "oCodigoClienteSucursal";
+            this.oCodigoClienteSucursal.ReadOnly = true;
+            // 
             // FrmBscOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 482);
+            this.ClientSize = new System.Drawing.Size(821, 482);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmBscOrdenPedido";
             this.Padding = new System.Windows.Forms.Padding(5);
@@ -462,18 +482,12 @@
         private System.Windows.Forms.Panel pnl3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label3;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdPedido;
         private System.Windows.Forms.BindingSource bsOrdenPedido;
         private DsNeo dsNeo;
         private DsNeoTableAdapters.taBuscaArticulo taBuscaArticulo;
         private DsNeoTableAdapters.taFnOrdenPedido taFnOrdenPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroOrdenPedidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoMonedaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel pnl5;
         private System.Windows.Forms.BindingNavigator bnOrdenPedido;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -488,5 +502,13 @@
         private System.Windows.Forms.ToolStripButton btnVer;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnSalir;
+        public System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oCodigoMoneda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oCodigoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oCodigoClienteSucursal;
     }
 }
