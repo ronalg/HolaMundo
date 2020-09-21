@@ -115,7 +115,6 @@ namespace Neo {
             base.Tables.CollectionChanged += schemaChangedHandler;
             base.Relations.CollectionChanged += schemaChangedHandler;
             this.EndInit();
-            this.InitExpressions();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -127,9 +126,6 @@ namespace Neo {
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
                 this.Tables.CollectionChanged += schemaChangedHandler1;
                 this.Relations.CollectionChanged += schemaChangedHandler1;
-                if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.ExcludeSchema)) {
-                    this.InitExpressions();
-                }
                 return;
             }
             string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
@@ -267,7 +263,6 @@ namespace Neo {
             }
             else {
                 this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                this.InitExpressions();
             }
             this.GetSerializationData(info, context);
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -719,7 +714,6 @@ namespace Neo {
         public override global::System.Data.DataSet Clone() {
             DsNeo cln = ((DsNeo)(base.Clone()));
             cln.InitVars();
-            cln.InitExpressions();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
@@ -1220,7 +1214,7 @@ namespace Neo {
             base.Tables.Add(this.tabletbOrdenPedido);
             this.tabletbBuscaArticulo = new tbBuscaArticuloDataTable();
             base.Tables.Add(this.tabletbBuscaArticulo);
-            this.tabletbOrdenPedidoArticulo = new tbOrdenPedidoArticuloDataTable(false);
+            this.tabletbOrdenPedidoArticulo = new tbOrdenPedidoArticuloDataTable();
             base.Tables.Add(this.tabletbOrdenPedidoArticulo);
             this.tabletbOrdenPedidoEstado = new tbOrdenPedidoEstadoDataTable();
             base.Tables.Add(this.tabletbOrdenPedidoEstado);
@@ -1521,12 +1515,6 @@ namespace Neo {
             }
             xs.Add(dsSchema);
             return type;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitExpressions() {
-            this.tbOrdenPedidoArticulo.ImporteColumn.Expression = "Cantidad * Precio - Descuento";
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -14834,19 +14822,10 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbOrdenPedidoArticuloDataTable() : 
-                    this(false) {
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbOrdenPedidoArticuloDataTable(bool initExpressions) {
+            public tbOrdenPedidoArticuloDataTable() {
                 this.TableName = "tbOrdenPedidoArticulo";
                 this.BeginInit();
                 this.InitClass();
-                if ((initExpressions == true)) {
-                    this.InitExpressions();
-                }
                 this.EndInit();
             }
             
@@ -15038,29 +15017,6 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbOrdenPedidoArticuloRow AddtbOrdenPedidoArticuloRow(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, string NumeroOrdenPedido, int CodigoArticulo, string Descripcion, decimal Coste, decimal Cantidad, decimal Precio, decimal Descuento, decimal Beneficio, string CodigoUnidad) {
-                tbOrdenPedidoArticuloRow rowtbOrdenPedidoArticuloRow = ((tbOrdenPedidoArticuloRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        CodigoTrabajo,
-                        CodigoEmpresa,
-                        CodigoSucursal,
-                        NumeroOrdenPedido,
-                        CodigoArticulo,
-                        Descripcion,
-                        Coste,
-                        Cantidad,
-                        Precio,
-                        Descuento,
-                        null,
-                        Beneficio,
-                        CodigoUnidad};
-                rowtbOrdenPedidoArticuloRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtbOrdenPedidoArticuloRow);
-                return rowtbOrdenPedidoArticuloRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbOrdenPedidoArticuloRow FindByCodigoTrabajoCodigoEmpresaCodigoSucursalNumeroOrdenPedidoCodigoArticulo(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, string NumeroOrdenPedido, int CodigoArticulo) {
                 return ((tbOrdenPedidoArticuloRow)(this.Rows.Find(new object[] {
                             CodigoTrabajo,
@@ -15169,12 +15125,6 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
                 return typeof(tbOrdenPedidoArticuloRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitExpressions() {
-                this.ImporteColumn.Expression = "Cantidad * Precio - Descuento";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15695,6 +15645,8 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnCodigoClienteSucursal;
             
+            private global::System.Data.DataColumn columnCodigoSucursal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public fnOrdenPedidoDataTable() {
@@ -15786,6 +15738,14 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoSucursalColumn {
+                get {
+                    return this.columnCodigoSucursal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15821,7 +15781,7 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fnOrdenPedidoRow AddfnOrdenPedidoRow(string NumeroOrdenPedido, string Nombre, string CodigoMoneda, System.DateTime Fecha, string Hora, short CodigoCliente, short CodigoClienteSucursal) {
+            public fnOrdenPedidoRow AddfnOrdenPedidoRow(string NumeroOrdenPedido, string Nombre, string CodigoMoneda, System.DateTime Fecha, string Hora, short CodigoCliente, short CodigoClienteSucursal, short CodigoSucursal) {
                 fnOrdenPedidoRow rowfnOrdenPedidoRow = ((fnOrdenPedidoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NumeroOrdenPedido,
@@ -15830,7 +15790,8 @@ namespace Neo {
                         Fecha,
                         Hora,
                         CodigoCliente,
-                        CodigoClienteSucursal};
+                        CodigoClienteSucursal,
+                        CodigoSucursal};
                 rowfnOrdenPedidoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfnOrdenPedidoRow);
                 return rowfnOrdenPedidoRow;
@@ -15860,6 +15821,7 @@ namespace Neo {
                 this.columnHora = base.Columns["Hora"];
                 this.columnCodigoCliente = base.Columns["CodigoCliente"];
                 this.columnCodigoClienteSucursal = base.Columns["CodigoClienteSucursal"];
+                this.columnCodigoSucursal = base.Columns["CodigoSucursal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15879,6 +15841,8 @@ namespace Neo {
                 base.Columns.Add(this.columnCodigoCliente);
                 this.columnCodigoClienteSucursal = new global::System.Data.DataColumn("CodigoClienteSucursal", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigoClienteSucursal);
+                this.columnCodigoSucursal = new global::System.Data.DataColumn("CodigoSucursal", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoSucursal);
                 this.columnNumeroOrdenPedido.AllowDBNull = false;
                 this.columnNumeroOrdenPedido.MaxLength = 7;
                 this.columnNombre.AllowDBNull = false;
@@ -15889,6 +15853,7 @@ namespace Neo {
                 this.columnHora.AllowDBNull = false;
                 this.columnHora.MaxLength = 5;
                 this.columnCodigoCliente.AllowDBNull = false;
+                this.columnCodigoSucursal.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20355,6 +20320,17 @@ namespace Neo {
                 }
                 set {
                     this[this.tablefnOrdenPedido.CodigoClienteSucursalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short CodigoSucursal {
+                get {
+                    return ((short)(this[this.tablefnOrdenPedido.CodigoSucursalColumn]));
+                }
+                set {
+                    this[this.tablefnOrdenPedido.CodigoSucursalColumn] = value;
                 }
             }
             
@@ -36983,10 +36959,12 @@ SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoAr
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoArticulo, Descripcion, Coste, Cantidad, Precio, Descuento, Importe, Beneficio
 FROM            tbOrdenPedidoArticulo
-WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)";
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoSucursal", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero", global::System.Data.SqlDbType.Char, 7, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroOrdenPedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"UPDATE       tbOrdenPedidoArticulo
@@ -37016,11 +36994,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoArticulo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, CodigoArticulo, Descripcion, Coste, Cantidad, Precio, Descuento, Importe, Beneficio
-FROM            tbOrdenPedidoArticulo
-WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)
-AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero)
-AND (CodigoArticulo = @codigoArticulo)";
+            this._commandCollection[3].CommandText = @"SELECT Beneficio, Cantidad, CodigoArticulo, CodigoEmpresa, CodigoSucursal, CodigoTrabajo, Coste, Descripcion, Descuento, Importe, NumeroOrdenPedido, Precio FROM tbOrdenPedidoArticulo WHERE (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @numero) AND (CodigoArticulo = @codigoArticulo)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -37049,10 +37023,17 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@codigoArti
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.tbOrdenPedidoArticuloDataTable dataTable, short codigoTrabajo, short codigoEmpresa) {
+        public virtual int Fill(DsNeo.tbOrdenPedidoArticuloDataTable dataTable, short codigoTrabajo, short codigoEmpresa, short codigoSucursal, string numero) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigoSucursal));
+            if ((numero == null)) {
+                throw new global::System.ArgumentNullException("numero");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(numero));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -37797,6 +37778,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
             tableMapping.ColumnMappings.Add("Hora", "Hora");
             tableMapping.ColumnMappings.Add("CodigoCliente", "CodigoCliente");
             tableMapping.ColumnMappings.Add("CodigoClienteSucursal", "CodigoClienteSucursal");
+            tableMapping.ColumnMappings.Add("CodigoSucursal", "CodigoSucursal");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -37814,8 +37796,8 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        NumeroOrdenPedido, Nombre, CodigoMoneda, Fecha, Hora, CodigoCliente" +
-                ", CodigoClienteSucursal\r\nFROM            dbo.fnOrdenPedido(@codigoTrabajo, @codi" +
-                "goEmpresa, @desde, @hasta, @nombreCliente) AS OrdenPedido";
+                ", CodigoClienteSucursal, CodigoSucursal\r\nFROM            dbo.fnOrdenPedido(@codi" +
+                "goTrabajo, @codigoEmpresa, @desde, @hasta, @nombreCliente) AS OrdenPedido";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -37835,7 +37817,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
             this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(desde));
             this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(hasta));
             if ((nombreCliente == null)) {
-                throw new global::System.ArgumentNullException("nombreCliente");
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[4].Value = ((string)(nombreCliente));

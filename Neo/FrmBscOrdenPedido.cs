@@ -60,7 +60,19 @@ namespace Neo
                 Utilidad.tscOrdenPedido.lblLimiteCredito.Text = Utilidad.tscOrdenPedido.dsNeo.tbCliente.Rows[0]["LimiteCredito"].ToString();
 
                 Utilidad.tscOrdenPedido.taClienteDomicilio.Fill(Utilidad.tscOrdenPedido.dsNeo.tbClienteDomicilio, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.tscOrdenPedido.codigoCliente);
-                short codigo = grdPedido.CurrentRow.Cells["oCodigoClienteSucursal"].Value != DBNull.Value ? Convert.ToInt16(grdPedido.CurrentRow.Cells["oCodigoClienteSucursal"].Value.ToString()) : Convert.ToInt16("0");
+                short codigoClienteSucursal = grdPedido.CurrentRow.Cells["oCodigoClienteSucursal"].Value != DBNull.Value ? Convert.ToInt16(grdPedido.CurrentRow.Cells["oCodigoClienteSucursal"].Value.ToString()) : Convert.ToInt16("0");
+                
+                short codigoSucursal = Convert.ToInt16(grdPedido.CurrentRow.Cells["oCodigoSucursal"].Value.ToString());                
+                string numero = grdPedido.CurrentRow.Cells["oNumero"].Value.ToString();
+                Utilidad.tscOrdenPedido.taOrdenPedido.FillByNumero(Utilidad.tscOrdenPedido.dsNeo.tbOrdenPedido, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero);
+                taSucursal.FillByCodigo(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal);
+                nombre = dsNeo.tbSucursal.Rows[0]["Nombre"].ToString();
+                Utilidad.tscOrdenPedido.cboSucursal.Text = nombre;
+                Utilidad.tscOrdenPedido.lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
+                Utilidad.tscOrdenPedido.lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
+
+                Utilidad.tscOrdenPedido.taOrdenPedidoArticulo.Fill(Utilidad.tscOrdenPedido.dsNeo.tbOrdenPedidoArticulo, Utilidad.codigoTrabajo, Utilidad.codigoSucursal, codigoSucursal, numero);
+                Utilidad.tscOrdenPedido.lblTotal.Text = Utilidad.tscOrdenPedido.total().ToString("N2");
                 this.Close();
             }
         }

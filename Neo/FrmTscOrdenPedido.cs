@@ -275,7 +275,7 @@ namespace Neo
             }
         }
 
-        private decimal total() 
+        public decimal total() 
         {
             decimal total = Convert.ToDecimal(dsNeo.tbOrdenPedidoArticulo.Compute("SUM(importe)", null));
             decimal descuento = Convert.ToDecimal(txtDesc.Text.Trim());

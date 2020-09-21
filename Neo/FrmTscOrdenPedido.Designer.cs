@@ -631,6 +631,7 @@
             this.lblSubTotal.Size = new System.Drawing.Size(100, 20);
             this.lblSubTotal.TabIndex = 6;
             this.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSubTotal.Visible = false;
             // 
             // label18
             // 
@@ -641,6 +642,7 @@
             this.label18.Size = new System.Drawing.Size(66, 13);
             this.label18.TabIndex = 5;
             this.label18.Text = "Sub Total:";
+            this.label18.Visible = false;
             // 
             // lblTotal
             // 
@@ -2062,12 +2064,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn domicilioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn aplicaDataGridViewCheckBoxColumn;
         private System.Windows.Forms.BindingSource bsOrdenPedido;
-        private DsNeoTableAdapters.taOrdenPedido taOrdenPedido;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.ComboBox cboSucursal;
-        private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.Label lblTrabajo;
         private System.Windows.Forms.BindingSource bsSucursal;
         private DsNeoTableAdapters.taSucursal taSucursal;
         private System.Windows.Forms.DataGridView grdArticulo;
@@ -2084,7 +2082,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn aCodigo;
         private System.Windows.Forms.BindingSource bsArticulo;
-        private DsNeoTableAdapters.taOrdenPedidoArticulo taOrdenPedidoArticulo;
         private System.Windows.Forms.ToolStripMenuItem mnuImpresoraPersonal;
         private System.Windows.Forms.ToolStripMenuItem mnuImpresoraEmpresa;
         private System.Windows.Forms.ToolStripMenuItem mnuPantallaPersonal;
@@ -2092,14 +2089,12 @@
         private System.Windows.Forms.Panel pnl10;
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel pnl9;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.BindingSource bsEstado;
         private DsNeoTableAdapters.taEstado taEstado;
         private DsNeoTableAdapters.TableAdapterManager tableAdapterManager;
@@ -2131,5 +2126,12 @@
         public ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdDomicilio;
         public DsNeoTableAdapters.taClienteDomicilio taClienteDomicilio;
         public DsNeo dsNeo;
+        public DsNeoTableAdapters.taOrdenPedido taOrdenPedido;
+        public System.Windows.Forms.ComboBox cboSucursal;
+        public System.Windows.Forms.Label lblEmpresa;
+        public System.Windows.Forms.Label lblTrabajo;
+        public System.Windows.Forms.ComboBox cboEstado;
+        public DsNeoTableAdapters.taOrdenPedidoArticulo taOrdenPedidoArticulo;
+        public System.Windows.Forms.Label lblTotal;
     }
 }
