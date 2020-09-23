@@ -410,6 +410,7 @@ namespace Neo
                         descuento = Convert.ToDecimal(dr["Descuento"].ToString());
                         taOrdenPedidoArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero, codArt, dr["Descripcion"].ToString(), coste, cantidad, precio, descuento);
                     }
+                    taEstado.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboEstado.Text, "Orden Pedido", true);
                 }
                 else
                 {

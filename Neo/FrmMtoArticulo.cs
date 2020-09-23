@@ -334,7 +334,7 @@ namespace Neo
             string nombre = grdProveedor.CurrentRow.Cells[e.ColumnIndex].OwningColumn.Name;
             if (nombre == "pActual")
             {
-                bool actual = Convert.ToBoolean(grdProveedor.CurrentRow.Cells[nombre].Value.ToString());
+                bool actual = grdProveedor.CurrentRow.Cells[nombre].Value == null ? false : Convert.ToBoolean(grdProveedor.CurrentRow.Cells[nombre].Value.ToString());
                 if (actual)
                 {
                     foreach (DataGridViewRow dgvr in grdProveedor.Rows)

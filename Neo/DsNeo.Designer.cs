@@ -13750,6 +13750,16 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public tbClienteDomicilioRow FindByCodigoTrabajoCodigoEmpresaCodigoClienteCodigoClienteSucursal(short CodigoTrabajo, short CodigoEmpresa, short CodigoCliente, short CodigoClienteSucursal) {
+                return ((tbClienteDomicilioRow)(this.Rows.Find(new object[] {
+                            CodigoTrabajo,
+                            CodigoEmpresa,
+                            CodigoCliente,
+                            CodigoClienteSucursal})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 tbClienteDomicilioDataTable cln = ((tbClienteDomicilioDataTable)(base.Clone()));
                 cln.InitVars();
@@ -13806,6 +13816,11 @@ namespace Neo {
                 base.Columns.Add(this.columnDomicilio);
                 this.columnAplica = new global::System.Data.DataColumn("Aplica", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAplica);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCodigoTrabajo,
+                                this.columnCodigoEmpresa,
+                                this.columnCodigoCliente,
+                                this.columnCodigoClienteSucursal}, true));
                 this.columnCodigoTrabajo.AllowDBNull = false;
                 this.columnCodigoEmpresa.AllowDBNull = false;
                 this.columnCodigoCliente.AllowDBNull = false;
@@ -36019,7 +36034,8 @@ FROM
 				AND c.CodigoCliente = cs.CodigoCliente
 		INNER JOIN tbPais p
 			ON c.CodigoTrabajo = p.CodigoTrabajo
-				AND c.CodigoEmpresa = p.CodigoEmpresa
+			AND c.CodigoEmpresa = p.CodigoEmpresa
+                                                        AND cs.CodigoPais = p.CodigoPais
 WHERE cs.CodigoTrabajo = @codigoTrabajo
 AND cs.CodigoEmpresa = @codigoEmpresa
 AND cs.CodigoCliente = @codigoCliente
@@ -36044,20 +36060,6 @@ AND cs.CodigoCliente = @codigoCliente
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsNeo.tbClienteDomicilioDataTable GetData(short codigoTrabajo, short codigoEmpresa, short codigoCliente) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
-            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigoCliente));
-            DsNeo.tbClienteDomicilioDataTable dataTable = new DsNeo.tbClienteDomicilioDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
     }
     
@@ -37406,7 +37408,7 @@ SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, NombreTi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, No" +
@@ -37456,6 +37458,18 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hora", global::System.Data.SqlDbType.Char, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT TOP 1 CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, NombreTipoEstado, Secuencia, Fecha, Hora, Usuario
+FROM            tbOrdenPedidoEstado
+WHERE CodigoTrabajo = @codigoTrabajo AND CodigoEmpresa = @codigoEmpresa 
+AND CodigoSucursal = @codigoSucursal AND NumeroOrdenPedido = @NumeroOrdenPedido
+ORDER BY Secuencia DESC";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoSucursal", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroOrdenPedido", global::System.Data.SqlDbType.Char, 7, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroOrdenPedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37466,6 +37480,28 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Ultimo(DsNeo.tbOrdenPedidoEstadoDataTable dataTable, short codigoTrabajo, short codigoEmpresa, short codigoSucursal, string NumeroOrdenPedido) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigoSucursal));
+            if ((NumeroOrdenPedido == null)) {
+                throw new global::System.ArgumentNullException("NumeroOrdenPedido");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(NumeroOrdenPedido));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

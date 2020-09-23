@@ -36,9 +36,6 @@
             this.pnl1 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdPedido = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.oCodigoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oCodigoClienteSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsNeo = new Neo.DsNeo();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.pnl5 = new System.Windows.Forms.Panel();
@@ -63,7 +60,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.taBuscaArticulo = new Neo.DsNeoTableAdapters.taBuscaArticulo();
+            this.oCodigoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oCodigoClienteSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oCodigoSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,17 +69,20 @@
             this.oFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsOrdenPedido = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
+            this.taBuscaArticulo = new Neo.DsNeoTableAdapters.taBuscaArticulo();
             this.taFnOrdenPedido = new Neo.DsNeoTableAdapters.taFnOrdenPedido();
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
+            this.taOrdenPedidoEstado = new Neo.DsNeoTableAdapters.taOrdenPedidoEstado();
             this.pnl1.SuspendLayout();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPedido)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.pnl2.SuspendLayout();
             this.pnl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnOrdenPedido)).BeginInit();
             this.bnOrdenPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrdenPedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl1
@@ -94,7 +95,7 @@
             this.pnl1.Location = new System.Drawing.Point(5, 5);
             this.pnl1.Name = "pnl1";
             this.pnl1.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl1.Size = new System.Drawing.Size(811, 472);
+            this.pnl1.Size = new System.Drawing.Size(717, 472);
             this.pnl1.TabIndex = 0;
             // 
             // pnl4
@@ -104,7 +105,7 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl4.Location = new System.Drawing.Point(5, 98);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(799, 367);
+            this.pnl4.Size = new System.Drawing.Size(705, 367);
             this.pnl4.TabIndex = 2;
             // 
             // grdPedido
@@ -129,35 +130,15 @@
             this.grdPedido.Location = new System.Drawing.Point(0, 0);
             this.grdPedido.Name = "grdPedido";
             this.grdPedido.ReadOnly = true;
-            this.grdPedido.Size = new System.Drawing.Size(797, 365);
+            this.grdPedido.Size = new System.Drawing.Size(703, 365);
             this.grdPedido.TabIndex = 6;
-            // 
-            // oCodigoCliente
-            // 
-            this.oCodigoCliente.DataPropertyName = "CodigoCliente";
-            this.oCodigoCliente.HeaderText = "CodigoCliente";
-            this.oCodigoCliente.Name = "oCodigoCliente";
-            this.oCodigoCliente.ReadOnly = true;
-            this.oCodigoCliente.Visible = false;
-            // 
-            // oCodigoClienteSucursal
-            // 
-            this.oCodigoClienteSucursal.DataPropertyName = "CodigoClienteSucursal";
-            this.oCodigoClienteSucursal.HeaderText = "CodigoClienteSucursal";
-            this.oCodigoClienteSucursal.Name = "oCodigoClienteSucursal";
-            this.oCodigoClienteSucursal.ReadOnly = true;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnl3
             // 
             this.pnl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl3.Location = new System.Drawing.Point(5, 88);
             this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(799, 10);
+            this.pnl3.Size = new System.Drawing.Size(705, 10);
             this.pnl3.TabIndex = 1;
             // 
             // pnl2
@@ -176,7 +157,7 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(5, 5);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(799, 83);
+            this.pnl2.Size = new System.Drawing.Size(705, 83);
             this.pnl2.TabIndex = 0;
             // 
             // pnl5
@@ -186,7 +167,7 @@
             this.pnl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl5.Location = new System.Drawing.Point(0, 14);
             this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(797, 27);
+            this.pnl5.Size = new System.Drawing.Size(703, 27);
             this.pnl5.TabIndex = 9;
             // 
             // bnOrdenPedido
@@ -216,7 +197,7 @@
             this.bnOrdenPedido.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnOrdenPedido.Name = "bnOrdenPedido";
             this.bnOrdenPedido.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnOrdenPedido.Size = new System.Drawing.Size(795, 25);
+            this.bnOrdenPedido.Size = new System.Drawing.Size(701, 25);
             this.bnOrdenPedido.TabIndex = 8;
             this.bnOrdenPedido.Text = "bindingNavigator1";
             // 
@@ -254,7 +235,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -318,7 +298,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(797, 14);
+            this.label4.Size = new System.Drawing.Size(703, 14);
             this.label4.TabIndex = 8;
             this.label4.Text = "Filtros";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -388,9 +368,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Desde:";
             // 
-            // taBuscaArticulo
+            // oCodigoCliente
             // 
-            this.taBuscaArticulo.ClearBeforeFill = true;
+            this.oCodigoCliente.DataPropertyName = "CodigoCliente";
+            this.oCodigoCliente.HeaderText = "CodigoCliente";
+            this.oCodigoCliente.Name = "oCodigoCliente";
+            this.oCodigoCliente.ReadOnly = true;
+            this.oCodigoCliente.Visible = false;
+            // 
+            // oCodigoClienteSucursal
+            // 
+            this.oCodigoClienteSucursal.DataPropertyName = "CodigoClienteSucursal";
+            this.oCodigoClienteSucursal.HeaderText = "CodigoClienteSucursal";
+            this.oCodigoClienteSucursal.Name = "oCodigoClienteSucursal";
+            this.oCodigoClienteSucursal.ReadOnly = true;
+            this.oCodigoClienteSucursal.Visible = false;
             // 
             // oCodigoSucursal
             // 
@@ -416,7 +408,7 @@
             this.oNombre.HeaderText = "Nombre";
             this.oNombre.Name = "oNombre";
             this.oNombre.ReadOnly = true;
-            this.oNombre.Width = 400;
+            this.oNombre.Width = 410;
             // 
             // oCodigoMoneda
             // 
@@ -450,6 +442,15 @@
             this.bsOrdenPedido.DataMember = "fnOrdenPedido";
             this.bsOrdenPedido.DataSource = this.dsNeo;
             // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // taBuscaArticulo
+            // 
+            this.taBuscaArticulo.ClearBeforeFill = true;
+            // 
             // taFnOrdenPedido
             // 
             this.taFnOrdenPedido.ClearBeforeFill = true;
@@ -458,11 +459,15 @@
             // 
             this.taSucursal.ClearBeforeFill = true;
             // 
+            // taOrdenPedidoEstado
+            // 
+            this.taOrdenPedidoEstado.ClearBeforeFill = true;
+            // 
             // FrmBscOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 482);
+            this.ClientSize = new System.Drawing.Size(727, 482);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmBscOrdenPedido";
             this.Padding = new System.Windows.Forms.Padding(5);
@@ -472,7 +477,6 @@
             this.pnl1.ResumeLayout(false);
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdPedido)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
             this.pnl5.ResumeLayout(false);
@@ -481,6 +485,7 @@
             this.bnOrdenPedido.ResumeLayout(false);
             this.bnOrdenPedido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrdenPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,6 +523,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnSalir;
         public System.Windows.Forms.TextBox txtCliente;
+        private DsNeoTableAdapters.taSucursal taSucursal;
         private System.Windows.Forms.DataGridViewTextBoxColumn oNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn oNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCodigoMoneda;
@@ -526,6 +532,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oCodigoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCodigoClienteSucursal;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCodigoSucursal;
-        private DsNeoTableAdapters.taSucursal taSucursal;
+        private DsNeoTableAdapters.taOrdenPedidoEstado taOrdenPedidoEstado;
     }
 }

@@ -73,6 +73,10 @@ namespace Neo
 
                 Utilidad.tscOrdenPedido.taOrdenPedidoArticulo.Fill(Utilidad.tscOrdenPedido.dsNeo.tbOrdenPedidoArticulo, Utilidad.codigoTrabajo, Utilidad.codigoSucursal, codigoSucursal, numero);
                 Utilidad.tscOrdenPedido.lblTotal.Text = Utilidad.tscOrdenPedido.total().ToString("N2");
+
+                taOrdenPedidoEstado.Ultimo(dsNeo.tbOrdenPedidoEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero);
+                nombre = dsNeo.tbOrdenPedidoEstado.Rows[0]["NombreTipoEstado"].ToString();
+                Utilidad.tscOrdenPedido.cboEstado.Enabled = false;                
                 this.Close();
             }
         }

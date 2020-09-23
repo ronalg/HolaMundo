@@ -216,4 +216,7 @@
   <metadata name="taSucursal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>656, 22</value>
   </metadata>
+  <metadata name="taOrdenPedidoEstado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>763, 22</value>
+  </metadata>
 </root>
