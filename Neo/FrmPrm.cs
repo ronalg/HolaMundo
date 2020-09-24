@@ -323,7 +323,7 @@ namespace Neo
             if (Utilidad.tscOrdenPedido == null)
             {
                 Utilidad.tscOrdenPedido = new FrmTscOrdenPedido();
-                Utilidad.tscOrdenPedido.WindowState = FormWindowState.Maximized;
+                //Utilidad.tscOrdenPedido.WindowState = FormWindowState.Maximized;
                 Utilidad.tscOrdenPedido.MdiParent = this;                
             }
             Utilidad.tscOrdenPedido.BringToFront();

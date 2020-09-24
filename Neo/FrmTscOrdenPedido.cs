@@ -214,12 +214,14 @@ namespace Neo
             }
 
             taArticulo.FillByCodigo(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
-            string codigoUnidad = dsNeo.tbArticulo.Rows[0]["CodigoUnidad"].ToString();
             taArticuloProveedor.FillByActual(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, true);
             if (dsNeo.tbArticuloProveedor.Rows.Count > 0)
             {
                 coste = Convert.ToDecimal(dsNeo.tbArticuloProveedor.Rows[0]["Costo"].ToString());
-
+                decimal cantidad = Convert.ToDecimal(txtCantidad.Text);
+                decimal precio = Convert.ToDecimal(txtPrecio.Text);
+                decimal descuento = Convert.ToDecimal(txtDescuento.Text);
+                decimal importe = cantidad * precio - descuento;
                 if (pnl7.BackColor == Color.White)
                 {
                     DataRow dr = dsNeo.tbOrdenPedidoArticulo.NewRow();
@@ -230,11 +232,11 @@ namespace Neo
                     dr["CodigoArticulo"] = codigoArticulo;
                     dr["Descripcion"] = txtDescripcion.Text.Trim();
                     dr["Coste"] = 0;
-                    dr["Cantidad"] = txtCantidad.Text.Trim();
-                    dr["Precio"] = txtPrecio.Text.Trim();
-                    dr["Descuento"] = txtDescuento.Text.Trim();
-                    dr["CodigoUnidad"] = codigoUnidad;
+                    dr["Cantidad"] = cantidad;
+                    dr["Precio"] = precio;
+                    dr["Descuento"] = descuento;
                     dr["Coste"] = coste;
+                    dr["Importe"] = importe;
                     dsNeo.tbOrdenPedidoArticulo.Rows.Add(dr);
                 }
                 else
@@ -245,6 +247,7 @@ namespace Neo
                     grdDetalle.CurrentRow.Cells["dDescripcion"].Value = txtDescripcion.Text.Trim();
                     grdDetalle.CurrentRow.Cells["dPrecio"].Value = txtPrecio.Text.Trim();
                     grdDetalle.CurrentRow.Cells["dDescuento"].Value = txtDescuento.Text.Trim();
+                    grdDetalle.CurrentRow.Cells["dDescuento"].Value = importe;
                     pnl7.BackColor = Color.White;
                 }
 
@@ -293,11 +296,16 @@ namespace Neo
         {
             cboEstado.SelectedIndex = -1;
             txtNombre.Clear();
+            lblId.Text = null;
+            lblNombre.Text = null;
+            lblRazonSocial.Text = null;
+            lblLimiteCredito.Text = null;
             dsNeo.tbCliente.Rows.Clear();
             dsNeo.tbOrdenPedido.Rows.Clear();
             dsNeo.tbClienteDomicilio.Rows.Clear();
             lblNumero.Text = null;
             cboEstado.SelectedIndex = -1;
+            cboEstado.Enabled = true;
             dtpFecha.Value = DateTime.Today.Date;
             limpiaArticulo();
             dsNeo.tbOrdenPedidoArticulo.Rows.Clear();
@@ -459,6 +467,15 @@ namespace Neo
             }
             Utilidad.bscOrdenPedido.BringToFront();
             Utilidad.bscOrdenPedido.Show();
+        }
+
+        private void grdDetalle_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            int codigo = Convert.ToInt32(grdDetalle.CurrentRow.Cells["dCodigoArticulo"].Value.ToString());
+            taArticulo.FillByCodigo(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+            string codigoUnidad = dsNeo.tbArticulo.Rows[0]["CodigoUnidad"].ToString();
+            grdDetalle.CurrentRow.Cells["dCodigoUnidad"].Value = codigoUnidad;
+            grdDetalle.RefreshEdit();
         }
     }
 }

@@ -70,15 +70,21 @@ namespace Neo
                 Utilidad.tscOrdenPedido.cboSucursal.Text = nombre;
                 Utilidad.tscOrdenPedido.lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
                 Utilidad.tscOrdenPedido.lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
-
+                
                 Utilidad.tscOrdenPedido.taOrdenPedidoArticulo.Fill(Utilidad.tscOrdenPedido.dsNeo.tbOrdenPedidoArticulo, Utilidad.codigoTrabajo, Utilidad.codigoSucursal, codigoSucursal, numero);
                 Utilidad.tscOrdenPedido.lblTotal.Text = Utilidad.tscOrdenPedido.total().ToString("N2");
 
                 taOrdenPedidoEstado.Ultimo(dsNeo.tbOrdenPedidoEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero);
-                nombre = dsNeo.tbOrdenPedidoEstado.Rows[0]["NombreTipoEstado"].ToString();
+                nombre = dsNeo.tbOrdenPedidoEstado.Rows[0]["NombreEstado"].ToString();
+                Utilidad.tscOrdenPedido.cboEstado.Text = nombre;
                 Utilidad.tscOrdenPedido.cboEstado.Enabled = false;                
                 this.Close();
             }
+        }
+
+        private void grdPedido_DoubleClick(object sender, EventArgs e)
+        {
+            btnVer_Click(sender, EventArgs.Empty);
         }
     }
 }

@@ -15263,8 +15263,6 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnNumeroOrdenPedido;
             
-            private global::System.Data.DataColumn columnNombreTipoEstado;
-            
             private global::System.Data.DataColumn columnSecuencia;
             
             private global::System.Data.DataColumn columnFecha;
@@ -15272,6 +15270,10 @@ namespace Neo {
             private global::System.Data.DataColumn columnHora;
             
             private global::System.Data.DataColumn columnUsuario;
+            
+            private global::System.Data.DataColumn columnNombreEstado;
+            
+            private global::System.Data.DataColumn columnTipoEstado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -15340,14 +15342,6 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombreTipoEstadoColumn {
-                get {
-                    return this.columnNombreTipoEstado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn SecuenciaColumn {
                 get {
                     return this.columnSecuencia;
@@ -15375,6 +15369,22 @@ namespace Neo {
             public global::System.Data.DataColumn UsuarioColumn {
                 get {
                     return this.columnUsuario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NombreEstadoColumn {
+                get {
+                    return this.columnNombreEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TipoEstadoColumn {
+                get {
+                    return this.columnTipoEstado;
                 }
             }
             
@@ -15415,18 +15425,19 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbOrdenPedidoEstadoRow AddtbOrdenPedidoEstadoRow(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, string NumeroOrdenPedido, string NombreTipoEstado, short Secuencia, System.DateTime Fecha, string Hora, string Usuario) {
+            public tbOrdenPedidoEstadoRow AddtbOrdenPedidoEstadoRow(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, string NumeroOrdenPedido, short Secuencia, System.DateTime Fecha, string Hora, string Usuario, string NombreEstado, string TipoEstado) {
                 tbOrdenPedidoEstadoRow rowtbOrdenPedidoEstadoRow = ((tbOrdenPedidoEstadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodigoTrabajo,
                         CodigoEmpresa,
                         CodigoSucursal,
                         NumeroOrdenPedido,
-                        NombreTipoEstado,
                         Secuencia,
                         Fecha,
                         Hora,
-                        Usuario};
+                        Usuario,
+                        NombreEstado,
+                        TipoEstado};
                 rowtbOrdenPedidoEstadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbOrdenPedidoEstadoRow);
                 return rowtbOrdenPedidoEstadoRow;
@@ -15434,14 +15445,15 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbOrdenPedidoEstadoRow FindByCodigoTrabajoCodigoEmpresaCodigoSucursalNumeroOrdenPedidoNombreTipoEstadoSecuencia(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, string NumeroOrdenPedido, string NombreTipoEstado, short Secuencia) {
+            public tbOrdenPedidoEstadoRow FindByCodigoTrabajoCodigoEmpresaCodigoSucursalNumeroOrdenPedidoSecuenciaNombreEstadoTipoEstado(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, string NumeroOrdenPedido, short Secuencia, string NombreEstado, string TipoEstado) {
                 return ((tbOrdenPedidoEstadoRow)(this.Rows.Find(new object[] {
                             CodigoTrabajo,
                             CodigoEmpresa,
                             CodigoSucursal,
                             NumeroOrdenPedido,
-                            NombreTipoEstado,
-                            Secuencia})));
+                            Secuencia,
+                            NombreEstado,
+                            TipoEstado})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15465,11 +15477,12 @@ namespace Neo {
                 this.columnCodigoEmpresa = base.Columns["CodigoEmpresa"];
                 this.columnCodigoSucursal = base.Columns["CodigoSucursal"];
                 this.columnNumeroOrdenPedido = base.Columns["NumeroOrdenPedido"];
-                this.columnNombreTipoEstado = base.Columns["NombreTipoEstado"];
                 this.columnSecuencia = base.Columns["Secuencia"];
                 this.columnFecha = base.Columns["Fecha"];
                 this.columnHora = base.Columns["Hora"];
                 this.columnUsuario = base.Columns["Usuario"];
+                this.columnNombreEstado = base.Columns["NombreEstado"];
+                this.columnTipoEstado = base.Columns["TipoEstado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15483,8 +15496,6 @@ namespace Neo {
                 base.Columns.Add(this.columnCodigoSucursal);
                 this.columnNumeroOrdenPedido = new global::System.Data.DataColumn("NumeroOrdenPedido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumeroOrdenPedido);
-                this.columnNombreTipoEstado = new global::System.Data.DataColumn("NombreTipoEstado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreTipoEstado);
                 this.columnSecuencia = new global::System.Data.DataColumn("Secuencia", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSecuencia);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -15493,26 +15504,33 @@ namespace Neo {
                 base.Columns.Add(this.columnHora);
                 this.columnUsuario = new global::System.Data.DataColumn("Usuario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsuario);
+                this.columnNombreEstado = new global::System.Data.DataColumn("NombreEstado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreEstado);
+                this.columnTipoEstado = new global::System.Data.DataColumn("TipoEstado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCodigoTrabajo,
                                 this.columnCodigoEmpresa,
                                 this.columnCodigoSucursal,
                                 this.columnNumeroOrdenPedido,
-                                this.columnNombreTipoEstado,
-                                this.columnSecuencia}, true));
+                                this.columnSecuencia,
+                                this.columnNombreEstado,
+                                this.columnTipoEstado}, true));
                 this.columnCodigoTrabajo.AllowDBNull = false;
                 this.columnCodigoEmpresa.AllowDBNull = false;
                 this.columnCodigoSucursal.AllowDBNull = false;
                 this.columnNumeroOrdenPedido.AllowDBNull = false;
                 this.columnNumeroOrdenPedido.MaxLength = 7;
-                this.columnNombreTipoEstado.AllowDBNull = false;
-                this.columnNombreTipoEstado.MaxLength = 15;
                 this.columnSecuencia.AllowDBNull = false;
                 this.columnFecha.AllowDBNull = false;
                 this.columnHora.AllowDBNull = false;
                 this.columnHora.MaxLength = 5;
                 this.columnUsuario.AllowDBNull = false;
                 this.columnUsuario.MaxLength = 15;
+                this.columnNombreEstado.AllowDBNull = false;
+                this.columnNombreEstado.MaxLength = 15;
+                this.columnTipoEstado.AllowDBNull = false;
+                this.columnTipoEstado.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20187,17 +20205,6 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NombreTipoEstado {
-                get {
-                    return ((string)(this[this.tabletbOrdenPedidoEstado.NombreTipoEstadoColumn]));
-                }
-                set {
-                    this[this.tabletbOrdenPedidoEstado.NombreTipoEstadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public short Secuencia {
                 get {
                     return ((short)(this[this.tabletbOrdenPedidoEstado.SecuenciaColumn]));
@@ -20237,6 +20244,28 @@ namespace Neo {
                 }
                 set {
                     this[this.tabletbOrdenPedidoEstado.UsuarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NombreEstado {
+                get {
+                    return ((string)(this[this.tabletbOrdenPedidoEstado.NombreEstadoColumn]));
+                }
+                set {
+                    this[this.tabletbOrdenPedidoEstado.NombreEstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TipoEstado {
+                get {
+                    return ((string)(this[this.tabletbOrdenPedidoEstado.TipoEstadoColumn]));
+                }
+                set {
+                    this[this.tabletbOrdenPedidoEstado.TipoEstadoColumn] = value;
                 }
             }
         }
@@ -37340,62 +37369,67 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@codigoArti
             tableMapping.ColumnMappings.Add("CodigoEmpresa", "CodigoEmpresa");
             tableMapping.ColumnMappings.Add("CodigoSucursal", "CodigoSucursal");
             tableMapping.ColumnMappings.Add("NumeroOrdenPedido", "NumeroOrdenPedido");
-            tableMapping.ColumnMappings.Add("NombreTipoEstado", "NombreTipoEstado");
             tableMapping.ColumnMappings.Add("Secuencia", "Secuencia");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
             tableMapping.ColumnMappings.Add("Hora", "Hora");
             tableMapping.ColumnMappings.Add("Usuario", "Usuario");
+            tableMapping.ColumnMappings.Add("NombreEstado", "NombreEstado");
+            tableMapping.ColumnMappings.Add("TipoEstado", "TipoEstado");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tbOrdenPedidoEstado] WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([NumeroOrdenPedido] = @Original_NumeroOrdenPedido) AND ([NombreTipoEstado] = @Original_NombreTipoEstado) AND ([Secuencia] = @Original_Secuencia) AND ([Fecha] = @Original_Fecha) AND ([Hora] = @Original_Hora) AND ([Usuario] = @Original_Usuario))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tbOrdenPedidoEstado] WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([NumeroOrdenPedido] = @Original_NumeroOrdenPedido) AND ([Secuencia] = @Original_Secuencia) AND ([Fecha] = @Original_Fecha) AND ([Hora] = @Original_Hora) AND ([Usuario] = @Original_Usuario) AND ([NombreEstado] = @Original_NombreEstado) AND ([TipoEstado] = @Original_TipoEstado))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoSucursal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroOrdenPedido", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroOrdenPedido", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreTipoEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreTipoEstado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Secuencia", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Secuencia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hora", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreEstado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoEstado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tbOrdenPedidoEstado] ([CodigoTrabajo], [CodigoEmpresa], [CodigoSucursal], [NumeroOrdenPedido], [NombreTipoEstado], [Secuencia], [Fecha], [Hora], [Usuario]) VALUES (@CodigoTrabajo, @CodigoEmpresa, @CodigoSucursal, @NumeroOrdenPedido, @NombreTipoEstado, @Secuencia, @Fecha, @Hora, @Usuario);
-SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, NombreTipoEstado, Secuencia, Fecha, Hora, Usuario FROM tbOrdenPedidoEstado WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (NombreTipoEstado = @NombreTipoEstado) AND (NumeroOrdenPedido = @NumeroOrdenPedido) AND (Secuencia = @Secuencia)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tbOrdenPedidoEstado] ([CodigoTrabajo], [CodigoEmpresa], [CodigoSucursal], [NumeroOrdenPedido], [Secuencia], [Fecha], [Hora], [Usuario], [NombreEstado], [TipoEstado]) VALUES (@CodigoTrabajo, @CodigoEmpresa, @CodigoSucursal, @NumeroOrdenPedido, @Secuencia, @Fecha, @Hora, @Usuario, @NombreEstado, @TipoEstado);
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, Secuencia, Fecha, Hora, Usuario, NombreEstado, TipoEstado FROM tbOrdenPedidoEstado WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (NombreEstado = @NombreEstado) AND (NumeroOrdenPedido = @NumeroOrdenPedido) AND (Secuencia = @Secuencia) AND (TipoEstado = @TipoEstado)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoSucursal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroOrdenPedido", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroOrdenPedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreTipoEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreTipoEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Secuencia", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Secuencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hora", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [tbOrdenPedidoEstado] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoEmpresa] = @CodigoEmpresa, [CodigoSucursal] = @CodigoSucursal, [NumeroOrdenPedido] = @NumeroOrdenPedido, [NombreTipoEstado] = @NombreTipoEstado, [Secuencia] = @Secuencia, [Fecha] = @Fecha, [Hora] = @Hora, [Usuario] = @Usuario WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([NumeroOrdenPedido] = @Original_NumeroOrdenPedido) AND ([NombreTipoEstado] = @Original_NombreTipoEstado) AND ([Secuencia] = @Original_Secuencia) AND ([Fecha] = @Original_Fecha) AND ([Hora] = @Original_Hora) AND ([Usuario] = @Original_Usuario));
-SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, NombreTipoEstado, Secuencia, Fecha, Hora, Usuario FROM tbOrdenPedidoEstado WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (NombreTipoEstado = @NombreTipoEstado) AND (NumeroOrdenPedido = @NumeroOrdenPedido) AND (Secuencia = @Secuencia)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [tbOrdenPedidoEstado] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoEmpresa] = @CodigoEmpresa, [CodigoSucursal] = @CodigoSucursal, [NumeroOrdenPedido] = @NumeroOrdenPedido, [Secuencia] = @Secuencia, [Fecha] = @Fecha, [Hora] = @Hora, [Usuario] = @Usuario, [NombreEstado] = @NombreEstado, [TipoEstado] = @TipoEstado WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([NumeroOrdenPedido] = @Original_NumeroOrdenPedido) AND ([Secuencia] = @Original_Secuencia) AND ([Fecha] = @Original_Fecha) AND ([Hora] = @Original_Hora) AND ([Usuario] = @Original_Usuario) AND ([NombreEstado] = @Original_NombreEstado) AND ([TipoEstado] = @Original_TipoEstado));
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, Secuencia, Fecha, Hora, Usuario, NombreEstado, TipoEstado FROM tbOrdenPedidoEstado WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (NombreEstado = @NombreEstado) AND (NumeroOrdenPedido = @NumeroOrdenPedido) AND (Secuencia = @Secuencia) AND (TipoEstado = @TipoEstado)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoSucursal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroOrdenPedido", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroOrdenPedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreTipoEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreTipoEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Secuencia", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Secuencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hora", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoSucursal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroOrdenPedido", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroOrdenPedido", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreTipoEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreTipoEstado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Secuencia", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Secuencia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hora", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreEstado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoEstado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37411,9 +37445,9 @@ SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, NombreTi
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, No" +
-                "mbreTipoEstado, Secuencia, Fecha, Hora, Usuario\r\nFROM            tbOrdenPedidoEs" +
-                "tado\r\nWHERE CodigoTrabajo = @codigoTrabajo AND CodigoEmpresa = @codigoEmpresa ";
+            this._commandCollection[0].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, Secuencia, Fecha, Hora, Usuario, NombreEstado, TipoEstado
+FROM            tbOrdenPedidoEstado
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -37460,11 +37494,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numero,@nombreTipo
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT TOP 1 CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroOrdenPedido, NombreTipoEstado, Secuencia, Fecha, Hora, Usuario
-FROM            tbOrdenPedidoEstado
-WHERE CodigoTrabajo = @codigoTrabajo AND CodigoEmpresa = @codigoEmpresa 
-AND CodigoSucursal = @codigoSucursal AND NumeroOrdenPedido = @NumeroOrdenPedido
-ORDER BY Secuencia DESC";
+            this._commandCollection[4].CommandText = @"SELECT TOP (1) CodigoEmpresa, CodigoSucursal, CodigoTrabajo, Fecha, Hora, NombreEstado, NumeroOrdenPedido, Secuencia, TipoEstado, Usuario FROM tbOrdenPedidoEstado WHERE (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (NumeroOrdenPedido = @NumeroOrdenPedido) ORDER BY Secuencia DESC";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
