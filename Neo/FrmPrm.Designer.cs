@@ -41,7 +41,6 @@
             this.mnuMtoCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoPerfilCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuMtoEstadoCivil = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoNacionalidad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoProveedor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -73,10 +72,12 @@
             this.mnuMtoPerfilFinanciera = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoTipoFinanciera = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTransacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscFactura = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTscOrdenPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTscIncripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.cboEmpresa = new System.Windows.Forms.ToolStripComboBox();
+            this.cboSucursal = new System.Windows.Forms.ToolStripComboBox();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -84,7 +85,7 @@
             this.taTrabajo = new Neo.DsNeoTableAdapters.taTrabajo();
             this.dsNeo = new Neo.DsNeo();
             this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
-            this.mnuTscFactura = new System.Windows.Forms.ToolStripMenuItem();
+            this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
             this.mnuPrincipal.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -185,7 +186,6 @@
             this.mnuMtoCliente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMtoPerfilCliente,
             this.toolStripSeparator9,
-            this.mnuMtoEstadoCivil,
             this.mnuMtoNacionalidad});
             this.mnuMtoCliente.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoCliente.Image")));
             this.mnuMtoCliente.Name = "mnuMtoCliente";
@@ -204,13 +204,6 @@
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(152, 6);
-            // 
-            // mnuMtoEstadoCivil
-            // 
-            this.mnuMtoEstadoCivil.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoEstadoCivil.Image")));
-            this.mnuMtoEstadoCivil.Name = "mnuMtoEstadoCivil";
-            this.mnuMtoEstadoCivil.Size = new System.Drawing.Size(155, 22);
-            this.mnuMtoEstadoCivil.Text = "Estado Civil";
             // 
             // mnuMtoNacionalidad
             // 
@@ -453,17 +446,24 @@
             this.mnuTransacion.Size = new System.Drawing.Size(92, 20);
             this.mnuTransacion.Text = "Transacciones";
             // 
+            // mnuTscFactura
+            // 
+            this.mnuTscFactura.Name = "mnuTscFactura";
+            this.mnuTscFactura.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscFactura.Text = "Facturas";
+            this.mnuTscFactura.Click += new System.EventHandler(this.mnuTscFactura_Click);
+            // 
             // mnuTscOrdenPedido
             // 
             this.mnuTscOrdenPedido.Name = "mnuTscOrdenPedido";
-            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(179, 22);
             this.mnuTscOrdenPedido.Text = "Ordenes de Pedidos";
             this.mnuTscOrdenPedido.Click += new System.EventHandler(this.mnuTscOrdenPedido_Click);
             // 
             // mnuTscIncripcion
             // 
             this.mnuTscIncripcion.Name = "mnuTscIncripcion";
-            this.mnuTscIncripcion.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscIncripcion.Size = new System.Drawing.Size(179, 22);
             this.mnuTscIncripcion.Text = "Incripciones";
             // 
             // toolStrip
@@ -471,6 +471,7 @@
             this.toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cboEmpresa,
+            this.cboSucursal,
             this.btnSalir});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
@@ -484,6 +485,11 @@
             this.cboEmpresa.Name = "cboEmpresa";
             this.cboEmpresa.Size = new System.Drawing.Size(200, 25);
             this.cboEmpresa.DropDownClosed += new System.EventHandler(this.cboEmpresa_DropDownClosed);
+            // 
+            // cboSucursal
+            // 
+            this.cboSucursal.Name = "cboSucursal";
+            this.cboSucursal.Size = new System.Drawing.Size(200, 25);
             // 
             // btnSalir
             // 
@@ -523,12 +529,9 @@
             // 
             this.taEmpresa.ClearBeforeFill = true;
             // 
-            // mnuTscFactura
+            // taSucursal
             // 
-            this.mnuTscFactura.Name = "mnuTscFactura";
-            this.mnuTscFactura.Size = new System.Drawing.Size(180, 22);
-            this.mnuTscFactura.Text = "Facturas";
-            this.mnuTscFactura.Click += new System.EventHandler(this.mnuTscFactura_Click);
+            this.taSucursal.ClearBeforeFill = true;
             // 
             // FrmPrm
             // 
@@ -599,7 +602,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMtoCliente;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoPerfilCliente;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripMenuItem mnuMtoEstadoCivil;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoNacionalidad;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoTipo;
@@ -613,6 +615,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuTscIncripcion;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoFrecuencia;
         private System.Windows.Forms.ToolStripMenuItem mnuTscFactura;
+        private System.Windows.Forms.ToolStripComboBox cboSucursal;
+        private DsNeoTableAdapters.taSucursal taSucursal;
     }
 }
 

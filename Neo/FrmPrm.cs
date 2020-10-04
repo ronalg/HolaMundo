@@ -202,6 +202,7 @@ namespace Neo
                 if (codigo == Utilidad.codigoEmpresa)
                     cboEmpresa.Text = nombre;
             }
+            listadoSucursal();
         }
 
         private void cboEmpresa_DropDownClosed(object sender, EventArgs e)
@@ -323,7 +324,6 @@ namespace Neo
             if (Utilidad.tscOrdenPedido == null)
             {
                 Utilidad.tscOrdenPedido = new FrmTscOrdenPedido();
-                //Utilidad.tscOrdenPedido.WindowState = FormWindowState.Maximized;
                 Utilidad.tscOrdenPedido.MdiParent = this;                
             }
             Utilidad.tscOrdenPedido.BringToFront();
@@ -340,6 +340,23 @@ namespace Neo
             }
             Utilidad.tscFactura.BringToFront();
             Utilidad.tscFactura.Show();
+        }
+
+        private void listadoSucursal ()
+        {
+            cboSucursal.Items.Clear();
+            taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoSucursal);
+            foreach (DataRow dr in dsNeo.tbSucursal.Rows)
+            {
+                short codigo = Convert.ToInt16(dsNeo.tbSucursal.Rows[0]["CodigoSucursal"].ToString());
+                string nombre = dsNeo.tbSucursal.Rows[0]["Nombre"].ToString();
+                cboSucursal.Items.Add(nombre);
+                if (Utilidad.codigoSucursal == codigo)
+                {
+                    cboSucursal.Text = nombre;
+                    Utilidad.nombreSucursal = nombre;
+                }
+            }
         }
     }
 }

@@ -33,9 +33,9 @@
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label tipoLabel;
+            System.Windows.Forms.Label inicioLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoEstado));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label inicioLabel;
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnMto = new System.Windows.Forms.BindingNavigator(this.components);
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
@@ -57,6 +57,7 @@
             this.pnl2 = new System.Windows.Forms.Panel();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
+            this.chkInicio = new System.Windows.Forms.CheckBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
@@ -72,7 +73,6 @@
             this.eTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.taEstado = new Neo.DsNeoTableAdapters.taEstado();
-            this.chkInicio = new System.Windows.Forms.CheckBox();
             codigoEmpresaLabel = new System.Windows.Forms.Label();
             codigoTrabajoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -125,6 +125,15 @@
             tipoLabel.Size = new System.Drawing.Size(31, 13);
             tipoLabel.TabIndex = 10;
             tipoLabel.Text = "Tipo:";
+            // 
+            // inicioLabel
+            // 
+            inicioLabel.AutoSize = true;
+            inicioLabel.Location = new System.Drawing.Point(26, 98);
+            inicioLabel.Name = "inicioLabel";
+            inicioLabel.Size = new System.Drawing.Size(35, 13);
+            inicioLabel.TabIndex = 15;
+            inicioLabel.Text = "Inicio:";
             // 
             // pnl1
             // 
@@ -222,7 +231,6 @@
             // 
             this.txtPosicion.AccessibleName = "Posición";
             this.txtPosicion.AutoSize = false;
-            this.txtPosicion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPosicion.Name = "txtPosicion";
             this.txtPosicion.Size = new System.Drawing.Size(50, 23);
             this.txtPosicion.Text = "0";
@@ -331,6 +339,15 @@
             this.pnl6.Name = "pnl6";
             this.pnl6.Size = new System.Drawing.Size(222, 337);
             this.pnl6.TabIndex = 6;
+            // 
+            // chkInicio
+            // 
+            this.chkInicio.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Inicio", true));
+            this.chkInicio.Location = new System.Drawing.Point(67, 93);
+            this.chkInicio.Name = "chkInicio";
+            this.chkInicio.Size = new System.Drawing.Size(24, 24);
+            this.chkInicio.TabIndex = 16;
+            this.chkInicio.UseVisualStyleBackColor = true;
             // 
             // cboTipo
             // 
@@ -473,24 +490,6 @@
             // taEstado
             // 
             this.taEstado.ClearBeforeFill = true;
-            // 
-            // inicioLabel
-            // 
-            inicioLabel.AutoSize = true;
-            inicioLabel.Location = new System.Drawing.Point(26, 98);
-            inicioLabel.Name = "inicioLabel";
-            inicioLabel.Size = new System.Drawing.Size(35, 13);
-            inicioLabel.TabIndex = 15;
-            inicioLabel.Text = "Inicio:";
-            // 
-            // chkInicio
-            // 
-            this.chkInicio.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Inicio", true));
-            this.chkInicio.Location = new System.Drawing.Point(67, 93);
-            this.chkInicio.Name = "chkInicio";
-            this.chkInicio.Size = new System.Drawing.Size(24, 24);
-            this.chkInicio.TabIndex = 16;
-            this.chkInicio.UseVisualStyleBackColor = true;
             // 
             // FrmMtoEstado
             // 

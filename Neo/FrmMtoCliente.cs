@@ -42,21 +42,26 @@ namespace Neo
 
         private void FrmMtoCliente_Load(object sender, EventArgs e)
         {
+            taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);            
+            taEstado.FillByTipo(dsNeo.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Estado Civil");
             taCliente.Fill(dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             if (!string.IsNullOrEmpty(lblCodigo.Text))
             {
                 short codigo = short.Parse(lblCodigo.Text);
-                taClienteSucursal.FillByCliente(dsNeo.tbClienteSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                taSucursalMiembro.Fill(dsNeo.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
             }
+            else
+            {
+                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, "Cliente");
+            }
+            cboSucursal.Text = Utilidad.nombreSucursal;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             ConfiguraBoton(false);
-            cboCategoria.SelectedIndex = -1;
             cboSexo.SelectedIndex = -1;
             cboEstadoCivil.SelectedIndex = -1;
-            cboSucursal.SelectedIndex = -1;
             cboFactura.SelectedIndex = -1;
             cboRecibo.SelectedIndex = -1;
             cboPedido.SelectedIndex = -1;
@@ -67,6 +72,8 @@ namespace Neo
             lblApertura.Text = DateTime.Today.ToShortDateString();
             txtId.Focus();
             dsNeo.tbClienteSucursal.Rows.Clear();
+            lblTipoEstado.Text = "Estado Civil";
+            taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, "Cliente");
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -96,13 +103,6 @@ namespace Neo
                 return;
             }
 
-            if (cboCategoria.SelectedIndex == -1)
-            {
-                cboCategoria.Focus();
-                ep.SetError(cboCategoria, Utilidad.listaVacia);
-                return;
-            }
-
             if (cboSexo.SelectedIndex == -1)
             {
                 cboSexo.Focus();
@@ -120,7 +120,7 @@ namespace Neo
             if (cboSucursal.SelectedIndex == -1)
             {
                 cboSucursal.Focus();
-                ep.SetError(cboCategoria, Utilidad.listaVacia);
+                ep.SetError(cboSucursal, Utilidad.listaVacia);
                 return;
             }
 
@@ -147,21 +147,39 @@ namespace Neo
 
             try
             {
-                this.Validate();
-                this.bsMto.EndEdit();
-                short codigo = short.Parse(lblCodigo.Text);
+                short codigo;
+                if (!btnNuevo.Available)
+                {
+                    DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
+                    codigo = Convert.ToInt16(cp.fnSiguienteNumero("cliente", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value.ToString());
+                    lblCodigo.Text = codigo.ToString();
+                }
+                else
+                {
+                    codigo = Convert.ToInt16(lblCodigo.Text);
+                }
                 short sucursal = short.Parse(cboSucursal.SelectedValue.ToString());
                 decimal? limite = null;
                 if (!string.IsNullOrEmpty(txtLimiteCredito.Text))
                     limite = decimal.Parse(txtLimiteCredito.Text);
+                this.Validate();
                 if (!btnNuevo.Available)
                 {
-                    taCliente.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text, txtId.Text.Trim(), cboCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, Utilidad.nombreUsuario, lblEquipo.Text, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text);
+                    taCliente.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text, txtId.Text.Trim(), txtCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, Utilidad.nombreUsuario, lblEquipo.Text, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taCliente.Edita(sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text.Trim(), txtId.Text.Trim(), cboCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), null, chkActivo.Checked, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                    taCliente.Edita(sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text.Trim(), txtId.Text.Trim(), txtCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                }
+
+                taIdentificacionMiembro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
+                foreach (DataRow dr in dsNeo.fnIdentificacionMiembro)
+                {
+                    string codigoId = dr["CodigoIdentificacion"].ToString();
+                    string identificacion = dr["Identificacion"].ToString();
+                    if (!string.IsNullOrEmpty(identificacion))
+                        taIdentificacionMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, codigoId, "Cliente", identificacion);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -190,7 +208,8 @@ namespace Neo
                     if (dr == DialogResult.Yes)
                     {
                         short codigo = short.Parse(lblCodigo.Text);
-                        taClienteSucursal.EliminaCliente(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                        taIdentificacionMiembro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
+                        taSucursalMiembro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
                         taCliente.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
                     }
@@ -245,7 +264,7 @@ namespace Neo
                 short codigoCliente = short.Parse(lblCodigo.Text);
                 short codigoSucursal = short.Parse(grdSucursal.CurrentRow.Cells["sCodigo"].Value.ToString());
                 DsNeo ds = new DsNeo();
-                taClienteSucursal.FillByCodigoSucursal(ds.tbClienteSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal);
+                taSucursalMiembro.FillByCodigo(ds.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, "Cliente");
                 if (ds.tbClienteSucursal.Rows.Count > 0)
                 {
                     string codigoPais = grdSucursal.CurrentRow.Cells["sCodigoPais"].Value.ToString();
@@ -270,7 +289,7 @@ namespace Neo
         {
             if (grdSucursal.CurrentRow != null && grdSucursal.CurrentRow.Cells["sNombrePais"].Selected == true)
             {
-                DataGridViewComboBoxCell cb = grdSucursal.CurrentRow.Cells["sProvincia"] as DataGridViewComboBoxCell;
+                DataGridViewComboBoxCell cb = grdSucursal.CurrentRow.Cells["sNombreProvincia"] as DataGridViewComboBoxCell;
                 string nombrePais = grdSucursal.CurrentRow.Cells["sNombrePais"].Value.ToString();
                 DsNeo ds = new DsNeo();
                 taPais.FillByNombre(ds.tbPais, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombrePais);
@@ -355,30 +374,31 @@ namespace Neo
         private void btnNuevoSucursal_Click(object sender, EventArgs e)
         {
             short codigoCliente = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text);
-            grdSucursal.CurrentRow.Cells["sTrabajo"].Value = Utilidad.codigoTrabajo;
-            grdSucursal.CurrentRow.Cells["sEmpresa"].Value = Utilidad.codigoEmpresa;
-            grdSucursal.CurrentRow.Cells["sCliente"].Value = codigoCliente;
+            grdSucursal.CurrentRow.Cells["sCodigoTrabajo"].Value = Utilidad.codigoTrabajo;
+            grdSucursal.CurrentRow.Cells["sCodigoEmpresa"].Value = Utilidad.codigoEmpresa;
+            grdSucursal.CurrentRow.Cells["sCodigo"].Value = codigoCliente;
             DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
             short codigo = 0;
-            grdSucursal.CurrentRow.Cells["sCodigo"].Value = codigo;
+            grdSucursal.CurrentRow.Cells["sSecuencia"].Value = codigo;
         }
 
         private void btnEliminarSucursal_Click(object sender, EventArgs e)
         {
             if (grdSucursal.CurrentRow != null)
             {
-                short codigoSucursal = short.Parse(grdSucursal.CurrentRow.Cells["sCodigo"].Value.ToString());
+                short codigo = short.Parse(grdSucursal.CurrentRow.Cells["sCodigo"].Value.ToString());
                 short codigoCliente = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text);
+                short secuencia = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(grdSucursal.CurrentRow.Cells["sSecuencia"].Value.ToString());
                 DsNeo ds = new DsNeo();
-                taClienteSucursal.FillByCodigoSucursal(ds.tbClienteSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal);
+                taSucursalMiembro.FillBySecuencia(ds.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente", secuencia);
                 if (ds.tbClienteSucursal.Rows.Count > 0)
                 {
                     DialogResult dr = new DialogResult();
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombreUsuario, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        taClienteSucursalContacto.EliminaClienteSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal);
-                        taClienteSucursal.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal);
+                        //taClienteSucursalContacto.EliminaClienteSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal);
+                        taSucursalMiembro.EliminaSecuencia(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, "Cliente");
                         grdSucursal.Rows.Remove(grdSucursal.CurrentRow);
                     }
                 }
@@ -414,6 +434,17 @@ namespace Neo
                     grdContacto.Rows.Remove(grdContacto.CurrentRow);
                 }
             }
+        }
+
+        private void cboEstadoCivil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdMto_SelectionChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lblCodigo.Text))
+                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Convert.ToInt16(lblCodigo.Text) , "Cliente");
         }
     }
 }

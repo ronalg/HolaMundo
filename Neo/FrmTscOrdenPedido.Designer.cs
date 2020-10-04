@@ -40,20 +40,20 @@
             System.Windows.Forms.Label fechaLabel;
             System.Windows.Forms.Label descuentoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTscOrdenPedido));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnOrdenPedido = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -209,9 +209,10 @@
             this.taBuscaArticulo = new Neo.DsNeoTableAdapters.taBuscaArticulo();
             this.taOrdenPedidoArticulo = new Neo.DsNeoTableAdapters.taOrdenPedidoArticulo();
             this.taEstado = new Neo.DsNeoTableAdapters.taEstado();
-            this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
             this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
+            this.taOrdenPedidoEstado = new Neo.DsNeoTableAdapters.taOrdenPedidoEstado();
+            this.btnEstado = new System.Windows.Forms.ToolStripDropDownButton();
             idClienteLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
@@ -369,6 +370,7 @@
             this.btnGuardar,
             this.btnEliminar,
             this.toolStripSeparator2,
+            this.btnEstado,
             this.btnBuscar,
             this.btnImprimir,
             this.toolStripSeparator1,
@@ -739,8 +741,8 @@
             // 
             this.grdDetalle.AllowUserToAddRows = false;
             this.grdDetalle.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdDetalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdDetalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdDetalle.AutoGenerateColumns = false;
             this.grdDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -802,8 +804,8 @@
             // dCodigoArticulo
             // 
             this.dCodigoArticulo.DataPropertyName = "CodigoArticulo";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dCodigoArticulo.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dCodigoArticulo.DefaultCellStyle = dataGridViewCellStyle2;
             this.dCodigoArticulo.HeaderText = "Código";
             this.dCodigoArticulo.Name = "dCodigoArticulo";
             this.dCodigoArticulo.ReadOnly = true;
@@ -829,9 +831,9 @@
             // dCoste4
             // 
             this.dCoste4.DataPropertyName = "Coste";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle45.Format = "N2";
-            this.dCoste4.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            this.dCoste4.DefaultCellStyle = dataGridViewCellStyle3;
             this.dCoste4.HeaderText = "Coste";
             this.dCoste4.Name = "dCoste4";
             this.dCoste4.ReadOnly = true;
@@ -840,9 +842,9 @@
             // dCantidad
             // 
             this.dCantidad.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.Format = "N2";
-            this.dCantidad.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N2";
+            this.dCantidad.DefaultCellStyle = dataGridViewCellStyle4;
             this.dCantidad.HeaderText = "Cantidad";
             this.dCantidad.Name = "dCantidad";
             this.dCantidad.ReadOnly = true;
@@ -851,9 +853,9 @@
             // dPrecio
             // 
             this.dPrecio.DataPropertyName = "Precio";
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle47.Format = "N2";
-            this.dPrecio.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            this.dPrecio.DefaultCellStyle = dataGridViewCellStyle5;
             this.dPrecio.HeaderText = "Precio";
             this.dPrecio.Name = "dPrecio";
             this.dPrecio.ReadOnly = true;
@@ -862,9 +864,9 @@
             // dDescuento
             // 
             this.dDescuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle48.Format = "N2";
-            this.dDescuento.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            this.dDescuento.DefaultCellStyle = dataGridViewCellStyle6;
             this.dDescuento.HeaderText = "Descuento";
             this.dDescuento.Name = "dDescuento";
             this.dDescuento.ReadOnly = true;
@@ -873,9 +875,9 @@
             // dImporte
             // 
             this.dImporte.DataPropertyName = "Importe";
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle49.Format = "N2";
-            this.dImporte.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            this.dImporte.DefaultCellStyle = dataGridViewCellStyle7;
             this.dImporte.HeaderText = "Importe";
             this.dImporte.Name = "dImporte";
             this.dImporte.ReadOnly = true;
@@ -884,9 +886,9 @@
             // dBeneficio
             // 
             this.dBeneficio.DataPropertyName = "Beneficio";
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle50.Format = "N2";
-            this.dBeneficio.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            this.dBeneficio.DefaultCellStyle = dataGridViewCellStyle8;
             this.dBeneficio.HeaderText = "Beneficio";
             this.dBeneficio.Name = "dBeneficio";
             this.dBeneficio.ReadOnly = true;
@@ -1270,8 +1272,8 @@
             // 
             this.grdDomicilio.AllowUserToAddRows = false;
             this.grdDomicilio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdDomicilio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdDomicilio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.grdDomicilio.AutoGenerateColumns = false;
             this.grdDomicilio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDomicilio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1311,8 +1313,8 @@
             // codigoClienteDataGridViewTextBoxColumn
             // 
             this.codigoClienteDataGridViewTextBoxColumn.DataPropertyName = "CodigoCliente";
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.codigoClienteDataGridViewTextBoxColumn.HeaderText = "CodigoCliente";
             this.codigoClienteDataGridViewTextBoxColumn.Name = "codigoClienteDataGridViewTextBoxColumn";
             this.codigoClienteDataGridViewTextBoxColumn.Visible = false;
@@ -1320,8 +1322,8 @@
             // codigoClienteSucursalDataGridViewTextBoxColumn
             // 
             this.codigoClienteSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoClienteSucursal";
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoClienteSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoClienteSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.codigoClienteSucursalDataGridViewTextBoxColumn.HeaderText = "Código";
             this.codigoClienteSucursalDataGridViewTextBoxColumn.Name = "codigoClienteSucursalDataGridViewTextBoxColumn";
             this.codigoClienteSucursalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1607,8 +1609,8 @@
             // cId
             // 
             this.cId.DataPropertyName = "IdCliente";
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cId.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cId.DefaultCellStyle = dataGridViewCellStyle12;
             this.cId.HeaderText = "ID";
             this.cId.Name = "cId";
             this.cId.ReadOnly = true;
@@ -1786,8 +1788,8 @@
             // aUnidad
             // 
             this.aUnidad.DataPropertyName = "CodigoUnidad";
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.aUnidad.DefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.aUnidad.DefaultCellStyle = dataGridViewCellStyle13;
             this.aUnidad.HeaderText = "UND";
             this.aUnidad.Name = "aUnidad";
             this.aUnidad.ReadOnly = true;
@@ -1844,9 +1846,9 @@
             // aPrecio
             // 
             this.aPrecio.DataPropertyName = "Precio";
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle56.Format = "N2";
-            this.aPrecio.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "N2";
+            this.aPrecio.DefaultCellStyle = dataGridViewCellStyle14;
             this.aPrecio.HeaderText = "Precio";
             this.aPrecio.Name = "aPrecio";
             this.aPrecio.ReadOnly = true;
@@ -1877,46 +1879,6 @@
             // 
             this.taEstado.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.taArticulo = null;
-            this.tableAdapterManager.taArticuloMultimedia = null;
-            this.tableAdapterManager.taCategoria = null;
-            this.tableAdapterManager.taCliente = this.taCliente;
-            this.tableAdapterManager.taClienteNacionalidad = null;
-            this.tableAdapterManager.taClienteSucursal = null;
-            this.tableAdapterManager.taClienteSucursalContacto = null;
-            this.tableAdapterManager.taContacto = null;
-            this.tableAdapterManager.taDepartamento = null;
-            this.tableAdapterManager.taEmpresa = null;
-            this.tableAdapterManager.taEstado = this.taEstado;
-            this.tableAdapterManager.taFinanciera = null;
-            this.tableAdapterManager.taFormaPago = null;
-            this.tableAdapterManager.taFrecuencia = null;
-            this.tableAdapterManager.taIdentificacion = null;
-            this.tableAdapterManager.taMoneda = null;
-            this.tableAdapterManager.taNacionalidad = null;
-            this.tableAdapterManager.taOcupacion = null;
-            this.tableAdapterManager.taOrdenPedido = this.taOrdenPedido;
-            this.tableAdapterManager.taOrdenPedidoArticulo = this.taOrdenPedidoArticulo;
-            this.tableAdapterManager.taOrdenPedidoEstado = null;
-            this.tableAdapterManager.taPais = null;
-            this.tableAdapterManager.taPrecioVenta = null;
-            this.tableAdapterManager.taProveedor = null;
-            this.tableAdapterManager.taProveedorSucursal = null;
-            this.tableAdapterManager.taProveedorSucursalContacto = null;
-            this.tableAdapterManager.taProvincia = null;
-            this.tableAdapterManager.taSucursal = this.taSucursal;
-            this.tableAdapterManager.taTipoContacto = null;
-            this.tableAdapterManager.taTipoFinanciera = null;
-            this.tableAdapterManager.taTipoTributo = null;
-            this.tableAdapterManager.taTrabajo = null;
-            this.tableAdapterManager.taTributo = null;
-            this.tableAdapterManager.taUnidad = null;
-            this.tableAdapterManager.taUsuario = null;
-            this.tableAdapterManager.UpdateOrder = Neo.DsNeoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // taArticulo
             // 
             this.taArticulo.ClearBeforeFill = true;
@@ -1924,6 +1886,18 @@
             // taArticuloProveedor
             // 
             this.taArticuloProveedor.ClearBeforeFill = true;
+            // 
+            // taOrdenPedidoEstado
+            // 
+            this.taOrdenPedidoEstado.ClearBeforeFill = true;
+            // 
+            // btnEstado
+            // 
+            this.btnEstado.Image = ((System.Drawing.Image)(resources.GetObject("btnEstado.Image")));
+            this.btnEstado.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.Size = new System.Drawing.Size(76, 22);
+            this.btnEstado.Text = "Estados";
             // 
             // FrmTscOrdenPedido
             // 
@@ -2087,7 +2061,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.BindingSource bsEstado;
         private DsNeoTableAdapters.taEstado taEstado;
-        private DsNeoTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dTrabajo;
@@ -2135,5 +2108,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn representanteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn domicilioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn aplicaDataGridViewCheckBoxColumn;
+        private DsNeoTableAdapters.taOrdenPedidoEstado taOrdenPedidoEstado;
+        private System.Windows.Forms.ToolStripDropDownButton btnEstado;
     }
 }

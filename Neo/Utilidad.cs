@@ -44,6 +44,7 @@ namespace Neo
         public static short codigoEmpresa = 0;
         public static short codigoTrabajo = 0;
         public static short codigoSucursal = 0;
+        public static string nombreSucursal = null;
         public static short codigoUsuario = 0;
         public static string nombreUsuario = "Maximo";
         public const string textoCuadroMensaje = "Neo";

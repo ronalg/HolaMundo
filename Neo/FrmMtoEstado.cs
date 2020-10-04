@@ -150,6 +150,6 @@ namespace Neo
                 nombre = grdMto.CurrentRow.Cells["eNombre"].Value.ToString();
                 tipo = grdMto.CurrentRow.Cells["eTipo"].Value.ToString();
             }
-        }
+        }       
     }
 }

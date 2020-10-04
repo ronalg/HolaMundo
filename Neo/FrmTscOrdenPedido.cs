@@ -86,6 +86,13 @@ namespace Neo
             taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             cboSucursal.SelectedIndex = -1;
             cboEstado.SelectedIndex = -1;
+            DsNeo ds = new DsNeo();
+            taEstado.FillByTipo(ds.tbEstado, Utilidad.codigoEmpresa, Utilidad.codigoEmpresa, "Orden Pedido");
+            foreach (DataRow  dr in ds.tbEstado.Rows)
+            {
+                string nombre = dr["NombreEstado"].ToString();
+                btnEstado.DropDown.Items.Add(nombre, null);
+            }
         }
 
         private void txtDescripcion_KeyDown(object sender, KeyEventArgs e)
@@ -404,7 +411,7 @@ namespace Neo
                 {
                     
                     DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
-                    int number = cp.fnSiguienteNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "ordenPedido", codigoSucursal).Value;
+                    int number = cp.fnSiguienteNumero("ordenPedido", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal).Value;
                     numero = Utilidad.Ceros(number.ToString());
                     lblNumero.Text = numero;
                     taOrdenPedido.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero, codigoCliente, "DOP", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), "05:30", Environment.MachineName, descuento, txtNota.Text.Trim());
@@ -418,7 +425,8 @@ namespace Neo
                         descuento = Convert.ToDecimal(dr["Descuento"].ToString());
                         taOrdenPedidoArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero, codArt, dr["Descripcion"].ToString(), coste, cantidad, precio, descuento);
                     }
-                    taEstado.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboEstado.Text, "Orden Pedido", true);
+                    string hora = DateTime.Now.ToLocalTime().ToString();
+                    taOrdenPedidoEstado.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoSucursal, numero, cboEstado.Text, "Orden Pedido", 1, dtpFecha.Value.ToShortDateString(), hora, Utilidad.nombreUsuario);
                 }
                 else
                 {
