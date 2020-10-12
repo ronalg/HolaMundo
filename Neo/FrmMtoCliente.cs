@@ -312,39 +312,46 @@ namespace Neo
 
         private void grdContacto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            string nombre = grdContacto.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name;
-            if (nombre == "cNombre")
+            if (e.RowIndex > -1)
             {
-                DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cNombre"] as DataGridViewComboBoxCell;
-                if (cb.Items.Count == 0)
+                string nombre = grdContacto.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name;
+                if (nombre == "cNombre")
                 {
-                    taContacto.Fill(dsNeo.tbContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-                    foreach (DataRow dr in dsNeo.tbContacto)
+                    DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cNombre"] as DataGridViewComboBoxCell;
+                    if (cb.Items.Count == 0)
                     {
-                        nombre = dr["NombreContacto"].ToString();
-                        cb.Items.Add(nombre);
+                        taContacto.Fill(dsNeo.tbContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+                        foreach (DataRow dr in dsNeo.tbContacto)
+                        {
+                            nombre = dr["NombreContacto"].ToString();
+                            cb.Items.Add(nombre);
+                        }
+                        cb.Value = nombre;
+                        cb = grdContacto.Rows[e.RowIndex].Cells["cTipoContacto"] as DataGridViewComboBoxCell;
+                        string contacto = grdContacto.Rows[e.RowIndex].Cells["cNombre"].Value.ToString();
+                        if (!string.IsNullOrEmpty(contacto))
+                            taTipoContacto.FillByContacto(dsNeo.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, contacto);
                     }
-
-                    cb = grdContacto.Rows[e.RowIndex].Cells["cTipo"] as DataGridViewComboBoxCell;
-                    string contacto = grdContacto.Rows[e.RowIndex].Cells["cNombre"].ToString();
-                    taTipoContacto.FillByContacto(dsNeo.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, contacto);
                 }
-            }
-            else if (nombre == "cTipo")
-            {
-                string contacto = grdContacto.Rows[e.RowIndex].Cells["cNombre"].Value.ToString();
-                DsNeo ds = new DsNeo();
-                taTipoContacto.FillByContacto(ds.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, contacto);
-                DataGridViewComboBoxCell cb = grdContacto.Rows[e.RowIndex].Cells["cTipo"] as DataGridViewComboBoxCell;
-                int i = cb.Items.Count;
-                int j = ds.tbTipoContacto.Rows.Count;
-
-                if (i != j)
+                else if (nombre == "cTipoContacto")
                 {
-                    foreach (DataRow dr in ds.tbTipoContacto.Rows)
+                    string contacto = grdContacto.Rows[e.RowIndex].Cells["cNombre"].Value.ToString();
+                    if (!string.IsNullOrEmpty(contacto))
                     {
-                        string n = dr["NombreTipoContacto"].ToString();
-                        cb.Items.Add(n);
+                        DsNeo ds = new DsNeo();
+                        taTipoContacto.FillByContacto(ds.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, contacto);
+                        DataGridViewComboBoxCell cb = grdContacto.Rows[e.RowIndex].Cells["cTipoContacto"] as DataGridViewComboBoxCell;
+                        int i = cb.Items.Count;
+                        int j = ds.tbTipoContacto.Rows.Count;
+
+                        if (i != j)
+                        {
+                            foreach (DataRow dr in ds.tbTipoContacto.Rows)
+                            {
+                                string n = dr["NombreTipoContacto"].ToString();
+                                cb.Items.Add(n);
+                            }
+                        }
                     }
                 }
             }
@@ -354,7 +361,8 @@ namespace Neo
         {
             if (grdContacto.CurrentRow != null && grdContacto.CurrentRow.Cells["cNombre"].Selected == true)
             {
-                DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cTipo"] as DataGridViewComboBoxCell;
+                DataGridViewComboBoxCell cb = grdContacto.CurrentRow.Cells["cTipoContacto"] as DataGridViewComboBoxCell;
+                cb.Items.Clear();
                 DsNeo ds = new DsNeo();
                 string nombreContacto = grdContacto.CurrentRow.Cells["cNombre"].Value.ToString();
                 taTipoContacto.FillByContacto(ds.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombreContacto);
@@ -397,7 +405,7 @@ namespace Neo
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombreUsuario, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        //taClienteSucursalContacto.EliminaClienteSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal);
+                        taContactoMiembro.EliminaSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, "Cliente");
                         taSucursalMiembro.EliminaSecuencia(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, "Cliente");
                         grdSucursal.Rows.Remove(grdSucursal.CurrentRow);
                     }
@@ -417,7 +425,7 @@ namespace Neo
                 short secuencia = short.Parse(grdContacto.CurrentRow.Cells["cOrden"].Value.ToString());
                 short codigoSucursal = short.Parse(grdContacto.CurrentRow.Cells["cSucursal"].Value.ToString());
                 short codigoCliente = short.Parse(lblCodigo.Text);
-                taClienteSucursalContacto.FillBySecuencia(dsNeo.tbClienteSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal, secuencia);
+                //taClienteSucursalContacto.FillBySecuencia(dsNeo.tbClienteSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal, secuencia);
 
                 if (ds.tbClienteSucursalContacto.Rows.Count > 0)
                 {
@@ -425,7 +433,7 @@ namespace Neo
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombreUsuario, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        taClienteSucursalContacto.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal, secuencia);
+                        //taClienteSucursalContacto.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal, secuencia);
                         grdContacto.Rows.Remove(grdContacto.CurrentRow);
                     }
                 }

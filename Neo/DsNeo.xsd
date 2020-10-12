@@ -5309,7 +5309,7 @@ SELECT CodigoTrabajo, CodigoEmpresa, Codigo, Secuencia, Tipo, CodigoPais, Nombre
               <Mapping SourceColumn="Representante" DataSetColumn="Representante" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Elimina" Modifier="Public" Name="Elimina" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Elimina">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Elimina" Modifier="Public" Name="Elimina" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Elimina">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM tbSucursalMiembro
@@ -5323,7 +5323,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminaSecuencia" Modifier="Public" Name="EliminaSecuencia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="EliminaSecuencia">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminaSecuencia" Modifier="Public" Name="EliminaSecuencia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="EliminaSecuencia">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM tbSucursalMiembro
@@ -5338,7 +5338,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbSucursalMiembro" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCodigo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByCodigo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByCodigo">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbSucursalMiembro" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCodigo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByCodigo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByCodigo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, Codigo, Secuencia, Tipo, CodigoPais, NombreProvincia, Nombre, CodigoPostal, Direccion, Representante
@@ -5353,7 +5353,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbSucursalMiembro" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBySecuencia" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBySecuencia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBySecuencia">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbSucursalMiembro" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBySecuencia" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBySecuencia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBySecuencia">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, Codigo, Secuencia, Tipo, CodigoPais, NombreProvincia, Nombre, CodigoPostal, Direccion, Representante
@@ -5369,7 +5369,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Inserta">
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Inserta">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO tbSucursalMiembro
@@ -5387,6 +5387,160 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
                       <Parameter AllowDbNull="true" AutogeneratedName="codigoPostal" ColumnName="CodigoPostal" DataSourceName="NeoDesarrollo.dbo.tbSucursalMiembro" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@codigoPostal" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CodigoPostal" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="direccion" ColumnName="Direccion" DataSourceName="NeoDesarrollo.dbo.tbSucursalMiembro" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@direccion" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="Direccion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="representante" ColumnName="Representante" DataSourceName="NeoDesarrollo.dbo.tbSucursalMiembro" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@representante" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Representante" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="taContactoMiembro" GeneratorDataComponentClassName="taContactoMiembro" Name="tbContactoMiembro" UserDataComponentName="taContactoMiembro">
+            <MainSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="NeoDesarrollo.dbo.tbContactoMiembro" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbContactoMiembro] WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([SecuenciaSucursal] = @Original_SecuenciaSucursal) AND ([Tipo] = @Original_Tipo) AND ([Secuencia] = @Original_Secuencia) AND ([NombreContacto] = @Original_NombreContacto) AND ([NombreTipoContacto] = @Original_NombreTipoContacto) AND ([Contacto] = @Original_Contacto))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_SecuenciaSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="SecuenciaSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_Secuencia" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="Secuencia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NombreContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreContacto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NombreTipoContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreTipoContacto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Contacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbContactoMiembro] ([CodigoTrabajo], [CodigoEmpresa], [CodigoSucursal], [SecuenciaSucursal], [Tipo], [Secuencia], [NombreContacto], [NombreTipoContacto], [Contacto]) VALUES (@CodigoTrabajo, @CodigoEmpresa, @CodigoSucursal, @SecuenciaSucursal, @Tipo, @Secuencia, @NombreContacto, @NombreTipoContacto, @Contacto);
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, SecuenciaSucursal, Tipo, Secuencia, NombreContacto, NombreTipoContacto, Contacto FROM tbContactoMiembro WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (Secuencia = @Secuencia) AND (SecuenciaSucursal = @SecuenciaSucursal) AND (Tipo = @Tipo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@SecuenciaSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="SecuenciaSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Secuencia" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="Secuencia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreContacto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreTipoContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreTipoContacto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Contacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, SecuenciaSucursal, Tipo, Secuencia, NombreContacto, NombreTipoContacto, Contacto
+FROM            tbContactoMiembro
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbContactoMiembro] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoEmpresa] = @CodigoEmpresa, [CodigoSucursal] = @CodigoSucursal, [SecuenciaSucursal] = @SecuenciaSucursal, [Tipo] = @Tipo, [Secuencia] = @Secuencia, [NombreContacto] = @NombreContacto, [NombreTipoContacto] = @NombreTipoContacto, [Contacto] = @Contacto WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoSucursal] = @Original_CodigoSucursal) AND ([SecuenciaSucursal] = @Original_SecuenciaSucursal) AND ([Tipo] = @Original_Tipo) AND ([Secuencia] = @Original_Secuencia) AND ([NombreContacto] = @Original_NombreContacto) AND ([NombreTipoContacto] = @Original_NombreTipoContacto) AND ([Contacto] = @Original_Contacto));
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, SecuenciaSucursal, Tipo, Secuencia, NombreContacto, NombreTipoContacto, Contacto FROM tbContactoMiembro WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoSucursal = @CodigoSucursal) AND (CodigoTrabajo = @CodigoTrabajo) AND (Secuencia = @Secuencia) AND (SecuenciaSucursal = @SecuenciaSucursal) AND (Tipo = @Tipo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@SecuenciaSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="SecuenciaSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Secuencia" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="Secuencia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreContacto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreTipoContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreTipoContacto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Contacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_CodigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_SecuenciaSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="SecuenciaSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_Secuencia" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="Secuencia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NombreContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreContacto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NombreTipoContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreTipoContacto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Contacto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodigoTrabajo" DataSetColumn="CodigoTrabajo" />
+              <Mapping SourceColumn="CodigoEmpresa" DataSetColumn="CodigoEmpresa" />
+              <Mapping SourceColumn="CodigoSucursal" DataSetColumn="CodigoSucursal" />
+              <Mapping SourceColumn="SecuenciaSucursal" DataSetColumn="SecuenciaSucursal" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Secuencia" DataSetColumn="Secuencia" />
+              <Mapping SourceColumn="NombreContacto" DataSetColumn="NombreContacto" />
+              <Mapping SourceColumn="NombreTipoContacto" DataSetColumn="NombreTipoContacto" />
+              <Mapping SourceColumn="Contacto" DataSetColumn="Contacto" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Elimina" Modifier="Public" Name="Elimina" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Elimina">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM tbContactoMiembro
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (SecuenciaSucursal = @secuenciaSucursal) AND (Secuencia = @secuencia) AND (Tipo = @tipo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="secuenciaSucursal" ColumnName="SecuenciaSucursal" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@secuenciaSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="SecuenciaSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="secuencia" ColumnName="Secuencia" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@secuencia" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Secuencia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="tipo" ColumnName="Tipo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="varchar(15)" DbType="AnsiString" Direction="Input" ParameterName="@tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="15" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminaSucursal" Modifier="Public" Name="EliminaSucursal" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="EliminaSucursal">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM tbContactoMiembro
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucural) AND (Tipo = @tipo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucural" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucural" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="tipo" ColumnName="Tipo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="varchar(15)" DbType="AnsiString" Direction="Input" ParameterName="@tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="15" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminaSucursalSecuencia" Modifier="Public" Name="EliminaSucursalSecuencia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="EliminaSucursalSecuencia">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM tbContactoMiembro
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoSucursal = @codigoSucursal) AND (SecuenciaSucursal = @secuenciaSucursal) AND (Tipo = @tipo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="secuenciaSucursal" ColumnName="SecuenciaSucursal" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@secuenciaSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="SecuenciaSucursal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="tipo" ColumnName="Tipo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="varchar(15)" DbType="AnsiString" Direction="Input" ParameterName="@tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="15" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="csNeo (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Inserta" Modifier="Public" Name="Inserta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Inserta">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO tbContactoMiembro
+                         (CodigoTrabajo, CodigoEmpresa, CodigoSucursal, SecuenciaSucursal, Tipo, Secuencia, NombreContacto, NombreTipoContacto, Contacto)
+VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@secuenciaSucursal,@tipo,@secuencia,@nombreContacto,@nombreTipoContacto,@contacto)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoTrabajo" ColumnName="CodigoTrabajo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoTrabajo" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoTrabajo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoEmpresa" ColumnName="CodigoEmpresa" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoEmpresa" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigoSucursal" ColumnName="CodigoSucursal" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@codigoSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="CodigoSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="secuenciaSucursal" ColumnName="SecuenciaSucursal" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@secuenciaSucursal" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="SecuenciaSucursal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="tipo" ColumnName="Tipo" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="varchar(15)" DbType="AnsiString" Direction="Input" ParameterName="@tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="15" SourceColumn="Tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="secuencia" ColumnName="Secuencia" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@secuencia" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Secuencia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="nombreContacto" ColumnName="NombreContacto" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@nombreContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="NombreContacto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="nombreTipoContacto" ColumnName="NombreTipoContacto" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@nombreTipoContacto" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="NombreTipoContacto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="contacto" ColumnName="Contacto" DataSourceName="NeoDesarrollo.dbo.tbContactoMiembro" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@contacto" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -5483,7 +5637,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
   <xs:element name="DsNeo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsNeo" msprop:Generator_UserDSName="DsNeo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbTrabajo" msprop:Generator_TableClassName="tbTrabajoDataTable" msprop:Generator_TableVarName="tabletbTrabajo" msprop:Generator_RowChangedName="tbTrabajoRowChanged" msprop:Generator_TablePropName="tbTrabajo" msprop:Generator_RowDeletingName="tbTrabajoRowDeleting" msprop:Generator_RowChangingName="tbTrabajoRowChanging" msprop:Generator_RowEvHandlerName="tbTrabajoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTrabajoRowDeleted" msprop:Generator_RowClassName="tbTrabajoRow" msprop:Generator_UserTableName="tbTrabajo" msprop:Generator_RowEvArgName="tbTrabajoRowChangeEvent">
+        <xs:element name="tbTrabajo" msprop:Generator_TableClassName="tbTrabajoDataTable" msprop:Generator_TableVarName="tabletbTrabajo" msprop:Generator_TablePropName="tbTrabajo" msprop:Generator_RowDeletingName="tbTrabajoRowDeleting" msprop:Generator_RowChangingName="tbTrabajoRowChanging" msprop:Generator_RowEvHandlerName="tbTrabajoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTrabajoRowDeleted" msprop:Generator_UserTableName="tbTrabajo" msprop:Generator_RowChangedName="tbTrabajoRowChanged" msprop:Generator_RowEvArgName="tbTrabajoRowChangeEvent" msprop:Generator_RowClassName="tbTrabajoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Código" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5498,7 +5652,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbMoneda" msprop:Generator_TableClassName="tbMonedaDataTable" msprop:Generator_TableVarName="tabletbMoneda" msprop:Generator_RowChangedName="tbMonedaRowChanged" msprop:Generator_TablePropName="tbMoneda" msprop:Generator_RowDeletingName="tbMonedaRowDeleting" msprop:Generator_RowChangingName="tbMonedaRowChanging" msprop:Generator_RowEvHandlerName="tbMonedaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbMonedaRowDeleted" msprop:Generator_RowClassName="tbMonedaRow" msprop:Generator_UserTableName="tbMoneda" msprop:Generator_RowEvArgName="tbMonedaRowChangeEvent">
+        <xs:element name="tbMoneda" msprop:Generator_TableClassName="tbMonedaDataTable" msprop:Generator_TableVarName="tabletbMoneda" msprop:Generator_TablePropName="tbMoneda" msprop:Generator_RowDeletingName="tbMonedaRowDeleting" msprop:Generator_RowChangingName="tbMonedaRowChanging" msprop:Generator_RowEvHandlerName="tbMonedaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbMonedaRowDeleted" msprop:Generator_UserTableName="tbMoneda" msprop:Generator_RowChangedName="tbMonedaRowChanged" msprop:Generator_RowEvArgName="tbMonedaRowChangeEvent" msprop:Generator_RowClassName="tbMonedaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5521,7 +5675,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbPais" msprop:Generator_TableClassName="tbPaisDataTable" msprop:Generator_TableVarName="tabletbPais" msprop:Generator_RowChangedName="tbPaisRowChanged" msprop:Generator_TablePropName="tbPais" msprop:Generator_RowDeletingName="tbPaisRowDeleting" msprop:Generator_RowChangingName="tbPaisRowChanging" msprop:Generator_RowEvHandlerName="tbPaisRowChangeEventHandler" msprop:Generator_RowDeletedName="tbPaisRowDeleted" msprop:Generator_RowClassName="tbPaisRow" msprop:Generator_UserTableName="tbPais" msprop:Generator_RowEvArgName="tbPaisRowChangeEvent">
+        <xs:element name="tbPais" msprop:Generator_TableClassName="tbPaisDataTable" msprop:Generator_TableVarName="tabletbPais" msprop:Generator_TablePropName="tbPais" msprop:Generator_RowDeletingName="tbPaisRowDeleting" msprop:Generator_RowChangingName="tbPaisRowChanging" msprop:Generator_RowEvHandlerName="tbPaisRowChangeEventHandler" msprop:Generator_RowDeletedName="tbPaisRowDeleted" msprop:Generator_UserTableName="tbPais" msprop:Generator_RowChangedName="tbPaisRowChanged" msprop:Generator_RowEvArgName="tbPaisRowChangeEvent" msprop:Generator_RowClassName="tbPaisRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5543,7 +5697,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbProvincia" msprop:Generator_TableClassName="tbProvinciaDataTable" msprop:Generator_TableVarName="tabletbProvincia" msprop:Generator_RowChangedName="tbProvinciaRowChanged" msprop:Generator_TablePropName="tbProvincia" msprop:Generator_RowDeletingName="tbProvinciaRowDeleting" msprop:Generator_RowChangingName="tbProvinciaRowChanging" msprop:Generator_RowEvHandlerName="tbProvinciaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProvinciaRowDeleted" msprop:Generator_RowClassName="tbProvinciaRow" msprop:Generator_UserTableName="tbProvincia" msprop:Generator_RowEvArgName="tbProvinciaRowChangeEvent">
+        <xs:element name="tbProvincia" msprop:Generator_TableClassName="tbProvinciaDataTable" msprop:Generator_TableVarName="tabletbProvincia" msprop:Generator_TablePropName="tbProvincia" msprop:Generator_RowDeletingName="tbProvinciaRowDeleting" msprop:Generator_RowChangingName="tbProvinciaRowChanging" msprop:Generator_RowEvHandlerName="tbProvinciaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProvinciaRowDeleted" msprop:Generator_UserTableName="tbProvincia" msprop:Generator_RowChangedName="tbProvinciaRowChanged" msprop:Generator_RowEvArgName="tbProvinciaRowChangeEvent" msprop:Generator_RowClassName="tbProvinciaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5565,7 +5719,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbCategoria" msprop:Generator_TableClassName="tbCategoriaDataTable" msprop:Generator_TableVarName="tabletbCategoria" msprop:Generator_RowChangedName="tbCategoriaRowChanged" msprop:Generator_TablePropName="tbCategoria" msprop:Generator_RowDeletingName="tbCategoriaRowDeleting" msprop:Generator_RowChangingName="tbCategoriaRowChanging" msprop:Generator_RowEvHandlerName="tbCategoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCategoriaRowDeleted" msprop:Generator_RowClassName="tbCategoriaRow" msprop:Generator_UserTableName="tbCategoria" msprop:Generator_RowEvArgName="tbCategoriaRowChangeEvent">
+        <xs:element name="tbCategoria" msprop:Generator_TableClassName="tbCategoriaDataTable" msprop:Generator_TableVarName="tabletbCategoria" msprop:Generator_TablePropName="tbCategoria" msprop:Generator_RowDeletingName="tbCategoriaRowDeleting" msprop:Generator_RowChangingName="tbCategoriaRowChanging" msprop:Generator_RowEvHandlerName="tbCategoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCategoriaRowDeleted" msprop:Generator_UserTableName="tbCategoria" msprop:Generator_RowChangedName="tbCategoriaRowChanged" msprop:Generator_RowEvArgName="tbCategoriaRowChangeEvent" msprop:Generator_RowClassName="tbCategoriaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5587,7 +5741,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbContacto" msprop:Generator_TableClassName="tbContactoDataTable" msprop:Generator_TableVarName="tabletbContacto" msprop:Generator_RowChangedName="tbContactoRowChanged" msprop:Generator_TablePropName="tbContacto" msprop:Generator_RowDeletingName="tbContactoRowDeleting" msprop:Generator_RowChangingName="tbContactoRowChanging" msprop:Generator_RowEvHandlerName="tbContactoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbContactoRowDeleted" msprop:Generator_RowClassName="tbContactoRow" msprop:Generator_UserTableName="tbContacto" msprop:Generator_RowEvArgName="tbContactoRowChangeEvent">
+        <xs:element name="tbContacto" msprop:Generator_TableClassName="tbContactoDataTable" msprop:Generator_TableVarName="tabletbContacto" msprop:Generator_TablePropName="tbContacto" msprop:Generator_RowDeletingName="tbContactoRowDeleting" msprop:Generator_RowChangingName="tbContactoRowChanging" msprop:Generator_RowEvHandlerName="tbContactoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbContactoRowDeleted" msprop:Generator_UserTableName="tbContacto" msprop:Generator_RowChangedName="tbContactoRowChanged" msprop:Generator_RowEvArgName="tbContactoRowChangeEvent" msprop:Generator_RowClassName="tbContactoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5602,7 +5756,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbTipoContacto" msprop:Generator_TableClassName="tbTipoContactoDataTable" msprop:Generator_TableVarName="tabletbTipoContacto" msprop:Generator_RowChangedName="tbTipoContactoRowChanged" msprop:Generator_TablePropName="tbTipoContacto" msprop:Generator_RowDeletingName="tbTipoContactoRowDeleting" msprop:Generator_RowChangingName="tbTipoContactoRowChanging" msprop:Generator_RowEvHandlerName="tbTipoContactoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTipoContactoRowDeleted" msprop:Generator_RowClassName="tbTipoContactoRow" msprop:Generator_UserTableName="tbTipoContacto" msprop:Generator_RowEvArgName="tbTipoContactoRowChangeEvent">
+        <xs:element name="tbTipoContacto" msprop:Generator_TableClassName="tbTipoContactoDataTable" msprop:Generator_TableVarName="tabletbTipoContacto" msprop:Generator_TablePropName="tbTipoContacto" msprop:Generator_RowDeletingName="tbTipoContactoRowDeleting" msprop:Generator_RowChangingName="tbTipoContactoRowChanging" msprop:Generator_RowEvHandlerName="tbTipoContactoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTipoContactoRowDeleted" msprop:Generator_UserTableName="tbTipoContacto" msprop:Generator_RowChangedName="tbTipoContactoRowChanged" msprop:Generator_RowEvArgName="tbTipoContactoRowChangeEvent" msprop:Generator_RowClassName="tbTipoContactoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5624,7 +5778,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbUsuario" msprop:Generator_TableClassName="tbUsuarioDataTable" msprop:Generator_TableVarName="tabletbUsuario" msprop:Generator_RowChangedName="tbUsuarioRowChanged" msprop:Generator_TablePropName="tbUsuario" msprop:Generator_RowDeletingName="tbUsuarioRowDeleting" msprop:Generator_RowChangingName="tbUsuarioRowChanging" msprop:Generator_RowEvHandlerName="tbUsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="tbUsuarioRowDeleted" msprop:Generator_RowClassName="tbUsuarioRow" msprop:Generator_UserTableName="tbUsuario" msprop:Generator_RowEvArgName="tbUsuarioRowChangeEvent">
+        <xs:element name="tbUsuario" msprop:Generator_TableClassName="tbUsuarioDataTable" msprop:Generator_TableVarName="tabletbUsuario" msprop:Generator_TablePropName="tbUsuario" msprop:Generator_RowDeletingName="tbUsuarioRowDeleting" msprop:Generator_RowChangingName="tbUsuarioRowChanging" msprop:Generator_RowEvHandlerName="tbUsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="tbUsuarioRowDeleted" msprop:Generator_UserTableName="tbUsuario" msprop:Generator_RowChangedName="tbUsuarioRowChanged" msprop:Generator_RowEvArgName="tbUsuarioRowChangeEvent" msprop:Generator_RowClassName="tbUsuarioRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5657,7 +5811,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbIdentificacion" msprop:Generator_TableClassName="tbIdentificacionDataTable" msprop:Generator_TableVarName="tabletbIdentificacion" msprop:Generator_RowChangedName="tbIdentificacionRowChanged" msprop:Generator_TablePropName="tbIdentificacion" msprop:Generator_RowDeletingName="tbIdentificacionRowDeleting" msprop:Generator_RowChangingName="tbIdentificacionRowChanging" msprop:Generator_RowEvHandlerName="tbIdentificacionRowChangeEventHandler" msprop:Generator_RowDeletedName="tbIdentificacionRowDeleted" msprop:Generator_RowClassName="tbIdentificacionRow" msprop:Generator_UserTableName="tbIdentificacion" msprop:Generator_RowEvArgName="tbIdentificacionRowChangeEvent">
+        <xs:element name="tbIdentificacion" msprop:Generator_TableClassName="tbIdentificacionDataTable" msprop:Generator_TableVarName="tabletbIdentificacion" msprop:Generator_TablePropName="tbIdentificacion" msprop:Generator_RowDeletingName="tbIdentificacionRowDeleting" msprop:Generator_RowChangingName="tbIdentificacionRowChanging" msprop:Generator_RowEvHandlerName="tbIdentificacionRowChangeEventHandler" msprop:Generator_RowDeletedName="tbIdentificacionRowDeleted" msprop:Generator_UserTableName="tbIdentificacion" msprop:Generator_RowChangedName="tbIdentificacionRowChanged" msprop:Generator_RowEvArgName="tbIdentificacionRowChangeEvent" msprop:Generator_RowClassName="tbIdentificacionRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5678,7 +5832,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbProveedor" msprop:Generator_TableClassName="tbProveedorDataTable" msprop:Generator_TableVarName="tabletbProveedor" msprop:Generator_RowChangedName="tbProveedorRowChanged" msprop:Generator_TablePropName="tbProveedor" msprop:Generator_RowDeletingName="tbProveedorRowDeleting" msprop:Generator_RowChangingName="tbProveedorRowChanging" msprop:Generator_RowEvHandlerName="tbProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProveedorRowDeleted" msprop:Generator_RowClassName="tbProveedorRow" msprop:Generator_UserTableName="tbProveedor" msprop:Generator_RowEvArgName="tbProveedorRowChangeEvent">
+        <xs:element name="tbProveedor" msprop:Generator_TableClassName="tbProveedorDataTable" msprop:Generator_TableVarName="tabletbProveedor" msprop:Generator_TablePropName="tbProveedor" msprop:Generator_RowDeletingName="tbProveedorRowDeleting" msprop:Generator_RowChangingName="tbProveedorRowChanging" msprop:Generator_RowEvHandlerName="tbProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProveedorRowDeleted" msprop:Generator_UserTableName="tbProveedor" msprop:Generator_RowChangedName="tbProveedorRowChanged" msprop:Generator_RowEvArgName="tbProveedorRowChangeEvent" msprop:Generator_RowClassName="tbProveedorRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5752,7 +5906,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbProveedorSucursal" msprop:Generator_TableClassName="tbProveedorSucursalDataTable" msprop:Generator_TableVarName="tabletbProveedorSucursal" msprop:Generator_RowChangedName="tbProveedorSucursalRowChanged" msprop:Generator_TablePropName="tbProveedorSucursal" msprop:Generator_RowDeletingName="tbProveedorSucursalRowDeleting" msprop:Generator_RowChangingName="tbProveedorSucursalRowChanging" msprop:Generator_RowEvHandlerName="tbProveedorSucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProveedorSucursalRowDeleted" msprop:Generator_RowClassName="tbProveedorSucursalRow" msprop:Generator_UserTableName="tbProveedorSucursal" msprop:Generator_RowEvArgName="tbProveedorSucursalRowChangeEvent">
+        <xs:element name="tbProveedorSucursal" msprop:Generator_TableClassName="tbProveedorSucursalDataTable" msprop:Generator_TableVarName="tabletbProveedorSucursal" msprop:Generator_TablePropName="tbProveedorSucursal" msprop:Generator_RowDeletingName="tbProveedorSucursalRowDeleting" msprop:Generator_RowChangingName="tbProveedorSucursalRowChanging" msprop:Generator_RowEvHandlerName="tbProveedorSucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProveedorSucursalRowDeleted" msprop:Generator_UserTableName="tbProveedorSucursal" msprop:Generator_RowChangedName="tbProveedorSucursalRowChanged" msprop:Generator_RowEvArgName="tbProveedorSucursalRowChangeEvent" msprop:Generator_RowClassName="tbProveedorSucursalRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5805,7 +5959,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbProveedorSucursalContacto" msprop:Generator_TableClassName="tbProveedorSucursalContactoDataTable" msprop:Generator_TableVarName="tabletbProveedorSucursalContacto" msprop:Generator_RowChangedName="tbProveedorSucursalContactoRowChanged" msprop:Generator_TablePropName="tbProveedorSucursalContacto" msprop:Generator_RowDeletingName="tbProveedorSucursalContactoRowDeleting" msprop:Generator_RowChangingName="tbProveedorSucursalContactoRowChanging" msprop:Generator_RowEvHandlerName="tbProveedorSucursalContactoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProveedorSucursalContactoRowDeleted" msprop:Generator_RowClassName="tbProveedorSucursalContactoRow" msprop:Generator_UserTableName="tbProveedorSucursalContacto" msprop:Generator_RowEvArgName="tbProveedorSucursalContactoRowChangeEvent">
+        <xs:element name="tbProveedorSucursalContacto" msprop:Generator_TableClassName="tbProveedorSucursalContactoDataTable" msprop:Generator_TableVarName="tabletbProveedorSucursalContacto" msprop:Generator_TablePropName="tbProveedorSucursalContacto" msprop:Generator_RowDeletingName="tbProveedorSucursalContactoRowDeleting" msprop:Generator_RowChangingName="tbProveedorSucursalContactoRowChanging" msprop:Generator_RowEvHandlerName="tbProveedorSucursalContactoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProveedorSucursalContactoRowDeleted" msprop:Generator_UserTableName="tbProveedorSucursalContacto" msprop:Generator_RowChangedName="tbProveedorSucursalContactoRowChanged" msprop:Generator_RowEvArgName="tbProveedorSucursalContactoRowChangeEvent" msprop:Generator_RowClassName="tbProveedorSucursalContactoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5837,7 +5991,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbEmpresa" msprop:Generator_TableClassName="tbEmpresaDataTable" msprop:Generator_TableVarName="tabletbEmpresa" msprop:Generator_RowChangedName="tbEmpresaRowChanged" msprop:Generator_TablePropName="tbEmpresa" msprop:Generator_RowDeletingName="tbEmpresaRowDeleting" msprop:Generator_RowChangingName="tbEmpresaRowChanging" msprop:Generator_RowEvHandlerName="tbEmpresaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbEmpresaRowDeleted" msprop:Generator_RowClassName="tbEmpresaRow" msprop:Generator_UserTableName="tbEmpresa" msprop:Generator_RowEvArgName="tbEmpresaRowChangeEvent">
+        <xs:element name="tbEmpresa" msprop:Generator_TableClassName="tbEmpresaDataTable" msprop:Generator_TableVarName="tabletbEmpresa" msprop:Generator_TablePropName="tbEmpresa" msprop:Generator_RowDeletingName="tbEmpresaRowDeleting" msprop:Generator_RowChangingName="tbEmpresaRowChanging" msprop:Generator_RowEvHandlerName="tbEmpresaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbEmpresaRowDeleted" msprop:Generator_UserTableName="tbEmpresa" msprop:Generator_RowChangedName="tbEmpresaRowChanged" msprop:Generator_RowEvArgName="tbEmpresaRowChangeEvent" msprop:Generator_RowClassName="tbEmpresaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5918,7 +6072,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbSucursal" msprop:Generator_TableClassName="tbSucursalDataTable" msprop:Generator_TableVarName="tabletbSucursal" msprop:Generator_RowChangedName="tbSucursalRowChanged" msprop:Generator_TablePropName="tbSucursal" msprop:Generator_RowDeletingName="tbSucursalRowDeleting" msprop:Generator_RowChangingName="tbSucursalRowChanging" msprop:Generator_RowEvHandlerName="tbSucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="tbSucursalRowDeleted" msprop:Generator_RowClassName="tbSucursalRow" msprop:Generator_UserTableName="tbSucursal" msprop:Generator_RowEvArgName="tbSucursalRowChangeEvent">
+        <xs:element name="tbSucursal" msprop:Generator_TableClassName="tbSucursalDataTable" msprop:Generator_TableVarName="tabletbSucursal" msprop:Generator_TablePropName="tbSucursal" msprop:Generator_RowDeletingName="tbSucursalRowDeleting" msprop:Generator_RowChangingName="tbSucursalRowChanging" msprop:Generator_RowEvHandlerName="tbSucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="tbSucursalRowDeleted" msprop:Generator_UserTableName="tbSucursal" msprop:Generator_RowChangedName="tbSucursalRowChanged" msprop:Generator_RowEvArgName="tbSucursalRowChangeEvent" msprop:Generator_RowClassName="tbSucursalRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5978,7 +6132,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbOcupacion" msprop:Generator_TableClassName="tbOcupacionDataTable" msprop:Generator_TableVarName="tabletbOcupacion" msprop:Generator_RowChangedName="tbOcupacionRowChanged" msprop:Generator_TablePropName="tbOcupacion" msprop:Generator_RowDeletingName="tbOcupacionRowDeleting" msprop:Generator_RowChangingName="tbOcupacionRowChanging" msprop:Generator_RowEvHandlerName="tbOcupacionRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOcupacionRowDeleted" msprop:Generator_RowClassName="tbOcupacionRow" msprop:Generator_UserTableName="tbOcupacion" msprop:Generator_RowEvArgName="tbOcupacionRowChangeEvent">
+        <xs:element name="tbOcupacion" msprop:Generator_TableClassName="tbOcupacionDataTable" msprop:Generator_TableVarName="tabletbOcupacion" msprop:Generator_TablePropName="tbOcupacion" msprop:Generator_RowDeletingName="tbOcupacionRowDeleting" msprop:Generator_RowChangingName="tbOcupacionRowChanging" msprop:Generator_RowEvHandlerName="tbOcupacionRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOcupacionRowDeleted" msprop:Generator_UserTableName="tbOcupacion" msprop:Generator_RowChangedName="tbOcupacionRowChanged" msprop:Generator_RowEvArgName="tbOcupacionRowChangeEvent" msprop:Generator_RowClassName="tbOcupacionRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -5993,7 +6147,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbTipoFinanciera" msprop:Generator_TableClassName="tbTipoFinancieraDataTable" msprop:Generator_TableVarName="tabletbTipoFinanciera" msprop:Generator_RowChangedName="tbTipoFinancieraRowChanged" msprop:Generator_TablePropName="tbTipoFinanciera" msprop:Generator_RowDeletingName="tbTipoFinancieraRowDeleting" msprop:Generator_RowChangingName="tbTipoFinancieraRowChanging" msprop:Generator_RowEvHandlerName="tbTipoFinancieraRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTipoFinancieraRowDeleted" msprop:Generator_RowClassName="tbTipoFinancieraRow" msprop:Generator_UserTableName="tbTipoFinanciera" msprop:Generator_RowEvArgName="tbTipoFinancieraRowChangeEvent">
+        <xs:element name="tbTipoFinanciera" msprop:Generator_TableClassName="tbTipoFinancieraDataTable" msprop:Generator_TableVarName="tabletbTipoFinanciera" msprop:Generator_TablePropName="tbTipoFinanciera" msprop:Generator_RowDeletingName="tbTipoFinancieraRowDeleting" msprop:Generator_RowChangingName="tbTipoFinancieraRowChanging" msprop:Generator_RowEvHandlerName="tbTipoFinancieraRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTipoFinancieraRowDeleted" msprop:Generator_UserTableName="tbTipoFinanciera" msprop:Generator_RowChangedName="tbTipoFinancieraRowChanged" msprop:Generator_RowEvArgName="tbTipoFinancieraRowChangeEvent" msprop:Generator_RowClassName="tbTipoFinancieraRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6008,7 +6162,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbFinanciera" msprop:Generator_TableClassName="tbFinancieraDataTable" msprop:Generator_TableVarName="tabletbFinanciera" msprop:Generator_RowChangedName="tbFinancieraRowChanged" msprop:Generator_TablePropName="tbFinanciera" msprop:Generator_RowDeletingName="tbFinancieraRowDeleting" msprop:Generator_RowChangingName="tbFinancieraRowChanging" msprop:Generator_RowEvHandlerName="tbFinancieraRowChangeEventHandler" msprop:Generator_RowDeletedName="tbFinancieraRowDeleted" msprop:Generator_RowClassName="tbFinancieraRow" msprop:Generator_UserTableName="tbFinanciera" msprop:Generator_RowEvArgName="tbFinancieraRowChangeEvent">
+        <xs:element name="tbFinanciera" msprop:Generator_TableClassName="tbFinancieraDataTable" msprop:Generator_TableVarName="tabletbFinanciera" msprop:Generator_TablePropName="tbFinanciera" msprop:Generator_RowDeletingName="tbFinancieraRowDeleting" msprop:Generator_RowChangingName="tbFinancieraRowChanging" msprop:Generator_RowEvHandlerName="tbFinancieraRowChangeEventHandler" msprop:Generator_RowDeletedName="tbFinancieraRowDeleted" msprop:Generator_UserTableName="tbFinanciera" msprop:Generator_RowChangedName="tbFinancieraRowChanged" msprop:Generator_RowEvArgName="tbFinancieraRowChangeEvent" msprop:Generator_RowClassName="tbFinancieraRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6030,7 +6184,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbUnidad" msprop:Generator_TableClassName="tbUnidadDataTable" msprop:Generator_TableVarName="tabletbUnidad" msprop:Generator_RowChangedName="tbUnidadRowChanged" msprop:Generator_TablePropName="tbUnidad" msprop:Generator_RowDeletingName="tbUnidadRowDeleting" msprop:Generator_RowChangingName="tbUnidadRowChanging" msprop:Generator_RowEvHandlerName="tbUnidadRowChangeEventHandler" msprop:Generator_RowDeletedName="tbUnidadRowDeleted" msprop:Generator_RowClassName="tbUnidadRow" msprop:Generator_UserTableName="tbUnidad" msprop:Generator_RowEvArgName="tbUnidadRowChangeEvent">
+        <xs:element name="tbUnidad" msprop:Generator_TableClassName="tbUnidadDataTable" msprop:Generator_TableVarName="tabletbUnidad" msprop:Generator_TablePropName="tbUnidad" msprop:Generator_RowDeletingName="tbUnidadRowDeleting" msprop:Generator_RowChangingName="tbUnidadRowChanging" msprop:Generator_RowEvHandlerName="tbUnidadRowChangeEventHandler" msprop:Generator_RowDeletedName="tbUnidadRowDeleted" msprop:Generator_UserTableName="tbUnidad" msprop:Generator_RowChangedName="tbUnidadRowChanged" msprop:Generator_RowEvArgName="tbUnidadRowChangeEvent" msprop:Generator_RowClassName="tbUnidadRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6052,7 +6206,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbPrecioVenta" msprop:Generator_TableClassName="tbPrecioVentaDataTable" msprop:Generator_TableVarName="tabletbPrecioVenta" msprop:Generator_RowChangedName="tbPrecioVentaRowChanged" msprop:Generator_TablePropName="tbPrecioVenta" msprop:Generator_RowDeletingName="tbPrecioVentaRowDeleting" msprop:Generator_RowChangingName="tbPrecioVentaRowChanging" msprop:Generator_RowEvHandlerName="tbPrecioVentaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbPrecioVentaRowDeleted" msprop:Generator_RowClassName="tbPrecioVentaRow" msprop:Generator_UserTableName="tbPrecioVenta" msprop:Generator_RowEvArgName="tbPrecioVentaRowChangeEvent">
+        <xs:element name="tbPrecioVenta" msprop:Generator_TableClassName="tbPrecioVentaDataTable" msprop:Generator_TableVarName="tabletbPrecioVenta" msprop:Generator_TablePropName="tbPrecioVenta" msprop:Generator_RowDeletingName="tbPrecioVentaRowDeleting" msprop:Generator_RowChangingName="tbPrecioVentaRowChanging" msprop:Generator_RowEvHandlerName="tbPrecioVentaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbPrecioVentaRowDeleted" msprop:Generator_UserTableName="tbPrecioVenta" msprop:Generator_RowChangedName="tbPrecioVentaRowChanged" msprop:Generator_RowEvArgName="tbPrecioVentaRowChangeEvent" msprop:Generator_RowClassName="tbPrecioVentaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6067,7 +6221,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbArticuloPrecioVenta" msprop:Generator_TableClassName="tbArticuloPrecioVentaDataTable" msprop:Generator_TableVarName="tabletbArticuloPrecioVenta" msprop:Generator_RowChangedName="tbArticuloPrecioVentaRowChanged" msprop:Generator_TablePropName="tbArticuloPrecioVenta" msprop:Generator_RowDeletingName="tbArticuloPrecioVentaRowDeleting" msprop:Generator_RowChangingName="tbArticuloPrecioVentaRowChanging" msprop:Generator_RowEvHandlerName="tbArticuloPrecioVentaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbArticuloPrecioVentaRowDeleted" msprop:Generator_RowClassName="tbArticuloPrecioVentaRow" msprop:Generator_UserTableName="tbArticuloPrecioVenta" msprop:Generator_RowEvArgName="tbArticuloPrecioVentaRowChangeEvent">
+        <xs:element name="tbArticuloPrecioVenta" msprop:Generator_TableClassName="tbArticuloPrecioVentaDataTable" msprop:Generator_TableVarName="tabletbArticuloPrecioVenta" msprop:Generator_TablePropName="tbArticuloPrecioVenta" msprop:Generator_RowDeletingName="tbArticuloPrecioVentaRowDeleting" msprop:Generator_RowChangingName="tbArticuloPrecioVentaRowChanging" msprop:Generator_RowEvHandlerName="tbArticuloPrecioVentaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbArticuloPrecioVentaRowDeleted" msprop:Generator_UserTableName="tbArticuloPrecioVenta" msprop:Generator_RowChangedName="tbArticuloPrecioVentaRowChanged" msprop:Generator_RowEvArgName="tbArticuloPrecioVentaRowChangeEvent" msprop:Generator_RowClassName="tbArticuloPrecioVentaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoPrecioVenta" msdata:Caption="Código" msprop:Generator_ColumnVarNameInTable="columnCodigoPrecioVenta" msprop:Generator_ColumnPropNameInRow="CodigoPrecioVenta" msprop:Generator_ColumnPropNameInTable="CodigoPrecioVentaColumn" msprop:Generator_UserColumnName="CodigoPrecioVenta" minOccurs="0">
@@ -6081,7 +6235,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbArticuloMultimedia" msprop:Generator_TableClassName="tbArticuloMultimediaDataTable" msprop:Generator_TableVarName="tabletbArticuloMultimedia" msprop:Generator_RowChangedName="tbArticuloMultimediaRowChanged" msprop:Generator_TablePropName="tbArticuloMultimedia" msprop:Generator_RowDeletingName="tbArticuloMultimediaRowDeleting" msprop:Generator_RowChangingName="tbArticuloMultimediaRowChanging" msprop:Generator_RowEvHandlerName="tbArticuloMultimediaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbArticuloMultimediaRowDeleted" msprop:Generator_RowClassName="tbArticuloMultimediaRow" msprop:Generator_UserTableName="tbArticuloMultimedia" msprop:Generator_RowEvArgName="tbArticuloMultimediaRowChangeEvent">
+        <xs:element name="tbArticuloMultimedia" msprop:Generator_TableClassName="tbArticuloMultimediaDataTable" msprop:Generator_TableVarName="tabletbArticuloMultimedia" msprop:Generator_TablePropName="tbArticuloMultimedia" msprop:Generator_RowDeletingName="tbArticuloMultimediaRowDeleting" msprop:Generator_RowChangingName="tbArticuloMultimediaRowChanging" msprop:Generator_RowEvHandlerName="tbArticuloMultimediaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbArticuloMultimediaRowDeleted" msprop:Generator_UserTableName="tbArticuloMultimedia" msprop:Generator_RowChangedName="tbArticuloMultimediaRowChanged" msprop:Generator_RowEvArgName="tbArticuloMultimediaRowChangeEvent" msprop:Generator_RowClassName="tbArticuloMultimediaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6092,7 +6246,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbDepartamento" msprop:Generator_TableClassName="tbDepartamentoDataTable" msprop:Generator_TableVarName="tabletbDepartamento" msprop:Generator_RowChangedName="tbDepartamentoRowChanged" msprop:Generator_TablePropName="tbDepartamento" msprop:Generator_RowDeletingName="tbDepartamentoRowDeleting" msprop:Generator_RowChangingName="tbDepartamentoRowChanging" msprop:Generator_RowEvHandlerName="tbDepartamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbDepartamentoRowDeleted" msprop:Generator_RowClassName="tbDepartamentoRow" msprop:Generator_UserTableName="tbDepartamento" msprop:Generator_RowEvArgName="tbDepartamentoRowChangeEvent">
+        <xs:element name="tbDepartamento" msprop:Generator_TableClassName="tbDepartamentoDataTable" msprop:Generator_TableVarName="tabletbDepartamento" msprop:Generator_TablePropName="tbDepartamento" msprop:Generator_RowDeletingName="tbDepartamentoRowDeleting" msprop:Generator_RowChangingName="tbDepartamentoRowChanging" msprop:Generator_RowEvHandlerName="tbDepartamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbDepartamentoRowDeleted" msprop:Generator_UserTableName="tbDepartamento" msprop:Generator_RowChangedName="tbDepartamentoRowChanged" msprop:Generator_RowEvArgName="tbDepartamentoRowChangeEvent" msprop:Generator_RowClassName="tbDepartamentoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6107,7 +6261,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbArticulo" msprop:Generator_TableClassName="tbArticuloDataTable" msprop:Generator_TableVarName="tabletbArticulo" msprop:Generator_RowChangedName="tbArticuloRowChanged" msprop:Generator_TablePropName="tbArticulo" msprop:Generator_RowDeletingName="tbArticuloRowDeleting" msprop:Generator_RowChangingName="tbArticuloRowChanging" msprop:Generator_RowEvHandlerName="tbArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="tbArticuloRowDeleted" msprop:Generator_RowClassName="tbArticuloRow" msprop:Generator_UserTableName="tbArticulo" msprop:Generator_RowEvArgName="tbArticuloRowChangeEvent">
+        <xs:element name="tbArticulo" msprop:Generator_TableClassName="tbArticuloDataTable" msprop:Generator_TableVarName="tabletbArticulo" msprop:Generator_TablePropName="tbArticulo" msprop:Generator_RowDeletingName="tbArticuloRowDeleting" msprop:Generator_RowChangingName="tbArticuloRowChanging" msprop:Generator_RowEvHandlerName="tbArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="tbArticuloRowDeleted" msprop:Generator_UserTableName="tbArticulo" msprop:Generator_RowChangedName="tbArticuloRowChanged" msprop:Generator_RowEvArgName="tbArticuloRowChangeEvent" msprop:Generator_RowClassName="tbArticuloRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6171,7 +6325,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbArticuloProveedor" msprop:Generator_TableClassName="tbArticuloProveedorDataTable" msprop:Generator_TableVarName="tabletbArticuloProveedor" msprop:Generator_RowChangedName="tbArticuloProveedorRowChanged" msprop:Generator_TablePropName="tbArticuloProveedor" msprop:Generator_RowDeletingName="tbArticuloProveedorRowDeleting" msprop:Generator_RowChangingName="tbArticuloProveedorRowChanging" msprop:Generator_RowEvHandlerName="tbArticuloProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="tbArticuloProveedorRowDeleted" msprop:Generator_RowClassName="tbArticuloProveedorRow" msprop:Generator_UserTableName="tbArticuloProveedor" msprop:Generator_RowEvArgName="tbArticuloProveedorRowChangeEvent">
+        <xs:element name="tbArticuloProveedor" msprop:Generator_TableClassName="tbArticuloProveedorDataTable" msprop:Generator_TableVarName="tabletbArticuloProveedor" msprop:Generator_TablePropName="tbArticuloProveedor" msprop:Generator_RowDeletingName="tbArticuloProveedorRowDeleting" msprop:Generator_RowChangingName="tbArticuloProveedorRowChanging" msprop:Generator_RowEvHandlerName="tbArticuloProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="tbArticuloProveedorRowDeleted" msprop:Generator_UserTableName="tbArticuloProveedor" msprop:Generator_RowChangedName="tbArticuloProveedorRowChanged" msprop:Generator_RowEvArgName="tbArticuloProveedorRowChangeEvent" msprop:Generator_RowClassName="tbArticuloProveedorRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoProveedor" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCodigoProveedor" msprop:Generator_ColumnPropNameInRow="CodigoProveedor" msprop:Generator_ColumnPropNameInTable="CodigoProveedorColumn" msprop:Generator_UserColumnName="CodigoProveedor" type="xs:short" minOccurs="0" />
@@ -6187,7 +6341,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbClienteSucursalContacto" msprop:Generator_TableClassName="tbClienteSucursalContactoDataTable" msprop:Generator_TableVarName="tabletbClienteSucursalContacto" msprop:Generator_RowChangedName="tbClienteSucursalContactoRowChanged" msprop:Generator_TablePropName="tbClienteSucursalContacto" msprop:Generator_RowDeletingName="tbClienteSucursalContactoRowDeleting" msprop:Generator_RowChangingName="tbClienteSucursalContactoRowChanging" msprop:Generator_RowEvHandlerName="tbClienteSucursalContactoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteSucursalContactoRowDeleted" msprop:Generator_RowClassName="tbClienteSucursalContactoRow" msprop:Generator_UserTableName="tbClienteSucursalContacto" msprop:Generator_RowEvArgName="tbClienteSucursalContactoRowChangeEvent">
+        <xs:element name="tbClienteSucursalContacto" msprop:Generator_TableClassName="tbClienteSucursalContactoDataTable" msprop:Generator_TableVarName="tabletbClienteSucursalContacto" msprop:Generator_TablePropName="tbClienteSucursalContacto" msprop:Generator_RowDeletingName="tbClienteSucursalContactoRowDeleting" msprop:Generator_RowChangingName="tbClienteSucursalContactoRowChanging" msprop:Generator_RowEvHandlerName="tbClienteSucursalContactoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteSucursalContactoRowDeleted" msprop:Generator_UserTableName="tbClienteSucursalContacto" msprop:Generator_RowChangedName="tbClienteSucursalContactoRowChanged" msprop:Generator_RowEvArgName="tbClienteSucursalContactoRowChangeEvent" msprop:Generator_RowClassName="tbClienteSucursalContactoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6219,7 +6373,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbNacionalidad" msprop:Generator_TableClassName="tbNacionalidadDataTable" msprop:Generator_TableVarName="tabletbNacionalidad" msprop:Generator_RowChangedName="tbNacionalidadRowChanged" msprop:Generator_TablePropName="tbNacionalidad" msprop:Generator_RowDeletingName="tbNacionalidadRowDeleting" msprop:Generator_RowChangingName="tbNacionalidadRowChanging" msprop:Generator_RowEvHandlerName="tbNacionalidadRowChangeEventHandler" msprop:Generator_RowDeletedName="tbNacionalidadRowDeleted" msprop:Generator_RowClassName="tbNacionalidadRow" msprop:Generator_UserTableName="tbNacionalidad" msprop:Generator_RowEvArgName="tbNacionalidadRowChangeEvent">
+        <xs:element name="tbNacionalidad" msprop:Generator_TableClassName="tbNacionalidadDataTable" msprop:Generator_TableVarName="tabletbNacionalidad" msprop:Generator_TablePropName="tbNacionalidad" msprop:Generator_RowDeletingName="tbNacionalidadRowDeleting" msprop:Generator_RowChangingName="tbNacionalidadRowChanging" msprop:Generator_RowEvHandlerName="tbNacionalidadRowChangeEventHandler" msprop:Generator_RowDeletedName="tbNacionalidadRowDeleted" msprop:Generator_UserTableName="tbNacionalidad" msprop:Generator_RowChangedName="tbNacionalidadRowChanged" msprop:Generator_RowEvArgName="tbNacionalidadRowChangeEvent" msprop:Generator_RowClassName="tbNacionalidadRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6234,7 +6388,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbEstado" msprop:Generator_TableClassName="tbEstadoDataTable" msprop:Generator_TableVarName="tabletbEstado" msprop:Generator_RowChangedName="tbEstadoRowChanged" msprop:Generator_TablePropName="tbEstado" msprop:Generator_RowDeletingName="tbEstadoRowDeleting" msprop:Generator_RowChangingName="tbEstadoRowChanging" msprop:Generator_RowEvHandlerName="tbEstadoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbEstadoRowDeleted" msprop:Generator_RowClassName="tbEstadoRow" msprop:Generator_UserTableName="tbEstado" msprop:Generator_RowEvArgName="tbEstadoRowChangeEvent">
+        <xs:element name="tbEstado" msprop:Generator_TableClassName="tbEstadoDataTable" msprop:Generator_TableVarName="tabletbEstado" msprop:Generator_TablePropName="tbEstado" msprop:Generator_RowDeletingName="tbEstadoRowDeleting" msprop:Generator_RowChangingName="tbEstadoRowChanging" msprop:Generator_RowEvHandlerName="tbEstadoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbEstadoRowDeleted" msprop:Generator_UserTableName="tbEstado" msprop:Generator_RowChangedName="tbEstadoRowChanged" msprop:Generator_RowEvArgName="tbEstadoRowChangeEvent" msprop:Generator_RowClassName="tbEstadoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6257,7 +6411,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbTributo" msprop:Generator_TableClassName="tbTributoDataTable" msprop:Generator_TableVarName="tabletbTributo" msprop:Generator_RowChangedName="tbTributoRowChanged" msprop:Generator_TablePropName="tbTributo" msprop:Generator_RowDeletingName="tbTributoRowDeleting" msprop:Generator_RowChangingName="tbTributoRowChanging" msprop:Generator_RowEvHandlerName="tbTributoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTributoRowDeleted" msprop:Generator_RowClassName="tbTributoRow" msprop:Generator_UserTableName="tbTributo" msprop:Generator_RowEvArgName="tbTributoRowChangeEvent">
+        <xs:element name="tbTributo" msprop:Generator_TableClassName="tbTributoDataTable" msprop:Generator_TableVarName="tabletbTributo" msprop:Generator_TablePropName="tbTributo" msprop:Generator_RowDeletingName="tbTributoRowDeleting" msprop:Generator_RowChangingName="tbTributoRowChanging" msprop:Generator_RowEvHandlerName="tbTributoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTributoRowDeleted" msprop:Generator_UserTableName="tbTributo" msprop:Generator_RowChangedName="tbTributoRowChanged" msprop:Generator_RowEvArgName="tbTributoRowChangeEvent" msprop:Generator_RowClassName="tbTributoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6272,7 +6426,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbTipoTributo" msprop:Generator_TableClassName="tbTipoTributoDataTable" msprop:Generator_TableVarName="tabletbTipoTributo" msprop:Generator_RowChangedName="tbTipoTributoRowChanged" msprop:Generator_TablePropName="tbTipoTributo" msprop:Generator_RowDeletingName="tbTipoTributoRowDeleting" msprop:Generator_RowChangingName="tbTipoTributoRowChanging" msprop:Generator_RowEvHandlerName="tbTipoTributoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTipoTributoRowDeleted" msprop:Generator_RowClassName="tbTipoTributoRow" msprop:Generator_UserTableName="tbTipoTributo" msprop:Generator_RowEvArgName="tbTipoTributoRowChangeEvent">
+        <xs:element name="tbTipoTributo" msprop:Generator_TableClassName="tbTipoTributoDataTable" msprop:Generator_TableVarName="tabletbTipoTributo" msprop:Generator_TablePropName="tbTipoTributo" msprop:Generator_RowDeletingName="tbTipoTributoRowDeleting" msprop:Generator_RowChangingName="tbTipoTributoRowChanging" msprop:Generator_RowEvHandlerName="tbTipoTributoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTipoTributoRowDeleted" msprop:Generator_UserTableName="tbTipoTributo" msprop:Generator_RowChangedName="tbTipoTributoRowChanged" msprop:Generator_RowEvArgName="tbTipoTributoRowChangeEvent" msprop:Generator_RowClassName="tbTipoTributoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6304,7 +6458,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbCliente" msprop:Generator_TableClassName="tbClienteDataTable" msprop:Generator_TableVarName="tabletbCliente" msprop:Generator_RowChangedName="tbClienteRowChanged" msprop:Generator_TablePropName="tbCliente" msprop:Generator_RowDeletingName="tbClienteRowDeleting" msprop:Generator_RowChangingName="tbClienteRowChanging" msprop:Generator_RowEvHandlerName="tbClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteRowDeleted" msprop:Generator_RowClassName="tbClienteRow" msprop:Generator_UserTableName="tbCliente" msprop:Generator_RowEvArgName="tbClienteRowChangeEvent">
+        <xs:element name="tbCliente" msprop:Generator_TableClassName="tbClienteDataTable" msprop:Generator_TableVarName="tabletbCliente" msprop:Generator_TablePropName="tbCliente" msprop:Generator_RowDeletingName="tbClienteRowDeleting" msprop:Generator_RowChangingName="tbClienteRowChanging" msprop:Generator_RowEvHandlerName="tbClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteRowDeleted" msprop:Generator_UserTableName="tbCliente" msprop:Generator_RowChangedName="tbClienteRowChanged" msprop:Generator_RowEvArgName="tbClienteRowChangeEvent" msprop:Generator_RowClassName="tbClienteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6423,7 +6577,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbClienteSucursal" msprop:Generator_TableClassName="tbClienteSucursalDataTable" msprop:Generator_TableVarName="tabletbClienteSucursal" msprop:Generator_RowChangedName="tbClienteSucursalRowChanged" msprop:Generator_TablePropName="tbClienteSucursal" msprop:Generator_RowDeletingName="tbClienteSucursalRowDeleting" msprop:Generator_RowChangingName="tbClienteSucursalRowChanging" msprop:Generator_RowEvHandlerName="tbClienteSucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteSucursalRowDeleted" msprop:Generator_RowClassName="tbClienteSucursalRow" msprop:Generator_UserTableName="tbClienteSucursal" msprop:Generator_RowEvArgName="tbClienteSucursalRowChangeEvent">
+        <xs:element name="tbClienteSucursal" msprop:Generator_TableClassName="tbClienteSucursalDataTable" msprop:Generator_TableVarName="tabletbClienteSucursal" msprop:Generator_TablePropName="tbClienteSucursal" msprop:Generator_RowDeletingName="tbClienteSucursalRowDeleting" msprop:Generator_RowChangingName="tbClienteSucursalRowChanging" msprop:Generator_RowEvHandlerName="tbClienteSucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteSucursalRowDeleted" msprop:Generator_UserTableName="tbClienteSucursal" msprop:Generator_RowChangedName="tbClienteSucursalRowChanged" msprop:Generator_RowEvArgName="tbClienteSucursalRowChangeEvent" msprop:Generator_RowClassName="tbClienteSucursalRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6475,7 +6629,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbClienteNacionalidad" msprop:Generator_TableClassName="tbClienteNacionalidadDataTable" msprop:Generator_TableVarName="tabletbClienteNacionalidad" msprop:Generator_RowChangedName="tbClienteNacionalidadRowChanged" msprop:Generator_TablePropName="tbClienteNacionalidad" msprop:Generator_RowDeletingName="tbClienteNacionalidadRowDeleting" msprop:Generator_RowChangingName="tbClienteNacionalidadRowChanging" msprop:Generator_RowEvHandlerName="tbClienteNacionalidadRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteNacionalidadRowDeleted" msprop:Generator_RowClassName="tbClienteNacionalidadRow" msprop:Generator_UserTableName="tbClienteNacionalidad" msprop:Generator_RowEvArgName="tbClienteNacionalidadRowChangeEvent">
+        <xs:element name="tbClienteNacionalidad" msprop:Generator_TableClassName="tbClienteNacionalidadDataTable" msprop:Generator_TableVarName="tabletbClienteNacionalidad" msprop:Generator_TablePropName="tbClienteNacionalidad" msprop:Generator_RowDeletingName="tbClienteNacionalidadRowDeleting" msprop:Generator_RowChangingName="tbClienteNacionalidadRowChanging" msprop:Generator_RowEvHandlerName="tbClienteNacionalidadRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteNacionalidadRowDeleted" msprop:Generator_UserTableName="tbClienteNacionalidad" msprop:Generator_RowChangedName="tbClienteNacionalidadRowChanged" msprop:Generator_RowEvArgName="tbClienteNacionalidadRowChangeEvent" msprop:Generator_RowClassName="tbClienteNacionalidadRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6505,7 +6659,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbFormaPago" msprop:Generator_TableClassName="tbFormaPagoDataTable" msprop:Generator_TableVarName="tabletbFormaPago" msprop:Generator_RowChangedName="tbFormaPagoRowChanged" msprop:Generator_TablePropName="tbFormaPago" msprop:Generator_RowDeletingName="tbFormaPagoRowDeleting" msprop:Generator_RowChangingName="tbFormaPagoRowChanging" msprop:Generator_RowEvHandlerName="tbFormaPagoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbFormaPagoRowDeleted" msprop:Generator_RowClassName="tbFormaPagoRow" msprop:Generator_UserTableName="tbFormaPago" msprop:Generator_RowEvArgName="tbFormaPagoRowChangeEvent">
+        <xs:element name="tbFormaPago" msprop:Generator_TableClassName="tbFormaPagoDataTable" msprop:Generator_TableVarName="tabletbFormaPago" msprop:Generator_TablePropName="tbFormaPago" msprop:Generator_RowDeletingName="tbFormaPagoRowDeleting" msprop:Generator_RowChangingName="tbFormaPagoRowChanging" msprop:Generator_RowEvHandlerName="tbFormaPagoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbFormaPagoRowDeleted" msprop:Generator_UserTableName="tbFormaPago" msprop:Generator_RowChangedName="tbFormaPagoRowChanged" msprop:Generator_RowEvArgName="tbFormaPagoRowChangeEvent" msprop:Generator_RowClassName="tbFormaPagoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6520,7 +6674,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbFrecuencia" msprop:Generator_TableClassName="tbFrecuenciaDataTable" msprop:Generator_TableVarName="tabletbFrecuencia" msprop:Generator_TablePropName="tbFrecuencia" msprop:Generator_RowDeletingName="tbFrecuenciaRowDeleting" msprop:Generator_RowChangingName="tbFrecuenciaRowChanging" msprop:Generator_RowEvHandlerName="tbFrecuenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbFrecuenciaRowDeleted" msprop:Generator_UserTableName="tbFrecuencia" msprop:Generator_RowChangedName="tbFrecuenciaRowChanged" msprop:Generator_RowEvArgName="tbFrecuenciaRowChangeEvent" msprop:Generator_RowClassName="tbFrecuenciaRow">
+        <xs:element name="tbFrecuencia" msprop:Generator_TableClassName="tbFrecuenciaDataTable" msprop:Generator_TableVarName="tabletbFrecuencia" msprop:Generator_RowChangedName="tbFrecuenciaRowChanged" msprop:Generator_TablePropName="tbFrecuencia" msprop:Generator_RowDeletingName="tbFrecuenciaRowDeleting" msprop:Generator_RowChangingName="tbFrecuenciaRowChanging" msprop:Generator_RowEvHandlerName="tbFrecuenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbFrecuenciaRowDeleted" msprop:Generator_RowClassName="tbFrecuenciaRow" msprop:Generator_UserTableName="tbFrecuencia" msprop:Generator_RowEvArgName="tbFrecuenciaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6536,7 +6690,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbClienteDomicilio" msprop:Generator_TableClassName="tbClienteDomicilioDataTable" msprop:Generator_TableVarName="tabletbClienteDomicilio" msprop:Generator_TablePropName="tbClienteDomicilio" msprop:Generator_RowDeletingName="tbClienteDomicilioRowDeleting" msprop:Generator_RowChangingName="tbClienteDomicilioRowChanging" msprop:Generator_RowEvHandlerName="tbClienteDomicilioRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteDomicilioRowDeleted" msprop:Generator_UserTableName="tbClienteDomicilio" msprop:Generator_RowChangedName="tbClienteDomicilioRowChanged" msprop:Generator_RowEvArgName="tbClienteDomicilioRowChangeEvent" msprop:Generator_RowClassName="tbClienteDomicilioRow">
+        <xs:element name="tbClienteDomicilio" msprop:Generator_TableClassName="tbClienteDomicilioDataTable" msprop:Generator_TableVarName="tabletbClienteDomicilio" msprop:Generator_RowChangedName="tbClienteDomicilioRowChanged" msprop:Generator_TablePropName="tbClienteDomicilio" msprop:Generator_RowDeletingName="tbClienteDomicilioRowDeleting" msprop:Generator_RowChangingName="tbClienteDomicilioRowChanging" msprop:Generator_RowEvHandlerName="tbClienteDomicilioRowChangeEventHandler" msprop:Generator_RowDeletedName="tbClienteDomicilioRowDeleted" msprop:Generator_RowClassName="tbClienteDomicilioRow" msprop:Generator_UserTableName="tbClienteDomicilio" msprop:Generator_RowEvArgName="tbClienteDomicilioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6596,7 +6750,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbOrdenPedido" msprop:Generator_TableClassName="tbOrdenPedidoDataTable" msprop:Generator_TableVarName="tabletbOrdenPedido" msprop:Generator_TablePropName="tbOrdenPedido" msprop:Generator_RowDeletingName="tbOrdenPedidoRowDeleting" msprop:Generator_RowChangingName="tbOrdenPedidoRowChanging" msprop:Generator_RowEvHandlerName="tbOrdenPedidoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOrdenPedidoRowDeleted" msprop:Generator_UserTableName="tbOrdenPedido" msprop:Generator_RowChangedName="tbOrdenPedidoRowChanged" msprop:Generator_RowEvArgName="tbOrdenPedidoRowChangeEvent" msprop:Generator_RowClassName="tbOrdenPedidoRow">
+        <xs:element name="tbOrdenPedido" msprop:Generator_TableClassName="tbOrdenPedidoDataTable" msprop:Generator_TableVarName="tabletbOrdenPedido" msprop:Generator_RowChangedName="tbOrdenPedidoRowChanged" msprop:Generator_TablePropName="tbOrdenPedido" msprop:Generator_RowDeletingName="tbOrdenPedidoRowDeleting" msprop:Generator_RowChangingName="tbOrdenPedidoRowChanging" msprop:Generator_RowEvHandlerName="tbOrdenPedidoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOrdenPedidoRowDeleted" msprop:Generator_RowClassName="tbOrdenPedidoRow" msprop:Generator_UserTableName="tbOrdenPedido" msprop:Generator_RowEvArgName="tbOrdenPedidoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msdata:Caption="Trabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6651,7 +6805,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbBuscaArticulo" msprop:Generator_TableClassName="tbBuscaArticuloDataTable" msprop:Generator_TableVarName="tabletbBuscaArticulo" msprop:Generator_TablePropName="tbBuscaArticulo" msprop:Generator_RowDeletingName="tbBuscaArticuloRowDeleting" msprop:Generator_RowChangingName="tbBuscaArticuloRowChanging" msprop:Generator_RowEvHandlerName="tbBuscaArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="tbBuscaArticuloRowDeleted" msprop:Generator_UserTableName="tbBuscaArticulo" msprop:Generator_RowChangedName="tbBuscaArticuloRowChanged" msprop:Generator_RowEvArgName="tbBuscaArticuloRowChangeEvent" msprop:Generator_RowClassName="tbBuscaArticuloRow">
+        <xs:element name="tbBuscaArticulo" msprop:Generator_TableClassName="tbBuscaArticuloDataTable" msprop:Generator_TableVarName="tabletbBuscaArticulo" msprop:Generator_RowChangedName="tbBuscaArticuloRowChanged" msprop:Generator_TablePropName="tbBuscaArticulo" msprop:Generator_RowDeletingName="tbBuscaArticuloRowDeleting" msprop:Generator_RowChangingName="tbBuscaArticuloRowChanging" msprop:Generator_RowEvHandlerName="tbBuscaArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="tbBuscaArticuloRowDeleted" msprop:Generator_RowClassName="tbBuscaArticuloRow" msprop:Generator_UserTableName="tbBuscaArticulo" msprop:Generator_RowEvArgName="tbBuscaArticuloRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoArticulo" msprop:Generator_ColumnVarNameInTable="columnCodigoArticulo" msprop:Generator_ColumnPropNameInRow="CodigoArticulo" msprop:Generator_ColumnPropNameInTable="CodigoArticuloColumn" msprop:Generator_UserColumnName="CodigoArticulo" type="xs:int" />
@@ -6702,7 +6856,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbOrdenPedidoArticulo" msprop:Generator_TableClassName="tbOrdenPedidoArticuloDataTable" msprop:Generator_TableVarName="tabletbOrdenPedidoArticulo" msprop:Generator_TablePropName="tbOrdenPedidoArticulo" msprop:Generator_RowDeletingName="tbOrdenPedidoArticuloRowDeleting" msprop:Generator_RowChangingName="tbOrdenPedidoArticuloRowChanging" msprop:Generator_RowEvHandlerName="tbOrdenPedidoArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOrdenPedidoArticuloRowDeleted" msprop:Generator_UserTableName="tbOrdenPedidoArticulo" msprop:Generator_RowChangedName="tbOrdenPedidoArticuloRowChanged" msprop:Generator_RowEvArgName="tbOrdenPedidoArticuloRowChangeEvent" msprop:Generator_RowClassName="tbOrdenPedidoArticuloRow">
+        <xs:element name="tbOrdenPedidoArticulo" msprop:Generator_TableClassName="tbOrdenPedidoArticuloDataTable" msprop:Generator_TableVarName="tabletbOrdenPedidoArticulo" msprop:Generator_RowChangedName="tbOrdenPedidoArticuloRowChanged" msprop:Generator_TablePropName="tbOrdenPedidoArticulo" msprop:Generator_RowDeletingName="tbOrdenPedidoArticuloRowDeleting" msprop:Generator_RowChangingName="tbOrdenPedidoArticuloRowChanging" msprop:Generator_RowEvHandlerName="tbOrdenPedidoArticuloRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOrdenPedidoArticuloRowDeleted" msprop:Generator_RowClassName="tbOrdenPedidoArticuloRow" msprop:Generator_UserTableName="tbOrdenPedidoArticulo" msprop:Generator_RowEvArgName="tbOrdenPedidoArticuloRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6733,7 +6887,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fnOrdenPedido" msprop:Generator_TableClassName="fnOrdenPedidoDataTable" msprop:Generator_TableVarName="tablefnOrdenPedido" msprop:Generator_TablePropName="fnOrdenPedido" msprop:Generator_RowDeletingName="fnOrdenPedidoRowDeleting" msprop:Generator_RowChangingName="fnOrdenPedidoRowChanging" msprop:Generator_RowEvHandlerName="fnOrdenPedidoRowChangeEventHandler" msprop:Generator_RowDeletedName="fnOrdenPedidoRowDeleted" msprop:Generator_UserTableName="fnOrdenPedido" msprop:Generator_RowChangedName="fnOrdenPedidoRowChanged" msprop:Generator_RowEvArgName="fnOrdenPedidoRowChangeEvent" msprop:Generator_RowClassName="fnOrdenPedidoRow">
+        <xs:element name="fnOrdenPedido" msprop:Generator_TableClassName="fnOrdenPedidoDataTable" msprop:Generator_TableVarName="tablefnOrdenPedido" msprop:Generator_RowChangedName="fnOrdenPedidoRowChanged" msprop:Generator_TablePropName="fnOrdenPedido" msprop:Generator_RowDeletingName="fnOrdenPedidoRowDeleting" msprop:Generator_RowChangingName="fnOrdenPedidoRowChanging" msprop:Generator_RowEvHandlerName="fnOrdenPedidoRowChangeEventHandler" msprop:Generator_RowDeletedName="fnOrdenPedidoRowDeleted" msprop:Generator_RowClassName="fnOrdenPedidoRow" msprop:Generator_UserTableName="fnOrdenPedido" msprop:Generator_RowEvArgName="fnOrdenPedidoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NumeroOrdenPedido" msprop:Generator_ColumnVarNameInTable="columnNumeroOrdenPedido" msprop:Generator_ColumnPropNameInRow="NumeroOrdenPedido" msprop:Generator_ColumnPropNameInTable="NumeroOrdenPedidoColumn" msprop:Generator_UserColumnName="NumeroOrdenPedido">
@@ -6771,7 +6925,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbOrdenPedidoEstado" msprop:Generator_TableClassName="tbOrdenPedidoEstadoDataTable" msprop:Generator_TableVarName="tabletbOrdenPedidoEstado" msprop:Generator_RowChangedName="tbOrdenPedidoEstadoRowChanged" msprop:Generator_TablePropName="tbOrdenPedidoEstado" msprop:Generator_RowDeletingName="tbOrdenPedidoEstadoRowDeleting" msprop:Generator_RowChangingName="tbOrdenPedidoEstadoRowChanging" msprop:Generator_RowEvHandlerName="tbOrdenPedidoEstadoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOrdenPedidoEstadoRowDeleted" msprop:Generator_RowClassName="tbOrdenPedidoEstadoRow" msprop:Generator_UserTableName="tbOrdenPedidoEstado" msprop:Generator_RowEvArgName="tbOrdenPedidoEstadoRowChangeEvent">
+        <xs:element name="tbOrdenPedidoEstado" msprop:Generator_TableClassName="tbOrdenPedidoEstadoDataTable" msprop:Generator_TableVarName="tabletbOrdenPedidoEstado" msprop:Generator_TablePropName="tbOrdenPedidoEstado" msprop:Generator_RowDeletingName="tbOrdenPedidoEstadoRowDeleting" msprop:Generator_RowChangingName="tbOrdenPedidoEstadoRowChanging" msprop:Generator_RowEvHandlerName="tbOrdenPedidoEstadoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbOrdenPedidoEstadoRowDeleted" msprop:Generator_UserTableName="tbOrdenPedidoEstado" msprop:Generator_RowChangedName="tbOrdenPedidoEstadoRowChanged" msprop:Generator_RowEvArgName="tbOrdenPedidoEstadoRowChangeEvent" msprop:Generator_RowClassName="tbOrdenPedidoEstadoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6810,7 +6964,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fnIdentificacionMiembro" msprop:Generator_TableClassName="fnIdentificacionMiembroDataTable" msprop:Generator_TableVarName="tablefnIdentificacionMiembro" msprop:Generator_TablePropName="fnIdentificacionMiembro" msprop:Generator_RowDeletingName="fnIdentificacionMiembroRowDeleting" msprop:Generator_RowChangingName="fnIdentificacionMiembroRowChanging" msprop:Generator_RowEvHandlerName="fnIdentificacionMiembroRowChangeEventHandler" msprop:Generator_RowDeletedName="fnIdentificacionMiembroRowDeleted" msprop:Generator_UserTableName="fnIdentificacionMiembro" msprop:Generator_RowChangedName="fnIdentificacionMiembroRowChanged" msprop:Generator_RowEvArgName="fnIdentificacionMiembroRowChangeEvent" msprop:Generator_RowClassName="fnIdentificacionMiembroRow">
+        <xs:element name="fnIdentificacionMiembro" msprop:Generator_TableClassName="fnIdentificacionMiembroDataTable" msprop:Generator_TableVarName="tablefnIdentificacionMiembro" msprop:Generator_RowChangedName="fnIdentificacionMiembroRowChanged" msprop:Generator_TablePropName="fnIdentificacionMiembro" msprop:Generator_RowDeletingName="fnIdentificacionMiembroRowDeleting" msprop:Generator_RowChangingName="fnIdentificacionMiembroRowChanging" msprop:Generator_RowEvHandlerName="fnIdentificacionMiembroRowChangeEventHandler" msprop:Generator_RowDeletedName="fnIdentificacionMiembroRowDeleted" msprop:Generator_RowClassName="fnIdentificacionMiembroRow" msprop:Generator_UserTableName="fnIdentificacionMiembro" msprop:Generator_RowEvArgName="fnIdentificacionMiembroRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoIdentificacion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCodigoIdentificacion" msprop:Generator_ColumnPropNameInRow="CodigoIdentificacion" msprop:Generator_ColumnPropNameInTable="CodigoIdentificacionColumn" msprop:Generator_UserColumnName="CodigoIdentificacion">
@@ -6830,7 +6984,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbSucursalMiembro" msprop:Generator_TableClassName="tbSucursalMiembroDataTable" msprop:Generator_TableVarName="tabletbSucursalMiembro" msprop:Generator_TablePropName="tbSucursalMiembro" msprop:Generator_RowDeletingName="tbSucursalMiembroRowDeleting" msprop:Generator_RowChangingName="tbSucursalMiembroRowChanging" msprop:Generator_RowEvHandlerName="tbSucursalMiembroRowChangeEventHandler" msprop:Generator_RowDeletedName="tbSucursalMiembroRowDeleted" msprop:Generator_UserTableName="tbSucursalMiembro" msprop:Generator_RowChangedName="tbSucursalMiembroRowChanged" msprop:Generator_RowEvArgName="tbSucursalMiembroRowChangeEvent" msprop:Generator_RowClassName="tbSucursalMiembroRow">
+        <xs:element name="tbSucursalMiembro" msprop:Generator_TableClassName="tbSucursalMiembroDataTable" msprop:Generator_TableVarName="tabletbSucursalMiembro" msprop:Generator_RowChangedName="tbSucursalMiembroRowChanged" msprop:Generator_TablePropName="tbSucursalMiembro" msprop:Generator_RowDeletingName="tbSucursalMiembroRowDeleting" msprop:Generator_RowChangingName="tbSucursalMiembroRowChanging" msprop:Generator_RowEvHandlerName="tbSucursalMiembroRowChangeEventHandler" msprop:Generator_RowDeletedName="tbSucursalMiembroRowDeleted" msprop:Generator_RowClassName="tbSucursalMiembroRow" msprop:Generator_UserTableName="tbSucursalMiembro" msprop:Generator_RowEvArgName="tbSucursalMiembroRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
@@ -6883,6 +7037,45 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbContactoMiembro" msprop:Generator_TableClassName="tbContactoMiembroDataTable" msprop:Generator_TableVarName="tabletbContactoMiembro" msprop:Generator_TablePropName="tbContactoMiembro" msprop:Generator_RowDeletingName="tbContactoMiembroRowDeleting" msprop:Generator_RowChangingName="tbContactoMiembroRowChanging" msprop:Generator_RowEvHandlerName="tbContactoMiembroRowChangeEventHandler" msprop:Generator_RowDeletedName="tbContactoMiembroRowDeleted" msprop:Generator_UserTableName="tbContactoMiembro" msprop:Generator_RowChangedName="tbContactoMiembroRowChanged" msprop:Generator_RowEvArgName="tbContactoMiembroRowChangeEvent" msprop:Generator_RowClassName="tbContactoMiembroRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoTrabajo" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajo" msprop:Generator_ColumnPropNameInRow="CodigoTrabajo" msprop:Generator_ColumnPropNameInTable="CodigoTrabajoColumn" msprop:Generator_UserColumnName="CodigoTrabajo" type="xs:short" />
+              <xs:element name="CodigoEmpresa" msprop:Generator_ColumnVarNameInTable="columnCodigoEmpresa" msprop:Generator_ColumnPropNameInRow="CodigoEmpresa" msprop:Generator_ColumnPropNameInTable="CodigoEmpresaColumn" msprop:Generator_UserColumnName="CodigoEmpresa" type="xs:short" />
+              <xs:element name="CodigoSucursal" msprop:Generator_ColumnVarNameInTable="columnCodigoSucursal" msprop:Generator_ColumnPropNameInRow="CodigoSucursal" msprop:Generator_ColumnPropNameInTable="CodigoSucursalColumn" msprop:Generator_UserColumnName="CodigoSucursal" type="xs:short" />
+              <xs:element name="SecuenciaSucursal" msprop:Generator_ColumnVarNameInTable="columnSecuenciaSucursal" msprop:Generator_ColumnPropNameInRow="SecuenciaSucursal" msprop:Generator_ColumnPropNameInTable="SecuenciaSucursalColumn" msprop:Generator_UserColumnName="SecuenciaSucursal" type="xs:short" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Secuencia" msprop:Generator_ColumnVarNameInTable="columnSecuencia" msprop:Generator_ColumnPropNameInRow="Secuencia" msprop:Generator_ColumnPropNameInTable="SecuenciaColumn" msprop:Generator_UserColumnName="Secuencia" type="xs:short" />
+              <xs:element name="NombreContacto" msprop:Generator_ColumnVarNameInTable="columnNombreContacto" msprop:Generator_ColumnPropNameInRow="NombreContacto" msprop:Generator_ColumnPropNameInTable="NombreContactoColumn" msprop:Generator_UserColumnName="NombreContacto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreTipoContacto" msprop:Generator_ColumnVarNameInTable="columnNombreTipoContacto" msprop:Generator_ColumnPropNameInRow="NombreTipoContacto" msprop:Generator_ColumnPropNameInTable="NombreTipoContactoColumn" msprop:Generator_UserColumnName="NombreTipoContacto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contacto" msprop:Generator_ColumnVarNameInTable="columnContacto" msprop:Generator_ColumnPropNameInRow="Contacto" msprop:Generator_ColumnPropNameInTable="ContactoColumn" msprop:Generator_UserColumnName="Contacto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -7134,6 +7327,15 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@secuencia,@tipo,@codigoPai
       <xs:field xpath="mstns:Codigo" />
       <xs:field xpath="mstns:Secuencia" />
       <xs:field xpath="mstns:Tipo" />
+    </xs:unique>
+    <xs:unique name="tbContactoMiembro_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbContactoMiembro" />
+      <xs:field xpath="mstns:CodigoTrabajo" />
+      <xs:field xpath="mstns:CodigoEmpresa" />
+      <xs:field xpath="mstns:CodigoSucursal" />
+      <xs:field xpath="mstns:SecuenciaSucursal" />
+      <xs:field xpath="mstns:Tipo" />
+      <xs:field xpath="mstns:Secuencia" />
     </xs:unique>
   </xs:element>
 </xs:schema>
