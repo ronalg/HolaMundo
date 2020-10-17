@@ -54,10 +54,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoCliente));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -98,15 +98,6 @@
             this.pnl10 = new System.Windows.Forms.Panel();
             this.pnl14 = new System.Windows.Forms.Panel();
             this.grdContacto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.codigoTrabajoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoEmpresaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoSucursalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cSecuenciaSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cSecuencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cTipoContacto = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsContacto = new System.Windows.Forms.BindingSource(this.components);
             this.pnl13 = new System.Windows.Forms.Panel();
             this.bnContacto = new System.Windows.Forms.BindingNavigator(this.components);
@@ -126,18 +117,6 @@
             this.pnl8 = new System.Windows.Forms.Panel();
             this.pnl12 = new System.Windows.Forms.Panel();
             this.grdSucursal = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.sCodigoTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sCodigoEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sSecuencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sCodigoPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNombrePais = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.sNombreProvincia = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.sCodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sRepresentante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsClienteSucursal = new System.Windows.Forms.BindingSource(this.components);
             this.pnl11 = new System.Windows.Forms.Panel();
             this.bnClienteSucursal = new System.Windows.Forms.BindingNavigator(this.components);
@@ -211,6 +190,27 @@
             this.taContacto = new Neo.DsNeoTableAdapters.taContacto();
             this.taContactoMiembro = new Neo.DsNeoTableAdapters.taContactoMiembro();
             this.taTipoContacto = new Neo.DsNeoTableAdapters.taTipoContacto();
+            this.cTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cSecuencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNombre = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cTipoContacto = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.contactoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCodigoTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCodigoEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSecuencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCodigoPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNombrePais = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sNombreProvincia = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sCodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sRepresentante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idClienteLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
@@ -915,87 +915,25 @@
             this.grdContacto.AutoGenerateColumns = false;
             this.grdContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoTrabajoDataGridViewTextBoxColumn1,
-            this.codigoEmpresaDataGridViewTextBoxColumn1,
-            this.codigoSucursalDataGridViewTextBoxColumn1,
-            this.cSecuenciaSucursal,
-            this.cTipo,
+            this.cTrabajo,
+            this.cEmpresa,
+            this.cCodigo,
             this.cSecuencia,
+            this.cTipo,
+            this.cOrden,
             this.cNombre,
             this.cTipoContacto,
-            this.cContacto});
+            this.contactoDataGridViewTextBoxColumn});
             this.grdContacto.DataSource = this.bsContacto;
             this.grdContacto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdContacto.Location = new System.Drawing.Point(0, 0);
             this.grdContacto.Name = "grdContacto";
             this.grdContacto.Size = new System.Drawing.Size(912, 150);
             this.grdContacto.TabIndex = 8;
+            this.grdContacto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdContacto_CellContentClick);
             this.grdContacto.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdContacto_CellFormatting);
             this.grdContacto.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdContacto_CellValueChanged);
             this.grdContacto.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdContacto_DataError);
-            // 
-            // codigoTrabajoDataGridViewTextBoxColumn1
-            // 
-            this.codigoTrabajoDataGridViewTextBoxColumn1.DataPropertyName = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn1.HeaderText = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn1.Name = "codigoTrabajoDataGridViewTextBoxColumn1";
-            this.codigoTrabajoDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // codigoEmpresaDataGridViewTextBoxColumn1
-            // 
-            this.codigoEmpresaDataGridViewTextBoxColumn1.DataPropertyName = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn1.HeaderText = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn1.Name = "codigoEmpresaDataGridViewTextBoxColumn1";
-            this.codigoEmpresaDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // codigoSucursalDataGridViewTextBoxColumn1
-            // 
-            this.codigoSucursalDataGridViewTextBoxColumn1.DataPropertyName = "CodigoSucursal";
-            this.codigoSucursalDataGridViewTextBoxColumn1.HeaderText = "CodigoSucursal";
-            this.codigoSucursalDataGridViewTextBoxColumn1.Name = "codigoSucursalDataGridViewTextBoxColumn1";
-            this.codigoSucursalDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // cSecuenciaSucursal
-            // 
-            this.cSecuenciaSucursal.DataPropertyName = "SecuenciaSucursal";
-            this.cSecuenciaSucursal.HeaderText = "SecuenciaSucursal";
-            this.cSecuenciaSucursal.Name = "cSecuenciaSucursal";
-            // 
-            // cTipo
-            // 
-            this.cTipo.DataPropertyName = "Tipo";
-            this.cTipo.HeaderText = "Tipo";
-            this.cTipo.Name = "cTipo";
-            // 
-            // cSecuencia
-            // 
-            this.cSecuencia.DataPropertyName = "Secuencia";
-            this.cSecuencia.HeaderText = "Secuencia";
-            this.cSecuencia.Name = "cSecuencia";
-            // 
-            // cNombre
-            // 
-            this.cNombre.DataPropertyName = "NombreContacto";
-            this.cNombre.HeaderText = "NombreContacto";
-            this.cNombre.Name = "cNombre";
-            this.cNombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cNombre.Width = 150;
-            // 
-            // cTipoContacto
-            // 
-            this.cTipoContacto.DataPropertyName = "NombreTipoContacto";
-            this.cTipoContacto.HeaderText = "NombreTipoContacto";
-            this.cTipoContacto.Name = "cTipoContacto";
-            this.cTipoContacto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cTipoContacto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cTipoContacto.Width = 150;
-            // 
-            // cContacto
-            // 
-            this.cContacto.DataPropertyName = "Contacto";
-            this.cContacto.HeaderText = "Contacto";
-            this.cContacto.Name = "cContacto";
             // 
             // bsContacto
             // 
@@ -1050,6 +988,7 @@
             this.btnNuevoContacto.RightToLeftAutoMirrorImage = true;
             this.btnNuevoContacto.Size = new System.Drawing.Size(23, 22);
             this.btnNuevoContacto.Text = "Agregar nuevo";
+            this.btnNuevoContacto.Click += new System.EventHandler(this.btnNuevoContacto_Click);
             // 
             // toolStripLabel1
             // 
@@ -1202,98 +1141,7 @@
             this.grdSucursal.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdSucursal_CellFormatting);
             this.grdSucursal.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdSucursal_CellValueChanged);
             this.grdSucursal.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdSucursal_DataError);
-            // 
-            // sCodigoTrabajo
-            // 
-            this.sCodigoTrabajo.DataPropertyName = "CodigoTrabajo";
-            this.sCodigoTrabajo.HeaderText = "CodigoTrabajo";
-            this.sCodigoTrabajo.Name = "sCodigoTrabajo";
-            this.sCodigoTrabajo.Visible = false;
-            // 
-            // sCodigoEmpresa
-            // 
-            this.sCodigoEmpresa.DataPropertyName = "CodigoEmpresa";
-            this.sCodigoEmpresa.HeaderText = "CodigoEmpresa";
-            this.sCodigoEmpresa.Name = "sCodigoEmpresa";
-            this.sCodigoEmpresa.Visible = false;
-            // 
-            // sCodigo
-            // 
-            this.sCodigo.DataPropertyName = "Codigo";
-            this.sCodigo.HeaderText = "Codigo";
-            this.sCodigo.Name = "sCodigo";
-            this.sCodigo.Visible = false;
-            // 
-            // sSecuencia
-            // 
-            this.sSecuencia.DataPropertyName = "Secuencia";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sSecuencia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.sSecuencia.HeaderText = "Secuencia";
-            this.sSecuencia.Name = "sSecuencia";
-            this.sSecuencia.ReadOnly = true;
-            this.sSecuencia.Width = 65;
-            // 
-            // sTipo
-            // 
-            this.sTipo.DataPropertyName = "Tipo";
-            this.sTipo.HeaderText = "Tipo";
-            this.sTipo.Name = "sTipo";
-            this.sTipo.ReadOnly = true;
-            this.sTipo.Visible = false;
-            // 
-            // sNombre
-            // 
-            this.sNombre.DataPropertyName = "Nombre";
-            this.sNombre.HeaderText = "Nombre";
-            this.sNombre.Name = "sNombre";
-            this.sNombre.Width = 130;
-            // 
-            // sCodigoPais
-            // 
-            this.sCodigoPais.DataPropertyName = "CodigoPais";
-            this.sCodigoPais.HeaderText = "CodigoPais";
-            this.sCodigoPais.Name = "sCodigoPais";
-            this.sCodigoPais.ReadOnly = true;
-            this.sCodigoPais.Visible = false;
-            // 
-            // sNombrePais
-            // 
-            this.sNombrePais.HeaderText = "País";
-            this.sNombrePais.Name = "sNombrePais";
-            this.sNombrePais.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sNombrePais.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.sNombrePais.Width = 130;
-            // 
-            // sNombreProvincia
-            // 
-            this.sNombreProvincia.DataPropertyName = "NombreProvincia";
-            this.sNombreProvincia.HeaderText = "Provincia";
-            this.sNombreProvincia.Name = "sNombreProvincia";
-            this.sNombreProvincia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sNombreProvincia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.sNombreProvincia.Width = 120;
-            // 
-            // sCodigoPostal
-            // 
-            this.sCodigoPostal.DataPropertyName = "CodigoPostal";
-            this.sCodigoPostal.HeaderText = "C. Postal";
-            this.sCodigoPostal.Name = "sCodigoPostal";
-            this.sCodigoPostal.Width = 80;
-            // 
-            // sDireccion
-            // 
-            this.sDireccion.DataPropertyName = "Direccion";
-            this.sDireccion.HeaderText = "Dirección";
-            this.sDireccion.Name = "sDireccion";
-            this.sDireccion.Width = 170;
-            // 
-            // sRepresentante
-            // 
-            this.sRepresentante.DataPropertyName = "Representante";
-            this.sRepresentante.HeaderText = "Representante";
-            this.sRepresentante.Name = "sRepresentante";
-            this.sRepresentante.Width = 160;
+            this.grdSucursal.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grdSucursal_RowsAdded);
             // 
             // bsClienteSucursal
             // 
@@ -1932,6 +1780,155 @@
             // 
             this.taTipoContacto.ClearBeforeFill = true;
             // 
+            // cTrabajo
+            // 
+            this.cTrabajo.DataPropertyName = "CodigoTrabajo";
+            this.cTrabajo.HeaderText = "CodigoTrabajo";
+            this.cTrabajo.Name = "cTrabajo";
+            this.cTrabajo.Visible = false;
+            // 
+            // cEmpresa
+            // 
+            this.cEmpresa.DataPropertyName = "CodigoEmpresa";
+            this.cEmpresa.HeaderText = "CodigoEmpresa";
+            this.cEmpresa.Name = "cEmpresa";
+            this.cEmpresa.Visible = false;
+            // 
+            // cCodigo
+            // 
+            this.cCodigo.DataPropertyName = "Codigo";
+            this.cCodigo.HeaderText = "Codigo";
+            this.cCodigo.Name = "cCodigo";
+            // 
+            // cSecuencia
+            // 
+            this.cSecuencia.DataPropertyName = "Secuencia";
+            this.cSecuencia.HeaderText = "Secuencia";
+            this.cSecuencia.Name = "cSecuencia";
+            // 
+            // cTipo
+            // 
+            this.cTipo.DataPropertyName = "Tipo";
+            this.cTipo.HeaderText = "Tipo";
+            this.cTipo.Name = "cTipo";
+            // 
+            // cOrden
+            // 
+            this.cOrden.DataPropertyName = "Orden";
+            this.cOrden.HeaderText = "Orden";
+            this.cOrden.Name = "cOrden";
+            // 
+            // cNombre
+            // 
+            this.cNombre.DataPropertyName = "NombreContacto";
+            this.cNombre.HeaderText = "Nombre";
+            this.cNombre.Name = "cNombre";
+            this.cNombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // cTipoContacto
+            // 
+            this.cTipoContacto.DataPropertyName = "NombreTipoContacto";
+            this.cTipoContacto.HeaderText = "Tipo";
+            this.cTipoContacto.Name = "cTipoContacto";
+            this.cTipoContacto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cTipoContacto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // contactoDataGridViewTextBoxColumn
+            // 
+            this.contactoDataGridViewTextBoxColumn.DataPropertyName = "Contacto";
+            this.contactoDataGridViewTextBoxColumn.HeaderText = "Contacto";
+            this.contactoDataGridViewTextBoxColumn.Name = "contactoDataGridViewTextBoxColumn";
+            // 
+            // sCodigoTrabajo
+            // 
+            this.sCodigoTrabajo.DataPropertyName = "CodigoTrabajo";
+            this.sCodigoTrabajo.HeaderText = "CodigoTrabajo";
+            this.sCodigoTrabajo.Name = "sCodigoTrabajo";
+            this.sCodigoTrabajo.Visible = false;
+            // 
+            // sCodigoEmpresa
+            // 
+            this.sCodigoEmpresa.DataPropertyName = "CodigoEmpresa";
+            this.sCodigoEmpresa.HeaderText = "CodigoEmpresa";
+            this.sCodigoEmpresa.Name = "sCodigoEmpresa";
+            this.sCodigoEmpresa.Visible = false;
+            // 
+            // sCodigo
+            // 
+            this.sCodigo.DataPropertyName = "Codigo";
+            this.sCodigo.HeaderText = "Codigo";
+            this.sCodigo.Name = "sCodigo";
+            // 
+            // sSecuencia
+            // 
+            this.sSecuencia.DataPropertyName = "Secuencia";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sSecuencia.DefaultCellStyle = dataGridViewCellStyle3;
+            this.sSecuencia.HeaderText = "Secuencia";
+            this.sSecuencia.Name = "sSecuencia";
+            this.sSecuencia.ReadOnly = true;
+            this.sSecuencia.Width = 65;
+            // 
+            // sTipo
+            // 
+            this.sTipo.DataPropertyName = "Tipo";
+            this.sTipo.HeaderText = "Tipo";
+            this.sTipo.Name = "sTipo";
+            this.sTipo.ReadOnly = true;
+            // 
+            // sNombre
+            // 
+            this.sNombre.DataPropertyName = "Nombre";
+            this.sNombre.HeaderText = "Nombre";
+            this.sNombre.Name = "sNombre";
+            this.sNombre.Width = 130;
+            // 
+            // sCodigoPais
+            // 
+            this.sCodigoPais.DataPropertyName = "CodigoPais";
+            this.sCodigoPais.HeaderText = "CodigoPais";
+            this.sCodigoPais.Name = "sCodigoPais";
+            this.sCodigoPais.ReadOnly = true;
+            // 
+            // sNombrePais
+            // 
+            this.sNombrePais.HeaderText = "País";
+            this.sNombrePais.Name = "sNombrePais";
+            this.sNombrePais.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sNombrePais.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.sNombrePais.Width = 130;
+            // 
+            // sNombreProvincia
+            // 
+            this.sNombreProvincia.DataPropertyName = "NombreProvincia";
+            this.sNombreProvincia.HeaderText = "Provincia";
+            this.sNombreProvincia.Name = "sNombreProvincia";
+            this.sNombreProvincia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sNombreProvincia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.sNombreProvincia.Width = 120;
+            // 
+            // sCodigoPostal
+            // 
+            this.sCodigoPostal.DataPropertyName = "CodigoPostal";
+            this.sCodigoPostal.HeaderText = "C. Postal";
+            this.sCodigoPostal.Name = "sCodigoPostal";
+            this.sCodigoPostal.Width = 80;
+            // 
+            // sDireccion
+            // 
+            this.sDireccion.DataPropertyName = "Direccion";
+            this.sDireccion.HeaderText = "Dirección";
+            this.sDireccion.Name = "sDireccion";
+            this.sDireccion.Width = 170;
+            // 
+            // sRepresentante
+            // 
+            this.sRepresentante.DataPropertyName = "Representante";
+            this.sRepresentante.HeaderText = "Representante";
+            this.sRepresentante.Name = "sRepresentante";
+            this.sRepresentante.Width = 160;
+            // 
             // FrmMtoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2120,6 +2117,20 @@
         private DsNeoTableAdapters.taPais taPais;
         private DsNeoTableAdapters.taProvincia taProvincia;
         private DsNeoTableAdapters.taSucursalMiembro taSucursalMiembro;
+        private DsNeoTableAdapters.taContacto taContacto;
+        private DsNeoTableAdapters.taContactoMiembro taContactoMiembro;
+        private DsNeoTableAdapters.taTipoContacto taTipoContacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cSecuenciaSucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrabajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cSecuencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cOrden;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cNombre;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cTipoContacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn sCodigo;
@@ -2132,17 +2143,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoPostal;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn sRepresentante;
-        private DsNeoTableAdapters.taContacto taContacto;
-        private DsNeoTableAdapters.taContactoMiembro taContactoMiembro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cSecuenciaSucursal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cSecuencia;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cNombre;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cTipoContacto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cContacto;
-        private DsNeoTableAdapters.taTipoContacto taTipoContacto;
     }
 }

@@ -71,7 +71,8 @@ namespace Neo
             lblEquipo.Text = Environment.MachineName;
             lblApertura.Text = DateTime.Today.ToShortDateString();
             txtId.Focus();
-            dsNeo.tbClienteSucursal.Rows.Clear();
+            dsNeo.tbSucursalMiembro.Rows.Clear();
+            dsNeo.tbContactoMiembro.Rows.Clear();
             lblTipoEstado.Text = "Estado Civil";
             taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, "Cliente");
         }
@@ -171,6 +172,18 @@ namespace Neo
                 else
                 {
                     taCliente.Edita(sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text.Trim(), txtId.Text.Trim(), txtCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                }
+
+                foreach (DataGridViewRow dgvr in grdSucursal.Rows)
+                {
+                    short secuencia = Convert.ToInt16(dgvr.Cells["sSecuencia"].Value.ToString());
+                    string codigoPais = dgvr.Cells["sCodigoPais"].Value.ToString();
+                    string nombrePronvicia = dgvr.Cells["sNombreProvincia"].Value.ToString();
+                    string nombre = dgvr.Cells["sNombre"].Value.ToString();
+                    string codigoPostal = dgvr.Cells["sCodigoPostal"].Value.ToString();
+                    string direccion = dgvr.Cells["sDireccion"].Value.ToString();
+                    string representante = dgvr.Cells["sRepresentante"].Value.ToString();
+                    taSucursalMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, "Cliente", codigoPais, nombrePronvicia, nombre, codigoPostal, direccion, representante);
                 }
 
                 taIdentificacionMiembro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
@@ -386,27 +399,27 @@ namespace Neo
             grdSucursal.CurrentRow.Cells["sCodigoEmpresa"].Value = Utilidad.codigoEmpresa;
             grdSucursal.CurrentRow.Cells["sCodigo"].Value = codigoCliente;
             DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
-            short codigo = 0;
+            int codigo = Utilidad.ValoMaxGrilla(grdSucursal, "sSecuencia"); ;
             grdSucursal.CurrentRow.Cells["sSecuencia"].Value = codigo;
+            grdSucursal.CurrentRow.Cells["sTipo"].Value = "Cliente";
         }
 
         private void btnEliminarSucursal_Click(object sender, EventArgs e)
         {
             if (grdSucursal.CurrentRow != null)
             {
-                short codigo = short.Parse(grdSucursal.CurrentRow.Cells["sCodigo"].Value.ToString());
                 short codigoCliente = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text);
                 short secuencia = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(grdSucursal.CurrentRow.Cells["sSecuencia"].Value.ToString());
                 DsNeo ds = new DsNeo();
-                taSucursalMiembro.FillBySecuencia(ds.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente", secuencia);
+                taSucursalMiembro.FillBySecuencia(ds.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, "Cliente", secuencia);
                 if (ds.tbClienteSucursal.Rows.Count > 0)
                 {
                     DialogResult dr = new DialogResult();
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombreUsuario, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        taContactoMiembro.EliminaSucursal(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, "Cliente");
-                        taSucursalMiembro.EliminaSecuencia(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, "Cliente");
+                        taContactoMiembro.EliminaCodigo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, "Cliente");
+                        taSucursalMiembro.EliminaSecuencia(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, secuencia, "Cliente");
                         grdSucursal.Rows.Remove(grdSucursal.CurrentRow);
                     }
                 }
@@ -422,20 +435,17 @@ namespace Neo
             if (grdContacto.CurrentRow != null)
             {
                 DsNeo ds = new DsNeo();
-                short secuencia = short.Parse(grdContacto.CurrentRow.Cells["cOrden"].Value.ToString());
-                short codigoSucursal = short.Parse(grdContacto.CurrentRow.Cells["cSucursal"].Value.ToString());
+                short sucursal = short.Parse(cboSucursal.SelectedValue.ToString());
+                short secuenciaSucursal = short.Parse(grdContacto.CurrentRow.Cells["cSecuenciaSucursal"].Value.ToString());
+                short secuencia = short.Parse(grdContacto.CurrentRow.Cells["cSecuencia"].Value.ToString());
                 short codigoCliente = short.Parse(lblCodigo.Text);
-                //taClienteSucursalContacto.FillBySecuencia(dsNeo.tbClienteSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal, secuencia);
-
-                if (ds.tbClienteSucursalContacto.Rows.Count > 0)
+                
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombreUsuario, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dr == DialogResult.Yes)
                 {
-                    DialogResult dr = new DialogResult();
-                    dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombreUsuario, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                    if (dr == DialogResult.Yes)
-                    {
-                        //taClienteSucursalContacto.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente, codigoSucursal, secuencia);
-                        grdContacto.Rows.Remove(grdContacto.CurrentRow);
-                    }
+                    taContactoMiembro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, sucursal, secuenciaSucursal, secuencia, "Cliente");
+                    grdContacto.Rows.Remove(grdContacto.CurrentRow);                    
                 }
                 else
                 {
@@ -452,7 +462,33 @@ namespace Neo
         private void grdMto_SelectionChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(lblCodigo.Text))
-                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Convert.ToInt16(lblCodigo.Text) , "Cliente");
+            {
+                short codigo = Convert.ToInt16(lblCodigo.Text);
+                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
+                taSucursalMiembro.Fill(dsNeo.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
+                
+            }
+        }
+
+        private void grdContacto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnNuevoContacto_Click(object sender, EventArgs e)
+        {
+            grdContacto.CurrentRow.Cells["cTrabajo"].Value = Utilidad.codigoTrabajo;
+            grdContacto.CurrentRow.Cells["cEmpresa"].Value = Utilidad.codigoEmpresa;
+            grdContacto.CurrentRow.Cells["cCodigo"].Value = string.IsNullOrEmpty(lblCodigo.Text) ? "0" : lblCodigo.Text;
+            grdContacto.CurrentRow.Cells["cTipo"].Value = "Cliente";            
+            grdContacto.CurrentRow.Cells["cSecuencia"].Value = grdSucursal.CurrentRow.Cells["sSecuencia"].Value;
+            int orden = Utilidad.ValoMaxGrilla(grdContacto, "cOrden");
+            grdContacto.CurrentRow.Cells["cOrden"].Value = orden;
+        }
+
+        private void grdSucursal_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+   //         var Mins = dsNeo.tbSucursalMiembro.AsEnumerable().Max(row => Convert.ToInt32(row["Secuencia"]));
         }
     }
 }

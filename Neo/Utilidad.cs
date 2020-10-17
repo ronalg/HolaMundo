@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Neo
 {
@@ -33,7 +34,7 @@ namespace Neo
         public static FrmMtoProveedor mtoProveedor = null;
         public static FrmMtoSucursal mtoSucursal = null;
         public static FrmMtoMoneda mtoMoneda = null;
-        public static FrmMtoCategoria mtoCategoria = null;       
+        public static FrmMtoCategoria mtoCategoria = null;
         public static FrmMtoProvincia mtoProvincia = null;
         public static FrmMtoEmpresa mtoEmpresa = null;
         public static FrmMtoPais mtoPais = null;
@@ -54,7 +55,7 @@ namespace Neo
         public const string nombrePrograma = "Neo";
         public const string mensajeGuardado = "Se han guardado exitosamente";
 
-        public static string Ceros (string valor)
+        public static string Ceros(string valor)
         {
             string resultado = null;
             switch (valor.Length)
@@ -83,6 +84,35 @@ namespace Neo
             }
 
             return resultado;
+        }
+
+        public static int ValoMaxGrilla (DataGridView grilla, string columna)
+        {
+            int numero = 0;
+            int filas = grilla.Rows.Count;
+            if (filas > 1)
+            {
+                for (int i = 0; i < grilla.Rows.Count - 1; i++)
+                {
+                    int valor1 = Convert.ToInt32(grilla.Rows[i].Cells[columna].Value.ToString());
+                    numero = valor1;
+                    for (int j = 0; j < grilla.Rows.Count; j++)
+                    {
+                        if (!string.IsNullOrEmpty(grilla.Rows[j].Cells[columna].Value.ToString()))
+                        {
+                            int valor2 = Convert.ToInt32(grilla.Rows[j].Cells[columna].Value.ToString());
+                            if (valor2 > valor1)
+                                numero = valor2;
+                        }
+                    }
+                }
+                numero++;
+            }
+            else
+            {
+                numero++;
+            }
+            return numero;
         }
     }
 }
