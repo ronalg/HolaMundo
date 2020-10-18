@@ -90,9 +90,9 @@ namespace Neo
         {
             int numero = 0;
             int filas = grilla.Rows.Count;
-            if (filas > 1)
+            if (filas > 0)
             {
-                for (int i = 0; i < grilla.Rows.Count - 1; i++)
+                for (int i = 0; i < grilla.Rows.Count; i++)
                 {
                     int valor1 = Convert.ToInt32(grilla.Rows[i].Cells[columna].Value.ToString());
                     numero = valor1;

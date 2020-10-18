@@ -1393,7 +1393,6 @@
             this.tableAdapterManager.taCategoria = null;
             this.tableAdapterManager.taCliente = null;
             this.tableAdapterManager.taClienteNacionalidad = null;
-            this.tableAdapterManager.taClienteSucursal = null;
             this.tableAdapterManager.taClienteSucursalContacto = null;
             this.tableAdapterManager.taContacto = null;
             this.tableAdapterManager.taDepartamento = null;

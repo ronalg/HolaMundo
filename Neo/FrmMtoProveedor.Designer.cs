@@ -1523,7 +1523,6 @@
             this.tableAdapterManager.taArticuloMultimedia = null;
             this.tableAdapterManager.taCategoria = this.taCategoria;
             this.tableAdapterManager.taCliente = null;
-            this.tableAdapterManager.taClienteSucursal = null;
             this.tableAdapterManager.taClienteSucursalContacto = null;
             this.tableAdapterManager.taContacto = this.taContacto;
             this.tableAdapterManager.taDepartamento = null;
