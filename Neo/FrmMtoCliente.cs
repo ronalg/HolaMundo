@@ -37,14 +37,14 @@ namespace Neo
         }
 
         private void FrmMtoCliente_Load(object sender, EventArgs e)
-        {
+        {            
             taTipoContacto.Fill(dsNeo.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taProvincia.Fill(dsNeo.tbProvincia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taEstado.FillByTipo(dsNeo.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Estado Civil");
             taCliente.Fill(dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             if (string.IsNullOrEmpty(lblCodigo.Text))
-                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, tipoMiembro);
+                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, tipoMiembro);                
             cboSucursal.Text = Utilidad.nombreSucursal;
         }
 
@@ -254,9 +254,10 @@ namespace Neo
                 foreach (DataRow dr in dsNeo.fnIdentificacionMiembro)
                 {
                     string codigoId = dr["CodigoIdentificacion"].ToString();
+                    string nacionalodad = dr["NombreNacionalidad"].ToString();
                     string identificacion = dr["Identificacion"].ToString();
                     if (!string.IsNullOrEmpty(identificacion))
-                        taIdentificacionMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, codigoId, tipoMiembro, identificacion);
+                        taIdentificacionMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, codigoId, nacionalodad, tipoMiembro, identificacion);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -539,9 +540,9 @@ namespace Neo
             if (!string.IsNullOrEmpty(lblCodigo.Text))
             {
                 short codigo = Convert.ToInt16(lblCodigo.Text);
-                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
                 taSucursalMiembro.Fill(dsNeo.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
-                taContactoMiembro.Fill(dsNeo.tbContactoMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);                
+                taContactoMiembro.Fill(dsNeo.tbContactoMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
+                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
             }
         }
 

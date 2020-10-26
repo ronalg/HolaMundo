@@ -39,7 +39,7 @@ namespace Neo
 
         private void FrmMtoNacionalidad_Load(object sender, EventArgs e)
         {
-            taNacionalidad.Fill(dsNeo.tbNacionalidad, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taNacionalidad.Fill(dsNeo.tbNacionalidad, Utilidad.codigoTrabajo);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -47,7 +47,6 @@ namespace Neo
             ConfiguraBoton(false);
             txtNombre.Focus();
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
-            lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -65,13 +64,13 @@ namespace Neo
                 this.bsMto.EndEdit();
                 if (!btnNuevo.Available)
                 {
-                    taNacionalidad.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtNombre.Text.Trim());
+                    taNacionalidad.Inserta(Utilidad.codigoTrabajo,txtNombre.Text.Trim());
                     ConfiguraBoton(true);
                     nombre = txtNombre.Text.Trim();
                 }
                 else
                 {
-                    taNacionalidad.Edita(txtNombre.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                    taNacionalidad.Edita(txtNombre.Text.Trim(), Utilidad.codigoTrabajo, nombre);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -99,7 +98,7 @@ namespace Neo
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.textoCuadroMensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        taNacionalidad.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                        taNacionalidad.Elimina(Utilidad.codigoTrabajo, nombre);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
                     }
                 }

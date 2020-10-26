@@ -4269,6 +4269,8 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnNombre;
             
+            private global::System.Data.DataColumn columnNombreNacionalidad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbIdentificacionDataTable() {
@@ -4328,6 +4330,14 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NombreNacionalidadColumn {
+                get {
+                    return this.columnNombreNacionalidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4363,12 +4373,13 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbIdentificacionRow AddtbIdentificacionRow(short CodigoTrabajo, string CodigoIdentificacion, string Nombre) {
+            public tbIdentificacionRow AddtbIdentificacionRow(short CodigoTrabajo, string CodigoIdentificacion, string Nombre, string NombreNacionalidad) {
                 tbIdentificacionRow rowtbIdentificacionRow = ((tbIdentificacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodigoTrabajo,
                         CodigoIdentificacion,
-                        Nombre};
+                        Nombre,
+                        NombreNacionalidad};
                 rowtbIdentificacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbIdentificacionRow);
                 return rowtbIdentificacionRow;
@@ -4376,10 +4387,11 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbIdentificacionRow FindByCodigoTrabajoCodigoIdentificacion(short CodigoTrabajo, string CodigoIdentificacion) {
+            public tbIdentificacionRow FindByCodigoTrabajoCodigoIdentificacionNombreNacionalidad(short CodigoTrabajo, string CodigoIdentificacion, string NombreNacionalidad) {
                 return ((tbIdentificacionRow)(this.Rows.Find(new object[] {
                             CodigoTrabajo,
-                            CodigoIdentificacion})));
+                            CodigoIdentificacion,
+                            NombreNacionalidad})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4402,6 +4414,7 @@ namespace Neo {
                 this.columnCodigoTrabajo = base.Columns["CodigoTrabajo"];
                 this.columnCodigoIdentificacion = base.Columns["CodigoIdentificacion"];
                 this.columnNombre = base.Columns["Nombre"];
+                this.columnNombreNacionalidad = base.Columns["NombreNacionalidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4413,15 +4426,22 @@ namespace Neo {
                 base.Columns.Add(this.columnCodigoIdentificacion);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
+                this.columnNombreNacionalidad = new global::System.Data.DataColumn("NombreNacionalidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreNacionalidad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCodigoTrabajo,
-                                this.columnCodigoIdentificacion}, true));
+                                this.columnCodigoIdentificacion,
+                                this.columnNombreNacionalidad}, true));
                 this.columnCodigoTrabajo.AllowDBNull = false;
+                this.columnCodigoTrabajo.Caption = "Trabajo";
                 this.columnCodigoIdentificacion.AllowDBNull = false;
                 this.columnCodigoIdentificacion.Caption = "Código";
                 this.columnCodigoIdentificacion.MaxLength = 10;
                 this.columnNombre.AllowDBNull = false;
                 this.columnNombre.MaxLength = 100;
+                this.columnNombreNacionalidad.AllowDBNull = false;
+                this.columnNombreNacionalidad.Caption = "Nacionalidad";
+                this.columnNombreNacionalidad.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10322,8 +10342,6 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnCodigoTrabajo;
             
-            private global::System.Data.DataColumn columnCodigoEmpresa;
-            
             private global::System.Data.DataColumn columnNombreNacionalidad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10364,14 +10382,6 @@ namespace Neo {
             public global::System.Data.DataColumn CodigoTrabajoColumn {
                 get {
                     return this.columnCodigoTrabajo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoEmpresaColumn {
-                get {
-                    return this.columnCodigoEmpresa;
                 }
             }
             
@@ -10420,11 +10430,10 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbNacionalidadRow AddtbNacionalidadRow(short CodigoTrabajo, short CodigoEmpresa, string NombreNacionalidad) {
+            public tbNacionalidadRow AddtbNacionalidadRow(short CodigoTrabajo, string NombreNacionalidad) {
                 tbNacionalidadRow rowtbNacionalidadRow = ((tbNacionalidadRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodigoTrabajo,
-                        CodigoEmpresa,
                         NombreNacionalidad};
                 rowtbNacionalidadRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbNacionalidadRow);
@@ -10433,10 +10442,9 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbNacionalidadRow FindByCodigoTrabajoCodigoEmpresaNombreNacionalidad(short CodigoTrabajo, short CodigoEmpresa, string NombreNacionalidad) {
+            public tbNacionalidadRow FindByCodigoTrabajoNombreNacionalidad(short CodigoTrabajo, string NombreNacionalidad) {
                 return ((tbNacionalidadRow)(this.Rows.Find(new object[] {
                             CodigoTrabajo,
-                            CodigoEmpresa,
                             NombreNacionalidad})));
             }
             
@@ -10458,7 +10466,6 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnCodigoTrabajo = base.Columns["CodigoTrabajo"];
-                this.columnCodigoEmpresa = base.Columns["CodigoEmpresa"];
                 this.columnNombreNacionalidad = base.Columns["NombreNacionalidad"];
             }
             
@@ -10467,18 +10474,13 @@ namespace Neo {
             private void InitClass() {
                 this.columnCodigoTrabajo = new global::System.Data.DataColumn("CodigoTrabajo", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigoTrabajo);
-                this.columnCodigoEmpresa = new global::System.Data.DataColumn("CodigoEmpresa", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigoEmpresa);
                 this.columnNombreNacionalidad = new global::System.Data.DataColumn("NombreNacionalidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreNacionalidad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCodigoTrabajo,
-                                this.columnCodigoEmpresa,
                                 this.columnNombreNacionalidad}, true));
                 this.columnCodigoTrabajo.AllowDBNull = false;
                 this.columnCodigoTrabajo.Caption = "Trabajo";
-                this.columnCodigoEmpresa.AllowDBNull = false;
-                this.columnCodigoEmpresa.Caption = "Empresa";
                 this.columnNombreNacionalidad.AllowDBNull = false;
                 this.columnNombreNacionalidad.Caption = "Nombre";
                 this.columnNombreNacionalidad.MaxLength = 15;
@@ -15675,6 +15677,8 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnIdentificacion;
             
+            private global::System.Data.DataColumn columnNombreNacionalidad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public fnIdentificacionMiembroDataTable() {
@@ -15726,6 +15730,14 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NombreNacionalidadColumn {
+                get {
+                    return this.columnNombreNacionalidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15761,11 +15773,12 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fnIdentificacionMiembroRow AddfnIdentificacionMiembroRow(string CodigoIdentificacion, string Identificacion) {
+            public fnIdentificacionMiembroRow AddfnIdentificacionMiembroRow(string CodigoIdentificacion, string Identificacion, string NombreNacionalidad) {
                 fnIdentificacionMiembroRow rowfnIdentificacionMiembroRow = ((fnIdentificacionMiembroRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodigoIdentificacion,
-                        Identificacion};
+                        Identificacion,
+                        NombreNacionalidad};
                 rowfnIdentificacionMiembroRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfnIdentificacionMiembroRow);
                 return rowfnIdentificacionMiembroRow;
@@ -15790,6 +15803,7 @@ namespace Neo {
             internal void InitVars() {
                 this.columnCodigoIdentificacion = base.Columns["CodigoIdentificacion"];
                 this.columnIdentificacion = base.Columns["Identificacion"];
+                this.columnNombreNacionalidad = base.Columns["NombreNacionalidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15799,10 +15813,15 @@ namespace Neo {
                 base.Columns.Add(this.columnCodigoIdentificacion);
                 this.columnIdentificacion = new global::System.Data.DataColumn("Identificacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdentificacion);
+                this.columnNombreNacionalidad = new global::System.Data.DataColumn("NombreNacionalidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreNacionalidad);
                 this.columnCodigoIdentificacion.AllowDBNull = false;
                 this.columnCodigoIdentificacion.ReadOnly = true;
                 this.columnCodigoIdentificacion.MaxLength = 10;
+                this.columnIdentificacion.AllowDBNull = false;
                 this.columnIdentificacion.MaxLength = 30;
+                this.columnNombreNacionalidad.AllowDBNull = false;
+                this.columnNombreNacionalidad.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17321,6 +17340,17 @@ namespace Neo {
                 }
                 set {
                     this[this.tabletbIdentificacion.NombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NombreNacionalidad {
+                get {
+                    return ((string)(this[this.tabletbIdentificacion.NombreNacionalidadColumn]));
+                }
+                set {
+                    this[this.tabletbIdentificacion.NombreNacionalidadColumn] = value;
                 }
             }
         }
@@ -19167,17 +19197,6 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short CodigoEmpresa {
-                get {
-                    return ((short)(this[this.tabletbNacionalidad.CodigoEmpresaColumn]));
-                }
-                set {
-                    this[this.tabletbNacionalidad.CodigoEmpresaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string NombreNacionalidad {
                 get {
                     return ((string)(this[this.tabletbNacionalidad.NombreNacionalidadColumn]));
@@ -20997,13 +21016,7 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Identificacion {
                 get {
-                    try {
-                        return ((string)(this[this.tablefnIdentificacionMiembro.IdentificacionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Identificacion\' de la tabla \'fnIdentificacionMiembro\' es " +
-                                "DBNull.", e);
-                    }
+                    return ((string)(this[this.tablefnIdentificacionMiembro.IdentificacionColumn]));
                 }
                 set {
                     this[this.tablefnIdentificacionMiembro.IdentificacionColumn] = value;
@@ -21012,14 +21025,13 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsIdentificacionNull() {
-                return this.IsNull(this.tablefnIdentificacionMiembro.IdentificacionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetIdentificacionNull() {
-                this[this.tablefnIdentificacionMiembro.IdentificacionColumn] = global::System.Convert.DBNull;
+            public string NombreNacionalidad {
+                get {
+                    return ((string)(this[this.tablefnIdentificacionMiembro.NombreNacionalidadColumn]));
+                }
+                set {
+                    this[this.tablefnIdentificacionMiembro.NombreNacionalidadColumn] = value;
+                }
             }
         }
         
@@ -25970,34 +25982,40 @@ SELECT CodigoTrabajo, CodigoUsuario, CodigoEmpresa, CodigoSucursal, Nombre, Usua
             tableMapping.ColumnMappings.Add("CodigoTrabajo", "CodigoTrabajo");
             tableMapping.ColumnMappings.Add("CodigoIdentificacion", "CodigoIdentificacion");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
+            tableMapping.ColumnMappings.Add("NombreNacionalidad", "NombreNacionalidad");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbIdentificacion] WHERE (([CodigoTrabajo] = @Original_CodigoTr" +
                 "abajo) AND ([CodigoIdentificacion] = @Original_CodigoIdentificacion) AND ([Nombr" +
-                "e] = @Original_Nombre))";
+                "eNacionalidad] = @Original_NombreNacionalidad) AND ([Nombre] = @Original_Nombre)" +
+                ")";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoIdentificacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreNacionalidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tbIdentificacion] ([CodigoTrabajo], [CodigoIdentificacion], [Nombre]) VALUES (@CodigoTrabajo, @CodigoIdentificacion, @Nombre);
-SELECT CodigoTrabajo, CodigoIdentificacion, Nombre FROM tbIdentificacion WHERE (CodigoIdentificacion = @CodigoIdentificacion) AND (CodigoTrabajo = @CodigoTrabajo)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tbIdentificacion] ([CodigoTrabajo], [CodigoIdentificacion], [NombreNacionalidad], [Nombre]) VALUES (@CodigoTrabajo, @CodigoIdentificacion, @NombreNacionalidad, @Nombre);
+SELECT CodigoTrabajo, CodigoIdentificacion, NombreNacionalidad, Nombre FROM tbIdentificacion WHERE (CodigoIdentificacion = @CodigoIdentificacion) AND (CodigoTrabajo = @CodigoTrabajo) AND (NombreNacionalidad = @NombreNacionalidad)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoIdentificacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreNacionalidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbIdentificacion] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoIdentificacion] = @CodigoIdentificacion, [Nombre] = @Nombre WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoIdentificacion] = @Original_CodigoIdentificacion) AND ([Nombre] = @Original_Nombre));
-SELECT CodigoTrabajo, CodigoIdentificacion, Nombre FROM tbIdentificacion WHERE (CodigoIdentificacion = @CodigoIdentificacion) AND (CodigoTrabajo = @CodigoTrabajo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbIdentificacion] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoIdentificacion] = @CodigoIdentificacion, [NombreNacionalidad] = @NombreNacionalidad, [Nombre] = @Nombre WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoIdentificacion] = @Original_CodigoIdentificacion) AND ([NombreNacionalidad] = @Original_NombreNacionalidad) AND ([Nombre] = @Original_Nombre));
+SELECT CodigoTrabajo, CodigoIdentificacion, NombreNacionalidad, Nombre FROM tbIdentificacion WHERE (CodigoIdentificacion = @CodigoIdentificacion) AND (CodigoTrabajo = @CodigoTrabajo) AND (NombreNacionalidad = @NombreNacionalidad)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoIdentificacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreNacionalidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoIdentificacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreNacionalidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -26014,35 +26032,41 @@ SELECT CodigoTrabajo, CodigoIdentificacion, Nombre FROM tbIdentificacion WHERE (
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CodigoTrabajo, CodigoIdentificacion, Nombre \r\nFROM dbo.tbIdentificacion\r\nW" +
-                "HERE CodigoTrabajo = @codigoTrabajo";
+            this._commandCollection[0].CommandText = "SELECT CodigoTrabajo, CodigoIdentificacion, NombreNacionalidad, Nombre \r\nFROM dbo" +
+                ".tbIdentificacion\r\nWHERE CodigoTrabajo = @codigoTrabajo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE tbIdentificacion\r\nSET CodigoIdentificacion = @nuevoCodigoIdentificacion, \r" +
-                "\nNombre = @nombre\r\nWHERE (CodigoTrabajo = @codigoTrabajo) AND (CodigoIdentificac" +
-                "ion = @codigoIdentificacion)";
+            this._commandCollection[1].CommandText = @"UPDATE       tbIdentificacion
+SET                CodigoIdentificacion = @codigoIdentificacion, NombreNacionalidad = @nombreNacionalidad, Nombre = @nombre
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoIdentificacion = @originalCodigoIdentificacion) AND (NombreNacionalidad = @originalNombreNacionalidad)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nuevoCodigoIdentificacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoIdentificacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreNacionalidad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 80, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoIdentificacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@originalCodigoIdentificacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@originalNombreNacionalidad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "DELETE FROM tbIdentificacion\r\nWHERE        (CodigoTrabajo = @codigoTrabajo) AND (" +
-                "CodigoIdentificacion = @codigoIdentificacion)";
+                "CodigoIdentificacion = @codigoIdentificacion)\r\nAND (NombreNacionalidad = @nombre" +
+                "Nacionalidad)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoIdentificacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreNacionalidad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO tbIdentificacion (CodigoTrabajo, CodigoIdentificacion, Nombre)\r\nVALUE" +
-                "S (@codigoTrabajo,@codigoIdentificacion,@nombre)";
+            this._commandCollection[3].CommandText = "INSERT INTO tbIdentificacion\r\n                         (CodigoTrabajo, CodigoIden" +
+                "tificacion, NombreNacionalidad, Nombre)\r\nVALUES        (@codigoTrabajo,@codigoId" +
+                "entificacion,@nombreNacionalidad,@nombre)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoIdentificacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreNacionalidad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 80, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26092,26 +26116,38 @@ SELECT CodigoTrabajo, CodigoIdentificacion, Nombre FROM tbIdentificacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Edita(string nuevoCodigoIdentificacion, string nombre, short codigoTrabajo, string codigoIdentificacion) {
+        public virtual int Edita(string codigoIdentificacion, string nombreNacionalidad, string nombre, short codigoTrabajo, string originalCodigoIdentificacion, string originalNombreNacionalidad) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((nuevoCodigoIdentificacion == null)) {
-                throw new global::System.ArgumentNullException("nuevoCodigoIdentificacion");
+            if ((codigoIdentificacion == null)) {
+                throw new global::System.ArgumentNullException("codigoIdentificacion");
             }
             else {
-                command.Parameters[0].Value = ((string)(nuevoCodigoIdentificacion));
+                command.Parameters[0].Value = ((string)(codigoIdentificacion));
+            }
+            if ((nombreNacionalidad == null)) {
+                throw new global::System.ArgumentNullException("nombreNacionalidad");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(nombreNacionalidad));
             }
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
             else {
-                command.Parameters[1].Value = ((string)(nombre));
+                command.Parameters[2].Value = ((string)(nombre));
             }
-            command.Parameters[2].Value = ((short)(codigoTrabajo));
-            if ((codigoIdentificacion == null)) {
-                throw new global::System.ArgumentNullException("codigoIdentificacion");
+            command.Parameters[3].Value = ((short)(codigoTrabajo));
+            if ((originalCodigoIdentificacion == null)) {
+                throw new global::System.ArgumentNullException("originalCodigoIdentificacion");
             }
             else {
-                command.Parameters[3].Value = ((string)(codigoIdentificacion));
+                command.Parameters[4].Value = ((string)(originalCodigoIdentificacion));
+            }
+            if ((originalNombreNacionalidad == null)) {
+                throw new global::System.ArgumentNullException("originalNombreNacionalidad");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(originalNombreNacionalidad));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -26134,7 +26170,7 @@ SELECT CodigoTrabajo, CodigoIdentificacion, Nombre FROM tbIdentificacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int Elimina(short codigoTrabajo, string codigoIdentificacion) {
+        public virtual int Elimina(short codigoTrabajo, string codigoIdentificacion, string nombreNacionalidad) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
             if ((codigoIdentificacion == null)) {
@@ -26142,6 +26178,12 @@ SELECT CodigoTrabajo, CodigoIdentificacion, Nombre FROM tbIdentificacion WHERE (
             }
             else {
                 command.Parameters[1].Value = ((string)(codigoIdentificacion));
+            }
+            if ((nombreNacionalidad == null)) {
+                throw new global::System.ArgumentNullException("nombreNacionalidad");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(nombreNacionalidad));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -26164,7 +26206,7 @@ SELECT CodigoTrabajo, CodigoIdentificacion, Nombre FROM tbIdentificacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Inserta(short codigoTrabajo, string codigoIdentificacion, string nombre) {
+        public virtual int Inserta(short codigoTrabajo, string codigoIdentificacion, string nombreNacionalidad, string nombre) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
             if ((codigoIdentificacion == null)) {
@@ -26173,11 +26215,17 @@ SELECT CodigoTrabajo, CodigoIdentificacion, Nombre FROM tbIdentificacion WHERE (
             else {
                 command.Parameters[1].Value = ((string)(codigoIdentificacion));
             }
+            if ((nombreNacionalidad == null)) {
+                throw new global::System.ArgumentNullException("nombreNacionalidad");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(nombreNacionalidad));
+            }
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
             else {
-                command.Parameters[2].Value = ((string)(nombre));
+                command.Parameters[3].Value = ((string)(nombre));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -33173,36 +33221,30 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "tbNacionalidad";
             tableMapping.ColumnMappings.Add("CodigoTrabajo", "CodigoTrabajo");
-            tableMapping.ColumnMappings.Add("CodigoEmpresa", "CodigoEmpresa");
             tableMapping.ColumnMappings.Add("NombreNacionalidad", "NombreNacionalidad");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [tbNacionalidad] WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) A" +
-                "ND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([NombreNacionalidad] = @Orig" +
-                "inal_NombreNacionalidad))";
+                "ND ([NombreNacionalidad] = @Original_NombreNacionalidad))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreNacionalidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tbNacionalidad] ([CodigoTrabajo], [CodigoEmpresa], [NombreNacionalidad]) VALUES (@CodigoTrabajo, @CodigoEmpresa, @NombreNacionalidad);
-SELECT CodigoTrabajo, CodigoEmpresa, NombreNacionalidad FROM tbNacionalidad WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoTrabajo = @CodigoTrabajo) AND (NombreNacionalidad = @NombreNacionalidad)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tbNacionalidad] ([CodigoTrabajo], [NombreNacionalidad]) VALUES (@CodigoTrabajo, @NombreNacionalidad);
+SELECT CodigoTrabajo, NombreNacionalidad FROM tbNacionalidad WHERE (CodigoTrabajo = @CodigoTrabajo) AND (NombreNacionalidad = @NombreNacionalidad)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreNacionalidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [tbNacionalidad] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoEmpresa] = @CodigoEmpresa, [NombreNacionalidad] = @NombreNacionalidad WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([NombreNacionalidad] = @Original_NombreNacionalidad));
-SELECT CodigoTrabajo, CodigoEmpresa, NombreNacionalidad FROM tbNacionalidad WHERE (CodigoEmpresa = @CodigoEmpresa) AND (CodigoTrabajo = @CodigoTrabajo) AND (NombreNacionalidad = @NombreNacionalidad)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [tbNacionalidad] SET [CodigoTrabajo] = @CodigoTrabajo, [NombreNacionalidad] = @NombreNacionalidad WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([NombreNacionalidad] = @Original_NombreNacionalidad));
+SELECT CodigoTrabajo, NombreNacionalidad FROM tbNacionalidad WHERE (CodigoTrabajo = @CodigoTrabajo) AND (NombreNacionalidad = @NombreNacionalidad)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreNacionalidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreNacionalidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -33219,38 +33261,32 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreNacionalidad FROM tbNacionalidad WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        CodigoTrabajo, CodigoEmpresa, NombreNacionalidad\r\nFROM            t" +
-                "bNacionalidad\r\nWHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa " +
-                "= @codigoEmpresa)";
+            this._commandCollection[0].CommandText = "SELECT        CodigoTrabajo, NombreNacionalidad\r\nFROM            tbNacionalidad\r\n" +
+                "WHERE        (CodigoTrabajo = @codigoTrabajo) ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "UPDATE       tbNacionalidad\r\nSET                NombreNacionalidad = @nombreNacio" +
-                "nalidad\r\nWHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @cod" +
-                "igoEmpresa) AND (NombreNacionalidad = @originalNombreNacionalidad)";
+                "nalidad\r\nWHERE        (CodigoTrabajo = @codigoTrabajo) AND (NombreNacionalidad =" +
+                " @originalNombreNacionalidad)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreNacionalidad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@originalNombreNacionalidad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM tbNacionalidad\r\nWHERE        (CodigoTrabajo = @codigoTrabajo) AND (Co" +
-                "digoEmpresa = @codigoEmpresa) AND (NombreNacionalidad = @nombreNacionalidad)";
+            this._commandCollection[2].CommandText = "DELETE FROM tbNacionalidad\r\nWHERE        (CodigoTrabajo = @codigoTrabajo) AND (No" +
+                "mbreNacionalidad = @nombreNacionalidad)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreNacionalidad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO tbNacionalidad\r\n                         (CodigoTrabajo, CodigoEmpres" +
-                "a, NombreNacionalidad)\r\nVALUES        (@codigoTrabajo,@codigoEmpresa,@nombreNaci" +
-                "onaliad)";
+            this._commandCollection[3].CommandText = "INSERT INTO tbNacionalidad\r\n                         (CodigoTrabajo, NombreNacion" +
+                "alidad)\r\nVALUES        (@codigoTrabajo,@nombreNacionaliad)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreNacionaliad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -33258,10 +33294,9 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreNacionalidad FROM tbNacionalidad WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.tbNacionalidadDataTable dataTable, short codigoTrabajo, short codigoEmpresa) {
+        public virtual int Fill(DsNeo.tbNacionalidadDataTable dataTable, short codigoTrabajo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -33302,7 +33337,7 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreNacionalidad FROM tbNacionalidad WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Edita(string nombreNacionalidad, short codigoTrabajo, short codigoEmpresa, string originalNombreNacionalidad) {
+        public virtual int Edita(string nombreNacionalidad, short codigoTrabajo, string originalNombreNacionalidad) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((nombreNacionalidad == null)) {
                 throw new global::System.ArgumentNullException("nombreNacionalidad");
@@ -33311,12 +33346,11 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreNacionalidad FROM tbNacionalidad WHER
                 command.Parameters[0].Value = ((string)(nombreNacionalidad));
             }
             command.Parameters[1].Value = ((short)(codigoTrabajo));
-            command.Parameters[2].Value = ((short)(codigoEmpresa));
             if ((originalNombreNacionalidad == null)) {
                 throw new global::System.ArgumentNullException("originalNombreNacionalidad");
             }
             else {
-                command.Parameters[3].Value = ((string)(originalNombreNacionalidad));
+                command.Parameters[2].Value = ((string)(originalNombreNacionalidad));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -33339,15 +33373,14 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreNacionalidad FROM tbNacionalidad WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int Elimina(short codigoTrabajo, short codigoEmpresa, string nombreNacionalidad) {
+        public virtual int Elimina(short codigoTrabajo, string nombreNacionalidad) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
-            command.Parameters[1].Value = ((short)(codigoEmpresa));
             if ((nombreNacionalidad == null)) {
                 throw new global::System.ArgumentNullException("nombreNacionalidad");
             }
             else {
-                command.Parameters[2].Value = ((string)(nombreNacionalidad));
+                command.Parameters[1].Value = ((string)(nombreNacionalidad));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -33370,15 +33403,14 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreNacionalidad FROM tbNacionalidad WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Inserta(short codigoTrabajo, short codigoEmpresa, string nombreNacionaliad) {
+        public virtual int Inserta(short codigoTrabajo, string nombreNacionaliad) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
-            command.Parameters[1].Value = ((short)(codigoEmpresa));
             if ((nombreNacionaliad == null)) {
                 throw new global::System.ArgumentNullException("nombreNacionaliad");
             }
             else {
-                command.Parameters[2].Value = ((string)(nombreNacionaliad));
+                command.Parameters[1].Value = ((string)(nombreNacionaliad));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -38608,6 +38640,7 @@ ORDER BY NumeroOrdenPedido DESC";
             tableMapping.DataSetTable = "fnIdentificacionMiembro";
             tableMapping.ColumnMappings.Add("CodigoIdentificacion", "CodigoIdentificacion");
             tableMapping.ColumnMappings.Add("Identificacion", "Identificacion");
+            tableMapping.ColumnMappings.Add("NombreNacionalidad", "NombreNacionalidad");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -38624,13 +38657,13 @@ ORDER BY NumeroOrdenPedido DESC";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        CodigoIdentificacion, Identificacion\r\nFROM            dbo.fnIdentif" +
-                "icacionMiembro(@codigoTrabajo, @codigoEmpresa, @codigo, @tipo) AS fnIdentificaci" +
-                "onMiembro";
+            this._commandCollection[0].CommandText = "SELECT        CodigoIdentificacion, NombreNacionalidad, Identificacion\r\nFROM     " +
+                "       dbo.fnIdentificacionMiembro(@codigoTrabajo, @codigoEmpresa, @codigo, @tip" +
+                "o) AS fnIdentificacionMiembro";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -38644,15 +38677,15 @@ ORDER BY NumeroOrdenPedido DESC";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO tbIdentificacionMiembro\r\n                         (CodigoTrabajo, Cod" +
-                "igoEmpresa, Codigo, CodigoIdentificacion, Tipo, Identificacion)\r\nVALUES        (" +
-                "@codigoTrabajo,@codigoEmpresa,@codigo,@codigoIdentificacion,@tipo,@identificacio" +
-                "n)";
+            this._commandCollection[2].CommandText = @"INSERT INTO tbIdentificacionMiembro
+                         (CodigoTrabajo, CodigoEmpresa, Codigo, CodigoIdentificacion, NombreNacionalidad, Tipo, Identificacion)
+VALUES        (@codigoTrabajo,@codigoEmpresa,@codigo,@codigoIdentificacion,@nombreNacionalidad,@tipo,@identificacion)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoIdentificacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreNacionalidad", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreNacionalidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@identificacion", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Identificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -38661,11 +38694,11 @@ ORDER BY NumeroOrdenPedido DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.fnIdentificacionMiembroDataTable dataTable, short codigoTrabajo, short codigoEmpresa, short codigo, string tipo) {
+        public virtual int Fill(DsNeo.fnIdentificacionMiembroDataTable dataTable, int codigoTrabajo, int codigoEmpresa, int codigo, string tipo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
-            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigo));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(codigo));
             if ((tipo == null)) {
                 throw new global::System.ArgumentNullException("tipo");
             }
@@ -38715,7 +38748,7 @@ ORDER BY NumeroOrdenPedido DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Inserta(short codigoTrabajo, short codigoEmpresa, short codigo, string codigoIdentificacion, string tipo, string identificacion) {
+        public virtual int Inserta(short codigoTrabajo, short codigoEmpresa, short codigo, string codigoIdentificacion, string nombreNacionalidad, string tipo, string identificacion) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
             command.Parameters[1].Value = ((short)(codigoEmpresa));
@@ -38726,17 +38759,23 @@ ORDER BY NumeroOrdenPedido DESC";
             else {
                 command.Parameters[3].Value = ((string)(codigoIdentificacion));
             }
+            if ((nombreNacionalidad == null)) {
+                throw new global::System.ArgumentNullException("nombreNacionalidad");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(nombreNacionalidad));
+            }
             if ((tipo == null)) {
                 throw new global::System.ArgumentNullException("tipo");
             }
             else {
-                command.Parameters[4].Value = ((string)(tipo));
+                command.Parameters[5].Value = ((string)(tipo));
             }
             if ((identificacion == null)) {
                 throw new global::System.ArgumentNullException("identificacion");
             }
             else {
-                command.Parameters[5].Value = ((string)(identificacion));
+                command.Parameters[6].Value = ((string)(identificacion));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
