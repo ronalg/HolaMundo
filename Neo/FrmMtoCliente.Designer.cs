@@ -51,16 +51,16 @@
             System.Windows.Forms.Label codigoEmpresaLabel;
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label activoLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoCliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -942,8 +942,8 @@
             // 
             this.grdContacto.AllowUserToAddRows = false;
             this.grdContacto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdContacto.AutoGenerateColumns = false;
             this.grdContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -964,9 +964,6 @@
             this.grdContacto.Size = new System.Drawing.Size(912, 150);
             this.grdContacto.TabIndex = 8;
             this.grdContacto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdContacto_CellDoubleClick);
-            this.grdContacto.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdContacto_CellFormatting);
-            this.grdContacto.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdContacto_CellValueChanged);
-            this.grdContacto.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdContacto_DataError);
             this.grdContacto.DoubleClick += new System.EventHandler(this.grdContacto_DoubleClick);
             // 
             // cSecuencia
@@ -980,8 +977,8 @@
             // cOrden
             // 
             this.cOrden.DataPropertyName = "Orden";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cOrden.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cOrden.DefaultCellStyle = dataGridViewCellStyle2;
             this.cOrden.HeaderText = "Orden";
             this.cOrden.Name = "cOrden";
             this.cOrden.ReadOnly = true;
@@ -1223,8 +1220,8 @@
             // 
             this.grdSucursal.AllowUserToAddRows = false;
             this.grdSucursal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdSucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdSucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.grdSucursal.AutoGenerateColumns = false;
             this.grdSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSucursal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1250,14 +1247,14 @@
             this.grdSucursal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdSucursal_CellDoubleClick);
             this.grdSucursal.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdSucursal_CellFormatting);
             this.grdSucursal.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdSucursal_CellValueChanged);
-            this.grdSucursal.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdSucursal_DataError);
             this.grdSucursal.SelectionChanged += new System.EventHandler(this.grdSucursal_SelectionChanged);
+            this.grdSucursal.DoubleClick += new System.EventHandler(this.grdSucursal_DoubleClick);
             // 
             // sSecuencia
             // 
             this.sSecuencia.DataPropertyName = "Secuencia";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sSecuencia.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sSecuencia.DefaultCellStyle = dataGridViewCellStyle4;
             this.sSecuencia.HeaderText = "Secuencia";
             this.sSecuencia.Name = "sSecuencia";
             this.sSecuencia.ReadOnly = true;
@@ -1512,8 +1509,8 @@
             // 
             this.grdIdentificacion.AllowUserToAddRows = false;
             this.grdIdentificacion.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdIdentificacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdIdentificacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.grdIdentificacion.AutoGenerateColumns = false;
             this.grdIdentificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdIdentificacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1575,8 +1572,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1671,8 +1668,8 @@
             // idClienteDataGridViewTextBoxColumn
             // 
             this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.idClienteDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
             this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
@@ -2046,8 +2043,8 @@
             // 
             this.grdProvincia.AllowUserToAddRows = false;
             this.grdProvincia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdProvincia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdProvincia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.grdProvincia.AutoGenerateColumns = false;
             this.grdProvincia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProvincia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2163,8 +2160,8 @@
             // 
             this.grdTipoContacto.AllowUserToAddRows = false;
             this.grdTipoContacto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdTipoContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdTipoContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.grdTipoContacto.AutoGenerateColumns = false;
             this.grdTipoContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTipoContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
