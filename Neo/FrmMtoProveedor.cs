@@ -91,15 +91,19 @@ namespace Neo
 
             try
             {
-                this.Validate();
-                
+                short codigo;
                 if (!btnNuevo.Available)
                 {
                     DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
-                    int codigo = cp.fnSiguienteNumero("proveedor", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null).Value;
+                    codigo = Convert.ToInt16(cp.fnSiguienteNumero("proveedor", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value.ToString());
                     lblCodigo.Text = codigo.ToString();
                 }
-
+                else
+                {
+                    codigo = Convert.ToInt16(lblCodigo.Text);
+                }
+                
+                this.Validate();
                 this.bsMto.EndEdit();
 
                 if (!btnNuevo.Available)
@@ -110,6 +114,45 @@ namespace Neo
                 else
                 {
                     taProveedor.Edita(cboIdentificacion.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), txtIdentificacion.Text, txtCuenta.Text.Trim(), txtSitioWeb.Text.Trim(), chkActivo.Checked, cboCategoria.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, short.Parse(lblCodigo.Text)); 
+                }
+
+                foreach (DataGridViewRow dgvr in grdSucursal.Rows)
+                {
+                    short secuencia = Convert.ToInt16(dgvr.Cells["sSecuencia"].Value.ToString());
+                    string codigoPais = dgvr.Cells["sCodigoPais"].Value.ToString();
+                    string nombrePronvicia = dgvr.Cells["sNombreProvincia"].Value.ToString();
+                    string nombre = dgvr.Cells["sNombre"].Value.ToString();
+                    string codigoPostal = dgvr.Cells["sCodigoPostal"].Value.ToString();
+                    string direccion = dgvr.Cells["sDireccion"].Value.ToString();
+                    string representante = dgvr.Cells["sRepresentante"].Value.ToString();
+
+                    DsNeo ds = new DsNeo();
+                    taSucursalMiembro.FillBySecuencia(ds.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro, secuencia);
+                    if (ds.tbSucursalMiembro.Rows.Count == 0)
+                        taSucursalMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, tipoMiembro, codigoPais, nombrePronvicia, nombre, codigoPostal, direccion, representante);
+                    else
+                        taSucursalMiembro.Edita(codigoPais, nombrePronvicia, nombre, codigoPostal, direccion, representante, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, "Cliente");
+                }
+
+                taContactoMiembro.EliminaCodigo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
+                foreach (DataGridViewRow dgvr in grdContacto.Rows)
+                {
+                    short secuencia = Convert.ToInt16(dgvr.Cells["cSecuencia"].Value.ToString());
+                    short orden = Convert.ToInt16(dgvr.Cells["cOrden"].Value.ToString());
+                    string nombreContacto = dgvr.Cells["cNombre"].Value.ToString();
+                    string tipoContacto = dgvr.Cells["cTipoContacto"].Value.ToString();
+                    string contacto = dgvr.Cells["cContacto"].Value.ToString();
+                    taContactoMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, tipoMiembro, orden, nombreContacto, tipoContacto, contacto);
+                }
+
+                taIdentificacionMiembro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
+                foreach (DataRow dr in dsNeo.fnIdentificacionMiembro)
+                {
+                    string codigoId = dr["CodigoIdentificacion"].ToString();
+                    string nacionalodad = dr["NombreNacionalidad"].ToString();
+                    string identificacion = dr["Identificacion"].ToString();
+                    if (!string.IsNullOrEmpty(identificacion))
+                        taIdentificacionMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, codigoId, nacionalodad, tipoMiembro, identificacion);
                 }
 
             }
@@ -182,7 +225,9 @@ namespace Neo
             taIdentificacion.Fill(dsNeo.tbIdentificacion, Utilidad.codigoTrabajo);
             cboIdentificacion.SelectedIndex = -1;
             taCategoria.Fill(dsNeo.tbCategoria, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            taProveedor.Fill(dsNeo.tbProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);           
+            taProveedor.Fill(dsNeo.tbProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            if (string.IsNullOrEmpty(lblCodigo.Text))
+                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, tipoMiembro);
         }
 
         private void btnNuevoSucursal_Click(object sender, EventArgs e)
@@ -190,7 +235,7 @@ namespace Neo
             DataRow dr = dsNeo.tbSucursalMiembro.NewRow();
             dr["CodigoTrabajo"] = Utilidad.codigoTrabajo;
             dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;
-            dr["Codigo"] = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text); ;
+            dr["Codigo"] = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text); 
             dr["Tipo"] = tipoMiembro;
             dr["Secuencia"] = Utilidad.ValoMaxGrilla(grdSucursal, "sSecuencia"); ;
             dr["CodigoPais"] = null;
@@ -415,7 +460,7 @@ namespace Neo
                 short codigo = Convert.ToInt16(lblCodigo.Text);
                 taSucursalMiembro.Fill(dsNeo.tbSucursalMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
                 taContactoMiembro.Fill(dsNeo.tbContactoMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
-                //taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
+                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
             }
 
         }
@@ -480,6 +525,38 @@ namespace Neo
         {
             if (grdSucursal.CurrentRow != null)
                 pnlProvincia.Visible = true;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            string pais = grdProvincia.CurrentRow.Cells["sPais"].Value.ToString();
+            string provincia = grdProvincia.CurrentRow.Cells["sProvincia"].Value.ToString();
+            grdSucursal.CurrentRow.Cells["sCodigoPais"].Value = pais;
+            grdSucursal.CurrentRow.Cells["sNombreProvincia"].Value = provincia;
+            pnlProvincia.Visible = false;
+            grdSucursal.CurrentRow.Cells["sCodigoPostal"].Selected = true;
+            grdSucursal.BeginEdit(true);
+        }
+
+        private void btnProvinciaCancelar_Click(object sender, EventArgs e)
+        {
+            pnlProvincia.Visible = false;
+        }
+
+        private void btnTipoContactoAceptar_Click(object sender, EventArgs e)
+        {
+            string nombre = grdTipoContacto.CurrentRow.Cells["tcNombre"].Value.ToString();
+            string tipo = grdTipoContacto.CurrentRow.Cells["tcTipo"].Value.ToString();
+            grdContacto.CurrentRow.Cells["cNombre"].Value = nombre;
+            grdContacto.CurrentRow.Cells["cTipoContacto"].Value = tipo;
+            pnlTipoContacto.Visible = false;
+            grdContacto.CurrentRow.Cells["cContacto"].Selected = true;
+            grdContacto.BeginEdit(true);
+        }
+
+        private void btnTipoContactoCancelar_Click(object sender, EventArgs e)
+        {
+            pnlTipoContacto.Visible = false;
         }
     }
 }

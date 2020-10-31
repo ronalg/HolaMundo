@@ -302,6 +302,8 @@ namespace Neo
             if (Utilidad.mtoCliente == null)
             {
                 Utilidad.mtoCliente = new FrmMtoCliente();
+                Utilidad.mtoCliente.StartPosition = FormStartPosition.CenterParent;
+                Utilidad.mtoCliente.WindowState = FormWindowState.Maximized;
                 Utilidad.mtoCliente.MdiParent = this;
             }
             Utilidad.mtoCliente.BringToFront();

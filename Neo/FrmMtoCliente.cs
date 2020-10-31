@@ -341,7 +341,7 @@ namespace Neo
             DataRow dr = dsNeo.tbSucursalMiembro.NewRow();
             dr["CodigoTrabajo"] = Utilidad.codigoTrabajo;
             dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;            
-            dr["Codigo"] = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text); ;
+            dr["Codigo"] = string.IsNullOrEmpty(lblCodigo.Text) ? short.Parse("0") : short.Parse(lblCodigo.Text); 
             dr["Tipo"] = tipoMiembro;
             dr["Secuencia"] = Utilidad.ValoMaxGrilla(grdSucursal, "sSecuencia"); ;
             dr["CodigoPais"] = null;

@@ -51,16 +51,20 @@
             System.Windows.Forms.Label codigoEmpresaLabel;
             System.Windows.Forms.Label codigoTrabajoLabel;
             System.Windows.Forms.Label activoLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoCliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -133,7 +137,6 @@
             this.sTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sCodigoPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNombrePais = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sNombreProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sCodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -942,8 +945,8 @@
             // 
             this.grdContacto.AllowUserToAddRows = false;
             this.grdContacto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
             this.grdContacto.AutoGenerateColumns = false;
             this.grdContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -977,8 +980,8 @@
             // cOrden
             // 
             this.cOrden.DataPropertyName = "Orden";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cOrden.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cOrden.DefaultCellStyle = dataGridViewCellStyle28;
             this.cOrden.HeaderText = "Orden";
             this.cOrden.Name = "cOrden";
             this.cOrden.ReadOnly = true;
@@ -1220,8 +1223,8 @@
             // 
             this.grdSucursal.AllowUserToAddRows = false;
             this.grdSucursal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdSucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdSucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
             this.grdSucursal.AutoGenerateColumns = false;
             this.grdSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSucursal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1229,7 +1232,6 @@
             this.sTipo,
             this.sNombre,
             this.sCodigoPais,
-            this.sNombrePais,
             this.sNombreProvincia,
             this.sCodigoPostal,
             this.sDireccion,
@@ -1253,8 +1255,8 @@
             // sSecuencia
             // 
             this.sSecuencia.DataPropertyName = "Secuencia";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sSecuencia.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sSecuencia.DefaultCellStyle = dataGridViewCellStyle30;
             this.sSecuencia.HeaderText = "Secuencia";
             this.sSecuencia.Name = "sSecuencia";
             this.sSecuencia.ReadOnly = true;
@@ -1278,23 +1280,18 @@
             // sCodigoPais
             // 
             this.sCodigoPais.DataPropertyName = "CodigoPais";
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sCodigoPais.DefaultCellStyle = dataGridViewCellStyle31;
             this.sCodigoPais.HeaderText = "País";
             this.sCodigoPais.Name = "sCodigoPais";
             this.sCodigoPais.ReadOnly = true;
             this.sCodigoPais.Width = 50;
             // 
-            // sNombrePais
-            // 
-            this.sNombrePais.HeaderText = "País";
-            this.sNombrePais.Name = "sNombrePais";
-            this.sNombrePais.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sNombrePais.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.sNombrePais.Visible = false;
-            this.sNombrePais.Width = 130;
-            // 
             // sNombreProvincia
             // 
             this.sNombreProvincia.DataPropertyName = "NombreProvincia";
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sNombreProvincia.DefaultCellStyle = dataGridViewCellStyle32;
             this.sNombreProvincia.HeaderText = "Provincia";
             this.sNombreProvincia.Name = "sNombreProvincia";
             this.sNombreProvincia.ReadOnly = true;
@@ -1509,8 +1506,8 @@
             // 
             this.grdIdentificacion.AllowUserToAddRows = false;
             this.grdIdentificacion.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdIdentificacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdIdentificacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.grdIdentificacion.AutoGenerateColumns = false;
             this.grdIdentificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdIdentificacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1527,6 +1524,8 @@
             // codigoIdentificacionDataGridViewTextBoxColumn
             // 
             this.codigoIdentificacionDataGridViewTextBoxColumn.DataPropertyName = "CodigoIdentificacion";
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoIdentificacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle34;
             this.codigoIdentificacionDataGridViewTextBoxColumn.HeaderText = "Código";
             this.codigoIdentificacionDataGridViewTextBoxColumn.Name = "codigoIdentificacionDataGridViewTextBoxColumn";
             this.codigoIdentificacionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1534,6 +1533,8 @@
             // nombreNacionalidadDataGridViewTextBoxColumn
             // 
             this.nombreNacionalidadDataGridViewTextBoxColumn.DataPropertyName = "NombreNacionalidad";
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nombreNacionalidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle35;
             this.nombreNacionalidadDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreNacionalidadDataGridViewTextBoxColumn.Name = "nombreNacionalidadDataGridViewTextBoxColumn";
             this.nombreNacionalidadDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1572,8 +1573,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1668,8 +1669,8 @@
             // idClienteDataGridViewTextBoxColumn
             // 
             this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle37;
             this.idClienteDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
             this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
@@ -2043,8 +2044,8 @@
             // 
             this.grdProvincia.AllowUserToAddRows = false;
             this.grdProvincia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdProvincia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdProvincia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle38;
             this.grdProvincia.AutoGenerateColumns = false;
             this.grdProvincia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProvincia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2118,7 +2119,7 @@
             this.pnlTipoContacto.Controls.Add(this.btnTipoContactoCancelar);
             this.pnlTipoContacto.Controls.Add(this.pnlTipoContactoSub);
             this.pnlTipoContacto.Controls.Add(this.label8);
-            this.pnlTipoContacto.Location = new System.Drawing.Point(387, 128);
+            this.pnlTipoContacto.Location = new System.Drawing.Point(355, 128);
             this.pnlTipoContacto.Name = "pnlTipoContacto";
             this.pnlTipoContacto.Size = new System.Drawing.Size(364, 282);
             this.pnlTipoContacto.TabIndex = 13;
@@ -2160,8 +2161,8 @@
             // 
             this.grdTipoContacto.AllowUserToAddRows = false;
             this.grdTipoContacto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdTipoContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdTipoContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
             this.grdTipoContacto.AutoGenerateColumns = false;
             this.grdTipoContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTipoContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2239,7 +2240,7 @@
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmMtoCliente";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Clientes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMtoCliente_FormClosed);
             this.Load += new System.EventHandler(this.FrmMtoCliente_Load);
@@ -2436,18 +2437,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdProvincia;
         private System.Windows.Forms.BindingSource bsProvincia;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sSecuencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoPais;
-        private System.Windows.Forms.DataGridViewComboBoxColumn sNombrePais;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sNombreProvincia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoPostal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sDireccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sRepresentante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoTrabajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoEmpresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn pPais;
         private System.Windows.Forms.DataGridViewTextBoxColumn pProvincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn1;
@@ -2472,6 +2461,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sSecuencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoPais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNombreProvincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoPostal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sRepresentante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoTrabajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoIdentificacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreNacionalidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn identificacionDataGridViewTextBoxColumn;
