@@ -44,7 +44,7 @@ namespace Neo
             if (grdMto.CurrentRow == null)
             {
                 taArticuloPrecioVenta.Fill(dsNeo.tbArticuloPrecioVenta, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
-                taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
+                //taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
             }
         }
 
@@ -52,7 +52,7 @@ namespace Neo
         {
             ConfiguraBoton(false);
             txtId.Focus();
-            taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
+            //taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0);
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
             lblEmpresa.Text = Utilidad.codigoTrabajo.ToString();
             cboUnidad.SelectedIndex = -1;
@@ -137,12 +137,12 @@ namespace Neo
 
                 if (!btnNuevo.Available)
                 {
-                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked, chkOrdenPedido.Checked);
+                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taArticulo.Edita(cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, existencia, chkInventario.Checked, chkActivo.Checked, chkOrdenPedido.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
+                    taArticulo.Edita(cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, existencia, chkInventario.Checked, chkActivo.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
                 }
 
                 DsNeo ds = new DsNeo();
@@ -275,7 +275,7 @@ namespace Neo
             {
                 short codigoArticulo = short.Parse(grdMto.CurrentRow.Cells["aId"].Value.ToString());
                 taArticuloPrecioVenta.Fill(dsNeo.tbArticuloPrecioVenta, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
-                taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);                
+                //taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);                
             }
         }
 

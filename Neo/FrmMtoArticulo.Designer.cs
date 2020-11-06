@@ -49,12 +49,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoArticulo));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label aplicaInscripcionLabel;
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcProveedor = new System.Windows.Forms.TabControl();
@@ -100,6 +101,10 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tpProveedor = new System.Windows.Forms.TabPage();
             this.grdProveedor = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pActual = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bsProveedor = new System.Windows.Forms.BindingSource(this.components);
             this.tpMultimedia = new System.Windows.Forms.TabPage();
             this.grdMultimedia = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -162,10 +167,8 @@
             this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
             this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pActual = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chkInscripcion = new System.Windows.Forms.CheckBox();
             idArticuloLabel = new System.Windows.Forms.Label();
             codigoUnidadLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -182,6 +185,7 @@
             existenciaLabel = new System.Windows.Forms.Label();
             inventarioLabel = new System.Windows.Forms.Label();
             aplica_Orden_PedidoLabel = new System.Windows.Forms.Label();
+            aplicaInscripcionLabel = new System.Windows.Forms.Label();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             this.tcProveedor.SuspendLayout();
@@ -351,7 +355,7 @@
             // aplica_Orden_PedidoLabel
             // 
             aplica_Orden_PedidoLabel.AutoSize = true;
-            aplica_Orden_PedidoLabel.Location = new System.Drawing.Point(381, 88);
+            aplica_Orden_PedidoLabel.Location = new System.Drawing.Point(530, 33);
             aplica_Orden_PedidoLabel.Name = "aplica_Orden_PedidoLabel";
             aplica_Orden_PedidoLabel.Size = new System.Drawing.Size(107, 13);
             aplica_Orden_PedidoLabel.TabIndex = 34;
@@ -367,7 +371,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(928, 410);
+            this.pnl3.Size = new System.Drawing.Size(1105, 410);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -379,7 +383,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(380, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(541, 398);
+            this.pnl6.Size = new System.Drawing.Size(718, 398);
             this.pnl6.TabIndex = 6;
             // 
             // tcProveedor
@@ -392,13 +396,16 @@
             this.tcProveedor.Location = new System.Drawing.Point(0, 0);
             this.tcProveedor.Name = "tcProveedor";
             this.tcProveedor.SelectedIndex = 0;
-            this.tcProveedor.Size = new System.Drawing.Size(539, 396);
+            this.tcProveedor.Size = new System.Drawing.Size(716, 396);
             this.tcProveedor.TabIndex = 0;
             // 
             // tpPerfil
             // 
             this.tpPerfil.AutoScroll = true;
             this.tpPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tpPerfil.Controls.Add(aplicaInscripcionLabel);
+            this.tpPerfil.Controls.Add(this.chkInscripcion);
+            this.tpPerfil.Controls.Add(this.label3);
             this.tpPerfil.Controls.Add(aplica_Orden_PedidoLabel);
             this.tpPerfil.Controls.Add(this.chkOrdenPedido);
             this.tpPerfil.Controls.Add(inventarioLabel);
@@ -438,7 +445,7 @@
             this.tpPerfil.Location = new System.Drawing.Point(4, 22);
             this.tpPerfil.Name = "tpPerfil";
             this.tpPerfil.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPerfil.Size = new System.Drawing.Size(531, 370);
+            this.tpPerfil.Size = new System.Drawing.Size(708, 370);
             this.tpPerfil.TabIndex = 0;
             this.tpPerfil.Text = "Perfil";
             this.tpPerfil.UseVisualStyleBackColor = true;
@@ -446,7 +453,7 @@
             // chkOrdenPedido
             // 
             this.chkOrdenPedido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Aplica Orden Pedido", true));
-            this.chkOrdenPedido.Location = new System.Drawing.Point(494, 83);
+            this.chkOrdenPedido.Location = new System.Drawing.Point(643, 28);
             this.chkOrdenPedido.Name = "chkOrdenPedido";
             this.chkOrdenPedido.Size = new System.Drawing.Size(16, 24);
             this.chkOrdenPedido.TabIndex = 35;
@@ -862,6 +869,39 @@
             this.grdProveedor.TabIndex = 0;
             this.grdProveedor.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProveedor_CellValidated);
             // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // costoDataGridViewTextBoxColumn
+            // 
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            this.costoDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // codigoProveedorDataGridViewTextBoxColumn
+            // 
+            this.codigoProveedorDataGridViewTextBoxColumn.DataPropertyName = "CodigoProveedor";
+            this.codigoProveedorDataGridViewTextBoxColumn.HeaderText = "CodigoProveedor";
+            this.codigoProveedorDataGridViewTextBoxColumn.Name = "codigoProveedorDataGridViewTextBoxColumn";
+            this.codigoProveedorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoProveedorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pActual
+            // 
+            this.pActual.DataPropertyName = "Actual";
+            this.pActual.HeaderText = "Actual";
+            this.pActual.Name = "pActual";
+            this.pActual.Width = 50;
+            // 
             // bsProveedor
             // 
             this.bsProveedor.DataMember = "tbArticuloProveedor";
@@ -1222,7 +1262,7 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(928, 10);
+            this.pnl2.Size = new System.Drawing.Size(1105, 10);
             this.pnl2.TabIndex = 6;
             // 
             // btnSalir
@@ -1241,7 +1281,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(928, 28);
+            this.pnl1.Size = new System.Drawing.Size(1105, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -1273,7 +1313,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(926, 25);
+            this.bnMto.Size = new System.Drawing.Size(1103, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -1395,6 +1435,7 @@
             this.tableAdapterManager.taClienteNacionalidad = null;
             this.tableAdapterManager.taClienteSucursalContacto = null;
             this.tableAdapterManager.taContacto = null;
+            this.tableAdapterManager.taContactoMiembro = null;
             this.tableAdapterManager.taDepartamento = null;
             this.tableAdapterManager.taEmpresa = null;
             this.tableAdapterManager.taEstado = null;
@@ -1407,6 +1448,7 @@
             this.tableAdapterManager.taOcupacion = null;
             this.tableAdapterManager.taOrdenPedido = null;
             this.tableAdapterManager.taOrdenPedidoArticulo = null;
+            this.tableAdapterManager.taOrdenPedidoEstado = null;
             this.tableAdapterManager.taPais = null;
             this.tableAdapterManager.taPrecioVenta = null;
             this.tableAdapterManager.taProveedor = null;
@@ -1414,6 +1456,7 @@
             this.tableAdapterManager.taProveedorSucursalContacto = null;
             this.tableAdapterManager.taProvincia = null;
             this.tableAdapterManager.taSucursal = null;
+            this.tableAdapterManager.taSucursalMiembro = null;
             this.tableAdapterManager.taTipoContacto = null;
             this.tableAdapterManager.taTipoFinanciera = null;
             this.tableAdapterManager.taTipoTributo = null;
@@ -1447,44 +1490,39 @@
             // 
             this.taArticuloProveedor.ClearBeforeFill = true;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // label3
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 200;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(530, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Aplicativo";
             // 
-            // costoDataGridViewTextBoxColumn
+            // aplicaInscripcionLabel
             // 
-            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
-            this.costoDataGridViewTextBoxColumn.Width = 70;
+            aplicaInscripcionLabel.AutoSize = true;
+            aplicaInscripcionLabel.Location = new System.Drawing.Point(544, 59);
+            aplicaInscripcionLabel.Name = "aplicaInscripcionLabel";
+            aplicaInscripcionLabel.Size = new System.Drawing.Size(93, 13);
+            aplicaInscripcionLabel.TabIndex = 37;
+            aplicaInscripcionLabel.Text = "Aplica Inscripción:";
             // 
-            // codigoProveedorDataGridViewTextBoxColumn
+            // chkInscripcion
             // 
-            this.codigoProveedorDataGridViewTextBoxColumn.DataPropertyName = "CodigoProveedor";
-            this.codigoProveedorDataGridViewTextBoxColumn.HeaderText = "CodigoProveedor";
-            this.codigoProveedorDataGridViewTextBoxColumn.Name = "codigoProveedorDataGridViewTextBoxColumn";
-            this.codigoProveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoProveedorDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // pActual
-            // 
-            this.pActual.DataPropertyName = "Actual";
-            this.pActual.HeaderText = "Actual";
-            this.pActual.Name = "pActual";
-            this.pActual.Width = 50;
+            this.chkInscripcion.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "AplicaInscripcion", true));
+            this.chkInscripcion.Location = new System.Drawing.Point(643, 54);
+            this.chkInscripcion.Name = "chkInscripcion";
+            this.chkInscripcion.Size = new System.Drawing.Size(16, 24);
+            this.chkInscripcion.TabIndex = 38;
+            this.chkInscripcion.UseVisualStyleBackColor = true;
             // 
             // FrmMtoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 448);
+            this.ClientSize = new System.Drawing.Size(1105, 448);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
@@ -1649,5 +1687,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pActual;
+        private System.Windows.Forms.CheckBox chkInscripcion;
+        private System.Windows.Forms.Label label3;
     }
 }
