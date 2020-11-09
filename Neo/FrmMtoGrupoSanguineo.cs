@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace Neo
 {
-    public partial class FrmMtoProvincia : Form
+    public partial class FrmMtoGrupoSanguineo : Form
     {
-        public FrmMtoProvincia()
+        public FrmMtoGrupoSanguineo()
         {
             InitializeComponent();
         }
 
-        string codigoPais = null;
-        string nombreProvincia = null;
+        string nombre = null;
+        string grupo = null;
 
         private void ConfiguraBoton(bool configura)
         {
@@ -38,19 +38,13 @@ namespace Neo
             pnl4.Visible = configura;
         }
 
-        private void FrmMtoProvincia_Load(object sender, EventArgs e)
-        {
-            taPais.Fill(dsNeo.tbPais, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            taProvincia.Fill(dsNeo.tbProvincia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-        }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             ConfiguraBoton(false);
             txtNombre.Focus();
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
             lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
-            cboPais.SelectedIndex = -1;
+            cboGrupo.SelectedIndex = -1;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -62,10 +56,10 @@ namespace Neo
                 return;
             }
 
-            if (cboPais.SelectedIndex == -1)
+            if (cboGrupo.SelectedIndex == -1)
             {
-                cboPais.Focus();
-                ep.SetError(cboPais, Utilidad.listaVacia);
+                cboGrupo.Focus();
+                ep.SetError(cboGrupo, Utilidad.listaVacia);
                 return;
             }
 
@@ -75,14 +69,14 @@ namespace Neo
                 this.bsMto.EndEdit();
                 if (!btnNuevo.Available)
                 {
-                    taProvincia.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboPais.Text, txtNombre.Text.Trim());
+                    taGrupoSanguineo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboGrupo.Text, txtNombre.Text.Trim());
                     ConfiguraBoton(true);
-                    codigoPais = cboPais.Text;
-                    nombreProvincia = txtNombre.Text.Trim();
+                    grupo = cboGrupo.Text;
+                    nombre = txtNombre.Text.Trim();
                 }
                 else
                 {
-                    taProvincia.Edita(cboPais.Text, txtNombre.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoPais, nombreProvincia);
+                    taGrupoSanguineo.Edita(cboGrupo.Text, txtNombre.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, grupo, nombre);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -110,7 +104,7 @@ namespace Neo
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.textoCuadroMensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        taProvincia.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoPais, nombreProvincia);
+                        taGrupoSanguineo.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, grupo, nombre);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
                     }
                 }
@@ -139,18 +133,24 @@ namespace Neo
             this.Close();
         }
 
-        private void FrmMtoProvincia_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmMtoGrupoSanguineo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Utilidad.mtoProvincia = null;
+            Utilidad.mtoGrupoSanguineo = null;
         }
 
         private void grdMto_SelectionChanged(object sender, EventArgs e)
         {
             if (grdMto.CurrentRow != null)
             {
-                codigoPais = grdMto.CurrentRow.Cells["pCodigoPais"].Value.ToString();
-                nombreProvincia = grdMto.CurrentRow.Cells["pNombreProvincia"].Value.ToString();
+                grupo = grdMto.CurrentRow.Cells["gsGrupo"].Value.ToString();
+                nombre = grdMto.CurrentRow.Cells["gsNombre"].Value.ToString();
             }
+        }
+
+        private void FrmMtoGrupoSanguineo_Load(object sender, EventArgs e)
+        {
+            taGrupo.Fill(dsNeo.tbGrupo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taGrupoSanguineo.Fill(dsNeo.tbGrupoSanguineo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
         }
     }
 }

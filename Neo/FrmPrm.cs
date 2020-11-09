@@ -360,5 +360,27 @@ namespace Neo
                 }
             }
         }
+
+        private void mnuMtoVtnGrupo_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoGrupo == null)
+            {
+                Utilidad.mtoGrupo = new FrmMtoGrupo();
+                Utilidad.mtoGrupo.MdiParent = this;
+            }
+            Utilidad.mtoGrupo.BringToFront();
+            Utilidad.mtoGrupo.Show();
+        }
+
+        private void mntoVtnGrupoSanguineo_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoGrupoSanguineo == null)
+            {
+                Utilidad.mtoGrupoSanguineo = new FrmMtoGrupoSanguineo();
+                Utilidad.mtoGrupoSanguineo.MdiParent = this;
+            }
+            Utilidad.mtoGrupoSanguineo.BringToFront();
+            Utilidad.mtoGrupoSanguineo.Show();
+        }
     }
 }

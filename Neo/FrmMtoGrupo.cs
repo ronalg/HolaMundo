@@ -11,15 +11,14 @@ using System.Windows.Forms;
 
 namespace Neo
 {
-    public partial class FrmMtoProvincia : Form
+    public partial class FrmMtoGrupo : Form
     {
-        public FrmMtoProvincia()
+        public FrmMtoGrupo()
         {
             InitializeComponent();
         }
 
-        string codigoPais = null;
-        string nombreProvincia = null;
+        string nombre = null;
 
         private void ConfiguraBoton(bool configura)
         {
@@ -36,12 +35,13 @@ namespace Neo
             spd4.Available = configura;
             btnSalir.Available = configura;
             pnl4.Visible = configura;
+            lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
+            lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
         }
 
-        private void FrmMtoProvincia_Load(object sender, EventArgs e)
+        private void FrmMtoGrupo_Load(object sender, EventArgs e)
         {
-            taPais.Fill(dsNeo.tbPais, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            taProvincia.Fill(dsNeo.tbProvincia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taGrupo.Fill(dsNeo.tbGrupo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -50,7 +50,6 @@ namespace Neo
             txtNombre.Focus();
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
             lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
-            cboPais.SelectedIndex = -1;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -62,27 +61,21 @@ namespace Neo
                 return;
             }
 
-            if (cboPais.SelectedIndex == -1)
-            {
-                cboPais.Focus();
-                ep.SetError(cboPais, Utilidad.listaVacia);
-                return;
-            }
-
             try
             {
+                lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
+                lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
                 this.Validate();
                 this.bsMto.EndEdit();
                 if (!btnNuevo.Available)
                 {
-                    taProvincia.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboPais.Text, txtNombre.Text.Trim());
+                    taGrupo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtNombre.Text.Trim());
                     ConfiguraBoton(true);
-                    codigoPais = cboPais.Text;
-                    nombreProvincia = txtNombre.Text.Trim();
+                    nombre = txtNombre.Text.Trim();
                 }
                 else
                 {
-                    taProvincia.Edita(cboPais.Text, txtNombre.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoPais, nombreProvincia);
+                    taGrupo.Edita(txtNombre.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -110,7 +103,7 @@ namespace Neo
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.textoCuadroMensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        taProvincia.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoPais, nombreProvincia);
+                        taGrupo.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
                     }
                 }
@@ -139,18 +132,15 @@ namespace Neo
             this.Close();
         }
 
-        private void FrmMtoProvincia_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmMtoGrupo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Utilidad.mtoProvincia = null;
+            Utilidad.mtoGrupo = null;
         }
 
         private void grdMto_SelectionChanged(object sender, EventArgs e)
         {
             if (grdMto.CurrentRow != null)
-            {
-                codigoPais = grdMto.CurrentRow.Cells["pCodigoPais"].Value.ToString();
-                nombreProvincia = grdMto.CurrentRow.Cells["pNombreProvincia"].Value.ToString();
-            }
+                nombre = grdMto.CurrentRow.Cells["gNombre"].Value.ToString();
         }
     }
 }

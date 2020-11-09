@@ -15,6 +15,10 @@ namespace Neo
         public static FrmTscFactura tscFactura = null;
         public static FrmTscOrdenPedido tscOrdenPedido = null;
         //formularios mantenimientos
+        //Veterinaria
+        public static FrmMtoGrupoSanguineo mtoGrupoSanguineo = null;
+        public static FrmMtoGrupo mtoGrupo = null;
+        //-------------------------------------------------------------------------
         public static FrmMtoFrecuencia mtoFrecuencia = null;
         public static FrmMtoCliente mtoCliente = null;
         public static FrmMtoFinanciera mtoFinanciera = null;

@@ -124,6 +124,18 @@
     <Compile Include="FrmMtoFrecuencia.Designer.cs">
       <DependentUpon>FrmMtoFrecuencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMtoGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoGrupo.Designer.cs">
+      <DependentUpon>FrmMtoGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoGrupoSanguineo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoGrupoSanguineo.Designer.cs">
+      <DependentUpon>FrmMtoGrupoSanguineo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMtoIdentificacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +183,12 @@
     </Compile>
     <Compile Include="FrmMtoProvincia.Designer.cs">
       <DependentUpon>FrmMtoProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoRaza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoRaza.Designer.cs">
+      <DependentUpon>FrmMtoRaza.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMtoSucursal.cs">
       <SubType>Form</SubType>
@@ -274,6 +292,12 @@
     <EmbeddedResource Include="FrmMtoFrecuencia.resx">
       <DependentUpon>FrmMtoFrecuencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoGrupo.resx">
+      <DependentUpon>FrmMtoGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoGrupoSanguineo.resx">
+      <DependentUpon>FrmMtoGrupoSanguineo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoIdentificacion.resx">
       <DependentUpon>FrmMtoIdentificacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoProvincia.resx">
       <DependentUpon>FrmMtoProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoRaza.resx">
+      <DependentUpon>FrmMtoRaza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoSucursal.resx">
       <DependentUpon>FrmMtoSucursal.cs</DependentUpon>
