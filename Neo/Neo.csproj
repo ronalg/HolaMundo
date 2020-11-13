@@ -76,6 +76,12 @@
     <Compile Include="FrmMtoArticulo.Designer.cs">
       <DependentUpon>FrmMtoArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMtoCaracter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoCaracter.Designer.cs">
+      <DependentUpon>FrmMtoCaracter.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMtoCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,12 @@
     </Compile>
     <Compile Include="FrmMtoPais.Designer.cs">
       <DependentUpon>FrmMtoPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoPelaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoPelaje.Designer.cs">
+      <DependentUpon>FrmMtoPelaje.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMtoPrecioVenta.cs">
       <SubType>Form</SubType>
@@ -268,6 +280,9 @@
     <EmbeddedResource Include="FrmMtoArticulo.resx">
       <DependentUpon>FrmMtoArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoCaracter.resx">
+      <DependentUpon>FrmMtoCaracter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoCategoria.resx">
       <DependentUpon>FrmMtoCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoPais.resx">
       <DependentUpon>FrmMtoPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoPelaje.resx">
+      <DependentUpon>FrmMtoPelaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoPrecioVenta.resx">
       <DependentUpon>FrmMtoPrecioVenta.cs</DependentUpon>

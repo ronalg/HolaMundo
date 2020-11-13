@@ -11,14 +11,13 @@ using System.Windows.Forms;
 
 namespace Neo
 {
-    public partial class FrmMtoRaza : Form
+    public partial class FrmMtoCaracter : Form
     {
-        public FrmMtoRaza()
+        public FrmMtoCaracter()
         {
             InitializeComponent();
         }
 
-        string grupo = null;
         string nombre = null;
 
         private void ConfiguraBoton(bool configura)
@@ -38,15 +37,17 @@ namespace Neo
             pnl4.Visible = configura;
         }
 
-        private void grdMto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FrmMtoCaracter_Load(object sender, EventArgs e)
         {
-
+            taCaracter.Fill(dsNeo.tbCaracter, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
         }
 
-        private void FrmMtoRaza_Load(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-            taGrupo.Fill(dsNeo.tbGrupo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            taRaza.Fill(dsNeo.tbRaza, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            ConfiguraBoton(false);
+            txtNombre.Focus();
+            lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
+            lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -58,27 +59,21 @@ namespace Neo
                 return;
             }
 
-            if (cboGrupo.SelectedIndex == -1)
-            {
-                cboGrupo.Focus();
-                ep.SetError(cboGrupo, Utilidad.listaVacia);
-                return;
-            }
-
             try
             {
+                lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
+                lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
                 this.Validate();
                 this.bsMto.EndEdit();
                 if (!btnNuevo.Available)
                 {
-                    taRaza.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboGrupo.Text, txtNombre.Text.Trim());
+                    taCaracter.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtNombre.Text.Trim());
                     ConfiguraBoton(true);
-                    grupo = cboGrupo.Text;
                     nombre = txtNombre.Text.Trim();
                 }
                 else
                 {
-                    taRaza.Edita(cboGrupo.Text, txtNombre.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, grupo, nombre);
+                    taCaracter.Edita(txtNombre.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -106,7 +101,7 @@ namespace Neo
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.textoCuadroMensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        taRaza.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, grupo, nombre);
+                        taCaracter.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
                     }
                 }
@@ -135,27 +130,15 @@ namespace Neo
             this.Close();
         }
 
-        private void FrmMtoRaza_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmMtoCaracter_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Utilidad.mtoRaza = null;
+            Utilidad.mtoCaracter = null;
         }
 
         private void grdMto_SelectionChanged(object sender, EventArgs e)
         {
             if (grdMto.CurrentRow != null)
-            {
-                grupo = grdMto.CurrentRow.Cells["rGrupo"].Value.ToString();
-                nombre = grdMto.CurrentRow.Cells["rNombre"].Value.ToString();
-            }
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            ConfiguraBoton(false);
-            txtNombre.Focus();
-            lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
-            lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
-            cboGrupo.SelectedIndex = -1;
+                nombre = grdMto.CurrentRow.Cells["cNombre"].Value.ToString();
         }
     }
 }

@@ -33,7 +33,10 @@
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.mnuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoVeterinaria = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoVtnRaza = new System.Windows.Forms.ToolStripMenuItem();
+            this.mntoVtnGrupoSanguineo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoVtnGrupo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoVtnCaracter = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoPerfilArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -84,12 +87,11 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.mntoVtnGrupoSanguineo = new System.Windows.Forms.ToolStripMenuItem();
             this.taTrabajo = new Neo.DsNeoTableAdapters.taTrabajo();
             this.dsNeo = new Neo.DsNeo();
             this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
-            this.mnuMtoVtnRaza = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoVtnPelo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -145,10 +147,26 @@
             this.mnuMtoVeterinaria.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMtoVtnRaza,
             this.mntoVtnGrupoSanguineo,
-            this.mnuMtoVtnGrupo});
+            this.mnuMtoVtnGrupo,
+            this.mnuMtoVtnCaracter,
+            this.mnuMtoVtnPelo});
             this.mnuMtoVeterinaria.Name = "mnuMtoVeterinaria";
             this.mnuMtoVeterinaria.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoVeterinaria.Text = "Veterinaria";
+            // 
+            // mnuMtoVtnRaza
+            // 
+            this.mnuMtoVtnRaza.Name = "mnuMtoVtnRaza";
+            this.mnuMtoVtnRaza.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnRaza.Text = "Razas";
+            this.mnuMtoVtnRaza.Click += new System.EventHandler(this.mnuMtoVtnRaza_Click);
+            // 
+            // mntoVtnGrupoSanguineo
+            // 
+            this.mntoVtnGrupoSanguineo.Name = "mntoVtnGrupoSanguineo";
+            this.mntoVtnGrupoSanguineo.Size = new System.Drawing.Size(180, 22);
+            this.mntoVtnGrupoSanguineo.Text = "Grupos Sanguineos";
+            this.mntoVtnGrupoSanguineo.Click += new System.EventHandler(this.mntoVtnGrupoSanguineo_Click);
             // 
             // mnuMtoVtnGrupo
             // 
@@ -156,6 +174,13 @@
             this.mnuMtoVtnGrupo.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoVtnGrupo.Text = "Grupos";
             this.mnuMtoVtnGrupo.Click += new System.EventHandler(this.mnuMtoVtnGrupo_Click);
+            // 
+            // mnuMtoVtnCaracter
+            // 
+            this.mnuMtoVtnCaracter.Name = "mnuMtoVtnCaracter";
+            this.mnuMtoVtnCaracter.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnCaracter.Text = "Caracter";
+            this.mnuMtoVtnCaracter.Click += new System.EventHandler(this.mnuMtoVtnCaracter_Click);
             // 
             // mnuMtoArticulo
             // 
@@ -538,13 +563,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // mntoVtnGrupoSanguineo
-            // 
-            this.mntoVtnGrupoSanguineo.Name = "mntoVtnGrupoSanguineo";
-            this.mntoVtnGrupoSanguineo.Size = new System.Drawing.Size(180, 22);
-            this.mntoVtnGrupoSanguineo.Text = "Grupos Sanguineos";
-            this.mntoVtnGrupoSanguineo.Click += new System.EventHandler(this.mntoVtnGrupoSanguineo_Click);
-            // 
             // taTrabajo
             // 
             this.taTrabajo.ClearBeforeFill = true;
@@ -562,11 +580,12 @@
             // 
             this.taSucursal.ClearBeforeFill = true;
             // 
-            // mnuMtoVtnRaza
+            // mnuMtoVtnPelo
             // 
-            this.mnuMtoVtnRaza.Name = "mnuMtoVtnRaza";
-            this.mnuMtoVtnRaza.Size = new System.Drawing.Size(180, 22);
-            this.mnuMtoVtnRaza.Text = "Razas";
+            this.mnuMtoVtnPelo.Name = "mnuMtoVtnPelo";
+            this.mnuMtoVtnPelo.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnPelo.Text = "Tipos de Pelo";
+            this.mnuMtoVtnPelo.Click += new System.EventHandler(this.mnuMtoVtnPelo_Click);
             // 
             // FrmPrm
             // 
@@ -656,6 +675,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnGrupo;
         private System.Windows.Forms.ToolStripMenuItem mntoVtnGrupoSanguineo;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnRaza;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnCaracter;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnPelo;
     }
 }
 

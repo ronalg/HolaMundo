@@ -382,5 +382,38 @@ namespace Neo
             Utilidad.mtoGrupoSanguineo.BringToFront();
             Utilidad.mtoGrupoSanguineo.Show();
         }
+
+        private void mnuMtoVtnRaza_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoRaza == null)
+            {
+                Utilidad.mtoRaza = new FrmMtoRaza();
+                Utilidad.mtoRaza.MdiParent = this;
+            }
+            Utilidad.mtoRaza.BringToFront();
+            Utilidad.mtoRaza.Show();
+        }
+
+        private void mnuMtoVtnCaracter_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoCaracter == null)
+            {
+                Utilidad.mtoCaracter = new FrmMtoCaracter();
+                Utilidad.mtoCaracter.MdiParent = this;
+            }
+            Utilidad.mtoCaracter.BringToFront();
+            Utilidad.mtoCaracter.Show();
+        }
+
+        private void mnuMtoVtnPelo_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoPelaje == null)
+            {
+                Utilidad.mtoPelaje = new FrmMtoPelaje();
+                Utilidad.mtoPelaje.MdiParent = this;
+            }
+            Utilidad.mtoPelaje.BringToFront();
+            Utilidad.mtoPelaje.Show();
+        }
     }
 }
