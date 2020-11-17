@@ -22,6 +22,8 @@ namespace Neo
         public static FrmMtoGrupoSanguineo mtoGrupoSanguineo = null;
         public static FrmMtoGrupo mtoGrupo = null;
         //-------------------------------------------------------------------------
+        public static FrmMtoPuesto mtoPuesto = null;
+        public static FrmMtoEmpleado mtoEmpleado = null;
         public static FrmMtoFrecuencia mtoFrecuencia = null;
         public static FrmMtoCliente mtoCliente = null;
         public static FrmMtoFinanciera mtoFinanciera = null;

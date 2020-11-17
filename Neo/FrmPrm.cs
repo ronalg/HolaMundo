@@ -415,5 +415,27 @@ namespace Neo
             Utilidad.mtoPelaje.BringToFront();
             Utilidad.mtoPelaje.Show();
         }
+
+        private void mnuMtoNmnPuesto_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoPuesto == null)
+            {
+                Utilidad.mtoPuesto = new FrmMtoPuesto();
+                Utilidad.mtoPuesto.MdiParent = this;
+            }
+            Utilidad.mtoPuesto.BringToFront();
+            Utilidad.mtoPuesto.Show();
+        }
+
+        private void mnuMtoNmnEmpleado_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoEmpleado == null)
+            {
+                Utilidad.mtoEmpleado = new FrmMtoEmpleado();
+                Utilidad.mtoEmpleado.MdiParent = this;
+            }
+            Utilidad.mtoEmpleado.BringToFront();
+            Utilidad.mtoEmpleado.Show();
+        }
     }
 }

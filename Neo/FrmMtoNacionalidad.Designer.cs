@@ -112,7 +112,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(529, 298);
+            this.pnl3.Size = new System.Drawing.Size(539, 298);
             this.pnl3.TabIndex = 11;
             // 
             // pnl6
@@ -129,7 +129,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(293, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(229, 286);
+            this.pnl6.Size = new System.Drawing.Size(239, 286);
             this.pnl6.TabIndex = 6;
             // 
             // txtNombre
@@ -240,7 +240,7 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(529, 10);
+            this.pnl2.Size = new System.Drawing.Size(539, 10);
             this.pnl2.TabIndex = 10;
             // 
             // btnSalir
@@ -268,7 +268,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(529, 28);
+            this.pnl1.Size = new System.Drawing.Size(539, 28);
             this.pnl1.TabIndex = 9;
             // 
             // bnMto
@@ -300,7 +300,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(527, 25);
+            this.bnMto.Size = new System.Drawing.Size(537, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -402,7 +402,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 336);
+            this.ClientSize = new System.Drawing.Size(539, 336);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);

@@ -106,6 +106,12 @@
     <Compile Include="FrmMtoDepartamento.Designer.cs">
       <DependentUpon>FrmMtoDepartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMtoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoEmpleado.Designer.cs">
+      <DependentUpon>FrmMtoEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMtoEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,12 @@
     </Compile>
     <Compile Include="FrmMtoProvincia.Designer.cs">
       <DependentUpon>FrmMtoProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMtoPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoPuesto.Designer.cs">
+      <DependentUpon>FrmMtoPuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMtoRaza.cs">
       <SubType>Form</SubType>
@@ -295,6 +307,9 @@
     <EmbeddedResource Include="FrmMtoDepartamento.resx">
       <DependentUpon>FrmMtoDepartamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoEmpleado.resx">
+      <DependentUpon>FrmMtoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoEmpresa.resx">
       <DependentUpon>FrmMtoEmpresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoProvincia.resx">
       <DependentUpon>FrmMtoProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoPuesto.resx">
+      <DependentUpon>FrmMtoPuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoRaza.resx">
       <DependentUpon>FrmMtoRaza.cs</DependentUpon>
