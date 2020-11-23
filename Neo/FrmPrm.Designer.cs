@@ -95,6 +95,8 @@
             this.dsNeo = new Neo.DsNeo();
             this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
+            this.mnuMtoVtnMascota = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuPrincipal.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -149,9 +151,11 @@
             // mnuMtoVeterinaria
             // 
             this.mnuMtoVeterinaria.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoVtnMascota,
+            this.toolStripSeparator10,
             this.mnuMtoVtnRaza,
-            this.mntoVtnGrupoSanguineo,
             this.mnuMtoVtnGrupo,
+            this.mntoVtnGrupoSanguineo,
             this.mnuMtoVtnCaracter,
             this.mnuMtoVtnPelo});
             this.mnuMtoVeterinaria.Name = "mnuMtoVeterinaria";
@@ -161,35 +165,35 @@
             // mnuMtoVtnRaza
             // 
             this.mnuMtoVtnRaza.Name = "mnuMtoVtnRaza";
-            this.mnuMtoVtnRaza.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnRaza.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoVtnRaza.Text = "Razas";
             this.mnuMtoVtnRaza.Click += new System.EventHandler(this.mnuMtoVtnRaza_Click);
             // 
             // mntoVtnGrupoSanguineo
             // 
             this.mntoVtnGrupoSanguineo.Name = "mntoVtnGrupoSanguineo";
-            this.mntoVtnGrupoSanguineo.Size = new System.Drawing.Size(176, 22);
+            this.mntoVtnGrupoSanguineo.Size = new System.Drawing.Size(180, 22);
             this.mntoVtnGrupoSanguineo.Text = "Grupos Sanguineos";
             this.mntoVtnGrupoSanguineo.Click += new System.EventHandler(this.mntoVtnGrupoSanguineo_Click);
             // 
             // mnuMtoVtnGrupo
             // 
             this.mnuMtoVtnGrupo.Name = "mnuMtoVtnGrupo";
-            this.mnuMtoVtnGrupo.Size = new System.Drawing.Size(176, 22);
-            this.mnuMtoVtnGrupo.Text = "Grupos";
+            this.mnuMtoVtnGrupo.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnGrupo.Text = "Grupos Razas";
             this.mnuMtoVtnGrupo.Click += new System.EventHandler(this.mnuMtoVtnGrupo_Click);
             // 
             // mnuMtoVtnCaracter
             // 
             this.mnuMtoVtnCaracter.Name = "mnuMtoVtnCaracter";
-            this.mnuMtoVtnCaracter.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnCaracter.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoVtnCaracter.Text = "Caracter";
             this.mnuMtoVtnCaracter.Click += new System.EventHandler(this.mnuMtoVtnCaracter_Click);
             // 
             // mnuMtoVtnPelo
             // 
             this.mnuMtoVtnPelo.Name = "mnuMtoVtnPelo";
-            this.mnuMtoVtnPelo.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnPelo.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoVtnPelo.Text = "Tipos de Pelo";
             this.mnuMtoVtnPelo.Click += new System.EventHandler(this.mnuMtoVtnPelo_Click);
             // 
@@ -506,14 +510,14 @@
             // mnuMtoNmnEmpleado
             // 
             this.mnuMtoNmnEmpleado.Name = "mnuMtoNmnEmpleado";
-            this.mnuMtoNmnEmpleado.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoNmnEmpleado.Size = new System.Drawing.Size(132, 22);
             this.mnuMtoNmnEmpleado.Text = "Empleados";
             this.mnuMtoNmnEmpleado.Click += new System.EventHandler(this.mnuMtoNmnEmpleado_Click);
             // 
             // mnuMtoNmnPuesto
             // 
             this.mnuMtoNmnPuesto.Name = "mnuMtoNmnPuesto";
-            this.mnuMtoNmnPuesto.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoNmnPuesto.Size = new System.Drawing.Size(132, 22);
             this.mnuMtoNmnPuesto.Text = "Puestos";
             this.mnuMtoNmnPuesto.Click += new System.EventHandler(this.mnuMtoNmnPuesto_Click);
             // 
@@ -614,6 +618,18 @@
             // 
             this.taSucursal.ClearBeforeFill = true;
             // 
+            // mnuMtoVtnMascota
+            // 
+            this.mnuMtoVtnMascota.Name = "mnuMtoVtnMascota";
+            this.mnuMtoVtnMascota.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnMascota.Text = "Mascotas";
+            this.mnuMtoVtnMascota.Click += new System.EventHandler(this.mnuMtoVtnMascota_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(177, 6);
+            // 
             // FrmPrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -707,6 +723,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMtoNomina;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoNmnEmpleado;
         private System.Windows.Forms.ToolStripMenuItem mnuMtoNmnPuesto;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnMascota;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     }
 }
 

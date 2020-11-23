@@ -437,5 +437,16 @@ namespace Neo
             Utilidad.mtoEmpleado.BringToFront();
             Utilidad.mtoEmpleado.Show();
         }
+
+        private void mnuMtoVtnMascota_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoMascota == null)
+            {
+                Utilidad.mtoMascota = new FrmMtoMascota();
+                Utilidad.mtoMascota.MdiParent = this;
+            }
+            Utilidad.mtoMascota.BringToFront();
+            Utilidad.mtoMascota.Show();
+        }
     }
 }
