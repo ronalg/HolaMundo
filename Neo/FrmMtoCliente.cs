@@ -80,7 +80,6 @@ namespace Neo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(txtId.Text.Trim()))
             {
                 txtId.Focus();

@@ -59,15 +59,23 @@
             System.Windows.Forms.Label peluqueriaLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoMascota));
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcMascota = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.tpMascota = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.chkPeluqueria = new System.Windows.Forms.CheckBox();
-            this.bsMto = new System.Windows.Forms.BindingSource(this.components);
+            this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.codigoClienteDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboVeterinario = new System.Windows.Forms.ComboBox();
+            this.lblVeterinario = new System.Windows.Forms.Label();
+            this.bsMto = new System.Windows.Forms.BindingSource(this.components);
+            this.chkPeluqueria = new System.Windows.Forms.CheckBox();
             this.txtPedigri = new System.Windows.Forms.TextBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.lblTrabajo = new System.Windows.Forms.Label();
@@ -162,7 +170,10 @@
             this.taPelaje = new Neo.DsNeoTableAdapters.taPelaje();
             this.taGrupoSanguineo = new Neo.DsNeoTableAdapters.taGrupoSanguineo();
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
-            this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
+            this.ofdLogo = new System.Windows.Forms.OpenFileDialog();
+            this.taEmpleado = new Neo.DsNeoTableAdapters.taEmpleado();
+            this.taEstado = new Neo.DsNeoTableAdapters.taEstado();
+            this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
             nombreLabel = new System.Windows.Forms.Label();
             nombreGrupoLabel = new System.Windows.Forms.Label();
             nombreRazaLabel = new System.Windows.Forms.Label();
@@ -197,8 +208,10 @@
             this.tcMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tpMascota)).BeginInit();
             this.tpMascota.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tpCita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tpHistorial)).BeginInit();
@@ -384,7 +397,7 @@
             // aperturaLabel
             // 
             aperturaLabel.AutoSize = true;
-            aperturaLabel.Location = new System.Drawing.Point(534, 278);
+            aperturaLabel.Location = new System.Drawing.Point(534, 299);
             aperturaLabel.Name = "aperturaLabel";
             aperturaLabel.Size = new System.Drawing.Size(50, 13);
             aperturaLabel.TabIndex = 46;
@@ -393,7 +406,7 @@
             // usuarioLabel
             // 
             usuarioLabel.AutoSize = true;
-            usuarioLabel.Location = new System.Drawing.Point(538, 306);
+            usuarioLabel.Location = new System.Drawing.Point(538, 327);
             usuarioLabel.Name = "usuarioLabel";
             usuarioLabel.Size = new System.Drawing.Size(46, 13);
             usuarioLabel.TabIndex = 48;
@@ -402,7 +415,7 @@
             // equipoLabel
             // 
             equipoLabel.AutoSize = true;
-            equipoLabel.Location = new System.Drawing.Point(541, 332);
+            equipoLabel.Location = new System.Drawing.Point(541, 353);
             equipoLabel.Name = "equipoLabel";
             equipoLabel.Size = new System.Drawing.Size(43, 13);
             equipoLabel.TabIndex = 50;
@@ -411,7 +424,7 @@
             // codigoMascotaLabel
             // 
             codigoMascotaLabel.AutoSize = true;
-            codigoMascotaLabel.Location = new System.Drawing.Point(541, 358);
+            codigoMascotaLabel.Location = new System.Drawing.Point(541, 379);
             codigoMascotaLabel.Name = "codigoMascotaLabel";
             codigoMascotaLabel.Size = new System.Drawing.Size(43, 13);
             codigoMascotaLabel.TabIndex = 52;
@@ -420,7 +433,7 @@
             // codigoSucursalLabel
             // 
             codigoSucursalLabel.AutoSize = true;
-            codigoSucursalLabel.Location = new System.Drawing.Point(535, 251);
+            codigoSucursalLabel.Location = new System.Drawing.Point(535, 272);
             codigoSucursalLabel.Name = "codigoSucursalLabel";
             codigoSucursalLabel.Size = new System.Drawing.Size(51, 13);
             codigoSucursalLabel.TabIndex = 54;
@@ -429,7 +442,7 @@
             // codigoTrabajoLabel
             // 
             codigoTrabajoLabel.AutoSize = true;
-            codigoTrabajoLabel.Location = new System.Drawing.Point(538, 386);
+            codigoTrabajoLabel.Location = new System.Drawing.Point(538, 407);
             codigoTrabajoLabel.Name = "codigoTrabajoLabel";
             codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
             codigoTrabajoLabel.TabIndex = 57;
@@ -438,7 +451,7 @@
             // codigoEmpresaLabel
             // 
             codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(640, 386);
+            codigoEmpresaLabel.Location = new System.Drawing.Point(640, 407);
             codigoEmpresaLabel.Name = "codigoEmpresaLabel";
             codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
             codigoEmpresaLabel.TabIndex = 59;
@@ -456,7 +469,7 @@
             // peluqueriaLabel
             // 
             peluqueriaLabel.AutoSize = true;
-            peluqueriaLabel.Location = new System.Drawing.Point(522, 223);
+            peluqueriaLabel.Location = new System.Drawing.Point(522, 221);
             peluqueriaLabel.Name = "peluqueriaLabel";
             peluqueriaLabel.Size = new System.Drawing.Size(62, 13);
             peluqueriaLabel.TabIndex = 63;
@@ -477,7 +490,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(1235, 463);
+            this.pnl3.Size = new System.Drawing.Size(1235, 514);
             this.pnl3.TabIndex = 11;
             // 
             // pnl6
@@ -489,7 +502,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(466, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(762, 451);
+            this.pnl6.Size = new System.Drawing.Size(762, 502);
             this.pnl6.TabIndex = 6;
             // 
             // tcMascota
@@ -502,7 +515,7 @@
             this.tpCita,
             this.tpHistorial});
             this.tcMascota.SelectedIndex = 0;
-            this.tcMascota.Size = new System.Drawing.Size(760, 449);
+            this.tcMascota.Size = new System.Drawing.Size(760, 500);
             this.tcMascota.TabIndex = 0;
             this.tcMascota.Text = "kryptonNavigator1";
             // 
@@ -510,6 +523,10 @@
             // 
             this.tpMascota.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.tpMascota.AutoScroll = true;
+            this.tpMascota.Controls.Add(this.grdCliente);
+            this.tpMascota.Controls.Add(this.label5);
+            this.tpMascota.Controls.Add(this.cboVeterinario);
+            this.tpMascota.Controls.Add(this.lblVeterinario);
             this.tpMascota.Controls.Add(peluqueriaLabel);
             this.tpMascota.Controls.Add(this.chkPeluqueria);
             this.tpMascota.Controls.Add(pedigriLabel);
@@ -579,30 +596,109 @@
             this.tpMascota.LastVisibleSet = true;
             this.tpMascota.MinimumSize = new System.Drawing.Size(50, 50);
             this.tpMascota.Name = "tpMascota";
-            this.tpMascota.Size = new System.Drawing.Size(758, 422);
+            this.tpMascota.Size = new System.Drawing.Size(758, 473);
             this.tpMascota.Text = "Mascota";
             this.tpMascota.ToolTipTitle = "Page ToolTip";
             this.tpMascota.UniqueName = "F1252336AC8144A62AA5D1393A2B66F2";
             this.tpMascota.Click += new System.EventHandler(this.tpMascota_Click);
             // 
-            // chkPeluqueria
+            // grdCliente
             // 
-            this.chkPeluqueria.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Peluqueria", true));
-            this.chkPeluqueria.Location = new System.Drawing.Point(590, 218);
-            this.chkPeluqueria.Name = "chkPeluqueria";
-            this.chkPeluqueria.Size = new System.Drawing.Size(104, 24);
-            this.chkPeluqueria.TabIndex = 64;
-            this.chkPeluqueria.UseVisualStyleBackColor = true;
+            this.grdCliente.AllowUserToAddRows = false;
+            this.grdCliente.AllowUserToDeleteRows = false;
+            this.grdCliente.AutoGenerateColumns = false;
+            this.grdCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoClienteDataGridViewTextBoxColumn1,
+            this.nombreDataGridViewTextBoxColumn1});
+            this.grdCliente.DataSource = this.bsCliente;
+            this.grdCliente.Location = new System.Drawing.Point(337, 50);
+            this.grdCliente.Name = "grdCliente";
+            this.grdCliente.ReadOnly = true;
+            this.grdCliente.RowHeadersVisible = false;
+            this.grdCliente.Size = new System.Drawing.Size(302, 158);
+            this.grdCliente.TabIndex = 69;
+            this.grdCliente.Visible = false;
+            this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
+            this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
+            // 
+            // codigoClienteDataGridViewTextBoxColumn1
+            // 
+            this.codigoClienteDataGridViewTextBoxColumn1.DataPropertyName = "CodigoCliente";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoClienteDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.codigoClienteDataGridViewTextBoxColumn1.HeaderText = "CodigoCliente";
+            this.codigoClienteDataGridViewTextBoxColumn1.Name = "codigoClienteDataGridViewTextBoxColumn1";
+            this.codigoClienteDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.codigoClienteDataGridViewTextBoxColumn1.Visible = false;
+            this.codigoClienteDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn1.Visible = false;
+            this.nombreDataGridViewTextBoxColumn1.Width = 220;
+            // 
+            // bsCliente
+            // 
+            this.bsCliente.DataMember = "tbCliente";
+            this.bsCliente.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(524, 245);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 68;
+            this.label5.Text = "Veterinario:";
+            // 
+            // cboVeterinario
+            // 
+            this.cboVeterinario.DataSource = this.dsNeo;
+            this.cboVeterinario.DisplayMember = "tbEmpleado.Nombre";
+            this.cboVeterinario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVeterinario.FormattingEnabled = true;
+            this.cboVeterinario.Location = new System.Drawing.Point(590, 242);
+            this.cboVeterinario.Name = "cboVeterinario";
+            this.cboVeterinario.Size = new System.Drawing.Size(121, 21);
+            this.cboVeterinario.TabIndex = 67;
+            this.cboVeterinario.ValueMember = "tbEmpleado.CodigoEmpleado";
+            this.cboVeterinario.SelectedIndexChanged += new System.EventHandler(this.cboVeterinario_SelectedIndexChanged);
+            // 
+            // lblVeterinario
+            // 
+            this.lblVeterinario.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblVeterinario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblVeterinario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpleado", true));
+            this.lblVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVeterinario.Location = new System.Drawing.Point(717, 242);
+            this.lblVeterinario.Name = "lblVeterinario";
+            this.lblVeterinario.Size = new System.Drawing.Size(22, 20);
+            this.lblVeterinario.TabIndex = 66;
+            this.lblVeterinario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bsMto
             // 
             this.bsMto.DataMember = "tbMascota";
             this.bsMto.DataSource = this.dsNeo;
             // 
-            // dsNeo
+            // chkPeluqueria
             // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.chkPeluqueria.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Peluqueria", true));
+            this.chkPeluqueria.Location = new System.Drawing.Point(590, 216);
+            this.chkPeluqueria.Name = "chkPeluqueria";
+            this.chkPeluqueria.Size = new System.Drawing.Size(25, 24);
+            this.chkPeluqueria.TabIndex = 64;
+            this.chkPeluqueria.UseVisualStyleBackColor = true;
             // 
             // txtPedigri
             // 
@@ -617,7 +713,8 @@
             this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
             this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
-            this.lblEmpresa.Location = new System.Drawing.Point(697, 383);
+            this.lblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.Location = new System.Drawing.Point(697, 404);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(42, 20);
             this.lblEmpresa.TabIndex = 60;
@@ -628,7 +725,8 @@
             this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
-            this.lblTrabajo.Location = new System.Drawing.Point(590, 383);
+            this.lblTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrabajo.Location = new System.Drawing.Point(590, 404);
             this.lblTrabajo.Name = "lblTrabajo";
             this.lblTrabajo.Size = new System.Drawing.Size(42, 20);
             this.lblTrabajo.TabIndex = 58;
@@ -640,7 +738,7 @@
             this.cboSucursal.DisplayMember = "tbSucursal.Nombre";
             this.cboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSucursal.FormattingEnabled = true;
-            this.cboSucursal.Location = new System.Drawing.Point(590, 248);
+            this.cboSucursal.Location = new System.Drawing.Point(590, 269);
             this.cboSucursal.Name = "cboSucursal";
             this.cboSucursal.Size = new System.Drawing.Size(121, 21);
             this.cboSucursal.TabIndex = 47;
@@ -652,7 +750,8 @@
             this.lblSucursal.BackColor = System.Drawing.Color.Gainsboro;
             this.lblSucursal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSucursal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoSucursal", true));
-            this.lblSucursal.Location = new System.Drawing.Point(717, 248);
+            this.lblSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursal.Location = new System.Drawing.Point(717, 269);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(20, 20);
             this.lblSucursal.TabIndex = 55;
@@ -663,7 +762,7 @@
             this.lblCodigo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoMascota", true));
-            this.lblCodigo.Location = new System.Drawing.Point(590, 355);
+            this.lblCodigo.Location = new System.Drawing.Point(590, 376);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(149, 20);
             this.lblCodigo.TabIndex = 53;
@@ -674,7 +773,7 @@
             this.lblEquipo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblEquipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEquipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Equipo", true));
-            this.lblEquipo.Location = new System.Drawing.Point(590, 328);
+            this.lblEquipo.Location = new System.Drawing.Point(590, 349);
             this.lblEquipo.Name = "lblEquipo";
             this.lblEquipo.Size = new System.Drawing.Size(149, 20);
             this.lblEquipo.TabIndex = 51;
@@ -685,7 +784,7 @@
             this.lblUsuario.BackColor = System.Drawing.Color.Gainsboro;
             this.lblUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Usuario", true));
-            this.lblUsuario.Location = new System.Drawing.Point(590, 302);
+            this.lblUsuario.Location = new System.Drawing.Point(590, 323);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(149, 20);
             this.lblUsuario.TabIndex = 49;
@@ -694,7 +793,7 @@
             // txtApertura
             // 
             this.txtApertura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Apertura", true));
-            this.txtApertura.Location = new System.Drawing.Point(590, 275);
+            this.txtApertura.Location = new System.Drawing.Point(590, 296);
             this.txtApertura.Mask = "00/00/0000";
             this.txtApertura.Name = "txtApertura";
             this.txtApertura.Size = new System.Drawing.Size(149, 20);
@@ -705,7 +804,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(520, 201);
+            this.label4.Location = new System.Drawing.Point(520, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 45;
@@ -718,6 +817,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(60, 25);
             this.btnBuscar.TabIndex = 44;
             this.btnBuscar.Values.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnQuitar
             // 
@@ -726,6 +826,7 @@
             this.btnQuitar.Size = new System.Drawing.Size(60, 25);
             this.btnQuitar.TabIndex = 43;
             this.btnQuitar.Values.Text = "Eliminar";
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // pbImagen
             // 
@@ -776,6 +877,8 @@
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(168, 23);
             this.txtBusca.TabIndex = 35;
+            this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
+            this.txtBusca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusca_KeyDown);
             // 
             // kryptonLabel1
             // 
@@ -877,6 +980,7 @@
             this.cboSanguineo.Size = new System.Drawing.Size(143, 21);
             this.cboSanguineo.TabIndex = 12;
             this.cboSanguineo.ValueMember = "tbGrupoSanguineo.NombreGrupoSanguineo";
+            this.cboSanguineo.Validated += new System.EventHandler(this.cboSanguineo_Validated);
             // 
             // cboPelaje
             // 
@@ -889,6 +993,7 @@
             this.cboPelaje.Size = new System.Drawing.Size(143, 21);
             this.cboPelaje.TabIndex = 11;
             this.cboPelaje.ValueMember = "tbPelaje.NombrePelaje";
+            this.cboPelaje.Validated += new System.EventHandler(this.cboPelaje_Validated);
             // 
             // cboCaracter
             // 
@@ -901,6 +1006,7 @@
             this.cboCaracter.Size = new System.Drawing.Size(143, 21);
             this.cboCaracter.TabIndex = 10;
             this.cboCaracter.ValueMember = "tbCaracter.NombreCaracter";
+            this.cboCaracter.Validated += new System.EventHandler(this.cboCaracter_Validated);
             // 
             // cboEstado
             // 
@@ -913,6 +1019,7 @@
             this.cboEstado.Size = new System.Drawing.Size(143, 21);
             this.cboEstado.TabIndex = 9;
             this.cboEstado.ValueMember = "tbEstado.NombreEstado";
+            this.cboEstado.Validated += new System.EventHandler(this.cboEstado_Validated);
             // 
             // cboSexo
             // 
@@ -1001,7 +1108,7 @@
             this.pnl5.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl5.Location = new System.Drawing.Point(456, 5);
             this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(10, 451);
+            this.pnl5.Size = new System.Drawing.Size(10, 502);
             this.pnl5.TabIndex = 5;
             // 
             // pnl4
@@ -1011,15 +1118,15 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl4.Location = new System.Drawing.Point(5, 5);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(451, 451);
+            this.pnl4.Size = new System.Drawing.Size(451, 502);
             this.pnl4.TabIndex = 4;
             // 
             // grdMto
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1057,7 +1164,7 @@
             this.grdMto.Location = new System.Drawing.Point(0, 0);
             this.grdMto.Name = "grdMto";
             this.grdMto.ReadOnly = true;
-            this.grdMto.Size = new System.Drawing.Size(449, 449);
+            this.grdMto.Size = new System.Drawing.Size(449, 500);
             this.grdMto.TabIndex = 3;
             // 
             // codigoTrabajoDataGridViewTextBoxColumn
@@ -1079,8 +1186,8 @@
             // codigoMascotaDataGridViewTextBoxColumn
             // 
             this.codigoMascotaDataGridViewTextBoxColumn.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoMascotaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoMascotaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.codigoMascotaDataGridViewTextBoxColumn.HeaderText = "Código";
             this.codigoMascotaDataGridViewTextBoxColumn.Name = "codigoMascotaDataGridViewTextBoxColumn";
             this.codigoMascotaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1481,59 +1588,27 @@
             // 
             this.taSucursal.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
+            // ofdLogo
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.taArticulo = null;
-            this.tableAdapterManager.taArticuloMultimedia = null;
-            this.tableAdapterManager.taCaracter = this.taCaracter;
-            this.tableAdapterManager.taCategoria = null;
-            this.tableAdapterManager.taCliente = null;
-            this.tableAdapterManager.taClienteNacionalidad = null;
-            this.tableAdapterManager.taClienteSucursalContacto = null;
-            this.tableAdapterManager.taContacto = null;
-            this.tableAdapterManager.taContactoMiembro = null;
-            this.tableAdapterManager.taDepartamento = null;
-            this.tableAdapterManager.taEmpleado = null;
-            this.tableAdapterManager.taEmpresa = null;
-            this.tableAdapterManager.taEstado = null;
-            this.tableAdapterManager.taFinanciera = null;
-            this.tableAdapterManager.taFormaPago = null;
-            this.tableAdapterManager.taFrecuencia = null;
-            this.tableAdapterManager.taGrupo = null;
-            this.tableAdapterManager.taGrupoSanguineo = this.taGrupoSanguineo;
-            this.tableAdapterManager.taIdentificacion = null;
-            this.tableAdapterManager.taMoneda = null;
-            this.tableAdapterManager.taNacionalidad = null;
-            this.tableAdapterManager.taOcupacion = null;
-            this.tableAdapterManager.taOrdenPedido = null;
-            this.tableAdapterManager.taOrdenPedidoArticulo = null;
-            this.tableAdapterManager.taOrdenPedidoEstado = null;
-            this.tableAdapterManager.taPais = null;
-            this.tableAdapterManager.taPelaje = this.taPelaje;
-            this.tableAdapterManager.taPrecioVenta = null;
-            this.tableAdapterManager.taProveedor = null;
-            this.tableAdapterManager.taProveedorSucursal = null;
-            this.tableAdapterManager.taProveedorSucursalContacto = null;
-            this.tableAdapterManager.taProvincia = null;
-            this.tableAdapterManager.taPuesto = null;
-            this.tableAdapterManager.taRaza = this.taRaza;
-            this.tableAdapterManager.taSucursal = this.taSucursal;
-            this.tableAdapterManager.taSucursalMiembro = null;
-            this.tableAdapterManager.taTipoContacto = null;
-            this.tableAdapterManager.taTipoFinanciera = null;
-            this.tableAdapterManager.taTipoTributo = null;
-            this.tableAdapterManager.taTrabajo = null;
-            this.tableAdapterManager.taTributo = null;
-            this.tableAdapterManager.taUnidad = null;
-            this.tableAdapterManager.taUsuario = null;
-            this.tableAdapterManager.UpdateOrder = Neo.DsNeoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.ofdLogo.FileName = "openFileDialog1";
+            // 
+            // taEmpleado
+            // 
+            this.taEmpleado.ClearBeforeFill = true;
+            // 
+            // taEstado
+            // 
+            this.taEstado.ClearBeforeFill = true;
+            // 
+            // taCliente
+            // 
+            this.taCliente.ClearBeforeFill = true;
             // 
             // FrmMtoMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 501);
+            this.ClientSize = new System.Drawing.Size(1235, 552);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
@@ -1549,8 +1624,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tpMascota)).EndInit();
             this.tpMascota.ResumeLayout(false);
             this.tpMascota.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tpCita)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tpHistorial)).EndInit();
@@ -1669,7 +1746,17 @@
         private DsNeoTableAdapters.taGrupoSanguineo taGrupoSanguineo;
         private DsNeoTableAdapters.taSucursal taSucursal;
         private System.Windows.Forms.TextBox txtPedigri;
-        private DsNeoTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.CheckBox chkPeluqueria;
+        private System.Windows.Forms.OpenFileDialog ofdLogo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboVeterinario;
+        private System.Windows.Forms.Label lblVeterinario;
+        private DsNeoTableAdapters.taEmpleado taEmpleado;
+        private DsNeoTableAdapters.taEstado taEstado;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoClienteDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource bsCliente;
+        private DsNeoTableAdapters.taCliente taCliente;
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,11 +59,12 @@ namespace Neo
             txtBusca.Clear();
             DsNeo ds = new DsNeo();
             taSucursal.FillByCodigo(ds.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
-            lblSucursal.Text = ds.tbSucursal.Rows[0]["Nombre"].ToString();
             lblSucursal.Text = Utilidad.codigoSucursal.ToString();
             txtNacimiento.Text = DateTime.Today.ToShortDateString();
             txtApertura.Text = DateTime.Today.ToShortDateString();
             lblUsuario.Text = Utilidad.nombreUsuario;
+            cboVeterinario.SelectedIndex = -1;
+            cboSucursal.Text = ds.tbSucursal.Rows[0]["Nombre"].ToString();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -143,16 +145,28 @@ namespace Neo
             {
                 lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
                 lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
-                this.Validate();
-                this.bsMto.EndEdit();
+                short codigo;
                 if (!btnNuevo.Available)
                 {
-                    taMascota.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, short.Parse(lblSucursal.Text), short.Parse(lblCliente.Text), cboGrupo.Text, cboRaza.Text, cboEstado.Text, short.Parse("0"), cboCaracter.Text, cboPelaje.Text, cboSanguineo.Text, lblUsuario.Text, txtNombre.Text.Trim(), txtApertura.Text, txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkCastrado.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, null, txtDieta.Text.Trim(), txtNota.Text.Trim(), lblEquipo.Text);
+                    DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
+                    codigo = Convert.ToInt16(cp.fnSiguienteNumero("mascota", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value.ToString());
+                    lblCodigo.Text = codigo.ToString();
+                }
+                else
+                {
+                    codigo = Convert.ToInt16(lblCodigo.Text);
+                }
+                this.Validate();
+                this.bsMto.EndEdit();
+                byte[] imagen = pbImagen.Image != null ? imagenByte(pbImagen.Image) : null;
+                if (!btnNuevo.Available)
+                {
+                    taMascota.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, short.Parse(lblSucursal.Text), short.Parse(lblCliente.Text), cboGrupo.Text, cboRaza.Text, cboEstado.Text, short.Parse(lblVeterinario.Text), cboCaracter.Text, cboPelaje.Text, cboSanguineo.Text, lblUsuario.Text, txtNombre.Text.Trim(), txtApertura.Text, txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkCastrado.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), lblEquipo.Text);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taMascota.Edita(short.Parse(lblSucursal.Text), short.Parse(lblCliente.Text), cboGrupo.Text, cboRaza.Text, cboEstado.Text, short.Parse("0"), cboCaracter.Text, cboPelaje.Text, cboSanguineo.Text, lblUsuario.Text, txtNombre.Text.Trim(), txtApertura.Text.Trim(), txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, null, txtDieta.Text.Trim(), txtNota.Text.Trim(), lblEquipo.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, int.Parse(lblCodigo.Text));
+                    taMascota.Edita(short.Parse(lblSucursal.Text), short.Parse(lblCliente.Text), cboGrupo.Text, cboRaza.Text, cboEstado.Text, short.Parse(lblVeterinario.Text), cboCaracter.Text, cboPelaje.Text, cboSanguineo.Text, txtNombre.Text.Trim(), txtApertura.Text.Trim(), txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -171,11 +185,151 @@ namespace Neo
 
         private void FrmMtoMascota_Load(object sender, EventArgs e)
         {
+            taEstado.FillByTipo(dsNeo.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinaria");
+            taEmpleado.FillByPuesto(dsNeo.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinario");
             taGrupo.Fill(dsNeo.tbGrupo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taCaracter.Fill(dsNeo.tbCaracter, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taPelaje.Fill(dsNeo.tbPelaje, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            cboSucursal.SelectedIndex = -1;
+            cboVeterinario.SelectedIndex = -1;
             taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ofdLogo.Filter = "Imagenes (*.BMP;*.JPG;*.GIF,*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG;";
+            if (ofdLogo.ShowDialog() == DialogResult.OK)
+                pbImagen.ImageLocation = ofdLogo.FileName;
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            pbImagen.Image = null;
+        }
+
+        public byte[] imagenByte(System.Drawing.Image imagen)
+        {
+            MemoryStream ms = new MemoryStream();
+            imagen.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
+
+        private void cboEstado_Validated(object sender, EventArgs e)
+        {
+            string nombre = cboEstado.Text.Trim();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                DsNeo ds = new DsNeo();
+                taEstado.FillByNombre(ds.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                if (ds.tbEstado.Rows.Count == 0)
+                {
+                    MessageBox.Show(string.Concat(Utilidad.mensajeNoEncontrado, "Estado"), Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    cboEstado.Focus();                    
+                }
+            }
+        }
+
+        private void cboCaracter_Validated(object sender, EventArgs e)
+        {
+            string nombre = cboCaracter.Text.Trim();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                DsNeo ds = new DsNeo();
+                taCaracter.FillByNombre(ds.tbCaracter, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                if (ds.tbCaracter.Rows.Count == 0)
+                {
+                    MessageBox.Show(string.Concat(Utilidad.mensajeNoEncontrado, "Caracter"), Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    cboCaracter.Focus();
+                }
+            }
+        }
+
+        private void cboPelaje_Validated(object sender, EventArgs e)
+        {
+            string nombre = cboPelaje.Text.Trim();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                DsNeo ds = new DsNeo();
+                taPelaje.FillByNombre(ds.tbPelaje, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                if (ds.tbPelaje.Rows.Count == 0)
+                {
+                    MessageBox.Show(string.Concat(Utilidad.mensajeNoEncontrado, "Pelaje"), Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    cboPelaje.Focus();
+                }
+            }
+        }
+
+        private void cboSanguineo_Validated(object sender, EventArgs e)
+        {
+            string nombre = cboSanguineo.Text.Trim();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                DsNeo ds = new DsNeo();
+                taGrupoSanguineo.FillByNombre(ds.tbGrupoSanguineo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                if (ds.tbGrupoSanguineo.Rows.Count == 0)
+                {
+                    MessageBox.Show(string.Concat(Utilidad.mensajeNoEncontrado, "Grupo Sanguineo"), Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    cboSanguineo.Focus();
+                }
+            }
+        }
+
+        private void txtBusca_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string nombre = txtBusca.Text;
+                taCliente.FillByNombre(dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                if (dsNeo.tbCliente.Rows.Count > 2)
+                {
+                    grdCliente.Visible = true;
+                    grdCliente.Focus();
+                }
+                else if (dsNeo.tbCliente.Count == 1)
+                {
+
+                }
+                else
+                {
+                    grdCliente.Visible = true;
+                }
+            }        
+        }
+
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBusca.Text))
+                grdCliente.Visible = false;
+        }
+
+        private void grdCliente_DoubleClick(object sender, EventArgs e)
+        {
+            lblCodigo.Text = grdCliente.CurrentRow.Cells["cCodigo"].Value.ToString();
+            lblDueno.Text = grdCliente.CurrentRow.Cells["cNombre"].Value.ToString();
+        }
+
+        private void grdCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                grdCliente_DoubleClick(sender, EventArgs.Empty);
+            else if (e.KeyCode == Keys.Escape)
+                grdCliente.Visible = false;
+
+            txtBusca.Focus();
+            txtBusca.SelectAll();
+        }
+
+        private void cboVeterinario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboVeterinario.SelectedIndex > -1)
+            {
+                string nombre = cboVeterinario.Text;
+                DsNeo ds = new DsNeo();
+                taEmpleado.FillByNombre(ds.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                string codigo = ds.tbEmpleado.Rows[0]["CodigoEmpleado"].ToString();
+                lblVeterinario.Text = codigo;
+            }
         }
     }
 }

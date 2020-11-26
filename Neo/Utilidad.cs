@@ -63,6 +63,7 @@ namespace Neo
         public const string campoVacio = "Ingrese valor";
         public const string listaVacia = "Seleccione un valor";
         public const string nombrePrograma = "Neo";
+        public const string mensajeNoEncontrado = "No se ha encontrado resgistro de ";
         public const string mensajeGuardado = "Se han guardado exitosamente";
 
         public static string Ceros(string valor)
