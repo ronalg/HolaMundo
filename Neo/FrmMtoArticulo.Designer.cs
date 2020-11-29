@@ -45,6 +45,7 @@
             System.Windows.Forms.Label existenciaLabel;
             System.Windows.Forms.Label inventarioLabel;
             System.Windows.Forms.Label aplica_Orden_PedidoLabel;
+            System.Windows.Forms.Label aplicaInscripcionLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -55,14 +56,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label aplicaInscripcionLabel;
+            System.Windows.Forms.Label veterinariaLabel;
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcProveedor = new System.Windows.Forms.TabControl();
             this.tpPerfil = new System.Windows.Forms.TabPage();
-            this.chkOrdenPedido = new System.Windows.Forms.CheckBox();
+            this.chkInscripcion = new System.Windows.Forms.CheckBox();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chkOrdenPedido = new System.Windows.Forms.CheckBox();
             this.chkInventario = new System.Windows.Forms.CheckBox();
             this.txtExistencia = new System.Windows.Forms.TextBox();
             this.lblEquipo = new System.Windows.Forms.Label();
@@ -167,8 +170,7 @@
             this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
             this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chkInscripcion = new System.Windows.Forms.CheckBox();
+            this.chkVeterinaria = new System.Windows.Forms.CheckBox();
             idArticuloLabel = new System.Windows.Forms.Label();
             codigoUnidadLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -186,6 +188,7 @@
             inventarioLabel = new System.Windows.Forms.Label();
             aplica_Orden_PedidoLabel = new System.Windows.Forms.Label();
             aplicaInscripcionLabel = new System.Windows.Forms.Label();
+            veterinariaLabel = new System.Windows.Forms.Label();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             this.tcProveedor.SuspendLayout();
@@ -357,9 +360,18 @@
             aplica_Orden_PedidoLabel.AutoSize = true;
             aplica_Orden_PedidoLabel.Location = new System.Drawing.Point(530, 33);
             aplica_Orden_PedidoLabel.Name = "aplica_Orden_PedidoLabel";
-            aplica_Orden_PedidoLabel.Size = new System.Drawing.Size(107, 13);
+            aplica_Orden_PedidoLabel.Size = new System.Drawing.Size(75, 13);
             aplica_Orden_PedidoLabel.TabIndex = 34;
-            aplica_Orden_PedidoLabel.Text = "Aplica Orden Pedido:";
+            aplica_Orden_PedidoLabel.Text = "Orden Pedido:";
+            // 
+            // aplicaInscripcionLabel
+            // 
+            aplicaInscripcionLabel.AutoSize = true;
+            aplicaInscripcionLabel.Location = new System.Drawing.Point(544, 59);
+            aplicaInscripcionLabel.Name = "aplicaInscripcionLabel";
+            aplicaInscripcionLabel.Size = new System.Drawing.Size(61, 13);
+            aplicaInscripcionLabel.TabIndex = 37;
+            aplicaInscripcionLabel.Text = "Inscripción:";
             // 
             // pnl3
             // 
@@ -403,6 +415,8 @@
             // 
             this.tpPerfil.AutoScroll = true;
             this.tpPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tpPerfil.Controls.Add(veterinariaLabel);
+            this.tpPerfil.Controls.Add(this.chkVeterinaria);
             this.tpPerfil.Controls.Add(aplicaInscripcionLabel);
             this.tpPerfil.Controls.Add(this.chkInscripcion);
             this.tpPerfil.Controls.Add(this.label3);
@@ -450,14 +464,14 @@
             this.tpPerfil.Text = "Perfil";
             this.tpPerfil.UseVisualStyleBackColor = true;
             // 
-            // chkOrdenPedido
+            // chkInscripcion
             // 
-            this.chkOrdenPedido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Aplica Orden Pedido", true));
-            this.chkOrdenPedido.Location = new System.Drawing.Point(643, 28);
-            this.chkOrdenPedido.Name = "chkOrdenPedido";
-            this.chkOrdenPedido.Size = new System.Drawing.Size(16, 24);
-            this.chkOrdenPedido.TabIndex = 35;
-            this.chkOrdenPedido.UseVisualStyleBackColor = true;
+            this.chkInscripcion.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "AplicaInscripcion", true));
+            this.chkInscripcion.Location = new System.Drawing.Point(611, 55);
+            this.chkInscripcion.Name = "chkInscripcion";
+            this.chkInscripcion.Size = new System.Drawing.Size(16, 24);
+            this.chkInscripcion.TabIndex = 38;
+            this.chkInscripcion.UseVisualStyleBackColor = true;
             // 
             // bsMto
             // 
@@ -468,6 +482,25 @@
             // 
             this.dsNeo.DataSetName = "DsNeo";
             this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(530, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Aplicactivo";
+            // 
+            // chkOrdenPedido
+            // 
+            this.chkOrdenPedido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Aplica Orden Pedido", true));
+            this.chkOrdenPedido.Location = new System.Drawing.Point(611, 29);
+            this.chkOrdenPedido.Name = "chkOrdenPedido";
+            this.chkOrdenPedido.Size = new System.Drawing.Size(16, 24);
+            this.chkOrdenPedido.TabIndex = 35;
+            this.chkOrdenPedido.UseVisualStyleBackColor = true;
             // 
             // chkInventario
             // 
@@ -676,7 +709,7 @@
             this.tpPrecios.Location = new System.Drawing.Point(4, 22);
             this.tpPrecios.Name = "tpPrecios";
             this.tpPrecios.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrecios.Size = new System.Drawing.Size(531, 370);
+            this.tpPrecios.Size = new System.Drawing.Size(708, 370);
             this.tpPrecios.TabIndex = 1;
             this.tpPrecios.Text = "Precios";
             this.tpPrecios.UseVisualStyleBackColor = true;
@@ -688,7 +721,7 @@
             this.pnl8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl8.Location = new System.Drawing.Point(3, 3);
             this.pnl8.Name = "pnl8";
-            this.pnl8.Size = new System.Drawing.Size(523, 362);
+            this.pnl8.Size = new System.Drawing.Size(700, 362);
             this.pnl8.TabIndex = 1;
             // 
             // grdPrecio
@@ -706,7 +739,7 @@
             this.grdPrecio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdPrecio.Location = new System.Drawing.Point(0, 27);
             this.grdPrecio.Name = "grdPrecio";
-            this.grdPrecio.Size = new System.Drawing.Size(523, 335);
+            this.grdPrecio.Size = new System.Drawing.Size(700, 335);
             this.grdPrecio.TabIndex = 5;
             // 
             // codigoPrecioVentaDataGridViewTextBoxColumn
@@ -739,7 +772,7 @@
             this.pnl9.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl9.Location = new System.Drawing.Point(0, 0);
             this.pnl9.Name = "pnl9";
-            this.pnl9.Size = new System.Drawing.Size(523, 27);
+            this.pnl9.Size = new System.Drawing.Size(700, 27);
             this.pnl9.TabIndex = 0;
             // 
             // bnPrecioVenta
@@ -766,7 +799,7 @@
             this.bnPrecioVenta.MovePreviousItem = this.toolStripButton3;
             this.bnPrecioVenta.Name = "bnPrecioVenta";
             this.bnPrecioVenta.PositionItem = this.toolStripTextBox1;
-            this.bnPrecioVenta.Size = new System.Drawing.Size(521, 25);
+            this.bnPrecioVenta.Size = new System.Drawing.Size(698, 25);
             this.bnPrecioVenta.TabIndex = 9;
             this.bnPrecioVenta.Text = "bindingNavigator1";
             // 
@@ -845,7 +878,7 @@
             this.tpProveedor.Location = new System.Drawing.Point(4, 22);
             this.tpProveedor.Name = "tpProveedor";
             this.tpProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProveedor.Size = new System.Drawing.Size(531, 370);
+            this.tpProveedor.Size = new System.Drawing.Size(708, 370);
             this.tpProveedor.TabIndex = 3;
             this.tpProveedor.Text = "Proveedores";
             this.tpProveedor.UseVisualStyleBackColor = true;
@@ -865,7 +898,7 @@
             this.grdProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdProveedor.Location = new System.Drawing.Point(3, 3);
             this.grdProveedor.Name = "grdProveedor";
-            this.grdProveedor.Size = new System.Drawing.Size(523, 362);
+            this.grdProveedor.Size = new System.Drawing.Size(700, 362);
             this.grdProveedor.TabIndex = 0;
             this.grdProveedor.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProveedor_CellValidated);
             // 
@@ -915,7 +948,7 @@
             this.tpMultimedia.Location = new System.Drawing.Point(4, 22);
             this.tpMultimedia.Name = "tpMultimedia";
             this.tpMultimedia.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMultimedia.Size = new System.Drawing.Size(531, 370);
+            this.tpMultimedia.Size = new System.Drawing.Size(708, 370);
             this.tpMultimedia.TabIndex = 2;
             this.tpMultimedia.Text = "Multimedia";
             this.tpMultimedia.UseVisualStyleBackColor = true;
@@ -939,7 +972,7 @@
             this.grdMultimedia.Location = new System.Drawing.Point(3, 31);
             this.grdMultimedia.Name = "grdMultimedia";
             this.grdMultimedia.ReadOnly = true;
-            this.grdMultimedia.Size = new System.Drawing.Size(523, 334);
+            this.grdMultimedia.Size = new System.Drawing.Size(700, 334);
             this.grdMultimedia.TabIndex = 7;
             this.grdMultimedia.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdMultimedia_DataError);
             // 
@@ -998,7 +1031,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(523, 28);
+            this.panel1.Size = new System.Drawing.Size(700, 28);
             this.panel1.TabIndex = 6;
             // 
             // bnmultimedia
@@ -1027,7 +1060,7 @@
             this.bnmultimedia.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnmultimedia.Name = "bnmultimedia";
             this.bnmultimedia.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnmultimedia.Size = new System.Drawing.Size(521, 25);
+            this.bnmultimedia.Size = new System.Drawing.Size(698, 25);
             this.bnmultimedia.TabIndex = 0;
             this.bnmultimedia.Text = "bindingNavigator1";
             // 
@@ -1430,6 +1463,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.taArticulo = this.taArticulo;
             this.tableAdapterManager.taArticuloMultimedia = null;
+            this.tableAdapterManager.taCaracter = null;
             this.tableAdapterManager.taCategoria = null;
             this.tableAdapterManager.taCliente = null;
             this.tableAdapterManager.taClienteNacionalidad = null;
@@ -1437,11 +1471,14 @@
             this.tableAdapterManager.taContacto = null;
             this.tableAdapterManager.taContactoMiembro = null;
             this.tableAdapterManager.taDepartamento = null;
+            this.tableAdapterManager.taEmpleado = null;
             this.tableAdapterManager.taEmpresa = null;
             this.tableAdapterManager.taEstado = null;
             this.tableAdapterManager.taFinanciera = null;
             this.tableAdapterManager.taFormaPago = null;
             this.tableAdapterManager.taFrecuencia = null;
+            this.tableAdapterManager.taGrupo = null;
+            this.tableAdapterManager.taGrupoSanguineo = null;
             this.tableAdapterManager.taIdentificacion = null;
             this.tableAdapterManager.taMoneda = null;
             this.tableAdapterManager.taNacionalidad = null;
@@ -1450,11 +1487,14 @@
             this.tableAdapterManager.taOrdenPedidoArticulo = null;
             this.tableAdapterManager.taOrdenPedidoEstado = null;
             this.tableAdapterManager.taPais = null;
+            this.tableAdapterManager.taPelaje = null;
             this.tableAdapterManager.taPrecioVenta = null;
             this.tableAdapterManager.taProveedor = null;
             this.tableAdapterManager.taProveedorSucursal = null;
             this.tableAdapterManager.taProveedorSucursalContacto = null;
             this.tableAdapterManager.taProvincia = null;
+            this.tableAdapterManager.taPuesto = null;
+            this.tableAdapterManager.taRaza = null;
             this.tableAdapterManager.taSucursal = null;
             this.tableAdapterManager.taSucursalMiembro = null;
             this.tableAdapterManager.taTipoContacto = null;
@@ -1490,33 +1530,23 @@
             // 
             this.taArticuloProveedor.ClearBeforeFill = true;
             // 
-            // label3
+            // veterinariaLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(530, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Aplicativo";
+            veterinariaLabel.AutoSize = true;
+            veterinariaLabel.Location = new System.Drawing.Point(540, 88);
+            veterinariaLabel.Name = "veterinariaLabel";
+            veterinariaLabel.Size = new System.Drawing.Size(60, 13);
+            veterinariaLabel.TabIndex = 39;
+            veterinariaLabel.Text = "Veterinaria:";
             // 
-            // aplicaInscripcionLabel
+            // chkVeterinaria
             // 
-            aplicaInscripcionLabel.AutoSize = true;
-            aplicaInscripcionLabel.Location = new System.Drawing.Point(544, 59);
-            aplicaInscripcionLabel.Name = "aplicaInscripcionLabel";
-            aplicaInscripcionLabel.Size = new System.Drawing.Size(93, 13);
-            aplicaInscripcionLabel.TabIndex = 37;
-            aplicaInscripcionLabel.Text = "Aplica Inscripción:";
-            // 
-            // chkInscripcion
-            // 
-            this.chkInscripcion.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "AplicaInscripcion", true));
-            this.chkInscripcion.Location = new System.Drawing.Point(643, 54);
-            this.chkInscripcion.Name = "chkInscripcion";
-            this.chkInscripcion.Size = new System.Drawing.Size(16, 24);
-            this.chkInscripcion.TabIndex = 38;
-            this.chkInscripcion.UseVisualStyleBackColor = true;
+            this.chkVeterinaria.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Veterinaria", true));
+            this.chkVeterinaria.Location = new System.Drawing.Point(611, 83);
+            this.chkVeterinaria.Name = "chkVeterinaria";
+            this.chkVeterinaria.Size = new System.Drawing.Size(27, 24);
+            this.chkVeterinaria.TabIndex = 40;
+            this.chkVeterinaria.UseVisualStyleBackColor = true;
             // 
             // FrmMtoArticulo
             // 
@@ -1689,5 +1719,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn pActual;
         private System.Windows.Forms.CheckBox chkInscripcion;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chkVeterinaria;
     }
 }

@@ -16,6 +16,7 @@ namespace Neo
         public static FrmTscOrdenPedido tscOrdenPedido = null;
         //formularios mantenimientos
         //Veterinaria
+        public static FrmMtoPropiedad mtoPropiedad = null;
         public static FrmMtoMascota mtoMascota = null;
         public static FrmMtoPelaje mtoPelaje = null;
         public static FrmMtoCaracter mtoCaracter = null;

@@ -137,12 +137,12 @@ namespace Neo
 
                 if (!btnNuevo.Available)
                 {
-                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked);
+                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked, chkVeterinaria.Checked);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taArticulo.Edita(cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, existencia, chkInventario.Checked, chkActivo.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
+                    taArticulo.Edita(cboUnidad.Text, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, existencia, chkInventario.Checked, chkActivo.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked, chkVeterinaria.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
                 }
 
                 DsNeo ds = new DsNeo();

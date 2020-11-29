@@ -46,8 +46,10 @@ namespace Neo
         {
             ConfiguraBoton(false);
             txtNombre.Focus();
-            lblUsuario.Text = Utilidad.codigoTrabajo.ToString();
+            lblUsuario.Text = Utilidad.nombreUsuario;
+            lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
             lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
+            lblEquipo.Text = Environment.MachineName;
             cboGrupo.SelectedIndex = -1;
             cboRaza.SelectedIndex = -1;
             dsNeo.tbRaza.Rows.Clear();
@@ -65,6 +67,7 @@ namespace Neo
             lblUsuario.Text = Utilidad.nombreUsuario;
             cboVeterinario.SelectedIndex = -1;
             cboSucursal.Text = ds.tbSucursal.Rows[0]["Nombre"].ToString();
+            dsNeo.tbSucursalContacto.Rows.Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -141,10 +144,56 @@ namespace Neo
                 return;
             }
 
+            if (cboGrupo.SelectedIndex == -1)
+            {
+                cboGrupo.Focus();
+                ep.SetError(cboGrupo, Utilidad.campoVacio);
+                return;
+            }
+
+            if (cboRaza.SelectedIndex == -1)
+            {
+                cboRaza.Focus();
+                ep.SetError(cboRaza, Utilidad.campoVacio);
+                return;
+            }
+
+            if (cboSexo.SelectedIndex == -1)
+            {
+                cboSexo.Focus();
+                ep.SetError(cboSexo, Utilidad.campoVacio);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtNacimiento.Text))
+            {
+                txtNacimiento.Focus();
+                ep.SetError(txtNacimiento, Utilidad.campoVacio);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(lblCliente.Text))
+            {
+                txtBusca.Focus();
+                ep.SetError(txtBusca, Utilidad.campoVacio);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(lblVeterinario.Text))
+            {
+                cboVeterinario.Focus();
+                ep.SetError(cboVeterinario, Utilidad.campoVacio);
+                return;
+            }
+
             try
             {
-                lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
-                lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
+                string caracter = string.IsNullOrEmpty(cboCaracter.Text) ? null : cboCaracter.Text;
+                string pelaje = string.IsNullOrEmpty(cboPelaje.Text) ? null : cboPelaje.Text;
+                string sanguineo = string.IsNullOrEmpty(cboSanguineo.Text) ? null : cboSanguineo.Text;
+                short cliente = short.Parse(lblCliente.Text);
+                short sucursal = short.Parse(lblSucursal.Text);
+                short veterinario = short.Parse(lblVeterinario.Text);
                 short codigo;
                 if (!btnNuevo.Available)
                 {
@@ -156,17 +205,18 @@ namespace Neo
                 {
                     codigo = Convert.ToInt16(lblCodigo.Text);
                 }
+
                 this.Validate();
-                this.bsMto.EndEdit();
                 byte[] imagen = pbImagen.Image != null ? imagenByte(pbImagen.Image) : null;
+
                 if (!btnNuevo.Available)
                 {
-                    taMascota.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, short.Parse(lblSucursal.Text), short.Parse(lblCliente.Text), cboGrupo.Text, cboRaza.Text, cboEstado.Text, short.Parse(lblVeterinario.Text), cboCaracter.Text, cboPelaje.Text, cboSanguineo.Text, lblUsuario.Text, txtNombre.Text.Trim(), txtApertura.Text, txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkCastrado.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), lblEquipo.Text);
+                    taMascota.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, sucursal, cliente, cboGrupo.Text, cboRaza.Text, cboEstado.Text, veterinario, caracter, pelaje, sanguineo, lblUsuario.Text, txtNombre.Text.Trim(), txtApertura.Text, txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkCastrado.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), lblEquipo.Text);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taMascota.Edita(short.Parse(lblSucursal.Text), short.Parse(lblCliente.Text), cboGrupo.Text, cboRaza.Text, cboEstado.Text, short.Parse(lblVeterinario.Text), cboCaracter.Text, cboPelaje.Text, cboSanguineo.Text, txtNombre.Text.Trim(), txtApertura.Text.Trim(), txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                    taMascota.Edita(sucursal, cliente, cboGrupo.Text, cboRaza.Text, cboEstado.Text, veterinario, caracter, pelaje, sanguineo, txtNombre.Text.Trim(), txtApertura.Text.Trim(), txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -288,13 +338,19 @@ namespace Neo
                 }
                 else if (dsNeo.tbCliente.Count == 1)
                 {
-
+                    grdCliente_DoubleClick(sender, EventArgs.Empty);
                 }
                 else
                 {
                     grdCliente.Visible = true;
                 }
-            }        
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                grdCliente.Visible = false;
+                txtBusca.Focus();
+                txtBusca.SelectAll();
+            }
         }
 
         private void txtBusca_TextChanged(object sender, EventArgs e)
@@ -305,7 +361,7 @@ namespace Neo
 
         private void grdCliente_DoubleClick(object sender, EventArgs e)
         {
-            lblCodigo.Text = grdCliente.CurrentRow.Cells["cCodigo"].Value.ToString();
+            lblCliente.Text = grdCliente.CurrentRow.Cells["cCodigo"].Value.ToString();
             lblDueno.Text = grdCliente.CurrentRow.Cells["cNombre"].Value.ToString();
         }
 
@@ -329,6 +385,24 @@ namespace Neo
                 taEmpleado.FillByNombre(ds.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
                 string codigo = ds.tbEmpleado.Rows[0]["CodigoEmpleado"].ToString();
                 lblVeterinario.Text = codigo;
+            }
+        }
+
+        private void grdMto_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdMto.CurrentRow.Cells["mCodigo"].Value != null)
+            {
+                int codigo = int.Parse(grdMto.CurrentRow.Cells["mCodigo"].Value.ToString());
+                taSucursalContacto.Fill(dsNeo.tbSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
+                DsNeo ds = new DsNeo();
+                short i = short.Parse(lblVeterinario.Text);
+                taEmpleado.FillByCodigo(ds.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, i);
+                string nombre = ds.tbEmpleado.Rows[0]["Nombre"].ToString();
+                cboVeterinario.Text = nombre;
+                i = short.Parse(lblSucursal.Text);
+                taSucursal.FillByCodigo(ds.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, i);
+                nombre = ds.tbSucursal.Rows[0]["Nombre"].ToString();
+                cboSucursal.Text = nombre;
             }
         }
     }

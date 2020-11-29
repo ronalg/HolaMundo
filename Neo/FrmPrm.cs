@@ -448,5 +448,17 @@ namespace Neo
             Utilidad.mtoMascota.BringToFront();
             Utilidad.mtoMascota.Show();
         }
+
+        private void mnuMtoVtnPropiedad_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoPropiedad == null)
+            {
+                Utilidad.mtoPropiedad = new FrmMtoPropiedad();
+                Utilidad.mtoPropiedad.MdiParent = this;
+            }
+            FrmMtoPropiedad.miembro = "Veterinaria";
+            Utilidad.mtoPropiedad.BringToFront();
+            Utilidad.mtoPropiedad.Show();
+        }
     }
 }
