@@ -35,14 +35,14 @@
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Neo\bin\Debug\ComponentFactory.Krypton.Design.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -288,6 +288,12 @@
     <Compile Include="FrmPrm.Designer.cs">
       <DependentUpon>FrmPrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTscCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTscCita.Designer.cs">
+      <DependentUpon>FrmTscCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTscFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrm.resx">
       <DependentUpon>FrmPrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTscCita.resx">
+      <DependentUpon>FrmTscCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTscFactura.resx">
       <DependentUpon>FrmTscFactura.cs</DependentUpon>
