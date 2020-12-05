@@ -19,14 +19,7 @@ namespace Neo
 
         private void fillToolStripButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.taCita.Fill(this.dsNeo.tbCita, ((short)(System.Convert.ChangeType(codigoTrabajoToolStripTextBox.Text, typeof(short)))), ((short)(System.Convert.ChangeType(codigoEmpresaToolStripTextBox.Text, typeof(short)))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+            
 
         }
 
@@ -42,6 +35,17 @@ namespace Neo
 
         private void numeroCitaLabel1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void fillToolStripButton_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void fillToolStripButton_Click_2(object sender, EventArgs e)
+        {
+            
 
         }
     }

@@ -40,6 +40,8 @@ namespace Neo
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             ConfiguraBoton(false);
+            dsNeo.tbSucursalMiembro.Rows.Clear();
+            dsNeo.tbContactoMiembro.Rows.Clear();
             txtNombre.Focus();
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
             lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
@@ -50,6 +52,7 @@ namespace Neo
             cboCategoria.SelectedIndex = -1;
             dsNeo.tbProveedorSucursal.Rows.Clear();
             dsNeo.tbProveedorSucursalContacto.Rows.Clear();
+            tcProveedor.SelectedTab = tpPerfil;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -226,8 +229,8 @@ namespace Neo
             cboIdentificacion.SelectedIndex = -1;
             taCategoria.Fill(dsNeo.tbCategoria, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taProveedor.Fill(dsNeo.tbProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            if (string.IsNullOrEmpty(lblCodigo.Text))
-                taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, tipoMiembro);
+            //if (string.IsNullOrEmpty(lblCodigo.Text))
+                //taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, tipoMiembro);
         }
 
         private void btnNuevoSucursal_Click(object sender, EventArgs e)

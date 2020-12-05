@@ -32,12 +32,12 @@ namespace Neo
             if (dsNeo.tbUsuario.Rows.Count > 0)
             {
                 Utilidad.frmPrimario = new FrmPrm();
-                Utilidad.frmPrimario.Show();
                 Utilidad.codigoTrabajo = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoTrabajo"].ToString());
                 Utilidad.codigoEmpresa = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoEmpresa"].ToString());
                 Utilidad.codigoUsuario = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoUsuario"].ToString());
                 Utilidad.codigoSucursal = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoSucursal"].ToString());
                 Utilidad.nombreUsuario = dsNeo.tbUsuario.Rows[0]["Usuario"].ToString();
+                Utilidad.frmPrimario.Show();
                 this.Hide();
             }
             else
@@ -55,9 +55,9 @@ namespace Neo
 
         private void FrmIniSsn_Load(object sender, EventArgs e)
         {
-            Neo.Properties.Settings.Default["csNeo"] = "Data Source=groovestudio.database.windows.net;Initial Catalog=NeoDesarrollo;User ID=administrador;Password=Emmanuel2612%;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
-            txtUsuario.Text = "adm";
-            txtContrasena.Text = "adm";
+            Neo.Properties.Settings.Default["csNeo"] = "Data Source=groovestudio.database.windows.net;Initial Catalog=Neo;User ID=administrador;Password=Emmanuel2612%;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+            txtUsuario.Text = "bienestar";
+            txtContrasena.Text = "animal";
             btnIniciar_Click(sender, EventArgs.Empty);
             this.Hide();
         }

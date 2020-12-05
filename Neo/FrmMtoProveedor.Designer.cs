@@ -468,7 +468,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(124, 139);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(182, 21);
-            this.cboCategoria.TabIndex = 28;
+            this.cboCategoria.TabIndex = 6;
             // 
             // bsMto
             // 
@@ -497,7 +497,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(182, 20);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.Validated += new System.EventHandler(this.txtNombre_Validated);
             // 
             // txtRazonSocial
@@ -507,7 +507,7 @@
             this.txtRazonSocial.MaxLength = 50;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(182, 20);
-            this.txtRazonSocial.TabIndex = 8;
+            this.txtRazonSocial.TabIndex = 1;
             // 
             // cboIdentificacion
             // 
@@ -519,7 +519,7 @@
             this.cboIdentificacion.Location = new System.Drawing.Point(11, 87);
             this.cboIdentificacion.Name = "cboIdentificacion";
             this.cboIdentificacion.Size = new System.Drawing.Size(105, 21);
-            this.cboIdentificacion.TabIndex = 9;
+            this.cboIdentificacion.TabIndex = 2;
             this.cboIdentificacion.ValueMember = "tbIdentificacion.CodigoIdentificacion";
             // 
             // txtCuenta
@@ -529,7 +529,7 @@
             this.txtCuenta.MaxLength = 12;
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(121, 20);
-            this.txtCuenta.TabIndex = 26;
+            this.txtCuenta.TabIndex = 7;
             // 
             // txtIdentificacion
             // 
@@ -538,7 +538,7 @@
             this.txtIdentificacion.MaxLength = 20;
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(182, 20);
-            this.txtIdentificacion.TabIndex = 10;
+            this.txtIdentificacion.TabIndex = 3;
             // 
             // label3
             // 
@@ -558,7 +558,7 @@
             this.txtSitioWeb.MaxLength = 100;
             this.txtSitioWeb.Name = "txtSitioWeb";
             this.txtSitioWeb.Size = new System.Drawing.Size(182, 20);
-            this.txtSitioWeb.TabIndex = 11;
+            this.txtSitioWeb.TabIndex = 4;
             // 
             // lblEquipo
             // 
@@ -597,8 +597,8 @@
             this.chkActivo.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Activo", true));
             this.chkActivo.Location = new System.Drawing.Point(423, 82);
             this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(37, 24);
-            this.chkActivo.TabIndex = 12;
+            this.chkActivo.Size = new System.Drawing.Size(13, 24);
+            this.chkActivo.TabIndex = 8;
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
             // lblGrabada
@@ -881,6 +881,7 @@
             // 
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -1168,6 +1169,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1553,6 +1555,7 @@
             // 
             this.txtPosicion.AccessibleName = "Posición";
             this.txtPosicion.AutoSize = false;
+            this.txtPosicion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPosicion.Name = "txtPosicion";
             this.txtPosicion.Size = new System.Drawing.Size(50, 23);
             this.txtPosicion.Text = "0";

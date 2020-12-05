@@ -149,13 +149,7 @@ namespace Neo
 
         private void mnuMtoUnidad_Click(object sender, EventArgs e)
         {
-            if (Utilidad.mtoUnidad == null)
-            {
-                Utilidad.mtoUnidad = new FrmMtoUnidad();
-                Utilidad.mtoUnidad.MdiParent = this;
-            }
-            Utilidad.mtoUnidad.BringToFront();
-            Utilidad.mtoUnidad.Show();
+
         }
 
         private void mnuPrecioVenta_Click(object sender, EventArgs e)
@@ -459,6 +453,17 @@ namespace Neo
             FrmMtoPropiedad.miembro = "Veterinaria";
             Utilidad.mtoPropiedad.BringToFront();
             Utilidad.mtoPropiedad.Show();
+        }
+
+        private void mnuTscCita_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.tscCita == null)
+            {
+                Utilidad.tscCita = new FrmTscCita();
+                Utilidad.tscCita.MdiParent = this;
+            }
+            Utilidad.tscCita.BringToFront();
+            Utilidad.tscCita.Show();
         }
     }
 }
