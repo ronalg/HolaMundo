@@ -2428,8 +2428,6 @@
         private DsNeoTableAdapters.taContacto taContacto;
         private DsNeoTableAdapters.taContactoMiembro taContactoMiembro;
         private DsNeoTableAdapters.taTipoContacto taTipoContacto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cSecuenciaSucursal;
         private System.Windows.Forms.Panel pnlProvincia;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnProvinciaCancelar;

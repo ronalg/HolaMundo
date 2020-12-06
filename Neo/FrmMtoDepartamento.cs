@@ -42,7 +42,7 @@ namespace Neo
             ConfiguraBoton(false);
             txtNombre.Focus();
             lblTrabajo.Text = Utilidad.codigoTrabajo.ToString();
-            lblEmpresa.Text = Utilidad.codigoTrabajo.ToString();
+            lblEmpresa.Text = Utilidad.codigoEmpresa.ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

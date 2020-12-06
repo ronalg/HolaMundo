@@ -29,27 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label codigoTrabajoLabel;
-            System.Windows.Forms.Label codigoEmpresaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoDepartamento));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.bsMto = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
-            this.lblTrabajo = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
@@ -66,49 +53,32 @@
             this.btnUltimo = new System.Windows.Forms.ToolStripButton();
             this.spd3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            nombreLabel = new System.Windows.Forms.Label();
-            codigoTrabajoLabel = new System.Windows.Forms.Label();
-            codigoEmpresaLabel = new System.Windows.Forms.Label();
+            this.dTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsMto = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
+            this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtNombre = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblTrabajo = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblEmpresa = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMto)).BeginInit();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(20, 28);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 6;
-            nombreLabel.Text = "Nombre:";
-            // 
-            // codigoTrabajoLabel
-            // 
-            codigoTrabajoLabel.AutoSize = true;
-            codigoTrabajoLabel.Location = new System.Drawing.Point(21, 81);
-            codigoTrabajoLabel.Name = "codigoTrabajoLabel";
-            codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
-            codigoTrabajoLabel.TabIndex = 7;
-            codigoTrabajoLabel.Text = "Trabajo:";
-            // 
-            // codigoEmpresaLabel
-            // 
-            codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(16, 107);
-            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
-            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
-            codigoEmpresaLabel.TabIndex = 8;
-            codigoEmpresaLabel.Text = "Empresa:";
             // 
             // btnSalir
             // 
@@ -137,85 +107,24 @@
             this.pnl6.AutoScroll = true;
             this.pnl6.BackColor = System.Drawing.Color.White;
             this.pnl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl6.Controls.Add(codigoEmpresaLabel);
+            this.pnl6.Controls.Add(this.kryptonLabel5);
+            this.pnl6.Controls.Add(this.kryptonLabel4);
+            this.pnl6.Controls.Add(this.kryptonLabel3);
             this.pnl6.Controls.Add(this.lblEmpresa);
-            this.pnl6.Controls.Add(codigoTrabajoLabel);
             this.pnl6.Controls.Add(this.lblTrabajo);
-            this.pnl6.Controls.Add(nombreLabel);
+            this.pnl6.Controls.Add(this.kryptonLabel2);
             this.pnl6.Controls.Add(this.txtNombre);
-            this.pnl6.Controls.Add(this.label2);
-            this.pnl6.Controls.Add(this.label1);
+            this.pnl6.Controls.Add(this.kryptonLabel1);
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl6.Location = new System.Drawing.Point(293, 5);
+            this.pnl6.Location = new System.Drawing.Point(258, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(280, 276);
+            this.pnl6.Size = new System.Drawing.Size(315, 276);
             this.pnl6.TabIndex = 6;
-            // 
-            // lblEmpresa
-            // 
-            this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
-            this.lblEmpresa.Location = new System.Drawing.Point(69, 104);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(163, 20);
-            this.lblEmpresa.TabIndex = 9;
-            this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bsMto
-            // 
-            this.bsMto.DataMember = "tbDepartamento";
-            this.bsMto.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblTrabajo
-            // 
-            this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
-            this.lblTrabajo.Location = new System.Drawing.Point(69, 78);
-            this.lblTrabajo.Name = "lblTrabajo";
-            this.lblTrabajo.Size = new System.Drawing.Size(163, 20);
-            this.lblTrabajo.TabIndex = 8;
-            this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Nombre", true));
-            this.txtNombre.Location = new System.Drawing.Point(69, 25);
-            this.txtNombre.MaxLength = 20;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(163, 20);
-            this.txtNombre.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Sistema";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dato General";
             // 
             // pnl5
             // 
             this.pnl5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl5.Location = new System.Drawing.Point(283, 5);
+            this.pnl5.Location = new System.Drawing.Point(248, 5);
             this.pnl5.Name = "pnl5";
             this.pnl5.Size = new System.Drawing.Size(10, 276);
             this.pnl5.TabIndex = 5;
@@ -227,7 +136,7 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl4.Location = new System.Drawing.Point(5, 5);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(278, 276);
+            this.pnl4.Size = new System.Drawing.Size(243, 276);
             this.pnl4.TabIndex = 4;
             // 
             // grdMto
@@ -239,41 +148,17 @@
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoTrabajoDataGridViewTextBoxColumn,
-            this.codigoEmpresaDataGridViewTextBoxColumn,
+            this.dTrabajo,
+            this.dEmpresa,
             this.dNombre});
             this.grdMto.DataSource = this.bsMto;
             this.grdMto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdMto.Location = new System.Drawing.Point(0, 0);
             this.grdMto.Name = "grdMto";
             this.grdMto.ReadOnly = true;
-            this.grdMto.Size = new System.Drawing.Size(276, 274);
+            this.grdMto.Size = new System.Drawing.Size(241, 274);
             this.grdMto.TabIndex = 3;
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
-            // 
-            // codigoTrabajoDataGridViewTextBoxColumn
-            // 
-            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
-            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // codigoEmpresaDataGridViewTextBoxColumn
-            // 
-            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
-            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dNombre
-            // 
-            this.dNombre.DataPropertyName = "Nombre";
-            this.dNombre.HeaderText = "Nombre";
-            this.dNombre.Name = "dNombre";
-            this.dNombre.ReadOnly = true;
-            this.dNombre.Width = 210;
             // 
             // pnl2
             // 
@@ -426,13 +311,120 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
+            // 
+            // dTrabajo
+            // 
+            this.dTrabajo.DataPropertyName = "CodigoTrabajo";
+            this.dTrabajo.HeaderText = "CodigoTrabajo";
+            this.dTrabajo.Name = "dTrabajo";
+            this.dTrabajo.ReadOnly = true;
+            this.dTrabajo.Visible = false;
+            // 
+            // dEmpresa
+            // 
+            this.dEmpresa.DataPropertyName = "CodigoEmpresa";
+            this.dEmpresa.HeaderText = "CodigoEmpresa";
+            this.dEmpresa.Name = "dEmpresa";
+            this.dEmpresa.ReadOnly = true;
+            this.dEmpresa.Visible = false;
+            // 
+            // dNombre
+            // 
+            this.dNombre.DataPropertyName = "NombreDepartamento";
+            this.dNombre.HeaderText = "Nombre";
+            this.dNombre.Name = "dNombre";
+            this.dNombre.ReadOnly = true;
+            this.dNombre.Width = 180;
+            // 
+            // bsMto
+            // 
+            this.bsMto.DataMember = "tbDepartamento";
+            this.bsMto.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // taDepartamento
             // 
             this.taDepartamento.ClearBeforeFill = true;
             // 
-            // ep
+            // kryptonLabel1
             // 
-            this.ep.ContainerControl = this;
+            this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel1.Location = new System.Drawing.Point(6, 2);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(55, 20);
+            this.kryptonLabel1.TabIndex = 9;
+            this.kryptonLabel1.Values.Text = "General";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreDepartamento", true));
+            this.txtNombre.Location = new System.Drawing.Point(78, 24);
+            this.txtNombre.MaxLength = 20;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(148, 23);
+            this.txtNombre.TabIndex = 10;
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel2.Location = new System.Drawing.Point(5, 49);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(56, 20);
+            this.kryptonLabel2.TabIndex = 11;
+            this.kryptonLabel2.Values.Text = "Sistema";
+            // 
+            // lblTrabajo
+            // 
+            this.lblTrabajo.AutoSize = false;
+            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
+            this.lblTrabajo.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.lblTrabajo.Location = new System.Drawing.Point(77, 72);
+            this.lblTrabajo.Name = "lblTrabajo";
+            this.lblTrabajo.Size = new System.Drawing.Size(32, 20);
+            this.lblTrabajo.TabIndex = 12;
+            this.lblTrabajo.Values.Text = "";
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = false;
+            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
+            this.lblEmpresa.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.lblEmpresa.Location = new System.Drawing.Point(79, 98);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(32, 20);
+            this.lblEmpresa.TabIndex = 13;
+            this.lblEmpresa.Values.Text = "";
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.Location = new System.Drawing.Point(6, 25);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(58, 20);
+            this.kryptonLabel3.TabIndex = 14;
+            this.kryptonLabel3.Values.Text = "Nombre:";
+            // 
+            // kryptonLabel4
+            // 
+            this.kryptonLabel4.Location = new System.Drawing.Point(6, 72);
+            this.kryptonLabel4.Name = "kryptonLabel4";
+            this.kryptonLabel4.Size = new System.Drawing.Size(54, 20);
+            this.kryptonLabel4.TabIndex = 15;
+            this.kryptonLabel4.Values.Text = "Trabajo:";
+            // 
+            // kryptonLabel5
+            // 
+            this.kryptonLabel5.Location = new System.Drawing.Point(6, 98);
+            this.kryptonLabel5.Name = "kryptonLabel5";
+            this.kryptonLabel5.Size = new System.Drawing.Size(60, 20);
+            this.kryptonLabel5.TabIndex = 16;
+            this.kryptonLabel5.Values.Text = "Empresa:";
             // 
             // FrmMtoDepartamento
             // 
@@ -450,8 +442,6 @@
             this.pnl3.ResumeLayout(false);
             this.pnl6.ResumeLayout(false);
             this.pnl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMto)).EndInit();
             this.pnl1.ResumeLayout(false);
@@ -460,6 +450,8 @@
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,8 +461,6 @@
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.Panel pnl3;
         private System.Windows.Forms.Panel pnl6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnl5;
         private System.Windows.Forms.Panel pnl4;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdMto;
@@ -493,12 +483,17 @@
         private System.Windows.Forms.ToolStripSeparator spd3;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private DsNeoTableAdapters.taDepartamento taDepartamento;
-        private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.Label lblTrabajo;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dNombre;
         private System.Windows.Forms.ErrorProvider ep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dTrabajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dNombre;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblEmpresa;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTrabajo;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtNombre;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
     }
 }

@@ -9561,6 +9561,7 @@ namespace Neo {
                 this.columnCodigoEmpresa.AllowDBNull = false;
                 this.columnCodigoEmpresa.Caption = "Empresa";
                 this.columnNombreDepartamento.AllowDBNull = false;
+                this.columnNombreDepartamento.Caption = "Nombre";
                 this.columnNombreDepartamento.MaxLength = 20;
             }
             

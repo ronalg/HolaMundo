@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Neo
 {
-    public partial class FrmMtoProveedor : Form
+    public partial class FrmMtoProveedor : KryptonForm
     {
         const string tipoMiembro = "Proveedor";
 
@@ -134,7 +135,7 @@ namespace Neo
                     if (ds.tbSucursalMiembro.Rows.Count == 0)
                         taSucursalMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, tipoMiembro, codigoPais, nombrePronvicia, nombre, codigoPostal, direccion, representante);
                     else
-                        taSucursalMiembro.Edita(codigoPais, nombrePronvicia, nombre, codigoPostal, direccion, representante, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, "Cliente");
+                        taSucursalMiembro.Edita(codigoPais, nombrePronvicia, nombre, codigoPostal, direccion, representante, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, secuencia, tipoMiembro);
                 }
 
                 taContactoMiembro.EliminaCodigo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
@@ -530,7 +531,7 @@ namespace Neo
                 pnlProvincia.Visible = true;
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void btnAceptarProvincia_Click(object sender, EventArgs e)
         {
             string pais = grdProvincia.CurrentRow.Cells["sPais"].Value.ToString();
             string provincia = grdProvincia.CurrentRow.Cells["sProvincia"].Value.ToString();

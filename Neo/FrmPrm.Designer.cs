@@ -169,20 +169,20 @@
             // 
             this.mnuMtoVtnMascota.Enabled = false;
             this.mnuMtoVtnMascota.Name = "mnuMtoVtnMascota";
-            this.mnuMtoVtnMascota.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnMascota.Size = new System.Drawing.Size(176, 22);
             this.mnuMtoVtnMascota.Text = "Mascotas";
             this.mnuMtoVtnMascota.Click += new System.EventHandler(this.mnuMtoVtnMascota_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(173, 6);
             // 
             // mnuMtoVtnRaza
             // 
             this.mnuMtoVtnRaza.Enabled = false;
             this.mnuMtoVtnRaza.Name = "mnuMtoVtnRaza";
-            this.mnuMtoVtnRaza.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnRaza.Size = new System.Drawing.Size(176, 22);
             this.mnuMtoVtnRaza.Text = "Razas";
             this.mnuMtoVtnRaza.Click += new System.EventHandler(this.mnuMtoVtnRaza_Click);
             // 
@@ -190,7 +190,7 @@
             // 
             this.mnuMtoVtnGrupo.Enabled = false;
             this.mnuMtoVtnGrupo.Name = "mnuMtoVtnGrupo";
-            this.mnuMtoVtnGrupo.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnGrupo.Size = new System.Drawing.Size(176, 22);
             this.mnuMtoVtnGrupo.Text = "Grupos Razas";
             this.mnuMtoVtnGrupo.Click += new System.EventHandler(this.mnuMtoVtnGrupo_Click);
             // 
@@ -198,7 +198,7 @@
             // 
             this.mntoVtnGrupoSanguineo.Enabled = false;
             this.mntoVtnGrupoSanguineo.Name = "mntoVtnGrupoSanguineo";
-            this.mntoVtnGrupoSanguineo.Size = new System.Drawing.Size(180, 22);
+            this.mntoVtnGrupoSanguineo.Size = new System.Drawing.Size(176, 22);
             this.mntoVtnGrupoSanguineo.Text = "Grupos Sanguineos";
             this.mntoVtnGrupoSanguineo.Click += new System.EventHandler(this.mntoVtnGrupoSanguineo_Click);
             // 
@@ -206,7 +206,7 @@
             // 
             this.mnuMtoVtnCaracter.Enabled = false;
             this.mnuMtoVtnCaracter.Name = "mnuMtoVtnCaracter";
-            this.mnuMtoVtnCaracter.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnCaracter.Size = new System.Drawing.Size(176, 22);
             this.mnuMtoVtnCaracter.Text = "Caracter";
             this.mnuMtoVtnCaracter.Click += new System.EventHandler(this.mnuMtoVtnCaracter_Click);
             // 
@@ -214,7 +214,7 @@
             // 
             this.mnuMtoVtnPelo.Enabled = false;
             this.mnuMtoVtnPelo.Name = "mnuMtoVtnPelo";
-            this.mnuMtoVtnPelo.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnPelo.Size = new System.Drawing.Size(176, 22);
             this.mnuMtoVtnPelo.Text = "Tipos de Pelo";
             this.mnuMtoVtnPelo.Click += new System.EventHandler(this.mnuMtoVtnPelo_Click);
             // 
@@ -222,7 +222,7 @@
             // 
             this.mnuMtoVtnPropiedad.Enabled = false;
             this.mnuMtoVtnPropiedad.Name = "mnuMtoVtnPropiedad";
-            this.mnuMtoVtnPropiedad.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoVtnPropiedad.Size = new System.Drawing.Size(176, 22);
             this.mnuMtoVtnPropiedad.Text = "Propiedades";
             this.mnuMtoVtnPropiedad.Click += new System.EventHandler(this.mnuMtoVtnPropiedad_Click);
             // 
@@ -280,20 +280,20 @@
             this.mnuMtoPerfilCliente.Enabled = false;
             this.mnuMtoPerfilCliente.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilCliente.Image")));
             this.mnuMtoPerfilCliente.Name = "mnuMtoPerfilCliente";
-            this.mnuMtoPerfilCliente.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoPerfilCliente.Size = new System.Drawing.Size(155, 22);
             this.mnuMtoPerfilCliente.Text = "Perfil";
             this.mnuMtoPerfilCliente.Click += new System.EventHandler(this.mnuMtoPerfilCliente_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(152, 6);
             // 
             // mnuMtoNacionalidad
             // 
             this.mnuMtoNacionalidad.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoNacionalidad.Image")));
             this.mnuMtoNacionalidad.Name = "mnuMtoNacionalidad";
-            this.mnuMtoNacionalidad.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoNacionalidad.Size = new System.Drawing.Size(155, 22);
             this.mnuMtoNacionalidad.Text = "Nacionalidades";
             this.mnuMtoNacionalidad.Click += new System.EventHandler(this.mnuMtoNacionalidad_Click);
             // 
@@ -467,7 +467,7 @@
             // 
             this.mnuMtoTipo.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoTipo.Image")));
             this.mnuMtoTipo.Name = "mnuMtoTipo";
-            this.mnuMtoTipo.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoTipo.Size = new System.Drawing.Size(116, 22);
             this.mnuMtoTipo.Text = "Tipos";
             this.mnuMtoTipo.Click += new System.EventHandler(this.mnuMtoTipo_Click);
             // 
@@ -475,7 +475,7 @@
             // 
             this.mnuMtoTributos.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoTributos.Image")));
             this.mnuMtoTributos.Name = "mnuMtoTributos";
-            this.mnuMtoTributos.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoTributos.Size = new System.Drawing.Size(116, 22);
             this.mnuMtoTributos.Text = "Tributos";
             this.mnuMtoTributos.Click += new System.EventHandler(this.mnuMtoTributos_Click);
             // 
@@ -515,7 +515,7 @@
             // 
             this.mnuMtoPerfilFinanciera.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilFinanciera.Image")));
             this.mnuMtoPerfilFinanciera.Name = "mnuMtoPerfilFinanciera";
-            this.mnuMtoPerfilFinanciera.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoPerfilFinanciera.Size = new System.Drawing.Size(102, 22);
             this.mnuMtoPerfilFinanciera.Text = "Perfil";
             this.mnuMtoPerfilFinanciera.Click += new System.EventHandler(this.mnuMtoPerfilFinanciera_Click);
             // 
@@ -523,7 +523,7 @@
             // 
             this.mnuMtoTipoFinanciera.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoTipoFinanciera.Image")));
             this.mnuMtoTipoFinanciera.Name = "mnuMtoTipoFinanciera";
-            this.mnuMtoTipoFinanciera.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoTipoFinanciera.Size = new System.Drawing.Size(102, 22);
             this.mnuMtoTipoFinanciera.Text = "Tipos";
             this.mnuMtoTipoFinanciera.Click += new System.EventHandler(this.mnuMtoTipoFinanciera_Click);
             // 
@@ -540,14 +540,14 @@
             // mnuMtoNmnEmpleado
             // 
             this.mnuMtoNmnEmpleado.Name = "mnuMtoNmnEmpleado";
-            this.mnuMtoNmnEmpleado.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoNmnEmpleado.Size = new System.Drawing.Size(132, 22);
             this.mnuMtoNmnEmpleado.Text = "Empleados";
             this.mnuMtoNmnEmpleado.Click += new System.EventHandler(this.mnuMtoNmnEmpleado_Click);
             // 
             // mnuMtoNmnPuesto
             // 
             this.mnuMtoNmnPuesto.Name = "mnuMtoNmnPuesto";
-            this.mnuMtoNmnPuesto.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoNmnPuesto.Size = new System.Drawing.Size(132, 22);
             this.mnuMtoNmnPuesto.Text = "Puestos";
             this.mnuMtoNmnPuesto.Click += new System.EventHandler(this.mnuMtoNmnPuesto_Click);
             // 
@@ -564,28 +564,32 @@
             // 
             // mnuTscFactura
             // 
+            this.mnuTscFactura.Enabled = false;
             this.mnuTscFactura.Name = "mnuTscFactura";
-            this.mnuTscFactura.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscFactura.Size = new System.Drawing.Size(180, 22);
             this.mnuTscFactura.Text = "Facturas";
             this.mnuTscFactura.Click += new System.EventHandler(this.mnuTscFactura_Click);
             // 
             // mnuTscOrdenPedido
             // 
+            this.mnuTscOrdenPedido.Enabled = false;
             this.mnuTscOrdenPedido.Name = "mnuTscOrdenPedido";
-            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(180, 22);
             this.mnuTscOrdenPedido.Text = "Ordenes de Pedidos";
             this.mnuTscOrdenPedido.Click += new System.EventHandler(this.mnuTscOrdenPedido_Click);
             // 
             // mnuTscIncripcion
             // 
+            this.mnuTscIncripcion.Enabled = false;
             this.mnuTscIncripcion.Name = "mnuTscIncripcion";
-            this.mnuTscIncripcion.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscIncripcion.Size = new System.Drawing.Size(180, 22);
             this.mnuTscIncripcion.Text = "Incripciones";
             // 
             // mnuTscCita
             // 
+            this.mnuTscCita.Enabled = false;
             this.mnuTscCita.Name = "mnuTscCita";
-            this.mnuTscCita.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscCita.Size = new System.Drawing.Size(180, 22);
             this.mnuTscCita.Text = "Citas";
             this.mnuTscCita.Click += new System.EventHandler(this.mnuTscCita_Click);
             // 

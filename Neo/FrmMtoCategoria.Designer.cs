@@ -170,14 +170,14 @@
             // 
             this.cboDepartamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreDepartamento", true));
             this.cboDepartamento.DataSource = this.dsNeo;
-            this.cboDepartamento.DisplayMember = "tbDepartamento.Nombre";
+            this.cboDepartamento.DisplayMember = "tbDepartamento.NombreDepartamento";
             this.cboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDepartamento.FormattingEnabled = true;
             this.cboDepartamento.Location = new System.Drawing.Point(91, 75);
             this.cboDepartamento.Name = "cboDepartamento";
             this.cboDepartamento.Size = new System.Drawing.Size(178, 21);
             this.cboDepartamento.TabIndex = 11;
-            this.cboDepartamento.ValueMember = "tbDepartamento.Nombre";
+            this.cboDepartamento.ValueMember = "tbDepartamento.NombreDepartamento";
             // 
             // bsMto
             // 

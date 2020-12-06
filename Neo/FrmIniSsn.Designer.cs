@@ -73,7 +73,7 @@
             this.btnSalir.Location = new System.Drawing.Point(12, 76);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(90, 25);
-            this.btnSalir.TabIndex = 4;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Values.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -82,7 +82,7 @@
             this.btnIniciar.Location = new System.Drawing.Point(118, 76);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(90, 25);
-            this.btnIniciar.TabIndex = 5;
+            this.btnIniciar.TabIndex = 2;
             this.btnIniciar.Values.Text = "Iniciar";
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
@@ -92,7 +92,7 @@
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(113, 23);
-            this.txtUsuario.TabIndex = 6;
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtContrasena
             // 
@@ -100,7 +100,8 @@
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(114, 23);
-            this.txtContrasena.TabIndex = 7;
+            this.txtContrasena.TabIndex = 1;
+            this.txtContrasena.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasena_KeyDown);
             // 
             // FrmIniSsn
             // 
