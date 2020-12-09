@@ -243,7 +243,7 @@ namespace Neo
             taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             cboSucursal.SelectedIndex = -1;
             cboVeterinario.SelectedIndex = -1;
-            taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

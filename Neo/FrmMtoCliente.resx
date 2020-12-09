@@ -117,72 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="idClienteLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="nombreLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="razonSocialLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="categoriaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="nacimientoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="sexoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="nombreEstadoCivilLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="tipoEstadoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="codigoSucursalLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="idUserWebLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="aperturaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="cuentaContableLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="usuarioLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="equipoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="formatoFacturaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="formatoReciboIngresoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="formatoOrdenPedidoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="limiteCreditoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="codigoClienteLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="codigoEmpresaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="codigoTrabajoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="activoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <metadata name="bsMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>97, 16</value>
   </metadata>
@@ -192,17 +126,20 @@
   <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>18, 13</value>
   </metadata>
-  <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>18, 13</value>
-  </metadata>
-  <metadata name="bsSucursal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>480, 52</value>
+  <metadata name="bsMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>97, 16</value>
   </metadata>
   <metadata name="bsSucursal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>480, 52</value>
   </metadata>
   <metadata name="bsEstado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 52</value>
+  </metadata>
+  <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>18, 13</value>
+  </metadata>
+  <metadata name="bsSucursal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>480, 52</value>
   </metadata>
   <metadata name="bsEstado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 52</value>
@@ -469,6 +406,43 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>64</value>
   </metadata>
+  <data name="kryptonButton1.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAIcAAAEAACyRKP///0jHGaThXUvOHkvNHqbhXiKZDVDQH63heVHQHwBmAABkAAh8AkzP
+        H1DRH6fdbc/slnjCUiqjDtTvl0XJHSFuISGAITGuD6bhX9XumgBgADOxES+0DpbaTaLhX7nzcxKHCqbg
+        XsfeyXrNSTnADbDmZkjJFU7PH07LFL7awWC4T03NHWC6SDOoI0OzKli1SGDQJeby6qjkYXLYLmfZJ63l
+        Y0/SILXldlrMGTC/AMzqlDiqJjrACzGnJiaoErPkgTvBFFTPE3+/dOvy7mfTJEm2OrfVvNLqzqnqZ6rj
+        YlbQG0THGaviY+jy7lPPHJ/gV1yyWLzWv3DCXVTSH9fwnQl5A7fkk//4/07QH6XhW9Ts0NXvnFDOH+Xw
+        6lHPH0LCCpXbTP/x/5fcTi2oG8/rlknOHtnu1tft00y2LaXeYdn2pa3ucD3BB9XzoDK7CrfxdWnYJNfx
+        naTVqdPrz83vmLzdv8zrlsnpkk7SH5XaTFjSHlnTHtTvnDSoI163TdPr0DWoIx6gC2LWGFXPGw+ACqTd
+        Y6HSnafpZGXZJFfUIErNHkavNwBoAK/jb//6/6vlYf/7/7roiGW8YaXhXp7nY6PgW0bGE03OHqXgXqnn
+        YqbiYFPRIOz08i+sHKTiXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAAAACwAAAAAEAAQAAAI/gABCBQY4EKDBhcCDFwIgEOAChsk
+        SNhQIQAHhgEiWOlihkcePH7mRFAokIGCNzmWjDhwQNOJR3YUMBA4gQ2IKJcI6IxExgUVLBMABJi0CRQn
+        DRoq3dgD6IsASkECYFBCQ8yWNYecfGDxREASGIkwXIlTgogaIzV0xJghoM4PGSEcibAkZQwSDzuOeBLA
+        5YUbOW0MOVBUZkoWEnSKCAj0JwyhITYcBGCiYtAKSZAEpBHkow8UPoUUDliECcgdAWh6mMBxpkWVAQIR
+        JOiE4hOiRkL0FGAEJgGCgQMgLPACp4mWTCkWQIC9kIKFBwUMGCjwwAIFhgMDdMiQoQPJgQEBADs=
+</value>
+  </data>
+  <data name="kryptonButton2.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAIYAAAEAAOAOE/IOFdoQEN0YFMAIC+wJELkLC+IWFPhbTvZAKvZPM+8REPU4JLYKDMwJ
+        C/hYUvUOD/c7OvAKDvdTNvZJLvZELfdQN+xBPPZML/dZO+8ODvhZT+kgHPUeGfhvUfQQEOoLEfmObfAX
+        E/dYQ/ZGLPU7KvUUEvmMevY+KvAMDsgIC/mAbfQqG/qih/Y1IvZAKfdEQfmHafYmHO4MDvQxH/U0IvUd
+        F/MeFuUbGfZOMvh6WvQzIPdQNvZIMfYzM/mIbPQkGvYiIbwIC/UjGuIaFfmJdPMhGPhnVPmbfPELEfdV
+        S/UyIO8NDfdYOvUOEPZSM/QNEPdWNpYGB+skHvU1J/qoje8WEuEcGPc2Nt0JEfEZHO8JEPdTN/MwIPdX
+        OfdUN/Y5JfZFLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQB
+        AAAAACwAAAAAEAAQAAAItgABCBgIoKDBgxImCHCRBIKAgwYnQGAhIYYTDTuMKIGYBYUIEgC4fAHThYIM
+        DgWXWIHiw4BBE1IWLMjwIcQWIDqquIRIpYQYCxd6VOiwEyKAADBSKFCQQ4tRgyuQMGnQIAyWp0cxtKjh
+        xQaPFw6MBkiA4wiRAwRmBCkCceyVEQgOFCTg4UbYgmOFMGAg1yCBEwMMRvjRZAMCowNADMEbgYaKB08H
+        BC6IIArkpwWeTMFqtEABAAEBADs=
+</value>
+  </data>
   <metadata name="taCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>331, 13</value>
   </metadata>
@@ -505,4 +479,41 @@
   <metadata name="bsTipoContacto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>276, 91</value>
   </metadata>
+  <data name="btnAceptaServicio.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAIcAAAEAACyRKP///0jHGaThXUvOHkvNHqbhXiKZDVDQH63heVHQHwBmAABkAAh8AkzP
+        H1DRH6fdbc/slnjCUiqjDtTvl0XJHSFuISGAITGuD6bhX9XumgBgADOxES+0DpbaTaLhX7nzcxKHCqbg
+        XsfeyXrNSTnADbDmZkjJFU7PH07LFL7awWC4T03NHWC6SDOoI0OzKli1SGDQJeby6qjkYXLYLmfZJ63l
+        Y0/SILXldlrMGTC/AMzqlDiqJjrACzGnJiaoErPkgTvBFFTPE3+/dOvy7mfTJEm2OrfVvNLqzqnqZ6rj
+        YlbQG0THGaviY+jy7lPPHJ/gV1yyWLzWv3DCXVTSH9fwnQl5A7fkk//4/07QH6XhW9Ts0NXvnFDOH+Xw
+        6lHPH0LCCpXbTP/x/5fcTi2oG8/rlknOHtnu1tft00y2LaXeYdn2pa3ucD3BB9XzoDK7CrfxdWnYJNfx
+        naTVqdPrz83vmLzdv8zrlsnpkk7SH5XaTFjSHlnTHtTvnDSoI163TdPr0DWoIx6gC2LWGFXPGw+ACqTd
+        Y6HSnafpZGXZJFfUIErNHkavNwBoAK/jb//6/6vlYf/7/7roiGW8YaXhXp7nY6PgW0bGE03OHqXgXqnn
+        YqbiYFPRIOz08i+sHKTiXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAAAACwAAAAAEAAQAAAI/gABCBQY4EKDBhcCDFwIgEOAChsk
+        SNhQIQAHhgEiWOlihkcePH7mRFAokIGCNzmWjDhwQNOJR3YUMBA4gQ2IKJcI6IxExgUVLBMABJi0CRQn
+        DRoq3dgD6IsASkECYFBCQ8yWNYecfGDxREASGIkwXIlTgogaIzV0xJghoM4PGSEcibAkZQwSDzuOeBLA
+        5YUbOW0MOVBUZkoWEnSKCAj0JwyhITYcBGCiYtAKSZAEpBHkow8UPoUUDliECcgdAWh6mMBxpkWVAQIR
+        JOiE4hOiRkL0FGAEJgGCgQMgLPACp4mWTCkWQIC9kIKFBwUMGCjwwAIFhgMDdMiQoQPJgQEBADs=
+</value>
+  </data>
+  <data name="btnCancelaServicio.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAIYAAAEAAOAOE/IOFdoQEN0YFMAIC+wJELkLC+IWFPhbTvZAKvZPM+8REPU4JLYKDMwJ
+        C/hYUvUOD/c7OvAKDvdTNvZJLvZELfdQN+xBPPZML/dZO+8ODvhZT+kgHPUeGfhvUfQQEOoLEfmObfAX
+        E/dYQ/ZGLPU7KvUUEvmMevY+KvAMDsgIC/mAbfQqG/qih/Y1IvZAKfdEQfmHafYmHO4MDvQxH/U0IvUd
+        F/MeFuUbGfZOMvh6WvQzIPdQNvZIMfYzM/mIbPQkGvYiIbwIC/UjGuIaFfmJdPMhGPhnVPmbfPELEfdV
+        S/UyIO8NDfdYOvUOEPZSM/QNEPdWNpYGB+skHvU1J/qoje8WEuEcGPc2Nt0JEfEZHO8JEPdTN/MwIPdX
+        OfdUN/Y5JfZFLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQB
+        AAAAACwAAAAAEAAQAAAItgABCBgIoKDBgxImCHCRBIKAgwYnQGAhIYYTDTuMKIGYBYUIEgC4fAHThYIM
+        DgWXWIHiw4BBE1IWLMjwIcQWIDqquIRIpYQYCxd6VOiwEyKAADBSKFCQQ4tRgyuQMGnQIAyWp0cxtKjh
+        xQaPFw6MBkiA4wiRAwRmBCkCceyVEQgOFCTg4UbYgmOFMGAg1yCBEwMMRvjRZAMCowNADMEbgYaKB08H
+        BC6IIArkpwWeTMFqtEABAAEBADs=
+</value>
+  </data>
 </root>

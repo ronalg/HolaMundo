@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoArticulo));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcArticulo = new System.Windows.Forms.TabControl();
@@ -72,22 +72,21 @@
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnCargar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnQuitar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblEquipo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblApertura = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.lblTrabajo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pbCaratula = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tpPrecios = new System.Windows.Forms.TabPage();
             this.pnl8 = new System.Windows.Forms.Panel();
             this.grdPrecio = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.pvCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pvAplicaOrdenPedido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bsPrecioVenta = new System.Windows.Forms.BindingSource(this.components);
             this.pnl9 = new System.Windows.Forms.Panel();
             this.bnPrecioVenta = new System.Windows.Forms.BindingNavigator(this.components);
@@ -166,9 +165,10 @@
             this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
             this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
-            this.pvCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pvAplicaOrdenPedido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.kryptonLabel18 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel19 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel20 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel21 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             this.tcArticulo.SuspendLayout();
@@ -242,6 +242,10 @@
             // 
             this.tpPerfil.AutoScroll = true;
             this.tpPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tpPerfil.Controls.Add(this.kryptonLabel21);
+            this.tpPerfil.Controls.Add(this.kryptonLabel20);
+            this.tpPerfil.Controls.Add(this.kryptonLabel19);
+            this.tpPerfil.Controls.Add(this.kryptonLabel18);
             this.tpPerfil.Controls.Add(this.kryptonLabel17);
             this.tpPerfil.Controls.Add(this.kryptonLabel16);
             this.tpPerfil.Controls.Add(this.kryptonLabel15);
@@ -269,19 +273,15 @@
             this.tpPerfil.Controls.Add(this.kryptonLabel3);
             this.tpPerfil.Controls.Add(this.kryptonLabel2);
             this.tpPerfil.Controls.Add(this.kryptonLabel1);
-            this.tpPerfil.Controls.Add(this.label4);
             this.tpPerfil.Controls.Add(this.btnCargar);
             this.tpPerfil.Controls.Add(this.btnQuitar);
-            this.tpPerfil.Controls.Add(this.label3);
             this.tpPerfil.Controls.Add(this.lblEquipo);
             this.tpPerfil.Controls.Add(this.lblUsuario);
             this.tpPerfil.Controls.Add(this.lblApertura);
             this.tpPerfil.Controls.Add(this.lblCodigo);
             this.tpPerfil.Controls.Add(this.lblEmpresa);
             this.tpPerfil.Controls.Add(this.lblTrabajo);
-            this.tpPerfil.Controls.Add(this.label2);
             this.tpPerfil.Controls.Add(this.pbCaratula);
-            this.tpPerfil.Controls.Add(this.label1);
             this.tpPerfil.Location = new System.Drawing.Point(4, 22);
             this.tpPerfil.Name = "tpPerfil";
             this.tpPerfil.Padding = new System.Windows.Forms.Padding(3);
@@ -536,17 +536,6 @@
             this.kryptonLabel1.TabIndex = 46;
             this.kryptonLabel1.Values.Text = "ID:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(334, 116);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "Multimedia";
-            // 
             // btnCargar
             // 
             this.btnCargar.Location = new System.Drawing.Point(525, 310);
@@ -564,17 +553,6 @@
             this.btnQuitar.TabIndex = 10;
             this.btnQuitar.Values.Text = "Eliminar";
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(333, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Aplicactivo";
             // 
             // lblEquipo
             // 
@@ -642,17 +620,6 @@
             this.lblTrabajo.TabIndex = 17;
             this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(6, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Sistema";
-            // 
             // pbCaratula
             // 
             this.pbCaratula.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -664,17 +631,6 @@
             this.pbCaratula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCaratula.TabIndex = 8;
             this.pbCaratula.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Datos Generales";
             // 
             // tpPrecios
             // 
@@ -702,8 +658,8 @@
             // 
             this.grdPrecio.AllowUserToAddRows = false;
             this.grdPrecio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdPrecio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdPrecio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdPrecio.AutoGenerateColumns = false;
             this.grdPrecio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdPrecio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -717,6 +673,34 @@
             this.grdPrecio.Size = new System.Drawing.Size(606, 353);
             this.grdPrecio.TabIndex = 5;
             this.grdPrecio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPrecio_CellContentClick);
+            // 
+            // pvCodigo
+            // 
+            this.pvCodigo.DataPropertyName = "CodigoPrecioVenta";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pvCodigo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.pvCodigo.HeaderText = "Código";
+            this.pvCodigo.Name = "pvCodigo";
+            this.pvCodigo.ReadOnly = true;
+            // 
+            // pvPrecio
+            // 
+            this.pvPrecio.DataPropertyName = "Precio";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0.00";
+            this.pvPrecio.DefaultCellStyle = dataGridViewCellStyle3;
+            this.pvPrecio.HeaderText = "Precio";
+            this.pvPrecio.Name = "pvPrecio";
+            // 
+            // pvAplicaOrdenPedido
+            // 
+            this.pvAplicaOrdenPedido.DataPropertyName = "AplicaOrdenPedido";
+            this.pvAplicaOrdenPedido.HeaderText = "Orden Pedido";
+            this.pvAplicaOrdenPedido.Name = "pvAplicaOrdenPedido";
+            this.pvAplicaOrdenPedido.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.pvAplicaOrdenPedido.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.pvAplicaOrdenPedido.Width = 110;
             // 
             // bsPrecioVenta
             // 
@@ -865,9 +849,9 @@
             // costoDataGridViewTextBoxColumn
             // 
             this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle22.Format = "N2";
-            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
             this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
             this.costoDataGridViewTextBoxColumn.Width = 70;
@@ -909,8 +893,8 @@
             // 
             this.grdMultimedia.AllowUserToAddRows = false;
             this.grdMultimedia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMultimedia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMultimedia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.grdMultimedia.AutoGenerateColumns = false;
             this.grdMultimedia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMultimedia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -955,8 +939,8 @@
             // mCodigo
             // 
             this.mCodigo.DataPropertyName = "CodigoMultimedia";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle6;
             this.mCodigo.HeaderText = "Código";
             this.mCodigo.Name = "mCodigo";
             this.mCodigo.ReadOnly = true;
@@ -1125,8 +1109,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1152,8 +1136,8 @@
             // codigoTrabajoDataGridViewTextBoxColumn
             // 
             this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoTrabajoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoTrabajoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
             this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
             this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1186,8 +1170,8 @@
             // aId
             // 
             this.aId.DataPropertyName = "IdArticulo";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.aId.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.aId.DefaultCellStyle = dataGridViewCellStyle9;
             this.aId.HeaderText = "ID";
             this.aId.Name = "aId";
             this.aId.ReadOnly = true;
@@ -1474,33 +1458,41 @@
             // 
             this.taArticuloProveedor.ClearBeforeFill = true;
             // 
-            // pvCodigo
+            // kryptonLabel18
             // 
-            this.pvCodigo.DataPropertyName = "CodigoPrecioVenta";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pvCodigo.DefaultCellStyle = dataGridViewCellStyle20;
-            this.pvCodigo.HeaderText = "Código";
-            this.pvCodigo.Name = "pvCodigo";
-            this.pvCodigo.ReadOnly = true;
+            this.kryptonLabel18.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel18.Location = new System.Drawing.Point(10, 3);
+            this.kryptonLabel18.Name = "kryptonLabel18";
+            this.kryptonLabel18.Size = new System.Drawing.Size(104, 20);
+            this.kryptonLabel18.TabIndex = 81;
+            this.kryptonLabel18.Values.Text = "Datos Generales";
             // 
-            // pvPrecio
+            // kryptonLabel19
             // 
-            this.pvPrecio.DataPropertyName = "Precio";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.Format = "N2";
-            dataGridViewCellStyle21.NullValue = "0.00";
-            this.pvPrecio.DefaultCellStyle = dataGridViewCellStyle21;
-            this.pvPrecio.HeaderText = "Precio";
-            this.pvPrecio.Name = "pvPrecio";
+            this.kryptonLabel19.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel19.Location = new System.Drawing.Point(6, 79);
+            this.kryptonLabel19.Name = "kryptonLabel19";
+            this.kryptonLabel19.Size = new System.Drawing.Size(56, 20);
+            this.kryptonLabel19.TabIndex = 82;
+            this.kryptonLabel19.Values.Text = "Sistema";
             // 
-            // pvAplicaOrdenPedido
+            // kryptonLabel20
             // 
-            this.pvAplicaOrdenPedido.DataPropertyName = "AplicaOrdenPedido";
-            this.pvAplicaOrdenPedido.HeaderText = "Orden Pedido";
-            this.pvAplicaOrdenPedido.Name = "pvAplicaOrdenPedido";
-            this.pvAplicaOrdenPedido.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.pvAplicaOrdenPedido.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.pvAplicaOrdenPedido.Width = 110;
+            this.kryptonLabel20.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel20.Location = new System.Drawing.Point(332, 2);
+            this.kryptonLabel20.Name = "kryptonLabel20";
+            this.kryptonLabel20.Size = new System.Drawing.Size(80, 20);
+            this.kryptonLabel20.TabIndex = 83;
+            this.kryptonLabel20.Values.Text = "Aplicactivos";
+            // 
+            // kryptonLabel21
+            // 
+            this.kryptonLabel21.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel21.Location = new System.Drawing.Point(332, 111);
+            this.kryptonLabel21.Name = "kryptonLabel21";
+            this.kryptonLabel21.Size = new System.Drawing.Size(77, 20);
+            this.kryptonLabel21.TabIndex = 84;
+            this.kryptonLabel21.Values.Text = "Multimedia";
             // 
             // FrmMtoArticulo
             // 
@@ -1586,13 +1578,11 @@
         private System.Windows.Forms.TabPage tpPrecios;
         private System.Windows.Forms.TabPage tpMultimedia;
         private DsNeoTableAdapters.taArticulo taArticulo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblApertura;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.Label lblTrabajo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbCaratula;
         private DsNeoTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel pnl8;
@@ -1653,10 +1643,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pActual;
-        private System.Windows.Forms.Label label3;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private System.Windows.Forms.Label label4;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCargar;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnQuitar;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
@@ -1687,5 +1675,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pvCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn pvPrecio;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pvAplicaOrdenPedido;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel21;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel20;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel19;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel18;
     }
 }

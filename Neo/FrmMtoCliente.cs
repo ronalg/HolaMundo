@@ -575,5 +575,15 @@ namespace Neo
             if (grdSucursal.CurrentRow != null)
                 pnlProvincia.Visible = true;
         }
+
+        private void kryptonLabel15_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel26_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }    
 }

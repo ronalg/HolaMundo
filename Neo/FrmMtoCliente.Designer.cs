@@ -29,28 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label idClienteLabel;
-            System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label razonSocialLabel;
-            System.Windows.Forms.Label categoriaLabel;
-            System.Windows.Forms.Label nacimientoLabel;
-            System.Windows.Forms.Label sexoLabel;
-            System.Windows.Forms.Label nombreEstadoCivilLabel;
-            System.Windows.Forms.Label tipoEstadoLabel;
-            System.Windows.Forms.Label codigoSucursalLabel;
-            System.Windows.Forms.Label idUserWebLabel;
-            System.Windows.Forms.Label aperturaLabel;
-            System.Windows.Forms.Label cuentaContableLabel;
-            System.Windows.Forms.Label usuarioLabel;
-            System.Windows.Forms.Label equipoLabel;
-            System.Windows.Forms.Label formatoFacturaLabel;
-            System.Windows.Forms.Label formatoReciboIngresoLabel;
-            System.Windows.Forms.Label formatoOrdenPedidoLabel;
-            System.Windows.Forms.Label limiteCreditoLabel;
-            System.Windows.Forms.Label codigoClienteLabel;
-            System.Windows.Forms.Label codigoEmpresaLabel;
-            System.Windows.Forms.Label codigoTrabajoLabel;
-            System.Windows.Forms.Label activoLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoCliente));
@@ -69,38 +47,10 @@
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcMto = new System.Windows.Forms.TabControl();
-            this.tpPerfil = new System.Windows.Forms.TabPage();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
-            this.txtNota = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.chkActivo = new System.Windows.Forms.CheckBox();
-            this.lblTrabajo = new System.Windows.Forms.Label();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.txtLimiteCredito = new System.Windows.Forms.TextBox();
-            this.cboPedido = new System.Windows.Forms.ComboBox();
-            this.cboRecibo = new System.Windows.Forms.ComboBox();
-            this.cboFactura = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblEquipo = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.txtCuentaContable = new System.Windows.Forms.TextBox();
-            this.lblApertura = new System.Windows.Forms.Label();
-            this.txtUserWeb = new System.Windows.Forms.TextBox();
-            this.cboSucursal = new System.Windows.Forms.ComboBox();
             this.bsSucursal = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblTipoEstado = new System.Windows.Forms.Label();
-            this.cboEstadoCivil = new System.Windows.Forms.ComboBox();
             this.bsEstado = new System.Windows.Forms.BindingSource(this.components);
-            this.cboSexo = new System.Windows.Forms.ComboBox();
-            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.txtRazonSocial = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tpSucursal = new System.Windows.Forms.TabPage();
             this.pnl10 = new System.Windows.Forms.Panel();
             this.pnl14 = new System.Windows.Forms.Panel();
@@ -219,8 +169,6 @@
             this.taContactoMiembro = new Neo.DsNeoTableAdapters.taContactoMiembro();
             this.taTipoContacto = new Neo.DsNeoTableAdapters.taTipoContacto();
             this.pnlProvincia = new System.Windows.Forms.Panel();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnProvinciaCancelar = new System.Windows.Forms.Button();
             this.pnlProvinciaSub = new System.Windows.Forms.Panel();
             this.grdProvincia = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.pPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -230,8 +178,6 @@
             this.bsProvincia = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.pnlTipoContacto = new System.Windows.Forms.Panel();
-            this.btnTipoContactoAceptar = new System.Windows.Forms.Button();
-            this.btnTipoContactoCancelar = new System.Windows.Forms.Button();
             this.pnlTipoContactoSub = new System.Windows.Forms.Panel();
             this.grdTipoContacto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.tcNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -240,32 +186,64 @@
             this.codigoEmpresaDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsTipoContacto = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
-            idClienteLabel = new System.Windows.Forms.Label();
-            nombreLabel = new System.Windows.Forms.Label();
-            razonSocialLabel = new System.Windows.Forms.Label();
-            categoriaLabel = new System.Windows.Forms.Label();
-            nacimientoLabel = new System.Windows.Forms.Label();
-            sexoLabel = new System.Windows.Forms.Label();
-            nombreEstadoCivilLabel = new System.Windows.Forms.Label();
-            tipoEstadoLabel = new System.Windows.Forms.Label();
-            codigoSucursalLabel = new System.Windows.Forms.Label();
-            idUserWebLabel = new System.Windows.Forms.Label();
-            aperturaLabel = new System.Windows.Forms.Label();
-            cuentaContableLabel = new System.Windows.Forms.Label();
-            usuarioLabel = new System.Windows.Forms.Label();
-            equipoLabel = new System.Windows.Forms.Label();
-            formatoFacturaLabel = new System.Windows.Forms.Label();
-            formatoReciboIngresoLabel = new System.Windows.Forms.Label();
-            formatoOrdenPedidoLabel = new System.Windows.Forms.Label();
-            limiteCreditoLabel = new System.Windows.Forms.Label();
-            codigoClienteLabel = new System.Windows.Forms.Label();
-            codigoEmpresaLabel = new System.Windows.Forms.Label();
-            codigoTrabajoLabel = new System.Windows.Forms.Label();
-            activoLabel = new System.Windows.Forms.Label();
+            this.btnTipoContactoAcepta = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnTipoServicioCancela = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnProvinciaAcepta = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnProvinciaCancela = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.cboSexo = new System.Windows.Forms.ComboBox();
+            this.cboEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.lblTipoEstado = new System.Windows.Forms.Label();
+            this.cboSucursal = new System.Windows.Forms.ComboBox();
+            this.txtUserWeb = new System.Windows.Forms.TextBox();
+            this.lblApertura = new System.Windows.Forms.Label();
+            this.txtCuentaContable = new System.Windows.Forms.TextBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblEquipo = new System.Windows.Forms.Label();
+            this.cboFactura = new System.Windows.Forms.ComboBox();
+            this.cboRecibo = new System.Windows.Forms.ComboBox();
+            this.cboPedido = new System.Windows.Forms.ComboBox();
+            this.txtLimiteCredito = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.lblTrabajo = new System.Windows.Forms.Label();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
+            this.txtNota = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.tpPerfil = new System.Windows.Forms.TabPage();
+            this.kryptonLabel11 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel12 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel13 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel14 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel15 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel16 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel17 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel18 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel19 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel20 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel21 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel22 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel23 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel24 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel25 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel26 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel27 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             this.tcMto.SuspendLayout();
-            this.tpPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsMto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSucursal)).BeginInit();
@@ -303,205 +281,8 @@
             this.pnlTipoContactoSub.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTipoContacto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTipoContacto)).BeginInit();
+            this.tpPerfil.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // idClienteLabel
-            // 
-            idClienteLabel.AutoSize = true;
-            idClienteLabel.Location = new System.Drawing.Point(62, 33);
-            idClienteLabel.Name = "idClienteLabel";
-            idClienteLabel.Size = new System.Drawing.Size(21, 13);
-            idClienteLabel.TabIndex = 1;
-            idClienteLabel.Text = "ID:";
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(36, 59);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 3;
-            nombreLabel.Text = "Nombre:";
-            // 
-            // razonSocialLabel
-            // 
-            razonSocialLabel.AutoSize = true;
-            razonSocialLabel.Location = new System.Drawing.Point(10, 85);
-            razonSocialLabel.Name = "razonSocialLabel";
-            razonSocialLabel.Size = new System.Drawing.Size(73, 13);
-            razonSocialLabel.TabIndex = 5;
-            razonSocialLabel.Text = "Razón Social:";
-            // 
-            // categoriaLabel
-            // 
-            categoriaLabel.AutoSize = true;
-            categoriaLabel.Location = new System.Drawing.Point(26, 111);
-            categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new System.Drawing.Size(57, 13);
-            categoriaLabel.TabIndex = 7;
-            categoriaLabel.Text = "Categoría:";
-            // 
-            // nacimientoLabel
-            // 
-            nacimientoLabel.AutoSize = true;
-            nacimientoLabel.Location = new System.Drawing.Point(20, 138);
-            nacimientoLabel.Name = "nacimientoLabel";
-            nacimientoLabel.Size = new System.Drawing.Size(63, 13);
-            nacimientoLabel.TabIndex = 9;
-            nacimientoLabel.Text = "Nacimiento:";
-            // 
-            // sexoLabel
-            // 
-            sexoLabel.AutoSize = true;
-            sexoLabel.Location = new System.Drawing.Point(49, 164);
-            sexoLabel.Name = "sexoLabel";
-            sexoLabel.Size = new System.Drawing.Size(34, 13);
-            sexoLabel.TabIndex = 11;
-            sexoLabel.Text = "Sexo:";
-            // 
-            // nombreEstadoCivilLabel
-            // 
-            nombreEstadoCivilLabel.AutoSize = true;
-            nombreEstadoCivilLabel.Location = new System.Drawing.Point(16, 191);
-            nombreEstadoCivilLabel.Name = "nombreEstadoCivilLabel";
-            nombreEstadoCivilLabel.Size = new System.Drawing.Size(67, 13);
-            nombreEstadoCivilLabel.TabIndex = 13;
-            nombreEstadoCivilLabel.Text = "Estado Cívil:";
-            // 
-            // tipoEstadoLabel
-            // 
-            tipoEstadoLabel.AutoSize = true;
-            tipoEstadoLabel.Location = new System.Drawing.Point(52, 219);
-            tipoEstadoLabel.Name = "tipoEstadoLabel";
-            tipoEstadoLabel.Size = new System.Drawing.Size(31, 13);
-            tipoEstadoLabel.TabIndex = 15;
-            tipoEstadoLabel.Text = "Tipo:";
-            // 
-            // codigoSucursalLabel
-            // 
-            codigoSucursalLabel.AutoSize = true;
-            codigoSucursalLabel.Location = new System.Drawing.Point(318, 28);
-            codigoSucursalLabel.Name = "codigoSucursalLabel";
-            codigoSucursalLabel.Size = new System.Drawing.Size(51, 13);
-            codigoSucursalLabel.TabIndex = 18;
-            codigoSucursalLabel.Text = "Sucursal:";
-            // 
-            // idUserWebLabel
-            // 
-            idUserWebLabel.AutoSize = true;
-            idUserWebLabel.Location = new System.Drawing.Point(311, 55);
-            idUserWebLabel.Name = "idUserWebLabel";
-            idUserWebLabel.Size = new System.Drawing.Size(58, 13);
-            idUserWebLabel.TabIndex = 20;
-            idUserWebLabel.Text = "User Web:";
-            // 
-            // aperturaLabel
-            // 
-            aperturaLabel.AutoSize = true;
-            aperturaLabel.Location = new System.Drawing.Point(319, 156);
-            aperturaLabel.Name = "aperturaLabel";
-            aperturaLabel.Size = new System.Drawing.Size(50, 13);
-            aperturaLabel.TabIndex = 22;
-            aperturaLabel.Text = "Apertura:";
-            // 
-            // cuentaContableLabel
-            // 
-            cuentaContableLabel.AutoSize = true;
-            cuentaContableLabel.Location = new System.Drawing.Point(280, 80);
-            cuentaContableLabel.Name = "cuentaContableLabel";
-            cuentaContableLabel.Size = new System.Drawing.Size(89, 13);
-            cuentaContableLabel.TabIndex = 24;
-            cuentaContableLabel.Text = "Cuenta Contable:";
-            // 
-            // usuarioLabel
-            // 
-            usuarioLabel.AutoSize = true;
-            usuarioLabel.Location = new System.Drawing.Point(323, 183);
-            usuarioLabel.Name = "usuarioLabel";
-            usuarioLabel.Size = new System.Drawing.Size(46, 13);
-            usuarioLabel.TabIndex = 26;
-            usuarioLabel.Text = "Usuario:";
-            // 
-            // equipoLabel
-            // 
-            equipoLabel.AutoSize = true;
-            equipoLabel.Location = new System.Drawing.Point(326, 207);
-            equipoLabel.Name = "equipoLabel";
-            equipoLabel.Size = new System.Drawing.Size(43, 13);
-            equipoLabel.TabIndex = 28;
-            equipoLabel.Text = "Equipo:";
-            // 
-            // formatoFacturaLabel
-            // 
-            formatoFacturaLabel.AutoSize = true;
-            formatoFacturaLabel.Location = new System.Drawing.Point(552, 35);
-            formatoFacturaLabel.Name = "formatoFacturaLabel";
-            formatoFacturaLabel.Size = new System.Drawing.Size(46, 13);
-            formatoFacturaLabel.TabIndex = 31;
-            formatoFacturaLabel.Text = "Factura:";
-            // 
-            // formatoReciboIngresoLabel
-            // 
-            formatoReciboIngresoLabel.AutoSize = true;
-            formatoReciboIngresoLabel.Location = new System.Drawing.Point(516, 61);
-            formatoReciboIngresoLabel.Name = "formatoReciboIngresoLabel";
-            formatoReciboIngresoLabel.Size = new System.Drawing.Size(82, 13);
-            formatoReciboIngresoLabel.TabIndex = 33;
-            formatoReciboIngresoLabel.Text = "Recibo Ingreso:";
-            // 
-            // formatoOrdenPedidoLabel
-            // 
-            formatoOrdenPedidoLabel.AutoSize = true;
-            formatoOrdenPedidoLabel.Location = new System.Drawing.Point(523, 88);
-            formatoOrdenPedidoLabel.Name = "formatoOrdenPedidoLabel";
-            formatoOrdenPedidoLabel.Size = new System.Drawing.Size(75, 13);
-            formatoOrdenPedidoLabel.TabIndex = 35;
-            formatoOrdenPedidoLabel.Text = "Orden Pedido:";
-            // 
-            // limiteCreditoLabel
-            // 
-            limiteCreditoLabel.AutoSize = true;
-            limiteCreditoLabel.Location = new System.Drawing.Point(294, 106);
-            limiteCreditoLabel.Name = "limiteCreditoLabel";
-            limiteCreditoLabel.Size = new System.Drawing.Size(75, 13);
-            limiteCreditoLabel.TabIndex = 37;
-            limiteCreditoLabel.Text = "Límite Crédito:";
-            // 
-            // codigoClienteLabel
-            // 
-            codigoClienteLabel.AutoSize = true;
-            codigoClienteLabel.Location = new System.Drawing.Point(327, 233);
-            codigoClienteLabel.Name = "codigoClienteLabel";
-            codigoClienteLabel.Size = new System.Drawing.Size(43, 13);
-            codigoClienteLabel.TabIndex = 39;
-            codigoClienteLabel.Text = "Código:";
-            // 
-            // codigoEmpresaLabel
-            // 
-            codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(319, 259);
-            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
-            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
-            codigoEmpresaLabel.TabIndex = 41;
-            codigoEmpresaLabel.Text = "Empresa:";
-            // 
-            // codigoTrabajoLabel
-            // 
-            codigoTrabajoLabel.AutoSize = true;
-            codigoTrabajoLabel.Location = new System.Drawing.Point(324, 285);
-            codigoTrabajoLabel.Name = "codigoTrabajoLabel";
-            codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
-            codigoTrabajoLabel.TabIndex = 43;
-            codigoTrabajoLabel.Text = "Trabajo:";
-            // 
-            // activoLabel
-            // 
-            activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(325, 132);
-            activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 45;
-            activoLabel.Text = "Activo:";
             // 
             // spd4
             // 
@@ -545,76 +326,6 @@
             this.tcMto.Size = new System.Drawing.Size(930, 415);
             this.tcMto.TabIndex = 0;
             // 
-            // tpPerfil
-            // 
-            this.tpPerfil.AutoScroll = true;
-            this.tpPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tpPerfil.Controls.Add(this.txtCategoria);
-            this.tpPerfil.Controls.Add(this.txtNota);
-            this.tpPerfil.Controls.Add(this.label4);
-            this.tpPerfil.Controls.Add(activoLabel);
-            this.tpPerfil.Controls.Add(this.chkActivo);
-            this.tpPerfil.Controls.Add(codigoTrabajoLabel);
-            this.tpPerfil.Controls.Add(this.lblTrabajo);
-            this.tpPerfil.Controls.Add(codigoEmpresaLabel);
-            this.tpPerfil.Controls.Add(this.lblEmpresa);
-            this.tpPerfil.Controls.Add(codigoClienteLabel);
-            this.tpPerfil.Controls.Add(this.lblCodigo);
-            this.tpPerfil.Controls.Add(limiteCreditoLabel);
-            this.tpPerfil.Controls.Add(this.txtLimiteCredito);
-            this.tpPerfil.Controls.Add(formatoOrdenPedidoLabel);
-            this.tpPerfil.Controls.Add(this.cboPedido);
-            this.tpPerfil.Controls.Add(formatoReciboIngresoLabel);
-            this.tpPerfil.Controls.Add(this.cboRecibo);
-            this.tpPerfil.Controls.Add(formatoFacturaLabel);
-            this.tpPerfil.Controls.Add(this.cboFactura);
-            this.tpPerfil.Controls.Add(this.label3);
-            this.tpPerfil.Controls.Add(equipoLabel);
-            this.tpPerfil.Controls.Add(this.lblEquipo);
-            this.tpPerfil.Controls.Add(usuarioLabel);
-            this.tpPerfil.Controls.Add(this.lblUsuario);
-            this.tpPerfil.Controls.Add(cuentaContableLabel);
-            this.tpPerfil.Controls.Add(this.txtCuentaContable);
-            this.tpPerfil.Controls.Add(aperturaLabel);
-            this.tpPerfil.Controls.Add(this.lblApertura);
-            this.tpPerfil.Controls.Add(idUserWebLabel);
-            this.tpPerfil.Controls.Add(this.txtUserWeb);
-            this.tpPerfil.Controls.Add(codigoSucursalLabel);
-            this.tpPerfil.Controls.Add(this.cboSucursal);
-            this.tpPerfil.Controls.Add(this.label2);
-            this.tpPerfil.Controls.Add(tipoEstadoLabel);
-            this.tpPerfil.Controls.Add(this.lblTipoEstado);
-            this.tpPerfil.Controls.Add(nombreEstadoCivilLabel);
-            this.tpPerfil.Controls.Add(this.cboEstadoCivil);
-            this.tpPerfil.Controls.Add(sexoLabel);
-            this.tpPerfil.Controls.Add(this.cboSexo);
-            this.tpPerfil.Controls.Add(nacimientoLabel);
-            this.tpPerfil.Controls.Add(this.dtpNacimiento);
-            this.tpPerfil.Controls.Add(categoriaLabel);
-            this.tpPerfil.Controls.Add(razonSocialLabel);
-            this.tpPerfil.Controls.Add(this.txtRazonSocial);
-            this.tpPerfil.Controls.Add(nombreLabel);
-            this.tpPerfil.Controls.Add(this.txtNombre);
-            this.tpPerfil.Controls.Add(idClienteLabel);
-            this.tpPerfil.Controls.Add(this.txtId);
-            this.tpPerfil.Controls.Add(this.label1);
-            this.tpPerfil.Location = new System.Drawing.Point(4, 22);
-            this.tpPerfil.Name = "tpPerfil";
-            this.tpPerfil.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPerfil.Size = new System.Drawing.Size(922, 389);
-            this.tpPerfil.TabIndex = 0;
-            this.tpPerfil.Text = "Perfil";
-            this.tpPerfil.UseVisualStyleBackColor = true;
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Categoria", true));
-            this.txtCategoria.Location = new System.Drawing.Point(85, 108);
-            this.txtCategoria.MaxLength = 50;
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(181, 20);
-            this.txtCategoria.TabIndex = 8;
-            // 
             // bsMto
             // 
             this.bsMto.DataMember = "tbCliente";
@@ -625,287 +336,15 @@
             this.dsNeo.DataSetName = "DsNeo";
             this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtNota
-            // 
-            this.txtNota.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Nota", true));
-            this.txtNota.Location = new System.Drawing.Point(513, 156);
-            this.txtNota.MaxLength = 500;
-            this.txtNota.Multiline = true;
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(198, 146);
-            this.txtNota.TabIndex = 49;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(510, 132);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Nota";
-            // 
-            // chkActivo
-            // 
-            this.chkActivo.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Activo", true));
-            this.chkActivo.Location = new System.Drawing.Point(371, 127);
-            this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(21, 24);
-            this.chkActivo.TabIndex = 46;
-            this.chkActivo.UseVisualStyleBackColor = true;
-            // 
-            // lblTrabajo
-            // 
-            this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
-            this.lblTrabajo.Location = new System.Drawing.Point(372, 282);
-            this.lblTrabajo.Name = "lblTrabajo";
-            this.lblTrabajo.Size = new System.Drawing.Size(120, 20);
-            this.lblTrabajo.TabIndex = 44;
-            this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblEmpresa
-            // 
-            this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
-            this.lblEmpresa.Location = new System.Drawing.Point(372, 256);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(120, 20);
-            this.lblEmpresa.TabIndex = 42;
-            this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoCliente", true));
-            this.lblCodigo.Location = new System.Drawing.Point(372, 230);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(120, 20);
-            this.lblCodigo.TabIndex = 40;
-            this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtLimiteCredito
-            // 
-            this.txtLimiteCredito.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "LimiteCredito", true));
-            this.txtLimiteCredito.Location = new System.Drawing.Point(371, 103);
-            this.txtLimiteCredito.Name = "txtLimiteCredito";
-            this.txtLimiteCredito.Size = new System.Drawing.Size(121, 20);
-            this.txtLimiteCredito.TabIndex = 38;
-            // 
-            // cboPedido
-            // 
-            this.cboPedido.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "FormatoOrdenPedido", true));
-            this.cboPedido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPedido.FormattingEnabled = true;
-            this.cboPedido.Items.AddRange(new object[] {
-            "Personal",
-            "Empresa"});
-            this.cboPedido.Location = new System.Drawing.Point(600, 85);
-            this.cboPedido.Name = "cboPedido";
-            this.cboPedido.Size = new System.Drawing.Size(111, 21);
-            this.cboPedido.TabIndex = 36;
-            // 
-            // cboRecibo
-            // 
-            this.cboRecibo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "FormatoReciboIngreso", true));
-            this.cboRecibo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboRecibo.FormattingEnabled = true;
-            this.cboRecibo.Items.AddRange(new object[] {
-            "Personal",
-            "Empresa"});
-            this.cboRecibo.Location = new System.Drawing.Point(600, 58);
-            this.cboRecibo.Name = "cboRecibo";
-            this.cboRecibo.Size = new System.Drawing.Size(111, 21);
-            this.cboRecibo.TabIndex = 34;
-            // 
-            // cboFactura
-            // 
-            this.cboFactura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "FormatoFactura", true));
-            this.cboFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFactura.FormattingEnabled = true;
-            this.cboFactura.Items.AddRange(new object[] {
-            "Personal",
-            "Empresa"});
-            this.cboFactura.Location = new System.Drawing.Point(600, 32);
-            this.cboFactura.Name = "cboFactura";
-            this.cboFactura.Size = new System.Drawing.Size(111, 21);
-            this.cboFactura.TabIndex = 32;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(507, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Impresion";
-            // 
-            // lblEquipo
-            // 
-            this.lblEquipo.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblEquipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEquipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Equipo", true));
-            this.lblEquipo.Location = new System.Drawing.Point(371, 204);
-            this.lblEquipo.Name = "lblEquipo";
-            this.lblEquipo.Size = new System.Drawing.Size(121, 20);
-            this.lblEquipo.TabIndex = 29;
-            this.lblEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Usuario", true));
-            this.lblUsuario.Location = new System.Drawing.Point(371, 179);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(121, 20);
-            this.lblUsuario.TabIndex = 27;
-            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtCuentaContable
-            // 
-            this.txtCuentaContable.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CuentaContable", true));
-            this.txtCuentaContable.Location = new System.Drawing.Point(371, 77);
-            this.txtCuentaContable.Name = "txtCuentaContable";
-            this.txtCuentaContable.Size = new System.Drawing.Size(121, 20);
-            this.txtCuentaContable.TabIndex = 25;
-            // 
-            // lblApertura
-            // 
-            this.lblApertura.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblApertura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblApertura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Apertura", true));
-            this.lblApertura.Location = new System.Drawing.Point(371, 153);
-            this.lblApertura.Name = "lblApertura";
-            this.lblApertura.Size = new System.Drawing.Size(121, 20);
-            this.lblApertura.TabIndex = 23;
-            this.lblApertura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtUserWeb
-            // 
-            this.txtUserWeb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "IdUserWeb", true));
-            this.txtUserWeb.Location = new System.Drawing.Point(371, 52);
-            this.txtUserWeb.Name = "txtUserWeb";
-            this.txtUserWeb.Size = new System.Drawing.Size(121, 20);
-            this.txtUserWeb.TabIndex = 21;
-            // 
-            // cboSucursal
-            // 
-            this.cboSucursal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoSucursal", true));
-            this.cboSucursal.DataSource = this.bsSucursal;
-            this.cboSucursal.DisplayMember = "Nombre";
-            this.cboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSucursal.Enabled = false;
-            this.cboSucursal.FormattingEnabled = true;
-            this.cboSucursal.Location = new System.Drawing.Point(371, 25);
-            this.cboSucursal.Name = "cboSucursal";
-            this.cboSucursal.Size = new System.Drawing.Size(121, 21);
-            this.cboSucursal.TabIndex = 19;
-            this.cboSucursal.ValueMember = "CodigoSucursal";
-            // 
             // bsSucursal
             // 
             this.bsSucursal.DataMember = "tbSucursal";
             this.bsSucursal.DataSource = this.dsNeo;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(283, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Sistema";
-            // 
-            // lblTipoEstado
-            // 
-            this.lblTipoEstado.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblTipoEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTipoEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "TipoEstado", true));
-            this.lblTipoEstado.Location = new System.Drawing.Point(85, 216);
-            this.lblTipoEstado.Name = "lblTipoEstado";
-            this.lblTipoEstado.Size = new System.Drawing.Size(181, 20);
-            this.lblTipoEstado.TabIndex = 16;
-            // 
-            // cboEstadoCivil
-            // 
-            this.cboEstadoCivil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreEstadoCivil", true));
-            this.cboEstadoCivil.DataSource = this.bsEstado;
-            this.cboEstadoCivil.DisplayMember = "NombreEstado";
-            this.cboEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEstadoCivil.FormattingEnabled = true;
-            this.cboEstadoCivil.Location = new System.Drawing.Point(85, 188);
-            this.cboEstadoCivil.Name = "cboEstadoCivil";
-            this.cboEstadoCivil.Size = new System.Drawing.Size(181, 21);
-            this.cboEstadoCivil.TabIndex = 14;
-            this.cboEstadoCivil.ValueMember = "NombreEstado";
-            // 
             // bsEstado
             // 
             this.bsEstado.DataMember = "tbEstado";
             this.bsEstado.DataSource = this.dsNeo;
-            // 
-            // cboSexo
-            // 
-            this.cboSexo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Sexo", true));
-            this.cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSexo.FormattingEnabled = true;
-            this.cboSexo.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino",
-            "No Definido"});
-            this.cboSexo.Location = new System.Drawing.Point(85, 161);
-            this.cboSexo.Name = "cboSexo";
-            this.cboSexo.Size = new System.Drawing.Size(181, 21);
-            this.cboSexo.TabIndex = 12;
-            // 
-            // dtpNacimiento
-            // 
-            this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsMto, "Nacimiento", true));
-            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNacimiento.Location = new System.Drawing.Point(85, 135);
-            this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(181, 20);
-            this.dtpNacimiento.TabIndex = 10;
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "RazonSocial", true));
-            this.txtRazonSocial.Location = new System.Drawing.Point(85, 82);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(181, 20);
-            this.txtRazonSocial.TabIndex = 6;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Nombre", true));
-            this.txtNombre.Location = new System.Drawing.Point(85, 56);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(181, 20);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // txtId
-            // 
-            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "IdCliente", true));
-            this.txtId.Location = new System.Drawing.Point(85, 30);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(181, 20);
-            this.txtId.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Datos Generales";
             // 
             // tpSucursal
             // 
@@ -1997,38 +1436,17 @@
             // 
             // pnlProvincia
             // 
+            this.pnlProvincia.BackColor = System.Drawing.Color.White;
             this.pnlProvincia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlProvincia.Controls.Add(this.btnAceptar);
-            this.pnlProvincia.Controls.Add(this.btnProvinciaCancelar);
+            this.pnlProvincia.Controls.Add(this.btnProvinciaAcepta);
+            this.pnlProvincia.Controls.Add(this.btnProvinciaCancela);
             this.pnlProvincia.Controls.Add(this.pnlProvinciaSub);
             this.pnlProvincia.Controls.Add(this.label7);
-            this.pnlProvincia.Location = new System.Drawing.Point(558, 128);
+            this.pnlProvincia.Location = new System.Drawing.Point(575, 129);
             this.pnlProvincia.Name = "pnlProvincia";
-            this.pnlProvincia.Size = new System.Drawing.Size(317, 282);
+            this.pnlProvincia.Size = new System.Drawing.Size(317, 285);
             this.pnlProvincia.TabIndex = 12;
             this.pnlProvincia.Visible = false;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(249, 251);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(59, 23);
-            this.btnAceptar.TabIndex = 3;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnProvinciaCancelar
-            // 
-            this.btnProvinciaCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProvinciaCancelar.Location = new System.Drawing.Point(7, 251);
-            this.btnProvinciaCancelar.Name = "btnProvinciaCancelar";
-            this.btnProvinciaCancelar.Size = new System.Drawing.Size(59, 23);
-            this.btnProvinciaCancelar.TabIndex = 2;
-            this.btnProvinciaCancelar.Text = "Cancelar";
-            this.btnProvinciaCancelar.UseVisualStyleBackColor = true;
-            this.btnProvinciaCancelar.Click += new System.EventHandler(this.btnProvinciaCancelar_Click);
             // 
             // pnlProvinciaSub
             // 
@@ -2114,38 +1532,17 @@
             // 
             // pnlTipoContacto
             // 
+            this.pnlTipoContacto.BackColor = System.Drawing.Color.White;
             this.pnlTipoContacto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlTipoContacto.Controls.Add(this.btnTipoContactoAceptar);
-            this.pnlTipoContacto.Controls.Add(this.btnTipoContactoCancelar);
+            this.pnlTipoContacto.Controls.Add(this.btnTipoContactoAcepta);
+            this.pnlTipoContacto.Controls.Add(this.btnTipoServicioCancela);
             this.pnlTipoContacto.Controls.Add(this.pnlTipoContactoSub);
             this.pnlTipoContacto.Controls.Add(this.label8);
-            this.pnlTipoContacto.Location = new System.Drawing.Point(355, 128);
+            this.pnlTipoContacto.Location = new System.Drawing.Point(200, 128);
             this.pnlTipoContacto.Name = "pnlTipoContacto";
-            this.pnlTipoContacto.Size = new System.Drawing.Size(364, 282);
+            this.pnlTipoContacto.Size = new System.Drawing.Size(364, 286);
             this.pnlTipoContacto.TabIndex = 13;
             this.pnlTipoContacto.Visible = false;
-            // 
-            // btnTipoContactoAceptar
-            // 
-            this.btnTipoContactoAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoContactoAceptar.Location = new System.Drawing.Point(294, 251);
-            this.btnTipoContactoAceptar.Name = "btnTipoContactoAceptar";
-            this.btnTipoContactoAceptar.Size = new System.Drawing.Size(59, 23);
-            this.btnTipoContactoAceptar.TabIndex = 3;
-            this.btnTipoContactoAceptar.Text = "Aceptar";
-            this.btnTipoContactoAceptar.UseVisualStyleBackColor = true;
-            this.btnTipoContactoAceptar.Click += new System.EventHandler(this.btnTipoContactoAceptar_Click);
-            // 
-            // btnTipoContactoCancelar
-            // 
-            this.btnTipoContactoCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoContactoCancelar.Location = new System.Drawing.Point(7, 251);
-            this.btnTipoContactoCancelar.Name = "btnTipoContactoCancelar";
-            this.btnTipoContactoCancelar.Size = new System.Drawing.Size(59, 23);
-            this.btnTipoContactoCancelar.TabIndex = 2;
-            this.btnTipoContactoCancelar.Text = "Cancelar";
-            this.btnTipoContactoCancelar.UseVisualStyleBackColor = true;
-            this.btnTipoContactoCancelar.Click += new System.EventHandler(this.btnTipoContactoCancelar_Click);
             // 
             // pnlTipoContactoSub
             // 
@@ -2229,6 +1626,570 @@
             this.label8.Text = "Tipos de Contactos";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnTipoContactoAcepta
+            // 
+            this.btnTipoContactoAcepta.Location = new System.Drawing.Point(261, 253);
+            this.btnTipoContactoAcepta.Name = "btnTipoContactoAcepta";
+            this.btnTipoContactoAcepta.Size = new System.Drawing.Size(90, 25);
+            this.btnTipoContactoAcepta.TabIndex = 5;
+            this.btnTipoContactoAcepta.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptaServicio.Values.Image")));
+            this.btnTipoContactoAcepta.Values.Text = "Aceptar";
+            this.btnTipoContactoAcepta.Click += new System.EventHandler(this.btnTipoContactoAceptar_Click);
+            // 
+            // btnTipoServicioCancela
+            // 
+            this.btnTipoServicioCancela.Location = new System.Drawing.Point(12, 253);
+            this.btnTipoServicioCancela.Name = "btnTipoServicioCancela";
+            this.btnTipoServicioCancela.Size = new System.Drawing.Size(90, 25);
+            this.btnTipoServicioCancela.TabIndex = 4;
+            this.btnTipoServicioCancela.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelaServicio.Values.Image")));
+            this.btnTipoServicioCancela.Values.Text = "Cancelar";
+            this.btnTipoServicioCancela.Click += new System.EventHandler(this.btnTipoContactoCancelar_Click);
+            // 
+            // btnProvinciaAcepta
+            // 
+            this.btnProvinciaAcepta.Location = new System.Drawing.Point(213, 252);
+            this.btnProvinciaAcepta.Name = "btnProvinciaAcepta";
+            this.btnProvinciaAcepta.Size = new System.Drawing.Size(90, 25);
+            this.btnProvinciaAcepta.TabIndex = 7;
+            this.btnProvinciaAcepta.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
+            this.btnProvinciaAcepta.Values.Text = "Aceptar";
+            // 
+            // btnProvinciaCancela
+            // 
+            this.btnProvinciaCancela.Location = new System.Drawing.Point(11, 252);
+            this.btnProvinciaCancela.Name = "btnProvinciaCancela";
+            this.btnProvinciaCancela.Size = new System.Drawing.Size(90, 25);
+            this.btnProvinciaCancela.TabIndex = 6;
+            this.btnProvinciaCancela.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.Values.Image")));
+            this.btnProvinciaCancela.Values.Text = "Cancelar";
+            // 
+            // txtId
+            // 
+            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "IdCliente", true));
+            this.txtId.Location = new System.Drawing.Point(85, 30);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(181, 20);
+            this.txtId.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Nombre", true));
+            this.txtNombre.Location = new System.Drawing.Point(85, 56);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(181, 20);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "RazonSocial", true));
+            this.txtRazonSocial.Location = new System.Drawing.Point(85, 82);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(181, 20);
+            this.txtRazonSocial.TabIndex = 6;
+            // 
+            // dtpNacimiento
+            // 
+            this.dtpNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsMto, "Nacimiento", true));
+            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNacimiento.Location = new System.Drawing.Point(85, 135);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(181, 20);
+            this.dtpNacimiento.TabIndex = 10;
+            // 
+            // cboSexo
+            // 
+            this.cboSexo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Sexo", true));
+            this.cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSexo.FormattingEnabled = true;
+            this.cboSexo.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino",
+            "No Definido"});
+            this.cboSexo.Location = new System.Drawing.Point(85, 161);
+            this.cboSexo.Name = "cboSexo";
+            this.cboSexo.Size = new System.Drawing.Size(181, 21);
+            this.cboSexo.TabIndex = 12;
+            // 
+            // cboEstadoCivil
+            // 
+            this.cboEstadoCivil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreEstadoCivil", true));
+            this.cboEstadoCivil.DataSource = this.bsEstado;
+            this.cboEstadoCivil.DisplayMember = "NombreEstado";
+            this.cboEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstadoCivil.FormattingEnabled = true;
+            this.cboEstadoCivil.Location = new System.Drawing.Point(85, 188);
+            this.cboEstadoCivil.Name = "cboEstadoCivil";
+            this.cboEstadoCivil.Size = new System.Drawing.Size(181, 21);
+            this.cboEstadoCivil.TabIndex = 14;
+            this.cboEstadoCivil.ValueMember = "NombreEstado";
+            // 
+            // lblTipoEstado
+            // 
+            this.lblTipoEstado.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblTipoEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTipoEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "TipoEstado", true));
+            this.lblTipoEstado.Location = new System.Drawing.Point(85, 216);
+            this.lblTipoEstado.Name = "lblTipoEstado";
+            this.lblTipoEstado.Size = new System.Drawing.Size(181, 20);
+            this.lblTipoEstado.TabIndex = 16;
+            // 
+            // cboSucursal
+            // 
+            this.cboSucursal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoSucursal", true));
+            this.cboSucursal.DataSource = this.bsSucursal;
+            this.cboSucursal.DisplayMember = "Nombre";
+            this.cboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSucursal.Enabled = false;
+            this.cboSucursal.FormattingEnabled = true;
+            this.cboSucursal.Location = new System.Drawing.Point(370, 29);
+            this.cboSucursal.Name = "cboSucursal";
+            this.cboSucursal.Size = new System.Drawing.Size(121, 21);
+            this.cboSucursal.TabIndex = 19;
+            this.cboSucursal.ValueMember = "CodigoSucursal";
+            // 
+            // txtUserWeb
+            // 
+            this.txtUserWeb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "IdUserWeb", true));
+            this.txtUserWeb.Location = new System.Drawing.Point(370, 56);
+            this.txtUserWeb.Name = "txtUserWeb";
+            this.txtUserWeb.Size = new System.Drawing.Size(121, 20);
+            this.txtUserWeb.TabIndex = 21;
+            // 
+            // lblApertura
+            // 
+            this.lblApertura.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblApertura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblApertura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Apertura", true));
+            this.lblApertura.Location = new System.Drawing.Point(370, 130);
+            this.lblApertura.Name = "lblApertura";
+            this.lblApertura.Size = new System.Drawing.Size(121, 20);
+            this.lblApertura.TabIndex = 23;
+            this.lblApertura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtCuentaContable
+            // 
+            this.txtCuentaContable.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CuentaContable", true));
+            this.txtCuentaContable.Location = new System.Drawing.Point(371, 313);
+            this.txtCuentaContable.Name = "txtCuentaContable";
+            this.txtCuentaContable.Size = new System.Drawing.Size(121, 20);
+            this.txtCuentaContable.TabIndex = 25;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Usuario", true));
+            this.lblUsuario.Location = new System.Drawing.Point(370, 156);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(121, 20);
+            this.lblUsuario.TabIndex = 27;
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblEquipo
+            // 
+            this.lblEquipo.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblEquipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEquipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Equipo", true));
+            this.lblEquipo.Location = new System.Drawing.Point(370, 181);
+            this.lblEquipo.Name = "lblEquipo";
+            this.lblEquipo.Size = new System.Drawing.Size(121, 20);
+            this.lblEquipo.TabIndex = 29;
+            this.lblEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cboFactura
+            // 
+            this.cboFactura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "FormatoFactura", true));
+            this.cboFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFactura.FormattingEnabled = true;
+            this.cboFactura.Items.AddRange(new object[] {
+            "Personal",
+            "Empresa"});
+            this.cboFactura.Location = new System.Drawing.Point(600, 32);
+            this.cboFactura.Name = "cboFactura";
+            this.cboFactura.Size = new System.Drawing.Size(111, 21);
+            this.cboFactura.TabIndex = 32;
+            // 
+            // cboRecibo
+            // 
+            this.cboRecibo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "FormatoReciboIngreso", true));
+            this.cboRecibo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRecibo.FormattingEnabled = true;
+            this.cboRecibo.Items.AddRange(new object[] {
+            "Personal",
+            "Empresa"});
+            this.cboRecibo.Location = new System.Drawing.Point(600, 58);
+            this.cboRecibo.Name = "cboRecibo";
+            this.cboRecibo.Size = new System.Drawing.Size(111, 21);
+            this.cboRecibo.TabIndex = 34;
+            // 
+            // cboPedido
+            // 
+            this.cboPedido.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "FormatoOrdenPedido", true));
+            this.cboPedido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPedido.FormattingEnabled = true;
+            this.cboPedido.Items.AddRange(new object[] {
+            "Personal",
+            "Empresa"});
+            this.cboPedido.Location = new System.Drawing.Point(600, 85);
+            this.cboPedido.Name = "cboPedido";
+            this.cboPedido.Size = new System.Drawing.Size(111, 21);
+            this.cboPedido.TabIndex = 36;
+            // 
+            // txtLimiteCredito
+            // 
+            this.txtLimiteCredito.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "LimiteCredito", true));
+            this.txtLimiteCredito.Location = new System.Drawing.Point(370, 82);
+            this.txtLimiteCredito.Name = "txtLimiteCredito";
+            this.txtLimiteCredito.Size = new System.Drawing.Size(121, 20);
+            this.txtLimiteCredito.TabIndex = 38;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoCliente", true));
+            this.lblCodigo.Location = new System.Drawing.Point(371, 207);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(120, 20);
+            this.lblCodigo.TabIndex = 40;
+            this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
+            this.lblEmpresa.Location = new System.Drawing.Point(371, 233);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(120, 20);
+            this.lblEmpresa.TabIndex = 42;
+            this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTrabajo
+            // 
+            this.lblTrabajo.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
+            this.lblTrabajo.Location = new System.Drawing.Point(371, 259);
+            this.lblTrabajo.Name = "lblTrabajo";
+            this.lblTrabajo.Size = new System.Drawing.Size(120, 20);
+            this.lblTrabajo.TabIndex = 44;
+            this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // chkActivo
+            // 
+            this.chkActivo.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Activo", true));
+            this.chkActivo.Location = new System.Drawing.Point(370, 106);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(21, 24);
+            this.chkActivo.TabIndex = 46;
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
+            // txtNota
+            // 
+            this.txtNota.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Nota", true));
+            this.txtNota.Location = new System.Drawing.Point(508, 141);
+            this.txtNota.MaxLength = 500;
+            this.txtNota.Multiline = true;
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(198, 146);
+            this.txtNota.TabIndex = 49;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "Categoria", true));
+            this.txtCategoria.Location = new System.Drawing.Point(85, 108);
+            this.txtCategoria.MaxLength = 50;
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(181, 20);
+            this.txtCategoria.TabIndex = 8;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel1.Location = new System.Drawing.Point(14, 4);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(104, 20);
+            this.kryptonLabel1.TabIndex = 50;
+            this.kryptonLabel1.Values.Text = "Datos Generales";
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel2.Location = new System.Drawing.Point(280, 4);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(56, 20);
+            this.kryptonLabel2.TabIndex = 51;
+            this.kryptonLabel2.Values.Text = "Sistema";
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel3.Location = new System.Drawing.Point(504, 6);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(69, 20);
+            this.kryptonLabel3.TabIndex = 52;
+            this.kryptonLabel3.Values.Text = "Impresion";
+            // 
+            // kryptonLabel4
+            // 
+            this.kryptonLabel4.Location = new System.Drawing.Point(25, 56);
+            this.kryptonLabel4.Name = "kryptonLabel4";
+            this.kryptonLabel4.Size = new System.Drawing.Size(58, 20);
+            this.kryptonLabel4.TabIndex = 53;
+            this.kryptonLabel4.Values.Text = "Nombre:";
+            // 
+            // kryptonLabel5
+            // 
+            this.kryptonLabel5.Location = new System.Drawing.Point(58, 29);
+            this.kryptonLabel5.Name = "kryptonLabel5";
+            this.kryptonLabel5.Size = new System.Drawing.Size(25, 20);
+            this.kryptonLabel5.TabIndex = 54;
+            this.kryptonLabel5.Values.Text = "ID:";
+            // 
+            // kryptonLabel6
+            // 
+            this.kryptonLabel6.Location = new System.Drawing.Point(1, 81);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(82, 20);
+            this.kryptonLabel6.TabIndex = 55;
+            this.kryptonLabel6.Values.Text = "Razón Social:";
+            // 
+            // kryptonLabel7
+            // 
+            this.kryptonLabel7.Location = new System.Drawing.Point(17, 108);
+            this.kryptonLabel7.Name = "kryptonLabel7";
+            this.kryptonLabel7.Size = new System.Drawing.Size(66, 20);
+            this.kryptonLabel7.TabIndex = 56;
+            this.kryptonLabel7.Values.Text = "Categoría:";
+            // 
+            // kryptonLabel8
+            // 
+            this.kryptonLabel8.Location = new System.Drawing.Point(7, 135);
+            this.kryptonLabel8.Name = "kryptonLabel8";
+            this.kryptonLabel8.Size = new System.Drawing.Size(76, 20);
+            this.kryptonLabel8.TabIndex = 57;
+            this.kryptonLabel8.Values.Text = "Nacimiento:";
+            // 
+            // kryptonLabel9
+            // 
+            this.kryptonLabel9.Location = new System.Drawing.Point(44, 162);
+            this.kryptonLabel9.Name = "kryptonLabel9";
+            this.kryptonLabel9.Size = new System.Drawing.Size(39, 20);
+            this.kryptonLabel9.TabIndex = 58;
+            this.kryptonLabel9.Values.Text = "Sexo:";
+            // 
+            // kryptonLabel10
+            // 
+            this.kryptonLabel10.Location = new System.Drawing.Point(7, 188);
+            this.kryptonLabel10.Name = "kryptonLabel10";
+            this.kryptonLabel10.Size = new System.Drawing.Size(76, 20);
+            this.kryptonLabel10.TabIndex = 59;
+            this.kryptonLabel10.Values.Text = "Estado Civil:";
+            // 
+            // tpPerfil
+            // 
+            this.tpPerfil.AutoScroll = true;
+            this.tpPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tpPerfil.Controls.Add(this.kryptonLabel27);
+            this.tpPerfil.Controls.Add(this.kryptonLabel26);
+            this.tpPerfil.Controls.Add(this.kryptonLabel25);
+            this.tpPerfil.Controls.Add(this.kryptonLabel24);
+            this.tpPerfil.Controls.Add(this.kryptonLabel23);
+            this.tpPerfil.Controls.Add(this.kryptonLabel22);
+            this.tpPerfil.Controls.Add(this.kryptonLabel21);
+            this.tpPerfil.Controls.Add(this.kryptonLabel20);
+            this.tpPerfil.Controls.Add(this.kryptonLabel19);
+            this.tpPerfil.Controls.Add(this.kryptonLabel18);
+            this.tpPerfil.Controls.Add(this.kryptonLabel17);
+            this.tpPerfil.Controls.Add(this.kryptonLabel16);
+            this.tpPerfil.Controls.Add(this.kryptonLabel15);
+            this.tpPerfil.Controls.Add(this.kryptonLabel14);
+            this.tpPerfil.Controls.Add(this.kryptonLabel13);
+            this.tpPerfil.Controls.Add(this.kryptonLabel12);
+            this.tpPerfil.Controls.Add(this.kryptonLabel11);
+            this.tpPerfil.Controls.Add(this.kryptonLabel10);
+            this.tpPerfil.Controls.Add(this.kryptonLabel9);
+            this.tpPerfil.Controls.Add(this.kryptonLabel8);
+            this.tpPerfil.Controls.Add(this.kryptonLabel7);
+            this.tpPerfil.Controls.Add(this.kryptonLabel6);
+            this.tpPerfil.Controls.Add(this.kryptonLabel5);
+            this.tpPerfil.Controls.Add(this.kryptonLabel4);
+            this.tpPerfil.Controls.Add(this.kryptonLabel3);
+            this.tpPerfil.Controls.Add(this.kryptonLabel2);
+            this.tpPerfil.Controls.Add(this.kryptonLabel1);
+            this.tpPerfil.Controls.Add(this.txtCategoria);
+            this.tpPerfil.Controls.Add(this.txtNota);
+            this.tpPerfil.Controls.Add(this.chkActivo);
+            this.tpPerfil.Controls.Add(this.lblTrabajo);
+            this.tpPerfil.Controls.Add(this.lblEmpresa);
+            this.tpPerfil.Controls.Add(this.lblCodigo);
+            this.tpPerfil.Controls.Add(this.txtLimiteCredito);
+            this.tpPerfil.Controls.Add(this.cboPedido);
+            this.tpPerfil.Controls.Add(this.cboRecibo);
+            this.tpPerfil.Controls.Add(this.cboFactura);
+            this.tpPerfil.Controls.Add(this.lblEquipo);
+            this.tpPerfil.Controls.Add(this.lblUsuario);
+            this.tpPerfil.Controls.Add(this.txtCuentaContable);
+            this.tpPerfil.Controls.Add(this.lblApertura);
+            this.tpPerfil.Controls.Add(this.txtUserWeb);
+            this.tpPerfil.Controls.Add(this.cboSucursal);
+            this.tpPerfil.Controls.Add(this.lblTipoEstado);
+            this.tpPerfil.Controls.Add(this.cboEstadoCivil);
+            this.tpPerfil.Controls.Add(this.cboSexo);
+            this.tpPerfil.Controls.Add(this.dtpNacimiento);
+            this.tpPerfil.Controls.Add(this.txtRazonSocial);
+            this.tpPerfil.Controls.Add(this.txtNombre);
+            this.tpPerfil.Controls.Add(this.txtId);
+            this.tpPerfil.Location = new System.Drawing.Point(4, 22);
+            this.tpPerfil.Name = "tpPerfil";
+            this.tpPerfil.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPerfil.Size = new System.Drawing.Size(922, 389);
+            this.tpPerfil.TabIndex = 0;
+            this.tpPerfil.Text = "Perfil";
+            this.tpPerfil.UseVisualStyleBackColor = true;
+            // 
+            // kryptonLabel11
+            // 
+            this.kryptonLabel11.Location = new System.Drawing.Point(46, 215);
+            this.kryptonLabel11.Name = "kryptonLabel11";
+            this.kryptonLabel11.Size = new System.Drawing.Size(37, 20);
+            this.kryptonLabel11.TabIndex = 60;
+            this.kryptonLabel11.Values.Text = "Tipo:";
+            // 
+            // kryptonLabel12
+            // 
+            this.kryptonLabel12.Location = new System.Drawing.Point(310, 29);
+            this.kryptonLabel12.Name = "kryptonLabel12";
+            this.kryptonLabel12.Size = new System.Drawing.Size(58, 20);
+            this.kryptonLabel12.TabIndex = 61;
+            this.kryptonLabel12.Values.Text = "Sucursal:";
+            // 
+            // kryptonLabel13
+            // 
+            this.kryptonLabel13.Location = new System.Drawing.Point(302, 56);
+            this.kryptonLabel13.Name = "kryptonLabel13";
+            this.kryptonLabel13.Size = new System.Drawing.Size(66, 20);
+            this.kryptonLabel13.TabIndex = 62;
+            this.kryptonLabel13.Values.Text = "User Web:";
+            // 
+            // kryptonLabel14
+            // 
+            this.kryptonLabel14.Location = new System.Drawing.Point(317, 313);
+            this.kryptonLabel14.Name = "kryptonLabel14";
+            this.kryptonLabel14.Size = new System.Drawing.Size(52, 20);
+            this.kryptonLabel14.TabIndex = 63;
+            this.kryptonLabel14.Values.Text = "Cuenta:";
+            // 
+            // kryptonLabel15
+            // 
+            this.kryptonLabel15.Location = new System.Drawing.Point(278, 82);
+            this.kryptonLabel15.Name = "kryptonLabel15";
+            this.kryptonLabel15.Size = new System.Drawing.Size(90, 20);
+            this.kryptonLabel15.TabIndex = 64;
+            this.kryptonLabel15.Values.Text = "Límite Crédito:";
+            this.kryptonLabel15.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonLabel15_Paint);
+            // 
+            // kryptonLabel16
+            // 
+            this.kryptonLabel16.Location = new System.Drawing.Point(320, 108);
+            this.kryptonLabel16.Name = "kryptonLabel16";
+            this.kryptonLabel16.Size = new System.Drawing.Size(47, 20);
+            this.kryptonLabel16.TabIndex = 65;
+            this.kryptonLabel16.Values.Text = "Activo:";
+            // 
+            // kryptonLabel17
+            // 
+            this.kryptonLabel17.Location = new System.Drawing.Point(307, 130);
+            this.kryptonLabel17.Name = "kryptonLabel17";
+            this.kryptonLabel17.Size = new System.Drawing.Size(61, 20);
+            this.kryptonLabel17.TabIndex = 66;
+            this.kryptonLabel17.Values.Text = "Apertura:";
+            // 
+            // kryptonLabel18
+            // 
+            this.kryptonLabel18.Location = new System.Drawing.Point(313, 156);
+            this.kryptonLabel18.Name = "kryptonLabel18";
+            this.kryptonLabel18.Size = new System.Drawing.Size(55, 20);
+            this.kryptonLabel18.TabIndex = 67;
+            this.kryptonLabel18.Values.Text = "Usuario:";
+            // 
+            // kryptonLabel19
+            // 
+            this.kryptonLabel19.Location = new System.Drawing.Point(317, 181);
+            this.kryptonLabel19.Name = "kryptonLabel19";
+            this.kryptonLabel19.Size = new System.Drawing.Size(51, 20);
+            this.kryptonLabel19.TabIndex = 68;
+            this.kryptonLabel19.Values.Text = "Equipo:";
+            // 
+            // kryptonLabel20
+            // 
+            this.kryptonLabel20.Location = new System.Drawing.Point(316, 207);
+            this.kryptonLabel20.Name = "kryptonLabel20";
+            this.kryptonLabel20.Size = new System.Drawing.Size(53, 20);
+            this.kryptonLabel20.TabIndex = 69;
+            this.kryptonLabel20.Values.Text = "Código:";
+            // 
+            // kryptonLabel21
+            // 
+            this.kryptonLabel21.Location = new System.Drawing.Point(309, 233);
+            this.kryptonLabel21.Name = "kryptonLabel21";
+            this.kryptonLabel21.Size = new System.Drawing.Size(60, 20);
+            this.kryptonLabel21.TabIndex = 70;
+            this.kryptonLabel21.Values.Text = "Empresa:";
+            // 
+            // kryptonLabel22
+            // 
+            this.kryptonLabel22.Location = new System.Drawing.Point(315, 259);
+            this.kryptonLabel22.Name = "kryptonLabel22";
+            this.kryptonLabel22.Size = new System.Drawing.Size(54, 20);
+            this.kryptonLabel22.TabIndex = 71;
+            this.kryptonLabel22.Values.Text = "Trabajo:";
+            // 
+            // kryptonLabel23
+            // 
+            this.kryptonLabel23.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel23.Location = new System.Drawing.Point(280, 288);
+            this.kryptonLabel23.Name = "kryptonLabel23";
+            this.kryptonLabel23.Size = new System.Drawing.Size(85, 20);
+            this.kryptonLabel23.TabIndex = 72;
+            this.kryptonLabel23.Values.Text = "Contabilidad";
+            // 
+            // kryptonLabel24
+            // 
+            this.kryptonLabel24.Location = new System.Drawing.Point(545, 32);
+            this.kryptonLabel24.Name = "kryptonLabel24";
+            this.kryptonLabel24.Size = new System.Drawing.Size(53, 20);
+            this.kryptonLabel24.TabIndex = 73;
+            this.kryptonLabel24.Values.Text = "Factura:";
+            // 
+            // kryptonLabel25
+            // 
+            this.kryptonLabel25.Location = new System.Drawing.Point(504, 58);
+            this.kryptonLabel25.Name = "kryptonLabel25";
+            this.kryptonLabel25.Size = new System.Drawing.Size(94, 20);
+            this.kryptonLabel25.TabIndex = 74;
+            this.kryptonLabel25.Values.Text = "Recibo Ingreso:";
+            // 
+            // kryptonLabel26
+            // 
+            this.kryptonLabel26.Location = new System.Drawing.Point(509, 85);
+            this.kryptonLabel26.Name = "kryptonLabel26";
+            this.kryptonLabel26.Size = new System.Drawing.Size(89, 20);
+            this.kryptonLabel26.TabIndex = 75;
+            this.kryptonLabel26.Values.Text = "Orden Pedido:";
+            this.kryptonLabel26.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonLabel26_Paint);
+            // 
+            // kryptonLabel27
+            // 
+            this.kryptonLabel27.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel27.Location = new System.Drawing.Point(504, 117);
+            this.kryptonLabel27.Name = "kryptonLabel27";
+            this.kryptonLabel27.Size = new System.Drawing.Size(39, 20);
+            this.kryptonLabel27.TabIndex = 76;
+            this.kryptonLabel27.Values.Text = "Nota";
+            // 
             // FrmMtoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2247,8 +2208,6 @@
             this.pnl3.ResumeLayout(false);
             this.pnl6.ResumeLayout(false);
             this.tcMto.ResumeLayout(false);
-            this.tpPerfil.ResumeLayout(false);
-            this.tpPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsMto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSucursal)).EndInit();
@@ -2292,6 +2251,8 @@
             this.pnlTipoContactoSub.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdTipoContacto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTipoContacto)).EndInit();
+            this.tpPerfil.ResumeLayout(false);
+            this.tpPerfil.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2324,31 +2285,7 @@
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.TabControl tcMto;
-        private System.Windows.Forms.TabPage tpPerfil;
-        private System.Windows.Forms.TextBox txtRazonSocial;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tpSucursal;
-        private System.Windows.Forms.Label lblTrabajo;
-        private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox txtLimiteCredito;
-        private System.Windows.Forms.ComboBox cboPedido;
-        private System.Windows.Forms.ComboBox cboRecibo;
-        private System.Windows.Forms.ComboBox cboFactura;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblEquipo;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.TextBox txtCuentaContable;
-        private System.Windows.Forms.Label lblApertura;
-        private System.Windows.Forms.TextBox txtUserWeb;
-        private System.Windows.Forms.ComboBox cboSucursal;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblTipoEstado;
-        private System.Windows.Forms.ComboBox cboEstadoCivil;
-        private System.Windows.Forms.ComboBox cboSexo;
-        private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoClienteDataGridViewTextBoxColumn;
@@ -2372,9 +2309,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn formatoFacturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formatoReciboIngresoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formatoOrdenPedidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.CheckBox chkActivo;
-        private System.Windows.Forms.TextBox txtNota;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnl7;
         private System.Windows.Forms.Panel pnl8;
         private System.Windows.Forms.Panel pnl12;
@@ -2421,7 +2355,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdIdentificacion;
         private System.Windows.Forms.BindingSource bsSucursal;
         private DsNeoTableAdapters.taSucursal taSucursal;
-        private System.Windows.Forms.TextBox txtCategoria;
         private DsNeoTableAdapters.taPais taPais;
         private DsNeoTableAdapters.taProvincia taProvincia;
         private DsNeoTableAdapters.taSucursalMiembro taSucursalMiembro;
@@ -2429,8 +2362,6 @@
         private DsNeoTableAdapters.taContactoMiembro taContactoMiembro;
         private DsNeoTableAdapters.taTipoContacto taTipoContacto;
         private System.Windows.Forms.Panel pnlProvincia;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnProvinciaCancelar;
         private System.Windows.Forms.Panel pnlProvinciaSub;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdProvincia;
         private System.Windows.Forms.BindingSource bsProvincia;
@@ -2440,8 +2371,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.Panel pnlTipoContacto;
-        private System.Windows.Forms.Button btnTipoContactoAceptar;
-        private System.Windows.Forms.Button btnTipoContactoCancelar;
         private System.Windows.Forms.Panel pnlTipoContactoSub;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdTipoContacto;
         private System.Windows.Forms.Label label8;
@@ -2473,5 +2402,60 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoIdentificacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreNacionalidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn identificacionDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnTipoContactoAcepta;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnTipoServicioCancela;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnProvinciaAcepta;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnProvinciaCancela;
+        private System.Windows.Forms.TabPage tpPerfil;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel16;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel15;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel14;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel13;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel12;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel11;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel10;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel8;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtNota;
+        private System.Windows.Forms.CheckBox chkActivo;
+        private System.Windows.Forms.Label lblTrabajo;
+        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtLimiteCredito;
+        private System.Windows.Forms.ComboBox cboPedido;
+        private System.Windows.Forms.ComboBox cboRecibo;
+        private System.Windows.Forms.ComboBox cboFactura;
+        private System.Windows.Forms.Label lblEquipo;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.TextBox txtCuentaContable;
+        private System.Windows.Forms.Label lblApertura;
+        private System.Windows.Forms.TextBox txtUserWeb;
+        private System.Windows.Forms.ComboBox cboSucursal;
+        private System.Windows.Forms.Label lblTipoEstado;
+        private System.Windows.Forms.ComboBox cboEstadoCivil;
+        private System.Windows.Forms.ComboBox cboSexo;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.TextBox txtRazonSocial;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtId;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel26;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel25;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel24;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel23;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel22;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel21;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel20;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel19;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel18;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel17;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel27;
     }
 }

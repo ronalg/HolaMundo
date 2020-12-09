@@ -241,20 +241,20 @@
             // 
             this.mnuMtoPerfilArticulo.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilArticulo.Image")));
             this.mnuMtoPerfilArticulo.Name = "mnuMtoPerfilArticulo";
-            this.mnuMtoPerfilArticulo.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoPerfilArticulo.Size = new System.Drawing.Size(165, 22);
             this.mnuMtoPerfilArticulo.Text = "Perfil";
             this.mnuMtoPerfilArticulo.Click += new System.EventHandler(this.mnuMtoPerfilArticulo_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(162, 6);
             // 
             // mnuPrecioVenta
             // 
             this.mnuPrecioVenta.Image = ((System.Drawing.Image)(resources.GetObject("mnuPrecioVenta.Image")));
             this.mnuPrecioVenta.Name = "mnuPrecioVenta";
-            this.mnuPrecioVenta.Size = new System.Drawing.Size(180, 22);
+            this.mnuPrecioVenta.Size = new System.Drawing.Size(165, 22);
             this.mnuPrecioVenta.Text = "Precios de Ventas";
             this.mnuPrecioVenta.Click += new System.EventHandler(this.mnuPrecioVenta_Click);
             // 
@@ -269,7 +269,6 @@
             this.mnuMtoPerfilCliente,
             this.toolStripSeparator9,
             this.mnuMtoNacionalidad});
-            this.mnuMtoCliente.Enabled = false;
             this.mnuMtoCliente.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoCliente.Image")));
             this.mnuMtoCliente.Name = "mnuMtoCliente";
             this.mnuMtoCliente.Size = new System.Drawing.Size(180, 22);
@@ -277,23 +276,22 @@
             // 
             // mnuMtoPerfilCliente
             // 
-            this.mnuMtoPerfilCliente.Enabled = false;
             this.mnuMtoPerfilCliente.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilCliente.Image")));
             this.mnuMtoPerfilCliente.Name = "mnuMtoPerfilCliente";
-            this.mnuMtoPerfilCliente.Size = new System.Drawing.Size(155, 22);
+            this.mnuMtoPerfilCliente.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoPerfilCliente.Text = "Perfil";
             this.mnuMtoPerfilCliente.Click += new System.EventHandler(this.mnuMtoPerfilCliente_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(177, 6);
             // 
             // mnuMtoNacionalidad
             // 
             this.mnuMtoNacionalidad.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoNacionalidad.Image")));
             this.mnuMtoNacionalidad.Name = "mnuMtoNacionalidad";
-            this.mnuMtoNacionalidad.Size = new System.Drawing.Size(155, 22);
+            this.mnuMtoNacionalidad.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoNacionalidad.Text = "Nacionalidades";
             this.mnuMtoNacionalidad.Click += new System.EventHandler(this.mnuMtoNacionalidad_Click);
             // 
@@ -368,7 +366,6 @@
             // 
             // mnuMtoEstado
             // 
-            this.mnuMtoEstado.Enabled = false;
             this.mnuMtoEstado.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoEstado.Image")));
             this.mnuMtoEstado.Name = "mnuMtoEstado";
             this.mnuMtoEstado.Size = new System.Drawing.Size(180, 22);
@@ -566,7 +563,7 @@
             // 
             this.mnuTscFactura.Enabled = false;
             this.mnuTscFactura.Name = "mnuTscFactura";
-            this.mnuTscFactura.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscFactura.Size = new System.Drawing.Size(179, 22);
             this.mnuTscFactura.Text = "Facturas";
             this.mnuTscFactura.Click += new System.EventHandler(this.mnuTscFactura_Click);
             // 
@@ -574,7 +571,7 @@
             // 
             this.mnuTscOrdenPedido.Enabled = false;
             this.mnuTscOrdenPedido.Name = "mnuTscOrdenPedido";
-            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(179, 22);
             this.mnuTscOrdenPedido.Text = "Ordenes de Pedidos";
             this.mnuTscOrdenPedido.Click += new System.EventHandler(this.mnuTscOrdenPedido_Click);
             // 
@@ -582,14 +579,13 @@
             // 
             this.mnuTscIncripcion.Enabled = false;
             this.mnuTscIncripcion.Name = "mnuTscIncripcion";
-            this.mnuTscIncripcion.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscIncripcion.Size = new System.Drawing.Size(179, 22);
             this.mnuTscIncripcion.Text = "Incripciones";
             // 
             // mnuTscCita
             // 
-            this.mnuTscCita.Enabled = false;
             this.mnuTscCita.Name = "mnuTscCita";
-            this.mnuTscCita.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscCita.Size = new System.Drawing.Size(179, 22);
             this.mnuTscCita.Text = "Citas";
             this.mnuTscCita.Click += new System.EventHandler(this.mnuTscCita_Click);
             // 
