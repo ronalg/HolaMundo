@@ -29,47 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label nombreGrupoLabel;
-            System.Windows.Forms.Label nombreRazaLabel;
-            System.Windows.Forms.Label sexoLabel;
-            System.Windows.Forms.Label nombreEstadoLabel;
-            System.Windows.Forms.Label nombreCaracterLabel;
-            System.Windows.Forms.Label nombrePelajeLabel;
-            System.Windows.Forms.Label nombreGrupoSanguineoLabel;
-            System.Windows.Forms.Label colorLabel;
-            System.Windows.Forms.Label nacimientoLabel;
-            System.Windows.Forms.Label corteOrejaLabel;
-            System.Windows.Forms.Label corteColaLabel;
-            System.Windows.Forms.Label castradoLabel;
-            System.Windows.Forms.Label exhibicionLabel;
-            System.Windows.Forms.Label dietaLabel;
-            System.Windows.Forms.Label notaLabel;
-            System.Windows.Forms.Label codigoClienteLabel;
-            System.Windows.Forms.Label imagenLabel;
-            System.Windows.Forms.Label aperturaLabel;
-            System.Windows.Forms.Label usuarioLabel;
-            System.Windows.Forms.Label equipoLabel;
-            System.Windows.Forms.Label codigoMascotaLabel;
-            System.Windows.Forms.Label codigoSucursalLabel;
-            System.Windows.Forms.Label codigoTrabajoLabel;
-            System.Windows.Forms.Label codigoEmpresaLabel;
-            System.Windows.Forms.Label pedigriLabel;
-            System.Windows.Forms.Label peluqueriaLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoMascota));
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcMascota = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.tpMascota = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.kryptonLabel22 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel21 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel20 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel19 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel18 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel17 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel16 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel15 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel14 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel13 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel12 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel11 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,7 +76,6 @@
             this.nombreTipoContactoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsSucursalContacto = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             this.cboVeterinario = new System.Windows.Forms.ComboBox();
             this.lblVeterinario = new System.Windows.Forms.Label();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
@@ -97,16 +89,13 @@
             this.lblEquipo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtApertura = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnBuscar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnQuitar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pbImagen = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblDueno = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.txtBusca = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.txtDieta = new System.Windows.Forms.TextBox();
             this.chkExhibicion = new System.Windows.Forms.CheckBox();
@@ -123,7 +112,6 @@
             this.cboRaza = new System.Windows.Forms.ComboBox();
             this.cboGrupo = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tpCita = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.grdCita = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.codigoTrabajoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -210,33 +198,18 @@
             this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
             this.taSucursalContacto = new Neo.DsNeoTableAdapters.taSucursalContacto();
             this.taCitaMascota = new Neo.DsNeoTableAdapters.taCitaMascota();
-            nombreLabel = new System.Windows.Forms.Label();
-            nombreGrupoLabel = new System.Windows.Forms.Label();
-            nombreRazaLabel = new System.Windows.Forms.Label();
-            sexoLabel = new System.Windows.Forms.Label();
-            nombreEstadoLabel = new System.Windows.Forms.Label();
-            nombreCaracterLabel = new System.Windows.Forms.Label();
-            nombrePelajeLabel = new System.Windows.Forms.Label();
-            nombreGrupoSanguineoLabel = new System.Windows.Forms.Label();
-            colorLabel = new System.Windows.Forms.Label();
-            nacimientoLabel = new System.Windows.Forms.Label();
-            corteOrejaLabel = new System.Windows.Forms.Label();
-            corteColaLabel = new System.Windows.Forms.Label();
-            castradoLabel = new System.Windows.Forms.Label();
-            exhibicionLabel = new System.Windows.Forms.Label();
-            dietaLabel = new System.Windows.Forms.Label();
-            notaLabel = new System.Windows.Forms.Label();
-            codigoClienteLabel = new System.Windows.Forms.Label();
-            imagenLabel = new System.Windows.Forms.Label();
-            aperturaLabel = new System.Windows.Forms.Label();
-            usuarioLabel = new System.Windows.Forms.Label();
-            equipoLabel = new System.Windows.Forms.Label();
-            codigoMascotaLabel = new System.Windows.Forms.Label();
-            codigoSucursalLabel = new System.Windows.Forms.Label();
-            codigoTrabajoLabel = new System.Windows.Forms.Label();
-            codigoEmpresaLabel = new System.Windows.Forms.Label();
-            pedigriLabel = new System.Windows.Forms.Label();
-            peluqueriaLabel = new System.Windows.Forms.Label();
+            this.kryptonLabel23 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel24 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel25 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel26 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel27 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel28 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel29 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel30 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel31 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel32 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel33 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel34 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcMascota)).BeginInit();
@@ -264,249 +237,6 @@
             this.bnMto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(60, 31);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 1;
-            nombreLabel.Text = "Nombre:";
-            // 
-            // nombreGrupoLabel
-            // 
-            nombreGrupoLabel.AutoSize = true;
-            nombreGrupoLabel.Location = new System.Drawing.Point(68, 57);
-            nombreGrupoLabel.Name = "nombreGrupoLabel";
-            nombreGrupoLabel.Size = new System.Drawing.Size(39, 13);
-            nombreGrupoLabel.TabIndex = 3;
-            nombreGrupoLabel.Text = "Grupo:";
-            // 
-            // nombreRazaLabel
-            // 
-            nombreRazaLabel.AutoSize = true;
-            nombreRazaLabel.Location = new System.Drawing.Point(72, 84);
-            nombreRazaLabel.Name = "nombreRazaLabel";
-            nombreRazaLabel.Size = new System.Drawing.Size(35, 13);
-            nombreRazaLabel.TabIndex = 5;
-            nombreRazaLabel.Text = "Raza:";
-            // 
-            // sexoLabel
-            // 
-            sexoLabel.AutoSize = true;
-            sexoLabel.Location = new System.Drawing.Point(73, 111);
-            sexoLabel.Name = "sexoLabel";
-            sexoLabel.Size = new System.Drawing.Size(34, 13);
-            sexoLabel.TabIndex = 7;
-            sexoLabel.Text = "Sexo:";
-            // 
-            // nombreEstadoLabel
-            // 
-            nombreEstadoLabel.AutoSize = true;
-            nombreEstadoLabel.Location = new System.Drawing.Point(64, 164);
-            nombreEstadoLabel.Name = "nombreEstadoLabel";
-            nombreEstadoLabel.Size = new System.Drawing.Size(43, 13);
-            nombreEstadoLabel.TabIndex = 9;
-            nombreEstadoLabel.Text = "Estado:";
-            // 
-            // nombreCaracterLabel
-            // 
-            nombreCaracterLabel.AutoSize = true;
-            nombreCaracterLabel.Location = new System.Drawing.Point(57, 191);
-            nombreCaracterLabel.Name = "nombreCaracterLabel";
-            nombreCaracterLabel.Size = new System.Drawing.Size(50, 13);
-            nombreCaracterLabel.TabIndex = 11;
-            nombreCaracterLabel.Text = "Caracter:";
-            // 
-            // nombrePelajeLabel
-            // 
-            nombrePelajeLabel.AutoSize = true;
-            nombrePelajeLabel.Location = new System.Drawing.Point(68, 218);
-            nombrePelajeLabel.Name = "nombrePelajeLabel";
-            nombrePelajeLabel.Size = new System.Drawing.Size(39, 13);
-            nombrePelajeLabel.TabIndex = 13;
-            nombrePelajeLabel.Text = "Pelaje:";
-            // 
-            // nombreGrupoSanguineoLabel
-            // 
-            nombreGrupoSanguineoLabel.AutoSize = true;
-            nombreGrupoSanguineoLabel.Location = new System.Drawing.Point(14, 245);
-            nombreGrupoSanguineoLabel.Name = "nombreGrupoSanguineoLabel";
-            nombreGrupoSanguineoLabel.Size = new System.Drawing.Size(93, 13);
-            nombreGrupoSanguineoLabel.TabIndex = 15;
-            nombreGrupoSanguineoLabel.Text = "Grupo Sanguineo:";
-            // 
-            // colorLabel
-            // 
-            colorLabel.AutoSize = true;
-            colorLabel.Location = new System.Drawing.Point(73, 272);
-            colorLabel.Name = "colorLabel";
-            colorLabel.Size = new System.Drawing.Size(34, 13);
-            colorLabel.TabIndex = 17;
-            colorLabel.Text = "Color:";
-            // 
-            // nacimientoLabel
-            // 
-            nacimientoLabel.AutoSize = true;
-            nacimientoLabel.Location = new System.Drawing.Point(44, 138);
-            nacimientoLabel.Name = "nacimientoLabel";
-            nacimientoLabel.Size = new System.Drawing.Size(63, 13);
-            nacimientoLabel.TabIndex = 19;
-            nacimientoLabel.Text = "Nacimiento:";
-            // 
-            // corteOrejaLabel
-            // 
-            corteOrejaLabel.AutoSize = true;
-            corteOrejaLabel.Location = new System.Drawing.Point(44, 325);
-            corteOrejaLabel.Name = "corteOrejaLabel";
-            corteOrejaLabel.Size = new System.Drawing.Size(63, 13);
-            corteOrejaLabel.TabIndex = 21;
-            corteOrejaLabel.Text = "Corte Oreja:";
-            // 
-            // corteColaLabel
-            // 
-            corteColaLabel.AutoSize = true;
-            corteColaLabel.Location = new System.Drawing.Point(174, 325);
-            corteColaLabel.Name = "corteColaLabel";
-            corteColaLabel.Size = new System.Drawing.Size(59, 13);
-            corteColaLabel.TabIndex = 23;
-            corteColaLabel.Text = "Corte Cola:";
-            // 
-            // castradoLabel
-            // 
-            castradoLabel.AutoSize = true;
-            castradoLabel.Location = new System.Drawing.Point(55, 352);
-            castradoLabel.Name = "castradoLabel";
-            castradoLabel.Size = new System.Drawing.Size(52, 13);
-            castradoLabel.TabIndex = 25;
-            castradoLabel.Text = "Castrado:";
-            // 
-            // exhibicionLabel
-            // 
-            exhibicionLabel.AutoSize = true;
-            exhibicionLabel.Location = new System.Drawing.Point(174, 352);
-            exhibicionLabel.Name = "exhibicionLabel";
-            exhibicionLabel.Size = new System.Drawing.Size(58, 13);
-            exhibicionLabel.TabIndex = 27;
-            exhibicionLabel.Text = "Exhibición:";
-            // 
-            // dietaLabel
-            // 
-            dietaLabel.AutoSize = true;
-            dietaLabel.Location = new System.Drawing.Point(72, 376);
-            dietaLabel.Name = "dietaLabel";
-            dietaLabel.Size = new System.Drawing.Size(35, 13);
-            dietaLabel.TabIndex = 29;
-            dietaLabel.Text = "Dieta:";
-            // 
-            // notaLabel
-            // 
-            notaLabel.AutoSize = true;
-            notaLabel.Location = new System.Drawing.Point(74, 402);
-            notaLabel.Name = "notaLabel";
-            notaLabel.Size = new System.Drawing.Size(33, 13);
-            notaLabel.TabIndex = 31;
-            notaLabel.Text = "Nota:";
-            // 
-            // codigoClienteLabel
-            // 
-            codigoClienteLabel.AutoSize = true;
-            codigoClienteLabel.Location = new System.Drawing.Point(291, 57);
-            codigoClienteLabel.Name = "codigoClienteLabel";
-            codigoClienteLabel.Size = new System.Drawing.Size(42, 13);
-            codigoClienteLabel.TabIndex = 36;
-            codigoClienteLabel.Text = "Dueño:";
-            // 
-            // imagenLabel
-            // 
-            imagenLabel.AutoSize = true;
-            imagenLabel.Location = new System.Drawing.Point(610, 31);
-            imagenLabel.Name = "imagenLabel";
-            imagenLabel.Size = new System.Drawing.Size(45, 13);
-            imagenLabel.TabIndex = 41;
-            imagenLabel.Text = "Imagen:";
-            // 
-            // aperturaLabel
-            // 
-            aperturaLabel.AutoSize = true;
-            aperturaLabel.Location = new System.Drawing.Point(605, 299);
-            aperturaLabel.Name = "aperturaLabel";
-            aperturaLabel.Size = new System.Drawing.Size(50, 13);
-            aperturaLabel.TabIndex = 46;
-            aperturaLabel.Text = "Apertura:";
-            // 
-            // usuarioLabel
-            // 
-            usuarioLabel.AutoSize = true;
-            usuarioLabel.Location = new System.Drawing.Point(609, 327);
-            usuarioLabel.Name = "usuarioLabel";
-            usuarioLabel.Size = new System.Drawing.Size(46, 13);
-            usuarioLabel.TabIndex = 48;
-            usuarioLabel.Text = "Usuario:";
-            // 
-            // equipoLabel
-            // 
-            equipoLabel.AutoSize = true;
-            equipoLabel.Location = new System.Drawing.Point(612, 353);
-            equipoLabel.Name = "equipoLabel";
-            equipoLabel.Size = new System.Drawing.Size(43, 13);
-            equipoLabel.TabIndex = 50;
-            equipoLabel.Text = "Equipo:";
-            // 
-            // codigoMascotaLabel
-            // 
-            codigoMascotaLabel.AutoSize = true;
-            codigoMascotaLabel.Location = new System.Drawing.Point(612, 379);
-            codigoMascotaLabel.Name = "codigoMascotaLabel";
-            codigoMascotaLabel.Size = new System.Drawing.Size(43, 13);
-            codigoMascotaLabel.TabIndex = 52;
-            codigoMascotaLabel.Text = "Código:";
-            // 
-            // codigoSucursalLabel
-            // 
-            codigoSucursalLabel.AutoSize = true;
-            codigoSucursalLabel.Location = new System.Drawing.Point(606, 272);
-            codigoSucursalLabel.Name = "codigoSucursalLabel";
-            codigoSucursalLabel.Size = new System.Drawing.Size(51, 13);
-            codigoSucursalLabel.TabIndex = 54;
-            codigoSucursalLabel.Text = "Sucursal:";
-            // 
-            // codigoTrabajoLabel
-            // 
-            codigoTrabajoLabel.AutoSize = true;
-            codigoTrabajoLabel.Location = new System.Drawing.Point(609, 407);
-            codigoTrabajoLabel.Name = "codigoTrabajoLabel";
-            codigoTrabajoLabel.Size = new System.Drawing.Size(46, 13);
-            codigoTrabajoLabel.TabIndex = 57;
-            codigoTrabajoLabel.Text = "Trabajo:";
-            // 
-            // codigoEmpresaLabel
-            // 
-            codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(711, 407);
-            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
-            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
-            codigoEmpresaLabel.TabIndex = 59;
-            codigoEmpresaLabel.Text = "Empresa:";
-            // 
-            // pedigriLabel
-            // 
-            pedigriLabel.AutoSize = true;
-            pedigriLabel.Location = new System.Drawing.Point(63, 298);
-            pedigriLabel.Name = "pedigriLabel";
-            pedigriLabel.Size = new System.Drawing.Size(44, 13);
-            pedigriLabel.TabIndex = 61;
-            pedigriLabel.Text = "Pedigrí:";
-            // 
-            // peluqueriaLabel
-            // 
-            peluqueriaLabel.AutoSize = true;
-            peluqueriaLabel.Location = new System.Drawing.Point(593, 221);
-            peluqueriaLabel.Name = "peluqueriaLabel";
-            peluqueriaLabel.Size = new System.Drawing.Size(62, 13);
-            peluqueriaLabel.TabIndex = 63;
-            peluqueriaLabel.Text = "Peluquería:";
             // 
             // spd4
             // 
@@ -548,7 +278,7 @@
             this.tpCita,
             this.tpHistorial,
             this.tpMultimedia});
-            this.tcMascota.SelectedIndex = 1;
+            this.tcMascota.SelectedIndex = 0;
             this.tcMascota.Size = new System.Drawing.Size(856, 500);
             this.tcMascota.TabIndex = 0;
             this.tcMascota.Text = "kryptonNavigator1";
@@ -557,75 +287,75 @@
             // 
             this.tpMascota.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.tpMascota.AutoScroll = true;
+            this.tpMascota.Controls.Add(this.kryptonLabel34);
+            this.tpMascota.Controls.Add(this.kryptonLabel33);
+            this.tpMascota.Controls.Add(this.kryptonLabel32);
+            this.tpMascota.Controls.Add(this.kryptonLabel31);
+            this.tpMascota.Controls.Add(this.kryptonLabel30);
+            this.tpMascota.Controls.Add(this.kryptonLabel29);
+            this.tpMascota.Controls.Add(this.kryptonLabel28);
+            this.tpMascota.Controls.Add(this.kryptonLabel27);
+            this.tpMascota.Controls.Add(this.kryptonLabel26);
+            this.tpMascota.Controls.Add(this.kryptonLabel25);
+            this.tpMascota.Controls.Add(this.kryptonLabel24);
+            this.tpMascota.Controls.Add(this.kryptonLabel23);
+            this.tpMascota.Controls.Add(this.kryptonLabel22);
+            this.tpMascota.Controls.Add(this.kryptonLabel21);
+            this.tpMascota.Controls.Add(this.kryptonLabel20);
+            this.tpMascota.Controls.Add(this.kryptonLabel19);
+            this.tpMascota.Controls.Add(this.kryptonLabel18);
+            this.tpMascota.Controls.Add(this.kryptonLabel17);
+            this.tpMascota.Controls.Add(this.kryptonLabel16);
+            this.tpMascota.Controls.Add(this.kryptonLabel15);
+            this.tpMascota.Controls.Add(this.kryptonLabel14);
+            this.tpMascota.Controls.Add(this.kryptonLabel13);
+            this.tpMascota.Controls.Add(this.kryptonLabel12);
+            this.tpMascota.Controls.Add(this.kryptonLabel11);
+            this.tpMascota.Controls.Add(this.kryptonLabel10);
+            this.tpMascota.Controls.Add(this.kryptonLabel9);
+            this.tpMascota.Controls.Add(this.kryptonLabel8);
+            this.tpMascota.Controls.Add(this.kryptonLabel7);
+            this.tpMascota.Controls.Add(this.kryptonLabel6);
+            this.tpMascota.Controls.Add(this.kryptonLabel5);
+            this.tpMascota.Controls.Add(this.kryptonLabel4);
+            this.tpMascota.Controls.Add(this.kryptonLabel3);
             this.tpMascota.Controls.Add(this.grdCliente);
             this.tpMascota.Controls.Add(this.grdSucursalContacto);
-            this.tpMascota.Controls.Add(this.label5);
             this.tpMascota.Controls.Add(this.cboVeterinario);
             this.tpMascota.Controls.Add(this.lblVeterinario);
-            this.tpMascota.Controls.Add(peluqueriaLabel);
             this.tpMascota.Controls.Add(this.chkPeluqueria);
-            this.tpMascota.Controls.Add(pedigriLabel);
             this.tpMascota.Controls.Add(this.txtPedigri);
-            this.tpMascota.Controls.Add(codigoEmpresaLabel);
             this.tpMascota.Controls.Add(this.lblEmpresa);
-            this.tpMascota.Controls.Add(codigoTrabajoLabel);
             this.tpMascota.Controls.Add(this.lblTrabajo);
             this.tpMascota.Controls.Add(this.cboSucursal);
-            this.tpMascota.Controls.Add(codigoSucursalLabel);
             this.tpMascota.Controls.Add(this.lblSucursal);
-            this.tpMascota.Controls.Add(codigoMascotaLabel);
             this.tpMascota.Controls.Add(this.lblCodigo);
-            this.tpMascota.Controls.Add(equipoLabel);
             this.tpMascota.Controls.Add(this.lblEquipo);
-            this.tpMascota.Controls.Add(usuarioLabel);
             this.tpMascota.Controls.Add(this.lblUsuario);
-            this.tpMascota.Controls.Add(aperturaLabel);
             this.tpMascota.Controls.Add(this.txtApertura);
-            this.tpMascota.Controls.Add(this.label4);
             this.tpMascota.Controls.Add(this.btnBuscar);
             this.tpMascota.Controls.Add(this.btnQuitar);
-            this.tpMascota.Controls.Add(imagenLabel);
             this.tpMascota.Controls.Add(this.pbImagen);
-            this.tpMascota.Controls.Add(this.label3);
             this.tpMascota.Controls.Add(this.lblDueno);
-            this.tpMascota.Controls.Add(codigoClienteLabel);
             this.tpMascota.Controls.Add(this.lblCliente);
             this.tpMascota.Controls.Add(this.txtBusca);
             this.tpMascota.Controls.Add(this.kryptonLabel1);
-            this.tpMascota.Controls.Add(this.label2);
-            this.tpMascota.Controls.Add(notaLabel);
             this.tpMascota.Controls.Add(this.txtNota);
-            this.tpMascota.Controls.Add(dietaLabel);
             this.tpMascota.Controls.Add(this.txtDieta);
-            this.tpMascota.Controls.Add(exhibicionLabel);
             this.tpMascota.Controls.Add(this.chkExhibicion);
-            this.tpMascota.Controls.Add(castradoLabel);
             this.tpMascota.Controls.Add(this.chkCastrado);
-            this.tpMascota.Controls.Add(corteColaLabel);
             this.tpMascota.Controls.Add(this.chkCorteCola);
-            this.tpMascota.Controls.Add(corteOrejaLabel);
             this.tpMascota.Controls.Add(this.chkCorteOreja);
-            this.tpMascota.Controls.Add(nacimientoLabel);
             this.tpMascota.Controls.Add(this.txtNacimiento);
-            this.tpMascota.Controls.Add(colorLabel);
             this.tpMascota.Controls.Add(this.txtColor);
-            this.tpMascota.Controls.Add(nombreGrupoSanguineoLabel);
             this.tpMascota.Controls.Add(this.cboSanguineo);
-            this.tpMascota.Controls.Add(nombrePelajeLabel);
             this.tpMascota.Controls.Add(this.cboPelaje);
-            this.tpMascota.Controls.Add(nombreCaracterLabel);
             this.tpMascota.Controls.Add(this.cboCaracter);
-            this.tpMascota.Controls.Add(nombreEstadoLabel);
             this.tpMascota.Controls.Add(this.cboEstado);
-            this.tpMascota.Controls.Add(sexoLabel);
             this.tpMascota.Controls.Add(this.cboSexo);
-            this.tpMascota.Controls.Add(nombreRazaLabel);
             this.tpMascota.Controls.Add(this.cboRaza);
-            this.tpMascota.Controls.Add(nombreGrupoLabel);
             this.tpMascota.Controls.Add(this.cboGrupo);
-            this.tpMascota.Controls.Add(nombreLabel);
             this.tpMascota.Controls.Add(this.txtNombre);
-            this.tpMascota.Controls.Add(this.label1);
             this.tpMascota.Flags = 65534;
             this.tpMascota.LastVisibleSet = true;
             this.tpMascota.MinimumSize = new System.Drawing.Size(50, 50);
@@ -635,6 +365,169 @@
             this.tpMascota.ToolTipTitle = "Page ToolTip";
             this.tpMascota.UniqueName = "F1252336AC8144A62AA5D1393A2B66F2";
             this.tpMascota.Click += new System.EventHandler(this.tpMascota_Click);
+            // 
+            // kryptonLabel22
+            // 
+            this.kryptonLabel22.Location = new System.Drawing.Point(53, 28);
+            this.kryptonLabel22.Name = "kryptonLabel22";
+            this.kryptonLabel22.Size = new System.Drawing.Size(58, 20);
+            this.kryptonLabel22.TabIndex = 91;
+            this.kryptonLabel22.Values.Text = "Nombre:";
+            // 
+            // kryptonLabel21
+            // 
+            this.kryptonLabel21.Location = new System.Drawing.Point(64, 54);
+            this.kryptonLabel21.Name = "kryptonLabel21";
+            this.kryptonLabel21.Size = new System.Drawing.Size(47, 20);
+            this.kryptonLabel21.TabIndex = 90;
+            this.kryptonLabel21.Values.Text = "Grupo:";
+            // 
+            // kryptonLabel20
+            // 
+            this.kryptonLabel20.Location = new System.Drawing.Point(72, 81);
+            this.kryptonLabel20.Name = "kryptonLabel20";
+            this.kryptonLabel20.Size = new System.Drawing.Size(39, 20);
+            this.kryptonLabel20.TabIndex = 89;
+            this.kryptonLabel20.Values.Text = "Raza:";
+            // 
+            // kryptonLabel19
+            // 
+            this.kryptonLabel19.Location = new System.Drawing.Point(72, 108);
+            this.kryptonLabel19.Name = "kryptonLabel19";
+            this.kryptonLabel19.Size = new System.Drawing.Size(39, 20);
+            this.kryptonLabel19.TabIndex = 88;
+            this.kryptonLabel19.Values.Text = "Sexo:";
+            // 
+            // kryptonLabel18
+            // 
+            this.kryptonLabel18.Location = new System.Drawing.Point(35, 135);
+            this.kryptonLabel18.Name = "kryptonLabel18";
+            this.kryptonLabel18.Size = new System.Drawing.Size(76, 20);
+            this.kryptonLabel18.TabIndex = 87;
+            this.kryptonLabel18.Values.Text = "Nacimiento:";
+            // 
+            // kryptonLabel17
+            // 
+            this.kryptonLabel17.Location = new System.Drawing.Point(61, 161);
+            this.kryptonLabel17.Name = "kryptonLabel17";
+            this.kryptonLabel17.Size = new System.Drawing.Size(50, 20);
+            this.kryptonLabel17.TabIndex = 86;
+            this.kryptonLabel17.Values.Text = "Estado:";
+            // 
+            // kryptonLabel16
+            // 
+            this.kryptonLabel16.Location = new System.Drawing.Point(53, 189);
+            this.kryptonLabel16.Name = "kryptonLabel16";
+            this.kryptonLabel16.Size = new System.Drawing.Size(58, 20);
+            this.kryptonLabel16.TabIndex = 85;
+            this.kryptonLabel16.Values.Text = "Caracter:";
+            // 
+            // kryptonLabel15
+            // 
+            this.kryptonLabel15.Location = new System.Drawing.Point(66, 215);
+            this.kryptonLabel15.Name = "kryptonLabel15";
+            this.kryptonLabel15.Size = new System.Drawing.Size(45, 20);
+            this.kryptonLabel15.TabIndex = 84;
+            this.kryptonLabel15.Values.Text = "Pelaje:";
+            // 
+            // kryptonLabel14
+            // 
+            this.kryptonLabel14.Location = new System.Drawing.Point(2, 243);
+            this.kryptonLabel14.Name = "kryptonLabel14";
+            this.kryptonLabel14.Size = new System.Drawing.Size(109, 20);
+            this.kryptonLabel14.TabIndex = 83;
+            this.kryptonLabel14.Values.Text = "Grupo Sanguineo:";
+            // 
+            // kryptonLabel13
+            // 
+            this.kryptonLabel13.Location = new System.Drawing.Point(68, 269);
+            this.kryptonLabel13.Name = "kryptonLabel13";
+            this.kryptonLabel13.Size = new System.Drawing.Size(43, 20);
+            this.kryptonLabel13.TabIndex = 82;
+            this.kryptonLabel13.Values.Text = "Color:";
+            // 
+            // kryptonLabel12
+            // 
+            this.kryptonLabel12.Location = new System.Drawing.Point(60, 295);
+            this.kryptonLabel12.Name = "kryptonLabel12";
+            this.kryptonLabel12.Size = new System.Drawing.Size(51, 20);
+            this.kryptonLabel12.TabIndex = 81;
+            this.kryptonLabel12.Values.Text = "Pedigrí:";
+            // 
+            // kryptonLabel11
+            // 
+            this.kryptonLabel11.Location = new System.Drawing.Point(34, 321);
+            this.kryptonLabel11.Name = "kryptonLabel11";
+            this.kryptonLabel11.Size = new System.Drawing.Size(76, 20);
+            this.kryptonLabel11.TabIndex = 80;
+            this.kryptonLabel11.Values.Text = "Corte Oreja:";
+            // 
+            // kryptonLabel10
+            // 
+            this.kryptonLabel10.Location = new System.Drawing.Point(166, 321);
+            this.kryptonLabel10.Name = "kryptonLabel10";
+            this.kryptonLabel10.Size = new System.Drawing.Size(71, 20);
+            this.kryptonLabel10.TabIndex = 79;
+            this.kryptonLabel10.Values.Text = "Corte Cola:";
+            // 
+            // kryptonLabel9
+            // 
+            this.kryptonLabel9.Location = new System.Drawing.Point(49, 348);
+            this.kryptonLabel9.Name = "kryptonLabel9";
+            this.kryptonLabel9.Size = new System.Drawing.Size(62, 20);
+            this.kryptonLabel9.TabIndex = 78;
+            this.kryptonLabel9.Values.Text = "Castrado:";
+            // 
+            // kryptonLabel8
+            // 
+            this.kryptonLabel8.Location = new System.Drawing.Point(167, 348);
+            this.kryptonLabel8.Name = "kryptonLabel8";
+            this.kryptonLabel8.Size = new System.Drawing.Size(68, 20);
+            this.kryptonLabel8.TabIndex = 77;
+            this.kryptonLabel8.Values.Text = "Exhibición:";
+            // 
+            // kryptonLabel7
+            // 
+            this.kryptonLabel7.Location = new System.Drawing.Point(587, 216);
+            this.kryptonLabel7.Name = "kryptonLabel7";
+            this.kryptonLabel7.Size = new System.Drawing.Size(71, 20);
+            this.kryptonLabel7.TabIndex = 76;
+            this.kryptonLabel7.Values.Text = "Peluquería:";
+            // 
+            // kryptonLabel6
+            // 
+            this.kryptonLabel6.Location = new System.Drawing.Point(586, 243);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(73, 20);
+            this.kryptonLabel6.TabIndex = 75;
+            this.kryptonLabel6.Values.Text = "Veterinario:";
+            // 
+            // kryptonLabel5
+            // 
+            this.kryptonLabel5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel5.Location = new System.Drawing.Point(587, 6);
+            this.kryptonLabel5.Name = "kryptonLabel5";
+            this.kryptonLabel5.Size = new System.Drawing.Size(77, 20);
+            this.kryptonLabel5.TabIndex = 74;
+            this.kryptonLabel5.Values.Text = "Multimedia";
+            // 
+            // kryptonLabel4
+            // 
+            this.kryptonLabel4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel4.Location = new System.Drawing.Point(281, 5);
+            this.kryptonLabel4.Name = "kryptonLabel4";
+            this.kryptonLabel4.Size = new System.Drawing.Size(49, 20);
+            this.kryptonLabel4.TabIndex = 73;
+            this.kryptonLabel4.Values.Text = "Dueño";
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel3.Location = new System.Drawing.Point(6, 7);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(104, 20);
+            this.kryptonLabel3.TabIndex = 72;
+            this.kryptonLabel3.Values.Text = "Datos Generales";
             // 
             // grdCliente
             // 
@@ -650,7 +543,7 @@
             this.grdCliente.Name = "grdCliente";
             this.grdCliente.ReadOnly = true;
             this.grdCliente.RowHeadersVisible = false;
-            this.grdCliente.Size = new System.Drawing.Size(302, 158);
+            this.grdCliente.Size = new System.Drawing.Size(302, 138);
             this.grdCliente.TabIndex = 71;
             this.grdCliente.Visible = false;
             this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
@@ -659,8 +552,8 @@
             // cCodigo
             // 
             this.cCodigo.DataPropertyName = "CodigoCliente";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle33;
             this.cCodigo.HeaderText = "CodigoCliente";
             this.cCodigo.Name = "cCodigo";
             this.cCodigo.ReadOnly = true;
@@ -690,8 +583,8 @@
             // 
             this.grdSucursalContacto.AllowUserToAddRows = false;
             this.grdSucursalContacto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdSucursalContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdSucursalContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
             this.grdSucursalContacto.AutoGenerateColumns = false;
             this.grdSucursalContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSucursalContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -743,8 +636,8 @@
             // nombreTipoContactoDataGridViewTextBoxColumn
             // 
             this.nombreTipoContactoDataGridViewTextBoxColumn.DataPropertyName = "NombreTipoContacto";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.nombreTipoContactoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.nombreTipoContactoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle35;
             this.nombreTipoContactoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.nombreTipoContactoDataGridViewTextBoxColumn.Name = "nombreTipoContactoDataGridViewTextBoxColumn";
             this.nombreTipoContactoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -762,15 +655,6 @@
             // 
             this.bsSucursalContacto.DataMember = "tbSucursalContacto";
             this.bsSucursalContacto.DataSource = this.dsNeo;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(595, 245);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 68;
-            this.label5.Text = "Veterinario:";
             // 
             // cboVeterinario
             // 
@@ -805,7 +689,7 @@
             // chkPeluqueria
             // 
             this.chkPeluqueria.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "Peluqueria", true));
-            this.chkPeluqueria.Location = new System.Drawing.Point(661, 216);
+            this.chkPeluqueria.Location = new System.Drawing.Point(661, 215);
             this.chkPeluqueria.Name = "chkPeluqueria";
             this.chkPeluqueria.Size = new System.Drawing.Size(25, 24);
             this.chkPeluqueria.TabIndex = 64;
@@ -912,16 +796,6 @@
             this.txtApertura.TabIndex = 48;
             this.txtApertura.ValidatingType = typeof(System.DateTime);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(591, 199);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 45;
-            this.label4.Text = "Sistema";
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(748, 171);
@@ -950,16 +824,6 @@
             this.pbImagen.Size = new System.Drawing.Size(149, 133);
             this.pbImagen.TabIndex = 42;
             this.pbImagen.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(591, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Multimedia";
             // 
             // lblDueno
             // 
@@ -1000,16 +864,6 @@
             this.kryptonLabel1.Size = new System.Drawing.Size(52, 20);
             this.kryptonLabel1.TabIndex = 34;
             this.kryptonLabel1.Values.Text = "Buscar:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(278, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Dueño";
             // 
             // txtNota
             // 
@@ -1182,16 +1036,6 @@
             this.txtNombre.Size = new System.Drawing.Size(143, 20);
             this.txtNombre.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Datos Generales";
-            // 
             // tpCita
             // 
             this.tpCita.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -1254,8 +1098,8 @@
             // codigoSucursalDataGridViewTextBoxColumn
             // 
             this.codigoSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoSucursal";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle36;
             this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "Sucursal";
             this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
             this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1264,8 +1108,8 @@
             // numeroCitaDataGridViewTextBoxColumn
             // 
             this.numeroCitaDataGridViewTextBoxColumn.DataPropertyName = "NumeroCita";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle37;
             this.numeroCitaDataGridViewTextBoxColumn.HeaderText = "Número";
             this.numeroCitaDataGridViewTextBoxColumn.Name = "numeroCitaDataGridViewTextBoxColumn";
             this.numeroCitaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1290,9 +1134,9 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.Format = "d";
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle38;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1423,7 +1267,7 @@
             this.tpMultimedia.LastVisibleSet = true;
             this.tpMultimedia.MinimumSize = new System.Drawing.Size(50, 50);
             this.tpMultimedia.Name = "tpMultimedia";
-            this.tpMultimedia.Size = new System.Drawing.Size(822, 473);
+            this.tpMultimedia.Size = new System.Drawing.Size(854, 473);
             this.tpMultimedia.Text = "Multimedia";
             this.tpMultimedia.ToolTipTitle = "Page ToolTip";
             this.tpMultimedia.UniqueName = "18C05188A4954E9A038DA5C20E19A2C1";
@@ -1450,8 +1294,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1512,8 +1356,8 @@
             // mCodigo
             // 
             this.mCodigo.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle40;
             this.mCodigo.HeaderText = "Código";
             this.mCodigo.Name = "mCodigo";
             this.mCodigo.ReadOnly = true;
@@ -1938,6 +1782,103 @@
             // 
             this.taCitaMascota.ClearBeforeFill = true;
             // 
+            // kryptonLabel23
+            // 
+            this.kryptonLabel23.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
+            this.kryptonLabel23.Location = new System.Drawing.Point(587, 190);
+            this.kryptonLabel23.Name = "kryptonLabel23";
+            this.kryptonLabel23.Size = new System.Drawing.Size(56, 20);
+            this.kryptonLabel23.TabIndex = 92;
+            this.kryptonLabel23.Values.Text = "Sistema";
+            // 
+            // kryptonLabel24
+            // 
+            this.kryptonLabel24.Location = new System.Drawing.Point(606, 376);
+            this.kryptonLabel24.Name = "kryptonLabel24";
+            this.kryptonLabel24.Size = new System.Drawing.Size(53, 20);
+            this.kryptonLabel24.TabIndex = 93;
+            this.kryptonLabel24.Values.Text = "Código:";
+            // 
+            // kryptonLabel25
+            // 
+            this.kryptonLabel25.Location = new System.Drawing.Point(608, 349);
+            this.kryptonLabel25.Name = "kryptonLabel25";
+            this.kryptonLabel25.Size = new System.Drawing.Size(51, 20);
+            this.kryptonLabel25.TabIndex = 94;
+            this.kryptonLabel25.Values.Text = "Equipo:";
+            // 
+            // kryptonLabel26
+            // 
+            this.kryptonLabel26.Location = new System.Drawing.Point(604, 323);
+            this.kryptonLabel26.Name = "kryptonLabel26";
+            this.kryptonLabel26.Size = new System.Drawing.Size(55, 20);
+            this.kryptonLabel26.TabIndex = 95;
+            this.kryptonLabel26.Values.Text = "Usuario:";
+            // 
+            // kryptonLabel27
+            // 
+            this.kryptonLabel27.Location = new System.Drawing.Point(598, 296);
+            this.kryptonLabel27.Name = "kryptonLabel27";
+            this.kryptonLabel27.Size = new System.Drawing.Size(61, 20);
+            this.kryptonLabel27.TabIndex = 96;
+            this.kryptonLabel27.Values.Text = "Apertura:";
+            // 
+            // kryptonLabel28
+            // 
+            this.kryptonLabel28.Location = new System.Drawing.Point(601, 270);
+            this.kryptonLabel28.Name = "kryptonLabel28";
+            this.kryptonLabel28.Size = new System.Drawing.Size(58, 20);
+            this.kryptonLabel28.TabIndex = 97;
+            this.kryptonLabel28.Values.Text = "Sucursal:";
+            // 
+            // kryptonLabel29
+            // 
+            this.kryptonLabel29.Location = new System.Drawing.Point(706, 404);
+            this.kryptonLabel29.Name = "kryptonLabel29";
+            this.kryptonLabel29.Size = new System.Drawing.Size(60, 20);
+            this.kryptonLabel29.TabIndex = 98;
+            this.kryptonLabel29.Values.Text = "Empresa:";
+            // 
+            // kryptonLabel30
+            // 
+            this.kryptonLabel30.Location = new System.Drawing.Point(605, 404);
+            this.kryptonLabel30.Name = "kryptonLabel30";
+            this.kryptonLabel30.Size = new System.Drawing.Size(54, 20);
+            this.kryptonLabel30.TabIndex = 99;
+            this.kryptonLabel30.Values.Text = "Trabajo:";
+            // 
+            // kryptonLabel31
+            // 
+            this.kryptonLabel31.Location = new System.Drawing.Point(71, 399);
+            this.kryptonLabel31.Name = "kryptonLabel31";
+            this.kryptonLabel31.Size = new System.Drawing.Size(40, 20);
+            this.kryptonLabel31.TabIndex = 100;
+            this.kryptonLabel31.Values.Text = "Nota:";
+            // 
+            // kryptonLabel32
+            // 
+            this.kryptonLabel32.Location = new System.Drawing.Point(69, 373);
+            this.kryptonLabel32.Name = "kryptonLabel32";
+            this.kryptonLabel32.Size = new System.Drawing.Size(42, 20);
+            this.kryptonLabel32.TabIndex = 101;
+            this.kryptonLabel32.Values.Text = "Dieta:";
+            // 
+            // kryptonLabel33
+            // 
+            this.kryptonLabel33.Location = new System.Drawing.Point(285, 57);
+            this.kryptonLabel33.Name = "kryptonLabel33";
+            this.kryptonLabel33.Size = new System.Drawing.Size(50, 20);
+            this.kryptonLabel33.TabIndex = 102;
+            this.kryptonLabel33.Values.Text = "Dueño:";
+            // 
+            // kryptonLabel34
+            // 
+            this.kryptonLabel34.Location = new System.Drawing.Point(606, 35);
+            this.kryptonLabel34.Name = "kryptonLabel34";
+            this.kryptonLabel34.Size = new System.Drawing.Size(54, 20);
+            this.kryptonLabel34.TabIndex = 103;
+            this.kryptonLabel34.Values.Text = "Imagen:";
+            // 
             // FrmMtoMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2018,16 +1959,13 @@
         private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.MaskedTextBox txtApertura;
-        private System.Windows.Forms.Label label4;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnBuscar;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnQuitar;
         private System.Windows.Forms.PictureBox pbImagen;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDueno;
         private System.Windows.Forms.Label lblCliente;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBusca;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.TextBox txtDieta;
         private System.Windows.Forms.CheckBox chkExhibicion;
@@ -2044,7 +1982,6 @@
         private System.Windows.Forms.ComboBox cboRaza;
         private System.Windows.Forms.ComboBox cboGrupo;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Navigator.KryptonPage tpCita;
         private ComponentFactory.Krypton.Navigator.KryptonPage tpHistorial;
         private DsNeoTableAdapters.taMascota taMascota;
@@ -2061,7 +1998,6 @@
         private System.Windows.Forms.TextBox txtPedigri;
         private System.Windows.Forms.CheckBox chkPeluqueria;
         private System.Windows.Forms.OpenFileDialog ofdLogo;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboVeterinario;
         private System.Windows.Forms.Label lblVeterinario;
         private DsNeoTableAdapters.taEmpleado taEmpleado;
@@ -2132,5 +2068,37 @@
         private ComponentFactory.Krypton.Toolkit.KryptonRadioButton rbTodos;
         private DsNeoTableAdapters.taCitaMascota taCitaMascota;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel22;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel21;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel20;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel19;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel18;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel17;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel16;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel15;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel14;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel13;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel12;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel11;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel10;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel8;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel30;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel29;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel28;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel27;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel26;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel25;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel24;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel23;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel34;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel33;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel32;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel31;
     }
 }

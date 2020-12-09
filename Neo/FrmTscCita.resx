@@ -135,13 +135,10 @@
   <metadata name="bnCita.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>248, 20</value>
   </metadata>
-  <metadata name="bnCita.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>248, 20</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bindingNavigatorAddNewItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        R0lGODlhEAAQAPYAAAEAAP///+3y9QhNe0F7nvv6+u3z9eXv8hFWhOTu8qnB0QhHdipokPz8/MPU4Pb3
+        R0lGODlhEAAQAIYAAAEAAP///+3y9QhNe0F7nvv6+u3z9eXv8hFWhOTu8qnB0QhHdipokPz8/MPU4Pb3
         /GeUrOzy9XihvcrZ41yNp9Hd5BRTf4mrvsnZ48/f6O7y9unt9HuivuTv8ufy9PT2/Nri7IyuwA1Oetvl
         7ePq7szb5OPt8cvX4PH3+m+ZtfDx8/r8/NDb4/D09xBUg+7z9oepv/v8/ODp8O/4+Pr6+vz6+uzx9YSl
         vAdMevP0+lmGoG6Usenw+fn8+uvy9Tpymvv7+oaovvT6++Lr8fz8+YmqwI+yyvT5+OPv8uDo9Oft9Yip
@@ -249,17 +246,8 @@
         W8GUX4GWHFZUF1QP/B3LVeTfTP9xZee/YZjfQoLMnY5yS70AAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="bsDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>335, 20</value>
-  </metadata>
-  <metadata name="bsDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>335, 20</value>
-  </metadata>
-  <metadata name="bnDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>547, 18</value>
   </metadata>
   <metadata name="bnDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>547, 18</value>
@@ -338,17 +326,8 @@
   <metadata name="bsPropiedad.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>651, 18</value>
   </metadata>
-  <metadata name="bsPropiedad.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>651, 18</value>
-  </metadata>
   <metadata name="bsMascota.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>904, 17</value>
-  </metadata>
-  <metadata name="bsMascota.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>904, 17</value>
-  </metadata>
-  <metadata name="dataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
   </metadata>
   <metadata name="dataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
