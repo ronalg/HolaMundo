@@ -120,5 +120,13 @@ namespace Neo
             //taArticulo.FillByVeterinaria(dataSet.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, true);
             //taEmpleado.FillByPuesto(dataSet.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinaria");
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.bscCita == null)
+                Utilidad.bscCita = new FrmBscCita();
+            Utilidad.bscCita.BringToFront();
+            Utilidad.bscCita.Show();
+        }
     }
 }

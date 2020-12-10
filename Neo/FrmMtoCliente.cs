@@ -66,6 +66,7 @@ namespace Neo
             dsNeo.tbContactoMiembro.Rows.Clear();
             lblTipoEstado.Text = "Estado Civil";
             taIdentificacionMiembro.Fill(dsNeo.fnIdentificacionMiembro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, 0, tipoMiembro);
+            tcMto.SelectedTab = tpPerfil;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
