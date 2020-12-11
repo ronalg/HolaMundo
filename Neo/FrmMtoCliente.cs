@@ -494,7 +494,7 @@ namespace Neo
             pnlProvincia.Visible = false;
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void btnProvinciaAceptar_Click(object sender, EventArgs e)
         {
             string pais = grdProvincia.CurrentRow.Cells["pPais"].Value.ToString();
             string provincia = grdProvincia.CurrentRow.Cells["pProvincia"].Value.ToString();
@@ -524,7 +524,7 @@ namespace Neo
 
         private void grdProvincia_DoubleClick(object sender, EventArgs e)
         {
-            btnAceptar_Click(sender, EventArgs.Empty);
+            btnProvinciaAceptar_Click(sender, EventArgs.Empty);
         }
 
         private void btnTipoContactoCancelar_Click(object sender, EventArgs e)
