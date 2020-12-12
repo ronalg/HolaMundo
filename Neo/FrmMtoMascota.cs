@@ -33,6 +33,8 @@ namespace Neo
             spd3.Available = configura;
             btnNuevo.Available = configura;
             spd4.Available = configura;
+            btnCliente.Available = configura;
+            spd5.Available = configura;
             btnSalir.Available = configura;
             pnl4.Visible = configura;
         }
@@ -114,6 +116,7 @@ namespace Neo
         private void FrmMtoMascota_FormClosed(object sender, FormClosedEventArgs e)
         {
             Utilidad.mtoMascota = null;
+            Utilidad.mtoCliente = null;
         }
 
         private void cboGrupo_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,6 +126,8 @@ namespace Neo
                 string nombre = cboGrupo.Text;
                 taRaza.FillByGrupo(dsNeo.tbRaza, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
                 cboRaza.SelectedIndex = -1;
+                taGrupoSanguineo.FillByGrupo(dsNeo.tbGrupoSanguineo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                cboSanguineo.SelectedIndex = -1;
             }
         }
 
@@ -244,6 +249,7 @@ namespace Neo
             cboSucursal.SelectedIndex = -1;
             cboVeterinario.SelectedIndex = -1;
             taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null);
+            grdMto_SelectionChanged(sender, EventArgs.Empty);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -361,8 +367,12 @@ namespace Neo
 
         private void grdCliente_DoubleClick(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             lblCliente.Text = grdCliente.CurrentRow.Cells["cCodigo"].Value.ToString();
             lblDueno.Text = grdCliente.CurrentRow.Cells["cNombre"].Value.ToString();
+            int codigo = int.Parse(lblCliente.Text);
+            CargaContacto(codigo);
+            this.Cursor = Cursors.Default;
         }
 
         private void grdCliente_KeyDown(object sender, KeyEventArgs e)
@@ -388,10 +398,30 @@ namespace Neo
             }
         }
 
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoCliente == null)
+            {
+                Utilidad.mtoCliente = new FrmMtoCliente();
+                Utilidad.mtoCliente.StartPosition = FormStartPosition.CenterParent;
+                Utilidad.mtoCliente.MdiParent = Utilidad.frmPrimario;
+            }
+
+            Utilidad.mtoCliente.Text = "Mascota";
+            Utilidad.mtoCliente.BringToFront();
+            Utilidad.mtoCliente.Show();
+        }
+
+        public void CargaContacto (int codigo)
+        {
+            taSucursalContacto.Fill(dsNeo.tbSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
+        }
+
         private void grdMto_SelectionChanged(object sender, EventArgs e)
         {
-            if (grdMto.CurrentRow.Cells["mCodigo"].Value != null)
+            if (grdMto.CurrentRow != null && grdMto.CurrentRow.Cells["mCodigo"].Value != DBNull.Value)
             {
+                this.Cursor = Cursors.WaitCursor;
                 int codigo = int.Parse(grdMto.CurrentRow.Cells["mCodigo"].Value.ToString());
                 taSucursalContacto.Fill(dsNeo.tbSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
                 DsNeo ds = new DsNeo();
@@ -403,6 +433,8 @@ namespace Neo
                 taSucursal.FillByCodigo(ds.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, i);
                 nombre = ds.tbSucursal.Rows[0]["Nombre"].ToString();
                 cboSucursal.Text = nombre;
+                CargaContacto(int.Parse(lblCliente.Text));
+                this.Cursor = Cursors.Default;
             }
         }
     }

@@ -51740,7 +51740,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoMascota,@codigoSucursal,@cod
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
             if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(nombre));
@@ -51761,7 +51761,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoMascota,@codigoSucursal,@cod
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
             if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(nombre));

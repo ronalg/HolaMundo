@@ -136,6 +136,7 @@ namespace Neo
 
         private void mnuMtoProveedor_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.Default;
             if (Utilidad.mtoProveedor == null)
             {
                 Utilidad.mtoProveedor = new FrmMtoProveedor();
@@ -145,6 +146,7 @@ namespace Neo
             }
             Utilidad.mtoProveedor.BringToFront();
             Utilidad.mtoProveedor.Show();
+            this.Cursor = Cursors.Default;
         }
 
         private void mnuMtoUnidad_Click(object sender, EventArgs e)
@@ -165,6 +167,7 @@ namespace Neo
 
         private void mnuMtoPerfilArticulo_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if (Utilidad.mtoArticulo == null)
             {
                 Utilidad.mtoArticulo = new FrmMtoArticulo();
@@ -172,6 +175,7 @@ namespace Neo
             }
             Utilidad.mtoArticulo.BringToFront();
             Utilidad.mtoArticulo.Show();
+            this.Cursor = Cursors.Default;
         }
 
         private void mnuMtoFormaPago_Click(object sender, EventArgs e)
@@ -293,15 +297,15 @@ namespace Neo
 
         private void mnuMtoPerfilCliente_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if (Utilidad.mtoCliente == null)
             {
                 Utilidad.mtoCliente = new FrmMtoCliente();
-                Utilidad.mtoCliente.StartPosition = FormStartPosition.CenterParent;
-                Utilidad.mtoCliente.WindowState = FormWindowState.Maximized;
                 Utilidad.mtoCliente.MdiParent = this;
             }
             Utilidad.mtoCliente.BringToFront();
             Utilidad.mtoCliente.Show();
+            this.Cursor = Cursors.Default;
         }
 
         private void mnuMtoFrecuencia_Click(object sender, EventArgs e)
@@ -434,6 +438,7 @@ namespace Neo
 
         private void mnuMtoVtnMascota_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if (Utilidad.mtoMascota == null)
             {
                 Utilidad.mtoMascota = new FrmMtoMascota();
@@ -441,6 +446,7 @@ namespace Neo
             }
             Utilidad.mtoMascota.BringToFront();
             Utilidad.mtoMascota.Show();
+            this.Cursor = Cursors.Default;
         }
 
         private void mnuMtoVtnPropiedad_Click(object sender, EventArgs e)
@@ -464,6 +470,21 @@ namespace Neo
             }
             Utilidad.tscCita.BringToFront();
             Utilidad.tscCita.Show();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            mnuMtoPerfilCliente_Click(sender, EventArgs.Empty);
+        }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            mnuMtoProveedor_Click(sender, EventArgs.Empty);
+        }
+
+        private void btnMascota_Click(object sender, EventArgs e)
+        {
+            mnuMtoVtnMascota_Click(sender, EventArgs.Empty);
         }
     }
 }

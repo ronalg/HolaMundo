@@ -48,7 +48,7 @@ namespace Neo
             cboSucursal.Text = Utilidad.nombreSucursal;
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        public void btnNuevo_Click(object sender, EventArgs e)
         {
             ConfiguraBoton(false);
             cboSexo.SelectedIndex = -1;
@@ -213,12 +213,12 @@ namespace Neo
                 this.Validate();
                 if (!btnNuevo.Available)
                 {
-                    taCliente.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text, txtId.Text.Trim(), txtCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, Utilidad.nombreUsuario, lblEquipo.Text, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text);
+                    taCliente.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text, txtId.Text.Trim(), cboCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, Utilidad.nombreUsuario, lblEquipo.Text, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taCliente.Edita(sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text.Trim(), txtId.Text.Trim(), txtCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                    taCliente.Edita(sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text.Trim(), txtId.Text.Trim(), cboCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                 }               
 
                 foreach (DataGridViewRow dgvr in grdSucursal.Rows)
@@ -259,6 +259,14 @@ namespace Neo
                     if (!string.IsNullOrEmpty(identificacion))
                         taIdentificacionMiembro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, codigoId, nacionalodad, tipoMiembro, identificacion);
                 }
+
+                if (this.Text == "Mascota")
+                {
+                    Utilidad.mtoMascota.lblCliente.Text = lblCodigo.Text;
+                    Utilidad.mtoMascota.lblDueno.Text = txtNombre.Text.Trim();
+                    Utilidad.mtoMascota.CargaContacto(int.Parse(lblCodigo.Text));
+                    this.Close();
+                }
             }
             catch (NoNullAllowedException nullEx)
             {
@@ -287,6 +295,7 @@ namespace Neo
                     {
                         short codigo = short.Parse(lblCodigo.Text);
                         taIdentificacionMiembro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
+                        taContactoMiembro.EliminaCodigo(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
                         taSucursalMiembro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, tipoMiembro);
                         taCliente.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
@@ -583,6 +592,11 @@ namespace Neo
         }
 
         private void kryptonLabel26_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void kryptonComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

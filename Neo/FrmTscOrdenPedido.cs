@@ -15,7 +15,6 @@ namespace Neo
     {
         short codigoArticulo = 0;
         public short codigoCliente = 0;
-        string codigoUnidad = null;
         decimal coste = 0.00M;
 
         public FrmTscOrdenPedido()
@@ -342,7 +341,6 @@ namespace Neo
         private void limpiaArticulo()
         {
             codigoArticulo = 0;
-            codigoUnidad = null;
             coste = 0.00M;
             txtCantidad.Text = "1.00";
             txtDescripcion.Clear();

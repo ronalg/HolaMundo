@@ -477,7 +477,7 @@
             this.rNombre.HeaderText = "Nombre";
             this.rNombre.Name = "rNombre";
             this.rNombre.ReadOnly = true;
-            this.rNombre.Width = 215;
+            this.rNombre.Width = 218;
             // 
             // FrmMtoRaza
             // 

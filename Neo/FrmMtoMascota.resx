@@ -129,18 +129,6 @@
   <metadata name="bsMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>94, 16</value>
   </metadata>
-  <metadata name="bsMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>94, 16</value>
-  </metadata>
-  <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 16</value>
-  </metadata>
-  <metadata name="bsMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>94, 16</value>
-  </metadata>
-  <metadata name="bsCita.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>846, 55</value>
-  </metadata>
   <metadata name="bsCita.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>846, 55</value>
   </metadata>
@@ -174,9 +162,6 @@
         1BEEQfgH0nyWdPF/NGgAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="bnMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>179, 16</value>
-  </metadata>
   <metadata name="bnMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>179, 16</value>
   </metadata>
@@ -249,6 +234,21 @@
         SdN99Z/BHFaN4tDbpf+eIFf3Fbtqh1IBe7tTAT6fHxwvwMvx8Hp4sCyHaRdLfx/BYXfSNXFJ053XrGAO
         3LRC0h6hxTev9HjcrKET1Ckb6ATlpRVbTrBDG8H2GjOY3dct2KYJ0yLvm8GMfxb+uTnMzgdSN3EhiIVg
         iN7Q9C0lLmkquTwARnJJj5yyXpD3nur3WZHek1PWiz/JL/9f2O8eBgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnCliente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH8SURBVDhPjY5dSFNhGMffbZd2JSGoIXMfoc3c3A62PNYC
+        6WZXBV0VXXQffWCgYlJiUNRNhAMNuugqYnNMEWoVyUZFEH3YRcumFSiLYjYI6sLT9us9ZyemNmYP/HjO
+        +5zn/3tfUa329hxA2aOiKL0oARV/IIjX3435u3bpi7u9Ch2dCm3tXRIv7R6f0beU6CFPh98I6BwM7Sek
+        qjS1uHG4dhmYq9XL5fZgd7SxvbGV+gYnrFymlB2D/DVGTx6iaYe9tkC/yen0MD54hNzjfng3DJnzZQpX
+        aGxurS34Ehb8fiZDL85QSh9Hm+lhbbYXbXYfzIWYC9fVFnwd9fAzPUIx2oV2VxINUIp1o8UCcE/dWqBX
+        vk+gTdhZm3CgTbrQbrrg9s7/Cxs1lKRwrgEm3RRvNFOMtBhnkcogjt6qLbGejXNitYDIrSKSM0RO1XF1
+        rB6RySHeZMuS/unqEj18LG+G3y4h5j/JvlLm9SLilRTMy3lq4d+XbBtIcPrHL8TCN8TLZURaLuukNqHP
+        nkiZ/ooNEnno+/wd6/NlLI/kLckslr88MPv9ykxEniIOj28U6GFrIlsm9sHolinZ4+VvY2ZieyhfqV5a
+        JwhfxxJfwjYlF6NyaTNGMIstsYht+iPWO+/RM2barOAFhG8I0TlYwTNQwTeMCIwgghfXhYX4Ayc4flRs
+        ZR4tAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="ep.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
