@@ -33,7 +33,6 @@ namespace Neo
             spd3.Available = configura;
             btnNuevo.Available = configura;
             spd4.Available = configura;
-            btnCliente.Available = configura;
             spd5.Available = configura;
             btnSalir.Available = configura;
             pnl4.Visible = configura;
@@ -370,6 +369,7 @@ namespace Neo
             this.Cursor = Cursors.WaitCursor;
             lblCliente.Text = grdCliente.CurrentRow.Cells["cCodigo"].Value.ToString();
             lblDueno.Text = grdCliente.CurrentRow.Cells["cNombre"].Value.ToString();
+            grdCliente.Visible = false;
             int codigo = int.Parse(lblCliente.Text);
             CargaContacto(codigo);
             this.Cursor = Cursors.Default;
@@ -378,12 +378,15 @@ namespace Neo
         private void grdCliente_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            {
                 grdCliente_DoubleClick(sender, EventArgs.Empty);
+                txtBusca.Focus();
+                txtBusca.SelectAll();
+            }
             else if (e.KeyCode == Keys.Escape)
+            {
                 grdCliente.Visible = false;
-
-            txtBusca.Focus();
-            txtBusca.SelectAll();
+            }
         }
 
         private void cboVeterinario_SelectedIndexChanged(object sender, EventArgs e)

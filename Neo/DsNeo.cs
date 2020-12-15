@@ -20,7 +20,9 @@
 
 namespace Neo.DsNeoTableAdapters
 {
-
+    partial class taArticulo
+    {
+    }
 
     public partial class taIdentificacion
     {

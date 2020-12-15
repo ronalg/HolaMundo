@@ -36,8 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoMascota));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -75,9 +75,6 @@
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
             this.grdSucursalContacto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -196,6 +193,8 @@
             this.btnUltimo = new System.Windows.Forms.ToolStripButton();
             this.spd3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnCliente = new System.Windows.Forms.ToolStripButton();
+            this.spd5 = new System.Windows.Forms.ToolStripSeparator();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.taMascota = new Neo.DsNeoTableAdapters.taMascota();
             this.taGrupo = new Neo.DsNeoTableAdapters.taGrupo();
@@ -210,15 +209,15 @@
             this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
             this.taSucursalContacto = new Neo.DsNeoTableAdapters.taSucursalContacto();
             this.taCitaMascota = new Neo.DsNeoTableAdapters.taCitaMascota();
-            this.btnCliente = new System.Windows.Forms.ToolStripButton();
-            this.spd5 = new System.Windows.Forms.ToolStripSeparator();
+            this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcMascota)).BeginInit();
             this.tcMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tpMascota)).BeginInit();
             this.tpMascota.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdSucursalContacto)).BeginInit();
@@ -238,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // spd4
@@ -321,7 +321,6 @@
             this.tpMascota.Controls.Add(this.kryptonLabel5);
             this.tpMascota.Controls.Add(this.kryptonLabel4);
             this.tpMascota.Controls.Add(this.kryptonLabel3);
-            this.tpMascota.Controls.Add(this.grdCliente);
             this.tpMascota.Controls.Add(this.grdSucursalContacto);
             this.tpMascota.Controls.Add(this.cboVeterinario);
             this.tpMascota.Controls.Add(this.lblVeterinario);
@@ -370,7 +369,7 @@
             // 
             // kryptonLabel34
             // 
-            this.kryptonLabel34.Location = new System.Drawing.Point(606, 35);
+            this.kryptonLabel34.Location = new System.Drawing.Point(604, 29);
             this.kryptonLabel34.Name = "kryptonLabel34";
             this.kryptonLabel34.Size = new System.Drawing.Size(54, 20);
             this.kryptonLabel34.TabIndex = 103;
@@ -628,46 +627,6 @@
             this.kryptonLabel3.TabIndex = 72;
             this.kryptonLabel3.Values.Text = "Datos Generales";
             // 
-            // grdCliente
-            // 
-            this.grdCliente.AllowUserToAddRows = false;
-            this.grdCliente.AllowUserToDeleteRows = false;
-            this.grdCliente.AutoGenerateColumns = false;
-            this.grdCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cCodigo,
-            this.cNombre});
-            this.grdCliente.DataSource = this.bsCliente;
-            this.grdCliente.Location = new System.Drawing.Point(337, 74);
-            this.grdCliente.Name = "grdCliente";
-            this.grdCliente.ReadOnly = true;
-            this.grdCliente.RowHeadersVisible = false;
-            this.grdCliente.Size = new System.Drawing.Size(302, 138);
-            this.grdCliente.TabIndex = 71;
-            this.grdCliente.Visible = false;
-            this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
-            this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
-            // 
-            // cCodigo
-            // 
-            this.cCodigo.DataPropertyName = "CodigoCliente";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cCodigo.HeaderText = "CodigoCliente";
-            this.cCodigo.Name = "cCodigo";
-            this.cCodigo.ReadOnly = true;
-            this.cCodigo.Visible = false;
-            this.cCodigo.Width = 60;
-            // 
-            // cNombre
-            // 
-            this.cNombre.DataPropertyName = "Nombre";
-            this.cNombre.HeaderText = "Nombre";
-            this.cNombre.Name = "cNombre";
-            this.cNombre.ReadOnly = true;
-            this.cNombre.Visible = false;
-            this.cNombre.Width = 220;
-            // 
             // bsCliente
             // 
             this.bsCliente.DataMember = "tbCliente";
@@ -682,8 +641,8 @@
             // 
             this.grdSucursalContacto.AllowUserToAddRows = false;
             this.grdSucursalContacto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdSucursalContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdSucursalContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdSucursalContacto.AutoGenerateColumns = false;
             this.grdSucursalContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSucursalContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -735,8 +694,8 @@
             // nombreTipoContactoDataGridViewTextBoxColumn
             // 
             this.nombreTipoContactoDataGridViewTextBoxColumn.DataPropertyName = "NombreTipoContacto";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.nombreTipoContactoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.nombreTipoContactoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.nombreTipoContactoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.nombreTipoContactoDataGridViewTextBoxColumn.Name = "nombreTipoContactoDataGridViewTextBoxColumn";
             this.nombreTipoContactoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1197,8 +1156,8 @@
             // codigoSucursalDataGridViewTextBoxColumn
             // 
             this.codigoSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoSucursal";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "Sucursal";
             this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
             this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1207,8 +1166,8 @@
             // numeroCitaDataGridViewTextBoxColumn
             // 
             this.numeroCitaDataGridViewTextBoxColumn.DataPropertyName = "NumeroCita";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.numeroCitaDataGridViewTextBoxColumn.HeaderText = "Número";
             this.numeroCitaDataGridViewTextBoxColumn.Name = "numeroCitaDataGridViewTextBoxColumn";
             this.numeroCitaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1233,9 +1192,9 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Format = "d";
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1393,8 +1352,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1455,8 +1414,8 @@
             // mCodigo
             // 
             this.mCodigo.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle7;
             this.mCodigo.HeaderText = "Código";
             this.mCodigo.Name = "mCodigo";
             this.mCodigo.ReadOnly = true;
@@ -1827,6 +1786,20 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnCliente
+            // 
+            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
+            this.btnCliente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(102, 22);
+            this.btnCliente.Text = "Nuevo Cliente";
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // spd5
+            // 
+            this.spd5.Name = "spd5";
+            this.spd5.Size = new System.Drawing.Size(6, 25);
+            // 
             // ep
             // 
             this.ep.ContainerControl = this;
@@ -1883,25 +1856,52 @@
             // 
             this.taCitaMascota.ClearBeforeFill = true;
             // 
-            // btnCliente
+            // grdCliente
             // 
-            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
-            this.btnCliente.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(102, 22);
-            this.btnCliente.Text = "Nuevo Cliente";
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            this.grdCliente.AllowUserToAddRows = false;
+            this.grdCliente.AllowUserToDeleteRows = false;
+            this.grdCliente.AutoGenerateColumns = false;
+            this.grdCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cNombre,
+            this.cCodigo});
+            this.grdCliente.DataSource = this.bsCliente;
+            this.grdCliente.Location = new System.Drawing.Point(806, 146);
+            this.grdCliente.Name = "grdCliente";
+            this.grdCliente.ReadOnly = true;
+            this.grdCliente.RowHeadersVisible = false;
+            this.grdCliente.Size = new System.Drawing.Size(285, 138);
+            this.grdCliente.TabIndex = 72;
+            this.grdCliente.Visible = false;
+            this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
+            this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
             // 
-            // spd5
+            // cNombre
             // 
-            this.spd5.Name = "spd5";
-            this.spd5.Size = new System.Drawing.Size(6, 25);
+            this.cNombre.DataPropertyName = "Nombre";
+            this.cNombre.HeaderText = "Nombre";
+            this.cNombre.Name = "cNombre";
+            this.cNombre.ReadOnly = true;
+            this.cNombre.Visible = false;
+            this.cNombre.Width = 250;
+            // 
+            // cCodigo
+            // 
+            this.cCodigo.DataPropertyName = "CodigoCliente";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle8;
+            this.cCodigo.HeaderText = "CodigoCliente";
+            this.cCodigo.Name = "cCodigo";
+            this.cCodigo.ReadOnly = true;
+            this.cCodigo.Visible = false;
+            this.cCodigo.Width = 60;
             // 
             // FrmMtoMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1331, 552);
+            this.Controls.Add(this.grdCliente);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
@@ -1917,7 +1917,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tpMascota)).EndInit();
             this.tpMascota.ResumeLayout(false);
             this.tpMascota.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdSucursalContacto)).EndInit();
@@ -1940,6 +1939,7 @@
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2058,9 +2058,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dietaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipoDataGridViewTextBoxColumn;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
         private ComponentFactory.Krypton.Navigator.KryptonPage tpMultimedia;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCita;
         private System.Windows.Forms.Panel pnl8;
@@ -2120,5 +2117,8 @@
         private System.Windows.Forms.ToolStripSeparator spd5;
         public System.Windows.Forms.Label lblDueno;
         public System.Windows.Forms.Label lblCliente;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;
     }
 }

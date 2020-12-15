@@ -12,7 +12,7 @@ namespace Neo
 {
     public partial class FrmBscCita : Form
     {
-        string codigo = null;
+        //string codigo = null;
         public FrmBscCita()
         {
             InitializeComponent();
