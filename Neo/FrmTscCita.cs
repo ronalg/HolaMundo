@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace Neo
 {
     public partial class FrmTscCita : Form
     {
+        int codigoMascota = 0;
+
         public FrmTscCita()
         {
             InitializeComponent();
@@ -59,11 +62,16 @@ namespace Neo
         {
             if (e.KeyCode == Keys.Enter)
             {
-                taMascota.Fill(dataSet.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtBuscaMascota.Text.Trim());
-                if (dataSet.tbMascota.Rows.Count == 1)
+                taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtBuscaMascota.Text.Trim());
+                if (grdMascota.RowCount == 1)
+                {
                     grdMascota_DoubleClick(sender, EventArgs.Empty);
+                }
                 else
+                {
                     grdMascota.Visible = true;
+                    grdMascota.Focus();
+                }
             }
             else if (e.KeyCode == Keys.Escape)
             {
@@ -75,7 +83,7 @@ namespace Neo
 
         private void grdMascota_DoubleClick(object sender, EventArgs e)
         {
-            int codigo = int.Parse(grdMascota.CurrentRow.Cells["mCodigoMascota"].Value.ToString());
+            int codigo = int.Parse(grdMascota.CurrentRow.Cells["mCodigo"].Value.ToString());
             taMascota.FillByCodigo(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, codigo);
             grdMascota.Visible = false;
             cboTipo.Focus();
@@ -212,9 +220,84 @@ namespace Neo
             btnAceptaServicio_Click(sender, EventArgs.Empty);
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        private void lblDueno_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            txtBuscaMascota.Focus();
+            dsNeo.tbMascota.Rows.Clear();
+            dsNeo.tbCitaDetalle.Rows.Clear();
+            lblNumero.Text = null;
+            lblSucursal.Text = Utilidad.codigoSucursal.ToString();
+            lblUsuario.Text = Utilidad.nombreUsuario;
+            dtpFecha.Value = DateTime.Today.Date;
+            lblTotal.Text = "0.00";
+            pnlServicio.Visible = false;
+            pnlVeterinario.Visible = false;
+            grdMascota.Visible = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (btnNuevo.Available)
+                {
+                    DialogResult dr = new DialogResult();
+                    dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.textoCuadroMensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (dr == DialogResult.Yes)
+                    {
+                        int numero = int.Parse(lblNumero.Text);
+                        short sucursal = short.Parse(lblSucursal.Text);
+                        taCitaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, sucursal, numero);
+                        taCita.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, sucursal, numero);
+                        btnNuevo_Click(sender, EventArgs.Empty);
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message, Utilidad.textoCuadroMensaje, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Utilidad.textoCuadroMensaje, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            int numero = !string.IsNullOrEmpty(lblNumero.Text) ? int.Parse(lblNumero.Text) : 0;
+            if (numero == 0)
+            {
+                DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
+                numero = cp.fnSiguienteNumero("cita", Utilidad.codigoSucursal, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
+                taCita.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoMascota, null, "Cliente", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, cboTipo.Text);
+                foreach (DataRow dr in dsNeo.tbCitaDetalle.Rows)
+                {
+                    int codigo = int.Parse(dr["CodigoArticulo"].ToString());
+                    short empleado = short.Parse(dr["CodigoVeterinario"].ToString());
+                    bool pendiente = bool.Parse(dr["Pendiente"].ToString());
+                    decimal costo = decimal.Parse(dr["Costo"].ToString());
+                    decimal venta = decimal.Parse(dr["Venta"].ToString());
+                    bool activa = bool.Parse(dr["Activa"].ToString());
+                    string nota = dr["Nota"].ToString();
+                    taCitaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo, empleado, pendiente, costo, venta, activa, nota);
+                }
+            }
+            else
+            {
+                
+            }
         }
     }
 }
