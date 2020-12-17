@@ -669,6 +669,21 @@
         9ta/cHL6BQJVEVCNs/3vAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="mnuTscCita.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAPYAAAEAAP///3et3Hay4yFksLfX8rHe+RZZpxVZpRRYpW276ZXP9GSYzhiL1YHC7Ie5
+        5pnD6bfe+ZHM8YTT90GCw1OV0JXB6ESJyR6M1rbj/B1jr5C/5y+X2Tac3ZfP8xaI1CqR1pPA5xtcphxc
+        p4DA7D5/wXK25BVbpmqt4j+d2zCX2SFosTJ0ut7m9hdaphVYphxbp4i65xtbp3e86iFqtXe66DOb3ODp
+        +EF9wTuf3j6h3zt7vt3p+OHt+T6Bw7jh+0KDxZbJ7Nrn94C/6jug36XP737B7Onu+SVqsxpeqSFyuqnW
+        87vi+6jV80CHxyV1vlWv5R5utzmHzLDY9JzS9JvR8q/X9ZfR80WNzKLR8X6445jS85rU9TuQ0Dqe3bHX
+        9LHd+Guh1Has25XC6Rthrdnk9F6n3hyK1Gue02ia0DmLzSZ8xDB+xEeNzFSv55vS9K7d+Dmd3AAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQB
+        AAAAACwAAAAAEAAQAAAI2wABCBxIsKDALgqeGBS4RoEagWwmRFkIQMkEKQAEOIGCRoDHjx7DuKEgpgIB
+        LwwygDHA0gCcDGniEKjQhgABBm+uUPHgYUsVLlpsYrkQgcmCJU0kWJki4UuWBT8iXPARIICDqkaqFglw
+        5GoAICUKFCAhdoaQAkHEDunBg8KOqjqq5qhaI8ANIlVx0KjaoaqNqiYCtOgbgMWKAQM4IFaBOAViDhs2
+        INFQFUPVM1XNBChjOQABMmMsNHgQ40MICCAgoGhg4YGGJAlOjECAAEaCAzIQuBDx4sABihQDAgA7
+</value>
+  </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>229, 16</value>
   </metadata>
@@ -702,7 +717,35 @@
         pFvaycsvJH+7DUtewbIL5JvsyO78RIhfXMM/8IAQjTgAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMascota.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticulo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGnSURBVDhPnc9PSBRxGMbxUUYJCTIb0TA0iA51y0iiQ7Cy
+        ePAUlYgSqy2uEHvwop7C8STUwQJvRntJwY2C2IvkP0RWcqu1UtkhXUnFpVg2pZXGyXH4ujvNqV2awQfe
+        y4/387z8BKdpfP6d4qvjnLg+ydnmT1jPzjK0DhWtnzl5c45S9wLSnSXKWxXnJY/XoH5wi1Pud5Q2Rk1c
+        2bHOue6Es5LgBigpKGn4iNQSo8q/SU1PgguPdu0LZAXGt+HthoH8XkVqi1OduXxeTlIb2MstuDutUxfc
+        5+LwHn0xmEiAvHjIrakDakd/cy2ocSmQpuLJr1zsmT/EHzVwvdHwfjBMvPzD4Pb0Aa7QPmVyypy8OJum
+        SZ17YYMbr1R8YY2+Rd3El5+lOdP/08TWav7UhzTcoT9cGVGpepqmaUrPXFYzOGWOtfb/SIMqpwd2KXm4
+        g+DbpqjzG4XeTUTfGmLbqn3Jl2WFgt4dCrqSiPfjiJ6vfyeDbQuyeDjwAq/PT6EF/h1rNTdZPPbytYmt
+        J8ExngtHmJmdp937wP6P+RJZiB4fL63Ejo8FQTgCA6Ank12Rjl0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="citasToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAPYAAAEAAP///3et3Hay4yFksLfX8rHe+RZZpxVZpRRYpW276ZXP9GSYzhiL1YHC7Ie5
+        5pnD6bfe+ZHM8YTT90GCw1OV0JXB6ESJyR6M1rbj/B1jr5C/5y+X2Tac3ZfP8xaI1CqR1pPA5xtcphxc
+        p4DA7D5/wXK25BVbpmqt4j+d2zCX2SFosTJ0ut7m9hdaphVYphxbp4i65xtbp3e86iFqtXe66DOb3ODp
+        +EF9wTuf3j6h3zt7vt3p+OHt+T6Bw7jh+0KDxZbJ7Nrn94C/6jug36XP737B7Onu+SVqsxpeqSFyuqnW
+        87vi+6jV80CHxyV1vlWv5R5utzmHzLDY9JzS9JvR8q/X9ZfR80WNzKLR8X6445jS85rU9TuQ0Dqe3bHX
+        9LHd+Guh1Has25XC6Rthrdnk9F6n3hyK1Gue02ia0DmLzSZ8xDB+xEeNzFSv55vS9K7d+Dmd3AAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQB
+        AAAAACwAAAAAEAAQAAAI2wABCBxIsKDALgqeGBS4RoEagWwmRFkIQMkEKQAEOIGCRoDHjx7DuKEgpgIB
+        LwwygDHA0gCcDGniEKjQhgABBm+uUPHgYUsVLlpsYrkQgcmCJU0kWJki4UuWBT8iXPARIICDqkaqFglw
+        5GoAICUKFCAhdoaQAkHEDunBg8KOqjqq5qhaI8ANIlVx0KjaoaqNqiYCtOgbgMWKAQM4IFaBOAViDhs2
+        INFQFUPVM1XNBChjOQABMmMsNHgQ40MICCAgoGhg4YGGJAlOjECAAEaCAzIQuBDx4sABihQDAgA7
+</value>
+  </data>
+  <data name="btnVeterinaria.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG

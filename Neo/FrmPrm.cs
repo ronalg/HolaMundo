@@ -486,5 +486,10 @@ namespace Neo
         {
             mnuMtoVtnMascota_Click(sender, EventArgs.Empty);
         }
+
+        private void mnuMascta_Click(object sender, EventArgs e)
+        {
+            btnMascota_Click(sender, EventArgs.Empty);
+        }
     }
 }
