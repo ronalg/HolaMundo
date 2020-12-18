@@ -239,6 +239,8 @@ namespace Neo
 
         private void FrmMtoMascota_Load(object sender, EventArgs e)
         {
+            cboPendiente.SelectedIndex = 0;
+            cboActiva.SelectedIndex = 0;
             taEstado.FillByTipo(dsNeo.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinaria");
             taEmpleado.FillByPuesto(dsNeo.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinario");
             taGrupo.Fill(dsNeo.tbGrupo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
@@ -437,6 +439,17 @@ namespace Neo
                 nombre = ds.tbSucursal.Rows[0]["Nombre"].ToString();
                 cboSucursal.Text = nombre;
                 CargaContacto(int.Parse(lblCliente.Text));
+                bool? pendiente = null;
+                if (cboPendiente.SelectedIndex == 1)
+                    pendiente = true;
+                else if (cboPendiente.SelectedIndex == 2)
+                    pendiente = false;
+                bool? activa = null;
+                if (cboActiva.SelectedIndex == 1)
+                    activa = true;
+                else if (cboActiva.SelectedIndex == 2)
+                    activa = false;
+                taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, pendiente, activa); 
                 this.Cursor = Cursors.Default;
             }
         }

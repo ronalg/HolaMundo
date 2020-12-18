@@ -124,7 +124,7 @@ namespace Neo
         private void FrmTscCita_Load(object sender, EventArgs e)
         {
             taArticulo.FillByVeterinaria(dataSet.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, true, null);
-            //taEmpleado.FillByPuesto(dataSet.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinaria");
+            taEmpleado.FillByPuesto(dataSet.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinario");
             btnNuevo_Click(sender, EventArgs.Empty);
         }
 
@@ -223,11 +223,6 @@ namespace Neo
             }
         }
 
-        private void grdArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void grdServicio_DoubleClick(object sender, EventArgs e)
         {
             btnAceptaServicio_Click(sender, EventArgs.Empty);
@@ -303,31 +298,55 @@ namespace Neo
                 return;
             }
 
-            int numero = !string.IsNullOrEmpty(lblNumero.Text) ? int.Parse(lblNumero.Text) : 0;
-            int codigoMascota = int.Parse(lblCodigo.Text);
-            if (numero == 0)
+            DataRow[] filaNula = dsNeo.tbArticulo.Select("Descripcion = ''");
+            if (filaNula.Length > -1)
             {
-                DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
-                numero = cp.fnSiguienteNumero("cita", Utilidad.codigoSucursal, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
-                taCita.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoMascota, null, "Cliente", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, cboTipo.Text);                
-            }
-            else
-            {
-                taCita.Edita(codigoMascota, null, dtpFecha.Value.ToShortDateString(), null, cboTipo.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);               
+                MessageBox.Show("Existe servicio con valor invalido", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                grdArticulo.Focus();
+                return;
             }
 
-            taCitaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
-            foreach (DataRow dr in dsNeo.tbCitaDetalle.Rows)
+            try
             {
-                int codigo = int.Parse(dr["CodigoArticulo"].ToString());
-                short empleado = short.Parse(dr["CodigoVeterinario"].ToString());
-                bool pendiente = bool.Parse(dr["Pendiente"].ToString());
-                decimal costo = decimal.Parse(dr["Costo"].ToString());
-                decimal venta = decimal.Parse(dr["Venta"].ToString());
-                bool activa = bool.Parse(dr["Activa"].ToString());
-                string nota = dr["Nota"].ToString();
+                this.Cursor = Cursors.WaitCursor;
+                int numero = !string.IsNullOrEmpty(lblNumero.Text) ? int.Parse(lblNumero.Text) : 0;
+                int codigoMascota = int.Parse(lblCodigo.Text);
+                if (numero == 0)
+                {
+                    DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
+                    numero = cp.fnSiguienteNumero("cita", Utilidad.codigoSucursal, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
+                    taCita.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoMascota, null, "Cliente", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, cboTipo.Text);
+                }
+                else
+                {
+                    taCita.Edita(codigoMascota, null, dtpFecha.Value.ToShortDateString(), null, cboTipo.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                }
 
-                taCitaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo, empleado, pendiente, costo, venta, activa, nota);
+                taCitaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                foreach (DataRow dr in dsNeo.tbCitaDetalle.Rows)
+                {
+                    int codigo = int.Parse(dr["CodigoArticulo"].ToString());
+                    short empleado = short.Parse(dr["CodigoEmpleado"].ToString());
+                    bool pendiente = bool.Parse(dr["Pendiente"].ToString());
+                    decimal costo = decimal.Parse(dr["Costo"].ToString());
+                    decimal venta = decimal.Parse(dr["Venta"].ToString());
+                    bool activa = bool.Parse(dr["Activa"].ToString());
+                    string nota = dr["Nota"].ToString();
+
+                    taCitaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo, empleado, pendiente, costo, venta, activa, nota);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -399,6 +418,53 @@ namespace Neo
         {
             if (e.KeyCode == Keys.Enter)
                 btnAceptaServicio_Click(sender, EventArgs.Empty);
+        }
+
+        private void grdArticulo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void grdArticulo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string columna = grdArticulo.CurrentRow.Cells[e.ColumnIndex].OwningColumn.Name;
+            if (columna == "aCodigo" || columna == "aDescripcion")
+            {
+                pnlServicio.Visible = true;
+                txtServicio.Focus();
+                txtServicio.Clear();
+            }
+            else if (columna == "aVeterinario")
+            {
+                pnlVeterinario.Visible = true;
+                grdVeterinario.Focus();
+            }
+        }
+
+        private void btnAceptaVeterinario_Click(object sender, EventArgs e)
+        {
+            if (grdVeterinario.CurrentRow.Cells["vNombre"].Value != DBNull.Value)
+            {
+                string codigo = grdVeterinario.CurrentRow.Cells["vCodigo"].Value.ToString();
+                string nombre = grdVeterinario.CurrentRow.Cells["vNombre"].Value.ToString();
+                grdArticulo.CurrentRow.Cells["aCodigoVeterinario"].Value = codigo;
+                grdArticulo.CurrentRow.Cells["aVeterinario"].Value = nombre;
+                pnlVeterinario.Visible = false;
+                grdArticulo.CurrentRow.Cells["aVeterinario"].Selected = true;
+            }
+        }
+
+        private void grdVeterinario_DoubleClick(object sender, EventArgs e)
+        {
+            btnAceptaVeterinario_Click(sender, EventArgs.Empty);
+        }
+
+        private void grdVeterinario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnAceptaVeterinario_Click(sender, EventArgs.Empty);
+            else if (e.KeyCode == Keys.Escape)
+                btnCancelaServicio_Click(sender, EventArgs.Empty);
         }
     }
 }
