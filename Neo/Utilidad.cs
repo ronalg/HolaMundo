@@ -13,12 +13,13 @@ namespace Neo
         public static FrmBscOrdenPedido bscOrdenPedido = null;
         //formulario transacciones
         //veternaria
+        public static FrmRptCita rptCita = null;
         public static FrmBscCita bscCita = null;
         public static FrmTscCita tscCita = null;
         public static FrmTscFactura tscFactura = null;
         public static FrmTscOrdenPedido tscOrdenPedido = null;
         //formularios mantenimientos
-        //Veterinaria
+        //Veterinaria        
         public static FrmMtoPropiedad mtoPropiedad = null;
         public static FrmMtoMascota mtoMascota = null;
         public static FrmMtoPelaje mtoPelaje = null;

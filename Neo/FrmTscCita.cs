@@ -294,16 +294,18 @@ namespace Neo
 
             if (grdArticulo.RowCount == 0)
             {
-                MessageBox.Show("Ingrese servicios", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Ingrese servicio", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 return;
             }
 
-            DataRow[] filaNula = dsNeo.tbArticulo.Select("Descripcion = ''");
-            if (filaNula.Length > -1)
+            foreach (DataRow dr in dsNeo.tbCitaDetalle)
             {
-                MessageBox.Show("Existe servicio con valor invalido", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                grdArticulo.Focus();
-                return;
+                string codigo = dr["CodigoArticulo"].ToString();
+                if (string.IsNullOrEmpty(codigo))
+                {
+                    MessageBox.Show("Ingrese valor en el listado de servicio valido", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    return;
+                }
             }
 
             try
@@ -316,6 +318,7 @@ namespace Neo
                     DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
                     numero = cp.fnSiguienteNumero("cita", Utilidad.codigoSucursal, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
                     taCita.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoMascota, null, "Cliente", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, cboTipo.Text);
+                    lblNumero.Text = numero.ToString();
                 }
                 else
                 {

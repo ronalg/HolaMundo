@@ -104,9 +104,6 @@
             this.lblSucursal = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pnl7 = new System.Windows.Forms.Panel();
-            this.pnl6 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -158,6 +155,16 @@
             this.btnCancelaVeterinario = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grdVeterinario = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.vNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoTrabajoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoEmpresaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoSucursalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrePuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aperturaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activoDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.notaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsVeterinario = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.grdMascota = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -175,16 +182,6 @@
             this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
             this.taArticulo1 = new Neo.DsNeoTableAdapters.taArticulo();
             this.taArticuloPrecioVenta = new Neo.DsNeoTableAdapters.taArticuloPrecioVenta();
-            this.vNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoTrabajoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoEmpresaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoSucursalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrePuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aperturaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activoDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.notaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             numeroCitaLabel = new System.Windows.Forms.Label();
             codigoSucursalLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
@@ -207,7 +204,6 @@
             this.pnl3.SuspendLayout();
             this.pnl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipo)).BeginInit();
-            this.pnl6.SuspendLayout();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsMascotaCita)).BeginInit();
             this.pnlServicio.SuspendLayout();
@@ -804,8 +800,6 @@
             // 
             this.pnl3.BackColor = System.Drawing.Color.White;
             this.pnl3.Controls.Add(this.pnl8);
-            this.pnl3.Controls.Add(this.pnl7);
-            this.pnl3.Controls.Add(this.pnl6);
             this.pnl3.Controls.Add(this.pnl5);
             this.pnl3.Controls.Add(this.pnl4);
             this.pnl3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -831,7 +825,7 @@
             this.pnl8.Controls.Add(this.lblNumero);
             this.pnl8.Controls.Add(this.label3);
             this.pnl8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl8.Location = new System.Drawing.Point(677, 0);
+            this.pnl8.Location = new System.Drawing.Point(353, 0);
             this.pnl8.Name = "pnl8";
             this.pnl8.Size = new System.Drawing.Size(182, 189);
             this.pnl8.TabIndex = 4;
@@ -867,6 +861,7 @@
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(62, 103);
             this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFecha.Size = new System.Drawing.Size(103, 21);
             this.dtpFecha.TabIndex = 6;
             // 
@@ -906,39 +901,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Cita";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnl7
-            // 
-            this.pnl7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl7.Location = new System.Drawing.Point(667, 0);
-            this.pnl7.Name = "pnl7";
-            this.pnl7.Size = new System.Drawing.Size(10, 189);
-            this.pnl7.TabIndex = 3;
-            // 
-            // pnl6
-            // 
-            this.pnl6.BackColor = System.Drawing.Color.White;
-            this.pnl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl6.Controls.Add(this.label2);
-            this.pnl6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl6.Location = new System.Drawing.Point(353, 0);
-            this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(314, 189);
-            this.pnl6.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(312, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Contactos";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl5
             // 
@@ -1471,6 +1433,86 @@
             this.grdVeterinario.DoubleClick += new System.EventHandler(this.grdVeterinario_DoubleClick);
             this.grdVeterinario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdVeterinario_KeyDown);
             // 
+            // vNombre
+            // 
+            this.vNombre.DataPropertyName = "Nombre";
+            this.vNombre.HeaderText = "Nombre";
+            this.vNombre.Name = "vNombre";
+            this.vNombre.ReadOnly = true;
+            this.vNombre.Width = 250;
+            // 
+            // codigoTrabajoDataGridViewTextBoxColumn3
+            // 
+            this.codigoTrabajoDataGridViewTextBoxColumn3.DataPropertyName = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn3.HeaderText = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn3.Name = "codigoTrabajoDataGridViewTextBoxColumn3";
+            this.codigoTrabajoDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.codigoTrabajoDataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // codigoEmpresaDataGridViewTextBoxColumn3
+            // 
+            this.codigoEmpresaDataGridViewTextBoxColumn3.DataPropertyName = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn3.HeaderText = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn3.Name = "codigoEmpresaDataGridViewTextBoxColumn3";
+            this.codigoEmpresaDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.codigoEmpresaDataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // vCodigo
+            // 
+            this.vCodigo.DataPropertyName = "CodigoEmpleado";
+            this.vCodigo.HeaderText = "CodigoEmpleado";
+            this.vCodigo.Name = "vCodigo";
+            this.vCodigo.ReadOnly = true;
+            this.vCodigo.Visible = false;
+            // 
+            // codigoSucursalDataGridViewTextBoxColumn1
+            // 
+            this.codigoSucursalDataGridViewTextBoxColumn1.DataPropertyName = "CodigoSucursal";
+            this.codigoSucursalDataGridViewTextBoxColumn1.HeaderText = "CodigoSucursal";
+            this.codigoSucursalDataGridViewTextBoxColumn1.Name = "codigoSucursalDataGridViewTextBoxColumn1";
+            this.codigoSucursalDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.codigoSucursalDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // nombrePuestoDataGridViewTextBoxColumn
+            // 
+            this.nombrePuestoDataGridViewTextBoxColumn.DataPropertyName = "NombrePuesto";
+            this.nombrePuestoDataGridViewTextBoxColumn.HeaderText = "NombrePuesto";
+            this.nombrePuestoDataGridViewTextBoxColumn.Name = "nombrePuestoDataGridViewTextBoxColumn";
+            this.nombrePuestoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombrePuestoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // aperturaDataGridViewTextBoxColumn1
+            // 
+            this.aperturaDataGridViewTextBoxColumn1.DataPropertyName = "Apertura";
+            this.aperturaDataGridViewTextBoxColumn1.HeaderText = "Apertura";
+            this.aperturaDataGridViewTextBoxColumn1.Name = "aperturaDataGridViewTextBoxColumn1";
+            this.aperturaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.aperturaDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // activoDataGridViewCheckBoxColumn1
+            // 
+            this.activoDataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
+            this.activoDataGridViewCheckBoxColumn1.HeaderText = "Activo";
+            this.activoDataGridViewCheckBoxColumn1.Name = "activoDataGridViewCheckBoxColumn1";
+            this.activoDataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.activoDataGridViewCheckBoxColumn1.Visible = false;
+            // 
+            // notaDataGridViewTextBoxColumn1
+            // 
+            this.notaDataGridViewTextBoxColumn1.DataPropertyName = "Nota";
+            this.notaDataGridViewTextBoxColumn1.HeaderText = "Nota";
+            this.notaDataGridViewTextBoxColumn1.Name = "notaDataGridViewTextBoxColumn1";
+            this.notaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.notaDataGridViewTextBoxColumn1.Visible = false;
+            // 
             // bsVeterinario
             // 
             this.bsVeterinario.DataMember = "tbEmpleado";
@@ -1626,86 +1668,6 @@
             // 
             this.taArticuloPrecioVenta.ClearBeforeFill = true;
             // 
-            // vNombre
-            // 
-            this.vNombre.DataPropertyName = "Nombre";
-            this.vNombre.HeaderText = "Nombre";
-            this.vNombre.Name = "vNombre";
-            this.vNombre.ReadOnly = true;
-            this.vNombre.Width = 250;
-            // 
-            // codigoTrabajoDataGridViewTextBoxColumn3
-            // 
-            this.codigoTrabajoDataGridViewTextBoxColumn3.DataPropertyName = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn3.HeaderText = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn3.Name = "codigoTrabajoDataGridViewTextBoxColumn3";
-            this.codigoTrabajoDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.codigoTrabajoDataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // codigoEmpresaDataGridViewTextBoxColumn3
-            // 
-            this.codigoEmpresaDataGridViewTextBoxColumn3.DataPropertyName = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn3.HeaderText = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn3.Name = "codigoEmpresaDataGridViewTextBoxColumn3";
-            this.codigoEmpresaDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.codigoEmpresaDataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // vCodigo
-            // 
-            this.vCodigo.DataPropertyName = "CodigoEmpleado";
-            this.vCodigo.HeaderText = "CodigoEmpleado";
-            this.vCodigo.Name = "vCodigo";
-            this.vCodigo.ReadOnly = true;
-            this.vCodigo.Visible = false;
-            // 
-            // codigoSucursalDataGridViewTextBoxColumn1
-            // 
-            this.codigoSucursalDataGridViewTextBoxColumn1.DataPropertyName = "CodigoSucursal";
-            this.codigoSucursalDataGridViewTextBoxColumn1.HeaderText = "CodigoSucursal";
-            this.codigoSucursalDataGridViewTextBoxColumn1.Name = "codigoSucursalDataGridViewTextBoxColumn1";
-            this.codigoSucursalDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.codigoSucursalDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // nombrePuestoDataGridViewTextBoxColumn
-            // 
-            this.nombrePuestoDataGridViewTextBoxColumn.DataPropertyName = "NombrePuesto";
-            this.nombrePuestoDataGridViewTextBoxColumn.HeaderText = "NombrePuesto";
-            this.nombrePuestoDataGridViewTextBoxColumn.Name = "nombrePuestoDataGridViewTextBoxColumn";
-            this.nombrePuestoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombrePuestoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // aperturaDataGridViewTextBoxColumn1
-            // 
-            this.aperturaDataGridViewTextBoxColumn1.DataPropertyName = "Apertura";
-            this.aperturaDataGridViewTextBoxColumn1.HeaderText = "Apertura";
-            this.aperturaDataGridViewTextBoxColumn1.Name = "aperturaDataGridViewTextBoxColumn1";
-            this.aperturaDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.aperturaDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // activoDataGridViewCheckBoxColumn1
-            // 
-            this.activoDataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
-            this.activoDataGridViewCheckBoxColumn1.HeaderText = "Activo";
-            this.activoDataGridViewCheckBoxColumn1.Name = "activoDataGridViewCheckBoxColumn1";
-            this.activoDataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.activoDataGridViewCheckBoxColumn1.Visible = false;
-            // 
-            // notaDataGridViewTextBoxColumn1
-            // 
-            this.notaDataGridViewTextBoxColumn1.DataPropertyName = "Nota";
-            this.notaDataGridViewTextBoxColumn1.HeaderText = "Nota";
-            this.notaDataGridViewTextBoxColumn1.Name = "notaDataGridViewTextBoxColumn1";
-            this.notaDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.notaDataGridViewTextBoxColumn1.Visible = false;
-            // 
             // FrmTscCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1744,7 +1706,6 @@
             this.pnl8.ResumeLayout(false);
             this.pnl8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipo)).EndInit();
-            this.pnl6.ResumeLayout(false);
             this.pnl4.ResumeLayout(false);
             this.pnl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsMascotaCita)).EndInit();
@@ -1775,13 +1736,9 @@
         private System.Windows.Forms.Panel pnl11;
         private System.Windows.Forms.Panel pnl3;
         private System.Windows.Forms.Panel pnl8;
-        private System.Windows.Forms.Panel pnl7;
-        private System.Windows.Forms.Panel pnl6;
         private System.Windows.Forms.Panel pnl5;
         private System.Windows.Forms.Panel pnl4;
-        private DsNeo dsNeo;
         private System.Windows.Forms.BindingSource bsCita;
-        private DsNeoTableAdapters.taCita taCita;
         private System.Windows.Forms.BindingNavigator bnCita;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -1796,7 +1753,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBuscaMascota;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.Label label1;
@@ -1806,7 +1762,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.BindingSource bsDetalle;
-        private DsNeoTableAdapters.taCitaDetalle taCitaDetalle;
         private System.Windows.Forms.BindingNavigator bnDetalle;
         private System.Windows.Forms.ToolStripButton btnNuevoServicio;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
@@ -1824,7 +1779,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTotal;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private System.Windows.Forms.BindingSource bsMascota;
-        private DsNeoTableAdapters.taMascota taMascota;
         private System.Windows.Forms.Label lblSexo;
         private DsNeo dataSet;
         private System.Windows.Forms.Label lblRaza;
@@ -1912,5 +1866,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aperturaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn1;
+        public DsNeo dsNeo;
+        public DsNeoTableAdapters.taCita taCita;
+        public DsNeoTableAdapters.taMascota taMascota;
+        public DsNeoTableAdapters.taCitaDetalle taCitaDetalle;
     }
 }

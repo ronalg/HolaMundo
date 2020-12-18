@@ -491,5 +491,16 @@ namespace Neo
         {
             btnMascota_Click(sender, EventArgs.Empty);
         }
+
+        private void mnuRptCita_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.rptCita == null)
+            {
+                Utilidad.rptCita = new FrmRptCita();
+                Utilidad.rptCita.MdiParent = this;
+            }
+            Utilidad.rptCita.BringToFront();
+            Utilidad.rptCita.Show();
+        }
     }
 }

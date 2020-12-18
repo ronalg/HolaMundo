@@ -1,6 +1,6 @@
 ﻿namespace Neo
 {
-    partial class FrmBscCita
+    partial class FrmRptCita
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBscCita));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRptCita));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnCita = new System.Windows.Forms.BindingNavigator(this.components);
             this.bsCita = new System.Windows.Forms.BindingSource(this.components);
@@ -47,33 +46,41 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.btnVer = new System.Windows.Forms.ToolStripButton();
+            this.btnImprimir = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mnuPantalla = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl2 = new System.Windows.Forms.Panel();
+            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cboActiva = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cboPendiente = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.txtMascota = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtDueno = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dtpHasta = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dtpDesde = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl3 = new System.Windows.Forms.Panel();
+            this.pnl6 = new System.Windows.Forms.Panel();
+            this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdCita = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.taCitaMascota = new Neo.DsNeoTableAdapters.taCitaMascota();
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroCitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueñoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreMascotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.veterinarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pendienteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.activaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +92,7 @@
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboActiva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPendiente)).BeginInit();
+            this.pnl3.SuspendLayout();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCita)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +104,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(1067, 28);
+            this.pnl1.Size = new System.Drawing.Size(1146, 28);
             this.pnl1.TabIndex = 0;
             // 
             // bnCita
@@ -118,6 +126,7 @@
             this.bindingNavigatorSeparator2,
             this.btnBuscar,
             this.btnVer,
+            this.btnImprimir,
             this.toolStripSeparator1,
             this.btnSalir});
             this.bnCita.Location = new System.Drawing.Point(0, 0);
@@ -127,8 +136,8 @@
             this.bnCita.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnCita.Name = "bnCita";
             this.bnCita.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnCita.Size = new System.Drawing.Size(1065, 25);
-            this.bnCita.TabIndex = 5;
+            this.bnCita.Size = new System.Drawing.Size(1144, 25);
+            this.bnCita.TabIndex = 7;
             this.bnCita.Text = "bindingNavigator1";
             // 
             // bsCita
@@ -216,7 +225,6 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(62, 22);
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnVer
             // 
@@ -225,7 +233,22 @@
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(43, 22);
             this.btnVer.Text = "Ver";
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuPantalla});
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(82, 22);
+            this.btnImprimir.Text = "Imprimir";
+            // 
+            // mnuPantalla
+            // 
+            this.mnuPantalla.Name = "mnuPantalla";
+            this.mnuPantalla.Size = new System.Drawing.Size(116, 22);
+            this.mnuPantalla.Text = "Pantalla";
             // 
             // toolStripSeparator1
             // 
@@ -244,12 +267,15 @@
             // pnl2
             // 
             this.pnl2.BackColor = System.Drawing.Color.White;
-            this.pnl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl2.Controls.Add(this.kryptonTextBox2);
+            this.pnl2.Controls.Add(this.kryptonLabel7);
+            this.pnl2.Controls.Add(this.kryptonTextBox1);
+            this.pnl2.Controls.Add(this.kryptonLabel6);
             this.pnl2.Controls.Add(this.cboActiva);
             this.pnl2.Controls.Add(this.kryptonLabel5);
             this.pnl2.Controls.Add(this.kryptonLabel4);
             this.pnl2.Controls.Add(this.cboPendiente);
-            this.pnl2.Controls.Add(this.txtMascota);
+            this.pnl2.Controls.Add(this.txtDueno);
             this.pnl2.Controls.Add(this.kryptonLabel3);
             this.pnl2.Controls.Add(this.dtpHasta);
             this.pnl2.Controls.Add(this.kryptonLabel2);
@@ -258,8 +284,42 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(1067, 42);
+            this.pnl2.Size = new System.Drawing.Size(1146, 36);
             this.pnl2.TabIndex = 1;
+            // 
+            // kryptonTextBox2
+            // 
+            this.kryptonTextBox2.Location = new System.Drawing.Point(695, 7);
+            this.kryptonTextBox2.MaxLength = 15;
+            this.kryptonTextBox2.Name = "kryptonTextBox2";
+            this.kryptonTextBox2.Size = new System.Drawing.Size(158, 23);
+            this.kryptonTextBox2.TabIndex = 22;
+            // 
+            // kryptonLabel7
+            // 
+            this.kryptonLabel7.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel7.Location = new System.Drawing.Point(631, 8);
+            this.kryptonLabel7.Name = "kryptonLabel7";
+            this.kryptonLabel7.Size = new System.Drawing.Size(60, 20);
+            this.kryptonLabel7.TabIndex = 23;
+            this.kryptonLabel7.Values.Text = "Servicio:";
+            // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Location = new System.Drawing.Point(564, 7);
+            this.kryptonTextBox1.MaxLength = 15;
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(64, 23);
+            this.kryptonTextBox1.TabIndex = 20;
+            // 
+            // kryptonLabel6
+            // 
+            this.kryptonLabel6.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel6.Location = new System.Drawing.Point(498, 8);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(63, 20);
+            this.kryptonLabel6.TabIndex = 21;
+            this.kryptonLabel6.Values.Text = "Mascota:";
             // 
             // cboActiva
             // 
@@ -269,28 +329,27 @@
             "Todos",
             "Si",
             "No"});
-            this.cboActiva.Location = new System.Drawing.Point(731, 10);
+            this.cboActiva.Location = new System.Drawing.Point(1057, 8);
             this.cboActiva.Name = "cboActiva";
             this.cboActiva.Size = new System.Drawing.Size(66, 21);
-            this.cboActiva.TabIndex = 9;
-            this.cboActiva.SelectedIndexChanged += new System.EventHandler(this.cboActiva_SelectedIndexChanged);
+            this.cboActiva.TabIndex = 19;
             // 
             // kryptonLabel5
             // 
             this.kryptonLabel5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel5.Location = new System.Drawing.Point(678, 10);
+            this.kryptonLabel5.Location = new System.Drawing.Point(1003, 8);
             this.kryptonLabel5.Name = "kryptonLabel5";
             this.kryptonLabel5.Size = new System.Drawing.Size(50, 20);
-            this.kryptonLabel5.TabIndex = 8;
+            this.kryptonLabel5.TabIndex = 18;
             this.kryptonLabel5.Values.Text = "Activa:";
             // 
             // kryptonLabel4
             // 
             this.kryptonLabel4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel4.Location = new System.Drawing.Point(530, 10);
+            this.kryptonLabel4.Location = new System.Drawing.Point(856, 8);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(72, 20);
-            this.kryptonLabel4.TabIndex = 6;
+            this.kryptonLabel4.TabIndex = 17;
             this.kryptonLabel4.Values.Text = "Pendiente:";
             // 
             // cboPendiente
@@ -301,82 +360,101 @@
             "Todos",
             "Si",
             "No"});
-            this.cboPendiente.Location = new System.Drawing.Point(604, 10);
+            this.cboPendiente.Location = new System.Drawing.Point(931, 8);
             this.cboPendiente.Name = "cboPendiente";
             this.cboPendiente.Size = new System.Drawing.Size(69, 21);
-            this.cboPendiente.TabIndex = 5;
+            this.cboPendiente.TabIndex = 16;
             // 
-            // txtMascota
+            // txtDueno
             // 
-            this.txtMascota.Location = new System.Drawing.Point(403, 9);
-            this.txtMascota.MaxLength = 15;
-            this.txtMascota.Name = "txtMascota";
-            this.txtMascota.Size = new System.Drawing.Size(124, 23);
-            this.txtMascota.TabIndex = 0;
+            this.txtDueno.Location = new System.Drawing.Point(348, 6);
+            this.txtDueno.MaxLength = 15;
+            this.txtDueno.Name = "txtDueno";
+            this.txtDueno.Size = new System.Drawing.Size(147, 23);
+            this.txtDueno.TabIndex = 10;
             // 
             // kryptonLabel3
             // 
             this.kryptonLabel3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel3.Location = new System.Drawing.Point(293, 10);
+            this.kryptonLabel3.Location = new System.Drawing.Point(294, 7);
             this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(107, 20);
-            this.kryptonLabel3.TabIndex = 4;
-            this.kryptonLabel3.Values.Text = "Mascota/Dueño:";
+            this.kryptonLabel3.Size = new System.Drawing.Size(52, 20);
+            this.kryptonLabel3.TabIndex = 15;
+            this.kryptonLabel3.Values.Text = "Dueño:";
             // 
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(197, 9);
+            this.dtpHasta.Location = new System.Drawing.Point(198, 7);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpHasta.Size = new System.Drawing.Size(94, 21);
-            this.dtpHasta.TabIndex = 2;
+            this.dtpHasta.TabIndex = 13;
             // 
             // kryptonLabel2
             // 
             this.kryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel2.Location = new System.Drawing.Point(148, 9);
+            this.kryptonLabel2.Location = new System.Drawing.Point(149, 7);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(47, 20);
-            this.kryptonLabel2.TabIndex = 2;
+            this.kryptonLabel2.TabIndex = 14;
             this.kryptonLabel2.Values.Text = "Hasta:";
             // 
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(53, 9);
+            this.dtpDesde.Location = new System.Drawing.Point(54, 7);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpDesde.Size = new System.Drawing.Size(94, 21);
-            this.dtpDesde.TabIndex = 1;
+            this.dtpDesde.TabIndex = 12;
             // 
             // kryptonLabel1
             // 
             this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel1.Location = new System.Drawing.Point(2, 9);
+            this.kryptonLabel1.Location = new System.Drawing.Point(3, 7);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(49, 20);
-            this.kryptonLabel1.TabIndex = 0;
+            this.kryptonLabel1.TabIndex = 11;
             this.kryptonLabel1.Values.Text = "Desde:";
             // 
             // pnl3
             // 
             this.pnl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl3.Location = new System.Drawing.Point(0, 70);
+            this.pnl3.Controls.Add(this.pnl6);
+            this.pnl3.Controls.Add(this.pnl5);
+            this.pnl3.Controls.Add(this.pnl4);
+            this.pnl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl3.Location = new System.Drawing.Point(0, 64);
             this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(1067, 10);
+            this.pnl3.Size = new System.Drawing.Size(1146, 521);
             this.pnl3.TabIndex = 2;
+            // 
+            // pnl6
+            // 
+            this.pnl6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl6.Location = new System.Drawing.Point(0, 463);
+            this.pnl6.Name = "pnl6";
+            this.pnl6.Size = new System.Drawing.Size(1144, 10);
+            this.pnl6.TabIndex = 2;
+            // 
+            // pnl5
+            // 
+            this.pnl5.BackColor = System.Drawing.Color.White;
+            this.pnl5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl5.Location = new System.Drawing.Point(0, 473);
+            this.pnl5.Name = "pnl5";
+            this.pnl5.Size = new System.Drawing.Size(1144, 46);
+            this.pnl5.TabIndex = 1;
             // 
             // pnl4
             // 
             this.pnl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl4.Controls.Add(this.grdCita);
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl4.Location = new System.Drawing.Point(0, 80);
+            this.pnl4.Location = new System.Drawing.Point(0, 0);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(1067, 370);
-            this.pnl4.TabIndex = 3;
+            this.pnl4.Size = new System.Drawing.Size(1144, 519);
+            this.pnl4.TabIndex = 0;
             // 
             // grdCita
             // 
@@ -388,13 +466,13 @@
             this.codigoTrabajoDataGridViewTextBoxColumn,
             this.codigoEmpresaDataGridViewTextBoxColumn,
             this.codigoSucursalDataGridViewTextBoxColumn,
-            this.cNumero,
+            this.numeroCitaDataGridViewTextBoxColumn,
             this.dueñoDataGridViewTextBoxColumn,
             this.nombreMascotaDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
             this.veterinarioDataGridViewTextBoxColumn,
-            this.tipoDataGridViewTextBoxColumn,
             this.pendienteDataGridViewCheckBoxColumn,
             this.activaDataGridViewCheckBoxColumn,
             this.usuarioDataGridViewTextBoxColumn});
@@ -403,8 +481,8 @@
             this.grdCita.Location = new System.Drawing.Point(0, 0);
             this.grdCita.Name = "grdCita";
             this.grdCita.ReadOnly = true;
-            this.grdCita.Size = new System.Drawing.Size(1065, 368);
-            this.grdCita.TabIndex = 3;
+            this.grdCita.Size = new System.Drawing.Size(1142, 517);
+            this.grdCita.TabIndex = 4;
             // 
             // taCitaMascota
             // 
@@ -434,15 +512,15 @@
             this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
             this.codigoSucursalDataGridViewTextBoxColumn.Visible = false;
             // 
-            // cNumero
+            // numeroCitaDataGridViewTextBoxColumn
             // 
-            this.cNumero.DataPropertyName = "NumeroCita";
+            this.numeroCitaDataGridViewTextBoxColumn.DataPropertyName = "NumeroCita";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cNumero.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cNumero.HeaderText = "Número";
-            this.cNumero.Name = "cNumero";
-            this.cNumero.ReadOnly = true;
-            this.cNumero.Width = 70;
+            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.numeroCitaDataGridViewTextBoxColumn.HeaderText = "Número";
+            this.numeroCitaDataGridViewTextBoxColumn.Name = "numeroCitaDataGridViewTextBoxColumn";
+            this.numeroCitaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroCitaDataGridViewTextBoxColumn.Width = 70;
             // 
             // dueñoDataGridViewTextBoxColumn
             // 
@@ -463,29 +541,10 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
             this.fechaDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 220;
-            // 
-            // veterinarioDataGridViewTextBoxColumn
-            // 
-            this.veterinarioDataGridViewTextBoxColumn.DataPropertyName = "Veterinario";
-            this.veterinarioDataGridViewTextBoxColumn.HeaderText = "Veterinario";
-            this.veterinarioDataGridViewTextBoxColumn.Name = "veterinarioDataGridViewTextBoxColumn";
-            this.veterinarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.veterinarioDataGridViewTextBoxColumn.Width = 150;
             // 
             // tipoDataGridViewTextBoxColumn
             // 
@@ -493,7 +552,23 @@
             this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
             this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn.Width = 80;
+            this.tipoDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // veterinarioDataGridViewTextBoxColumn
+            // 
+            this.veterinarioDataGridViewTextBoxColumn.DataPropertyName = "Veterinario";
+            this.veterinarioDataGridViewTextBoxColumn.HeaderText = "Veterinario";
+            this.veterinarioDataGridViewTextBoxColumn.Name = "veterinarioDataGridViewTextBoxColumn";
+            this.veterinarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.veterinarioDataGridViewTextBoxColumn.Width = 130;
             // 
             // pendienteDataGridViewCheckBoxColumn
             // 
@@ -509,7 +584,7 @@
             this.activaDataGridViewCheckBoxColumn.HeaderText = "Activa";
             this.activaDataGridViewCheckBoxColumn.Name = "activaDataGridViewCheckBoxColumn";
             this.activaDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.activaDataGridViewCheckBoxColumn.Width = 50;
+            this.activaDataGridViewCheckBoxColumn.Width = 60;
             // 
             // usuarioDataGridViewTextBoxColumn
             // 
@@ -517,22 +592,20 @@
             this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
             this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
             this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usuarioDataGridViewTextBoxColumn.Visible = false;
+            this.usuarioDataGridViewTextBoxColumn.Width = 80;
             // 
-            // FrmBscCita
+            // FrmRptCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 450);
-            this.Controls.Add(this.pnl4);
+            this.ClientSize = new System.Drawing.Size(1146, 585);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
-            this.Name = "FrmBscCita";
+            this.Name = "FrmRptCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmBscCita_FormClosed);
-            this.Load += new System.EventHandler(this.FrmBscCita_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmRptCita_FormClosed);
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCita)).EndInit();
@@ -544,6 +617,7 @@
             this.pnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboActiva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPendiente)).EndInit();
+            this.pnl3.ResumeLayout(false);
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCita)).EndInit();
             this.ResumeLayout(false);
@@ -555,11 +629,26 @@
         private System.Windows.Forms.Panel pnl1;
         private System.Windows.Forms.Panel pnl2;
         private System.Windows.Forms.Panel pnl3;
+        private System.Windows.Forms.Panel pnl6;
+        private System.Windows.Forms.Panel pnl5;
         private System.Windows.Forms.Panel pnl4;
-        private DsNeo dsNeo;
-        private System.Windows.Forms.BindingSource bsCita;
-        private DsNeoTableAdapters.taCitaMascota taCitaMascota;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboActiva;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboPendiente;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtDueno;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpHasta;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpDesde;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.BindingNavigator bnCita;
+        private System.Windows.Forms.BindingSource bsCita;
+        private DsNeo dsNeo;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -570,30 +659,23 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton btnBuscar;
+        private System.Windows.Forms.ToolStripButton btnVer;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtMascota;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpHasta;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpDesde;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private System.Windows.Forms.ToolStripButton btnVer;
+        private DsNeoTableAdapters.taCitaMascota taCitaMascota;
+        private System.Windows.Forms.ToolStripDropDownButton btnImprimir;
+        private System.Windows.Forms.ToolStripMenuItem mnuPantalla;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCita;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboActiva;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboPendiente;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroCitaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueñoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreMascotaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn veterinarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pendienteDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activaDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;

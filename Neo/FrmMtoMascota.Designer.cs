@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoMascota));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -364,7 +364,7 @@
             this.tpMascota.MinimumSize = new System.Drawing.Size(50, 50);
             this.tpMascota.Name = "tpMascota";
             this.tpMascota.Size = new System.Drawing.Size(854, 473);
-            this.tpMascota.Text = "Mascota";
+            this.tpMascota.Text = "Perfil";
             this.tpMascota.ToolTipTitle = "Page ToolTip";
             this.tpMascota.UniqueName = "F1252336AC8144A62AA5D1393A2B66F2";
             this.tpMascota.Click += new System.EventHandler(this.tpMascota_Click);
@@ -633,8 +633,8 @@
             // 
             this.grdSucursalContacto.AllowUserToAddRows = false;
             this.grdSucursalContacto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdSucursalContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdSucursalContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.grdSucursalContacto.AutoGenerateColumns = false;
             this.grdSucursalContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSucursalContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -686,8 +686,8 @@
             // nombreTipoContactoDataGridViewTextBoxColumn
             // 
             this.nombreTipoContactoDataGridViewTextBoxColumn.DataPropertyName = "NombreTipoContacto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.nombreTipoContactoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.nombreTipoContactoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
             this.nombreTipoContactoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.nombreTipoContactoDataGridViewTextBoxColumn.Name = "nombreTipoContactoDataGridViewTextBoxColumn";
             this.nombreTipoContactoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1154,8 +1154,8 @@
             // codigoSucursalDataGridViewTextBoxColumn
             // 
             this.codigoSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoSucursal";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
             this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "Sucursal";
             this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
             this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1164,8 +1164,8 @@
             // numeroCitaDataGridViewTextBoxColumn
             // 
             this.numeroCitaDataGridViewTextBoxColumn.DataPropertyName = "NumeroCita";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle28;
             this.numeroCitaDataGridViewTextBoxColumn.HeaderText = "Número";
             this.numeroCitaDataGridViewTextBoxColumn.Name = "numeroCitaDataGridViewTextBoxColumn";
             this.numeroCitaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1190,9 +1190,9 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.Format = "d";
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle29;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1283,6 +1283,7 @@
             this.cboActiva.Name = "cboActiva";
             this.cboActiva.Size = new System.Drawing.Size(66, 21);
             this.cboActiva.TabIndex = 13;
+            this.cboActiva.SelectedIndexChanged += new System.EventHandler(this.cboActiva_SelectedIndexChanged);
             // 
             // kryptonLabel2
             // 
@@ -1314,6 +1315,7 @@
             this.cboPendiente.Name = "cboPendiente";
             this.cboPendiente.Size = new System.Drawing.Size(69, 21);
             this.cboPendiente.TabIndex = 10;
+            this.cboPendiente.SelectedIndexChanged += new System.EventHandler(this.cboPendiente_SelectedIndexChanged);
             // 
             // tpHistorial
             // 
@@ -1361,8 +1363,8 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle30;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1423,8 +1425,8 @@
             // mCodigo
             // 
             this.mCodigo.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle31;
             this.mCodigo.HeaderText = "Código";
             this.mCodigo.Name = "mCodigo";
             this.mCodigo.ReadOnly = true;
@@ -1902,8 +1904,8 @@
             // cCodigo
             // 
             this.cCodigo.DataPropertyName = "CodigoCliente";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle32;
             this.cCodigo.HeaderText = "CodigoCliente";
             this.cCodigo.Name = "cCodigo";
             this.cCodigo.ReadOnly = true;

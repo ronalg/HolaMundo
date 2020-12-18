@@ -12,7 +12,6 @@ namespace Neo
 {
     public partial class FrmBscCita : Form
     {
-        //string codigo = null;
         public FrmBscCita()
         {
             InitializeComponent();
@@ -30,8 +29,8 @@ namespace Neo
 
         private void FrmBscCita_Load(object sender, EventArgs e)
         {
-            dtpDesde.Value.AddDays(-30);
-            dtpHasta.Value.AddDays(30);
+            dtpDesde.Value = DateTime.Today.AddDays(-30);
+            dtpHasta.Value = DateTime.Today.AddDays(30);
             cboPendiente.SelectedIndex = 0;
             cboActiva.SelectedIndex = 0;
             btnBuscar_Click(sender, EventArgs.Empty);
@@ -56,13 +55,26 @@ namespace Neo
                 activa = true;
             else if (cboActiva.SelectedIndex == 2)
                 activa = false;
-            taCitaMascota.FillByNombre(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, dtpDesde.Value.ToLongDateString(), dtpHasta.Value.ToShortTimeString(), nombre, pendiente, activa);
+            taCitaMascota.FillByFiltro(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, pendiente, activa, dtpDesde.Value.ToShortDateString(), dtpHasta.Value.ToShortDateString(), nombre);
             this.Cursor = Cursors.Default;
         }
 
         private void cboActiva_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            if (dsNeo.tbCitaMascota.Rows.Count > 0)
+            {
+                int numero = int.Parse(grdCita.CurrentRow.Cells["cNumero"].Value.ToString());
+                Utilidad.tscCita.taCita.FillByNumero(Utilidad.tscCita.dsNeo.tbCita, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal,  numero);
+                int codigo = int.Parse(Utilidad.tscCita.dsNeo.tbCita.Rows[0]["CodigoMascota"].ToString());
+                Utilidad.tscCita.taMascota.FillByCodigo(Utilidad.tscCita.dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, codigo);
+                Utilidad.tscCita.taCitaDetalle.FillByNumero(Utilidad.tscCita.dsNeo.tbCitaDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                this.Close();
+            }
         }
     }
 }

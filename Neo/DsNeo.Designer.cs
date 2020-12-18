@@ -21767,7 +21767,6 @@ namespace Neo {
                 this.columnCodigoCliente.AllowDBNull = false;
                 this.columnDueño.AllowDBNull = false;
                 this.columnDueño.MaxLength = 100;
-                this.columnGrupo.AllowDBNull = false;
                 this.columnGrupo.MaxLength = 30;
                 this.columnRaza.AllowDBNull = false;
                 this.columnRaza.MaxLength = 30;
@@ -28697,7 +28696,12 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Grupo {
                 get {
-                    return ((string)(this[this.tabletbCita.GrupoColumn]));
+                    try {
+                        return ((string)(this[this.tabletbCita.GrupoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Grupo\' de la tabla \'tbCita\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletbCita.GrupoColumn] = value;
@@ -28723,22 +28727,6 @@ namespace Neo {
                 }
                 set {
                     this[this.tabletbCita.SexoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte[] Imagen {
-                get {
-                    try {
-                        return ((byte[])(this[this.tabletbCita.ImagenColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Imagen\' de la tabla \'tbCita\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbCita.ImagenColumn] = value;
                 }
             }
             
@@ -28790,11 +28778,11 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Nota {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbCita.NotaColumn]));
+                    if (this.IsNotaNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nota\' de la tabla \'tbCita\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tabletbCita.NotaColumn]));
                     }
                 }
                 set {
@@ -28847,14 +28835,14 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsImagenNull() {
-                return this.IsNull(this.tabletbCita.ImagenColumn);
+            public bool IsGrupoNull() {
+                return this.IsNull(this.tabletbCita.GrupoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetImagenNull() {
-                this[this.tabletbCita.ImagenColumn] = global::System.Convert.DBNull;
+            public void SetGrupoNull() {
+                this[this.tabletbCita.GrupoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28972,11 +28960,11 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Veterinario {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbCitaDetalle.VeterinarioColumn]));
+                    if (this.IsVeterinarioNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Veterinario\' de la tabla \'tbCitaDetalle\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tabletbCitaDetalle.VeterinarioColumn]));
                     }
                 }
                 set {
@@ -29004,11 +28992,11 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Descripcion {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbCitaDetalle.DescripcionColumn]));
+                    if (this.IsDescripcionNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion\' de la tabla \'tbCitaDetalle\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tabletbCitaDetalle.DescripcionColumn]));
                     }
                 }
                 set {
@@ -29074,11 +29062,11 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string nota {
                 get {
-                    try {
-                        return ((string)(this[this.tabletbCitaDetalle.notaColumn]));
+                    if (this.IsnotaNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nota\' de la tabla \'tbCitaDetalle\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tabletbCitaDetalle.notaColumn]));
                     }
                 }
                 set {
@@ -52420,36 +52408,22 @@ AND (@activa IS NULL OR Activa =  @activa)";
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activa", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Activa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Activa, CodigoEmpresa, CodigoSucursal, CodigoTrabajo, Descripcion, Dueño, " +
-                "Fecha, NombreMascota, NumeroCita, Pendiente, Tipo, Usuario, Veterinario FROM dbo" +
-                ".fnCitaMascota(@codigoTrabajo, @codigoEmpresa) AS tbCitaMascota WHERE (Fecha BET" +
-                "WEEN @desde AND @hasta) AND (@nombre IS NULL) AND (@pendiente IS NULL) AND (@act" +
-                "iva IS NULL) OR (Fecha BETWEEN @desde AND @hasta) AND (@pendiente IS NULL) AND (" +
-                "@activa IS NULL) AND (NombreMascota LIKE \'%\' + @nombre + \'%\') OR (Fecha BETWEEN " +
-                "@desde AND @hasta) AND (@pendiente IS NULL) AND (@activa IS NULL) AND (Dueño LIK" +
-                "E \'%\' + @nombre + \'%\') OR (Fecha BETWEEN @desde AND @hasta) AND (@nombre IS NULL" +
-                ") AND (@activa IS NULL) AND (Pendiente = @pendiente) OR (Fecha BETWEEN @desde AN" +
-                "D @hasta) AND (@activa IS NULL) AND (NombreMascota LIKE \'%\' + @nombre + \'%\') AND" +
-                " (Pendiente = @pendiente) OR (Fecha BETWEEN @desde AND @hasta) AND (@activa IS N" +
-                "ULL) AND (Dueño LIKE \'%\' + @nombre + \'%\') AND (Pendiente = @pendiente) OR (Fecha" +
-                " BETWEEN @desde AND @hasta) AND (@nombre IS NULL) AND (@pendiente IS NULL) AND (" +
-                "Activa = @activa) OR (Fecha BETWEEN @desde AND @hasta) AND (@pendiente IS NULL) " +
-                "AND (NombreMascota LIKE \'%\' + @nombre + \'%\') AND (Activa = @activa) OR (Fecha BE" +
-                "TWEEN @desde AND @hasta) AND (@pendiente IS NULL) AND (Dueño LIKE \'%\' + @nombre " +
-                "+ \'%\') AND (Activa = @activa) OR (Fecha BETWEEN @desde AND @hasta) AND (@nombre " +
-                "IS NULL) AND (Pendiente = @pendiente) AND (Activa = @activa) OR (Fecha BETWEEN @" +
-                "desde AND @hasta) AND (NombreMascota LIKE \'%\' + @nombre + \'%\') AND (Pendiente = " +
-                "@pendiente) AND (Activa = @activa) OR (Fecha BETWEEN @desde AND @hasta) AND (Due" +
-                "ño LIKE \'%\' + @nombre + \'%\') AND (Pendiente = @pendiente) AND (Activa = @activa)" +
-                "";
+            this._commandCollection[1].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroCita, Dueño, NombreMascota, Fecha, Tipo, Descripcion, Veterinario, Pendiente, Activa, Usuario
+FROM            dbo.fnCitaMascota(@codigoTrabajo, @codigoEmpresa) AS tbCitaMascota
+WHERE        (CodigoMascota = @codigoMascota)
+AND (@pendiente IS NULL OR pendiente = @pendiente)
+AND (@activa IS NULL OR Activa =  @activa)
+AND fecha BETWEEN @desde AND @hasta
+AND (@nombre IS NULL OR Dueño LIKE '%' + @nombre + '%' OR NombreMascota LIKE '%' + @nombre + '%')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@desde", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "NombreMascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoMascota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoMascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pendiente", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Pendiente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activa", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Activa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@desde", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Dueño", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -52484,39 +52458,45 @@ AND (@activa IS NULL OR Activa =  @activa)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByNombre(DsNeo.tbCitaMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa, string desde, string hasta, string nombre, global::System.Nullable<bool> pendiente, global::System.Nullable<bool> activa) {
+        public virtual int FillByFiltro(DsNeo.tbCitaMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa, global::System.Nullable<int> codigoMascota, global::System.Nullable<bool> pendiente, global::System.Nullable<bool> activa, string desde, string hasta, string nombre) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
+            if ((codigoMascota.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(codigoMascota.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((pendiente.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((bool)(pendiente.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((activa.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((bool)(activa.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((desde == null)) {
                 throw new global::System.ArgumentNullException("desde");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(desde));
+                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(desde));
             }
             if ((hasta == null)) {
                 throw new global::System.ArgumentNullException("hasta");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(hasta));
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(hasta));
             }
             if ((nombre == null)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(nombre));
-            }
-            if ((pendiente.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[5].Value = ((bool)(pendiente.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((activa.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[6].Value = ((bool)(activa.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(nombre));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -52704,10 +52684,12 @@ FROM
 WHERE
 	c.CodigoTrabajo = @codigoTrabajo
 	AND c.CodigoEmpresa = @codigoEmpresa
+                   AND c.CodigoSucursal = @codigoSucursal
 	";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoSucursal", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"UPDATE       tbCita
@@ -52756,11 +52738,14 @@ FROM
 WHERE
 	c.CodigoTrabajo = @codigoTrabajo
 	AND c.CodigoEmpresa = @codigoEmpresa
+                   AND c.CodigoSucursal = @codigoSucursal
                    AND c.NumeroCita = @numeroCita 
+
 	";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoSucursal", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroCita", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCita", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
@@ -52786,10 +52771,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.tbCitaDataTable dataTable, short codigoTrabajo, short codigoEmpresa) {
+        public virtual int Fill(DsNeo.tbCitaDataTable dataTable, short codigoTrabajo, short codigoEmpresa, short codigoSucursal) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigoSucursal));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -52801,11 +52787,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByNumero(DsNeo.tbCitaDataTable dataTable, short codigoTrabajo, short codigoEmpresa, int numeroCita) {
+        public virtual int FillByNumero(DsNeo.tbCitaDataTable dataTable, short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numeroCita) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
-            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(numeroCita));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigoSucursal));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(numeroCita));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -53118,9 +53105,15 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
 	 a.CodigoArticulo, a.Descripcion, cd.pendiente, cd.costo, cd.venta, cd.activa, cd.nota
 FROM
 	tbCitaDetalle cd
+		INNER JOIN tbCita c
+			ON cd.CodigoTrabajo = c.CodigoTrabajo
+				AND cd.CodigoEmpresa = c.CodigoEmpresa
+				AND cd.CodigoSucursal = c.CodigoSucursal
+				AND cd.NumeroCita = c.NumeroCita
 		INNER JOIN tbArticulo a
 			ON cd.CodigoTrabajo = a.CodigoTrabajo
 				AND cd.CodigoEmpresa = a.CodigoEmpresa
+				AND cd.CodigoArticulo = a.CodigoArticulo
 		INNER JOIN tbEmpleado e
 			ON cd.CodigoTrabajo = e.CodigoTrabajo
 				AND cd.CodigoEmpresa = e.CodigoEmpresa
@@ -53160,9 +53153,15 @@ WHERE
 	 a.CodigoArticulo, a.Descripcion, cd.pendiente, cd.costo, cd.venta, cd.activa, cd.nota
 FROM
 	tbCitaDetalle cd
+		INNER JOIN tbCita c
+			ON cd.CodigoTrabajo = c.CodigoTrabajo
+				AND cd.CodigoEmpresa = c.CodigoEmpresa
+				AND cd.CodigoSucursal = c.CodigoSucursal
+				AND cd.NumeroCita = c.NumeroCita
 		INNER JOIN tbArticulo a
 			ON cd.CodigoTrabajo = a.CodigoTrabajo
 				AND cd.CodigoEmpresa = a.CodigoEmpresa
+				AND cd.CodigoArticulo = a.CodigoArticulo
 		INNER JOIN tbEmpleado e
 			ON cd.CodigoTrabajo = e.CodigoTrabajo
 				AND cd.CodigoEmpresa = e.CodigoEmpresa
@@ -53209,6 +53208,20 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DsNeo.tbCitaDetalleDataTable GetData(short codigoTrabajo, short codigoEmpresa, short codigoSucursal) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigoSucursal));
+            DsNeo.tbCitaDetalleDataTable dataTable = new DsNeo.tbCitaDetalleDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

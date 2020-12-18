@@ -439,18 +439,43 @@ namespace Neo
                 nombre = ds.tbSucursal.Rows[0]["Nombre"].ToString();
                 cboSucursal.Text = nombre;
                 CargaContacto(int.Parse(lblCliente.Text));
-                bool? pendiente = null;
-                if (cboPendiente.SelectedIndex == 1)
-                    pendiente = true;
-                else if (cboPendiente.SelectedIndex == 2)
-                    pendiente = false;
-                bool? activa = null;
-                if (cboActiva.SelectedIndex == 1)
-                    activa = true;
-                else if (cboActiva.SelectedIndex == 2)
-                    activa = false;
-                taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, pendiente, activa); 
+                cita(codigo);
                 this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void cita (int codigoMascota)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            bool? pendiente = null;
+            if (cboPendiente.SelectedIndex == 1)
+                pendiente = true;
+            else if (cboPendiente.SelectedIndex == 2)
+                pendiente = false;
+            bool? activa = null;
+            if (cboActiva.SelectedIndex == 1)
+                activa = true;
+            else if (cboActiva.SelectedIndex == 2)
+                activa = false;
+            taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoMascota, pendiente, activa);
+            this.Cursor = Cursors.Default;
+        }
+
+        private void cboPendiente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (grdMto.CurrentRow != null)
+            {
+                int codigo = int.Parse(grdMto.CurrentRow.Cells["mCodigo"].Value.ToString());
+                cita(codigo);
+            }
+        }
+
+        private void cboActiva_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (grdMto.CurrentRow != null)
+            {
+                int codigo = int.Parse(grdMto.CurrentRow.Cells["mCodigo"].Value.ToString());
+                cita(codigo);
             }
         }
     }
