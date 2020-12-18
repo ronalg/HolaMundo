@@ -74,7 +74,7 @@
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroCitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueñoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreMascotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -184,7 +184,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -233,6 +232,7 @@
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(43, 22);
             this.btnVer.Text = "Ver";
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnImprimir
             // 
@@ -466,7 +466,7 @@
             this.codigoTrabajoDataGridViewTextBoxColumn,
             this.codigoEmpresaDataGridViewTextBoxColumn,
             this.codigoSucursalDataGridViewTextBoxColumn,
-            this.numeroCitaDataGridViewTextBoxColumn,
+            this.cNumero,
             this.dueñoDataGridViewTextBoxColumn,
             this.nombreMascotaDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
@@ -512,15 +512,15 @@
             this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
             this.codigoSucursalDataGridViewTextBoxColumn.Visible = false;
             // 
-            // numeroCitaDataGridViewTextBoxColumn
+            // cNumero
             // 
-            this.numeroCitaDataGridViewTextBoxColumn.DataPropertyName = "NumeroCita";
+            this.cNumero.DataPropertyName = "NumeroCita";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.numeroCitaDataGridViewTextBoxColumn.HeaderText = "Número";
-            this.numeroCitaDataGridViewTextBoxColumn.Name = "numeroCitaDataGridViewTextBoxColumn";
-            this.numeroCitaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroCitaDataGridViewTextBoxColumn.Width = 70;
+            this.cNumero.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cNumero.HeaderText = "Número";
+            this.cNumero.Name = "cNumero";
+            this.cNumero.ReadOnly = true;
+            this.cNumero.Width = 70;
             // 
             // dueñoDataGridViewTextBoxColumn
             // 
@@ -669,7 +669,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroCitaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueñoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreMascotaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
