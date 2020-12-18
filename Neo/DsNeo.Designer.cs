@@ -122,8 +122,6 @@ namespace Neo {
         
         private tbEmpleadoDataTable tabletbEmpleado;
         
-        private tbMascotaDataTable tabletbMascota;
-        
         private tbSucursalContactoDataTable tabletbSucursalContacto;
         
         private tbPropiedadDataTable tabletbPropiedad;
@@ -310,9 +308,6 @@ namespace Neo {
                 }
                 if ((ds.Tables["tbEmpleado"] != null)) {
                     base.Tables.Add(new tbEmpleadoDataTable(ds.Tables["tbEmpleado"]));
-                }
-                if ((ds.Tables["tbMascota"] != null)) {
-                    base.Tables.Add(new tbMascotaDataTable(ds.Tables["tbMascota"]));
                 }
                 if ((ds.Tables["tbSucursalContacto"] != null)) {
                     base.Tables.Add(new tbSucursalContactoDataTable(ds.Tables["tbSucursalContacto"]));
@@ -844,16 +839,6 @@ namespace Neo {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tbMascotaDataTable tbMascota {
-            get {
-                return this.tabletbMascota;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public tbSucursalContactoDataTable tbSucursalContacto {
             get {
                 return this.tabletbSucursalContacto;
@@ -1123,9 +1108,6 @@ namespace Neo {
                 }
                 if ((ds.Tables["tbEmpleado"] != null)) {
                     base.Tables.Add(new tbEmpleadoDataTable(ds.Tables["tbEmpleado"]));
-                }
-                if ((ds.Tables["tbMascota"] != null)) {
-                    base.Tables.Add(new tbMascotaDataTable(ds.Tables["tbMascota"]));
                 }
                 if ((ds.Tables["tbSucursalContacto"] != null)) {
                     base.Tables.Add(new tbSucursalContactoDataTable(ds.Tables["tbSucursalContacto"]));
@@ -1472,12 +1454,6 @@ namespace Neo {
                     this.tabletbEmpleado.InitVars();
                 }
             }
-            this.tabletbMascota = ((tbMascotaDataTable)(base.Tables["tbMascota"]));
-            if ((initTable == true)) {
-                if ((this.tabletbMascota != null)) {
-                    this.tabletbMascota.InitVars();
-                }
-            }
             this.tabletbSucursalContacto = ((tbSucursalContactoDataTable)(base.Tables["tbSucursalContacto"]));
             if ((initTable == true)) {
                 if ((this.tabletbSucursalContacto != null)) {
@@ -1622,8 +1598,6 @@ namespace Neo {
             base.Tables.Add(this.tabletbPuesto);
             this.tabletbEmpleado = new tbEmpleadoDataTable();
             base.Tables.Add(this.tabletbEmpleado);
-            this.tabletbMascota = new tbMascotaDataTable();
-            base.Tables.Add(this.tabletbMascota);
             this.tabletbSucursalContacto = new tbSucursalContactoDataTable();
             base.Tables.Add(this.tabletbSucursalContacto);
             this.tabletbPropiedad = new tbPropiedadDataTable();
@@ -1934,12 +1908,6 @@ namespace Neo {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializetbMascota() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializetbSucursalContacto() {
             return false;
         }
@@ -2175,9 +2143,6 @@ namespace Neo {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void tbEmpleadoRowChangeEventHandler(object sender, tbEmpleadoRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void tbMascotaRowChangeEventHandler(object sender, tbMascotaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void tbSucursalContactoRowChangeEventHandler(object sender, tbSucursalContactoRowChangeEvent e);
@@ -19521,750 +19486,6 @@ namespace Neo {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tbMascotaDataTable : global::System.Data.TypedTableBase<tbMascotaRow> {
-            
-            private global::System.Data.DataColumn columnCodigoTrabajo;
-            
-            private global::System.Data.DataColumn columnCodigoEmpresa;
-            
-            private global::System.Data.DataColumn columnCodigoMascota;
-            
-            private global::System.Data.DataColumn columnNombre;
-            
-            private global::System.Data.DataColumn columnCodigoCliente;
-            
-            private global::System.Data.DataColumn columnnombreDueno;
-            
-            private global::System.Data.DataColumn columnNombreGrupo;
-            
-            private global::System.Data.DataColumn columnNombreRaza;
-            
-            private global::System.Data.DataColumn columnNombreEstado;
-            
-            private global::System.Data.DataColumn columnCodigoEmpleado;
-            
-            private global::System.Data.DataColumn columnnombreVeterinario;
-            
-            private global::System.Data.DataColumn columnNombreCaracter;
-            
-            private global::System.Data.DataColumn columnNombrePelaje;
-            
-            private global::System.Data.DataColumn columnNombreGrupoSanguineo;
-            
-            private global::System.Data.DataColumn columnUsuario;
-            
-            private global::System.Data.DataColumn columnApertura;
-            
-            private global::System.Data.DataColumn columnNacimiento;
-            
-            private global::System.Data.DataColumn columnSexo;
-            
-            private global::System.Data.DataColumn columnColor;
-            
-            private global::System.Data.DataColumn columnPedigri;
-            
-            private global::System.Data.DataColumn columnCorteOreja;
-            
-            private global::System.Data.DataColumn columnCorteCola;
-            
-            private global::System.Data.DataColumn columnCastrado;
-            
-            private global::System.Data.DataColumn columnPeluqueria;
-            
-            private global::System.Data.DataColumn columnExhibicion;
-            
-            private global::System.Data.DataColumn columnImagen;
-            
-            private global::System.Data.DataColumn columnDieta;
-            
-            private global::System.Data.DataColumn columnNota;
-            
-            private global::System.Data.DataColumn columnEquipo;
-            
-            private global::System.Data.DataColumn columnCodigoSucursal;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbMascotaDataTable() {
-                this.TableName = "tbMascota";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal tbMascotaDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected tbMascotaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoTrabajoColumn {
-                get {
-                    return this.columnCodigoTrabajo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoEmpresaColumn {
-                get {
-                    return this.columnCodigoEmpresa;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoMascotaColumn {
-                get {
-                    return this.columnCodigoMascota;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombreColumn {
-                get {
-                    return this.columnNombre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoClienteColumn {
-                get {
-                    return this.columnCodigoCliente;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nombreDuenoColumn {
-                get {
-                    return this.columnnombreDueno;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombreGrupoColumn {
-                get {
-                    return this.columnNombreGrupo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombreRazaColumn {
-                get {
-                    return this.columnNombreRaza;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombreEstadoColumn {
-                get {
-                    return this.columnNombreEstado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoEmpleadoColumn {
-                get {
-                    return this.columnCodigoEmpleado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nombreVeterinarioColumn {
-                get {
-                    return this.columnnombreVeterinario;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombreCaracterColumn {
-                get {
-                    return this.columnNombreCaracter;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombrePelajeColumn {
-                get {
-                    return this.columnNombrePelaje;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombreGrupoSanguineoColumn {
-                get {
-                    return this.columnNombreGrupoSanguineo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn UsuarioColumn {
-                get {
-                    return this.columnUsuario;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AperturaColumn {
-                get {
-                    return this.columnApertura;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NacimientoColumn {
-                get {
-                    return this.columnNacimiento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SexoColumn {
-                get {
-                    return this.columnSexo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ColorColumn {
-                get {
-                    return this.columnColor;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PedigriColumn {
-                get {
-                    return this.columnPedigri;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CorteOrejaColumn {
-                get {
-                    return this.columnCorteOreja;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CorteColaColumn {
-                get {
-                    return this.columnCorteCola;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CastradoColumn {
-                get {
-                    return this.columnCastrado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PeluqueriaColumn {
-                get {
-                    return this.columnPeluqueria;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ExhibicionColumn {
-                get {
-                    return this.columnExhibicion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ImagenColumn {
-                get {
-                    return this.columnImagen;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DietaColumn {
-                get {
-                    return this.columnDieta;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NotaColumn {
-                get {
-                    return this.columnNota;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EquipoColumn {
-                get {
-                    return this.columnEquipo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoSucursalColumn {
-                get {
-                    return this.columnCodigoSucursal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbMascotaRow this[int index] {
-                get {
-                    return ((tbMascotaRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event tbMascotaRowChangeEventHandler tbMascotaRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event tbMascotaRowChangeEventHandler tbMascotaRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event tbMascotaRowChangeEventHandler tbMascotaRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event tbMascotaRowChangeEventHandler tbMascotaRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddtbMascotaRow(tbMascotaRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbMascotaRow AddtbMascotaRow(
-                        short CodigoTrabajo, 
-                        short CodigoEmpresa, 
-                        int CodigoMascota, 
-                        string Nombre, 
-                        short CodigoCliente, 
-                        string nombreDueno, 
-                        string NombreGrupo, 
-                        string NombreRaza, 
-                        string NombreEstado, 
-                        short CodigoEmpleado, 
-                        string nombreVeterinario, 
-                        string NombreCaracter, 
-                        string NombrePelaje, 
-                        string NombreGrupoSanguineo, 
-                        string Usuario, 
-                        System.DateTime Apertura, 
-                        System.DateTime Nacimiento, 
-                        string Sexo, 
-                        string Color, 
-                        string Pedigri, 
-                        bool CorteOreja, 
-                        bool CorteCola, 
-                        bool Castrado, 
-                        bool Peluqueria, 
-                        bool Exhibicion, 
-                        byte[] Imagen, 
-                        string Dieta, 
-                        string Nota, 
-                        string Equipo, 
-                        short CodigoSucursal) {
-                tbMascotaRow rowtbMascotaRow = ((tbMascotaRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        CodigoTrabajo,
-                        CodigoEmpresa,
-                        CodigoMascota,
-                        Nombre,
-                        CodigoCliente,
-                        nombreDueno,
-                        NombreGrupo,
-                        NombreRaza,
-                        NombreEstado,
-                        CodigoEmpleado,
-                        nombreVeterinario,
-                        NombreCaracter,
-                        NombrePelaje,
-                        NombreGrupoSanguineo,
-                        Usuario,
-                        Apertura,
-                        Nacimiento,
-                        Sexo,
-                        Color,
-                        Pedigri,
-                        CorteOreja,
-                        CorteCola,
-                        Castrado,
-                        Peluqueria,
-                        Exhibicion,
-                        Imagen,
-                        Dieta,
-                        Nota,
-                        Equipo,
-                        CodigoSucursal};
-                rowtbMascotaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtbMascotaRow);
-                return rowtbMascotaRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                tbMascotaDataTable cln = ((tbMascotaDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new tbMascotaDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnCodigoTrabajo = base.Columns["CodigoTrabajo"];
-                this.columnCodigoEmpresa = base.Columns["CodigoEmpresa"];
-                this.columnCodigoMascota = base.Columns["CodigoMascota"];
-                this.columnNombre = base.Columns["Nombre"];
-                this.columnCodigoCliente = base.Columns["CodigoCliente"];
-                this.columnnombreDueno = base.Columns["nombreDueno"];
-                this.columnNombreGrupo = base.Columns["NombreGrupo"];
-                this.columnNombreRaza = base.Columns["NombreRaza"];
-                this.columnNombreEstado = base.Columns["NombreEstado"];
-                this.columnCodigoEmpleado = base.Columns["CodigoEmpleado"];
-                this.columnnombreVeterinario = base.Columns["nombreVeterinario"];
-                this.columnNombreCaracter = base.Columns["NombreCaracter"];
-                this.columnNombrePelaje = base.Columns["NombrePelaje"];
-                this.columnNombreGrupoSanguineo = base.Columns["NombreGrupoSanguineo"];
-                this.columnUsuario = base.Columns["Usuario"];
-                this.columnApertura = base.Columns["Apertura"];
-                this.columnNacimiento = base.Columns["Nacimiento"];
-                this.columnSexo = base.Columns["Sexo"];
-                this.columnColor = base.Columns["Color"];
-                this.columnPedigri = base.Columns["Pedigri"];
-                this.columnCorteOreja = base.Columns["CorteOreja"];
-                this.columnCorteCola = base.Columns["CorteCola"];
-                this.columnCastrado = base.Columns["Castrado"];
-                this.columnPeluqueria = base.Columns["Peluqueria"];
-                this.columnExhibicion = base.Columns["Exhibicion"];
-                this.columnImagen = base.Columns["Imagen"];
-                this.columnDieta = base.Columns["Dieta"];
-                this.columnNota = base.Columns["Nota"];
-                this.columnEquipo = base.Columns["Equipo"];
-                this.columnCodigoSucursal = base.Columns["CodigoSucursal"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnCodigoTrabajo = new global::System.Data.DataColumn("CodigoTrabajo", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigoTrabajo);
-                this.columnCodigoEmpresa = new global::System.Data.DataColumn("CodigoEmpresa", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigoEmpresa);
-                this.columnCodigoMascota = new global::System.Data.DataColumn("CodigoMascota", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigoMascota);
-                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre);
-                this.columnCodigoCliente = new global::System.Data.DataColumn("CodigoCliente", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigoCliente);
-                this.columnnombreDueno = new global::System.Data.DataColumn("nombreDueno", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombreDueno);
-                this.columnNombreGrupo = new global::System.Data.DataColumn("NombreGrupo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreGrupo);
-                this.columnNombreRaza = new global::System.Data.DataColumn("NombreRaza", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreRaza);
-                this.columnNombreEstado = new global::System.Data.DataColumn("NombreEstado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreEstado);
-                this.columnCodigoEmpleado = new global::System.Data.DataColumn("CodigoEmpleado", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigoEmpleado);
-                this.columnnombreVeterinario = new global::System.Data.DataColumn("nombreVeterinario", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombreVeterinario);
-                this.columnNombreCaracter = new global::System.Data.DataColumn("NombreCaracter", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreCaracter);
-                this.columnNombrePelaje = new global::System.Data.DataColumn("NombrePelaje", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombrePelaje);
-                this.columnNombreGrupoSanguineo = new global::System.Data.DataColumn("NombreGrupoSanguineo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreGrupoSanguineo);
-                this.columnUsuario = new global::System.Data.DataColumn("Usuario", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUsuario);
-                this.columnApertura = new global::System.Data.DataColumn("Apertura", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApertura);
-                this.columnNacimiento = new global::System.Data.DataColumn("Nacimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNacimiento);
-                this.columnSexo = new global::System.Data.DataColumn("Sexo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSexo);
-                this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnColor);
-                this.columnPedigri = new global::System.Data.DataColumn("Pedigri", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPedigri);
-                this.columnCorteOreja = new global::System.Data.DataColumn("CorteOreja", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCorteOreja);
-                this.columnCorteCola = new global::System.Data.DataColumn("CorteCola", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCorteCola);
-                this.columnCastrado = new global::System.Data.DataColumn("Castrado", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCastrado);
-                this.columnPeluqueria = new global::System.Data.DataColumn("Peluqueria", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPeluqueria);
-                this.columnExhibicion = new global::System.Data.DataColumn("Exhibicion", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExhibicion);
-                this.columnImagen = new global::System.Data.DataColumn("Imagen", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImagen);
-                this.columnDieta = new global::System.Data.DataColumn("Dieta", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDieta);
-                this.columnNota = new global::System.Data.DataColumn("Nota", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNota);
-                this.columnEquipo = new global::System.Data.DataColumn("Equipo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEquipo);
-                this.columnCodigoSucursal = new global::System.Data.DataColumn("CodigoSucursal", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigoSucursal);
-                this.columnCodigoTrabajo.AllowDBNull = false;
-                this.columnCodigoTrabajo.Caption = "Trabajo";
-                this.columnCodigoEmpresa.AllowDBNull = false;
-                this.columnCodigoEmpresa.Caption = "Empresa";
-                this.columnCodigoMascota.AllowDBNull = false;
-                this.columnCodigoMascota.Caption = "Código";
-                this.columnNombre.AllowDBNull = false;
-                this.columnNombre.MaxLength = 20;
-                this.columnCodigoCliente.AllowDBNull = false;
-                this.columnCodigoCliente.Caption = "Código ";
-                this.columnnombreDueno.AllowDBNull = false;
-                this.columnnombreDueno.Caption = "Nombre";
-                this.columnnombreDueno.MaxLength = 100;
-                this.columnNombreGrupo.AllowDBNull = false;
-                this.columnNombreGrupo.Caption = "Grupo";
-                this.columnNombreGrupo.MaxLength = 30;
-                this.columnNombreRaza.AllowDBNull = false;
-                this.columnNombreRaza.Caption = "Raza";
-                this.columnNombreRaza.MaxLength = 30;
-                this.columnNombreEstado.AllowDBNull = false;
-                this.columnNombreEstado.Caption = "Estado";
-                this.columnNombreEstado.MaxLength = 15;
-                this.columnCodigoEmpleado.AllowDBNull = false;
-                this.columnCodigoEmpleado.Caption = "Código";
-                this.columnnombreVeterinario.AllowDBNull = false;
-                this.columnnombreVeterinario.Caption = "Nombre";
-                this.columnnombreVeterinario.MaxLength = 60;
-                this.columnNombreCaracter.Caption = "Caracter";
-                this.columnNombreCaracter.MaxLength = 15;
-                this.columnNombrePelaje.Caption = "Pelaje";
-                this.columnNombrePelaje.MaxLength = 20;
-                this.columnNombreGrupoSanguineo.Caption = "Grupo Sanguineo";
-                this.columnNombreGrupoSanguineo.MaxLength = 10;
-                this.columnUsuario.AllowDBNull = false;
-                this.columnUsuario.MaxLength = 20;
-                this.columnApertura.AllowDBNull = false;
-                this.columnNacimiento.AllowDBNull = false;
-                this.columnSexo.AllowDBNull = false;
-                this.columnSexo.MaxLength = 10;
-                this.columnColor.MaxLength = 30;
-                this.columnPedigri.Caption = "Pedigrí";
-                this.columnPedigri.MaxLength = 50;
-                this.columnCorteOreja.AllowDBNull = false;
-                this.columnCorteOreja.Caption = "Corte Oreja";
-                this.columnCorteOreja.DefaultValue = ((bool)(false));
-                this.columnCorteCola.AllowDBNull = false;
-                this.columnCorteCola.Caption = "Corte Cola";
-                this.columnCorteCola.DefaultValue = ((bool)(false));
-                this.columnCastrado.AllowDBNull = false;
-                this.columnCastrado.DefaultValue = ((bool)(false));
-                this.columnPeluqueria.AllowDBNull = false;
-                this.columnPeluqueria.Caption = "Peluquería";
-                this.columnPeluqueria.DefaultValue = ((bool)(false));
-                this.columnExhibicion.AllowDBNull = false;
-                this.columnExhibicion.Caption = "Exhibición";
-                this.columnExhibicion.DefaultValue = ((bool)(false));
-                this.columnDieta.MaxLength = 2147483647;
-                this.columnNota.MaxLength = 2147483647;
-                this.columnEquipo.MaxLength = 50;
-                this.columnCodigoSucursal.AllowDBNull = false;
-                this.columnCodigoSucursal.Caption = "Sucursal";
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbMascotaRow NewtbMascotaRow() {
-                return ((tbMascotaRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tbMascotaRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(tbMascotaRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.tbMascotaRowChanged != null)) {
-                    this.tbMascotaRowChanged(this, new tbMascotaRowChangeEvent(((tbMascotaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.tbMascotaRowChanging != null)) {
-                    this.tbMascotaRowChanging(this, new tbMascotaRowChangeEvent(((tbMascotaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.tbMascotaRowDeleted != null)) {
-                    this.tbMascotaRowDeleted(this, new tbMascotaRowChangeEvent(((tbMascotaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.tbMascotaRowDeleting != null)) {
-                    this.tbMascotaRowDeleting(this, new tbMascotaRowChangeEvent(((tbMascotaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovetbMascotaRow(tbMascotaRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsNeo ds = new DsNeo();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tbMascotaDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class tbSucursalContactoDataTable : global::System.Data.TypedTableBase<tbSucursalContactoRow> {
             
             private global::System.Data.DataColumn columnNombre;
@@ -27790,476 +27011,6 @@ namespace Neo {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tbMascotaRow : global::System.Data.DataRow {
-            
-            private tbMascotaDataTable tabletbMascota;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal tbMascotaRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tabletbMascota = ((tbMascotaDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short CodigoTrabajo {
-                get {
-                    return ((short)(this[this.tabletbMascota.CodigoTrabajoColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CodigoTrabajoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short CodigoEmpresa {
-                get {
-                    return ((short)(this[this.tabletbMascota.CodigoEmpresaColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CodigoEmpresaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CodigoMascota {
-                get {
-                    return ((int)(this[this.tabletbMascota.CodigoMascotaColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CodigoMascotaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Nombre {
-                get {
-                    return ((string)(this[this.tabletbMascota.NombreColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.NombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short CodigoCliente {
-                get {
-                    return ((short)(this[this.tabletbMascota.CodigoClienteColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CodigoClienteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string nombreDueno {
-                get {
-                    return ((string)(this[this.tabletbMascota.nombreDuenoColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.nombreDuenoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NombreGrupo {
-                get {
-                    return ((string)(this[this.tabletbMascota.NombreGrupoColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.NombreGrupoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NombreRaza {
-                get {
-                    return ((string)(this[this.tabletbMascota.NombreRazaColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.NombreRazaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NombreEstado {
-                get {
-                    return ((string)(this[this.tabletbMascota.NombreEstadoColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.NombreEstadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short CodigoEmpleado {
-                get {
-                    return ((short)(this[this.tabletbMascota.CodigoEmpleadoColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CodigoEmpleadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string nombreVeterinario {
-                get {
-                    return ((string)(this[this.tabletbMascota.nombreVeterinarioColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.nombreVeterinarioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NombreCaracter {
-                get {
-                    try {
-                        return ((string)(this[this.tabletbMascota.NombreCaracterColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreCaracter\' de la tabla \'tbMascota\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbMascota.NombreCaracterColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NombrePelaje {
-                get {
-                    try {
-                        return ((string)(this[this.tabletbMascota.NombrePelajeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombrePelaje\' de la tabla \'tbMascota\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbMascota.NombrePelajeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NombreGrupoSanguineo {
-                get {
-                    if (this.IsNombreGrupoSanguineoNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tabletbMascota.NombreGrupoSanguineoColumn]));
-                    }
-                }
-                set {
-                    this[this.tabletbMascota.NombreGrupoSanguineoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Usuario {
-                get {
-                    return ((string)(this[this.tabletbMascota.UsuarioColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.UsuarioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Apertura {
-                get {
-                    return ((global::System.DateTime)(this[this.tabletbMascota.AperturaColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.AperturaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Nacimiento {
-                get {
-                    return ((global::System.DateTime)(this[this.tabletbMascota.NacimientoColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.NacimientoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Sexo {
-                get {
-                    return ((string)(this[this.tabletbMascota.SexoColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.SexoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Color {
-                get {
-                    try {
-                        return ((string)(this[this.tabletbMascota.ColorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Color\' de la tabla \'tbMascota\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbMascota.ColorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Pedigri {
-                get {
-                    try {
-                        return ((string)(this[this.tabletbMascota.PedigriColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Pedigri\' de la tabla \'tbMascota\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbMascota.PedigriColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool CorteOreja {
-                get {
-                    return ((bool)(this[this.tabletbMascota.CorteOrejaColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CorteOrejaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool CorteCola {
-                get {
-                    return ((bool)(this[this.tabletbMascota.CorteColaColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CorteColaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Castrado {
-                get {
-                    return ((bool)(this[this.tabletbMascota.CastradoColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CastradoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Peluqueria {
-                get {
-                    return ((bool)(this[this.tabletbMascota.PeluqueriaColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.PeluqueriaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Exhibicion {
-                get {
-                    return ((bool)(this[this.tabletbMascota.ExhibicionColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.ExhibicionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Dieta {
-                get {
-                    try {
-                        return ((string)(this[this.tabletbMascota.DietaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Dieta\' de la tabla \'tbMascota\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbMascota.DietaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Nota {
-                get {
-                    try {
-                        return ((string)(this[this.tabletbMascota.NotaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nota\' de la tabla \'tbMascota\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbMascota.NotaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Equipo {
-                get {
-                    try {
-                        return ((string)(this[this.tabletbMascota.EquipoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Equipo\' de la tabla \'tbMascota\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbMascota.EquipoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short CodigoSucursal {
-                get {
-                    return ((short)(this[this.tabletbMascota.CodigoSucursalColumn]));
-                }
-                set {
-                    this[this.tabletbMascota.CodigoSucursalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNombreCaracterNull() {
-                return this.IsNull(this.tabletbMascota.NombreCaracterColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNombreCaracterNull() {
-                this[this.tabletbMascota.NombreCaracterColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNombrePelajeNull() {
-                return this.IsNull(this.tabletbMascota.NombrePelajeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNombrePelajeNull() {
-                this[this.tabletbMascota.NombrePelajeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNombreGrupoSanguineoNull() {
-                return this.IsNull(this.tabletbMascota.NombreGrupoSanguineoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNombreGrupoSanguineoNull() {
-                this[this.tabletbMascota.NombreGrupoSanguineoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsColorNull() {
-                return this.IsNull(this.tabletbMascota.ColorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetColorNull() {
-                this[this.tabletbMascota.ColorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPedigriNull() {
-                return this.IsNull(this.tabletbMascota.PedigriColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPedigriNull() {
-                this[this.tabletbMascota.PedigriColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDietaNull() {
-                return this.IsNull(this.tabletbMascota.DietaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDietaNull() {
-                this[this.tabletbMascota.DietaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNotaNull() {
-                return this.IsNull(this.tabletbMascota.NotaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNotaNull() {
-                this[this.tabletbMascota.NotaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsEquipoNull() {
-                return this.IsNull(this.tabletbMascota.EquipoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetEquipoNull() {
-                this[this.tabletbMascota.EquipoColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class tbSucursalContactoRow : global::System.Data.DataRow {
             
             private tbSucursalContactoDataTable tabletbSucursalContacto;
@@ -30893,40 +29644,6 @@ namespace Neo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbEmpleadoRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class tbMascotaRowChangeEvent : global::System.EventArgs {
-            
-            private tbMascotaRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbMascotaRowChangeEvent(tbMascotaRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbMascotaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -51060,651 +49777,6 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoEmpleado,@codigoSucursal,@no
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class taMascota : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public taMascota() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tbMascota";
-            tableMapping.ColumnMappings.Add("CodigoTrabajo", "CodigoTrabajo");
-            tableMapping.ColumnMappings.Add("CodigoEmpresa", "CodigoEmpresa");
-            tableMapping.ColumnMappings.Add("CodigoMascota", "CodigoMascota");
-            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
-            tableMapping.ColumnMappings.Add("CodigoCliente", "CodigoCliente");
-            tableMapping.ColumnMappings.Add("nombreDueno", "nombreDueno");
-            tableMapping.ColumnMappings.Add("NombreGrupo", "NombreGrupo");
-            tableMapping.ColumnMappings.Add("NombreRaza", "NombreRaza");
-            tableMapping.ColumnMappings.Add("NombreEstado", "NombreEstado");
-            tableMapping.ColumnMappings.Add("CodigoEmpleado", "CodigoEmpleado");
-            tableMapping.ColumnMappings.Add("nombreVeterinario", "nombreVeterinario");
-            tableMapping.ColumnMappings.Add("NombreCaracter", "NombreCaracter");
-            tableMapping.ColumnMappings.Add("NombrePelaje", "NombrePelaje");
-            tableMapping.ColumnMappings.Add("NombreGrupoSanguineo", "NombreGrupoSanguineo");
-            tableMapping.ColumnMappings.Add("Usuario", "Usuario");
-            tableMapping.ColumnMappings.Add("Apertura", "Apertura");
-            tableMapping.ColumnMappings.Add("Nacimiento", "Nacimiento");
-            tableMapping.ColumnMappings.Add("Sexo", "Sexo");
-            tableMapping.ColumnMappings.Add("Color", "Color");
-            tableMapping.ColumnMappings.Add("Pedigri", "Pedigri");
-            tableMapping.ColumnMappings.Add("CorteOreja", "CorteOreja");
-            tableMapping.ColumnMappings.Add("CorteCola", "CorteCola");
-            tableMapping.ColumnMappings.Add("Castrado", "Castrado");
-            tableMapping.ColumnMappings.Add("Peluqueria", "Peluqueria");
-            tableMapping.ColumnMappings.Add("Exhibicion", "Exhibicion");
-            tableMapping.ColumnMappings.Add("Imagen", "Imagen");
-            tableMapping.ColumnMappings.Add("Dieta", "Dieta");
-            tableMapping.ColumnMappings.Add("Nota", "Nota");
-            tableMapping.ColumnMappings.Add("Equipo", "Equipo");
-            tableMapping.ColumnMappings.Add("CodigoSucursal", "CodigoSucursal");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Neo.Properties.Settings.Default.csNeo;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoMascota, Nombre, CodigoCliente, nombreDueno, NombreGrupo, NombreRaza, NombreEstado, CodigoEmpleado, nombreVeterinario, NombreCaracter, NombrePelaje, 
-                         NombreGrupoSanguineo, Usuario, Apertura, Nacimiento, Sexo, Color, Pedigri, CorteOreja, CorteCola, Castrado, Peluqueria, Exhibicion, Imagen, Dieta, Nota, Equipo, CodigoSucursal
-FROM            dbo.fnMascota(@codigoTrabajo, @codigoEmpresa, @nombre) AS tbMascota";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"UPDATE       tbMascota
-SET                CodigoSucursal = @codigoSucursal, CodigoCliente = @codigoCliente, NombreGrupo = @nombreGrupo, NombreRaza = @nombreRaza, NombreEstado = @nombreEstado, CodigoEmpleado = @codigoEmpleado, 
-                         NombreCaracter = @nombreCaracter, NombrePelaje = @nombrePelaje, NombreGrupoSanguineo = @nombreGrupoSanguineo, Nombre = @nombre, Apertura = @apertura, Nacimiento = @nacimiento, Sexo = @sexo, 
-                         Color = @color, Pedigri = @pedigri, CorteOreja = @corteOreja, CorteCola = @corteOreja, Castrado = @castrado, Peluqueria = @peluqueria, Exhibicion = @exhibicion, Imagen = @imageb, Dieta = @dieta, Nota = @nota
-WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoMascota = @codigoMascota)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoSucursal", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoCliente", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreGrupo", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "NombreGrupo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreRaza", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "NombreRaza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpleado", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreCaracter", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCaracter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombrePelaje", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "NombrePelaje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreGrupoSanguineo", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NombreGrupoSanguineo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apertura", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Apertura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nacimiento", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Nacimiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexo", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@color", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pedigri", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pedigri", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@corteOreja", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CorteOreja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@castrado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Castrado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peluqueria", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Peluqueria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@exhibicion", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Exhibicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imageb", global::System.Data.SqlDbType.Image, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Imagen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dieta", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Dieta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nota", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Nota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoMascota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoMascota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM tbMascota\r\nWHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoE" +
-                "mpresa = @codigoEmpresa) AND (CodigoMascota = @codigoMascota)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoMascota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoMascota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoMascota, Nombre, CodigoCliente, nombreDueno, NombreGrupo, NombreRaza, NombreEstado, CodigoEmpleado, nombreVeterinario, NombreCaracter, NombrePelaje, 
-                         NombreGrupoSanguineo, Usuario, Apertura, Nacimiento, Sexo, Color, Pedigri, CorteOreja, CorteCola, Castrado, Peluqueria, Exhibicion, Imagen, Dieta, Nota, Equipo, CodigoSucursal
-FROM            dbo.fnMascota(@codigoTrabajo, @codigoEmpresa, @nombre) AS tbMascota
-WHERE CodigoMascota = @codigoMascota";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoMascota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoMascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO tbMascota
-                         (CodigoTrabajo, CodigoEmpresa, CodigoMascota, CodigoSucursal, CodigoCliente, NombreGrupo, NombreRaza, NombreEstado, CodigoEmpleado, NombreCaracter, NombrePelaje, NombreGrupoSanguineo, Usuario, Nombre, 
-                         Apertura, Nacimiento, Sexo, Color, Pedigri, CorteOreja, CorteCola, Castrado, Peluqueria, Exhibicion, Imagen, Dieta, Nota, Equipo)
-VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoMascota,@codigoSucursal,@codigoCliente,@nombreGrupo,@nombreRaza,@nombreEstado,@codigoEmpleado,@nombreCaracter,@nombrePelaje,@nombreGrupoSanguineo,@usuario,@nombre,@apertura,@nacimiento,@sexo,@color,@pedigri,@corteOreja,@corteCola,@castrado,@peluqueria,@exhbicion,@imagen,@dieta,@nota,@equipo)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoMascota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoMascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoSucursal", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoCliente", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreGrupo", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "NombreGrupo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreRaza", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "NombreRaza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpleado", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreCaracter", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCaracter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombrePelaje", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "NombrePelaje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreGrupoSanguineo", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NombreGrupoSanguineo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apertura", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Apertura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nacimiento", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Nacimiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexo", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@color", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pedigri", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pedigri", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@corteOreja", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CorteOreja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@corteCola", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CorteCola", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@castrado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Castrado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peluqueria", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Peluqueria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@exhbicion", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Exhibicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagen", global::System.Data.SqlDbType.Image, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Imagen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dieta", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Dieta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nota", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Nota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equipo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Equipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.tbMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa, string nombre) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
-            if ((nombre == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(nombre));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByCodigo(DsNeo.tbMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa, string nombre, int codigoMascota) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
-            if ((nombre == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(nombre));
-            }
-            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(codigoMascota));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Edita(
-                    short codigoSucursal, 
-                    short codigoCliente, 
-                    string nombreGrupo, 
-                    string nombreRaza, 
-                    string nombreEstado, 
-                    short codigoEmpleado, 
-                    string nombreCaracter, 
-                    string nombrePelaje, 
-                    string nombreGrupoSanguineo, 
-                    string nombre, 
-                    string apertura, 
-                    string nacimiento, 
-                    string sexo, 
-                    string color, 
-                    string pedigri, 
-                    bool corteOreja, 
-                    bool castrado, 
-                    bool peluqueria, 
-                    bool exhibicion, 
-                    byte[] imageb, 
-                    string dieta, 
-                    string nota, 
-                    short codigoTrabajo, 
-                    short codigoEmpresa, 
-                    int codigoMascota) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((short)(codigoSucursal));
-            command.Parameters[1].Value = ((short)(codigoCliente));
-            if ((nombreGrupo == null)) {
-                throw new global::System.ArgumentNullException("nombreGrupo");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(nombreGrupo));
-            }
-            if ((nombreRaza == null)) {
-                throw new global::System.ArgumentNullException("nombreRaza");
-            }
-            else {
-                command.Parameters[3].Value = ((string)(nombreRaza));
-            }
-            if ((nombreEstado == null)) {
-                throw new global::System.ArgumentNullException("nombreEstado");
-            }
-            else {
-                command.Parameters[4].Value = ((string)(nombreEstado));
-            }
-            command.Parameters[5].Value = ((short)(codigoEmpleado));
-            if ((nombreCaracter == null)) {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[6].Value = ((string)(nombreCaracter));
-            }
-            if ((nombrePelaje == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[7].Value = ((string)(nombrePelaje));
-            }
-            if ((nombreGrupoSanguineo == null)) {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[8].Value = ((string)(nombreGrupoSanguineo));
-            }
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                command.Parameters[9].Value = ((string)(nombre));
-            }
-            if ((apertura == null)) {
-                throw new global::System.ArgumentNullException("apertura");
-            }
-            else {
-                command.Parameters[10].Value = ((string)(apertura));
-            }
-            if ((nacimiento == null)) {
-                throw new global::System.ArgumentNullException("nacimiento");
-            }
-            else {
-                command.Parameters[11].Value = ((string)(nacimiento));
-            }
-            if ((sexo == null)) {
-                throw new global::System.ArgumentNullException("sexo");
-            }
-            else {
-                command.Parameters[12].Value = ((string)(sexo));
-            }
-            if ((color == null)) {
-                command.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[13].Value = ((string)(color));
-            }
-            if ((pedigri == null)) {
-                command.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[14].Value = ((string)(pedigri));
-            }
-            command.Parameters[15].Value = ((bool)(corteOreja));
-            command.Parameters[16].Value = ((bool)(castrado));
-            command.Parameters[17].Value = ((bool)(peluqueria));
-            command.Parameters[18].Value = ((bool)(exhibicion));
-            if ((imageb == null)) {
-                command.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[19].Value = ((byte[])(imageb));
-            }
-            if ((dieta == null)) {
-                command.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[20].Value = ((string)(dieta));
-            }
-            if ((nota == null)) {
-                command.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[21].Value = ((string)(nota));
-            }
-            command.Parameters[22].Value = ((short)(codigoTrabajo));
-            command.Parameters[23].Value = ((short)(codigoEmpresa));
-            command.Parameters[24].Value = ((int)(codigoMascota));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int Elimina(short codigoTrabajo, short codigoEmpresa, int codigoMascota) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((short)(codigoTrabajo));
-            command.Parameters[1].Value = ((short)(codigoEmpresa));
-            command.Parameters[2].Value = ((int)(codigoMascota));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Inserta(
-                    short codigoTrabajo, 
-                    short codigoEmpresa, 
-                    int codigoMascota, 
-                    short codigoSucursal, 
-                    short codigoCliente, 
-                    string nombreGrupo, 
-                    string nombreRaza, 
-                    string nombreEstado, 
-                    short codigoEmpleado, 
-                    string nombreCaracter, 
-                    string nombrePelaje, 
-                    string nombreGrupoSanguineo, 
-                    string usuario, 
-                    string nombre, 
-                    string apertura, 
-                    string nacimiento, 
-                    string sexo, 
-                    string color, 
-                    string pedigri, 
-                    bool corteOreja, 
-                    bool corteCola, 
-                    bool castrado, 
-                    bool peluqueria, 
-                    bool exhbicion, 
-                    byte[] imagen, 
-                    string dieta, 
-                    string nota, 
-                    string equipo) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
-            command.Parameters[0].Value = ((short)(codigoTrabajo));
-            command.Parameters[1].Value = ((short)(codigoEmpresa));
-            command.Parameters[2].Value = ((int)(codigoMascota));
-            command.Parameters[3].Value = ((short)(codigoSucursal));
-            command.Parameters[4].Value = ((short)(codigoCliente));
-            if ((nombreGrupo == null)) {
-                throw new global::System.ArgumentNullException("nombreGrupo");
-            }
-            else {
-                command.Parameters[5].Value = ((string)(nombreGrupo));
-            }
-            if ((nombreRaza == null)) {
-                throw new global::System.ArgumentNullException("nombreRaza");
-            }
-            else {
-                command.Parameters[6].Value = ((string)(nombreRaza));
-            }
-            if ((nombreEstado == null)) {
-                throw new global::System.ArgumentNullException("nombreEstado");
-            }
-            else {
-                command.Parameters[7].Value = ((string)(nombreEstado));
-            }
-            command.Parameters[8].Value = ((short)(codigoEmpleado));
-            if ((nombreCaracter == null)) {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[9].Value = ((string)(nombreCaracter));
-            }
-            if ((nombrePelaje == null)) {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[10].Value = ((string)(nombrePelaje));
-            }
-            if ((nombreGrupoSanguineo == null)) {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[11].Value = ((string)(nombreGrupoSanguineo));
-            }
-            if ((usuario == null)) {
-                throw new global::System.ArgumentNullException("usuario");
-            }
-            else {
-                command.Parameters[12].Value = ((string)(usuario));
-            }
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                command.Parameters[13].Value = ((string)(nombre));
-            }
-            if ((apertura == null)) {
-                throw new global::System.ArgumentNullException("apertura");
-            }
-            else {
-                command.Parameters[14].Value = ((string)(apertura));
-            }
-            if ((nacimiento == null)) {
-                throw new global::System.ArgumentNullException("nacimiento");
-            }
-            else {
-                command.Parameters[15].Value = ((string)(nacimiento));
-            }
-            if ((sexo == null)) {
-                throw new global::System.ArgumentNullException("sexo");
-            }
-            else {
-                command.Parameters[16].Value = ((string)(sexo));
-            }
-            if ((color == null)) {
-                command.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[17].Value = ((string)(color));
-            }
-            if ((pedigri == null)) {
-                command.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[18].Value = ((string)(pedigri));
-            }
-            command.Parameters[19].Value = ((bool)(corteOreja));
-            command.Parameters[20].Value = ((bool)(corteCola));
-            command.Parameters[21].Value = ((bool)(castrado));
-            command.Parameters[22].Value = ((bool)(peluqueria));
-            command.Parameters[23].Value = ((bool)(exhbicion));
-            if ((imagen == null)) {
-                command.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[24].Value = ((byte[])(imagen));
-            }
-            if ((dieta == null)) {
-                command.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[25].Value = ((string)(dieta));
-            }
-            if ((nota == null)) {
-                command.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[26].Value = ((string)(nota));
-            }
-            if ((equipo == null)) {
-                command.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[27].Value = ((string)(equipo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class taSucursalContacto : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -52392,112 +50464,25 @@ SELECT CodigoTrabajo, CodigoEmpresa, Codigo, Miembro FROM tbPropiedad WHERE (Cod
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroCita, Dueño, NombreMascota, Fecha, Tipo, Descripcion, Veterinario, Pendiente, Activa, Usuario
-FROM            dbo.fnCitaMascota(@codigoTrabajo, @codigoEmpresa) AS tbCitaMascota
-WHERE        (CodigoMascota = @codigoMascota)
-AND (@pendiente IS NULL OR pendiente = @pendiente)
-AND (@activa IS NULL OR Activa =  @activa)";
+            this._commandCollection[0].CommandText = "SELECT \r\n  CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroCita, Dueño, Nombr" +
+                "eMascota, Fecha, Tipo, Descripcion, Veterinario, Pendiente, Activa, Usuario\r\nFRO" +
+                "M \r\n  dbo.fnCitaMascota(@codigoTrabajo, @codigoEmpresa) AS tbCitaMascota\r\n\r\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoMascota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoMascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pendiente", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Pendiente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activa", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Activa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroCita, Dueño, NombreMascota, Fecha, Tipo, Descripcion, Veterinario, Pendiente, Activa, Usuario
-FROM            dbo.fnCitaMascota(@codigoTrabajo, @codigoEmpresa) AS tbCitaMascota
-WHERE        (CodigoMascota = @codigoMascota)
-AND (@pendiente IS NULL OR pendiente = @pendiente)
-AND (@activa IS NULL OR Activa =  @activa)
-AND fecha BETWEEN @desde AND @hasta
-AND (@nombre IS NULL OR Dueño LIKE '%' + @nombre + '%' OR NombreMascota LIKE '%' + @nombre + '%')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoMascota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoMascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pendiente", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Pendiente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activa", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Activa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@desde", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Dueño", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.tbCitaMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa, int codigoMascota, global::System.Nullable<bool> pendiente, global::System.Nullable<bool> activa) {
+        public virtual int Fill(DsNeo.tbCitaMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
-            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(codigoMascota));
-            if ((pendiente.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((bool)(pendiente.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((activa.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((bool)(activa.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByFiltro(DsNeo.tbCitaMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa, global::System.Nullable<int> codigoMascota, global::System.Nullable<bool> pendiente, global::System.Nullable<bool> activa, string desde, string hasta, string nombre) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
-            if ((codigoMascota.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(codigoMascota.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((pendiente.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((bool)(pendiente.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((activa.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((bool)(activa.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((desde == null)) {
-                throw new global::System.ArgumentNullException("desde");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(desde));
-            }
-            if ((hasta == null)) {
-                throw new global::System.ArgumentNullException("hasta");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(hasta));
-            }
-            if ((nombre == null)) {
-                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(nombre));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -54977,6 +52962,15 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._taCliente != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbCliente.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._taCliente.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._taClienteNacionalidad != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tbClienteNacionalidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -55031,6 +53025,15 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._taTipoTributo != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbTipoTributo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._taTipoTributo.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._taSucursalMiembro != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tbSucursalMiembro.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -55040,21 +53043,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._taCliente != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbCliente.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._taGrupo != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbGrupo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._taCliente.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._taContactoMiembro != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbContactoMiembro.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._taContactoMiembro.Update(updatedRows));
+                    result = (result + this._taGrupo.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -55121,21 +53115,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._taGrupo != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbGrupo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._taContactoMiembro != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbContactoMiembro.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._taGrupo.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._taTipoTributo != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbTipoTributo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._taTipoTributo.Update(updatedRows));
+                    result = (result + this._taContactoMiembro.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -55148,12 +53133,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._taEstado != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbEstado.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._taNacionalidad != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbNacionalidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._taEstado.Update(updatedRows));
+                    result = (result + this._taNacionalidad.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -55256,21 +53241,21 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._taEstado != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbEstado.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._taEstado.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._taEmpresa != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tbEmpresa.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._taEmpresa.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._taSucursal != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbSucursal.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._taSucursal.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -55355,12 +53340,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._taNacionalidad != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tbNacionalidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._taSucursal != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tbSucursal.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._taNacionalidad.Update(updatedRows));
+                    result = (result + this._taSucursal.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -55379,6 +53364,14 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._taTrabajo.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._taCliente != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbCliente.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._taCliente.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -55430,6 +53423,14 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._taTipoTributo != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbTipoTributo.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._taTipoTributo.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._taSucursalMiembro != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tbSucursalMiembro.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -55438,19 +53439,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._taCliente != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbCliente.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._taGrupo != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbGrupo.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._taCliente.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._taContactoMiembro != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbContactoMiembro.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._taContactoMiembro.Update(addedRows));
+                    result = (result + this._taGrupo.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -55510,19 +53503,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._taGrupo != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbGrupo.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._taContactoMiembro != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbContactoMiembro.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._taGrupo.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._taTipoTributo != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbTipoTributo.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._taTipoTributo.Update(addedRows));
+                    result = (result + this._taContactoMiembro.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -55534,11 +53519,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._taEstado != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbEstado.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._taNacionalidad != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbNacionalidad.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._taEstado.Update(addedRows));
+                    result = (result + this._taNacionalidad.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -55630,19 +53615,19 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._taEstado != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbEstado.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._taEstado.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._taEmpresa != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tbEmpresa.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._taEmpresa.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._taSucursal != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbSucursal.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._taSucursal.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -55718,11 +53703,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._taNacionalidad != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tbNacionalidad.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._taSucursal != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tbSucursal.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._taNacionalidad.Update(addedRows));
+                    result = (result + this._taSucursal.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -55736,11 +53721,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(DsNeo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._taNacionalidad != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbNacionalidad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._taSucursal != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbSucursal.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._taNacionalidad.Update(deletedRows));
+                    result = (result + this._taSucursal.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -55816,19 +53801,19 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._taSucursal != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbSucursal.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._taSucursal.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._taEmpresa != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tbEmpresa.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._taEmpresa.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._taEstado != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbEstado.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._taEstado.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -55920,11 +53905,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._taEstado != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbEstado.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._taNacionalidad != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbNacionalidad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._taEstado.Update(deletedRows));
+                    result = (result + this._taNacionalidad.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -55936,19 +53921,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._taTipoTributo != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbTipoTributo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._taContactoMiembro != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbContactoMiembro.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._taTipoTributo.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._taGrupo != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbGrupo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._taGrupo.Update(deletedRows));
+                    result = (result + this._taContactoMiembro.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -56008,19 +53985,11 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._taContactoMiembro != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbContactoMiembro.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._taGrupo != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbGrupo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._taContactoMiembro.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._taCliente != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tbCliente.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._taCliente.Update(deletedRows));
+                    result = (result + this._taGrupo.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -56029,6 +53998,14 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._taSucursalMiembro.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._taTipoTributo != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbTipoTributo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._taTipoTributo.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -56077,6 +54054,14 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroCita,@codigo
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._taClienteNacionalidad.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._taCliente != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tbCliente.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._taCliente.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

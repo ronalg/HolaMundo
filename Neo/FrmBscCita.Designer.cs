@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBscCita));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnCita = new System.Windows.Forms.BindingNavigator(this.components);
             this.bsCita = new System.Windows.Forms.BindingSource(this.components);
@@ -67,13 +65,13 @@
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroCitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueñoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreMascotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.veterinarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pendienteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.activaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -178,7 +176,7 @@
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.Text = "1";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
             // bindingNavigatorSeparator1
@@ -328,7 +326,6 @@
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHasta.Location = new System.Drawing.Point(197, 9);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpHasta.Size = new System.Drawing.Size(94, 21);
             this.dtpHasta.TabIndex = 2;
             // 
@@ -346,7 +343,6 @@
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDesde.Location = new System.Drawing.Point(53, 9);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpDesde.Size = new System.Drawing.Size(94, 21);
             this.dtpDesde.TabIndex = 1;
             // 
@@ -388,13 +384,13 @@
             this.codigoTrabajoDataGridViewTextBoxColumn,
             this.codigoEmpresaDataGridViewTextBoxColumn,
             this.codigoSucursalDataGridViewTextBoxColumn,
-            this.cNumero,
+            this.numeroCitaDataGridViewTextBoxColumn,
             this.dueñoDataGridViewTextBoxColumn,
             this.nombreMascotaDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
             this.veterinarioDataGridViewTextBoxColumn,
-            this.tipoDataGridViewTextBoxColumn,
             this.pendienteDataGridViewCheckBoxColumn,
             this.activaDataGridViewCheckBoxColumn,
             this.usuarioDataGridViewTextBoxColumn});
@@ -416,7 +412,6 @@
             this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
             this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
             this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
             // 
             // codigoEmpresaDataGridViewTextBoxColumn
             // 
@@ -424,7 +419,6 @@
             this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
             this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
             this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
             // 
             // codigoSucursalDataGridViewTextBoxColumn
             // 
@@ -432,17 +426,13 @@
             this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "CodigoSucursal";
             this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
             this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoSucursalDataGridViewTextBoxColumn.Visible = false;
             // 
-            // cNumero
+            // numeroCitaDataGridViewTextBoxColumn
             // 
-            this.cNumero.DataPropertyName = "NumeroCita";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cNumero.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cNumero.HeaderText = "Número";
-            this.cNumero.Name = "cNumero";
-            this.cNumero.ReadOnly = true;
-            this.cNumero.Width = 70;
+            this.numeroCitaDataGridViewTextBoxColumn.DataPropertyName = "NumeroCita";
+            this.numeroCitaDataGridViewTextBoxColumn.HeaderText = "NumeroCita";
+            this.numeroCitaDataGridViewTextBoxColumn.Name = "numeroCitaDataGridViewTextBoxColumn";
+            this.numeroCitaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dueñoDataGridViewTextBoxColumn
             // 
@@ -450,42 +440,20 @@
             this.dueñoDataGridViewTextBoxColumn.HeaderText = "Dueño";
             this.dueñoDataGridViewTextBoxColumn.Name = "dueñoDataGridViewTextBoxColumn";
             this.dueñoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dueñoDataGridViewTextBoxColumn.Width = 200;
             // 
             // nombreMascotaDataGridViewTextBoxColumn
             // 
             this.nombreMascotaDataGridViewTextBoxColumn.DataPropertyName = "NombreMascota";
-            this.nombreMascotaDataGridViewTextBoxColumn.HeaderText = "Mascota";
+            this.nombreMascotaDataGridViewTextBoxColumn.HeaderText = "NombreMascota";
             this.nombreMascotaDataGridViewTextBoxColumn.Name = "nombreMascotaDataGridViewTextBoxColumn";
             this.nombreMascotaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreMascotaDataGridViewTextBoxColumn.Width = 80;
             // 
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 220;
-            // 
-            // veterinarioDataGridViewTextBoxColumn
-            // 
-            this.veterinarioDataGridViewTextBoxColumn.DataPropertyName = "Veterinario";
-            this.veterinarioDataGridViewTextBoxColumn.HeaderText = "Veterinario";
-            this.veterinarioDataGridViewTextBoxColumn.Name = "veterinarioDataGridViewTextBoxColumn";
-            this.veterinarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.veterinarioDataGridViewTextBoxColumn.Width = 150;
             // 
             // tipoDataGridViewTextBoxColumn
             // 
@@ -493,7 +461,20 @@
             this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
             this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // veterinarioDataGridViewTextBoxColumn
+            // 
+            this.veterinarioDataGridViewTextBoxColumn.DataPropertyName = "Veterinario";
+            this.veterinarioDataGridViewTextBoxColumn.HeaderText = "Veterinario";
+            this.veterinarioDataGridViewTextBoxColumn.Name = "veterinarioDataGridViewTextBoxColumn";
+            this.veterinarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pendienteDataGridViewCheckBoxColumn
             // 
@@ -501,7 +482,6 @@
             this.pendienteDataGridViewCheckBoxColumn.HeaderText = "Pendiente";
             this.pendienteDataGridViewCheckBoxColumn.Name = "pendienteDataGridViewCheckBoxColumn";
             this.pendienteDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.pendienteDataGridViewCheckBoxColumn.Width = 70;
             // 
             // activaDataGridViewCheckBoxColumn
             // 
@@ -509,7 +489,6 @@
             this.activaDataGridViewCheckBoxColumn.HeaderText = "Activa";
             this.activaDataGridViewCheckBoxColumn.Name = "activaDataGridViewCheckBoxColumn";
             this.activaDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.activaDataGridViewCheckBoxColumn.Width = 50;
             // 
             // usuarioDataGridViewTextBoxColumn
             // 
@@ -517,7 +496,6 @@
             this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
             this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
             this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usuarioDataGridViewTextBoxColumn.Visible = false;
             // 
             // FrmBscCita
             // 
@@ -587,13 +565,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroCitaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueñoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreMascotaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn veterinarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pendienteDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activaDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;

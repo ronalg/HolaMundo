@@ -4,6 +4,10 @@
 
     partial class DsNeo
     {
+        partial class tbMascotaDataTable
+        {
+        }
+
         partial class tbTipoFinancieraDataTable
         {
         }

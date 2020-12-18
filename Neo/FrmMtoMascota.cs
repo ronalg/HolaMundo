@@ -249,6 +249,8 @@ namespace Neo
             taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             cboSucursal.SelectedIndex = -1;
             cboVeterinario.SelectedIndex = -1;
+            cboGrupo.SelectedIndex = -1;
+            cboRaza.SelectedIndex = -1;
             taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null);
             grdMto_SelectionChanged(sender, EventArgs.Empty);
         }
@@ -444,7 +446,7 @@ namespace Neo
             }
         }
 
-        private void cita (int codigoMascota)
+        private void cita (int? codigoMascota)
         {
             this.Cursor = Cursors.WaitCursor;
             bool? pendiente = null;
@@ -457,7 +459,7 @@ namespace Neo
                 activa = true;
             else if (cboActiva.SelectedIndex == 2)
                 activa = false;
-            taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoMascota, pendiente, activa);
+            taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             this.Cursor = Cursors.Default;
         }
 

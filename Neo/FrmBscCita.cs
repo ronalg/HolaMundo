@@ -55,7 +55,7 @@ namespace Neo
                 activa = true;
             else if (cboActiva.SelectedIndex == 2)
                 activa = false;
-            taCitaMascota.FillByFiltro(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, pendiente, activa, dtpDesde.Value.ToShortDateString(), dtpHasta.Value.ToShortDateString(), nombre);
+            //taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, null, dtpDesde.Value.Date, dtpHasta.Value.Date, null, pendiente, activa, null);
             this.Cursor = Cursors.Default;
         }
 
