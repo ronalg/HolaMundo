@@ -88,6 +88,8 @@
             this.mnuTscOrdenPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTscIncripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTscCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRpt = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptCita = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.cboEmpresa = new System.Windows.Forms.ToolStripComboBox();
             this.cboSucursal = new System.Windows.Forms.ToolStripComboBox();
@@ -108,8 +110,6 @@
             this.dsNeo = new Neo.DsNeo();
             this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
-            this.mnuRpt = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptCita = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -576,7 +576,7 @@
             // 
             this.mnuTscFactura.Enabled = false;
             this.mnuTscFactura.Name = "mnuTscFactura";
-            this.mnuTscFactura.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscFactura.Size = new System.Drawing.Size(179, 22);
             this.mnuTscFactura.Text = "Facturas";
             this.mnuTscFactura.Visible = false;
             this.mnuTscFactura.Click += new System.EventHandler(this.mnuTscFactura_Click);
@@ -585,7 +585,7 @@
             // 
             this.mnuTscOrdenPedido.Enabled = false;
             this.mnuTscOrdenPedido.Name = "mnuTscOrdenPedido";
-            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(179, 22);
             this.mnuTscOrdenPedido.Text = "Ordenes de Pedidos";
             this.mnuTscOrdenPedido.Visible = false;
             this.mnuTscOrdenPedido.Click += new System.EventHandler(this.mnuTscOrdenPedido_Click);
@@ -594,7 +594,7 @@
             // 
             this.mnuTscIncripcion.Enabled = false;
             this.mnuTscIncripcion.Name = "mnuTscIncripcion";
-            this.mnuTscIncripcion.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscIncripcion.Size = new System.Drawing.Size(179, 22);
             this.mnuTscIncripcion.Text = "Incripciones";
             this.mnuTscIncripcion.Visible = false;
             // 
@@ -602,9 +602,26 @@
             // 
             this.mnuTscCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscCita.Image")));
             this.mnuTscCita.Name = "mnuTscCita";
-            this.mnuTscCita.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscCita.Size = new System.Drawing.Size(179, 22);
             this.mnuTscCita.Text = "Citas";
             this.mnuTscCita.Click += new System.EventHandler(this.mnuTscCita_Click);
+            // 
+            // mnuRpt
+            // 
+            this.mnuRpt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuRptCita});
+            this.mnuRpt.Name = "mnuRpt";
+            this.mnuRpt.Size = new System.Drawing.Size(65, 20);
+            this.mnuRpt.Text = "Reportes";
+            // 
+            // mnuRptCita
+            // 
+            this.mnuRptCita.Enabled = false;
+            this.mnuRptCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCita.Image")));
+            this.mnuRptCita.Name = "mnuRptCita";
+            this.mnuRptCita.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptCita.Text = "Citas";
+            this.mnuRptCita.Click += new System.EventHandler(this.mnuRptCita_Click);
             // 
             // toolStrip
             // 
@@ -747,22 +764,6 @@
             // taSucursal
             // 
             this.taSucursal.ClearBeforeFill = true;
-            // 
-            // mnuRpt
-            // 
-            this.mnuRpt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuRptCita});
-            this.mnuRpt.Name = "mnuRpt";
-            this.mnuRpt.Size = new System.Drawing.Size(65, 20);
-            this.mnuRpt.Text = "Reportes";
-            // 
-            // mnuRptCita
-            // 
-            this.mnuRptCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCita.Image")));
-            this.mnuRptCita.Name = "mnuRptCita";
-            this.mnuRptCita.Size = new System.Drawing.Size(180, 22);
-            this.mnuRptCita.Text = "Citas";
-            this.mnuRptCita.Click += new System.EventHandler(this.mnuRptCita_Click);
             // 
             // FrmPrm
             // 

@@ -55,7 +55,7 @@ namespace Neo
                 activa = true;
             else if (cboActiva.SelectedIndex == 2)
                 activa = false;
-            //taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, null, dtpDesde.Value.Date, dtpHasta.Value.Date, null, pendiente, activa, null);
+            taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, dtpDesde.Value.Date, dtpHasta.Value.Date, pendiente, activa, nombre, null, null, null);
             this.Cursor = Cursors.Default;
         }
 
@@ -71,10 +71,15 @@ namespace Neo
                 int numero = int.Parse(grdCita.CurrentRow.Cells["cNumero"].Value.ToString());
                 Utilidad.tscCita.taCita.FillByNumero(Utilidad.tscCita.dsNeo.tbCita, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal,  numero);
                 int codigo = int.Parse(Utilidad.tscCita.dsNeo.tbCita.Rows[0]["CodigoMascota"].ToString());
-                Utilidad.tscCita.taMascota.FillByCodigo(Utilidad.tscCita.dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, codigo);
+                Utilidad.tscCita.taMascota.Fill(Utilidad.tscCita.dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, null); 
                 Utilidad.tscCita.taCitaDetalle.FillByNumero(Utilidad.tscCita.dsNeo.tbCitaDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 this.Close();
             }
+        }
+
+        private void grdCita_DoubleClick(object sender, EventArgs e)
+        {
+            btnVer_Click(sender, EventArgs.Empty);
         }
     }
 }

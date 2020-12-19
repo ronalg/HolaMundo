@@ -60,7 +60,7 @@ namespace Neo
         {
             if (e.KeyCode == Keys.Enter)
             {
-                taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtBuscaMascota.Text.Trim());
+                taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, txtBuscaMascota.Text.Trim());
                 if (grdMascota.RowCount == 1)
                 {
                     grdMascota_DoubleClick(sender, EventArgs.Empty);
@@ -82,7 +82,7 @@ namespace Neo
         private void grdMascota_DoubleClick(object sender, EventArgs e)
         {
             int codigo = int.Parse(grdMascota.CurrentRow.Cells["mCodigo"].Value.ToString());
-            taMascota.FillByCodigo(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, codigo);
+            taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, null);
             grdMascota.Visible = false;
             cboTipo.Focus();
         }
@@ -149,31 +149,39 @@ namespace Neo
 
         private void btnNuevoServicio_Click(object sender, EventArgs e)
         {
-            DataRow dr = dsNeo.tbCitaDetalle.NewtbCitaDetalleRow();
-            dr["CodigoTrabajo"] = Utilidad.codigoTrabajo;
-            dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;
-            dr["CodigoSucursal"] = Utilidad.codigoSucursal;
-            dr["NumeroCita"] = 0;
-            dr["CodigoEmpleado"] = DBNull.Value;
-            dr["Veterinario"] = DBNull.Value;
-            dr["CodigoArticulo"] = DBNull.Value;
-            dr["Descripcion"] = DBNull.Value;
-            dr["Pendiente"] = true;
-            dr["Costo"] = DBNull.Value;
-            dr["Venta"] = DBNull.Value;
-            dr["Activa"] = true;
-            dr["Nota"] = DBNull.Value;
-            dsNeo.tbCitaDetalle.Rows.Add(dr);
-            pnlServicio.Visible = true;
-            txtServicio.Clear();
-            txtServicio.Focus();
-            grdArticulo.Rows[grdArticulo.RowCount - 1].Cells["aCodigo"].Selected = true;
+            if (!string.IsNullOrEmpty(lblCodigo.Text))
+            {
+                DataRow dr = dsNeo.tbCitaDetalle.NewtbCitaDetalleRow();
+                dr["CodigoTrabajo"] = Utilidad.codigoTrabajo;
+                dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;
+                dr["CodigoSucursal"] = Utilidad.codigoSucursal;
+                dr["NumeroCita"] = 0;
+                dr["CodigoEmpleado"] = DBNull.Value;
+                dr["Veterinario"] = DBNull.Value;
+                dr["CodigoArticulo"] = DBNull.Value;
+                dr["Descripcion"] = DBNull.Value;
+                dr["Pendiente"] = true;
+                dr["Costo"] = DBNull.Value;
+                dr["Venta"] = DBNull.Value;
+                dr["Activa"] = true;
+                dr["Nota"] = DBNull.Value;
+                dsNeo.tbCitaDetalle.Rows.Add(dr);
+                pnlServicio.Visible = true;
+                txtServicio.Clear();
+                txtServicio.Focus();
+                grdArticulo.Rows[grdArticulo.RowCount - 1].Cells["aCodigo"].Selected = true;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione mascota", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnAceptaServicio_Click(object sender, EventArgs e)
         {
             if (grdServicio.CurrentRow.Cells["sCodigo"].Value != DBNull.Value)
             {
+                this.Cursor = Cursors.WaitCursor;
                 int codigo = int.Parse(grdServicio.CurrentRow.Cells["sCodigo"].Value.ToString());
                 grdArticulo.CurrentRow.Cells["aCodigo"].Value = codigo;
                 grdArticulo.CurrentRow.Cells["aDescripcion"].Value = grdServicio.CurrentRow.Cells["sDescripcion"].Value.ToString();
@@ -200,7 +208,7 @@ namespace Neo
                     grdArticulo.CurrentRow.Cells["aVenta"].Value = 0.00M;
                 }
                 codigo = int.Parse(lblCodigo.Text);
-                taMascota.FillByCodigo(dataSet.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, codigo);
+                taMascota.Fill(dataSet.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, null);
                 short codigoEmpleado = short.Parse(dataSet.tbMascota.Rows[0]["CodigoEmpleado"].ToString());
                 grdArticulo.CurrentRow.Cells["aCodigoVeterinario"].Value = codigoEmpleado;
                 string nombre = dataSet.tbMascota.Rows[0]["nombreVeterinario"].ToString();
@@ -208,6 +216,7 @@ namespace Neo
                 pnlServicio.Visible = false;
                 lblTotal.Text = total().ToString("N2");
                 bnDetalle.Focus();
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -392,11 +401,14 @@ namespace Neo
                     dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.textoCuadroMensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (dr == DialogResult.Yes)
                     {
-                        int codigo = int.Parse(grdArticulo.CurrentRow.Cells["aCodigo"].Value.ToString());
-                        if (!string.IsNullOrEmpty(lblNumero.Text))
+                        if (grdArticulo.CurrentRow.Cells["aCodigo"].Value != DBNull.Value)
                         {
-                            int numero = int.Parse(lblNumero.Text);
-                            taCitaDetalle.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo);
+                            int codigo = int.Parse(grdArticulo.CurrentRow.Cells["aCodigo"].Value.ToString());
+                            if (!string.IsNullOrEmpty(lblNumero.Text))
+                            {
+                                int numero = int.Parse(lblNumero.Text);
+                                taCitaDetalle.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo);
+                            }
                         }
                         grdArticulo.Rows.Remove(grdArticulo.CurrentRow);
                         lblTotal.Text = total().ToString("N2");

@@ -69,6 +69,10 @@ namespace Neo
             cboVeterinario.SelectedIndex = -1;
             cboSucursal.Text = ds.tbSucursal.Rows[0]["Nombre"].ToString();
             dsNeo.tbSucursalContacto.Rows.Clear();
+            if (cboVeterinario.Items.Count == 1)
+                cboVeterinario.SelectedIndex = 0;
+            if (cboSucursal.Items.Count == 1)
+                cboSucursal.SelectedIndex = 0;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -85,12 +89,14 @@ namespace Neo
                         int codigo = int.Parse(lblCodigo.Text);
                         taMascota.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                         grdMto.Rows.Remove(grdMto.CurrentRow);
+                        tcMascota.SelectedPage = tpMascota;
                     }
                 }
                 else if (grdMto.CurrentRow != null)
                 {
                     grdMto.Rows.Remove(grdMto.CurrentRow);
                     ConfiguraBoton(true);
+                    tcMascota.SelectedPage = tpMascota;
                 }
             }
             catch (SqlException sqlEx)
@@ -196,7 +202,6 @@ namespace Neo
                 string pelaje = string.IsNullOrEmpty(cboPelaje.Text) ? null : cboPelaje.Text;
                 string sanguineo = string.IsNullOrEmpty(cboSanguineo.Text) ? null : cboSanguineo.Text;
                 short cliente = short.Parse(lblCliente.Text);
-                short sucursal = short.Parse(lblSucursal.Text);
                 short veterinario = short.Parse(lblVeterinario.Text);
                 short codigo;
                 if (!btnNuevo.Available)
@@ -215,12 +220,12 @@ namespace Neo
 
                 if (!btnNuevo.Available)
                 {
-                    taMascota.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, sucursal, cliente, cboGrupo.Text, cboRaza.Text, cboEstado.Text, veterinario, caracter, pelaje, sanguineo, lblUsuario.Text, txtNombre.Text.Trim(), txtApertura.Text, txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkCastrado.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), lblEquipo.Text);
+                    taMascota.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, Utilidad.codigoSucursal, cliente, cboGrupo.Text.Trim(), cboRaza.Text.Trim(), cboEstado.Text.Trim(), veterinario, caracter, pelaje, Utilidad.nombreUsuario, txtNombre.Text.Trim(), DateTime.Today.ToShortDateString(), txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkCastrado.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), lblEquipo.Text);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taMascota.Edita(sucursal, cliente, cboGrupo.Text, cboRaza.Text, cboEstado.Text, veterinario, caracter, pelaje, sanguineo, txtNombre.Text.Trim(), txtApertura.Text.Trim(), txtNacimiento.Text, cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(), Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                    taMascota.Edita(Utilidad.codigoSucursal, cliente, cboGrupo.Text, cboRaza.Text, cboEstado.Text, veterinario, caracter, pelaje, sanguineo, txtNombre.Text.Trim(), txtNacimiento.Text.Trim(), cboSexo.Text, txtColor.Text.Trim(), txtPedigri.Text.Trim(), chkCorteOreja.Checked, chkCorteCola.Checked, chkCastrado.Checked, chkPeluqueria.Checked, chkExhibicion.Checked, imagen, txtDieta.Text.Trim(), txtNota.Text.Trim(),  Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                 }
             }
             catch (NoNullAllowedException nullEx)
@@ -251,7 +256,9 @@ namespace Neo
             cboVeterinario.SelectedIndex = -1;
             cboGrupo.SelectedIndex = -1;
             cboRaza.SelectedIndex = -1;
-            taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null);
+            cboCaracter.SelectedIndex = -1;
+            cboPelaje.SelectedIndex = -1;
+            taMascota.Fill(dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, null);
             grdMto_SelectionChanged(sender, EventArgs.Empty);
         }
 
@@ -338,6 +345,8 @@ namespace Neo
         {
             if (e.KeyCode == Keys.Enter)
             {
+                grdCliente.Columns["cCodigo"].Visible = false;
+                grdCliente.Columns["cNombre"].Visible = false;
                 string nombre = txtBusca.Text;
                 taCliente.FillByNombre(dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
                 if (dsNeo.tbCliente.Rows.Count > 2)
@@ -407,6 +416,7 @@ namespace Neo
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if (Utilidad.mtoCliente == null)
             {
                 Utilidad.mtoCliente = new FrmMtoCliente();
@@ -417,6 +427,7 @@ namespace Neo
             Utilidad.mtoCliente.Text = "Mascota";
             Utilidad.mtoCliente.BringToFront();
             Utilidad.mtoCliente.Show();
+            this.Cursor = Cursors.Default;
         }
 
         public void CargaContacto (int codigo)
@@ -430,6 +441,7 @@ namespace Neo
             {
                 this.Cursor = Cursors.WaitCursor;
                 int codigo = int.Parse(grdMto.CurrentRow.Cells["mCodigo"].Value.ToString());
+                CargaCita(codigo);
                 taSucursalContacto.Fill(dsNeo.tbSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
                 DsNeo ds = new DsNeo();
                 short i = short.Parse(lblVeterinario.Text);
@@ -440,13 +452,13 @@ namespace Neo
                 taSucursal.FillByCodigo(ds.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, i);
                 nombre = ds.tbSucursal.Rows[0]["Nombre"].ToString();
                 cboSucursal.Text = nombre;
-                CargaContacto(int.Parse(lblCliente.Text));
-                cita(codigo);
+                codigo = int.Parse(lblCliente.Text);
+                CargaContacto(codigo);
                 this.Cursor = Cursors.Default;
             }
         }
 
-        private void cita (int? codigoMascota)
+        private void CargaCita (int? codigoMascota)
         {
             this.Cursor = Cursors.WaitCursor;
             bool? pendiente = null;
@@ -459,7 +471,8 @@ namespace Neo
                 activa = true;
             else if (cboActiva.SelectedIndex == 2)
                 activa = false;
-            taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            DsNeoTableAdapters.taCitaMascota ta = new DsNeoTableAdapters.taCitaMascota();
+            ta.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoMascota, null, null, pendiente, activa, null, null, null, null);
             this.Cursor = Cursors.Default;
         }
 
@@ -468,7 +481,7 @@ namespace Neo
             if (grdMto.CurrentRow != null)
             {
                 int codigo = int.Parse(grdMto.CurrentRow.Cells["mCodigo"].Value.ToString());
-                cita(codigo);
+                CargaCita(codigo);
             }
         }
 
@@ -477,8 +490,13 @@ namespace Neo
             if (grdMto.CurrentRow != null)
             {
                 int codigo = int.Parse(grdMto.CurrentRow.Cells["mCodigo"].Value.ToString());
-                cita(codigo);
+                CargaCita(codigo);
             }
+        }
+
+        private void grdMto_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

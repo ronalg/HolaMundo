@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoMascota));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -150,17 +150,18 @@
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoSucursalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDuenoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreGrupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreRazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEstadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreVeterinarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCaracterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrePelajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreGrupoSanguineoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aperturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -176,7 +177,6 @@
             this.dietaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.pnl2 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
@@ -196,19 +196,19 @@
             this.btnCliente = new System.Windows.Forms.ToolStripButton();
             this.spd5 = new System.Windows.Forms.ToolStripSeparator();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.taMascota = new Neo.DsNeoTableAdapters.taMascota();
+            this.ofdLogo = new System.Windows.Forms.OpenFileDialog();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.taGrupo = new Neo.DsNeoTableAdapters.taGrupo();
             this.taRaza = new Neo.DsNeoTableAdapters.taRaza();
             this.taCaracter = new Neo.DsNeoTableAdapters.taCaracter();
             this.taPelaje = new Neo.DsNeoTableAdapters.taPelaje();
             this.taGrupoSanguineo = new Neo.DsNeoTableAdapters.taGrupoSanguineo();
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
-            this.ofdLogo = new System.Windows.Forms.OpenFileDialog();
             this.taEmpleado = new Neo.DsNeoTableAdapters.taEmpleado();
             this.taEstado = new Neo.DsNeoTableAdapters.taEstado();
             this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
             this.taSucursalContacto = new Neo.DsNeoTableAdapters.taSucursalContacto();
-            this.taCitaMascota = new Neo.DsNeoTableAdapters.taCitaMascota();
+            this.taMascota = new Neo.DsNeoTableAdapters.taMascota();
             this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -234,11 +234,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tpMultimedia)).BeginInit();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).BeginInit();
             this.bnMto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -274,15 +274,34 @@
             // 
             // tcMascota
             // 
+            this.tcMascota.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
+            this.tcMascota.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.RemovePageAndDispose;
+            this.tcMascota.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.tcMascota.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.SelectPage;
+            this.tcMascota.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.tcMascota.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
+            this.tcMascota.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
+            this.tcMascota.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.tcMascota.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.tcMascota.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.tcMascota.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.tcMascota.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcMascota.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
+            this.tcMascota.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient;
+            this.tcMascota.Header.HeaderStyleBar = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
+            this.tcMascota.Header.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
+            this.tcMascota.Header.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
             this.tcMascota.Location = new System.Drawing.Point(0, 0);
             this.tcMascota.Name = "tcMascota";
+            this.tcMascota.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
+            this.tcMascota.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
             this.tcMascota.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.tpMascota,
             this.tpCita,
             this.tpHistorial,
             this.tpMultimedia});
-            this.tcMascota.SelectedIndex = 0;
+            this.tcMascota.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
+            this.tcMascota.SelectedIndex = 1;
             this.tcMascota.Size = new System.Drawing.Size(856, 500);
             this.tcMascota.TabIndex = 0;
             this.tcMascota.Text = "kryptonNavigator1";
@@ -291,6 +310,7 @@
             // 
             this.tpMascota.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.tpMascota.AutoScroll = true;
+            this.tpMascota.Controls.Add(this.grdCliente);
             this.tpMascota.Controls.Add(this.kryptonLabel34);
             this.tpMascota.Controls.Add(this.kryptonLabel33);
             this.tpMascota.Controls.Add(this.kryptonLabel32);
@@ -365,6 +385,7 @@
             this.tpMascota.Name = "tpMascota";
             this.tpMascota.Size = new System.Drawing.Size(854, 473);
             this.tpMascota.Text = "Perfil";
+            this.tpMascota.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.tpMascota.ToolTipTitle = "Page ToolTip";
             this.tpMascota.UniqueName = "F1252336AC8144A62AA5D1393A2B66F2";
             this.tpMascota.Click += new System.EventHandler(this.tpMascota_Click);
@@ -633,8 +654,8 @@
             // 
             this.grdSucursalContacto.AllowUserToAddRows = false;
             this.grdSucursalContacto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdSucursalContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdSucursalContacto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.grdSucursalContacto.AutoGenerateColumns = false;
             this.grdSucursalContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSucursalContacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -686,8 +707,8 @@
             // nombreTipoContactoDataGridViewTextBoxColumn
             // 
             this.nombreTipoContactoDataGridViewTextBoxColumn.DataPropertyName = "NombreTipoContacto";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.nombreTipoContactoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.nombreTipoContactoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.nombreTipoContactoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.nombreTipoContactoDataGridViewTextBoxColumn.Name = "nombreTipoContactoDataGridViewTextBoxColumn";
             this.nombreTipoContactoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1103,6 +1124,7 @@
             this.tpCita.Name = "tpCita";
             this.tpCita.Size = new System.Drawing.Size(854, 473);
             this.tpCita.Text = "Citas";
+            this.tpCita.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.tpCita.ToolTipTitle = "Page ToolTip";
             this.tpCita.UniqueName = "DC4D00F6658B484A8F95A88EF790512C";
             // 
@@ -1154,8 +1176,8 @@
             // codigoSucursalDataGridViewTextBoxColumn
             // 
             this.codigoSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoSucursal";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoSucursalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "Sucursal";
             this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
             this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1164,8 +1186,8 @@
             // numeroCitaDataGridViewTextBoxColumn
             // 
             this.numeroCitaDataGridViewTextBoxColumn.DataPropertyName = "NumeroCita";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numeroCitaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.numeroCitaDataGridViewTextBoxColumn.HeaderText = "Número";
             this.numeroCitaDataGridViewTextBoxColumn.Name = "numeroCitaDataGridViewTextBoxColumn";
             this.numeroCitaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1190,9 +1212,9 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "d";
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1326,6 +1348,7 @@
             this.tpHistorial.Name = "tpHistorial";
             this.tpHistorial.Size = new System.Drawing.Size(854, 473);
             this.tpHistorial.Text = "Historial";
+            this.tpHistorial.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.tpHistorial.ToolTipTitle = "Page ToolTip";
             this.tpHistorial.UniqueName = "F5F31AA7389842CBA5AABFB152DC280B";
             // 
@@ -1338,6 +1361,7 @@
             this.tpMultimedia.Name = "tpMultimedia";
             this.tpMultimedia.Size = new System.Drawing.Size(854, 473);
             this.tpMultimedia.Text = "Multimedia";
+            this.tpMultimedia.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.tpMultimedia.ToolTipTitle = "Page ToolTip";
             this.tpMultimedia.UniqueName = "18C05188A4954E9A038DA5C20E19A2C1";
             // 
@@ -1363,25 +1387,26 @@
             // 
             this.grdMto.AllowUserToAddRows = false;
             this.grdMto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.grdMto.AutoGenerateColumns = false;
             this.grdMto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoTrabajoDataGridViewTextBoxColumn,
             this.codigoEmpresaDataGridViewTextBoxColumn,
             this.mCodigo,
-            this.nombreDataGridViewTextBoxColumn,
+            this.codigoSucursalDataGridViewTextBoxColumn1,
             this.codigoClienteDataGridViewTextBoxColumn,
-            this.nombreDuenoDataGridViewTextBoxColumn,
             this.nombreGrupoDataGridViewTextBoxColumn,
             this.nombreRazaDataGridViewTextBoxColumn,
             this.nombreEstadoDataGridViewTextBoxColumn,
             this.codigoEmpleadoDataGridViewTextBoxColumn,
-            this.nombreVeterinarioDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
             this.nombreCaracterDataGridViewTextBoxColumn,
             this.nombrePelajeDataGridViewTextBoxColumn,
             this.nombreGrupoSanguineoDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
+            this.nombreDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn,
             this.aperturaDataGridViewTextBoxColumn,
             this.nacimientoDataGridViewTextBoxColumn,
@@ -1404,6 +1429,7 @@
             this.grdMto.ReadOnly = true;
             this.grdMto.Size = new System.Drawing.Size(449, 500);
             this.grdMto.TabIndex = 3;
+            this.grdMto.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdMto_DataError);
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
             // 
             // codigoTrabajoDataGridViewTextBoxColumn
@@ -1425,20 +1451,20 @@
             // mCodigo
             // 
             this.mCodigo.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle15;
             this.mCodigo.HeaderText = "Código";
             this.mCodigo.Name = "mCodigo";
             this.mCodigo.ReadOnly = true;
-            this.mCodigo.Width = 70;
+            this.mCodigo.Width = 60;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // codigoSucursalDataGridViewTextBoxColumn1
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 80;
+            this.codigoSucursalDataGridViewTextBoxColumn1.DataPropertyName = "CodigoSucursal";
+            this.codigoSucursalDataGridViewTextBoxColumn1.HeaderText = "CodigoSucursal";
+            this.codigoSucursalDataGridViewTextBoxColumn1.Name = "codigoSucursalDataGridViewTextBoxColumn1";
+            this.codigoSucursalDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.codigoSucursalDataGridViewTextBoxColumn1.Visible = false;
             // 
             // codigoClienteDataGridViewTextBoxColumn
             // 
@@ -1447,14 +1473,6 @@
             this.codigoClienteDataGridViewTextBoxColumn.Name = "codigoClienteDataGridViewTextBoxColumn";
             this.codigoClienteDataGridViewTextBoxColumn.ReadOnly = true;
             this.codigoClienteDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDuenoDataGridViewTextBoxColumn
-            // 
-            this.nombreDuenoDataGridViewTextBoxColumn.DataPropertyName = "nombreDueno";
-            this.nombreDuenoDataGridViewTextBoxColumn.HeaderText = "Dueño";
-            this.nombreDuenoDataGridViewTextBoxColumn.Name = "nombreDuenoDataGridViewTextBoxColumn";
-            this.nombreDuenoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDuenoDataGridViewTextBoxColumn.Width = 240;
             // 
             // nombreGrupoDataGridViewTextBoxColumn
             // 
@@ -1488,13 +1506,13 @@
             this.codigoEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
             this.codigoEmpleadoDataGridViewTextBoxColumn.Visible = false;
             // 
-            // nombreVeterinarioDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.nombreVeterinarioDataGridViewTextBoxColumn.DataPropertyName = "nombreVeterinario";
-            this.nombreVeterinarioDataGridViewTextBoxColumn.HeaderText = "nombreVeterinario";
-            this.nombreVeterinarioDataGridViewTextBoxColumn.Name = "nombreVeterinarioDataGridViewTextBoxColumn";
-            this.nombreVeterinarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreVeterinarioDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NombreVeterinario";
+            this.dataGridViewTextBoxColumn1.HeaderText = "NombreVeterinario";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // nombreCaracterDataGridViewTextBoxColumn
             // 
@@ -1519,6 +1537,22 @@
             this.nombreGrupoSanguineoDataGridViewTextBoxColumn.Name = "nombreGrupoSanguineoDataGridViewTextBoxColumn";
             this.nombreGrupoSanguineoDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreGrupoSanguineoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NombreDueno";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Dueño";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 205;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 120;
             // 
             // usuarioDataGridViewTextBoxColumn
             // 
@@ -1639,11 +1673,6 @@
             this.equipoDataGridViewTextBoxColumn.Name = "equipoDataGridViewTextBoxColumn";
             this.equipoDataGridViewTextBoxColumn.ReadOnly = true;
             this.equipoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // bsCliente
-            // 
-            this.bsCliente.DataMember = "tbCliente";
-            this.bsCliente.DataSource = this.dsNeo;
             // 
             // pnl2
             // 
@@ -1820,9 +1849,14 @@
             // 
             this.ep.ContainerControl = this;
             // 
-            // taMascota
+            // ofdLogo
             // 
-            this.taMascota.ClearBeforeFill = true;
+            this.ofdLogo.FileName = "openFileDialog1";
+            // 
+            // bsCliente
+            // 
+            this.bsCliente.DataMember = "tbCliente";
+            this.bsCliente.DataSource = this.dsNeo;
             // 
             // taGrupo
             // 
@@ -1848,10 +1882,6 @@
             // 
             this.taSucursal.ClearBeforeFill = true;
             // 
-            // ofdLogo
-            // 
-            this.ofdLogo.FileName = "openFileDialog1";
-            // 
             // taEmpleado
             // 
             this.taEmpleado.ClearBeforeFill = true;
@@ -1868,9 +1898,9 @@
             // 
             this.taSucursalContacto.ClearBeforeFill = true;
             // 
-            // taCitaMascota
+            // taMascota
             // 
-            this.taCitaMascota.ClearBeforeFill = true;
+            this.taMascota.ClearBeforeFill = true;
             // 
             // grdCliente
             // 
@@ -1882,12 +1912,12 @@
             this.cNombre,
             this.cCodigo});
             this.grdCliente.DataSource = this.bsCliente;
-            this.grdCliente.Location = new System.Drawing.Point(806, 146);
+            this.grdCliente.Location = new System.Drawing.Point(336, 49);
             this.grdCliente.Name = "grdCliente";
             this.grdCliente.ReadOnly = true;
             this.grdCliente.RowHeadersVisible = false;
             this.grdCliente.Size = new System.Drawing.Size(285, 138);
-            this.grdCliente.TabIndex = 72;
+            this.grdCliente.TabIndex = 104;
             this.grdCliente.Visible = false;
             this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
             this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
@@ -1904,8 +1934,8 @@
             // cCodigo
             // 
             this.cCodigo.DataPropertyName = "CodigoCliente";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle16;
             this.cCodigo.HeaderText = "CodigoCliente";
             this.cCodigo.Name = "cCodigo";
             this.cCodigo.ReadOnly = true;
@@ -1917,7 +1947,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1331, 552);
-            this.Controls.Add(this.grdCliente);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
@@ -1950,13 +1979,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.tpMultimedia)).EndInit();
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).EndInit();
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnMto)).EndInit();
             this.bnMto.ResumeLayout(false);
             this.bnMto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).EndInit();
             this.ResumeLayout(false);
 
@@ -2018,7 +2047,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private ComponentFactory.Krypton.Navigator.KryptonPage tpCita;
         private ComponentFactory.Krypton.Navigator.KryptonPage tpHistorial;
-        private DsNeoTableAdapters.taMascota taMascota;
         private System.Windows.Forms.ComboBox cboSucursal;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Label lblEmpresa;
@@ -2047,35 +2075,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreContactoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreTipoContactoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDuenoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreGrupoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreRazaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEstadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreVeterinarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCaracterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombrePelajeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreGrupoSanguineoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aperturaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nacimientoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pedigriDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn corteOrejaDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn corteColaDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn castradoDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn peluqueriaDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn exhibicionDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn imagenDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dietaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipoDataGridViewTextBoxColumn;
         private ComponentFactory.Krypton.Navigator.KryptonPage tpMultimedia;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCita;
         private System.Windows.Forms.Panel pnl8;
@@ -2131,12 +2132,43 @@
         private System.Windows.Forms.ToolStripSeparator spd5;
         public System.Windows.Forms.Label lblDueno;
         public System.Windows.Forms.Label lblCliente;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboActiva;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel35;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboPendiente;
+        private DsNeoTableAdapters.taMascota taMascota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreGrupoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreRazaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEstadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCaracterDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombrePelajeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreGrupoSanguineoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aperturaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nacimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pedigriDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn corteOrejaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn corteColaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn castradoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn peluqueriaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn exhibicionDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn imagenDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dietaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipoDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;
     }
 }

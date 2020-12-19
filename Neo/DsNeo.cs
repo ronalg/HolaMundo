@@ -24,6 +24,10 @@
 
 namespace Neo.DsNeoTableAdapters
 {
+    partial class taCitaMascota
+    {
+    }
+
     partial class taArticulo
     {
     }
