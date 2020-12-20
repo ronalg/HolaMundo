@@ -245,6 +245,7 @@ namespace Neo
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             txtBuscaMascota.Focus();
+            txtBuscaMascota.Clear();
             dsNeo.tbMascota.Rows.Clear();
             dsNeo.tbCitaDetalle.Rows.Clear();
             lblNumero.Text = null;
@@ -345,7 +346,7 @@ namespace Neo
                     bool activa = bool.Parse(dr["Activa"].ToString());
                     string nota = dr["Nota"].ToString();
 
-                    //taCitaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo, empleado, pendiente, costo, venta, activa, nota);
+                    taCitaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo, empleado, pendiente, costo, venta, activa, nota);
                 }
             }
             catch (SqlException sqlEx)

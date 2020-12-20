@@ -497,6 +497,7 @@ namespace Neo
             if (Utilidad.rptCita == null)
             {
                 Utilidad.rptCita = new FrmRptCita();
+                Utilidad.rptCita.WindowState = FormWindowState.Maximized;
                 Utilidad.rptCita.MdiParent = this;
             }
             Utilidad.rptCita.BringToFront();

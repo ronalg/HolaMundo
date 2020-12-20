@@ -40,6 +40,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnCita = new System.Windows.Forms.BindingNavigator(this.components);
             this.bsCita = new System.Windows.Forms.BindingSource(this.components);
@@ -56,6 +57,9 @@
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnImprimir = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mnuImpresora = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPantalla = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -168,6 +172,8 @@
             this.bsVeterinario = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.grdMascota = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.mCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsMascota = new System.Windows.Forms.BindingSource(this.components);
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.taCita = new Neo.DsNeoTableAdapters.taCita();
@@ -179,11 +185,6 @@
             this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
             this.taArticulo1 = new Neo.DsNeoTableAdapters.taArticulo();
             this.taArticuloPrecioVenta = new Neo.DsNeoTableAdapters.taArticuloPrecioVenta();
-            this.mCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnImprimir = new System.Windows.Forms.ToolStripDropDownButton();
-            this.mnuPantalla = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuImpresora = new System.Windows.Forms.ToolStripMenuItem();
             numeroCitaLabel = new System.Windows.Forms.Label();
             codigoSucursalLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
@@ -417,6 +418,31 @@
             this.btnGuardar.Size = new System.Drawing.Size(101, 22);
             this.btnGuardar.Text = "Guardar datos";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuImpresora,
+            this.mnuPantalla});
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(82, 22);
+            this.btnImprimir.Text = "Imprimir";
+            // 
+            // mnuImpresora
+            // 
+            this.mnuImpresora.Enabled = false;
+            this.mnuImpresora.Name = "mnuImpresora";
+            this.mnuImpresora.Size = new System.Drawing.Size(127, 22);
+            this.mnuImpresora.Text = "Impresora";
+            // 
+            // mnuPantalla
+            // 
+            this.mnuPantalla.Enabled = false;
+            this.mnuPantalla.Name = "mnuPantalla";
+            this.mnuPantalla.Size = new System.Drawing.Size(127, 22);
+            this.mnuPantalla.Text = "Pantalla";
             // 
             // toolStripSeparator4
             // 
@@ -863,7 +889,6 @@
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(62, 103);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFecha.Size = new System.Drawing.Size(103, 21);
             this.dtpFecha.TabIndex = 6;
             // 
@@ -1537,22 +1562,43 @@
             // 
             this.grdMascota.AllowUserToAddRows = false;
             this.grdMascota.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMascota.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.grdMascota.AutoGenerateColumns = false;
             this.grdMascota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMascota.ColumnHeadersVisible = false;
             this.grdMascota.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mCodigo,
             this.nombreDataGridViewTextBoxColumn});
             this.grdMascota.DataSource = this.bsMascota;
-            this.grdMascota.Location = new System.Drawing.Point(82, 81);
+            this.grdMascota.Location = new System.Drawing.Point(82, 80);
             this.grdMascota.Name = "grdMascota";
             this.grdMascota.ReadOnly = true;
             this.grdMascota.RowHeadersVisible = false;
-            this.grdMascota.Size = new System.Drawing.Size(317, 150);
+            this.grdMascota.Size = new System.Drawing.Size(319, 152);
             this.grdMascota.TabIndex = 16;
             this.grdMascota.Visible = false;
             this.grdMascota.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMascota_CellContentClick);
             this.grdMascota.DoubleClick += new System.EventHandler(this.grdMascota_DoubleClick);
             this.grdMascota.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdMascota_KeyDown);
+            // 
+            // mCodigo
+            // 
+            this.mCodigo.DataPropertyName = "CodigoMascota";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle6;
+            this.mCodigo.HeaderText = "Codigo";
+            this.mCodigo.Name = "mCodigo";
+            this.mCodigo.ReadOnly = true;
+            this.mCodigo.Width = 80;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 220;
             // 
             // bsMascota
             // 
@@ -1643,49 +1689,6 @@
             // taArticuloPrecioVenta
             // 
             this.taArticuloPrecioVenta.ClearBeforeFill = true;
-            // 
-            // mCodigo
-            // 
-            this.mCodigo.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle5;
-            this.mCodigo.HeaderText = "Codigo";
-            this.mCodigo.Name = "mCodigo";
-            this.mCodigo.ReadOnly = true;
-            this.mCodigo.Width = 80;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 220;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuImpresora,
-            this.mnuPantalla});
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(82, 22);
-            this.btnImprimir.Text = "Imprimir";
-            // 
-            // mnuPantalla
-            // 
-            this.mnuPantalla.Enabled = false;
-            this.mnuPantalla.Name = "mnuPantalla";
-            this.mnuPantalla.Size = new System.Drawing.Size(180, 22);
-            this.mnuPantalla.Text = "Pantalla";
-            // 
-            // mnuImpresora
-            // 
-            this.mnuImpresora.Enabled = false;
-            this.mnuImpresora.Name = "mnuImpresora";
-            this.mnuImpresora.Size = new System.Drawing.Size(180, 22);
-            this.mnuImpresora.Text = "Impresora";
             // 
             // FrmTscCita
             // 

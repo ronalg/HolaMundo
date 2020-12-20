@@ -60,9 +60,9 @@
     <Shape ID="DesignTable:tbCita" ZOrder="4" X="1183" Y="1969" Height="476" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="332" />
     <Shape ID="DesignTable:tbCitaDetalle" ZOrder="3" X="1500" Y="1967" Height="476" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="332" />
     <Shape ID="DesignTable:fnArticuloProveedor" ZOrder="8" X="1820" Y="1189" Height="134" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignSources:ConsultasProgramadas" ZOrder="32" X="224" Y="1555" Height="143" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
-    <Shape ID="DesignTable:tbMascota" ZOrder="2" X="535" Y="1960" Height="476" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="351" />
+    <Shape ID="DesignTable:tbMascota" ZOrder="2" X="535" Y="1960" Height="478" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="351" />
     <Shape ID="DesignTable:tbCitaMascota" ZOrder="1" X="856" Y="1963" Height="476" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="408" />
+    <Shape ID="DesignSources:ConsultasProgramadas" ZOrder="32" X="224" Y="1555" Height="143" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

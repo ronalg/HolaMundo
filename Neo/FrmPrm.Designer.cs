@@ -616,7 +616,6 @@
             // 
             // mnuRptCita
             // 
-            this.mnuRptCita.Enabled = false;
             this.mnuRptCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCita.Image")));
             this.mnuRptCita.Name = "mnuRptCita";
             this.mnuRptCita.Size = new System.Drawing.Size(180, 22);
