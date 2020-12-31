@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnCita = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bsCita = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -48,6 +50,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl2 = new System.Windows.Forms.Panel();
+            this.cboInformado = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cboActiva = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -61,8 +65,6 @@
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdCita = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bsCita = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
             this.taCitaMascota = new Neo.DsNeoTableAdapters.taCitaMascota();
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,17 +78,19 @@
             this.veterinarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pendienteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.activaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cInformado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCita)).BeginInit();
             this.bnCita.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.pnl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboInformado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboActiva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPendiente)).BeginInit();
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCita)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCita)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl1
@@ -96,7 +100,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(1040, 28);
+            this.pnl1.Size = new System.Drawing.Size(1116, 28);
             this.pnl1.TabIndex = 0;
             // 
             // bnCita
@@ -127,9 +131,19 @@
             this.bnCita.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnCita.Name = "bnCita";
             this.bnCita.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnCita.Size = new System.Drawing.Size(1038, 25);
+            this.bnCita.Size = new System.Drawing.Size(1114, 25);
             this.bnCita.TabIndex = 5;
             this.bnCita.Text = "bindingNavigator1";
+            // 
+            // bsCita
+            // 
+            this.bsCita.DataMember = "tbCitaMascota";
+            this.bsCita.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -235,6 +249,8 @@
             // 
             this.pnl2.BackColor = System.Drawing.Color.White;
             this.pnl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl2.Controls.Add(this.cboInformado);
+            this.pnl2.Controls.Add(this.kryptonLabel6);
             this.pnl2.Controls.Add(this.cboActiva);
             this.pnl2.Controls.Add(this.kryptonLabel5);
             this.pnl2.Controls.Add(this.kryptonLabel4);
@@ -248,8 +264,30 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(1040, 42);
+            this.pnl2.Size = new System.Drawing.Size(1116, 42);
             this.pnl2.TabIndex = 1;
+            // 
+            // cboInformado
+            // 
+            this.cboInformado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboInformado.DropDownWidth = 54;
+            this.cboInformado.Items.AddRange(new object[] {
+            "Todos",
+            "Si",
+            "No"});
+            this.cboInformado.Location = new System.Drawing.Point(874, 10);
+            this.cboInformado.Name = "cboInformado";
+            this.cboInformado.Size = new System.Drawing.Size(66, 21);
+            this.cboInformado.TabIndex = 11;
+            // 
+            // kryptonLabel6
+            // 
+            this.kryptonLabel6.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel6.Location = new System.Drawing.Point(796, 10);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(76, 20);
+            this.kryptonLabel6.TabIndex = 10;
+            this.kryptonLabel6.Values.Text = "Informado:";
             // 
             // cboActiva
             // 
@@ -319,7 +357,6 @@
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHasta.Location = new System.Drawing.Point(197, 9);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpHasta.Size = new System.Drawing.Size(94, 21);
             this.dtpHasta.TabIndex = 2;
             // 
@@ -338,7 +375,6 @@
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDesde.Location = new System.Drawing.Point(53, 9);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpDesde.Size = new System.Drawing.Size(94, 21);
             this.dtpDesde.TabIndex = 1;
             // 
@@ -357,7 +393,7 @@
             this.pnl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl3.Location = new System.Drawing.Point(0, 70);
             this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(1040, 10);
+            this.pnl3.Size = new System.Drawing.Size(1116, 10);
             this.pnl3.TabIndex = 2;
             // 
             // pnl4
@@ -367,7 +403,7 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl4.Location = new System.Drawing.Point(0, 80);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(1040, 329);
+            this.pnl4.Size = new System.Drawing.Size(1116, 329);
             this.pnl4.TabIndex = 3;
             // 
             // grdCita
@@ -389,25 +425,16 @@
             this.veterinarioDataGridViewTextBoxColumn,
             this.pendienteDataGridViewCheckBoxColumn,
             this.activaDataGridViewCheckBoxColumn,
+            this.cInformado,
             this.usuarioDataGridViewTextBoxColumn});
             this.grdCita.DataSource = this.bsCita;
             this.grdCita.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdCita.Location = new System.Drawing.Point(0, 0);
             this.grdCita.Name = "grdCita";
             this.grdCita.ReadOnly = true;
-            this.grdCita.Size = new System.Drawing.Size(1038, 327);
+            this.grdCita.Size = new System.Drawing.Size(1114, 327);
             this.grdCita.TabIndex = 3;
             this.grdCita.DoubleClick += new System.EventHandler(this.grdCita_DoubleClick);
-            // 
-            // bsCita
-            // 
-            this.bsCita.DataMember = "tbCitaMascota";
-            this.bsCita.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // taCitaMascota
             // 
@@ -513,6 +540,14 @@
             this.activaDataGridViewCheckBoxColumn.ReadOnly = true;
             this.activaDataGridViewCheckBoxColumn.Width = 50;
             // 
+            // cInformado
+            // 
+            this.cInformado.DataPropertyName = "Informado";
+            this.cInformado.HeaderText = "Informado";
+            this.cInformado.Name = "cInformado";
+            this.cInformado.ReadOnly = true;
+            this.cInformado.Width = 75;
+            // 
             // usuarioDataGridViewTextBoxColumn
             // 
             this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
@@ -525,7 +560,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 409);
+            this.ClientSize = new System.Drawing.Size(1116, 409);
             this.Controls.Add(this.pnl4);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
@@ -540,14 +575,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnCita)).EndInit();
             this.bnCita.ResumeLayout(false);
             this.bnCita.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboInformado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboActiva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPendiente)).EndInit();
             this.pnl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCita)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCita)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -586,6 +622,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboPendiente;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboInformado;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn;
@@ -598,6 +636,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn veterinarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pendienteDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cInformado;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
     }
 }

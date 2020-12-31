@@ -319,5 +319,16 @@
         </ColumnUISetting>
       </ColumnUISettings>
     </TableUISetting>
+    <TableUISetting Name="tbCitaMascota">
+      <ColumnUISettings>
+        <ColumnUISetting Name="Informado">
+          <ControlSettings>
+            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+              <BindableControlInfo Name="KryptonCheckBox" Type="ComponentFactory.Krypton.Toolkit.KryptonCheckBox" AssemblyName="ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e" AssemblyCodeBase="file:///C:/Users/Ronalg/Downloads/Krypton-master/Bin/ComponentFactory.Krypton.Toolkit.dll" Frameworks=".NETFramework,Version=v4.0;.NETFramework,Version=v4.5;.NETFramework,Version=v4.5.1;.NETFramework,Version=v4.5.2;.NETFramework,Version=v4.6;.NETFramework,Version=v4.6.1;.NETFramework,Version=v4.7.1;.NETFramework,Version=v4.7.2" />
+            </ControlSetting>
+          </ControlSettings>
+        </ColumnUISetting>
+      </ColumnUISettings>
+    </TableUISetting>
   </TableUISettings>
 </DataSetUISetting>

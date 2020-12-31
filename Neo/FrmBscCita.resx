@@ -171,16 +171,16 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVDhPjVNLTxNhFJ2FC2NcGMPvcOvaf9Gdv8FFN26a
-        PrCPaWg7M6Vgq7EB0lpRI0LjBmvTMRRiscpDQdCqJYAEFB/M99nSw73jEILUx0luZpL5zrnnnu+O8jvi
-        8fhVwzC2Q6FQhyuZTLZ0Xa9Ho9Ee50h38AFN07aimXxHe9LENfM7fKZAtLKD/mIdcb0fiUTiknP8JKjz
-        ZmpiFokZgXuvBMrvBEpU/D5QE1DNXRjpbHcRIpvGnUkMzAqs7rTQ3G3j+XoLpVULj95YeLgskapJaJVN
-        hMORtkM7As28r1a+4OmHn9j4to+V7TZqaxKltxbGlyyMLgiMLkr0TZOb+2VQw7RDVZRYLHZRywwhUhWY
-        ei9Q/SgwTWU2LEyuWBh7bSE/L1BYkORQwnjcAAW77tBt+5f14QeIkTrPzCTuzM/isoW7ixZGXgoMvxC4
-        TgLx8gYo8B8O/chBeErQvMLuyLb5yeTcnMCtuiARieSzLg4YhxmMzEmMLUkUyDLb5s5MzlC4QySg0piD
-        lAHdxE2H+gt0/9UUh0Nj5OalHViWLN8gYpYEmByfkdDNLfByObTjoG37ygvDYQ7SrEziytA758N7kMxk
-        EQwGpdfrPbkLvIk025qazncSpSYC5p69iZHKZ3sTg2pfR1UjKE6Mw+PxdHw+X9WhHgfdyhXeSs7F+Rf2
-        Dv8FIjby+RzMSvnvIn8CkXr8Ab8sFG7bIr29ATif/okzVOe5XC7XBb/fL1VV7ZDgJ/vrf+AU1Vmqc1S2
-        kNvtDiqKcvoATxH6s4AQ4uIAAAAASUVORK5CYII=
+        vu0jdtpOKYVqbHi0VtTIo3GDtekYCrFY5aEgaNUSQAKKD+b7bJnjveMQgtTHSU5mkvnOufee747yO1RV
+        vapp2k4gEDCZqVSqnUwmG9FotMc+0h18IJFIbIf7R8zE4xYC+jd4dIFodRe9pQbUZC/i8fgl+/hJUOWt
+        9OQc4rMC914KVN4KlIn83lcXiOh70AZy3U1IrGt3ptA3J7C220Zrr4NnG22U1ww8fG1gfEUiXZdIVLcQ
+        DF7r2LIj0MwHkepnPHn/A5tfD7C600F9XaL8xsDEsoHRRYHRJYnrM9TN/Qqo4IAtVZRYLHYxkR1EuCYw
+        /U6g9kFghqg3DUytGhh7ZaCwIFBclNShhPaoCQp2w5Zb7V9ODj1AjNx5ZhZxZX6WVgzcXTIw/EJg6LlA
+        PxmolU1Q4N9t+VEHoWlB8wqrIrfNTxbn5wVuNQSZSKSedumAcZjB8LzE2LJEkVrmtrkyi7MU7iAZRGjM
+        DGVAN3HTlv4C3X8tzeHQGPkFaQWWo5ZvkDBHBixWZyWS+jZ4uWzZcdC2feGF4TAzNCuLmFl653x4D1LZ
+        HF1jULrd7pO7wJtIs62HMiNmvNyCT9+3NjFc/WRtoj8UNSORMEqTE3C5XKbH46nZ0uOgW7nCW8m52P/C
+        /uG/QMJmoZCHXq383eRPIFGP1+eVxeJty8Tv98H+9E+cIZ5nOhyOC16vV4ZCIZMMP1pf/wOniGeJ54iW
+        kdPpDCqKcvon2Bz6fW2nzV4AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnVer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -216,6 +216,9 @@
         W8GUX4GWHFZUF1QP/B3LVeTfTP9xZee/YZjfQoLMnY5yS70AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="cInformado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="taCitaMascota.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>186, 17</value>
   </metadata>

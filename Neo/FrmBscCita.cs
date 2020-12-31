@@ -33,6 +33,7 @@ namespace Neo
             dtpHasta.Value = DateTime.Today.AddDays(30);
             cboPendiente.SelectedIndex = 0;
             cboActiva.SelectedIndex = 0;
+            cboInformado.SelectedIndex = 0;
             btnBuscar_Click(sender, EventArgs.Empty);
         }
 
@@ -55,7 +56,12 @@ namespace Neo
                 activa = true;
             else if (cboActiva.SelectedIndex == 2)
                 activa = false;
-            taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, dtpDesde.Value.Date, dtpHasta.Value.Date, pendiente, activa, nombre, null, null, null);
+            bool? informado = null;
+            if (cboInformado.SelectedIndex == 1)
+                informado = true;
+            else if (cboInformado.SelectedIndex == 2)
+                informado = false;
+            taCitaMascota.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, null, dtpDesde.Value.Date, dtpHasta.Value.Date, pendiente, activa, nombre, null, null, null, informado);
             this.Cursor = Cursors.Default;
         }
 
@@ -73,6 +79,7 @@ namespace Neo
                 int codigo = int.Parse(Utilidad.tscCita.dsNeo.tbCita.Rows[0]["CodigoMascota"].ToString());
                 Utilidad.tscCita.taMascota.Fill(Utilidad.tscCita.dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, null); 
                 Utilidad.tscCita.taCitaDetalle.FillByNumero(Utilidad.tscCita.dsNeo.tbCitaDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                Utilidad.tscCita.chkInformado.Checked = bool.Parse(grdCita.CurrentRow.Cells["cInformado"].Value.ToString());
                 this.Close();
             }
         }

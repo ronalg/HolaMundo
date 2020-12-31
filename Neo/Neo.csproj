@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="ComponentFactory.Krypton.Design, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
@@ -44,9 +45,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -294,6 +301,12 @@
     <Compile Include="FrmPrm.Designer.cs">
       <DependentUpon>FrmPrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRpt.Designer.cs">
+      <DependentUpon>FrmRpt.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRptCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +325,12 @@
     <Compile Include="FrmTscFactura.Designer.cs">
       <DependentUpon>FrmTscFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTscHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTscHistorial.Designer.cs">
+      <DependentUpon>FrmTscHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTscOrdenPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +339,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RptCita.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptCita.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilidad.cs" />
     <EmbeddedResource Include="FrmBscCita.resx">
       <DependentUpon>FrmBscCita.cs</DependentUpon>
@@ -435,6 +460,9 @@
     <EmbeddedResource Include="FrmPrm.resx">
       <DependentUpon>FrmPrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRpt.resx">
+      <DependentUpon>FrmRpt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRptCita.resx">
       <DependentUpon>FrmRptCita.cs</DependentUpon>
     </EmbeddedResource>
@@ -443,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTscFactura.resx">
       <DependentUpon>FrmTscFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTscHistorial.resx">
+      <DependentUpon>FrmTscHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTscOrdenPedido.resx">
       <DependentUpon>FrmTscOrdenPedido.cs</DependentUpon>
@@ -456,6 +487,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RptCita.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptCita.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="DsNeo.xsc">
       <DependentUpon>DsNeo.xsd</DependentUpon>
     </None>
@@ -479,6 +514,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

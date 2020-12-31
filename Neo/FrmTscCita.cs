@@ -124,8 +124,7 @@ namespace Neo
         private void FrmTscCita_Load(object sender, EventArgs e)
         {
             taArticulo.FillByVeterinaria(dataSet.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, true, null);
-            taEmpleado.FillByPuesto(dataSet.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinario");
-            btnNuevo_Click(sender, EventArgs.Empty);
+            taEmpleado.FillByPuesto(dataSet.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinario");            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -327,12 +326,12 @@ namespace Neo
                 {
                     DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
                     numero = cp.fnSiguienteNumero("cita", Utilidad.codigoSucursal, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
-                    taCita.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoMascota, null, "Cliente", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, cboTipo.Text);
+                    taCita.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoMascota, null, "Cliente", Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, cboTipo.Text, chkInformado.Checked);
                     lblNumero.Text = numero.ToString();
                 }
                 else
                 {
-                    taCita.Edita(codigoMascota, null, dtpFecha.Value.ToShortDateString(), null, cboTipo.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    taCita.Edita(codigoMascota, null, dtpFecha.Value.ToShortDateString(), null, cboTipo.Text, chkInformado.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 }
 
                 taCitaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);

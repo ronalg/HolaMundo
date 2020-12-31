@@ -246,6 +246,7 @@ namespace Neo
         {
             cboPendiente.SelectedIndex = 0;
             cboActiva.SelectedIndex = 0;
+            cboInformado.SelectedIndex = 0;
             taEstado.FillByTipo(dsNeo.tbEstado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinaria");
             taEmpleado.FillByPuesto(dsNeo.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinario");
             taGrupo.Fill(dsNeo.tbGrupo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
@@ -471,8 +472,13 @@ namespace Neo
                 activa = true;
             else if (cboActiva.SelectedIndex == 2)
                 activa = false;
+            bool? informado = null;
+            if (cboInformado.SelectedIndex == 1)
+                informado = true;
+            else if (cboInformado.SelectedIndex == 2)
+                informado = false;
             DsNeoTableAdapters.taCitaMascota ta = new DsNeoTableAdapters.taCitaMascota();
-            ta.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoMascota, null, null, pendiente, activa, null, null, null, null);
+            ta.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoMascota, null, null, pendiente, activa, null, null, null, null, informado);
             this.Cursor = Cursors.Default;
         }
 

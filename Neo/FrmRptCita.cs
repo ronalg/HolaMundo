@@ -36,12 +36,20 @@ namespace Neo
         {
             if (dsNeo.tbCitaMascota.Rows.Count > 0)
             {
+                if (Utilidad.tscCita == null)
+                {
+                    Utilidad.tscCita = new FrmTscCita();
+                    Utilidad.tscCita.MdiParent = Utilidad.frmPrimario;
+                }
+
                 int numero = int.Parse(grdCita.CurrentRow.Cells["cNumero"].Value.ToString());
                 Utilidad.tscCita.taCita.FillByNumero(Utilidad.tscCita.dsNeo.tbCita, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 int codigo = int.Parse(Utilidad.tscCita.dsNeo.tbCita.Rows[0]["CodigoMascota"].ToString());
                 Utilidad.tscCita.taMascota.Fill(Utilidad.tscCita.dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, null);
                 Utilidad.tscCita.taCitaDetalle.FillByNumero(Utilidad.tscCita.dsNeo.tbCitaDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
-                this.Close();
+                Utilidad.tscCita.chkInformado.Checked = bool.Parse(grdCita.CurrentRow.Cells["cInformado"].Value.ToString());
+                Utilidad.tscCita.Refresh();
+                Utilidad.tscCita.Show();
             }
         }
 
@@ -208,6 +216,7 @@ namespace Neo
         {
             cboPendiente.SelectedIndex = 0;
             cboActiva.SelectedIndex = 0;
+            cboInformado.SelectedIndex = 0;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -225,7 +234,12 @@ namespace Neo
                     activa = true;
                 else if (cboActiva.SelectedIndex == 2)
                     activa = false;
-                taCitaMascota.FillReporte(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, dtpDesde.Value.Date, dtpHasta.Value.Date, codigoMascota, codigoCliente, codigoServicio, pendiente, activa);
+                bool? informado = null;
+                if (cboInformado.SelectedIndex == 1)
+                    informado = true;
+                else if (cboInformado.SelectedIndex == 2)
+                    informado = false;
+                taCitaMascota.FillReporte(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, dtpDesde.Value.Date, dtpHasta.Value.Date, codigoMascota, codigoCliente, codigoServicio, pendiente, activa, informado);
                 if (dsNeo.tbCitaMascota.Rows.Count > 0)
                 {
                     decimal costo = decimal.Parse(dsNeo.tbCitaMascota.Compute("SUM(Costo)", null).ToString());
@@ -237,6 +251,69 @@ namespace Neo
             catch (SqlException sqlEx)
             {
                 MessageBox.Show(sqlEx.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            pnlContacto.Visible = false;
+            grdCita.Focus();
+        }
+
+        private void btnVerContacto_Click(object sender, EventArgs e)
+        {
+            if (dsNeo.tbCitaMascota.Rows.Count > 0)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                int codigo = int.Parse(grdCita.CurrentRow.Cells["cCliente"].Value.ToString());
+                taContacto.Fill(dsNeo.tbSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
+                pnlContacto.Visible = true;
+                grdContacto.Focus();
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void mnuBuscar_Click(object sender, EventArgs e)
+        {
+            btnBuscar_Click(sender, EventArgs.Empty);
+        }
+
+        private void mnuVerCita_Click(object sender, EventArgs e)
+        {
+            btnVer_Click(sender, EventArgs.Empty);
+        }
+
+        private void mnuVerContacto_Click(object sender, EventArgs e)
+        {
+            btnVerContacto_Click(sender, EventArgs.Empty);
+        }
+
+        private void grdContacto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                btnCerrar_Click(sender, EventArgs.Empty);
+        }
+
+        private void mnuPantalla_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                taEmpresa.FillByCodigo(dsNeo.tbEmpresa, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+                taSucursal.FillByCodigo(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
+                RptCita rpt = new RptCita();
+                rpt.SetDataSource(dsNeo);
+                FrmRpt frm = new FrmRpt();
+                frm.crv.ReportSource = rpt;
+                frm.ShowDialog();
             }
             catch (Exception ex)
             {
