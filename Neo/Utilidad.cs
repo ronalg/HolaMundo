@@ -13,6 +13,7 @@ namespace Neo
         public static FrmBscOrdenPedido bscOrdenPedido = null;
         //formulario transacciones
         //veternaria
+        public static FrmTscHistorial tscHistorial = null;
         public static FrmRptCita rptCita = null;
         public static FrmBscCita bscCita = null;
         public static FrmTscCita tscCita = null;

@@ -16,5 +16,15 @@ namespace Neo
         {
             InitializeComponent();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmTscHistorial_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utilidad.tscHistorial = null;
+        }
     }
 }

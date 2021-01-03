@@ -503,5 +503,16 @@ namespace Neo
             Utilidad.rptCita.BringToFront();
             Utilidad.rptCita.Show();
         }
+
+        private void mnuTscHistorial_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.tscHistorial == null)
+            {
+                Utilidad.tscHistorial = new FrmTscHistorial();
+                Utilidad.tscHistorial.MdiParent = this;
+            }
+            Utilidad.tscHistorial.BringToFront();
+            Utilidad.tscHistorial.Show();
+        }
     }
 }
