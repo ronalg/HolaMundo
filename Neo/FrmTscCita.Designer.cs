@@ -909,6 +909,7 @@
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(81, 103);
             this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFecha.Size = new System.Drawing.Size(103, 21);
             this.dtpFecha.TabIndex = 6;
             // 
@@ -1145,7 +1146,7 @@
             this.pnlServicio.Controls.Add(this.btnCancelaServicio);
             this.pnlServicio.Controls.Add(this.pnlTipoContactoSub);
             this.pnlServicio.Controls.Add(this.label8);
-            this.pnlServicio.Location = new System.Drawing.Point(163, 105);
+            this.pnlServicio.Location = new System.Drawing.Point(350, 122);
             this.pnlServicio.Name = "pnlServicio";
             this.pnlServicio.Size = new System.Drawing.Size(364, 289);
             this.pnlServicio.TabIndex = 14;
@@ -1244,7 +1245,6 @@
             this.grdServicio.ReadOnly = true;
             this.grdServicio.Size = new System.Drawing.Size(360, 187);
             this.grdServicio.TabIndex = 4;
-            this.grdServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdServicio_CellContentClick);
             this.grdServicio.DoubleClick += new System.EventHandler(this.grdServicio_DoubleClick);
             this.grdServicio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdServicio_KeyDown);
             // 
@@ -1598,7 +1598,6 @@
             this.grdMascota.Size = new System.Drawing.Size(319, 152);
             this.grdMascota.TabIndex = 16;
             this.grdMascota.Visible = false;
-            this.grdMascota.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMascota_CellContentClick);
             this.grdMascota.DoubleClick += new System.EventHandler(this.grdMascota_DoubleClick);
             this.grdMascota.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdMascota_KeyDown);
             // 

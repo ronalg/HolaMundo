@@ -88,8 +88,10 @@
             this.mnuTscOrdenPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTscIncripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTscCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRptCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.cboEmpresa = new System.Windows.Forms.ToolStripComboBox();
             this.cboSucursal = new System.Windows.Forms.ToolStripComboBox();
@@ -99,6 +101,7 @@
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.btnVeterinaria = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuMascta = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -110,9 +113,6 @@
             this.dsNeo = new Neo.DsNeo();
             this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
-            this.mnuTscHistorial = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnHistorial = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -610,6 +610,14 @@
             this.mnuTscCita.Text = "Citas";
             this.mnuTscCita.Click += new System.EventHandler(this.mnuTscCita_Click);
             // 
+            // mnuTscHistorial
+            // 
+            this.mnuTscHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscHistorial.Image")));
+            this.mnuTscHistorial.Name = "mnuTscHistorial";
+            this.mnuTscHistorial.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscHistorial.Text = "Historial";
+            this.mnuTscHistorial.Click += new System.EventHandler(this.mnuTscHistorial_Click);
+            // 
             // mnuRpt
             // 
             this.mnuRpt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -626,6 +634,13 @@
             this.mnuRptCita.Size = new System.Drawing.Size(180, 22);
             this.mnuRptCita.Text = "Citas";
             this.mnuRptCita.Click += new System.EventHandler(this.mnuRptCita_Click);
+            // 
+            // mnuRptHistorial
+            // 
+            this.mnuRptHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptHistorial.Image")));
+            this.mnuRptHistorial.Name = "mnuRptHistorial";
+            this.mnuRptHistorial.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptHistorial.Text = "Historial";
             // 
             // toolStrip
             // 
@@ -711,6 +726,14 @@
             this.mnuCita.Text = "Citas";
             this.mnuCita.Click += new System.EventHandler(this.mnuTscCita_Click);
             // 
+            // mnHistorial
+            // 
+            this.mnHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnHistorial.Image")));
+            this.mnHistorial.Name = "mnHistorial";
+            this.mnHistorial.Size = new System.Drawing.Size(180, 22);
+            this.mnHistorial.Text = "Historial";
+            this.mnHistorial.Click += new System.EventHandler(this.mnHistorial_Click);
+            // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
@@ -769,28 +792,6 @@
             // taSucursal
             // 
             this.taSucursal.ClearBeforeFill = true;
-            // 
-            // mnuTscHistorial
-            // 
-            this.mnuTscHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscHistorial.Image")));
-            this.mnuTscHistorial.Name = "mnuTscHistorial";
-            this.mnuTscHistorial.Size = new System.Drawing.Size(180, 22);
-            this.mnuTscHistorial.Text = "Historial";
-            this.mnuTscHistorial.Click += new System.EventHandler(this.mnuTscHistorial_Click);
-            // 
-            // mnHistorial
-            // 
-            this.mnHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnHistorial.Image")));
-            this.mnHistorial.Name = "mnHistorial";
-            this.mnHistorial.Size = new System.Drawing.Size(180, 22);
-            this.mnHistorial.Text = "Historial";
-            // 
-            // mnuRptHistorial
-            // 
-            this.mnuRptHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptHistorial.Image")));
-            this.mnuRptHistorial.Name = "mnuRptHistorial";
-            this.mnuRptHistorial.Size = new System.Drawing.Size(180, 22);
-            this.mnuRptHistorial.Text = "Historial";
             // 
             // FrmPrm
             // 

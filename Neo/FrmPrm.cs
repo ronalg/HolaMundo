@@ -514,5 +514,10 @@ namespace Neo
             Utilidad.tscHistorial.BringToFront();
             Utilidad.tscHistorial.Show();
         }
+
+        private void mnHistorial_Click(object sender, EventArgs e)
+        {
+            mnuTscHistorial_Click(sender, EventArgs.Empty);
+        }
     }
 }

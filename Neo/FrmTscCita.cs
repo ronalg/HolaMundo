@@ -135,11 +135,6 @@ namespace Neo
             Utilidad.bscCita.Show();
         }
 
-        private void grdServicio_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void txtServicio_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtServicio.Text))
@@ -289,7 +284,6 @@ namespace Neo
             {
                 this.Cursor = Cursors.Default;
             }
-
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -363,11 +357,6 @@ namespace Neo
         }
 
         private void lblCodigo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grdMascota_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
