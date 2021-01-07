@@ -443,6 +443,7 @@ namespace Neo
                 this.Cursor = Cursors.WaitCursor;
                 int codigo = int.Parse(grdMto.CurrentRow.Cells["mCodigo"].Value.ToString());
                 CargaCita(codigo);
+                CargaHistorial(codigo);
                 taSucursalContacto.Fill(dsNeo.tbSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
                 DsNeo ds = new DsNeo();
                 short i = short.Parse(lblVeterinario.Text);
@@ -480,6 +481,11 @@ namespace Neo
             DsNeoTableAdapters.taCitaMascota ta = new DsNeoTableAdapters.taCitaMascota();
             ta.Fill(dsNeo.tbCitaMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoMascota, null, null, pendiente, activa, null, null, null, null, informado);
             this.Cursor = Cursors.Default;
+        }
+
+        private void CargaHistorial(int? codigo)
+        {
+            taHistorialMascota.Fill(dsNeo.tbHistorialMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, null, null, null, null, null, null, null, null);
         }
 
         private void cboPendiente_SelectedIndexChanged(object sender, EventArgs e)

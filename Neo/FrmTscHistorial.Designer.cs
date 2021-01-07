@@ -31,16 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTscHistorial));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bsHistorial = new System.Windows.Forms.BindingNavigator(this.components);
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.tbHistorial = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -60,11 +58,6 @@
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.grdMascota = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.mCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mDueno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsMascota = new System.Windows.Forms.BindingSource(this.components);
-            this.ds = new Neo.DsNeo();
             this.pnl8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -98,7 +91,6 @@
             this.pnl7 = new System.Windows.Forms.Panel();
             this.bnDetalle = new System.Windows.Forms.BindingNavigator(this.components);
             this.btnNew = new System.Windows.Forms.ToolStripButton();
-            this.bsDetalle = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -111,18 +103,7 @@
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.pnl9 = new System.Windows.Forms.Panel();
             this.grdArticulo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.aTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aVeterinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aNota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl6 = new System.Windows.Forms.Panel();
-            this.taHistorial = new Neo.DsNeoTableAdapters.taHistorial();
-            this.taHistorialDetalle = new Neo.DsNeoTableAdapters.taHistorialDetalle();
-            this.taMascota = new Neo.DsNeoTableAdapters.taMascota();
             this.pnlServicio = new System.Windows.Forms.Panel();
             this.btnServicioAceptarNuevo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnAceptaServicio = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -131,48 +112,69 @@
             this.txtServicio = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.grdServicio = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.sDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsServicio = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.pnlVeterinario = new System.Windows.Forms.Panel();
             this.btnAceptaVeterinario = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnCancelaVeterinario = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grdVeterinario = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.sCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aCodigoVeterinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsEmpleado = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
+            this.dsNeo = new Neo.DsNeo();
+            this.sDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsServicio = new System.Windows.Forms.BindingSource(this.components);
+            this.aTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aVeterinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aNota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsDetalle = new System.Windows.Forms.BindingSource(this.components);
+            this.mCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mDueno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsMascota = new System.Windows.Forms.BindingSource(this.components);
+            this.ds = new Neo.DsNeo();
+            this.tbHistorial = new System.Windows.Forms.BindingSource(this.components);
+            this.taHistorial = new Neo.DsNeoTableAdapters.taHistorial();
+            this.taHistorialDetalle = new Neo.DsNeoTableAdapters.taHistorialDetalle();
+            this.taMascota = new Neo.DsNeoTableAdapters.taMascota();
             this.taEmpleado = new Neo.DsNeoTableAdapters.taEmpleado();
             this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
-            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsHistorial)).BeginInit();
             this.bsHistorial.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbHistorial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.pnl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMascota)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMascota)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.pnl8.SuspendLayout();
             this.pnl4.SuspendLayout();
             this.pnl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnDetalle)).BeginInit();
             this.bnDetalle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDetalle)).BeginInit();
             this.pnl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdArticulo)).BeginInit();
             this.pnl6.SuspendLayout();
             this.pnlServicio.SuspendLayout();
             this.pnlTipoContactoSub.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdServicio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsServicio)).BeginInit();
             this.pnlVeterinario.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVeterinario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServicio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMascota)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbHistorial)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl1
@@ -229,16 +231,6 @@
             this.btnNuevo.Size = new System.Drawing.Size(105, 22);
             this.btnNuevo.Text = "Agregar nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // tbHistorial
-            // 
-            this.tbHistorial.DataMember = "tbHistorial";
-            this.tbHistorial.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -406,41 +398,6 @@
             this.grdMascota.DoubleClick += new System.EventHandler(this.grdMascota_DoubleClick);
             this.grdMascota.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdMascota_KeyDown);
             // 
-            // mCodigo
-            // 
-            this.mCodigo.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.mCodigo.HeaderText = "CodigoMascota";
-            this.mCodigo.Name = "mCodigo";
-            this.mCodigo.ReadOnly = true;
-            this.mCodigo.Width = 70;
-            // 
-            // mDueno
-            // 
-            this.mDueno.DataPropertyName = "NombreDueno";
-            this.mDueno.HeaderText = "NombreDueno";
-            this.mDueno.Name = "mDueno";
-            this.mDueno.ReadOnly = true;
-            this.mDueno.Width = 180;
-            // 
-            // mNombre
-            // 
-            this.mNombre.DataPropertyName = "Nombre";
-            this.mNombre.HeaderText = "Nombre";
-            this.mNombre.Name = "mNombre";
-            this.mNombre.ReadOnly = true;
-            // 
-            // bsMascota
-            // 
-            this.bsMascota.DataMember = "tbMascota";
-            this.bsMascota.DataSource = this.ds;
-            // 
-            // ds
-            // 
-            this.ds.DataSetName = "DsNeo";
-            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pnl8
             // 
             this.pnl8.AutoScroll = true;
@@ -532,7 +489,6 @@
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(64, 130);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFecha.Size = new System.Drawing.Size(103, 21);
             this.dtpFecha.TabIndex = 6;
             // 
@@ -773,7 +729,7 @@
             // 
             // bnDetalle
             // 
-            this.bnDetalle.AddNewItem = this.btnNew;
+            this.bnDetalle.AddNewItem = null;
             this.bnDetalle.BindingSource = this.bsDetalle;
             this.bnDetalle.CountItem = this.toolStripLabel1;
             this.bnDetalle.DeleteItem = null;
@@ -809,11 +765,6 @@
             this.btnNew.Size = new System.Drawing.Size(105, 22);
             this.btnNew.Text = "Agregar nuevo";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // bsDetalle
-            // 
-            this.bsDetalle.DataMember = "tbHistorialDetalle";
-            this.bsDetalle.DataSource = this.dsNeo;
             // 
             // toolStripLabel1
             // 
@@ -916,80 +867,14 @@
             this.aCodigo,
             this.aDescripcion,
             this.aVeterinario,
-            this.aNota});
+            this.aNota,
+            this.aCodigoVeterinario});
             this.grdArticulo.DataSource = this.bsDetalle;
             this.grdArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdArticulo.Location = new System.Drawing.Point(0, 0);
             this.grdArticulo.Name = "grdArticulo";
-            this.grdArticulo.ReadOnly = true;
             this.grdArticulo.Size = new System.Drawing.Size(863, 210);
             this.grdArticulo.TabIndex = 0;
-            // 
-            // aTrabajo
-            // 
-            this.aTrabajo.DataPropertyName = "CodigoTrabajo";
-            this.aTrabajo.HeaderText = "CodigoTrabajo";
-            this.aTrabajo.Name = "aTrabajo";
-            this.aTrabajo.ReadOnly = true;
-            this.aTrabajo.Visible = false;
-            // 
-            // aEmpresa
-            // 
-            this.aEmpresa.DataPropertyName = "CodigoEmpresa";
-            this.aEmpresa.HeaderText = "CodigoEmpresa";
-            this.aEmpresa.Name = "aEmpresa";
-            this.aEmpresa.ReadOnly = true;
-            this.aEmpresa.Visible = false;
-            // 
-            // aSucursal
-            // 
-            this.aSucursal.DataPropertyName = "CodigoSucursal";
-            this.aSucursal.HeaderText = "CodigoSucursal";
-            this.aSucursal.Name = "aSucursal";
-            this.aSucursal.ReadOnly = true;
-            this.aSucursal.Visible = false;
-            // 
-            // aNumero
-            // 
-            this.aNumero.DataPropertyName = "NumeroHistorial";
-            this.aNumero.HeaderText = "NumeroHistorial";
-            this.aNumero.Name = "aNumero";
-            this.aNumero.ReadOnly = true;
-            this.aNumero.Visible = false;
-            // 
-            // aCodigo
-            // 
-            this.aCodigo.DataPropertyName = "CodigoArticulo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.aCodigo.HeaderText = "Código";
-            this.aCodigo.Name = "aCodigo";
-            this.aCodigo.ReadOnly = true;
-            this.aCodigo.Width = 80;
-            // 
-            // aDescripcion
-            // 
-            this.aDescripcion.DataPropertyName = "Descripcion";
-            this.aDescripcion.HeaderText = "Descripción";
-            this.aDescripcion.Name = "aDescripcion";
-            this.aDescripcion.ReadOnly = true;
-            this.aDescripcion.Width = 250;
-            // 
-            // aVeterinario
-            // 
-            this.aVeterinario.DataPropertyName = "Veterinario";
-            this.aVeterinario.HeaderText = "Veterinario";
-            this.aVeterinario.Name = "aVeterinario";
-            this.aVeterinario.ReadOnly = true;
-            this.aVeterinario.Width = 180;
-            // 
-            // aNota
-            // 
-            this.aNota.DataPropertyName = "Nota";
-            this.aNota.HeaderText = "Nota";
-            this.aNota.Name = "aNota";
-            this.aNota.ReadOnly = true;
-            this.aNota.Width = 220;
             // 
             // pnl6
             // 
@@ -1002,18 +887,6 @@
             this.pnl6.Size = new System.Drawing.Size(867, 241);
             this.pnl6.TabIndex = 3;
             // 
-            // taHistorial
-            // 
-            this.taHistorial.ClearBeforeFill = true;
-            // 
-            // taHistorialDetalle
-            // 
-            this.taHistorialDetalle.ClearBeforeFill = true;
-            // 
-            // taMascota
-            // 
-            this.taMascota.ClearBeforeFill = true;
-            // 
             // pnlServicio
             // 
             this.pnlServicio.BackColor = System.Drawing.Color.White;
@@ -1023,7 +896,7 @@
             this.pnlServicio.Controls.Add(this.btnCancelaServicio);
             this.pnlServicio.Controls.Add(this.pnlTipoContactoSub);
             this.pnlServicio.Controls.Add(this.label8);
-            this.pnlServicio.Location = new System.Drawing.Point(346, 89);
+            this.pnlServicio.Location = new System.Drawing.Point(346, 38);
             this.pnlServicio.Name = "pnlServicio";
             this.pnlServicio.Size = new System.Drawing.Size(364, 289);
             this.pnlServicio.TabIndex = 15;
@@ -1077,6 +950,8 @@
             this.txtServicio.Name = "txtServicio";
             this.txtServicio.Size = new System.Drawing.Size(281, 23);
             this.txtServicio.TabIndex = 6;
+            this.txtServicio.TextChanged += new System.EventHandler(this.txtServicio_TextChanged);
+            this.txtServicio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtServicio_KeyDown);
             // 
             // kryptonLabel8
             // 
@@ -1096,7 +971,8 @@
             this.grdServicio.AutoGenerateColumns = false;
             this.grdServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sDescripcion});
+            this.sDescripcion,
+            this.sCodigo});
             this.grdServicio.DataSource = this.bsServicio;
             this.grdServicio.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grdServicio.Location = new System.Drawing.Point(0, 40);
@@ -1105,18 +981,7 @@
             this.grdServicio.Size = new System.Drawing.Size(360, 187);
             this.grdServicio.TabIndex = 4;
             this.grdServicio.DoubleClick += new System.EventHandler(this.grdServicio_DoubleClick);
-            // 
-            // sDescripcion
-            // 
-            this.sDescripcion.DataPropertyName = "Descripcion";
-            this.sDescripcion.HeaderText = "Descripcion";
-            this.sDescripcion.Name = "sDescripcion";
-            this.sDescripcion.ReadOnly = true;
-            // 
-            // bsServicio
-            // 
-            this.bsServicio.DataMember = "tbArticulo";
-            this.bsServicio.DataSource = this.dsNeo;
+            this.grdServicio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdServicio_KeyDown);
             // 
             // label8
             // 
@@ -1195,6 +1060,40 @@
             this.grdVeterinario.TabIndex = 4;
             this.grdVeterinario.DoubleClick += new System.EventHandler(this.grdVeterinario_DoubleClick);
             // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(310, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Veterinarios";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
+            // 
+            // sCodigo
+            // 
+            this.sCodigo.DataPropertyName = "CodigoArticulo";
+            this.sCodigo.HeaderText = "CodigoArticulo";
+            this.sCodigo.Name = "sCodigo";
+            this.sCodigo.ReadOnly = true;
+            this.sCodigo.Visible = false;
+            this.sCodigo.Width = 70;
+            // 
+            // aCodigoVeterinario
+            // 
+            this.aCodigoVeterinario.DataPropertyName = "CodigoEmpleado";
+            this.aCodigoVeterinario.HeaderText = "CodigoEmpleado";
+            this.aCodigoVeterinario.Name = "aCodigoVeterinario";
+            this.aCodigoVeterinario.ReadOnly = true;
+            this.aCodigoVeterinario.Visible = false;
+            // 
             // vCodigo
             // 
             this.vCodigo.DataPropertyName = "CodigoEmpleado";
@@ -1219,18 +1118,145 @@
             this.bsEmpleado.DataMember = "tbEmpleado";
             this.bsEmpleado.DataSource = this.dsNeo;
             // 
-            // label5
+            // dsNeo
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(310, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Veterinarios";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sDescripcion
+            // 
+            this.sDescripcion.DataPropertyName = "Descripcion";
+            this.sDescripcion.HeaderText = "Descripcion";
+            this.sDescripcion.Name = "sDescripcion";
+            this.sDescripcion.ReadOnly = true;
+            this.sDescripcion.Width = 300;
+            // 
+            // bsServicio
+            // 
+            this.bsServicio.DataMember = "tbArticulo";
+            this.bsServicio.DataSource = this.dsNeo;
+            // 
+            // aTrabajo
+            // 
+            this.aTrabajo.DataPropertyName = "CodigoTrabajo";
+            this.aTrabajo.HeaderText = "CodigoTrabajo";
+            this.aTrabajo.Name = "aTrabajo";
+            this.aTrabajo.ReadOnly = true;
+            this.aTrabajo.Visible = false;
+            // 
+            // aEmpresa
+            // 
+            this.aEmpresa.DataPropertyName = "CodigoEmpresa";
+            this.aEmpresa.HeaderText = "CodigoEmpresa";
+            this.aEmpresa.Name = "aEmpresa";
+            this.aEmpresa.ReadOnly = true;
+            this.aEmpresa.Visible = false;
+            // 
+            // aSucursal
+            // 
+            this.aSucursal.DataPropertyName = "CodigoSucursal";
+            this.aSucursal.HeaderText = "CodigoSucursal";
+            this.aSucursal.Name = "aSucursal";
+            this.aSucursal.ReadOnly = true;
+            this.aSucursal.Visible = false;
+            // 
+            // aNumero
+            // 
+            this.aNumero.DataPropertyName = "NumeroHistorial";
+            this.aNumero.HeaderText = "NumeroHistorial";
+            this.aNumero.Name = "aNumero";
+            this.aNumero.ReadOnly = true;
+            this.aNumero.Visible = false;
+            // 
+            // aCodigo
+            // 
+            this.aCodigo.DataPropertyName = "CodigoArticulo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.aCodigo.HeaderText = "Código";
+            this.aCodigo.Name = "aCodigo";
+            this.aCodigo.ReadOnly = true;
+            this.aCodigo.Width = 80;
+            // 
+            // aDescripcion
+            // 
+            this.aDescripcion.DataPropertyName = "Descripcion";
+            this.aDescripcion.HeaderText = "Descripción";
+            this.aDescripcion.Name = "aDescripcion";
+            this.aDescripcion.ReadOnly = true;
+            this.aDescripcion.Width = 250;
+            // 
+            // aVeterinario
+            // 
+            this.aVeterinario.DataPropertyName = "Veterinario";
+            this.aVeterinario.HeaderText = "Veterinario";
+            this.aVeterinario.Name = "aVeterinario";
+            this.aVeterinario.ReadOnly = true;
+            this.aVeterinario.Width = 180;
+            // 
+            // aNota
+            // 
+            this.aNota.DataPropertyName = "Nota";
+            this.aNota.HeaderText = "Nota";
+            this.aNota.Name = "aNota";
+            this.aNota.Width = 220;
+            // 
+            // bsDetalle
+            // 
+            this.bsDetalle.DataMember = "tbHistorialDetalle";
+            this.bsDetalle.DataSource = this.dsNeo;
+            // 
+            // mCodigo
+            // 
+            this.mCodigo.DataPropertyName = "CodigoMascota";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.mCodigo.HeaderText = "CodigoMascota";
+            this.mCodigo.Name = "mCodigo";
+            this.mCodigo.ReadOnly = true;
+            this.mCodigo.Width = 70;
+            // 
+            // mDueno
+            // 
+            this.mDueno.DataPropertyName = "NombreDueno";
+            this.mDueno.HeaderText = "NombreDueno";
+            this.mDueno.Name = "mDueno";
+            this.mDueno.ReadOnly = true;
+            this.mDueno.Width = 180;
+            // 
+            // mNombre
+            // 
+            this.mNombre.DataPropertyName = "Nombre";
+            this.mNombre.HeaderText = "Nombre";
+            this.mNombre.Name = "mNombre";
+            this.mNombre.ReadOnly = true;
+            // 
+            // bsMascota
+            // 
+            this.bsMascota.DataMember = "tbMascota";
+            this.bsMascota.DataSource = this.ds;
+            // 
+            // ds
+            // 
+            this.ds.DataSetName = "DsNeo";
+            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbHistorial
+            // 
+            this.tbHistorial.DataMember = "tbHistorial";
+            this.tbHistorial.DataSource = this.dsNeo;
+            // 
+            // taHistorial
+            // 
+            this.taHistorial.ClearBeforeFill = true;
+            // 
+            // taHistorialDetalle
+            // 
+            this.taHistorialDetalle.ClearBeforeFill = true;
+            // 
+            // taMascota
+            // 
+            this.taMascota.ClearBeforeFill = true;
             // 
             // taEmpleado
             // 
@@ -1239,10 +1265,6 @@
             // taArticulo
             // 
             this.taArticulo.ClearBeforeFill = true;
-            // 
-            // ep
-            // 
-            this.ep.ContainerControl = this;
             // 
             // FrmTscHistorial
             // 
@@ -1265,12 +1287,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsHistorial)).EndInit();
             this.bsHistorial.ResumeLayout(false);
             this.bsHistorial.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbHistorial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.pnl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMascota)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMascota)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.pnl8.ResumeLayout(false);
             this.pnl8.PerformLayout();
             this.pnl4.ResumeLayout(false);
@@ -1280,7 +1298,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnDetalle)).EndInit();
             this.bnDetalle.ResumeLayout(false);
             this.bnDetalle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDetalle)).EndInit();
             this.pnl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdArticulo)).EndInit();
             this.pnl6.ResumeLayout(false);
@@ -1288,12 +1305,17 @@
             this.pnlTipoContactoSub.ResumeLayout(false);
             this.pnlTipoContactoSub.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdServicio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsServicio)).EndInit();
             this.pnlVeterinario.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdVeterinario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServicio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMascota)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbHistorial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1325,15 +1347,12 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
-        private System.Windows.Forms.Label lblNombre;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBuscaMascota;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnl11;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private DsNeo dsNeo;
         private System.Windows.Forms.BindingSource tbHistorial;
-        private DsNeoTableAdapters.taHistorial taHistorial;
         private System.Windows.Forms.BindingNavigator bsHistorial;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -1365,7 +1384,6 @@
         private System.Windows.Forms.Panel pnl6;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdArticulo;
         private System.Windows.Forms.BindingSource bsDetalle;
-        private DsNeoTableAdapters.taHistorialDetalle taHistorialDetalle;
         private System.Windows.Forms.ToolStripDropDownButton btnImprimir;
         private System.Windows.Forms.ToolStripMenuItem mnuPantalla;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -1375,7 +1393,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdMascota;
         private System.Windows.Forms.BindingSource bsMascota;
         private DsNeo ds;
-        private DsNeoTableAdapters.taMascota taMascota;
         private System.Windows.Forms.Panel pnlServicio;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnServicioAceptarNuevo;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAceptaServicio;
@@ -1395,9 +1412,14 @@
         private DsNeoTableAdapters.taEmpleado taEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn vCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn vNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sDescripcion;
         private System.Windows.Forms.BindingSource bsServicio;
         private DsNeoTableAdapters.taArticulo taArticulo;
+        private System.Windows.Forms.ErrorProvider ep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mDueno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn aTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn aEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn aSucursal;
@@ -1406,9 +1428,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn aVeterinario;
         private System.Windows.Forms.DataGridViewTextBoxColumn aNota;
-        private System.Windows.Forms.ErrorProvider ep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mDueno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aCodigoVeterinario;
+        public DsNeoTableAdapters.taHistorial taHistorial;
+        public DsNeo dsNeo;
+        public DsNeoTableAdapters.taMascota taMascota;
+        public DsNeoTableAdapters.taHistorialDetalle taHistorialDetalle;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

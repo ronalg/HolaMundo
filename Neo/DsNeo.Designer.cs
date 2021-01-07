@@ -23646,6 +23646,8 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnNota;
             
+            private global::System.Data.DataColumn columnCodigoEmpleado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbHistorialDetalleDataTable() {
@@ -23745,6 +23747,14 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoEmpleadoColumn {
+                get {
+                    return this.columnCodigoEmpleado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -23780,7 +23790,7 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbHistorialDetalleRow AddtbHistorialDetalleRow(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, int NumeroHistorial, int CodigoArticulo, string Descripcion, string Veterinario, string Nota) {
+            public tbHistorialDetalleRow AddtbHistorialDetalleRow(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, int NumeroHistorial, int CodigoArticulo, string Descripcion, string Veterinario, string Nota, short CodigoEmpleado) {
                 tbHistorialDetalleRow rowtbHistorialDetalleRow = ((tbHistorialDetalleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodigoTrabajo,
@@ -23790,7 +23800,8 @@ namespace Neo {
                         CodigoArticulo,
                         Descripcion,
                         Veterinario,
-                        Nota};
+                        Nota,
+                        CodigoEmpleado};
                 rowtbHistorialDetalleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbHistorialDetalleRow);
                 return rowtbHistorialDetalleRow;
@@ -23832,6 +23843,7 @@ namespace Neo {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnVeterinario = base.Columns["Veterinario"];
                 this.columnNota = base.Columns["Nota"];
+                this.columnCodigoEmpleado = base.Columns["CodigoEmpleado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23853,6 +23865,8 @@ namespace Neo {
                 base.Columns.Add(this.columnVeterinario);
                 this.columnNota = new global::System.Data.DataColumn("Nota", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNota);
+                this.columnCodigoEmpleado = new global::System.Data.DataColumn("CodigoEmpleado", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoEmpleado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCodigoTrabajo,
                                 this.columnCodigoEmpresa,
@@ -23864,9 +23878,7 @@ namespace Neo {
                 this.columnCodigoSucursal.AllowDBNull = false;
                 this.columnNumeroHistorial.AllowDBNull = false;
                 this.columnCodigoArticulo.AllowDBNull = false;
-                this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 300;
-                this.columnVeterinario.AllowDBNull = false;
                 this.columnVeterinario.MaxLength = 60;
                 this.columnNota.MaxLength = 300;
             }
@@ -24037,6 +24049,8 @@ namespace Neo {
             private global::System.Data.DataColumn columnVeterinario;
             
             private global::System.Data.DataColumn columnNotaDetalle;
+            
+            private global::System.Data.DataColumn columnCodigoArticulo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -24217,6 +24231,14 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoArticuloColumn {
+                get {
+                    return this.columnCodigoArticulo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -24270,7 +24292,8 @@ namespace Neo {
                         string Dueño, 
                         string Descripcion, 
                         string Veterinario, 
-                        string NotaDetalle) {
+                        string NotaDetalle, 
+                        int CodigoArticulo) {
                 tbHistorialMascotaRow rowtbHistorialMascotaRow = ((tbHistorialMascotaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodigoTrabajo,
@@ -24290,10 +24313,21 @@ namespace Neo {
                         Dueño,
                         Descripcion,
                         Veterinario,
-                        NotaDetalle};
+                        NotaDetalle,
+                        CodigoArticulo};
                 rowtbHistorialMascotaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbHistorialMascotaRow);
                 return rowtbHistorialMascotaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public tbHistorialMascotaRow FindByCodigoTrabajoCodigoEmpresaCodigoSucursalNumeroHistorial(short CodigoTrabajo, short CodigoEmpresa, short CodigoSucursal, int NumeroHistorial) {
+                return ((tbHistorialMascotaRow)(this.Rows.Find(new object[] {
+                            CodigoTrabajo,
+                            CodigoEmpresa,
+                            CodigoSucursal,
+                            NumeroHistorial})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24331,6 +24365,7 @@ namespace Neo {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnVeterinario = base.Columns["Veterinario"];
                 this.columnNotaDetalle = base.Columns["NotaDetalle"];
+                this.columnCodigoArticulo = base.Columns["CodigoArticulo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24372,19 +24407,23 @@ namespace Neo {
                 base.Columns.Add(this.columnVeterinario);
                 this.columnNotaDetalle = new global::System.Data.DataColumn("NotaDetalle", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNotaDetalle);
+                this.columnCodigoArticulo = new global::System.Data.DataColumn("CodigoArticulo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoArticulo);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCodigoTrabajo,
+                                this.columnCodigoEmpresa,
+                                this.columnCodigoSucursal,
+                                this.columnNumeroHistorial}, true));
                 this.columnCodigoTrabajo.AllowDBNull = false;
                 this.columnCodigoEmpresa.AllowDBNull = false;
                 this.columnCodigoSucursal.AllowDBNull = false;
                 this.columnNumeroHistorial.AllowDBNull = false;
                 this.columnCodigoMascota.AllowDBNull = false;
-                this.columnNumeroCita.AllowDBNull = false;
                 this.columnUsuario.AllowDBNull = false;
                 this.columnUsuario.MaxLength = 20;
                 this.columnApertura.AllowDBNull = false;
                 this.columnFecha.AllowDBNull = false;
-                this.columnNotaHistorial.AllowDBNull = false;
                 this.columnNotaHistorial.MaxLength = 300;
-                this.columnImagen.AllowDBNull = false;
                 this.columnMascota.AllowDBNull = false;
                 this.columnMascota.MaxLength = 20;
                 this.columnSexo.AllowDBNull = false;
@@ -24397,6 +24436,7 @@ namespace Neo {
                 this.columnVeterinario.AllowDBNull = false;
                 this.columnVeterinario.MaxLength = 60;
                 this.columnNotaDetalle.MaxLength = 300;
+                this.columnCodigoArticulo.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -31905,7 +31945,12 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Descripcion {
                 get {
-                    return ((string)(this[this.tabletbHistorialDetalle.DescripcionColumn]));
+                    try {
+                        return ((string)(this[this.tabletbHistorialDetalle.DescripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion\' de la tabla \'tbHistorialDetalle\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletbHistorialDetalle.DescripcionColumn] = value;
@@ -31916,7 +31961,12 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Veterinario {
                 get {
-                    return ((string)(this[this.tabletbHistorialDetalle.VeterinarioColumn]));
+                    try {
+                        return ((string)(this[this.tabletbHistorialDetalle.VeterinarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Veterinario\' de la tabla \'tbHistorialDetalle\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletbHistorialDetalle.VeterinarioColumn] = value;
@@ -31941,6 +31991,47 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short CodigoEmpleado {
+                get {
+                    try {
+                        return ((short)(this[this.tabletbHistorialDetalle.CodigoEmpleadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CodigoEmpleado\' de la tabla \'tbHistorialDetalle\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbHistorialDetalle.CodigoEmpleadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescripcionNull() {
+                return this.IsNull(this.tabletbHistorialDetalle.DescripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescripcionNull() {
+                this[this.tabletbHistorialDetalle.DescripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsVeterinarioNull() {
+                return this.IsNull(this.tabletbHistorialDetalle.VeterinarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetVeterinarioNull() {
+                this[this.tabletbHistorialDetalle.VeterinarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNotaNull() {
                 return this.IsNull(this.tabletbHistorialDetalle.NotaColumn);
             }
@@ -31949,6 +32040,18 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNotaNull() {
                 this[this.tabletbHistorialDetalle.NotaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCodigoEmpleadoNull() {
+                return this.IsNull(this.tabletbHistorialDetalle.CodigoEmpleadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCodigoEmpleadoNull() {
+                this[this.tabletbHistorialDetalle.CodigoEmpleadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -32025,7 +32128,12 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int NumeroCita {
                 get {
-                    return ((int)(this[this.tabletbHistorialMascota.NumeroCitaColumn]));
+                    try {
+                        return ((int)(this[this.tabletbHistorialMascota.NumeroCitaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NumeroCita\' de la tabla \'tbHistorialMascota\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletbHistorialMascota.NumeroCitaColumn] = value;
@@ -32069,7 +32177,13 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string NotaHistorial {
                 get {
-                    return ((string)(this[this.tabletbHistorialMascota.NotaHistorialColumn]));
+                    try {
+                        return ((string)(this[this.tabletbHistorialMascota.NotaHistorialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NotaHistorial\' de la tabla \'tbHistorialMascota\' es DBNull" +
+                                ".", e);
+                    }
                 }
                 set {
                     this[this.tabletbHistorialMascota.NotaHistorialColumn] = value;
@@ -32080,7 +32194,12 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public byte[] Imagen {
                 get {
-                    return ((byte[])(this[this.tabletbHistorialMascota.ImagenColumn]));
+                    try {
+                        return ((byte[])(this[this.tabletbHistorialMascota.ImagenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Imagen\' de la tabla \'tbHistorialMascota\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletbHistorialMascota.ImagenColumn] = value;
@@ -32167,6 +32286,53 @@ namespace Neo {
                 set {
                     this[this.tabletbHistorialMascota.NotaDetalleColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int CodigoArticulo {
+                get {
+                    return ((int)(this[this.tabletbHistorialMascota.CodigoArticuloColumn]));
+                }
+                set {
+                    this[this.tabletbHistorialMascota.CodigoArticuloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNumeroCitaNull() {
+                return this.IsNull(this.tabletbHistorialMascota.NumeroCitaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNumeroCitaNull() {
+                this[this.tabletbHistorialMascota.NumeroCitaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNotaHistorialNull() {
+                return this.IsNull(this.tabletbHistorialMascota.NotaHistorialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNotaHistorialNull() {
+                this[this.tabletbHistorialMascota.NotaHistorialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsImagenNull() {
+                return this.IsNull(this.tabletbHistorialMascota.ImagenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetImagenNull() {
+                this[this.tabletbHistorialMascota.ImagenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -56883,10 +57049,12 @@ FROM
 WHERE 
            hm.CodigoTrabajo = @codigoTrabajo
            AND hm.CodigoEmpresa = @codigoEmpresa
+           AND hm.CodigoSucursal = @codigoSucursal
            AND (@numero IS NULL OR hm.NumeroHistorial = @numero)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoSucursal", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroHistorial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -56935,11 +57103,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.tbHistorialDataTable dataTable, short codigoTrabajo, short codigoEmpresa, int numero) {
+        public virtual int Fill(DsNeo.tbHistorialDataTable dataTable, short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numero) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
-            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(numero));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigoSucursal));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(numero));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -56961,13 +57130,13 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
                 command.Parameters[1].Value = ((string)(fecha));
             }
             if ((nota == null)) {
-                throw new global::System.ArgumentNullException("nota");
+                command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[2].Value = ((string)(nota));
             }
             if ((imagen == null)) {
-                throw new global::System.ArgumentNullException("imagen");
+                command.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[3].Value = ((byte[])(imagen));
@@ -57214,6 +57383,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Veterinario", "Veterinario");
             tableMapping.ColumnMappings.Add("Nota", "Nota");
+            tableMapping.ColumnMappings.Add("CodigoEmpleado", "CodigoEmpleado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -57231,7 +57401,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT
-             hmd.CodigoTrabajo, hmd.CodigoEmpresa, hmd.CodigoSucursal, hmd.NumeroHistorial,              a.CodigoArticulo, a.Descripcion, e.Nombre AS Veterinario, hmd.Nota
+             hmd.CodigoTrabajo, hmd.CodigoEmpresa, hmd.CodigoSucursal, hmd.NumeroHistorial, a.CodigoArticulo, a.Descripcion, e.CodigoEmpleado, e.Nombre AS Veterinario, hmd.Nota
 FROM
 	tbHistorialMascotaDetalle hmd
 		INNER JOIN tbArticulo a
@@ -57244,10 +57414,14 @@ FROM
 				AND hmd.CodigoEmpleado = e.CodigoEmpleado
 WHERE 
 	hmd.CodigoTrabajo = @codigoTrabajo
-	AND hmd.CodigoEmpresa = @codigoEmpresa";
+	AND hmd.CodigoEmpresa = @codigoEmpresa
+                   AND (@codigoSucursal IS NULL OR hmd.CodigoSucursal = @codigoSucursal)
+                   AND (@numero IS NULL OR hmd.NumeroHistorial = @numero)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoSucursal", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoSucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroHistorial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "DELETE FROM tbHistorialMascotaDetalle\r\nWHERE        (CodigoTrabajo = @codigoTraba" +
@@ -57288,10 +57462,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.tbHistorialDetalleDataTable dataTable, short codigoTrabajo, short codigoEmpresa) {
+        public virtual int Fill(DsNeo.tbHistorialDetalleDataTable dataTable, short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numero) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((short)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((short)(codigoSucursal));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(numero));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -57303,13 +57479,18 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int Elimina(short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numeroHistorial, int codigoArticulo) {
+        public virtual int Elimina(short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numeroHistorial, global::System.Nullable<int> codigoArticulo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
             command.Parameters[1].Value = ((short)(codigoEmpresa));
             command.Parameters[2].Value = ((short)(codigoSucursal));
             command.Parameters[3].Value = ((int)(numeroHistorial));
-            command.Parameters[4].Value = ((int)(codigoArticulo));
+            if ((codigoArticulo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(codigoArticulo.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -57358,14 +57539,24 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Inserta(short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numeroHistorial, int codigoArticulo, short codigoEmpleado, string nota) {
+        public virtual int Inserta(short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numeroHistorial, global::System.Nullable<int> codigoArticulo, global::System.Nullable<short> codigoEmpleado, string nota) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
             command.Parameters[1].Value = ((short)(codigoEmpresa));
             command.Parameters[2].Value = ((short)(codigoSucursal));
             command.Parameters[3].Value = ((int)(numeroHistorial));
-            command.Parameters[4].Value = ((int)(codigoArticulo));
-            command.Parameters[5].Value = ((short)(codigoEmpleado));
+            if ((codigoArticulo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(codigoArticulo.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((codigoEmpleado.HasValue == true)) {
+                command.Parameters[5].Value = ((short)(codigoEmpleado.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
             if ((nota == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
@@ -57529,6 +57720,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Veterinario", "Veterinario");
             tableMapping.ColumnMappings.Add("NotaDetalle", "NotaDetalle");
+            tableMapping.ColumnMappings.Add("CodigoArticulo", "CodigoArticulo");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -57545,22 +57737,92 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroHistorial, CodigoMascota, NumeroCita, Usuario, Apertura, Fecha, NotaHistorial, Imagen, Mascota, Sexo, CodigoCliente, Dueño, Descripcion, Veterinario, 
-                         NotaDetalle
-FROM            dbo.fnHistorialMascota(@codigoTrabajo, @codigoEmpresa) AS tbHistorialMascota";
+            this._commandCollection[0].CommandText = @"SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroHistorial, CodigoMascota, NumeroCita, Usuario, Apertura, Fecha, NotaHistorial, Imagen, Mascota, Sexo, CodigoCliente, Dueño, Descripcion, Veterinario, NotaDetalle, CodigoArticulo
+FROM dbo.fnHistorialMascota(@codigoTrabajo, @codigoEmpresa) AS tbHistorialMascota
+WHERE (@codigoMascota IS NULL OR CodigoMascota = @codigoMascota) 
+AND (@desde IS NULL OR Fecha BETWEEN @desde AND @hasta) 
+AND (@mascota IS NULL OR Mascota LIKE '%' + @mascota + '%') 
+AND (@codigoCliente IS NULL OR CodigoCliente = @codigoCliente) 
+AND (@dueño IS NULL OR Dueño LIKE '%' + @dueño + '%') 
+AND (@codigoArticulo IS NULL OR CodigoArticulo = @codigoArticulo)
+AND (@descripcion IS NULL OR Descripcion LIKE '%' + @descripcion + '%')
+AND (@nombre IS NULL OR Mascota LIKE '%' + @nombre + '%' OR Dueño LIKE '%' + @nombre + '%')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoMascota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoMascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@desde", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mascota", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Mascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoCliente", global::System.Data.SqlDbType.Int, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dueño", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Dueño", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoArticulo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoArticulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Mascota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNeo.tbHistorialMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa) {
+        public virtual int Fill(DsNeo.tbHistorialMascotaDataTable dataTable, int codigoTrabajo, int codigoEmpresa, global::System.Nullable<int> codigoMascota, global::System.Nullable<global::System.DateTime> desde, global::System.Nullable<global::System.DateTime> hasta, string mascota, global::System.Nullable<int> codigoCliente, string dueño, global::System.Nullable<int> codigoArticulo, string descripcion, string nombre) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(codigoTrabajo));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigoEmpresa));
+            if ((codigoMascota.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(codigoMascota.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((desde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(desde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((hasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(hasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((mascota == null)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(mascota));
+            }
+            if ((codigoCliente.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((int)(codigoCliente.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((dueño == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(dueño));
+            }
+            if ((codigoArticulo.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((int)(codigoArticulo.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((descripcion == null)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((string)(descripcion));
+            }
+            if ((nombre == null)) {
+                this.Adapter.SelectCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[10].Value = ((string)(nombre));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

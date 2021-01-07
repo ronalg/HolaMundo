@@ -511,6 +511,7 @@ namespace Neo
                 Utilidad.tscHistorial = new FrmTscHistorial();
                 Utilidad.tscHistorial.MdiParent = this;
             }
+            Utilidad.tscHistorial.btnNuevo_Click(sender, EventArgs.Empty);
             Utilidad.tscHistorial.BringToFront();
             Utilidad.tscHistorial.Show();
         }

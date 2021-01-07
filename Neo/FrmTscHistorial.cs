@@ -99,11 +99,12 @@ namespace Neo
             }
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        public void btnNuevo_Click(object sender, EventArgs e)
         {
             txtBuscaMascota.Focus();
             txtBuscaMascota.Clear();
             dsNeo.tbMascota.Rows.Clear();
+            dsNeo.tbHistorial.Rows.Clear();
             dsNeo.tbHistorialDetalle.Rows.Clear();
             lblNumero.Text = null;
             lblSucursal.Text = Utilidad.codigoSucursal.ToString();
@@ -180,10 +181,10 @@ namespace Neo
                 dr["NumeroHistorial"] = 0;
                 dr["CodigoEmpleado"] = DBNull.Value;
                 dr["Veterinario"] = DBNull.Value;
-                dr["CodigoArticulo"] = DBNull.Value;
+                dr["CodigoArticulo"] = 0;
                 dr["Descripcion"] = DBNull.Value;
                 dr["Nota"] = DBNull.Value;
-                dsNeo.tbCitaDetalle.Rows.Add(dr);
+                dsNeo.tbHistorialDetalle.Rows.Add(dr);
                 pnlServicio.Visible = true;
                 txtServicio.Clear();
                 txtServicio.Focus();
@@ -281,14 +282,10 @@ namespace Neo
                 }
 
                 taHistorialDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
-                foreach (DataRow dr in dsNeo.tbCitaDetalle.Rows)
+                foreach (DataRow dr in dsNeo.tbHistorialDetalle.Rows)
                 {
                     int codigo = int.Parse(dr["CodigoArticulo"].ToString());
                     short empleado = short.Parse(dr["CodigoEmpleado"].ToString());
-                    bool pendiente = bool.Parse(dr["Pendiente"].ToString());
-                    decimal costo = decimal.Parse(dr["Costo"].ToString());
-                    decimal venta = decimal.Parse(dr["Venta"].ToString());
-                    bool activa = bool.Parse(dr["Activa"].ToString());
                     string nota = dr["Nota"].ToString();
 
                     taHistorialDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo, empleado, nota);
@@ -334,6 +331,30 @@ namespace Neo
         {
             taArticulo.FillByVeterinaria(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, true, null);
             taEmpleado.FillByPuesto(dsNeo.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Veterinario");
+        }
+
+        private void txtServicio_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtServicio.Text))
+                taArticulo.FillByVeterinaria(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, true, null);
+        }
+
+        private void txtServicio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                taArticulo.FillByVeterinaria(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, true, txtServicio.Text);
+                if (dsNeo.tbArticulo.Rows.Count == 1)
+                    btnAceptaServicio_Click(sender, EventArgs.Empty);
+                else
+                    grdServicio.Focus();
+            }
+        }
+
+        private void grdServicio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnAceptaServicio_Click(sender, EventArgs.Empty);
         }
     }
 }
