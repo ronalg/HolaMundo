@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTscCita));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnCita = new System.Windows.Forms.BindingNavigator(this.components);
             this.bsCita = new System.Windows.Forms.BindingSource(this.components);
@@ -390,15 +390,15 @@
             // 
             this.mnuImpresora.Enabled = false;
             this.mnuImpresora.Name = "mnuImpresora";
-            this.mnuImpresora.Size = new System.Drawing.Size(127, 22);
+            this.mnuImpresora.Size = new System.Drawing.Size(180, 22);
             this.mnuImpresora.Text = "Impresora";
             // 
             // mnuPantalla
             // 
-            this.mnuPantalla.Enabled = false;
             this.mnuPantalla.Name = "mnuPantalla";
-            this.mnuPantalla.Size = new System.Drawing.Size(127, 22);
+            this.mnuPantalla.Size = new System.Drawing.Size(180, 22);
             this.mnuPantalla.Text = "Pantalla";
+            this.mnuPantalla.Click += new System.EventHandler(this.mnuPantalla_Click);
             // 
             // toolStripSeparator4
             // 
@@ -498,9 +498,9 @@
             this.pnl14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl14.Controls.Add(this.grdArticulo);
             this.pnl14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl14.Location = new System.Drawing.Point(0, 25);
+            this.pnl14.Location = new System.Drawing.Point(0, 28);
             this.pnl14.Name = "pnl14";
-            this.pnl14.Size = new System.Drawing.Size(993, 247);
+            this.pnl14.Size = new System.Drawing.Size(993, 244);
             this.pnl14.TabIndex = 3;
             // 
             // grdArticulo
@@ -528,7 +528,7 @@
             this.grdArticulo.Location = new System.Drawing.Point(0, 0);
             this.grdArticulo.MultiSelect = false;
             this.grdArticulo.Name = "grdArticulo";
-            this.grdArticulo.Size = new System.Drawing.Size(991, 245);
+            this.grdArticulo.Size = new System.Drawing.Size(991, 242);
             this.grdArticulo.TabIndex = 1;
             this.grdArticulo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdArticulo_CellClick);
             this.grdArticulo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdArticulo_CellDoubleClick);
@@ -576,8 +576,8 @@
             // aCodigo
             // 
             this.aCodigo.DataPropertyName = "CodigoArticulo";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle7;
             this.aCodigo.HeaderText = "Código";
             this.aCodigo.Name = "aCodigo";
             this.aCodigo.ReadOnly = true;
@@ -631,9 +631,9 @@
             // aVenta
             // 
             this.aVenta.DataPropertyName = "venta";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            this.aVenta.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            this.aVenta.DefaultCellStyle = dataGridViewCellStyle8;
             this.aVenta.HeaderText = "Venta";
             this.aVenta.Name = "aVenta";
             this.aVenta.ReadOnly = true;
@@ -651,7 +651,7 @@
             this.pnl13.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl13.Location = new System.Drawing.Point(0, 0);
             this.pnl13.Name = "pnl13";
-            this.pnl13.Size = new System.Drawing.Size(993, 25);
+            this.pnl13.Size = new System.Drawing.Size(993, 28);
             this.pnl13.TabIndex = 2;
             // 
             // bnDetalle
@@ -1215,8 +1215,8 @@
             // 
             this.grdServicio.AllowUserToAddRows = false;
             this.grdServicio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdServicio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdServicio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.grdServicio.AutoGenerateColumns = false;
             this.grdServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1454,8 +1454,8 @@
             // 
             this.grdVeterinario.AllowUserToAddRows = false;
             this.grdVeterinario.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdVeterinario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdVeterinario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.grdVeterinario.AutoGenerateColumns = false;
             this.grdVeterinario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdVeterinario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1581,8 +1581,8 @@
             // 
             this.grdMascota.AllowUserToAddRows = false;
             this.grdMascota.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMascota.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMascota.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.grdMascota.AutoGenerateColumns = false;
             this.grdMascota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMascota.ColumnHeadersVisible = false;
@@ -1603,8 +1603,8 @@
             // mCodigo
             // 
             this.mCodigo.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle12;
             this.mCodigo.HeaderText = "Codigo";
             this.mCodigo.Name = "mCodigo";
             this.mCodigo.ReadOnly = true;

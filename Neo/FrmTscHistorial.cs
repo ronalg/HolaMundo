@@ -114,6 +114,12 @@ namespace Neo
             pnlVeterinario.Visible = false;
             grdMascota.Visible = false;
             txtBuscaMascota.Focus();
+            lblNombre.Text = null;
+            lblDueno.Text = null;
+            lblGrupo.Text = null;
+            lblRaza.Text = null;
+            lblSexo.Text = null;
+            lblCodigo.Text = null;
         }
 
         private void btnCancelaVeterinario_Click(object sender, EventArgs e)
@@ -278,7 +284,7 @@ namespace Neo
                 }
                 else
                 {
-                    taHistorial.Edita(codigoMascota, null, dtpFecha.Value.ToShortDateString(), null, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    taHistorial.Edita(codigoMascota, dtpFecha.Value.ToShortDateString(), null, null, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 }
 
                 taHistorialDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);

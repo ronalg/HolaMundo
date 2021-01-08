@@ -16,14 +16,14 @@ namespace Neo {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class RptCita : ReportClass {
+    public class RptTscCita : ReportClass {
         
-        public RptCita() {
+        public RptTscCita() {
         }
         
         public override string ResourceName {
             get {
-                return "RptCita.rpt";
+                return "RptTscCita.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Neo {
         
         public override string FullResourceName {
             get {
-                return "Neo.RptCita.rpt";
+                return "Neo.RptTscCita.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Neo {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRptCita : Component, ICachedReport {
+    public class CachedRptTscCita : Component, ICachedReport {
         
-        public CachedRptCita() {
+        public CachedRptTscCita() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Neo {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            RptCita rpt = new RptCita();
+            RptTscCita rpt = new RptTscCita();
             rpt.Site = this.Site;
             return rpt;
         }

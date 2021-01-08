@@ -319,6 +319,12 @@
     <Compile Include="FrmRptCita.Designer.cs">
       <DependentUpon>FrmRptCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRptHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRptHistorial.Designer.cs">
+      <DependentUpon>FrmRptHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTscCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,10 +351,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RptCita.cs">
+    <Compile Include="RptTscCita.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RptCita.rpt</DependentUpon>
+      <DependentUpon>RptTscCita.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilidad.cs" />
@@ -475,6 +481,9 @@
     <EmbeddedResource Include="FrmRptCita.resx">
       <DependentUpon>FrmRptCita.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRptHistorial.resx">
+      <DependentUpon>FrmRptHistorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTscCita.resx">
       <DependentUpon>FrmTscCita.cs</DependentUpon>
     </EmbeddedResource>
@@ -496,9 +505,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RptCita.rpt">
+    <EmbeddedResource Include="RptTscCita.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RptCita.cs</LastGenOutput>
+      <LastGenOutput>RptTscCita.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="DsNeo.xsc">
       <DependentUpon>DsNeo.xsd</DependentUpon>

@@ -520,5 +520,17 @@ namespace Neo
         {
             mnuTscHistorial_Click(sender, EventArgs.Empty);
         }
+
+        private void mnuRptHistorial_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.rptHistorial == null)
+            {
+                Utilidad.rptHistorial = new FrmRptHistorial();
+                Utilidad.rptHistorial.WindowState = FormWindowState.Maximized;
+                Utilidad.rptHistorial.MdiParent = this;
+            }
+            Utilidad.rptHistorial.BringToFront();
+            Utilidad.rptHistorial.Show();
+        }
     }
 }

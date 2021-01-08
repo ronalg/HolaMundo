@@ -217,6 +217,8 @@ namespace Neo
             cboPendiente.SelectedIndex = 0;
             cboActiva.SelectedIndex = 0;
             cboInformado.SelectedIndex = 0;
+            dtpDesde.Value = DateTime.Today.AddDays(-30);
+            dtpHasta.Value = DateTime.Today.Date;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -309,10 +311,10 @@ namespace Neo
                 this.Cursor = Cursors.WaitCursor;
                 taEmpresa.FillByCodigo(dsNeo.tbEmpresa, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
                 taSucursal.FillByCodigo(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
-                RptCita rpt = new RptCita();
-                rpt.SetDataSource(dsNeo);
+                //RptCita rpt = new RptCita();
+                //rpt.SetDataSource(dsNeo);
                 FrmRpt frm = new FrmRpt();
-                frm.crv.ReportSource = rpt;
+                //frm.crv.ReportSource = rpt;
                 frm.ShowDialog();
             }
             catch (Exception ex)

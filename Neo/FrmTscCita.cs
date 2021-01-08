@@ -470,5 +470,26 @@ namespace Neo
             else if (e.KeyCode == Keys.Escape)
                 btnCancelaServicio_Click(sender, EventArgs.Empty);
         }
+
+        private void mnuPantalla_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                RptTscCita rpt = new RptTscCita();
+                //rpt.SetDataSource(dsNeo);
+                FrmRpt frm = new FrmRpt();
+                //frm.crv.ReportSource = rpt;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
     }
 }

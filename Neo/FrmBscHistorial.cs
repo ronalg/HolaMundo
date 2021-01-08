@@ -49,7 +49,14 @@ namespace Neo
                 int numero = int.Parse(grdHistorial.CurrentRow.Cells["hNumero"].Value.ToString());
                 Utilidad.tscHistorial.taHistorial.Fill(Utilidad.tscHistorial.dsNeo.tbHistorial, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 int codigo = int.Parse(grdHistorial.CurrentRow.Cells["hCodigo"].Value.ToString());
-                Utilidad.tscHistorial.taMascota.Fill(Utilidad.tscHistorial.dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, null);
+                //Utilidad.tscHistorial.taMascota.Fill(Utilidad.tscHistorial.dsNeo.tbMascota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, null);
+                Utilidad.tscHistorial.lblNombre.Text = grdHistorial.CurrentRow.Cells["hNombre"].Value.ToString();
+                Utilidad.tscHistorial.lblDueno.Text = grdHistorial.CurrentRow.Cells["hDueno"].Value.ToString();
+                Utilidad.tscHistorial.lblSexo.Text = grdHistorial.CurrentRow.Cells["hSexo"].Value.ToString();
+                Utilidad.tscHistorial.lblGrupo.Text = grdHistorial.CurrentRow.Cells["hGrupo"].Value.ToString();
+                Utilidad.tscHistorial.lblRaza.Text = grdHistorial.CurrentRow.Cells["hRaza"].Value.ToString();
+                Utilidad.tscHistorial.lblCodigo.Text = grdHistorial.CurrentRow.Cells["hCodigo"].Value.ToString();
+                Utilidad.tscHistorial.dtpFecha.Value = DateTime.Parse(grdHistorial.CurrentRow.Cells["hFecha"].Value.ToString());
                 Utilidad.tscHistorial.taHistorialDetalle.Fill(Utilidad.tscHistorial.dsNeo.tbHistorialDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 this.Close();
             }

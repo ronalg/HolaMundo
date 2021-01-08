@@ -24052,6 +24052,10 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnCodigoArticulo;
             
+            private global::System.Data.DataColumn columnNombreGrupo;
+            
+            private global::System.Data.DataColumn columnNombreRaza;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbHistorialMascotaDataTable() {
@@ -24239,6 +24243,22 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NombreGrupoColumn {
+                get {
+                    return this.columnNombreGrupo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NombreRazaColumn {
+                get {
+                    return this.columnNombreRaza;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -24293,7 +24313,9 @@ namespace Neo {
                         string Descripcion, 
                         string Veterinario, 
                         string NotaDetalle, 
-                        int CodigoArticulo) {
+                        int CodigoArticulo, 
+                        string NombreGrupo, 
+                        string NombreRaza) {
                 tbHistorialMascotaRow rowtbHistorialMascotaRow = ((tbHistorialMascotaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodigoTrabajo,
@@ -24314,7 +24336,9 @@ namespace Neo {
                         Descripcion,
                         Veterinario,
                         NotaDetalle,
-                        CodigoArticulo};
+                        CodigoArticulo,
+                        NombreGrupo,
+                        NombreRaza};
                 rowtbHistorialMascotaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbHistorialMascotaRow);
                 return rowtbHistorialMascotaRow;
@@ -24366,6 +24390,8 @@ namespace Neo {
                 this.columnVeterinario = base.Columns["Veterinario"];
                 this.columnNotaDetalle = base.Columns["NotaDetalle"];
                 this.columnCodigoArticulo = base.Columns["CodigoArticulo"];
+                this.columnNombreGrupo = base.Columns["NombreGrupo"];
+                this.columnNombreRaza = base.Columns["NombreRaza"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24409,6 +24435,10 @@ namespace Neo {
                 base.Columns.Add(this.columnNotaDetalle);
                 this.columnCodigoArticulo = new global::System.Data.DataColumn("CodigoArticulo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigoArticulo);
+                this.columnNombreGrupo = new global::System.Data.DataColumn("NombreGrupo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreGrupo);
+                this.columnNombreRaza = new global::System.Data.DataColumn("NombreRaza", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreRaza);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCodigoTrabajo,
                                 this.columnCodigoEmpresa,
@@ -24437,6 +24467,10 @@ namespace Neo {
                 this.columnVeterinario.MaxLength = 60;
                 this.columnNotaDetalle.MaxLength = 300;
                 this.columnCodigoArticulo.AllowDBNull = false;
+                this.columnNombreGrupo.AllowDBNull = false;
+                this.columnNombreGrupo.MaxLength = 30;
+                this.columnNombreRaza.AllowDBNull = false;
+                this.columnNombreRaza.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -32296,6 +32330,28 @@ namespace Neo {
                 }
                 set {
                     this[this.tabletbHistorialMascota.CodigoArticuloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NombreGrupo {
+                get {
+                    return ((string)(this[this.tabletbHistorialMascota.NombreGrupoColumn]));
+                }
+                set {
+                    this[this.tabletbHistorialMascota.NombreGrupoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NombreRaza {
+                get {
+                    return ((string)(this[this.tabletbHistorialMascota.NombreRazaColumn]));
+                }
+                set {
+                    this[this.tabletbHistorialMascota.NombreRazaColumn] = value;
                 }
             }
             
@@ -57721,6 +57777,8 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
             tableMapping.ColumnMappings.Add("Veterinario", "Veterinario");
             tableMapping.ColumnMappings.Add("NotaDetalle", "NotaDetalle");
             tableMapping.ColumnMappings.Add("CodigoArticulo", "CodigoArticulo");
+            tableMapping.ColumnMappings.Add("NombreGrupo", "NombreGrupo");
+            tableMapping.ColumnMappings.Add("NombreRaza", "NombreRaza");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -57737,16 +57795,19 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroHistorial, CodigoMascota, NumeroCita, Usuario, Apertura, Fecha, NotaHistorial, Imagen, Mascota, Sexo, CodigoCliente, Dueño, Descripcion, Veterinario, NotaDetalle, CodigoArticulo
-FROM dbo.fnHistorialMascota(@codigoTrabajo, @codigoEmpresa) AS tbHistorialMascota
-WHERE (@codigoMascota IS NULL OR CodigoMascota = @codigoMascota) 
-AND (@desde IS NULL OR Fecha BETWEEN @desde AND @hasta) 
-AND (@mascota IS NULL OR Mascota LIKE '%' + @mascota + '%') 
-AND (@codigoCliente IS NULL OR CodigoCliente = @codigoCliente) 
-AND (@dueño IS NULL OR Dueño LIKE '%' + @dueño + '%') 
-AND (@codigoArticulo IS NULL OR CodigoArticulo = @codigoArticulo)
-AND (@descripcion IS NULL OR Descripcion LIKE '%' + @descripcion + '%')
-AND (@nombre IS NULL OR Mascota LIKE '%' + @nombre + '%' OR Dueño LIKE '%' + @nombre + '%')";
+            this._commandCollection[0].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoSucursal, NumeroHistorial, CodigoMascota, NumeroCita, Usuario, Apertura, Fecha, NotaHistorial, Imagen, Mascota, Sexo, CodigoCliente, Dueño, Descripcion, Veterinario, NotaDetalle, 
+                         CodigoArticulo, NombreGrupo, NombreRaza
+FROM            dbo.fnHistorialMascota(@codigoTrabajo, @codigoEmpresa) AS tbHistorialMascota
+WHERE        (@codigoMascota IS NULL OR
+                         CodigoMascota = @codigoMascota) AND (@desde IS NULL OR
+                         Fecha BETWEEN @desde AND @hasta) AND (@mascota IS NULL OR
+                         Mascota LIKE '%' + @mascota + '%') AND (@codigoCliente IS NULL OR
+                         CodigoCliente = @codigoCliente) AND (@dueño IS NULL OR
+                         Dueño LIKE '%' + @dueño + '%') AND (@codigoArticulo IS NULL OR
+                         CodigoArticulo = @codigoArticulo) AND (@descripcion IS NULL OR
+                         Descripcion LIKE '%' + @descripcion + '%') AND (@nombre IS NULL OR
+                         Mascota LIKE '%' + @nombre + '%' OR
+                         Dueño LIKE '%' + @nombre + '%')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

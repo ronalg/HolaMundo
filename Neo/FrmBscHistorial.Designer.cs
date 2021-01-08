@@ -69,16 +69,18 @@
             this.numeroCitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aperturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaHistorialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagenDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.mascotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueñoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hDueno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.veterinarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaDetalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hRaza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnHistorial)).BeginInit();
             this.bnHistorial.SuspendLayout();
@@ -165,6 +167,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -343,16 +346,18 @@
             this.numeroCitaDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn,
             this.aperturaDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
+            this.hFecha,
             this.notaHistorialDataGridViewTextBoxColumn,
             this.imagenDataGridViewImageColumn,
-            this.mascotaDataGridViewTextBoxColumn,
-            this.sexoDataGridViewTextBoxColumn,
+            this.hNombre,
+            this.hSexo,
             this.codigoClienteDataGridViewTextBoxColumn,
-            this.dueñoDataGridViewTextBoxColumn,
+            this.hDueno,
             this.descripcionDataGridViewTextBoxColumn,
             this.veterinarioDataGridViewTextBoxColumn,
-            this.notaDetalleDataGridViewTextBoxColumn});
+            this.notaDetalleDataGridViewTextBoxColumn,
+            this.hGrupo,
+            this.hRaza});
             this.grdHistorial.DataSource = this.bsHistorial;
             this.grdHistorial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdHistorial.Location = new System.Drawing.Point(0, 0);
@@ -441,16 +446,16 @@
             this.aperturaDataGridViewTextBoxColumn.ReadOnly = true;
             this.aperturaDataGridViewTextBoxColumn.Visible = false;
             // 
-            // fechaDataGridViewTextBoxColumn
+            // hFecha
             // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.hFecha.DataPropertyName = "Fecha";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 80;
+            this.hFecha.DefaultCellStyle = dataGridViewCellStyle2;
+            this.hFecha.HeaderText = "Fecha";
+            this.hFecha.Name = "hFecha";
+            this.hFecha.ReadOnly = true;
+            this.hFecha.Width = 80;
             // 
             // notaHistorialDataGridViewTextBoxColumn
             // 
@@ -468,21 +473,21 @@
             this.imagenDataGridViewImageColumn.ReadOnly = true;
             this.imagenDataGridViewImageColumn.Visible = false;
             // 
-            // mascotaDataGridViewTextBoxColumn
+            // hNombre
             // 
-            this.mascotaDataGridViewTextBoxColumn.DataPropertyName = "Mascota";
-            this.mascotaDataGridViewTextBoxColumn.HeaderText = "Mascota";
-            this.mascotaDataGridViewTextBoxColumn.Name = "mascotaDataGridViewTextBoxColumn";
-            this.mascotaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mascotaDataGridViewTextBoxColumn.Width = 90;
+            this.hNombre.DataPropertyName = "Mascota";
+            this.hNombre.HeaderText = "Mascota";
+            this.hNombre.Name = "hNombre";
+            this.hNombre.ReadOnly = true;
+            this.hNombre.Width = 90;
             // 
-            // sexoDataGridViewTextBoxColumn
+            // hSexo
             // 
-            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sexoDataGridViewTextBoxColumn.Width = 70;
+            this.hSexo.DataPropertyName = "Sexo";
+            this.hSexo.HeaderText = "Sexo";
+            this.hSexo.Name = "hSexo";
+            this.hSexo.ReadOnly = true;
+            this.hSexo.Width = 70;
             // 
             // codigoClienteDataGridViewTextBoxColumn
             // 
@@ -492,13 +497,13 @@
             this.codigoClienteDataGridViewTextBoxColumn.ReadOnly = true;
             this.codigoClienteDataGridViewTextBoxColumn.Visible = false;
             // 
-            // dueñoDataGridViewTextBoxColumn
+            // hDueno
             // 
-            this.dueñoDataGridViewTextBoxColumn.DataPropertyName = "Dueño";
-            this.dueñoDataGridViewTextBoxColumn.HeaderText = "Dueño";
-            this.dueñoDataGridViewTextBoxColumn.Name = "dueñoDataGridViewTextBoxColumn";
-            this.dueñoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dueñoDataGridViewTextBoxColumn.Width = 200;
+            this.hDueno.DataPropertyName = "Dueño";
+            this.hDueno.HeaderText = "Dueño";
+            this.hDueno.Name = "hDueno";
+            this.hDueno.ReadOnly = true;
+            this.hDueno.Width = 200;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
@@ -523,6 +528,22 @@
             this.notaDetalleDataGridViewTextBoxColumn.Name = "notaDetalleDataGridViewTextBoxColumn";
             this.notaDetalleDataGridViewTextBoxColumn.ReadOnly = true;
             this.notaDetalleDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // hGrupo
+            // 
+            this.hGrupo.DataPropertyName = "NombreGrupo";
+            this.hGrupo.HeaderText = "NombreGrupo";
+            this.hGrupo.Name = "hGrupo";
+            this.hGrupo.ReadOnly = true;
+            this.hGrupo.Visible = false;
+            // 
+            // hRaza
+            // 
+            this.hRaza.DataPropertyName = "NombreRaza";
+            this.hRaza.HeaderText = "NombreRaza";
+            this.hRaza.Name = "hRaza";
+            this.hRaza.ReadOnly = true;
+            this.hRaza.Visible = false;
             // 
             // FrmBscHistorial
             // 
@@ -593,15 +614,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroCitaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aperturaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaHistorialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn imagenDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mascotaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dueñoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hDueno;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn veterinarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaDetalleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hGrupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hRaza;
     }
 }
