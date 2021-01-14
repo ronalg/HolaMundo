@@ -132,9 +132,9 @@ namespace Neo
                     existencia = Convert.ToDecimal(txtExistencia.Text);
 
                 if (!btnNuevo.Available)
-                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked, chkVeterinaria.Checked);                   
+                    taArticulo.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo, cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, lblApertura.Text, lblUsuario.Text, chkActivo.Checked, lblEquipo.Text, existencia, chkInventario.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked, chkVeterinaria.Checked, chkCitaHistorial.Checked);                   
                 else
-                    taArticulo.Edita(cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, existencia, chkInventario.Checked, chkActivo.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked, chkVeterinaria.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
+                    taArticulo.Edita(cboCategoria.Text, cboDepartamento.Text, txtId.Text.Trim(), txtDescripcion.Text.Trim(), caratula, existencia, chkInventario.Checked, chkActivo.Checked, chkOrdenPedido.Checked, chkInscripcion.Checked, chkVeterinaria.Checked, chkCitaHistorial.Checked, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
                 
                 DsNeo ds = new DsNeo();
                 foreach (DataRow dr in dsNeo.tbArticuloPrecioVenta)

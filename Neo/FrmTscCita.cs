@@ -329,6 +329,9 @@ namespace Neo
                 }
 
                 taCitaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                bool insertoHistorial = false;
+                int numeroHistorial = 0;
+
                 foreach (DataRow dr in dsNeo.tbCitaDetalle.Rows)
                 {
                     int codigo = int.Parse(dr["CodigoArticulo"].ToString());
@@ -338,7 +341,23 @@ namespace Neo
                     decimal venta = decimal.Parse(dr["Venta"].ToString());
                     bool activa = bool.Parse(dr["Activa"].ToString());
                     string nota = dr["Nota"].ToString();
-
+                    
+                    if (!pendiente)
+                    {
+                        taArticulo.FillByCodigo(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                        bool historial = bool.Parse(dsNeo.tbArticulo.Rows[0]["ImportaCitaHistorial"].ToString());
+                        if (historial && !insertoHistorial)
+                        {
+                            DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
+                            numeroHistorial = cp.fnSiguienteNumero("historial", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
+                            taHistorial.Inserta(Utilidad.codigoUsuario, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numeroHistorial, short.Parse(lblCodigo.Text), numero, Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, null);
+                            insertoHistorial = false;
+                        }
+                        else if (historial)
+                        {
+                            taHistorialDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numeroHistorial, codigo, empleado, null);
+                        }
+                    }
                     taCitaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo, empleado, pendiente, costo, venta, activa, nota);
                 }
             }

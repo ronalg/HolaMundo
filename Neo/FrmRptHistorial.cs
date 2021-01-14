@@ -220,7 +220,8 @@ namespace Neo
                 Utilidad.tscHistorial.lblCodigo.Text = grdHistorial.CurrentRow.Cells["hCodigo"].Value.ToString();
                 Utilidad.tscHistorial.dtpFecha.Value = DateTime.Parse(grdHistorial.CurrentRow.Cells["hFecha"].Value.ToString());
                 Utilidad.tscHistorial.taHistorialDetalle.Fill(Utilidad.tscHistorial.dsNeo.tbHistorialDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
-                this.Close();
+                Utilidad.tscHistorial.Show();
+                Utilidad.tscHistorial.BringToFront();
             }
         }
 

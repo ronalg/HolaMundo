@@ -9800,6 +9800,8 @@ namespace Neo {
             
             private global::System.Data.DataColumn columnVeterinaria;
             
+            private global::System.Data.DataColumn columnImportaCitaHistorial;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbArticuloDataTable() {
@@ -9971,6 +9973,14 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ImportaCitaHistorialColumn {
+                get {
+                    return this.columnImportaCitaHistorial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10023,7 +10033,8 @@ namespace Neo {
                         bool Inventario, 
                         bool AplicaOrdenPedido, 
                         bool AplicaInscripcion, 
-                        bool Veterinaria) {
+                        bool Veterinaria, 
+                        bool ImportaCitaHistorial) {
                 tbArticuloRow rowtbArticuloRow = ((tbArticuloRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodigoTrabajo,
@@ -10042,7 +10053,8 @@ namespace Neo {
                         Inventario,
                         AplicaOrdenPedido,
                         AplicaInscripcion,
-                        Veterinaria};
+                        Veterinaria,
+                        ImportaCitaHistorial};
                 rowtbArticuloRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbArticuloRow);
                 return rowtbArticuloRow;
@@ -10091,6 +10103,7 @@ namespace Neo {
                 this.columnAplicaOrdenPedido = base.Columns["AplicaOrdenPedido"];
                 this.columnAplicaInscripcion = base.Columns["AplicaInscripcion"];
                 this.columnVeterinaria = base.Columns["Veterinaria"];
+                this.columnImportaCitaHistorial = base.Columns["ImportaCitaHistorial"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10130,6 +10143,8 @@ namespace Neo {
                 base.Columns.Add(this.columnAplicaInscripcion);
                 this.columnVeterinaria = new global::System.Data.DataColumn("Veterinaria", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVeterinaria);
+                this.columnImportaCitaHistorial = new global::System.Data.DataColumn("ImportaCitaHistorial", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImportaCitaHistorial);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCodigoTrabajo,
                                 this.columnCodigoEmpresa,
@@ -26790,6 +26805,23 @@ namespace Neo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool ImportaCitaHistorial {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletbArticulo.ImportaCitaHistorialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ImportaCitaHistorial\' de la tabla \'tbArticulo\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabletbArticulo.ImportaCitaHistorialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCaratulaNull() {
                 return this.IsNull(this.tabletbArticulo.CaratulaColumn);
             }
@@ -26810,6 +26842,18 @@ namespace Neo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetExistenciaNull() {
                 this[this.tabletbArticulo.ExistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsImportaCitaHistorialNull() {
+                return this.IsNull(this.tabletbArticulo.ImportaCitaHistorialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetImportaCitaHistorialNull() {
+                this[this.tabletbArticulo.ImportaCitaHistorialColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -43590,10 +43634,11 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreDepartamento FROM tbDepartamento WHER
             tableMapping.ColumnMappings.Add("AplicaOrdenPedido", "AplicaOrdenPedido");
             tableMapping.ColumnMappings.Add("AplicaInscripcion", "AplicaInscripcion");
             tableMapping.ColumnMappings.Add("AplicaVeterinaria", "Veterinaria");
+            tableMapping.ColumnMappings.Add("ImportaCitaHistorial", "ImportaCitaHistorial");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tbArticulo] WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoArticulo] = @Original_CodigoArticulo) AND ([NombreCategoria] = @Original_NombreCategoria) AND ([NombreDepartamento] = @Original_NombreDepartamento) AND ([IdArticulo] = @Original_IdArticulo) AND ([Descripcion] = @Original_Descripcion) AND ([Apertura] = @Original_Apertura) AND ([Usuario] = @Original_Usuario) AND ([Activo] = @Original_Activo) AND ([Equipo] = @Original_Equipo) AND ((@IsNull_Existencia = 1 AND [Existencia] IS NULL) OR ([Existencia] = @Original_Existencia)) AND ([Inventario] = @Original_Inventario) AND ([AplicaOrdenPedido] = @Original_AplicaOrdenPedido) AND ([AplicaInscripcion] = @Original_AplicaInscripcion) AND ([AplicaVeterinaria] = @Original_AplicaVeterinaria))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tbArticulo] WHERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoArticulo] = @Original_CodigoArticulo) AND ([NombreCategoria] = @Original_NombreCategoria) AND ([NombreDepartamento] = @Original_NombreDepartamento) AND ([IdArticulo] = @Original_IdArticulo) AND ([Descripcion] = @Original_Descripcion) AND ([Apertura] = @Original_Apertura) AND ([Usuario] = @Original_Usuario) AND ([Activo] = @Original_Activo) AND ([Equipo] = @Original_Equipo) AND ((@IsNull_Existencia = 1 AND [Existencia] IS NULL) OR ([Existencia] = @Original_Existencia)) AND ([Inventario] = @Original_Inventario) AND ([AplicaOrdenPedido] = @Original_AplicaOrdenPedido) AND ([AplicaInscripcion] = @Original_AplicaInscripcion) AND ([AplicaVeterinaria] = @Original_AplicaVeterinaria) AND ((@IsNull_ImportaCitaHistorial = 1 AND [ImportaCitaHistorial] IS NULL) OR ([ImportaCitaHistorial] = @Original_ImportaCitaHistorial)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -43612,6 +43657,31 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreDepartamento FROM tbDepartamento WHER
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AplicaOrdenPedido", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaOrdenPedido", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AplicaInscripcion", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaInscripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AplicaVeterinaria", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaVeterinaria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ImportaCitaHistorial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportaCitaHistorial", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ImportaCitaHistorial", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportaCitaHistorial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tbArticulo] ([CodigoTrabajo], [CodigoEmpresa], [CodigoArticulo], [NombreCategoria], [NombreDepartamento], [IdArticulo], [Descripcion], [Caratula], [Apertura], [Usuario], [Activo], [Equipo], [Existencia], [Inventario], [AplicaOrdenPedido], [AplicaInscripcion], [AplicaVeterinaria], [ImportaCitaHistorial]) VALUES (@CodigoTrabajo, @CodigoEmpresa, @CodigoArticulo, @NombreCategoria, @NombreDepartamento, @IdArticulo, @Descripcion, @Caratula, @Apertura, @Usuario, @Activo, @Equipo, @Existencia, @Inventario, @AplicaOrdenPedido, @AplicaInscripcion, @AplicaVeterinaria, @ImportaCitaHistorial);
+SELECT CodigoTrabajo, CodigoEmpresa, CodigoArticulo, NombreCategoria, NombreDepartamento, IdArticulo, Descripcion, Caratula, Apertura, Usuario, Activo, Equipo, Existencia, Inventario, AplicaOrdenPedido, AplicaInscripcion, AplicaVeterinaria, ImportaCitaHistorial FROM tbArticulo WHERE (CodigoArticulo = @CodigoArticulo) AND (CodigoEmpresa = @CodigoEmpresa) AND (CodigoTrabajo = @CodigoTrabajo)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoArticulo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoArticulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreCategoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCategoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreDepartamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreDepartamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdArticulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdArticulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Caratula", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Caratula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Apertura", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Apertura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Equipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Equipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Existencia", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Existencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inventario", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AplicaOrdenPedido", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaOrdenPedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AplicaInscripcion", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaInscripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AplicaVeterinaria", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaVeterinaria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImportaCitaHistorial", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportaCitaHistorial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [tbArticulo] SET [CodigoTrabajo] = @CodigoTrabajo, [CodigoEmpresa] = @Codi" +
@@ -43620,22 +43690,25 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreDepartamento FROM tbDepartamento WHER
                 "scripcion] = @Descripcion, [Caratula] = @Caratula, [Apertura] = @Apertura, [Usua" +
                 "rio] = @Usuario, [Activo] = @Activo, [Equipo] = @Equipo, [Existencia] = @Existen" +
                 "cia, [Inventario] = @Inventario, [AplicaOrdenPedido] = @AplicaOrdenPedido, [Apli" +
-                "caInscripcion] = @AplicaInscripcion, [AplicaVeterinaria] = @AplicaVeterinaria WH" +
-                "ERE (([CodigoTrabajo] = @Original_CodigoTrabajo) AND ([CodigoEmpresa] = @Origina" +
-                "l_CodigoEmpresa) AND ([CodigoArticulo] = @Original_CodigoArticulo) AND ([NombreC" +
-                "ategoria] = @Original_NombreCategoria) AND ([NombreDepartamento] = @Original_Nom" +
-                "breDepartamento) AND ([IdArticulo] = @Original_IdArticulo) AND ([Descripcion] = " +
-                "@Original_Descripcion) AND ([Apertura] = @Original_Apertura) AND ([Usuario] = @O" +
-                "riginal_Usuario) AND ([Activo] = @Original_Activo) AND ([Equipo] = @Original_Equ" +
-                "ipo) AND ((@IsNull_Existencia = 1 AND [Existencia] IS NULL) OR ([Existencia] = @" +
-                "Original_Existencia)) AND ([Inventario] = @Original_Inventario) AND ([AplicaOrde" +
-                "nPedido] = @Original_AplicaOrdenPedido) AND ([AplicaInscripcion] = @Original_Apl" +
-                "icaInscripcion) AND ([AplicaVeterinaria] = @Original_AplicaVeterinaria));\r\nSELEC" +
-                "T CodigoTrabajo, CodigoEmpresa, CodigoArticulo, NombreCategoria, NombreDepartame" +
-                "nto, IdArticulo, Descripcion, Caratula, Apertura, Usuario, Activo, Equipo, Exist" +
-                "encia, Inventario, AplicaOrdenPedido, AplicaInscripcion, AplicaVeterinaria FROM " +
-                "tbArticulo WHERE (CodigoArticulo = @CodigoArticulo) AND (CodigoEmpresa = @Codigo" +
-                "Empresa) AND (CodigoTrabajo = @CodigoTrabajo)";
+                "caInscripcion] = @AplicaInscripcion, [AplicaVeterinaria] = @AplicaVeterinaria, [" +
+                "ImportaCitaHistorial] = @ImportaCitaHistorial WHERE (([CodigoTrabajo] = @Origina" +
+                "l_CodigoTrabajo) AND ([CodigoEmpresa] = @Original_CodigoEmpresa) AND ([CodigoArt" +
+                "iculo] = @Original_CodigoArticulo) AND ([NombreCategoria] = @Original_NombreCate" +
+                "goria) AND ([NombreDepartamento] = @Original_NombreDepartamento) AND ([IdArticul" +
+                "o] = @Original_IdArticulo) AND ([Descripcion] = @Original_Descripcion) AND ([Ape" +
+                "rtura] = @Original_Apertura) AND ([Usuario] = @Original_Usuario) AND ([Activo] =" +
+                " @Original_Activo) AND ([Equipo] = @Original_Equipo) AND ((@IsNull_Existencia = " +
+                "1 AND [Existencia] IS NULL) OR ([Existencia] = @Original_Existencia)) AND ([Inve" +
+                "ntario] = @Original_Inventario) AND ([AplicaOrdenPedido] = @Original_AplicaOrden" +
+                "Pedido) AND ([AplicaInscripcion] = @Original_AplicaInscripcion) AND ([AplicaVete" +
+                "rinaria] = @Original_AplicaVeterinaria) AND ((@IsNull_ImportaCitaHistorial = 1 A" +
+                "ND [ImportaCitaHistorial] IS NULL) OR ([ImportaCitaHistorial] = @Original_Import" +
+                "aCitaHistorial)));\r\nSELECT CodigoTrabajo, CodigoEmpresa, CodigoArticulo, NombreC" +
+                "ategoria, NombreDepartamento, IdArticulo, Descripcion, Caratula, Apertura, Usuar" +
+                "io, Activo, Equipo, Existencia, Inventario, AplicaOrdenPedido, AplicaInscripcion" +
+                ", AplicaVeterinaria, ImportaCitaHistorial FROM tbArticulo WHERE (CodigoArticulo " +
+                "= @CodigoArticulo) AND (CodigoEmpresa = @CodigoEmpresa) AND (CodigoTrabajo = @Co" +
+                "digoTrabajo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -43654,6 +43727,7 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreDepartamento FROM tbDepartamento WHER
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AplicaOrdenPedido", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaOrdenPedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AplicaInscripcion", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaInscripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AplicaVeterinaria", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaVeterinaria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImportaCitaHistorial", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportaCitaHistorial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoTrabajo", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoEmpresa", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodigoArticulo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -43671,6 +43745,8 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreDepartamento FROM tbDepartamento WHER
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AplicaOrdenPedido", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaOrdenPedido", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AplicaInscripcion", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaInscripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AplicaVeterinaria", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaVeterinaria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ImportaCitaHistorial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportaCitaHistorial", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ImportaCitaHistorial", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportaCitaHistorial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -43687,7 +43763,7 @@ SELECT CodigoTrabajo, CodigoEmpresa, NombreDepartamento FROM tbDepartamento WHER
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoArticulo, NombreCategoria, NombreDepartamento, IdArticulo, Descripcion, Caratula, Apertura, Usuario, Activo, Equipo, Existencia, Inventario, AplicaOrdenPedido, AplicaInscripcion, 
-                         AplicaVeterinaria
+                         AplicaVeterinaria, ImportaCitaHistorial
 FROM            tbArticulo
 WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -43697,8 +43773,8 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"UPDATE       tbArticulo
 SET                NombreCategoria = @nombreCategoria, NombreDepartamento = @nombreDepartamento, IdArticulo = @idArticulo, Descripcion = @descripcion, Caratula = @caratula, Existencia = @existencia, Inventario = @iventario, 
-                         Activo = @activo, AplicaOrdenPedido = @aplicaOrdenPedido, AplicaInscripcion = @aplicaInscripcion, AplicaVeterinaria = @aplicaVeterinaria
-WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoArticulo = @codigoArticulo) ";
+                         Activo = @activo, AplicaOrdenPedido = @aplicaOrdenPedido, AplicaInscripcion = @aplicaInscripcion, AplicaVeterinaria = @aplicaVeterinaria, ImportaCitaHistorial = @importaCitaHistorial
+WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (CodigoArticulo = @codigoArticulo)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreCategoria", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCategoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreDepartamento", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "NombreDepartamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -43711,6 +43787,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aplicaOrdenPedido", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaOrdenPedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aplicaInscripcion", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaInscripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aplicaVeterinaria", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaVeterinaria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@importaCitaHistorial", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ImportaCitaHistorial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoArticulo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -43731,11 +43808,7 @@ WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpres
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoArticulo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoArticulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        CodigoTrabajo, CodigoEmpresa, CodigoArticulo, NombreCategoria, NombreDepartamento, IdArticulo, Descripcion, Caratula, Apertura, Usuario, Activo, Equipo, Existencia, Inventario, AplicaOrdenPedido, AplicaInscripcion, 
-                         AplicaVeterinaria
-FROM            tbArticulo
-WHERE        (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa)
-AND (Descripcion LIKE '%' + @descripcion + '%')";
+            this._commandCollection[4].CommandText = @"SELECT Activo, Apertura, AplicaInscripcion, AplicaOrdenPedido, AplicaVeterinaria, Caratula, CodigoArticulo, CodigoEmpresa, CodigoTrabajo, Descripcion, Equipo, Existencia, IdArticulo, ImportaCitaHistorial, Inventario, NombreCategoria, NombreDepartamento, Usuario FROM tbArticulo WHERE (CodigoTrabajo = @codigoTrabajo) AND (CodigoEmpresa = @codigoEmpresa) AND (Descripcion LIKE '%' + @descripcion + '%')";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -43755,8 +43828,8 @@ AND (@descripcion IS NULL OR Descripcion LIKE '%' + @descripcion + '%')";
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = @"INSERT INTO tbArticulo
                          (CodigoTrabajo, CodigoEmpresa, CodigoArticulo, NombreCategoria, NombreDepartamento, IdArticulo, Descripcion, Caratula, Apertura, Usuario, Activo, Equipo, Existencia, Inventario, AplicaOrdenPedido, AplicaInscripcion, 
-                         AplicaVeterinaria)
-VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoArticulo,@nombreCategoria,@nombreDepartamento,@idArticulo,@descripcion,@caratula,@apertura,@usuario,@activo,@equipo,@existencia,@inventario,@aplicaOrdenPedido,@aplicaInscripcion,@aplicaVeterinaria)";
+                         AplicaVeterinaria, ImportaCitaHistorial)
+VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoArticulo,@nombreCategoria,@nombreDepartamento,@idArticulo,@descripcion,@caratula,@apertura,@usuario,@activo,@equipo,@existencia,@inventario,@aplicaOrdenPedido,@aplicaInscripcion,@aplicaVeterinaria,@importaCitaHistorial)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoTrabajo", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoTrabajo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoEmpresa", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -43775,6 +43848,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoArticulo,@nombreCategoria,@n
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aplicaOrdenPedido", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaOrdenPedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aplicaInscripcion", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaInscripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aplicaVeterinaria", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AplicaVeterinaria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@importaCitaHistorial", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ImportaCitaHistorial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -43839,7 +43913,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoArticulo,@nombreCategoria,@n
             this.Adapter.SelectCommand.Parameters[1].Value = ((short)(codigoEmpresa));
             this.Adapter.SelectCommand.Parameters[2].Value = ((bool)(veterinaria));
             if ((descripcion == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("descripcion");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = ((string)(descripcion));
@@ -43884,7 +43958,7 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoArticulo,@nombreCategoria,@n
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Edita(string nombreCategoria, string nombreDepartamento, string idArticulo, string descripcion, byte[] caratula, global::System.Nullable<decimal> existencia, bool iventario, bool activo, bool aplicaOrdenPedido, bool aplicaInscripcion, bool aplicaVeterinaria, short codigoTrabajo, short codigoEmpresa, int codigoArticulo) {
+        public virtual int Edita(string nombreCategoria, string nombreDepartamento, string idArticulo, string descripcion, byte[] caratula, global::System.Nullable<decimal> existencia, bool iventario, bool activo, bool aplicaOrdenPedido, bool aplicaInscripcion, bool aplicaVeterinaria, global::System.Nullable<bool> importaCitaHistorial, short codigoTrabajo, short codigoEmpresa, int codigoArticulo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((nombreCategoria == null)) {
                 throw new global::System.ArgumentNullException("nombreCategoria");
@@ -43927,9 +44001,15 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoArticulo,@nombreCategoria,@n
             command.Parameters[8].Value = ((bool)(aplicaOrdenPedido));
             command.Parameters[9].Value = ((bool)(aplicaInscripcion));
             command.Parameters[10].Value = ((bool)(aplicaVeterinaria));
-            command.Parameters[11].Value = ((short)(codigoTrabajo));
-            command.Parameters[12].Value = ((short)(codigoEmpresa));
-            command.Parameters[13].Value = ((int)(codigoArticulo));
+            if ((importaCitaHistorial.HasValue == true)) {
+                command.Parameters[11].Value = ((bool)(importaCitaHistorial.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[12].Value = ((short)(codigoTrabajo));
+            command.Parameters[13].Value = ((short)(codigoEmpresa));
+            command.Parameters[14].Value = ((int)(codigoArticulo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -43994,7 +44074,8 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoArticulo,@nombreCategoria,@n
                     bool inventario, 
                     bool aplicaOrdenPedido, 
                     bool aplicaInscripcion, 
-                    bool aplicaVeterinaria) {
+                    bool aplicaVeterinaria, 
+                    global::System.Nullable<bool> importaCitaHistorial) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
             command.Parameters[1].Value = ((short)(codigoEmpresa));
@@ -44058,6 +44139,12 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoArticulo,@nombreCategoria,@n
             command.Parameters[14].Value = ((bool)(aplicaOrdenPedido));
             command.Parameters[15].Value = ((bool)(aplicaInscripcion));
             command.Parameters[16].Value = ((bool)(aplicaVeterinaria));
+            if ((importaCitaHistorial.HasValue == true)) {
+                command.Parameters[17].Value = ((bool)(importaCitaHistorial.Value));
+            }
+            else {
+                command.Parameters[17].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -57595,24 +57682,14 @@ VALUES        (@codigoTrabajo,@codigoEmpresa,@codigoSucursal,@numeroHistorial,@c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Inserta(short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numeroHistorial, global::System.Nullable<int> codigoArticulo, global::System.Nullable<short> codigoEmpleado, string nota) {
+        public virtual int Inserta(short codigoTrabajo, short codigoEmpresa, short codigoSucursal, int numeroHistorial, int codigoArticulo, short codigoEmpleado, string nota) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((short)(codigoTrabajo));
             command.Parameters[1].Value = ((short)(codigoEmpresa));
             command.Parameters[2].Value = ((short)(codigoSucursal));
             command.Parameters[3].Value = ((int)(numeroHistorial));
-            if ((codigoArticulo.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(codigoArticulo.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((codigoEmpleado.HasValue == true)) {
-                command.Parameters[5].Value = ((short)(codigoEmpleado.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
+            command.Parameters[4].Value = ((int)(codigoArticulo));
+            command.Parameters[5].Value = ((short)(codigoEmpleado));
             if ((nota == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }

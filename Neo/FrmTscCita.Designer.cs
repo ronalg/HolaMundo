@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTscCita));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnCita = new System.Windows.Forms.BindingNavigator(this.components);
             this.bsCita = new System.Windows.Forms.BindingSource(this.components);
@@ -185,11 +185,11 @@
             this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
             this.taEmpleado = new Neo.DsNeoTableAdapters.taEmpleado();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
-            this.tableAdapterManager = new Neo.DsNeoTableAdapters.TableAdapterManager();
-            this.taArticulo1 = new Neo.DsNeoTableAdapters.taArticulo();
             this.taArticuloPrecioVenta = new Neo.DsNeoTableAdapters.taArticuloPrecioVenta();
             this.taCitaMascota = new Neo.DsNeoTableAdapters.taCitaMascota();
             this.tbCitaMascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.taHistorial = new Neo.DsNeoTableAdapters.taHistorial();
+            this.taHistorialDetalle = new Neo.DsNeoTableAdapters.taHistorialDetalle();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCita)).BeginInit();
             this.bnCita.SuspendLayout();
@@ -315,7 +315,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -390,13 +389,13 @@
             // 
             this.mnuImpresora.Enabled = false;
             this.mnuImpresora.Name = "mnuImpresora";
-            this.mnuImpresora.Size = new System.Drawing.Size(180, 22);
+            this.mnuImpresora.Size = new System.Drawing.Size(127, 22);
             this.mnuImpresora.Text = "Impresora";
             // 
             // mnuPantalla
             // 
             this.mnuPantalla.Name = "mnuPantalla";
-            this.mnuPantalla.Size = new System.Drawing.Size(180, 22);
+            this.mnuPantalla.Size = new System.Drawing.Size(127, 22);
             this.mnuPantalla.Text = "Pantalla";
             this.mnuPantalla.Click += new System.EventHandler(this.mnuPantalla_Click);
             // 
@@ -576,8 +575,8 @@
             // aCodigo
             // 
             this.aCodigo.DataPropertyName = "CodigoArticulo";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle1;
             this.aCodigo.HeaderText = "Código";
             this.aCodigo.Name = "aCodigo";
             this.aCodigo.ReadOnly = true;
@@ -631,9 +630,9 @@
             // aVenta
             // 
             this.aVenta.DataPropertyName = "venta";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            this.aVenta.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            this.aVenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.aVenta.HeaderText = "Venta";
             this.aVenta.Name = "aVenta";
             this.aVenta.ReadOnly = true;
@@ -718,7 +717,6 @@
             // 
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -1215,8 +1213,8 @@
             // 
             this.grdServicio.AllowUserToAddRows = false;
             this.grdServicio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdServicio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdServicio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.grdServicio.AutoGenerateColumns = false;
             this.grdServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1454,8 +1452,8 @@
             // 
             this.grdVeterinario.AllowUserToAddRows = false;
             this.grdVeterinario.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdVeterinario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdVeterinario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdVeterinario.AutoGenerateColumns = false;
             this.grdVeterinario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdVeterinario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1581,8 +1579,8 @@
             // 
             this.grdMascota.AllowUserToAddRows = false;
             this.grdMascota.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdMascota.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdMascota.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.grdMascota.AutoGenerateColumns = false;
             this.grdMascota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMascota.ColumnHeadersVisible = false;
@@ -1603,8 +1601,8 @@
             // mCodigo
             // 
             this.mCodigo.DataPropertyName = "CodigoMascota";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mCodigo.DefaultCellStyle = dataGridViewCellStyle6;
             this.mCodigo.HeaderText = "Codigo";
             this.mCodigo.Name = "mCodigo";
             this.mCodigo.ReadOnly = true;
@@ -1651,59 +1649,6 @@
             // 
             this.taArticuloProveedor.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.taArticulo = this.taArticulo;
-            this.tableAdapterManager.taArticuloMultimedia = null;
-            this.tableAdapterManager.taCaracter = null;
-            this.tableAdapterManager.taCategoria = null;
-            this.tableAdapterManager.taCliente = null;
-            this.tableAdapterManager.taClienteNacionalidad = null;
-            this.tableAdapterManager.taClienteSucursalContacto = null;
-            this.tableAdapterManager.taContacto = null;
-            this.tableAdapterManager.taContactoMiembro = null;
-            this.tableAdapterManager.taDepartamento = null;
-            this.tableAdapterManager.taEmpleado = this.taEmpleado;
-            this.tableAdapterManager.taEmpresa = null;
-            this.tableAdapterManager.taEstado = null;
-            this.tableAdapterManager.taFinanciera = null;
-            this.tableAdapterManager.taFormaPago = null;
-            this.tableAdapterManager.taFrecuencia = null;
-            this.tableAdapterManager.taGrupo = null;
-            this.tableAdapterManager.taGrupoSanguineo = null;
-            this.tableAdapterManager.taIdentificacion = null;
-            this.tableAdapterManager.taMoneda = null;
-            this.tableAdapterManager.taNacionalidad = null;
-            this.tableAdapterManager.taOcupacion = null;
-            this.tableAdapterManager.taOrdenPedido = null;
-            this.tableAdapterManager.taOrdenPedidoArticulo = null;
-            this.tableAdapterManager.taOrdenPedidoEstado = null;
-            this.tableAdapterManager.taPais = null;
-            this.tableAdapterManager.taPelaje = null;
-            this.tableAdapterManager.taPrecioVenta = null;
-            this.tableAdapterManager.taPropiedad = null;
-            this.tableAdapterManager.taProveedor = null;
-            this.tableAdapterManager.taProveedorSucursal = null;
-            this.tableAdapterManager.taProveedorSucursalContacto = null;
-            this.tableAdapterManager.taProvincia = null;
-            this.tableAdapterManager.taPuesto = null;
-            this.tableAdapterManager.taRaza = null;
-            this.tableAdapterManager.taSucursal = null;
-            this.tableAdapterManager.taSucursalMiembro = null;
-            this.tableAdapterManager.taTipoContacto = null;
-            this.tableAdapterManager.taTipoFinanciera = null;
-            this.tableAdapterManager.taTipoTributo = null;
-            this.tableAdapterManager.taTrabajo = null;
-            this.tableAdapterManager.taTributo = null;
-            this.tableAdapterManager.taUnidad = null;
-            this.tableAdapterManager.taUsuario = null;
-            this.tableAdapterManager.UpdateOrder = Neo.DsNeoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // taArticulo1
-            // 
-            this.taArticulo1.ClearBeforeFill = true;
-            // 
             // taArticuloPrecioVenta
             // 
             this.taArticuloPrecioVenta.ClearBeforeFill = true;
@@ -1716,6 +1661,14 @@
             // 
             this.tbCitaMascotaBindingSource.DataMember = "tbCitaMascota";
             this.tbCitaMascotaBindingSource.DataSource = this.dataSet;
+            // 
+            // taHistorial
+            // 
+            this.taHistorial.ClearBeforeFill = true;
+            // 
+            // taHistorialDetalle
+            // 
+            this.taHistorialDetalle.ClearBeforeFill = true;
             // 
             // FrmTscCita
             // 
@@ -1862,9 +1815,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdMascota;
         private System.Windows.Forms.Label lblCodigo;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
-        private DsNeoTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ErrorProvider ep;
-        private DsNeoTableAdapters.taArticulo taArticulo1;
         private DsNeoTableAdapters.taArticuloPrecioVenta taArticuloPrecioVenta;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnServicioAceptarNuevo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDescripcion;
@@ -1933,5 +1884,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource tbCitaMascotaBindingSource;
         public ComponentFactory.Krypton.Toolkit.KryptonCheckBox chkInformado;
+        private DsNeoTableAdapters.taHistorial taHistorial;
+        private DsNeoTableAdapters.taHistorialDetalle taHistorialDetalle;
     }
 }

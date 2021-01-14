@@ -50,6 +50,7 @@ namespace Neo
                 Utilidad.tscCita.chkInformado.Checked = bool.Parse(grdCita.CurrentRow.Cells["cInformado"].Value.ToString());
                 Utilidad.tscCita.Refresh();
                 Utilidad.tscCita.Show();
+                Utilidad.tscCita.BringToFront();
             }
         }
 
