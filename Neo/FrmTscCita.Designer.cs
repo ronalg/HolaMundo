@@ -182,14 +182,14 @@
             this.taCita = new Neo.DsNeoTableAdapters.taCita();
             this.taCitaDetalle = new Neo.DsNeoTableAdapters.taCitaDetalle();
             this.taMascota = new Neo.DsNeoTableAdapters.taMascota();
-            this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
             this.taEmpleado = new Neo.DsNeoTableAdapters.taEmpleado();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
             this.taArticuloPrecioVenta = new Neo.DsNeoTableAdapters.taArticuloPrecioVenta();
             this.taCitaMascota = new Neo.DsNeoTableAdapters.taCitaMascota();
-            this.tbCitaMascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbCitaMascota = new System.Windows.Forms.BindingSource(this.components);
             this.taHistorial = new Neo.DsNeoTableAdapters.taHistorial();
             this.taHistorialDetalle = new Neo.DsNeoTableAdapters.taHistorialDetalle();
+            this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCita)).BeginInit();
             this.bnCita.SuspendLayout();
@@ -222,7 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdMascota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMascota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCitaMascotaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCitaMascota)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl1
@@ -315,6 +315,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -717,6 +718,7 @@
             // 
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -1143,7 +1145,7 @@
             this.pnlServicio.Controls.Add(this.btnCancelaServicio);
             this.pnlServicio.Controls.Add(this.pnlTipoContactoSub);
             this.pnlServicio.Controls.Add(this.label8);
-            this.pnlServicio.Location = new System.Drawing.Point(350, 122);
+            this.pnlServicio.Location = new System.Drawing.Point(487, 123);
             this.pnlServicio.Name = "pnlServicio";
             this.pnlServicio.Size = new System.Drawing.Size(364, 289);
             this.pnlServicio.TabIndex = 14;
@@ -1637,10 +1639,6 @@
             // 
             this.taMascota.ClearBeforeFill = true;
             // 
-            // taArticulo
-            // 
-            this.taArticulo.ClearBeforeFill = true;
-            // 
             // taEmpleado
             // 
             this.taEmpleado.ClearBeforeFill = true;
@@ -1657,10 +1655,10 @@
             // 
             this.taCitaMascota.ClearBeforeFill = true;
             // 
-            // tbCitaMascotaBindingSource
+            // tbCitaMascota
             // 
-            this.tbCitaMascotaBindingSource.DataMember = "tbCitaMascota";
-            this.tbCitaMascotaBindingSource.DataSource = this.dataSet;
+            this.tbCitaMascota.DataMember = "tbCitaMascota";
+            this.tbCitaMascota.DataSource = this.dataSet;
             // 
             // taHistorial
             // 
@@ -1669,6 +1667,10 @@
             // taHistorialDetalle
             // 
             this.taHistorialDetalle.ClearBeforeFill = true;
+            // 
+            // taArticulo
+            // 
+            this.taArticulo.ClearBeforeFill = true;
             // 
             // FrmTscCita
             // 
@@ -1725,7 +1727,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdMascota)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMascota)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCitaMascotaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCitaMascota)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1800,7 +1802,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdVeterinario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.BindingSource bsServicio;
-        private DsNeoTableAdapters.taArticulo taArticulo;
         private System.Windows.Forms.BindingSource bsVeterinario;
         private DsNeoTableAdapters.taEmpleado taEmpleado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -1882,9 +1883,10 @@
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.BindingSource tbCitaMascotaBindingSource;
+        private System.Windows.Forms.BindingSource tbCitaMascota;
         public ComponentFactory.Krypton.Toolkit.KryptonCheckBox chkInformado;
         private DsNeoTableAdapters.taHistorial taHistorial;
         private DsNeoTableAdapters.taHistorialDetalle taHistorialDetalle;
+        private DsNeoTableAdapters.taArticulo taArticulo;
     }
 }

@@ -210,6 +210,7 @@ namespace Neo
                 pnlServicio.Visible = false;
                 lblTotal.Text = total().ToString("N2");
                 bnDetalle.Focus();
+                btnNuevoServicio.Select();
                 this.Cursor = Cursors.Default;
             }
         }
@@ -236,7 +237,7 @@ namespace Neo
 
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        public void btnNuevo_Click(object sender, EventArgs e)
         {
             txtBuscaMascota.Focus();
             txtBuscaMascota.Clear();
@@ -342,22 +343,17 @@ namespace Neo
                     bool activa = bool.Parse(dr["Activa"].ToString());
                     string nota = dr["Nota"].ToString();
                     
-                    if (!pendiente)
-                    {
-                        taArticulo.FillByCodigo(dsNeo.tbArticulo, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
-                        bool historial = bool.Parse(dsNeo.tbArticulo.Rows[0]["ImportaCitaHistorial"].ToString());
-                        if (historial && !insertoHistorial)
-                        {
-                            DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
-                            numeroHistorial = cp.fnSiguienteNumero("historial", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
-                            taHistorial.Inserta(Utilidad.codigoUsuario, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numeroHistorial, short.Parse(lblCodigo.Text), numero, Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, null);
-                            insertoHistorial = false;
-                        }
-                        else if (historial)
-                        {
-                            taHistorialDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numeroHistorial, codigo, empleado, null);
-                        }
-                    }
+                    //if (!pendiente)
+                    //{
+                    //    if (!insertoHistorial)
+                    //    {
+                    //        DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
+                    //        numeroHistorial = cp.fnSiguienteNumero("historial", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
+                    //        taHistorial.Inserta(Utilidad.codigoUsuario, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numeroHistorial, short.Parse(lblCodigo.Text), numero, Utilidad.nombreUsuario, DateTime.Today.ToShortDateString(), dtpFecha.Value.ToShortDateString(), null, null);
+                    //        insertoHistorial = false;
+                    //    }
+                    //    taHistorialDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numeroHistorial, codigo, empleado, null);                        
+                    //}
                     taCitaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigo, empleado, pendiente, costo, venta, activa, nota);
                 }
             }
@@ -389,7 +385,10 @@ namespace Neo
         private void cboTipo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                btnNuevoServicio_Click(sender, EventArgs.Empty);
+            {
+                bnDetalle.Focus();
+                btnNuevoServicio.Select();
+            }
         }
 
         private void btnServicioAceptarNuevo_Click(object sender, EventArgs e)

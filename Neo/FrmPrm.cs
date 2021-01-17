@@ -468,6 +468,7 @@ namespace Neo
                 Utilidad.tscCita = new FrmTscCita();
                 Utilidad.tscCita.MdiParent = this;
             }
+            Utilidad.tscCita.btnNuevo_Click(sender, EventArgs.Empty);
             Utilidad.tscCita.BringToFront();
             Utilidad.tscCita.Show();
         }

@@ -43,6 +43,8 @@
             this.pnl6 = new System.Windows.Forms.Panel();
             this.tcArticulo = new System.Windows.Forms.TabControl();
             this.tpPerfil = new System.Windows.Forms.TabPage();
+            this.bsMto = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
             this.kryptonLabel21 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel20 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel19 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -54,8 +56,6 @@
             this.kryptonLabel13 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel12 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.chkActivo = new System.Windows.Forms.CheckBox();
-            this.bsMto = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
             this.chkVeterinaria = new System.Windows.Forms.CheckBox();
             this.chkInscripcion = new System.Windows.Forms.CheckBox();
             this.chkOrdenPedido = new System.Windows.Forms.CheckBox();
@@ -169,8 +169,6 @@
             this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
             this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
             this.taArticuloProveedor = new Neo.DsNeoTableAdapters.taArticuloProveedor();
-            this.chkCitaHistorial = new System.Windows.Forms.CheckBox();
-            this.kryptonLabel22 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             this.tcArticulo.SuspendLayout();
@@ -244,8 +242,6 @@
             // 
             this.tpPerfil.AutoScroll = true;
             this.tpPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tpPerfil.Controls.Add(this.kryptonLabel22);
-            this.tpPerfil.Controls.Add(this.chkCitaHistorial);
             this.tpPerfil.Controls.Add(this.kryptonLabel21);
             this.tpPerfil.Controls.Add(this.kryptonLabel20);
             this.tpPerfil.Controls.Add(this.kryptonLabel19);
@@ -294,6 +290,16 @@
             this.tpPerfil.Text = "Perfil";
             this.tpPerfil.UseVisualStyleBackColor = true;
             this.tpPerfil.Click += new System.EventHandler(this.tpPerfil_Click);
+            // 
+            // bsMto
+            // 
+            this.bsMto.DataMember = "tbArticulo";
+            this.bsMto.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kryptonLabel21
             // 
@@ -387,16 +393,6 @@
             this.chkActivo.Size = new System.Drawing.Size(14, 24);
             this.chkActivo.TabIndex = 6;
             this.chkActivo.UseVisualStyleBackColor = true;
-            // 
-            // bsMto
-            // 
-            this.bsMto.DataMember = "tbArticulo";
-            this.bsMto.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // chkVeterinaria
             // 
@@ -679,7 +675,7 @@
             this.tpPrecios.Location = new System.Drawing.Point(4, 22);
             this.tpPrecios.Name = "tpPrecios";
             this.tpPrecios.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrecios.Size = new System.Drawing.Size(614, 388);
+            this.tpPrecios.Size = new System.Drawing.Size(672, 388);
             this.tpPrecios.TabIndex = 1;
             this.tpPrecios.Text = "Precios";
             this.tpPrecios.UseVisualStyleBackColor = true;
@@ -691,7 +687,7 @@
             this.pnl8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl8.Location = new System.Drawing.Point(3, 3);
             this.pnl8.Name = "pnl8";
-            this.pnl8.Size = new System.Drawing.Size(606, 380);
+            this.pnl8.Size = new System.Drawing.Size(664, 380);
             this.pnl8.TabIndex = 1;
             // 
             // grdPrecio
@@ -710,7 +706,7 @@
             this.grdPrecio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdPrecio.Location = new System.Drawing.Point(0, 27);
             this.grdPrecio.Name = "grdPrecio";
-            this.grdPrecio.Size = new System.Drawing.Size(606, 353);
+            this.grdPrecio.Size = new System.Drawing.Size(664, 353);
             this.grdPrecio.TabIndex = 5;
             this.grdPrecio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPrecio_CellContentClick);
             // 
@@ -754,7 +750,7 @@
             this.pnl9.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl9.Location = new System.Drawing.Point(0, 0);
             this.pnl9.Name = "pnl9";
-            this.pnl9.Size = new System.Drawing.Size(606, 27);
+            this.pnl9.Size = new System.Drawing.Size(664, 27);
             this.pnl9.TabIndex = 0;
             // 
             // bnPrecioVenta
@@ -780,7 +776,7 @@
             this.bnPrecioVenta.MovePreviousItem = this.toolStripButton3;
             this.bnPrecioVenta.Name = "bnPrecioVenta";
             this.bnPrecioVenta.PositionItem = this.toolStripTextBox1;
-            this.bnPrecioVenta.Size = new System.Drawing.Size(604, 25);
+            this.bnPrecioVenta.Size = new System.Drawing.Size(662, 25);
             this.bnPrecioVenta.TabIndex = 9;
             this.bnPrecioVenta.Text = "bindingNavigator1";
             // 
@@ -818,7 +814,6 @@
             // 
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -854,7 +849,7 @@
             this.tpProveedor.Location = new System.Drawing.Point(4, 22);
             this.tpProveedor.Name = "tpProveedor";
             this.tpProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProveedor.Size = new System.Drawing.Size(614, 388);
+            this.tpProveedor.Size = new System.Drawing.Size(672, 388);
             this.tpProveedor.TabIndex = 3;
             this.tpProveedor.Text = "Proveedores";
             this.tpProveedor.UseVisualStyleBackColor = true;
@@ -874,7 +869,7 @@
             this.grdProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdProveedor.Location = new System.Drawing.Point(3, 3);
             this.grdProveedor.Name = "grdProveedor";
-            this.grdProveedor.Size = new System.Drawing.Size(606, 380);
+            this.grdProveedor.Size = new System.Drawing.Size(664, 380);
             this.grdProveedor.TabIndex = 0;
             this.grdProveedor.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProveedor_CellValidated);
             // 
@@ -924,7 +919,7 @@
             this.tpMultimedia.Location = new System.Drawing.Point(4, 22);
             this.tpMultimedia.Name = "tpMultimedia";
             this.tpMultimedia.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMultimedia.Size = new System.Drawing.Size(614, 388);
+            this.tpMultimedia.Size = new System.Drawing.Size(672, 388);
             this.tpMultimedia.TabIndex = 2;
             this.tpMultimedia.Text = "Multimedia";
             this.tpMultimedia.UseVisualStyleBackColor = true;
@@ -948,7 +943,7 @@
             this.grdMultimedia.Location = new System.Drawing.Point(3, 31);
             this.grdMultimedia.Name = "grdMultimedia";
             this.grdMultimedia.ReadOnly = true;
-            this.grdMultimedia.Size = new System.Drawing.Size(606, 352);
+            this.grdMultimedia.Size = new System.Drawing.Size(664, 352);
             this.grdMultimedia.TabIndex = 7;
             this.grdMultimedia.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdMultimedia_DataError);
             // 
@@ -1007,7 +1002,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(606, 28);
+            this.panel1.Size = new System.Drawing.Size(664, 28);
             this.panel1.TabIndex = 6;
             // 
             // bnMultimedia
@@ -1036,7 +1031,7 @@
             this.bnMultimedia.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnMultimedia.Name = "bnMultimedia";
             this.bnMultimedia.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnMultimedia.Size = new System.Drawing.Size(604, 25);
+            this.bnMultimedia.Size = new System.Drawing.Size(662, 25);
             this.bnMultimedia.TabIndex = 0;
             this.bnMultimedia.Text = "bindingNavigator1";
             // 
@@ -1093,7 +1088,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1360,7 +1354,6 @@
             // 
             this.txtPosicion.AccessibleName = "Posición";
             this.txtPosicion.AutoSize = false;
-            this.txtPosicion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPosicion.Name = "txtPosicion";
             this.txtPosicion.Size = new System.Drawing.Size(50, 23);
             this.txtPosicion.Text = "0";
@@ -1497,23 +1490,6 @@
             // taArticuloProveedor
             // 
             this.taArticuloProveedor.ClearBeforeFill = true;
-            // 
-            // chkCitaHistorial
-            // 
-            this.chkCitaHistorial.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bsMto, "ImportaCitaHistorial", true));
-            this.chkCitaHistorial.Location = new System.Drawing.Point(579, 85);
-            this.chkCitaHistorial.Name = "chkCitaHistorial";
-            this.chkCitaHistorial.Size = new System.Drawing.Size(20, 24);
-            this.chkCitaHistorial.TabIndex = 85;
-            this.chkCitaHistorial.UseVisualStyleBackColor = true;
-            // 
-            // kryptonLabel22
-            // 
-            this.kryptonLabel22.Location = new System.Drawing.Point(448, 87);
-            this.kryptonLabel22.Name = "kryptonLabel22";
-            this.kryptonLabel22.Size = new System.Drawing.Size(129, 20);
-            this.kryptonLabel22.TabIndex = 86;
-            this.kryptonLabel22.Values.Text = "Importa Cita Historial:";
             // 
             // FrmMtoArticulo
             // 
@@ -1700,7 +1676,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aperturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel22;
-        private System.Windows.Forms.CheckBox chkCitaHistorial;
     }
 }
