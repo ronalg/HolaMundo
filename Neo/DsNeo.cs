@@ -4,6 +4,10 @@
 
     partial class DsNeo
     {
+        partial class tbCitaMascotaPendienteDataTable
+        {
+        }
+
         partial class tbMascotaDataTable
         {
         }

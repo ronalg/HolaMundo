@@ -461,12 +461,12 @@ namespace Neo
             Utilidad.mtoPropiedad.Show();
         }
 
-        private void mnuTscCita_Click(object sender, EventArgs e)
+        public void mnuTscCita_Click(object sender, EventArgs e)
         {
             if (Utilidad.tscCita == null)
             {
                 Utilidad.tscCita = new FrmTscCita();
-                Utilidad.tscCita.MdiParent = this;
+                Utilidad.tscCita.MdiParent = Utilidad.frmPrimario;
             }
             Utilidad.tscCita.btnNuevo_Click(sender, EventArgs.Empty);
             Utilidad.tscCita.BringToFront();
@@ -532,6 +532,18 @@ namespace Neo
             }
             Utilidad.rptHistorial.BringToFront();
             Utilidad.rptHistorial.Show();
+        }
+
+        private void mnuRptCitaPendiemte_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.rptCitaPendiente == null)
+            {
+                Utilidad.rptCitaPendiente = new FrmRptCitaPendiente();
+                Utilidad.rptCitaPendiente.WindowState = FormWindowState.Maximized;
+                Utilidad.rptCitaPendiente.MdiParent = this;
+            }
+            Utilidad.rptCitaPendiente.BringToFront();
+            Utilidad.rptCitaPendiente.Show();
         }
     }
 }

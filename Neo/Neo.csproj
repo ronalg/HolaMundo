@@ -319,6 +319,12 @@
     <Compile Include="FrmRptCita.Designer.cs">
       <DependentUpon>FrmRptCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRptCitaPendiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRptCitaPendiente.Designer.cs">
+      <DependentUpon>FrmRptCitaPendiente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRptHistorial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -480,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRptCita.resx">
       <DependentUpon>FrmRptCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRptCitaPendiente.resx">
+      <DependentUpon>FrmRptCitaPendiente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRptHistorial.resx">
       <DependentUpon>FrmRptHistorial.cs</DependentUpon>

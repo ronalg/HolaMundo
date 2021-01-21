@@ -91,6 +91,7 @@
             this.mnuTscHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRptCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptCitaPendiemte = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRptHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.cboEmpresa = new System.Windows.Forms.ToolStripComboBox();
@@ -614,14 +615,16 @@
             // 
             this.mnuTscHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscHistorial.Image")));
             this.mnuTscHistorial.Name = "mnuTscHistorial";
-            this.mnuTscHistorial.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscHistorial.Size = new System.Drawing.Size(180, 22);
             this.mnuTscHistorial.Text = "Historial";
+            this.mnuTscHistorial.Visible = false;
             this.mnuTscHistorial.Click += new System.EventHandler(this.mnuTscHistorial_Click);
             // 
             // mnuRpt
             // 
             this.mnuRpt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuRptCita,
+            this.mnuRptCitaPendiemte,
             this.mnuRptHistorial});
             this.mnuRpt.Name = "mnuRpt";
             this.mnuRpt.Size = new System.Drawing.Size(65, 20);
@@ -635,12 +638,21 @@
             this.mnuRptCita.Text = "Citas";
             this.mnuRptCita.Click += new System.EventHandler(this.mnuRptCita_Click);
             // 
+            // mnuRptCitaPendiemte
+            // 
+            this.mnuRptCitaPendiemte.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCitaPendiemte.Image")));
+            this.mnuRptCitaPendiemte.Name = "mnuRptCitaPendiemte";
+            this.mnuRptCitaPendiemte.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptCitaPendiemte.Text = "Citas Pendientes";
+            this.mnuRptCitaPendiemte.Click += new System.EventHandler(this.mnuRptCitaPendiemte_Click);
+            // 
             // mnuRptHistorial
             // 
             this.mnuRptHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptHistorial.Image")));
             this.mnuRptHistorial.Name = "mnuRptHistorial";
             this.mnuRptHistorial.Size = new System.Drawing.Size(180, 22);
             this.mnuRptHistorial.Text = "Historial";
+            this.mnuRptHistorial.Visible = false;
             this.mnuRptHistorial.Click += new System.EventHandler(this.mnuRptHistorial_Click);
             // 
             // toolStrip
@@ -723,7 +735,7 @@
             // 
             this.mnuCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuCita.Image")));
             this.mnuCita.Name = "mnuCita";
-            this.mnuCita.Size = new System.Drawing.Size(124, 22);
+            this.mnuCita.Size = new System.Drawing.Size(180, 22);
             this.mnuCita.Text = "Citas";
             this.mnuCita.Click += new System.EventHandler(this.mnuTscCita_Click);
             // 
@@ -731,19 +743,20 @@
             // 
             this.mnHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnHistorial.Image")));
             this.mnHistorial.Name = "mnHistorial";
-            this.mnHistorial.Size = new System.Drawing.Size(124, 22);
+            this.mnHistorial.Size = new System.Drawing.Size(180, 22);
             this.mnHistorial.Text = "Historial";
+            this.mnHistorial.Visible = false;
             this.mnHistorial.Click += new System.EventHandler(this.mnHistorial_Click);
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(121, 6);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(177, 6);
             // 
             // mnuMascta
             // 
             this.mnuMascta.Name = "mnuMascta";
-            this.mnuMascta.Size = new System.Drawing.Size(124, 22);
+            this.mnuMascta.Size = new System.Drawing.Size(180, 22);
             this.mnuMascta.Text = "Mascotas";
             this.mnuMascta.Click += new System.EventHandler(this.mnuMtoVtnMascota_Click);
             // 
@@ -905,6 +918,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuTscHistorial;
         private System.Windows.Forms.ToolStripMenuItem mnuRptHistorial;
         private System.Windows.Forms.ToolStripMenuItem mnHistorial;
+        private System.Windows.Forms.ToolStripMenuItem mnuRptCitaPendiemte;
     }
 }
 
