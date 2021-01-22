@@ -580,8 +580,9 @@
             // mnuTscFactura
             // 
             this.mnuTscFactura.Enabled = false;
+            this.mnuTscFactura.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscFactura.Image")));
             this.mnuTscFactura.Name = "mnuTscFactura";
-            this.mnuTscFactura.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscFactura.Size = new System.Drawing.Size(180, 22);
             this.mnuTscFactura.Text = "Facturas";
             this.mnuTscFactura.Visible = false;
             this.mnuTscFactura.Click += new System.EventHandler(this.mnuTscFactura_Click);
@@ -590,7 +591,7 @@
             // 
             this.mnuTscOrdenPedido.Enabled = false;
             this.mnuTscOrdenPedido.Name = "mnuTscOrdenPedido";
-            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(180, 22);
             this.mnuTscOrdenPedido.Text = "Ordenes de Pedidos";
             this.mnuTscOrdenPedido.Visible = false;
             this.mnuTscOrdenPedido.Click += new System.EventHandler(this.mnuTscOrdenPedido_Click);
@@ -599,7 +600,7 @@
             // 
             this.mnuTscIncripcion.Enabled = false;
             this.mnuTscIncripcion.Name = "mnuTscIncripcion";
-            this.mnuTscIncripcion.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscIncripcion.Size = new System.Drawing.Size(180, 22);
             this.mnuTscIncripcion.Text = "Incripciones";
             this.mnuTscIncripcion.Visible = false;
             // 
@@ -607,7 +608,7 @@
             // 
             this.mnuTscCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscCita.Image")));
             this.mnuTscCita.Name = "mnuTscCita";
-            this.mnuTscCita.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscCita.Size = new System.Drawing.Size(180, 22);
             this.mnuTscCita.Text = "Citas";
             this.mnuTscCita.Click += new System.EventHandler(this.mnuTscCita_Click);
             // 
@@ -634,7 +635,7 @@
             // 
             this.mnuRptCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCita.Image")));
             this.mnuRptCita.Name = "mnuRptCita";
-            this.mnuRptCita.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptCita.Size = new System.Drawing.Size(161, 22);
             this.mnuRptCita.Text = "Citas";
             this.mnuRptCita.Click += new System.EventHandler(this.mnuRptCita_Click);
             // 
@@ -642,7 +643,7 @@
             // 
             this.mnuRptCitaPendiemte.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCitaPendiemte.Image")));
             this.mnuRptCitaPendiemte.Name = "mnuRptCitaPendiemte";
-            this.mnuRptCitaPendiemte.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptCitaPendiemte.Size = new System.Drawing.Size(161, 22);
             this.mnuRptCitaPendiemte.Text = "Citas Pendientes";
             this.mnuRptCitaPendiemte.Click += new System.EventHandler(this.mnuRptCitaPendiemte_Click);
             // 
@@ -650,7 +651,7 @@
             // 
             this.mnuRptHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptHistorial.Image")));
             this.mnuRptHistorial.Name = "mnuRptHistorial";
-            this.mnuRptHistorial.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptHistorial.Size = new System.Drawing.Size(161, 22);
             this.mnuRptHistorial.Text = "Historial";
             this.mnuRptHistorial.Visible = false;
             this.mnuRptHistorial.Click += new System.EventHandler(this.mnuRptHistorial_Click);
@@ -735,7 +736,7 @@
             // 
             this.mnuCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuCita.Image")));
             this.mnuCita.Name = "mnuCita";
-            this.mnuCita.Size = new System.Drawing.Size(180, 22);
+            this.mnuCita.Size = new System.Drawing.Size(124, 22);
             this.mnuCita.Text = "Citas";
             this.mnuCita.Click += new System.EventHandler(this.mnuTscCita_Click);
             // 
@@ -743,7 +744,7 @@
             // 
             this.mnHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnHistorial.Image")));
             this.mnHistorial.Name = "mnHistorial";
-            this.mnHistorial.Size = new System.Drawing.Size(180, 22);
+            this.mnHistorial.Size = new System.Drawing.Size(124, 22);
             this.mnHistorial.Text = "Historial";
             this.mnHistorial.Visible = false;
             this.mnHistorial.Click += new System.EventHandler(this.mnHistorial_Click);
@@ -751,12 +752,12 @@
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(121, 6);
             // 
             // mnuMascta
             // 
             this.mnuMascta.Name = "mnuMascta";
-            this.mnuMascta.Size = new System.Drawing.Size(180, 22);
+            this.mnuMascta.Size = new System.Drawing.Size(124, 22);
             this.mnuMascta.Text = "Mascotas";
             this.mnuMascta.Click += new System.EventHandler(this.mnuMtoVtnMascota_Click);
             // 

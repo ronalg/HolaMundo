@@ -79,6 +79,12 @@
     <Compile Include="FrmBscCita.Designer.cs">
       <DependentUpon>FrmBscCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBscFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBscFactura.Designer.cs">
+      <DependentUpon>FrmBscFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBscHistorial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     <Compile Include="Utilidad.cs" />
     <EmbeddedResource Include="FrmBscCita.resx">
       <DependentUpon>FrmBscCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBscFactura.resx">
+      <DependentUpon>FrmBscFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBscHistorial.resx">
       <DependentUpon>FrmBscHistorial.cs</DependentUpon>

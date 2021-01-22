@@ -58,9 +58,6 @@
             this.pnl4 = new System.Windows.Forms.Panel();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.grdHistorial = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bsHistorial = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
-            this.taHistorialMascota = new Neo.DsNeoTableAdapters.taHistorialMascota();
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +78,9 @@
             this.notaDetalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hRaza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsHistorial = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
+            this.taHistorialMascota = new Neo.DsNeoTableAdapters.taHistorialMascota();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnHistorial)).BeginInit();
             this.bnHistorial.SuspendLayout();
@@ -167,7 +167,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -272,6 +271,7 @@
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHasta.Location = new System.Drawing.Point(197, 9);
             this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpHasta.Size = new System.Drawing.Size(94, 21);
             this.dtpHasta.TabIndex = 2;
             // 
@@ -290,6 +290,7 @@
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDesde.Location = new System.Drawing.Point(53, 9);
             this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpDesde.Size = new System.Drawing.Size(94, 21);
             this.dtpDesde.TabIndex = 1;
             // 
@@ -318,7 +319,7 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl4.Location = new System.Drawing.Point(0, 0);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(976, 156);
+            this.pnl4.Size = new System.Drawing.Size(976, 10);
             this.pnl4.TabIndex = 4;
             // 
             // pnl5
@@ -365,20 +366,6 @@
             this.grdHistorial.ReadOnly = true;
             this.grdHistorial.Size = new System.Drawing.Size(976, 367);
             this.grdHistorial.TabIndex = 0;
-            // 
-            // bsHistorial
-            // 
-            this.bsHistorial.DataMember = "tbHistorialMascota";
-            this.bsHistorial.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // taHistorialMascota
-            // 
-            this.taHistorialMascota.ClearBeforeFill = true;
             // 
             // codigoTrabajoDataGridViewTextBoxColumn
             // 
@@ -544,6 +531,20 @@
             this.hRaza.Name = "hRaza";
             this.hRaza.ReadOnly = true;
             this.hRaza.Visible = false;
+            // 
+            // bsHistorial
+            // 
+            this.bsHistorial.DataMember = "tbHistorialMascota";
+            this.bsHistorial.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // taHistorialMascota
+            // 
+            this.taHistorialMascota.ClearBeforeFill = true;
             // 
             // FrmBscHistorial
             // 
