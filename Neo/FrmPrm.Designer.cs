@@ -579,7 +579,6 @@
             // 
             // mnuTscFactura
             // 
-            this.mnuTscFactura.Enabled = false;
             this.mnuTscFactura.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscFactura.Image")));
             this.mnuTscFactura.Name = "mnuTscFactura";
             this.mnuTscFactura.Size = new System.Drawing.Size(180, 22);
