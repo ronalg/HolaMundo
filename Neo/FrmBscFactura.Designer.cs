@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBscFactura));
             this.pnl1 = new System.Windows.Forms.Panel();
-            this.bnHistorial = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bnFactura = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -54,32 +54,36 @@
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.pnl5 = new System.Windows.Forms.Panel();
-            this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.grdFactura = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dsNeo = new Neo.DsNeo();
+            this.bsFactura = new System.Windows.Forms.BindingSource(this.components);
             this.pnl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bnHistorial)).BeginInit();
-            this.bnHistorial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).BeginInit();
+            this.bnFactura.SuspendLayout();
             this.pnl2.SuspendLayout();
             this.pnl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl1
             // 
             this.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl1.Controls.Add(this.bnHistorial);
+            this.pnl1.Controls.Add(this.bnFactura);
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
             this.pnl1.Size = new System.Drawing.Size(800, 28);
             this.pnl1.TabIndex = 2;
             // 
-            // bnHistorial
+            // bnFactura
             // 
-            this.bnHistorial.AddNewItem = null;
-            this.bnHistorial.CountItem = this.bindingNavigatorCountItem;
-            this.bnHistorial.DeleteItem = null;
-            this.bnHistorial.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bnHistorial.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bnFactura.AddNewItem = null;
+            this.bnFactura.CountItem = this.bindingNavigatorCountItem;
+            this.bnFactura.DeleteItem = null;
+            this.bnFactura.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bnFactura.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -93,16 +97,16 @@
             this.btnVer,
             this.toolStripSeparator1,
             this.btnSalir});
-            this.bnHistorial.Location = new System.Drawing.Point(0, 0);
-            this.bnHistorial.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bnHistorial.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bnHistorial.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bnHistorial.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bnHistorial.Name = "bnHistorial";
-            this.bnHistorial.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnHistorial.Size = new System.Drawing.Size(798, 25);
-            this.bnHistorial.TabIndex = 5;
-            this.bnHistorial.Text = "bindingNavigator1";
+            this.bnFactura.Location = new System.Drawing.Point(0, 0);
+            this.bnFactura.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bnFactura.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bnFactura.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bnFactura.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bnFactura.Name = "bnFactura";
+            this.bnFactura.PositionItem = this.bindingNavigatorPositionItem;
+            this.bnFactura.Size = new System.Drawing.Size(798, 25);
+            this.bnFactura.TabIndex = 5;
+            this.bnFactura.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -284,24 +288,34 @@
             // pnl5
             // 
             this.pnl5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl5.Controls.Add(this.kryptonDataGridView1);
+            this.pnl5.Controls.Add(this.grdFactura);
             this.pnl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl5.Location = new System.Drawing.Point(0, 80);
             this.pnl5.Name = "pnl5";
             this.pnl5.Size = new System.Drawing.Size(800, 370);
             this.pnl5.TabIndex = 6;
             // 
-            // kryptonDataGridView1
+            // grdFactura
             // 
-            this.kryptonDataGridView1.AllowUserToAddRows = false;
-            this.kryptonDataGridView1.AllowUserToDeleteRows = false;
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.ReadOnly = true;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(798, 368);
-            this.kryptonDataGridView1.TabIndex = 0;
+            this.grdFactura.AllowUserToAddRows = false;
+            this.grdFactura.AllowUserToDeleteRows = false;
+            this.grdFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdFactura.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdFactura.Location = new System.Drawing.Point(0, 0);
+            this.grdFactura.Name = "grdFactura";
+            this.grdFactura.ReadOnly = true;
+            this.grdFactura.Size = new System.Drawing.Size(798, 368);
+            this.grdFactura.TabIndex = 0;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bsFactura
+            // 
+            this.bsFactura.DataMember = "fnFactura";
+            this.bsFactura.DataSource = this.dsNeo;
             // 
             // FrmBscFactura
             // 
@@ -317,13 +331,15 @@
             this.Text = "Factura";
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bnHistorial)).EndInit();
-            this.bnHistorial.ResumeLayout(false);
-            this.bnHistorial.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).EndInit();
+            this.bnFactura.ResumeLayout(false);
+            this.bnFactura.PerformLayout();
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
             this.pnl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFactura)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,7 +347,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl1;
-        private System.Windows.Forms.BindingNavigator bnHistorial;
+        private System.Windows.Forms.BindingNavigator bnFactura;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -354,6 +370,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.Panel pnl4;
         private System.Windows.Forms.Panel pnl5;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdFactura;
+        private DsNeo dsNeo;
+        private System.Windows.Forms.BindingSource bsFactura;
     }
 }

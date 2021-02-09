@@ -140,7 +140,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(532, 333);
+            this.pnl3.Size = new System.Drawing.Size(514, 241);
             this.pnl3.TabIndex = 11;
             // 
             // pnl6
@@ -162,7 +162,7 @@
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(293, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(232, 321);
+            this.pnl6.Size = new System.Drawing.Size(214, 229);
             this.pnl6.TabIndex = 6;
             // 
             // label3
@@ -183,6 +183,7 @@
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(120, 20);
             this.lblEmpresa.TabIndex = 10;
+            this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bsMto
             // 
@@ -203,6 +204,7 @@
             this.lblTrabajo.Name = "lblTrabajo";
             this.lblTrabajo.Size = new System.Drawing.Size(120, 20);
             this.lblTrabajo.TabIndex = 9;
+            this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // nudCantidad
             // 
@@ -251,7 +253,7 @@
             this.pnl5.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl5.Location = new System.Drawing.Point(283, 5);
             this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(10, 321);
+            this.pnl5.Size = new System.Drawing.Size(10, 229);
             this.pnl5.TabIndex = 5;
             // 
             // pnl4
@@ -261,7 +263,7 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl4.Location = new System.Drawing.Point(5, 5);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(278, 321);
+            this.pnl4.Size = new System.Drawing.Size(278, 229);
             this.pnl4.TabIndex = 4;
             // 
             // grdMto
@@ -282,7 +284,7 @@
             this.grdMto.Location = new System.Drawing.Point(0, 0);
             this.grdMto.Name = "grdMto";
             this.grdMto.ReadOnly = true;
-            this.grdMto.Size = new System.Drawing.Size(276, 319);
+            this.grdMto.Size = new System.Drawing.Size(276, 227);
             this.grdMto.TabIndex = 3;
             this.grdMto.SelectionChanged += new System.EventHandler(this.grdMto_SelectionChanged);
             // 
@@ -323,7 +325,7 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(532, 10);
+            this.pnl2.Size = new System.Drawing.Size(514, 10);
             this.pnl2.TabIndex = 10;
             // 
             // btnSalir
@@ -351,7 +353,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(532, 28);
+            this.pnl1.Size = new System.Drawing.Size(514, 28);
             this.pnl1.TabIndex = 9;
             // 
             // bnMto
@@ -383,7 +385,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(530, 25);
+            this.bnMto.Size = new System.Drawing.Size(512, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -485,7 +487,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 371);
+            this.ClientSize = new System.Drawing.Size(514, 279);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);

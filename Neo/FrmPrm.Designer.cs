@@ -392,10 +392,9 @@
             // 
             // mnuMtoFrecuencia
             // 
-            this.mnuMtoFrecuencia.Enabled = false;
             this.mnuMtoFrecuencia.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoFrecuencia.Image")));
             this.mnuMtoFrecuencia.Name = "mnuMtoFrecuencia";
-            this.mnuMtoFrecuencia.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoFrecuencia.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoFrecuencia.Text = "Frecuencias";
             this.mnuMtoFrecuencia.Click += new System.EventHandler(this.mnuMtoFrecuencia_Click);
             // 
@@ -583,7 +582,6 @@
             this.mnuTscFactura.Name = "mnuTscFactura";
             this.mnuTscFactura.Size = new System.Drawing.Size(180, 22);
             this.mnuTscFactura.Text = "Facturas";
-            this.mnuTscFactura.Visible = false;
             this.mnuTscFactura.Click += new System.EventHandler(this.mnuTscFactura_Click);
             // 
             // mnuTscOrdenPedido

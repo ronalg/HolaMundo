@@ -335,7 +335,7 @@ namespace Neo
             if (Utilidad.tscFactura == null)
             {
                 Utilidad.tscFactura = new FrmTscFactura();
-                Utilidad.tscFactura.WindowState = FormWindowState.Maximized;
+                //Utilidad.tscFactura.WindowState = FormWindowState.Maximized;
                 Utilidad.tscFactura.MdiParent = this;
             }
             Utilidad.tscFactura.BringToFront();
