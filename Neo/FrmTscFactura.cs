@@ -115,5 +115,74 @@ namespace Neo
         {
 
         }
+
+        private void btnCancelaServicio_Click(object sender, EventArgs e)
+        {
+            pnlServicio.Visible = false;
+        }
+
+        private void txtServicio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                taFnArticuloPrecioVenta.Fill(dataSet.fnArticuloPrecioVenta, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtServicio.Text);
+                if (dataSet.fnArticuloPrecioVenta.Rows.Count == 1)
+                    btnAceptaServicio_Click(sender, EventArgs.Empty);
+                else
+                    grdServicio.Focus();
+            }
+        }
+
+        private void btnAceptaServicio_Click(object sender, EventArgs e)
+        {
+            if (grdServicio.CurrentRow.Cells["sCodigo"].Value != DBNull.Value)
+            {
+                string codigo = grdServicio.CurrentRow.Cells["sCodigo"].Value.ToString();
+                string descripcion = grdServicio.CurrentRow.Cells["sDescripcion"].Value.ToString();
+                string codigoPrecio = grdServicio.CurrentRow.Cells["sCodigoPrecio"].Value.ToString();
+                string precio = grdServicio.CurrentRow.Cells["sPrecio"].Value.ToString();
+                grdDetalle.CurrentRow.Cells["dCodigo"].Value = codigo;
+                grdDetalle.CurrentRow.Cells["dDescripcion"].Value = descripcion;
+                grdDetalle.CurrentRow.Cells["dCodigoPrecio"].Value = codigoPrecio;
+                grdDetalle.CurrentRow.Cells["dVenta"].Value = precio;
+                pnlServicio.Visible = false;
+                grdDetalle.CurrentRow.Cells["dCantidad"].Selected = true;
+            }
+        }
+
+        private void btnNuevoServicio_Click(object sender, EventArgs e)
+        {   
+            DataRow dr = dsNeo.tbFacturaDetalle.NewtbFacturaDetalleRow();
+            dr["CodigoTrabajo"] = Utilidad.codigoTrabajo;
+            dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;
+            dr["CodigoSucursal"] = Utilidad.codigoSucursal;
+            dr["NumeroFactura"] = DBNull.Value;
+            dr["Secuencia"] = DBNull.Value;
+            dr["CodigoArticulo"] = DBNull.Value;
+            dr["CodigoPrecioVenta"] = DBNull.Value;
+            dr["Descripcion"] = DBNull.Value;
+            dr["Cantidad"] = 1;
+            dr["Costo"] = DBNull.Value;
+            dr["Venta"] = DBNull.Value;
+            dr["DescuentoArticulo"] = 0.00M;
+            dsNeo.tbFacturaDetalle.Rows.Add(dr);
+            pnlServicio.Visible = true;
+            txtServicio.Clear();
+            txtServicio.Focus();
+            grdDetalle.Rows[grdDetalle.RowCount - 1].Cells["dSecuencia"].Selected = true;
+        }
+
+        private void grdServicio_DoubleClick(object sender, EventArgs e)
+        {
+            btnAceptaServicio_Click(sender, EventArgs.Empty);
+        }
+
+        private void grdServicio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnAceptaServicio_Click(sender, EventArgs.Empty);            
+            else if (e.KeyCode == Keys.Escape)
+                btnCancelaServicio_Click(sender, EventArgs.Empty);            
+        }
     }
 }

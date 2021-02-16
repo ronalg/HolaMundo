@@ -1422,7 +1422,7 @@
             // 
             // btnAceptaVeterinario
             // 
-            this.btnAceptaVeterinario.Location = new System.Drawing.Point(212, 220);
+            this.btnAceptaVeterinario.Location = new System.Drawing.Point(214, 220);
             this.btnAceptaVeterinario.Name = "btnAceptaVeterinario";
             this.btnAceptaVeterinario.Size = new System.Drawing.Size(90, 25);
             this.btnAceptaVeterinario.TabIndex = 3;
