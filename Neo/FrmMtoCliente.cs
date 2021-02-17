@@ -37,7 +37,8 @@ namespace Neo
         }
 
         private void FrmMtoCliente_Load(object sender, EventArgs e)
-        {            
+        {
+            taEmpleado.FillByPuesto(dsNeo.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Vendedor");
             taTipoContacto.Fill(dsNeo.tbTipoContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taProvincia.Fill(dsNeo.tbProvincia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
@@ -113,6 +114,13 @@ namespace Neo
             {
                 cboSucursal.Focus();
                 ep.SetError(cboSucursal, Utilidad.listaVacia);
+                return;
+            }
+
+            if (cboVendedor.SelectedIndex == -1)
+            {
+                cboVendedor.Focus();
+                ep.SetError(cboVendedor, Utilidad.listaVacia);
                 return;
             }
 
@@ -210,15 +218,16 @@ namespace Neo
                 decimal? limite = null;
                 if (!string.IsNullOrEmpty(txtLimiteCredito.Text))
                     limite = decimal.Parse(txtLimiteCredito.Text);
+                short vendedor = short.Parse(cboVendedor.Text);
                 this.Validate();
                 if (!btnNuevo.Available)
                 {
-                    taCliente.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text, txtId.Text.Trim(), cboCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, Utilidad.nombreUsuario, lblEquipo.Text, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text);
+                    taCliente.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text, txtId.Text.Trim(), cboCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, Utilidad.nombreUsuario, lblEquipo.Text, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text, vendedor);
                     ConfiguraBoton(true);
                 }
                 else
                 {
-                    taCliente.Edita(sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text.Trim(), txtId.Text.Trim(), cboCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
+                    taCliente.Edita(sucursal, cboEstadoCivil.Text, lblTipoEstado.Text, txtUserWeb.Text.Trim(), txtId.Text.Trim(), cboCategoria.Text, txtNombre.Text.Trim(), txtRazonSocial.Text.Trim(), dtpNacimiento.Value.ToShortDateString(), lblApertura.Text, cboSexo.Text, txtCuentaContable.Text.Trim(), txtNota.Text.Trim(), chkActivo.Checked, limite, cboFactura.Text, cboRecibo.Text, cboPedido.Text, vendedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo);
                 }               
 
                 foreach (DataGridViewRow dgvr in grdSucursal.Rows)

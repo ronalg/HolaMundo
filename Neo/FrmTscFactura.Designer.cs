@@ -173,13 +173,14 @@
             this.txtServicio = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel11 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.grdServicio = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bsArticulo = new System.Windows.Forms.BindingSource(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.taFnArticuloPrecioVenta = new Neo.DsNeoTableAdapters.TaFnArticuloPrecioVenta();
             this.sCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sCodigoPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsArticulo = new System.Windows.Forms.BindingSource(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.taFnArticuloPrecioVenta = new Neo.DsNeoTableAdapters.TaFnArticuloPrecioVenta();
             this.codigoTrabajoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -189,8 +190,8 @@
             this.dCodigoPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCita)).BeginInit();
@@ -300,7 +301,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1028,8 +1028,8 @@
             this.dCodigoPrecio,
             this.dDescripcion,
             this.dCantidad,
-            this.dDescuento,
             this.dVenta,
+            this.dDescuento,
             this.dCosto});
             this.grdDetalle.DataSource = this.bsFacturaDetalle;
             this.grdDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1117,7 +1117,6 @@
             // 
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -1438,7 +1437,7 @@
             this.pnlServicio.Controls.Add(this.label8);
             this.pnlServicio.Location = new System.Drawing.Point(241, 188);
             this.pnlServicio.Name = "pnlServicio";
-            this.pnlServicio.Size = new System.Drawing.Size(533, 289);
+            this.pnlServicio.Size = new System.Drawing.Size(536, 289);
             this.pnlServicio.TabIndex = 28;
             this.pnlServicio.Visible = false;
             // 
@@ -1480,7 +1479,7 @@
             this.pnlTipoContactoSub.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTipoContactoSub.Location = new System.Drawing.Point(0, 17);
             this.pnlTipoContactoSub.Name = "pnlTipoContactoSub";
-            this.pnlTipoContactoSub.Size = new System.Drawing.Size(531, 229);
+            this.pnlTipoContactoSub.Size = new System.Drawing.Size(534, 229);
             this.pnlTipoContactoSub.TabIndex = 1;
             // 
             // txtServicio
@@ -1512,38 +1511,17 @@
             this.sCodigo,
             this.sDescripcion,
             this.sCodigoPrecio,
-            this.sPrecio});
+            this.sPrecio,
+            this.sCosto});
             this.grdServicio.DataSource = this.bsArticulo;
             this.grdServicio.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grdServicio.Location = new System.Drawing.Point(0, 40);
             this.grdServicio.Name = "grdServicio";
             this.grdServicio.ReadOnly = true;
-            this.grdServicio.Size = new System.Drawing.Size(529, 187);
+            this.grdServicio.Size = new System.Drawing.Size(532, 187);
             this.grdServicio.TabIndex = 4;
             this.grdServicio.DoubleClick += new System.EventHandler(this.grdServicio_DoubleClick);
             this.grdServicio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdServicio_KeyDown);
-            // 
-            // bsArticulo
-            // 
-            this.bsArticulo.DataMember = "fnArticuloPrecioVenta";
-            this.bsArticulo.DataSource = this.dataSet;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(531, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Articulos/Servicios";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // taFnArticuloPrecioVenta
-            // 
-            this.taFnArticuloPrecioVenta.ClearBeforeFill = true;
             // 
             // sCodigo
             // 
@@ -1578,6 +1556,36 @@
             this.sPrecio.Name = "sPrecio";
             this.sPrecio.ReadOnly = true;
             this.sPrecio.Width = 80;
+            // 
+            // sCosto
+            // 
+            this.sCosto.DataPropertyName = "Costo";
+            this.sCosto.HeaderText = "Costo";
+            this.sCosto.Name = "sCosto";
+            this.sCosto.ReadOnly = true;
+            this.sCosto.Visible = false;
+            // 
+            // bsArticulo
+            // 
+            this.bsArticulo.DataMember = "fnArticuloPrecioVenta";
+            this.bsArticulo.DataSource = this.dataSet;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(534, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Articulos/Servicios";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // taFnArticuloPrecioVenta
+            // 
+            this.taFnArticuloPrecioVenta.ClearBeforeFill = true;
             // 
             // codigoTrabajoDataGridViewTextBoxColumn1
             // 
@@ -1649,27 +1657,27 @@
             this.dCantidad.DefaultCellStyle = dataGridViewCellStyle3;
             this.dCantidad.HeaderText = "Cantidad";
             this.dCantidad.Name = "dCantidad";
-            this.dCantidad.Width = 70;
-            // 
-            // dDescuento
-            // 
-            this.dDescuento.DataPropertyName = "DescuentoArticulo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            this.dDescuento.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dDescuento.HeaderText = "Desc.";
-            this.dDescuento.Name = "dDescuento";
-            this.dDescuento.Width = 70;
+            this.dCantidad.Width = 60;
             // 
             // dVenta
             // 
             this.dVenta.DataPropertyName = "Venta";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            this.dVenta.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dVenta.HeaderText = "Venta";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            this.dVenta.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dVenta.HeaderText = "Precio";
             this.dVenta.Name = "dVenta";
             this.dVenta.Width = 70;
+            // 
+            // dDescuento
+            // 
+            this.dDescuento.DataPropertyName = "DescuentoArticulo";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            this.dDescuento.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dDescuento.HeaderText = "Desc.";
+            this.dDescuento.Name = "dDescuento";
+            this.dDescuento.Width = 70;
             // 
             // dCosto
             // 
@@ -1880,6 +1888,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn sCodigoPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn sPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCosto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn1;
@@ -1889,8 +1898,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dCodigoPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn dCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dCosto;
     }
 }

@@ -55,6 +55,19 @@ namespace Neo
             lblCodigo.Text = codigo.ToString();
             taSucursalContacto.Fill(dsNeo.tbSucursalContacto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigo, "Cliente");
             grdCliente.Visible = false;
+            if (string.IsNullOrEmpty(lblNumero.Text))
+            {
+                if (cboVendedor.Items.Count == 1)
+                {
+                    cboVendedor.SelectedIndex = 0;
+                }
+                else
+                {
+                    cboVendedor.Text = grdCliente.CurrentRow.Cells[""].Value.ToString();
+                }
+                bnDetalle.Focus();
+                btnNuevoServicio.Select();
+            }
         }
 
         private void grdCliente_KeyDown(object sender, KeyEventArgs e)
@@ -141,12 +154,15 @@ namespace Neo
                 string descripcion = grdServicio.CurrentRow.Cells["sDescripcion"].Value.ToString();
                 string codigoPrecio = grdServicio.CurrentRow.Cells["sCodigoPrecio"].Value.ToString();
                 string precio = grdServicio.CurrentRow.Cells["sPrecio"].Value.ToString();
+                string costo = grdServicio.CurrentRow.Cells["sCosto"].Value.ToString();
                 grdDetalle.CurrentRow.Cells["dCodigo"].Value = codigo;
                 grdDetalle.CurrentRow.Cells["dDescripcion"].Value = descripcion;
                 grdDetalle.CurrentRow.Cells["dCodigoPrecio"].Value = codigoPrecio;
                 grdDetalle.CurrentRow.Cells["dVenta"].Value = precio;
+                grdDetalle.CurrentRow.Cells["dCosto"].Value = costo;
                 pnlServicio.Visible = false;
                 grdDetalle.CurrentRow.Cells["dCantidad"].Selected = true;
+                grdDetalle.BeginEdit(true);
             }
         }
 
