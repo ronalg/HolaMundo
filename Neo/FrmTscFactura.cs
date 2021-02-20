@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -199,6 +200,94 @@ namespace Neo
                 btnAceptaServicio_Click(sender, EventArgs.Empty);            
             else if (e.KeyCode == Keys.Escape)
                 btnCancelaServicio_Click(sender, EventArgs.Empty);            
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cboCondicion.Text))
+            {
+                ep.SetError(cboCondicion, Utilidad.campoVacio);
+                cboCondicion.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(cboVendedor.Text))
+            {
+                ep.SetError(cboVendedor, Utilidad.campoVacio);
+                cboVendedor.Focus();
+                return;
+            }
+
+            if (grdDetalle.RowCount == 0)
+            {
+                MessageBox.Show("Ingrese servicio", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                return;
+            }
+
+            foreach (DataRow dr in dsNeo.tbFacturaDetalle)
+            {
+                string codigo = dr["CodigoArticulo"].ToString();
+                if (string.IsNullOrEmpty(codigo))
+                {
+                    MessageBox.Show("Ingrese valor en el listado de servicio valido", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    return;
+                }
+            }
+
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                int numero = !string.IsNullOrEmpty(lblNumero.Text) ? int.Parse(lblNumero.Text) : 0;
+                short? codigoCliente = null;
+                if (!string.IsNullOrEmpty(lblCodigo.Text))
+                    codigoCliente = short.Parse(lblCodigo.Text);
+                short codigoEmpleado = short.Parse(cboVendedor.Text);
+                string nombre = !string.IsNullOrEmpty(txtNombre.Text) ? txtNombre.Text.Trim() : null;
+                decimal descuento = decimal.Parse(txtDescuento.Text);
+                string nota = !string.IsNullOrEmpty(txtNota.Text) ? txtNota.Text : null;
+
+                if (numero == 0)
+                {
+                    DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
+                    numero = cp.fnSiguienteNumero("factura", Utilidad.codigoSucursal, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
+                    taFactura.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoCliente, "Cliente", codigoEmpleado, cboCondicion.Text, null, null, Utilidad.nombreUsuario, null, null, DateTime.Today.ToShortDateString(), nombre, dtpFecha.Value.ToShortDateString(), null, descuento, nota); 
+                    lblNumero.Text = numero.ToString();
+                }
+                else
+                {
+                    taFactura.Edita(codigoCliente, codigoEmpleado, cboCondicion.Text, nombre, dtpFecha.Value.ToShortDateString(), descuento, nota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                }
+
+                taFacturaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                
+                foreach (DataRow dr in dsNeo.tbFacturaDetalle.Rows)
+                {
+                    short secuencia = short.Parse(dr["Secuencia"].ToString());
+                    int codigo = int.Parse(dr["CodigoArticulo"].ToString());
+                    string codigoPrecio = dr["CodigoPrecioVenta"].ToString();
+                    string descripcion = dr["Descripcion"].ToString();
+                    short cantidad = short.Parse(dr["Cantidad"].ToString());
+                    short empleado = short.Parse(dr["CodigoEmpleado"].ToString());
+                    bool pendiente = bool.Parse(dr["Pendiente"].ToString());
+                    decimal costo = decimal.Parse(dr["Costo"].ToString());
+                    decimal venta = decimal.Parse(dr["Venta"].ToString());
+                    descuento = decimal.Parse(dr["DescuentoArticulo"].ToString());
+                   
+                    taFacturaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, secuencia, codigo, codigoPrecio, descripcion, cantidad, costo, venta, descuento);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
         }
     }
 }
