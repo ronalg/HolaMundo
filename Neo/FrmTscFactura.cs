@@ -142,8 +142,13 @@ namespace Neo
                 taFnArticuloPrecioVenta.Fill(dataSet.fnArticuloPrecioVenta, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, txtServicio.Text);
                 if (dataSet.fnArticuloPrecioVenta.Rows.Count == 1)
                     btnAceptaServicio_Click(sender, EventArgs.Empty);
-                else
+                else if (dataSet.fnArticuloPrecioVenta.Rows.Count > 1)
                     grdServicio.Focus();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                dataSet.fnArticuloPrecioVenta.Rows.Clear();
+                btnCancelaServicio_Click(sender, EventArgs.Empty);
             }
         }
 
@@ -161,8 +166,12 @@ namespace Neo
                 grdDetalle.CurrentRow.Cells["dCodigoPrecio"].Value = codigoPrecio;
                 grdDetalle.CurrentRow.Cells["dVenta"].Value = precio;
                 grdDetalle.CurrentRow.Cells["dCosto"].Value = costo;
+                grdDetalle.CurrentRow.Cells["dSubTotal"].Value = precio;
+                grdDetalle.CurrentRow.Cells["dImporte"].Value = precio;
                 pnlServicio.Visible = false;
-                grdDetalle.CurrentRow.Cells["dCantidad"].Selected = true;
+
+                grdServicio.Rows[grdDetalle.RowCount - 1].Selected = true;
+                grdDetalle.Rows[grdDetalle.RowCount - 1].Cells["dCantidad"].Selected = true;
                 grdDetalle.BeginEdit(true);
             }
         }

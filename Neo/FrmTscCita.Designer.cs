@@ -1052,7 +1052,6 @@
             this.lblDueno.Size = new System.Drawing.Size(251, 20);
             this.lblDueno.TabIndex = 18;
             this.lblDueno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDueno.Click += new System.EventHandler(this.lblDueno_Click);
             // 
             // kryptonLabel7
             // 

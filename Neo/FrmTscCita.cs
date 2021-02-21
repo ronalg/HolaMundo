@@ -225,16 +225,17 @@ namespace Neo
                 else
                     grdServicio.Focus();
             }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                dataSet.tbArticulo.Rows.Clear();
+                btnCancelaServicio_Click(sender, EventArgs.Empty);
+            }
+
         }
 
         private void grdServicio_DoubleClick(object sender, EventArgs e)
         {
             btnAceptaServicio_Click(sender, EventArgs.Empty);
-        }
-
-        private void lblDueno_Click(object sender, EventArgs e)
-        {
-
         }
 
         public void btnNuevo_Click(object sender, EventArgs e)
