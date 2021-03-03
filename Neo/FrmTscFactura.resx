@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="bnCita.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>113, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -239,19 +239,19 @@
 </value>
   </data>
   <metadata name="bsFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>884, 15</value>
+    <value>1002, 17</value>
   </metadata>
   <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>202, 17</value>
+    <value>304, 17</value>
   </metadata>
   <metadata name="bsSucursalContacto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>579, 15</value>
+    <value>686, 17</value>
   </metadata>
   <metadata name="bsCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>289, 17</value>
+    <value>391, 17</value>
   </metadata>
-  <metadata name="bsCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>265, 54</value>
+  <metadata name="bsCobroFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>849, 56</value>
   </metadata>
   <metadata name="dSubTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -260,10 +260,10 @@
     <value>True</value>
   </metadata>
   <metadata name="bsFacturaDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>988, 15</value>
+    <value>1106, 17</value>
   </metadata>
   <metadata name="bnDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>98, 17</value>
+    <value>200, 17</value>
   </metadata>
   <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -330,25 +330,25 @@
 </value>
   </data>
   <metadata name="dataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>486, 15</value>
+    <value>593, 17</value>
   </metadata>
   <metadata name="taCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>386, 15</value>
+    <value>493, 17</value>
   </metadata>
   <metadata name="taSucursalContacto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>727, 15</value>
+    <value>845, 17</value>
   </metadata>
   <metadata name="taFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1130, 15</value>
+    <value>17, 56</value>
   </metadata>
   <metadata name="taFacturaDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1352, 15</value>
+    <value>239, 56</value>
   </metadata>
   <metadata name="taFrecuencia.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1232, 15</value>
+    <value>119, 56</value>
   </metadata>
   <metadata name="taEmpleado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1492, 15</value>
+    <value>379, 56</value>
   </metadata>
   <data name="btnServicioAceptarNuevo.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -406,18 +406,76 @@
     <value>True</value>
   </metadata>
   <metadata name="bsArticulo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1608, 15</value>
+    <value>495, 56</value>
   </metadata>
   <metadata name="taFnArticuloPrecioVenta.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 54</value>
+    <value>601, 56</value>
   </metadata>
   <metadata name="ep.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>200, 54</value>
+    <value>784, 56</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>93</value>
   </metadata>
+  <data name="btnAceptarNuevoFp.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAIYAAAEAAP///+3y9QhNe0F7nvv6+u3z9eXv8hFWhOTu8qnB0QhHdipokPz8/MPU4Pb3
+        /GeUrOzy9XihvcrZ41yNp9Hd5BRTf4mrvsnZ48/f6O7y9unt9HuivuTv8ufy9PT2/Nri7IyuwA1Oetvl
+        7ePq7szb5OPt8cvX4PH3+m+ZtfDx8/r8/NDb4/D09xBUg+7z9oepv/v8/ODp8O/4+Pr6+vz6+uzx9YSl
+        vAdMevP0+lmGoG6Usenw+fn8+uvy9Tpymvv7+oaovvT6++Lr8fz8+YmqwI+yyvT5+OPv8uDo9Oft9Yip
+        v+fy87TM2tTg6cva436kvs7b44atw/n4+QhNfPn6+7bK2oKmvPL3+R1eihVZhe/1973Q3iBii/r8+vX5
+        +PL5/PT1+HWeuPD0+Obx9O709eHs9ODp75W2x/T2/ePp7ejw8uzu9Rdbh/b4+r3O3MTT4r3N3BJWhE59
+        nPb7+vP6+vz89/D09uz09/j5+trj7gAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQB
+        AAAAACwAAAAAEAAQAAAI3AABAAgBI8iSIhygUPghsKHACwEChFFyookUCgQcPgxQg0cSFlyMQEiR0eGN
+        AEQaHDmjR4GEBG9KCrwSwA4QL2SGOFCgIgEEBg3FBGhAo0CPLyYq7JTQpeGOADEKSF1xgESFOGiyNNQR
+        QMgMN3noTCmjJoqVNg3nBMAToUWOOlUebHACR0tDAgEMCBAQYQsYFA/MPJFzN+9eG1jGfEjDBgOCwnr3
+        CtDw4g6TCY8F4o2814cHAR0wN2QQYA2SA6hBjJCRoYSLhhYiyp4dIIGFhiKoDNjNezeOBQsABAQAOw==
+</value>
+  </data>
+  <data name="btnAceptarFg.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAIcAAAEAACyRKP///0jHGaThXUvOHkvNHqbhXiKZDVDQH63heVHQHwBmAABkAAh8AkzP
+        H1DRH6fdbc/slnjCUiqjDtTvl0XJHSFuISGAITGuD6bhX9XumgBgADOxES+0DpbaTaLhX7nzcxKHCqbg
+        XsfeyXrNSTnADbDmZkjJFU7PH07LFL7awWC4T03NHWC6SDOoI0OzKli1SGDQJeby6qjkYXLYLmfZJ63l
+        Y0/SILXldlrMGTC/AMzqlDiqJjrACzGnJiaoErPkgTvBFFTPE3+/dOvy7mfTJEm2OrfVvNLqzqnqZ6rj
+        YlbQG0THGaviY+jy7lPPHJ/gV1yyWLzWv3DCXVTSH9fwnQl5A7fkk//4/07QH6XhW9Ts0NXvnFDOH+Xw
+        6lHPH0LCCpXbTP/x/5fcTi2oG8/rlknOHtnu1tft00y2LaXeYdn2pa3ucD3BB9XzoDK7CrfxdWnYJNfx
+        naTVqdPrz83vmLzdv8zrlsnpkk7SH5XaTFjSHlnTHtTvnDSoI163TdPr0DWoIx6gC2LWGFXPGw+ACqTd
+        Y6HSnafpZGXZJFfUIErNHkavNwBoAK/jb//6/6vlYf/7/7roiGW8YaXhXp7nY6PgW0bGE03OHqXgXqnn
+        YqbiYFPRIOz08i+sHKTiXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAAAACwAAAAAEAAQAAAI/gABCBQY4EKDBhcCDFwIgEOAChsk
+        SNhQIQAHhgEiWOlihkcePH7mRFAokIGCNzmWjDhwQNOJR3YUMBA4gQ2IKJcI6IxExgUVLBMABJi0CRQn
+        DRoq3dgD6IsASkECYFBCQ8yWNYecfGDxREASGIkwXIlTgogaIzV0xJghoM4PGSEcibAkZQwSDzuOeBLA
+        5YUbOW0MOVBUZkoWEnSKCAj0JwyhITYcBGCiYtAKSZAEpBHkow8UPoUUDliECcgdAWh6mMBxpkWVAQIR
+        JOiE4hOiRkL0FGAEJgGCgQMgLPACp4mWTCkWQIC9kIKFBwUMGCjwwAIFhgMDdMiQoQPJgQEBADs=
+</value>
+  </data>
+  <data name="btnCancelarFp.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAIYAAAEAAOAOE/IOFdoQEN0YFMAIC+wJELkLC+IWFPhbTvZAKvZPM+8REPU4JLYKDMwJ
+        C/hYUvUOD/c7OvAKDvdTNvZJLvZELfdQN+xBPPZML/dZO+8ODvhZT+kgHPUeGfhvUfQQEOoLEfmObfAX
+        E/dYQ/ZGLPU7KvUUEvmMevY+KvAMDsgIC/mAbfQqG/qih/Y1IvZAKfdEQfmHafYmHO4MDvQxH/U0IvUd
+        F/MeFuUbGfZOMvh6WvQzIPdQNvZIMfYzM/mIbPQkGvYiIbwIC/UjGuIaFfmJdPMhGPhnVPmbfPELEfdV
+        S/UyIO8NDfdYOvUOEPZSM/QNEPdWNpYGB+skHvU1J/qoje8WEuEcGPc2Nt0JEfEZHO8JEPdTN/MwIPdX
+        OfdUN/Y5JfZFLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQB
+        AAAAACwAAAAAEAAQAAAItgABCBgIoKDBgxImCHCRBIKAgwYnQGAhIYYTDTuMKIGYBYUIEgC4fAHThYIM
+        DgWXWIHiw4BBE1IWLMjwIcQWIDqquIRIpYQYCxd6VOiwEyKAADBSKFCQQ4tRgyuQMGnQIAyWp0cxtKjh
+        xQaPFw6MBkiA4wiRAwRmBCkCceyVEQgOFCTg4UbYgmOFMGAg1yCBEwMMRvjRZAMCowNADMEbgYaKB08H
+        BC6IIArkpwWeTMFqtEABAAEBADs=
+</value>
+  </data>
+  <metadata name="bsFormaPago.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>987, 56</value>
+  </metadata>
   <metadata name="taCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>363, 54</value>
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="taFormaPago.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1113, 56</value>
   </metadata>
 </root>

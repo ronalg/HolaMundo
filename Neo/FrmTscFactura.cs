@@ -87,6 +87,7 @@ namespace Neo
 
         private void FrmTscFactura_Load(object sender, EventArgs e)
         {
+            taFormaPago.Fill(dsNeo.tbFormaPago, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taEmpleado.FillByPuesto(dsNeo.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Vendedor");
             taFrecuencia.Fill(dsNeo.tbFrecuencia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             btnNuevo_Click(sender, EventArgs.Empty);
@@ -297,6 +298,47 @@ namespace Neo
             {
                 this.Cursor = Cursors.Default;
             }
+        }
+
+        private void btnCancelarFp_Click(object sender, EventArgs e)
+        {
+            pnlFormaPago.Visible = false;
+        }
+
+        private void grdCobroFactura_DoubleClick(object sender, EventArgs e)
+        {
+            pnlFormaPago.Visible = true;
+            grdFormaPago.Focus();
+        }
+
+        private void btnAceptarFg_Click(object sender, EventArgs e)
+        {
+            object numero = DBNull.Value;
+            if (!string.IsNullOrEmpty(lblNumero.Text))
+                numero = lblNumero.Text;
+            DataRow dr = dsNeo.tbFacturaCobro.NewtbFacturaCobroRow();
+            dr["CodigoTrabajo"] = Utilidad.codigoTrabajo;
+            dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;
+            dr["CodigoSucursal"] = Utilidad.codigoSucursal;
+            dr["NumeroFactura"] = numero;
+            dr["SecuenciaCobro"] = 1;
+            dr["NombreFormaPago"] = grdFormaPago.CurrentRow.Cells["fpNombre"].Value.ToString();
+            dr["Monto"] = 0.00M;
+            dr["FechaCobro"] = DateTime.Today.ToShortDateString();
+            dr["Concepto"] = "Cobro";
+            dr["UsuarioCobro"] = Utilidad.nombreUsuario;
+            dsNeo.tbFacturaCobro.Rows.Add(dr);
+
+            grdFacturaCobro.Rows[grdFacturaCobro.RowCount - 1].Selected = true;
+            grdFacturaCobro.Rows[grdFacturaCobro.RowCount - 1].Cells["cMonto"].Selected = true;
+            grdFacturaCobro.BeginEdit(true);
+
+            btnCancelarFp_Click(sender, EventArgs.Empty);
+        }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
