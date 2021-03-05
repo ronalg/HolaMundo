@@ -70,6 +70,7 @@
             this.mnuMtoTipoContacto = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuMtoFormaPago = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoCaja = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoMoneda = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMtoTipo = new System.Windows.Forms.ToolStripMenuItem();
@@ -154,6 +155,7 @@
             this.mnuMtoContacto,
             this.toolStripSeparator2,
             this.mnuMtoFormaPago,
+            this.mnuMtoCaja,
             this.mnuMtoMoneda,
             this.clientesToolStripMenuItem,
             this.toolStripSeparator7,
@@ -455,6 +457,14 @@
             this.mnuMtoFormaPago.Size = new System.Drawing.Size(180, 22);
             this.mnuMtoFormaPago.Text = "Formas de Pagos";
             this.mnuMtoFormaPago.Click += new System.EventHandler(this.mnuMtoFormaPago_Click);
+            // 
+            // mnuMtoCaja
+            // 
+            this.mnuMtoCaja.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoCaja.Image")));
+            this.mnuMtoCaja.Name = "mnuMtoCaja";
+            this.mnuMtoCaja.Size = new System.Drawing.Size(180, 22);
+            this.mnuMtoCaja.Text = "Cajas";
+            this.mnuMtoCaja.Click += new System.EventHandler(this.mnuMtoCaja_Click);
             // 
             // mnuMtoMoneda
             // 
@@ -916,6 +926,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuRptHistorial;
         private System.Windows.Forms.ToolStripMenuItem mnHistorial;
         private System.Windows.Forms.ToolStripMenuItem mnuRptCitaPendiemte;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoCaja;
     }
 }
 

@@ -545,5 +545,16 @@ namespace Neo
             Utilidad.rptCitaPendiente.BringToFront();
             Utilidad.rptCitaPendiente.Show();
         }
+
+        private void mnuMtoCaja_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoCaja == null)
+            {
+                Utilidad.mtoCaja = new FrmMtoCaja();
+                Utilidad.mtoCaja.MdiParent = this;
+            }
+            Utilidad.mtoCaja.BringToFront();
+            Utilidad.mtoCaja.Show();
+        }
     }
 }

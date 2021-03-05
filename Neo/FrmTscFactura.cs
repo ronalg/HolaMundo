@@ -307,8 +307,6 @@ namespace Neo
 
         private void grdCobroFactura_DoubleClick(object sender, EventArgs e)
         {
-            pnlFormaPago.Visible = true;
-            grdFormaPago.Focus();
         }
 
         private void btnAceptarFg_Click(object sender, EventArgs e)
@@ -339,6 +337,23 @@ namespace Neo
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnNuevoCobro_Click(object sender, EventArgs e)
+        {
+            pnlFormaPago.Visible = true;
+            grdFormaPago.Focus();
+        }
+
+        private void btnAceptarNuevoFp_Click(object sender, EventArgs e)
+        {
+            btnAceptarFg_Click(sender, EventArgs.Empty);
+            btnNuevoCobro_Click(sender, EventArgs.Empty);
         }
     }
 }

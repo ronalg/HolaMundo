@@ -109,6 +109,12 @@
     <Compile Include="FrmMtoArticulo.Designer.cs">
       <DependentUpon>FrmMtoArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMtoCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMtoCaja.Designer.cs">
+      <DependentUpon>FrmMtoCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMtoCaracter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoArticulo.resx">
       <DependentUpon>FrmMtoArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMtoCaja.resx">
+      <DependentUpon>FrmMtoCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMtoCaracter.resx">
       <DependentUpon>FrmMtoCaracter.cs</DependentUpon>
