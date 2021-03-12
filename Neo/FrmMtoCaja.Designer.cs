@@ -31,22 +31,28 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nombreCajaLabel;
             System.Windows.Forms.Label codigoTrabajoLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoCaja));
             System.Windows.Forms.Label codigoEmpresaLabel;
             System.Windows.Forms.Label codigoSucursalLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMtoCaja));
             this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
-            this.codigoTrabajoLabel1 = new System.Windows.Forms.Label();
+            this.lblSucursal = new System.Windows.Forms.Label();
             this.bsMto = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
-            this.nombreCajaTextBox = new System.Windows.Forms.TextBox();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.lblTrabajo = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdMto = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
@@ -65,12 +71,6 @@
             this.spd3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.taCaja = new Neo.DsNeoTableAdapters.taCaja();
-            this.codigoEmpresaLabel1 = new System.Windows.Forms.Label();
-            this.codigoSucursalLabel1 = new System.Windows.Forms.Label();
-            this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreCajaLabel = new System.Windows.Forms.Label();
             codigoTrabajoLabel = new System.Windows.Forms.Label();
             codigoEmpresaLabel = new System.Windows.Forms.Label();
@@ -105,6 +105,24 @@
             codigoTrabajoLabel.TabIndex = 7;
             codigoTrabajoLabel.Text = "Trabajo:";
             // 
+            // codigoEmpresaLabel
+            // 
+            codigoEmpresaLabel.AutoSize = true;
+            codigoEmpresaLabel.Location = new System.Drawing.Point(20, 94);
+            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
+            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
+            codigoEmpresaLabel.TabIndex = 8;
+            codigoEmpresaLabel.Text = "Empresa:";
+            // 
+            // codigoSucursalLabel
+            // 
+            codigoSucursalLabel.AutoSize = true;
+            codigoSucursalLabel.Location = new System.Drawing.Point(20, 117);
+            codigoSucursalLabel.Name = "codigoSucursalLabel";
+            codigoSucursalLabel.Size = new System.Drawing.Size(51, 13);
+            codigoSucursalLabel.TabIndex = 9;
+            codigoSucursalLabel.Text = "Sucursal:";
+            // 
             // spd4
             // 
             this.spd4.Name = "spd4";
@@ -120,7 +138,7 @@
             this.pnl3.Location = new System.Drawing.Point(0, 38);
             this.pnl3.Name = "pnl3";
             this.pnl3.Padding = new System.Windows.Forms.Padding(5);
-            this.pnl3.Size = new System.Drawing.Size(493, 221);
+            this.pnl3.Size = new System.Drawing.Size(509, 221);
             this.pnl3.TabIndex = 7;
             // 
             // pnl6
@@ -129,31 +147,31 @@
             this.pnl6.BackColor = System.Drawing.Color.White;
             this.pnl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl6.Controls.Add(codigoSucursalLabel);
-            this.pnl6.Controls.Add(this.codigoSucursalLabel1);
+            this.pnl6.Controls.Add(this.lblSucursal);
             this.pnl6.Controls.Add(codigoEmpresaLabel);
-            this.pnl6.Controls.Add(this.codigoEmpresaLabel1);
+            this.pnl6.Controls.Add(this.lblEmpresa);
             this.pnl6.Controls.Add(codigoTrabajoLabel);
-            this.pnl6.Controls.Add(this.codigoTrabajoLabel1);
+            this.pnl6.Controls.Add(this.lblTrabajo);
             this.pnl6.Controls.Add(nombreCajaLabel);
-            this.pnl6.Controls.Add(this.nombreCajaTextBox);
+            this.pnl6.Controls.Add(this.txtNombre);
             this.pnl6.Controls.Add(this.label2);
             this.pnl6.Controls.Add(this.label1);
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(237, 5);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(249, 209);
+            this.pnl6.Size = new System.Drawing.Size(265, 209);
             this.pnl6.TabIndex = 6;
             // 
-            // codigoTrabajoLabel1
+            // lblSucursal
             // 
-            this.codigoTrabajoLabel1.BackColor = System.Drawing.Color.LightGray;
-            this.codigoTrabajoLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.codigoTrabajoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
-            this.codigoTrabajoLabel1.Location = new System.Drawing.Point(73, 68);
-            this.codigoTrabajoLabel1.Name = "codigoTrabajoLabel1";
-            this.codigoTrabajoLabel1.Size = new System.Drawing.Size(143, 20);
-            this.codigoTrabajoLabel1.TabIndex = 8;
-            this.codigoTrabajoLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSucursal.BackColor = System.Drawing.Color.LightGray;
+            this.lblSucursal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSucursal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoSucursal", true));
+            this.lblSucursal.Location = new System.Drawing.Point(73, 114);
+            this.lblSucursal.Name = "lblSucursal";
+            this.lblSucursal.Size = new System.Drawing.Size(143, 20);
+            this.lblSucursal.TabIndex = 10;
+            this.lblSucursal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bsMto
             // 
@@ -165,13 +183,35 @@
             this.dsNeo.DataSetName = "DsNeo";
             this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nombreCajaTextBox
+            // lblEmpresa
             // 
-            this.nombreCajaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreCaja", true));
-            this.nombreCajaTextBox.Location = new System.Drawing.Point(73, 24);
-            this.nombreCajaTextBox.Name = "nombreCajaTextBox";
-            this.nombreCajaTextBox.Size = new System.Drawing.Size(143, 20);
-            this.nombreCajaTextBox.TabIndex = 7;
+            this.lblEmpresa.BackColor = System.Drawing.Color.LightGray;
+            this.lblEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
+            this.lblEmpresa.Location = new System.Drawing.Point(73, 91);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(143, 20);
+            this.lblEmpresa.TabIndex = 9;
+            this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTrabajo
+            // 
+            this.lblTrabajo.BackColor = System.Drawing.Color.LightGray;
+            this.lblTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoTrabajo", true));
+            this.lblTrabajo.Location = new System.Drawing.Point(73, 68);
+            this.lblTrabajo.Name = "lblTrabajo";
+            this.lblTrabajo.Size = new System.Drawing.Size(143, 20);
+            this.lblTrabajo.TabIndex = 8;
+            this.lblTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "NombreCaja", true));
+            this.txtNombre.Location = new System.Drawing.Point(73, 24);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(143, 20);
+            this.txtNombre.TabIndex = 7;
             // 
             // label2
             // 
@@ -232,12 +272,44 @@
             this.grdMto.Size = new System.Drawing.Size(220, 207);
             this.grdMto.TabIndex = 3;
             // 
+            // codigoTrabajoDataGridViewTextBoxColumn
+            // 
+            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
+            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
+            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codigoEmpresaDataGridViewTextBoxColumn
+            // 
+            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
+            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
+            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codigoSucursalDataGridViewTextBoxColumn
+            // 
+            this.codigoSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoSucursal";
+            this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "CodigoSucursal";
+            this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
+            this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoSucursalDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cNombre
+            // 
+            this.cNombre.DataPropertyName = "NombreCaja";
+            this.cNombre.HeaderText = "Nombre";
+            this.cNombre.Name = "cNombre";
+            this.cNombre.ReadOnly = true;
+            this.cNombre.Width = 160;
+            // 
             // pnl2
             // 
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(493, 10);
+            this.pnl2.Size = new System.Drawing.Size(509, 10);
             this.pnl2.TabIndex = 6;
             // 
             // btnSalir
@@ -247,6 +319,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(49, 22);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // ep
             // 
@@ -259,6 +332,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(70, 22);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // pnl1
             // 
@@ -267,7 +341,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(493, 28);
+            this.pnl1.Size = new System.Drawing.Size(509, 28);
             this.pnl1.TabIndex = 5;
             // 
             // bnMto
@@ -299,7 +373,7 @@
             this.bnMto.MovePreviousItem = this.btnAnterior;
             this.bnMto.Name = "bnMto";
             this.bnMto.PositionItem = this.txtPosicion;
-            this.bnMto.Size = new System.Drawing.Size(491, 25);
+            this.bnMto.Size = new System.Drawing.Size(507, 25);
             this.bnMto.TabIndex = 1;
             this.bnMto.Text = "bindingNavigator1";
             // 
@@ -310,6 +384,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(62, 22);
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblRegistro
             // 
@@ -386,94 +461,24 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(69, 22);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // taCaja
             // 
             this.taCaja.ClearBeforeFill = true;
             // 
-            // codigoEmpresaLabel
-            // 
-            codigoEmpresaLabel.AutoSize = true;
-            codigoEmpresaLabel.Location = new System.Drawing.Point(20, 94);
-            codigoEmpresaLabel.Name = "codigoEmpresaLabel";
-            codigoEmpresaLabel.Size = new System.Drawing.Size(51, 13);
-            codigoEmpresaLabel.TabIndex = 8;
-            codigoEmpresaLabel.Text = "Empresa:";
-            // 
-            // codigoEmpresaLabel1
-            // 
-            this.codigoEmpresaLabel1.BackColor = System.Drawing.Color.LightGray;
-            this.codigoEmpresaLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.codigoEmpresaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoEmpresa", true));
-            this.codigoEmpresaLabel1.Location = new System.Drawing.Point(73, 91);
-            this.codigoEmpresaLabel1.Name = "codigoEmpresaLabel1";
-            this.codigoEmpresaLabel1.Size = new System.Drawing.Size(143, 20);
-            this.codigoEmpresaLabel1.TabIndex = 9;
-            this.codigoEmpresaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // codigoSucursalLabel
-            // 
-            codigoSucursalLabel.AutoSize = true;
-            codigoSucursalLabel.Location = new System.Drawing.Point(20, 117);
-            codigoSucursalLabel.Name = "codigoSucursalLabel";
-            codigoSucursalLabel.Size = new System.Drawing.Size(51, 13);
-            codigoSucursalLabel.TabIndex = 9;
-            codigoSucursalLabel.Text = "Sucursal:";
-            // 
-            // codigoSucursalLabel1
-            // 
-            this.codigoSucursalLabel1.BackColor = System.Drawing.Color.LightGray;
-            this.codigoSucursalLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.codigoSucursalLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMto, "CodigoSucursal", true));
-            this.codigoSucursalLabel1.Location = new System.Drawing.Point(73, 114);
-            this.codigoSucursalLabel1.Name = "codigoSucursalLabel1";
-            this.codigoSucursalLabel1.Size = new System.Drawing.Size(143, 20);
-            this.codigoSucursalLabel1.TabIndex = 10;
-            this.codigoSucursalLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // codigoTrabajoDataGridViewTextBoxColumn
-            // 
-            this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.HeaderText = "CodigoTrabajo";
-            this.codigoTrabajoDataGridViewTextBoxColumn.Name = "codigoTrabajoDataGridViewTextBoxColumn";
-            this.codigoTrabajoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoTrabajoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // codigoEmpresaDataGridViewTextBoxColumn
-            // 
-            this.codigoEmpresaDataGridViewTextBoxColumn.DataPropertyName = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.HeaderText = "CodigoEmpresa";
-            this.codigoEmpresaDataGridViewTextBoxColumn.Name = "codigoEmpresaDataGridViewTextBoxColumn";
-            this.codigoEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoEmpresaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // codigoSucursalDataGridViewTextBoxColumn
-            // 
-            this.codigoSucursalDataGridViewTextBoxColumn.DataPropertyName = "CodigoSucursal";
-            this.codigoSucursalDataGridViewTextBoxColumn.HeaderText = "CodigoSucursal";
-            this.codigoSucursalDataGridViewTextBoxColumn.Name = "codigoSucursalDataGridViewTextBoxColumn";
-            this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoSucursalDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cNombre
-            // 
-            this.cNombre.DataPropertyName = "NombreCaja";
-            this.cNombre.HeaderText = "Nombre";
-            this.cNombre.Name = "cNombre";
-            this.cNombre.ReadOnly = true;
-            this.cNombre.Width = 160;
-            // 
             // FrmMtoCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 259);
+            this.ClientSize = new System.Drawing.Size(509, 259);
             this.Controls.Add(this.pnl3);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.pnl1);
             this.Name = "FrmMtoCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cajas";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMtoPais_FormClosed);
             this.Load += new System.EventHandler(this.FrmMtoCaja_Load);
             this.pnl3.ResumeLayout(false);
             this.pnl6.ResumeLayout(false);
@@ -521,11 +526,11 @@
         private System.Windows.Forms.ToolStripSeparator spd3;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.Label codigoTrabajoLabel1;
-        private System.Windows.Forms.TextBox nombreCajaTextBox;
+        private System.Windows.Forms.Label lblTrabajo;
+        private System.Windows.Forms.TextBox txtNombre;
         private DsNeoTableAdapters.taCaja taCaja;
-        private System.Windows.Forms.Label codigoSucursalLabel1;
-        private System.Windows.Forms.Label codigoEmpresaLabel1;
+        private System.Windows.Forms.Label lblSucursal;
+        private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn;

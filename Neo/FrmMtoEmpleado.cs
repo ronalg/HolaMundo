@@ -40,7 +40,7 @@ namespace Neo
         private void FrmMtoEmpleado_Load(object sender, EventArgs e)
         {
             taSucursal.Fill(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            taPuesto.FillByVeterinaria(dsNeo.tbPuesto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, true);
+            taPuesto.Fill(dsNeo.tbPuesto, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taEmpleado.Fill(dsNeo.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
         }
 

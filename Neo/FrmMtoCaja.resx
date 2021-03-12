@@ -123,11 +123,14 @@
   <metadata name="codigoTrabajoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="codigoEmpresaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="codigoSucursalLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="codigoEmpresaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <metadata name="bsMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>105, 15</value>
   </metadata>
   <metadata name="bsMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 15</value>
@@ -158,25 +161,6 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>55</value>
   </metadata>
-  <metadata name="bnMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>188, 17</value>
-  </metadata>
-  <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJDSURBVDhPfVBbTJJhGP7vOxiJgakJkcDAEkUhMFQglNrc
-        7GTRqGYnN2OriW5sXViTDi67q9tuust11UWHC7tstXXXubmyA5Hof+KnLp++9wPdnNCzPdu75/B+B4Eg
-        OtsgefYgZzSDC/8BZeRAGNQpCmwo3LgALRVH4fYklpjJjTJYdHl5hmdZh7rCgtsLdbgP6rkoCtNJaFNX
-        kTE0rllCmjadRuFWkmepQ11h3mBCbn8n8ueZeKYX6ukI5FQSP9v9K0synSGoUxNQh5jPMvnhKO/MLz/5
-        a70FuehuKEMRKKf2QptMQL0+gTl9A+aq66HevIJCOsE9WpLtaseXOsvqW35gN8mGPVBPBKEc74FyrAt/
-        7qTx9+41qLHuohYP4ruvFR+NpvL/9K7WjEzQDfloAPJggJ3Yx0kzaVR+ww4qxcvjdc02LO7zQDnohzzg
-        K/KAD9KAH+SVYpXxkr1ZPByC3N8Bqd/LSbNypAfklWLl8crhwu/UKKSwC1KEPaW3SJqlcAt+jV3Ei0Zr
-        +SWzOgMWLo9DOzsIKdTK6MJSdwsnzcT8SBzfEiOY1RlXL3lu24nseBJShwOipxmybxc+O214srmWk2bS
-        yKPMj9FLoA4vP9pYg8xYEvnYIYhtTojuZnyy78Bj/daVU2gmjTzKaCdjvENd4anNCcnaBNFuh+Jw4L15
-        O2aq9GveSRp5lKEsdZ452C0ebqmDZrFCabLjbYMJM5vY1gogjzKUpQ51uXF/vQ4PNlTj3rqqiuVlUIay
-        1BEEQfgH0nyWdPF/NGgAAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="bnMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>188, 17</value>
   </metadata>
@@ -251,16 +235,23 @@
         iN7Q9C0lLmkquTwARnJJj5yyXpD3nur3WZHek1PWiz/JL/9f2O8eBgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJDSURBVDhPfVBbTJJhGP7vOxiJgakJkcDAEkUhMFQglNrc
+        7GTRqGYnN2OriW5sXViTDi67q9tuust11UWHC7tstXXXubmyA5Hof+KnLp++9wPdnNCzPdu75/B+B4Eg
+        OtsgefYgZzSDC/8BZeRAGNQpCmwo3LgALRVH4fYklpjJjTJYdHl5hmdZh7rCgtsLdbgP6rkoCtNJaFNX
+        kTE0rllCmjadRuFWkmepQ11h3mBCbn8n8ueZeKYX6ukI5FQSP9v9K0synSGoUxNQh5jPMvnhKO/MLz/5
+        a70FuehuKEMRKKf2QptMQL0+gTl9A+aq66HevIJCOsE9WpLtaseXOsvqW35gN8mGPVBPBKEc74FyrAt/
+        7qTx9+41qLHuohYP4ruvFR+NpvL/9K7WjEzQDfloAPJggJ3Yx0kzaVR+ww4qxcvjdc02LO7zQDnohzzg
+        K/KAD9KAH+SVYpXxkr1ZPByC3N8Bqd/LSbNypAfklWLl8crhwu/UKKSwC1KEPaW3SJqlcAt+jV3Ei0Zr
+        +SWzOgMWLo9DOzsIKdTK6MJSdwsnzcT8SBzfEiOY1RlXL3lu24nseBJShwOipxmybxc+O214srmWk2bS
+        yKPMj9FLoA4vP9pYg8xYEvnYIYhtTojuZnyy78Bj/daVU2gmjTzKaCdjvENd4anNCcnaBNFuh+Jw4L15
+        O2aq9GveSRp5lKEsdZ452C0ebqmDZrFCabLjbYMJM5vY1gogjzKUpQ51uXF/vQ4PNlTj3rqqiuVlUIay
+        1BEEQfgH0nyWdPF/NGgAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="taCaja.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>338, 16</value>
-  </metadata>
-  <metadata name="codigoEmpresaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="codigoSucursalLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="bsMto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>105, 15</value>
   </metadata>
 </root>
