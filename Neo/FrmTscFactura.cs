@@ -18,6 +18,26 @@ namespace Neo
             InitializeComponent();
         }
 
+        private void ConfiguraBoton(bool configura)
+        {
+            btnPrimero.Available = configura;
+            btnAnterior.Available = configura;
+            spd1.Available = configura;
+            txtPosicion.Available = configura;
+            lblRegistro.Available = configura;
+            spd2.Available = configura;
+            btnSiguiente.Available = configura;
+            btnUltimo.Available = configura;
+            spd3.Available = configura;
+            btnNuevo.Available = configura;
+            btnBuscar.Available = configura;
+            spd4.Available = configura;
+            btnImprimir.Available = configura;
+            spd5.Available = configura;
+            btnSalir.Available = configura;
+        }
+
+
         private void txtBuscaMascota_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBusca.Text.Trim()))            
@@ -87,10 +107,14 @@ namespace Neo
 
         private void FrmTscFactura_Load(object sender, EventArgs e)
         {
+            taCaja.Fill(dsNeo.tbCaja, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
             taFormaPago.Fill(dsNeo.tbFormaPago, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
             taEmpleado.FillByPuesto(dsNeo.tbEmpleado, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, "Vendedor");
             taFrecuencia.Fill(dsNeo.tbFrecuencia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
-            btnNuevo_Click(sender, EventArgs.Empty);
+            cboCaja.SelectedIndex = -1;
+            cboCondicion.SelectedIndex = -1;
+            cboVendedor.SelectedIndex = -1;            
+            //btnNuevo_Click(sender, EventArgs.Empty);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -109,8 +133,6 @@ namespace Neo
             lblSucursal.Text = Utilidad.codigoSucursal.ToString();
             lblUsuario.Text = Utilidad.nombreUsuario;
             dtpFecha.Value = DateTime.Today.Date;
-            cboCondicion.SelectedIndex = -1;
-            cboVendedor.SelectedIndex = -1;
             txtBusca.Clear();
             txtNombre.Clear();
             lblRazonSocial.Text = null;
@@ -123,7 +145,10 @@ namespace Neo
             lblSubTotal.Text = "0.00";
             txtDescuento.Text = "0.00";
             lblTotal.Text = "0.00";
-            cboCondicion.Text = "Contado";
+            cboCondicion.SelectedIndex = cboCondicion.Items.Count == 0 ? -1 : 0;
+            cboVendedor.SelectedIndex = cboVendedor.Items.Count == 0 ? -1 : 0;
+            cboCaja.SelectedIndex = cboCaja.Items.Count == 0 ? -1 : 0;
+            ConfiguraBoton(false);
         }
 
         private void tbSucursalContactoKryptonDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -354,6 +379,18 @@ namespace Neo
         {
             btnAceptarFg_Click(sender, EventArgs.Empty);
             btnNuevoCobro_Click(sender, EventArgs.Empty);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (btnNuevo.Available)
+            {
+
+            }
+            else
+            {
+                ConfiguraBoton(true);
+            }
         }
     }
 }

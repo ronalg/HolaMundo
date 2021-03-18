@@ -30,48 +30,48 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTscFactura));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnCita = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblRegistro = new System.Windows.Forms.ToolStripLabel();
+            this.btnPrimero = new System.Windows.Forms.ToolStripButton();
+            this.btnAnterior = new System.Windows.Forms.ToolStripButton();
+            this.spd1 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtPosicion = new System.Windows.Forms.ToolStripTextBox();
+            this.spd2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSiguiente = new System.Windows.Forms.ToolStripButton();
+            this.btnUltimo = new System.Windows.Forms.ToolStripButton();
+            this.spd3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuImpresora = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPantalla = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.spd4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.spd5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.bsFactura = new System.Windows.Forms.BindingSource(this.components);
             this.dsNeo = new Neo.DsNeo();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
             this.kryptonLabel15 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -102,12 +102,20 @@
             this.txtBusca = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txtNota = new System.Windows.Forms.TextBox();
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.pnl11 = new System.Windows.Forms.Panel();
             this.pnl2 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.cboCaja = new System.Windows.Forms.ComboBox();
+            this.kryptonLabel20 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.cboVendedor = new System.Windows.Forms.ComboBox();
+            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.cboCondicion = new System.Windows.Forms.ComboBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.grdFacturaCobro = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -240,15 +248,10 @@
             this.bsFormaPago = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.taFormaPago = new Neo.DsNeoTableAdapters.taFormaPago();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cboVendedor = new System.Windows.Forms.ComboBox();
-            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.cboCondicion = new System.Windows.Forms.ComboBox();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel20 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.taFnFactura = new Neo.DsNeoTableAdapters.taFnFactura();
+            this.taCaja = new Neo.DsNeoTableAdapters.taCaja();
+            this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtNota = new System.Windows.Forms.TextBox();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCita)).BeginInit();
             this.bnCita.SuspendLayout();
@@ -262,6 +265,7 @@
             this.pnl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
             this.pnl2.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturaCobro)).BeginInit();
@@ -287,7 +291,6 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFormaPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFormaPago)).BeginInit();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl1
@@ -303,105 +306,105 @@
             // bnCita
             // 
             this.bnCita.AddNewItem = null;
-            this.bnCita.CountItem = this.bindingNavigatorCountItem;
+            this.bnCita.CountItem = this.lblRegistro;
             this.bnCita.DeleteItem = null;
             this.bnCita.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bnCita.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
+            this.btnPrimero,
+            this.btnAnterior,
+            this.spd1,
+            this.txtPosicion,
+            this.lblRegistro,
+            this.spd2,
+            this.btnSiguiente,
+            this.btnUltimo,
+            this.spd3,
             this.btnNuevo,
             this.btnEliminar,
             this.btnGuardar,
             this.btnImprimir,
-            this.toolStripSeparator4,
+            this.spd4,
             this.btnBuscar,
-            this.toolStripSeparator5,
+            this.spd5,
             this.btnSalir});
             this.bnCita.Location = new System.Drawing.Point(0, 0);
-            this.bnCita.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bnCita.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bnCita.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bnCita.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bnCita.MoveFirstItem = this.btnPrimero;
+            this.bnCita.MoveLastItem = this.btnUltimo;
+            this.bnCita.MoveNextItem = this.btnSiguiente;
+            this.bnCita.MovePreviousItem = this.btnAnterior;
             this.bnCita.Name = "bnCita";
-            this.bnCita.PositionItem = this.bindingNavigatorPositionItem;
+            this.bnCita.PositionItem = this.txtPosicion;
             this.bnCita.Size = new System.Drawing.Size(1014, 25);
             this.bnCita.TabIndex = 3;
             this.bnCita.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorCountItem
+            // lblRegistro
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(37, 22);
+            this.lblRegistro.Text = "de {0}";
+            this.lblRegistro.ToolTipText = "Número total de elementos";
             // 
-            // bindingNavigatorMoveFirstItem
+            // btnPrimero
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            this.btnPrimero.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrimero.Image = ((System.Drawing.Image)(resources.GetObject("btnPrimero.Image")));
+            this.btnPrimero.Name = "btnPrimero";
+            this.btnPrimero.RightToLeftAutoMirrorImage = true;
+            this.btnPrimero.Size = new System.Drawing.Size(23, 22);
+            this.btnPrimero.Text = "Mover primero";
             // 
-            // bindingNavigatorMovePreviousItem
+            // btnAnterior
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            this.btnAnterior.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.RightToLeftAutoMirrorImage = true;
+            this.btnAnterior.Size = new System.Drawing.Size(23, 22);
+            this.btnAnterior.Text = "Mover anterior";
             // 
-            // bindingNavigatorSeparator
+            // spd1
             // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.spd1.Name = "spd1";
+            this.spd1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorPositionItem
+            // txtPosicion
             // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+            this.txtPosicion.AccessibleName = "Posición";
+            this.txtPosicion.AutoSize = false;
+            this.txtPosicion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPosicion.Name = "txtPosicion";
+            this.txtPosicion.Size = new System.Drawing.Size(50, 23);
+            this.txtPosicion.Text = "0";
+            this.txtPosicion.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorSeparator1
+            // spd2
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.spd2.Name = "spd2";
+            this.spd2.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem
+            // btnSiguiente
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            this.btnSiguiente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.RightToLeftAutoMirrorImage = true;
+            this.btnSiguiente.Size = new System.Drawing.Size(23, 22);
+            this.btnSiguiente.Text = "Mover siguiente";
             // 
-            // bindingNavigatorMoveLastItem
+            // btnUltimo
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            this.btnUltimo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUltimo.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimo.Image")));
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.RightToLeftAutoMirrorImage = true;
+            this.btnUltimo.Size = new System.Drawing.Size(23, 22);
+            this.btnUltimo.Text = "Mover último";
             // 
-            // bindingNavigatorSeparator2
+            // spd3
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.spd3.Name = "spd3";
+            this.spd3.Size = new System.Drawing.Size(6, 25);
             // 
             // btnNuevo
             // 
@@ -419,6 +422,7 @@
             this.btnEliminar.RightToLeftAutoMirrorImage = true;
             this.btnEliminar.Size = new System.Drawing.Size(70, 22);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
@@ -443,19 +447,19 @@
             // 
             this.mnuImpresora.Enabled = false;
             this.mnuImpresora.Name = "mnuImpresora";
-            this.mnuImpresora.Size = new System.Drawing.Size(127, 22);
+            this.mnuImpresora.Size = new System.Drawing.Size(180, 22);
             this.mnuImpresora.Text = "Impresora";
             // 
             // mnuPantalla
             // 
             this.mnuPantalla.Name = "mnuPantalla";
-            this.mnuPantalla.Size = new System.Drawing.Size(127, 22);
+            this.mnuPantalla.Size = new System.Drawing.Size(180, 22);
             this.mnuPantalla.Text = "Pantalla";
             // 
-            // toolStripSeparator4
+            // spd4
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.spd4.Name = "spd4";
+            this.spd4.Size = new System.Drawing.Size(6, 25);
             // 
             // btnBuscar
             // 
@@ -465,10 +469,10 @@
             this.btnBuscar.Size = new System.Drawing.Size(62, 22);
             this.btnBuscar.Text = "Buscar";
             // 
-            // toolStripSeparator5
+            // spd5
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.spd5.Name = "spd5";
+            this.spd5.Size = new System.Drawing.Size(6, 25);
             // 
             // btnSalir
             // 
@@ -511,16 +515,6 @@
             this.panel3.Size = new System.Drawing.Size(210, 138);
             this.panel3.TabIndex = 6;
             // 
-            // bsFactura
-            // 
-            this.bsFactura.DataMember = "tbFactura";
-            this.bsFactura.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lblUsuario
             // 
             this.lblUsuario.BackColor = System.Drawing.Color.Gainsboro;
@@ -531,6 +525,16 @@
             this.lblUsuario.Size = new System.Drawing.Size(126, 20);
             this.lblUsuario.TabIndex = 21;
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bsFactura
+            // 
+            this.bsFactura.DataMember = "tbFactura";
+            this.bsFactura.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblSucursal
             // 
@@ -830,23 +834,6 @@
             this.label1.Text = "Cliente";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // kryptonLabel9
-            // 
-            this.kryptonLabel9.Location = new System.Drawing.Point(262, 211);
-            this.kryptonLabel9.Name = "kryptonLabel9";
-            this.kryptonLabel9.Size = new System.Drawing.Size(40, 20);
-            this.kryptonLabel9.TabIndex = 30;
-            this.kryptonLabel9.Values.Text = "Nota:";
-            // 
-            // txtNota
-            // 
-            this.txtNota.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "Nota", true));
-            this.txtNota.Location = new System.Drawing.Point(274, 248);
-            this.txtNota.MaxLength = 100;
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(241, 20);
-            this.txtNota.TabIndex = 29;
-            // 
             // txtDescuento
             // 
             this.txtDescuento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "Descuento", true));
@@ -875,8 +862,6 @@
             // 
             this.pnl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl2.Controls.Add(this.panel8);
-            this.pnl2.Controls.Add(this.txtNota);
-            this.pnl2.Controls.Add(this.kryptonLabel9);
             this.pnl2.Controls.Add(this.panel2);
             this.pnl2.Controls.Add(this.panel5);
             this.pnl2.Controls.Add(this.panel1);
@@ -885,8 +870,122 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl2.Location = new System.Drawing.Point(0, 176);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(1016, 419);
+            this.pnl2.Size = new System.Drawing.Size(1016, 362);
             this.pnl2.TabIndex = 4;
+            // 
+            // panel8
+            // 
+            this.panel8.AutoScroll = true;
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.txtNota);
+            this.panel8.Controls.Add(this.kryptonLabel9);
+            this.panel8.Controls.Add(this.cboCaja);
+            this.panel8.Controls.Add(this.kryptonLabel20);
+            this.panel8.Controls.Add(this.cboVendedor);
+            this.panel8.Controls.Add(this.kryptonLabel6);
+            this.panel8.Controls.Add(this.cboCondicion);
+            this.panel8.Controls.Add(this.dtpFecha);
+            this.panel8.Controls.Add(this.kryptonLabel2);
+            this.panel8.Controls.Add(this.kryptonLabel8);
+            this.panel8.Controls.Add(this.label11);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 205);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(520, 155);
+            this.panel8.TabIndex = 31;
+            // 
+            // cboCaja
+            // 
+            this.cboCaja.DataSource = this.dsNeo;
+            this.cboCaja.DisplayMember = "tbCaja.NombreCaja";
+            this.cboCaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCaja.FormattingEnabled = true;
+            this.cboCaja.Location = new System.Drawing.Point(75, 107);
+            this.cboCaja.Name = "cboCaja";
+            this.cboCaja.Size = new System.Drawing.Size(180, 21);
+            this.cboCaja.TabIndex = 33;
+            this.cboCaja.ValueMember = "tbCaja.NombreCaja";
+            // 
+            // kryptonLabel20
+            // 
+            this.kryptonLabel20.Location = new System.Drawing.Point(7, 106);
+            this.kryptonLabel20.Name = "kryptonLabel20";
+            this.kryptonLabel20.Size = new System.Drawing.Size(36, 20);
+            this.kryptonLabel20.TabIndex = 32;
+            this.kryptonLabel20.Values.Text = "Caja:";
+            // 
+            // cboVendedor
+            // 
+            this.cboVendedor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "CodigoEmpleado", true));
+            this.cboVendedor.DataSource = this.dsNeo;
+            this.cboVendedor.DisplayMember = "tbEmpleado.Nombre";
+            this.cboVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVendedor.FormattingEnabled = true;
+            this.cboVendedor.Location = new System.Drawing.Point(75, 80);
+            this.cboVendedor.Name = "cboVendedor";
+            this.cboVendedor.Size = new System.Drawing.Size(182, 21);
+            this.cboVendedor.TabIndex = 31;
+            this.cboVendedor.ValueMember = "tbEmpleado.CodigoEmpleado";
+            // 
+            // kryptonLabel6
+            // 
+            this.kryptonLabel6.Location = new System.Drawing.Point(6, 80);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(67, 20);
+            this.kryptonLabel6.TabIndex = 30;
+            this.kryptonLabel6.Values.Text = "Vendedor:";
+            // 
+            // cboCondicion
+            // 
+            this.cboCondicion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "Condicion", true));
+            this.cboCondicion.DataSource = this.dsNeo;
+            this.cboCondicion.DisplayMember = "tbFrecuencia.Nombre";
+            this.cboCondicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCondicion.FormattingEnabled = true;
+            this.cboCondicion.Location = new System.Drawing.Point(75, 52);
+            this.cboCondicion.Name = "cboCondicion";
+            this.cboCondicion.Size = new System.Drawing.Size(182, 21);
+            this.cboCondicion.TabIndex = 29;
+            this.cboCondicion.ValueMember = "tbFrecuencia.Nombre";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsFactura, "Fecha", true));
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(75, 25);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(180, 20);
+            this.dtpFecha.TabIndex = 28;
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(5, 52);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(68, 20);
+            this.kryptonLabel2.TabIndex = 27;
+            this.kryptonLabel2.Values.Text = "Condición:";
+            // 
+            // kryptonLabel8
+            // 
+            this.kryptonLabel8.Location = new System.Drawing.Point(5, 26);
+            this.kryptonLabel8.Name = "kryptonLabel8";
+            this.kryptonLabel8.Size = new System.Drawing.Size(45, 20);
+            this.kryptonLabel8.TabIndex = 26;
+            this.kryptonLabel8.Values.Text = "Fecha:";
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(518, 17);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Propiedades";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -899,7 +998,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(520, 205);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 212);
+            this.panel2.Size = new System.Drawing.Size(331, 155);
             this.panel2.TabIndex = 7;
             // 
             // panel7
@@ -909,7 +1008,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 45);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(329, 165);
+            this.panel7.Size = new System.Drawing.Size(329, 108);
             this.panel7.TabIndex = 5;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
@@ -936,7 +1035,7 @@
             this.grdFacturaCobro.MultiSelect = false;
             this.grdFacturaCobro.Name = "grdFacturaCobro";
             this.grdFacturaCobro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.grdFacturaCobro.Size = new System.Drawing.Size(327, 163);
+            this.grdFacturaCobro.Size = new System.Drawing.Size(327, 106);
             this.grdFacturaCobro.TabIndex = 4;
             this.grdFacturaCobro.DoubleClick += new System.EventHandler(this.grdCobroFactura_DoubleClick);
             // 
@@ -975,8 +1074,8 @@
             // cSecuencia
             // 
             this.cSecuencia.DataPropertyName = "SecuenciaCobro";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cSecuencia.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cSecuencia.DefaultCellStyle = dataGridViewCellStyle33;
             this.cSecuencia.HeaderText = "Sec";
             this.cSecuencia.Name = "cSecuencia";
             this.cSecuencia.ReadOnly = true;
@@ -985,9 +1084,9 @@
             // cFecha
             // 
             this.cFecha.DataPropertyName = "FechaCobro";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "d";
-            this.cFecha.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.Format = "d";
+            this.cFecha.DefaultCellStyle = dataGridViewCellStyle34;
             this.cFecha.HeaderText = "Fecha";
             this.cFecha.Name = "cFecha";
             this.cFecha.ReadOnly = true;
@@ -1003,9 +1102,9 @@
             // cMonto
             // 
             this.cMonto.DataPropertyName = "Monto";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            this.cMonto.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle35.Format = "N2";
+            this.cMonto.DefaultCellStyle = dataGridViewCellStyle35;
             this.cMonto.HeaderText = "Monto";
             this.cMonto.Name = "cMonto";
             this.cMonto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1191,7 +1290,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(851, 205);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(163, 212);
+            this.panel5.Size = new System.Drawing.Size(163, 155);
             this.panel5.TabIndex = 6;
             // 
             // lblDevuelta
@@ -1376,8 +1475,8 @@
             // dSecuencia
             // 
             this.dSecuencia.DataPropertyName = "Secuencia";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dSecuencia.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dSecuencia.DefaultCellStyle = dataGridViewCellStyle36;
             this.dSecuencia.HeaderText = "Sec";
             this.dSecuencia.Name = "dSecuencia";
             this.dSecuencia.ReadOnly = true;
@@ -1386,8 +1485,8 @@
             // dCodigo
             // 
             this.dCodigo.DataPropertyName = "CodigoArticulo";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dCodigo.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dCodigo.DefaultCellStyle = dataGridViewCellStyle37;
             this.dCodigo.HeaderText = "Código";
             this.dCodigo.Name = "dCodigo";
             this.dCodigo.ReadOnly = true;
@@ -1411,8 +1510,8 @@
             // dCantidad
             // 
             this.dCantidad.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dCantidad.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dCantidad.DefaultCellStyle = dataGridViewCellStyle38;
             this.dCantidad.HeaderText = "Cantidad";
             this.dCantidad.Name = "dCantidad";
             this.dCantidad.Width = 60;
@@ -1420,9 +1519,9 @@
             // dVenta
             // 
             this.dVenta.DataPropertyName = "Venta";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N2";
-            this.dVenta.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle39.Format = "N2";
+            this.dVenta.DefaultCellStyle = dataGridViewCellStyle39;
             this.dVenta.HeaderText = "Precio";
             this.dVenta.Name = "dVenta";
             this.dVenta.Width = 70;
@@ -1430,9 +1529,9 @@
             // dDescuento
             // 
             this.dDescuento.DataPropertyName = "DescuentoArticulo";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            this.dDescuento.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle40.Format = "N2";
+            this.dDescuento.DefaultCellStyle = dataGridViewCellStyle40;
             this.dDescuento.HeaderText = "Desc.";
             this.dDescuento.Name = "dDescuento";
             this.dDescuento.Width = 70;
@@ -1440,9 +1539,9 @@
             // dCosto
             // 
             this.dCosto.DataPropertyName = "Costo";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N2";
-            this.dCosto.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle41.Format = "N2";
+            this.dCosto.DefaultCellStyle = dataGridViewCellStyle41;
             this.dCosto.HeaderText = "Costo";
             this.dCosto.Name = "dCosto";
             this.dCosto.Width = 70;
@@ -1450,9 +1549,9 @@
             // dSubTotal
             // 
             this.dSubTotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            this.dSubTotal.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle42.Format = "N2";
+            this.dSubTotal.DefaultCellStyle = dataGridViewCellStyle42;
             this.dSubTotal.HeaderText = "Sub Total";
             this.dSubTotal.Name = "dSubTotal";
             this.dSubTotal.ReadOnly = true;
@@ -1461,9 +1560,9 @@
             // dImporte
             // 
             this.dImporte.DataPropertyName = "Importe";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N2";
-            this.dImporte.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle43.Format = "N2";
+            this.dImporte.DefaultCellStyle = dataGridViewCellStyle43;
             this.dImporte.HeaderText = "Importe";
             this.dImporte.Name = "dImporte";
             this.dImporte.ReadOnly = true;
@@ -1646,8 +1745,8 @@
             // cCodigo
             // 
             this.cCodigo.DataPropertyName = "CodigoCliente";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle44;
             this.cCodigo.HeaderText = "CodigoCliente";
             this.cCodigo.Name = "cCodigo";
             this.cCodigo.ReadOnly = true;
@@ -1867,7 +1966,7 @@
             this.pnlServicio.Controls.Add(this.btnCancelaServicio);
             this.pnlServicio.Controls.Add(this.pnlTipoContactoSub);
             this.pnlServicio.Controls.Add(this.label8);
-            this.pnlServicio.Location = new System.Drawing.Point(241, 137);
+            this.pnlServicio.Location = new System.Drawing.Point(241, 100);
             this.pnlServicio.Name = "pnlServicio";
             this.pnlServicio.Size = new System.Drawing.Size(536, 289);
             this.pnlServicio.TabIndex = 28;
@@ -1935,8 +2034,8 @@
             // 
             this.grdServicio.AllowUserToAddRows = false;
             this.grdServicio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdServicio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdServicio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
             this.grdServicio.AutoGenerateColumns = false;
             this.grdServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1958,8 +2057,8 @@
             // sCodigo
             // 
             this.sCodigo.DataPropertyName = "CodigoArticulo";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sCodigo.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sCodigo.DefaultCellStyle = dataGridViewCellStyle46;
             this.sCodigo.HeaderText = "Código";
             this.sCodigo.Name = "sCodigo";
             this.sCodigo.ReadOnly = true;
@@ -1983,9 +2082,9 @@
             // sPrecio
             // 
             this.sPrecio.DataPropertyName = "Precio";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "N2";
-            this.sPrecio.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle47.Format = "N2";
+            this.sPrecio.DefaultCellStyle = dataGridViewCellStyle47;
             this.sPrecio.HeaderText = "Precio";
             this.sPrecio.Name = "sPrecio";
             this.sPrecio.ReadOnly = true;
@@ -2088,8 +2187,8 @@
             // 
             this.grdFormaPago.AllowUserToAddRows = false;
             this.grdFormaPago.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdFormaPago.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdFormaPago.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle48;
             this.grdFormaPago.AutoGenerateColumns = false;
             this.grdFormaPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdFormaPago.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2151,111 +2250,38 @@
             // 
             this.taFormaPago.ClearBeforeFill = true;
             // 
-            // panel8
+            // taFnFactura
             // 
-            this.panel8.AutoScroll = true;
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.kryptonLabel20);
-            this.panel8.Controls.Add(this.cboVendedor);
-            this.panel8.Controls.Add(this.kryptonLabel6);
-            this.panel8.Controls.Add(this.cboCondicion);
-            this.panel8.Controls.Add(this.dtpFecha);
-            this.panel8.Controls.Add(this.kryptonLabel2);
-            this.panel8.Controls.Add(this.kryptonLabel8);
-            this.panel8.Controls.Add(this.label11);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(0, 205);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(212, 212);
-            this.panel8.TabIndex = 31;
+            this.taFnFactura.ClearBeforeFill = true;
             // 
-            // label11
+            // taCaja
             // 
-            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(210, 17);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Propiedades";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.taCaja.ClearBeforeFill = true;
             // 
-            // cboVendedor
+            // kryptonLabel9
             // 
-            this.cboVendedor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "CodigoEmpleado", true));
-            this.cboVendedor.DataSource = this.dsNeo;
-            this.cboVendedor.DisplayMember = "tbEmpleado.Nombre";
-            this.cboVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboVendedor.FormattingEnabled = true;
-            this.cboVendedor.Location = new System.Drawing.Point(75, 80);
-            this.cboVendedor.Name = "cboVendedor";
-            this.cboVendedor.Size = new System.Drawing.Size(123, 21);
-            this.cboVendedor.TabIndex = 31;
-            this.cboVendedor.ValueMember = "tbEmpleado.CodigoEmpleado";
+            this.kryptonLabel9.Location = new System.Drawing.Point(271, 27);
+            this.kryptonLabel9.Name = "kryptonLabel9";
+            this.kryptonLabel9.Size = new System.Drawing.Size(40, 20);
+            this.kryptonLabel9.TabIndex = 34;
+            this.kryptonLabel9.Values.Text = "Nota:";
             // 
-            // kryptonLabel6
+            // txtNota
             // 
-            this.kryptonLabel6.Location = new System.Drawing.Point(6, 80);
-            this.kryptonLabel6.Name = "kryptonLabel6";
-            this.kryptonLabel6.Size = new System.Drawing.Size(67, 20);
-            this.kryptonLabel6.TabIndex = 30;
-            this.kryptonLabel6.Values.Text = "Vendedor:";
-            // 
-            // cboCondicion
-            // 
-            this.cboCondicion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "Condicion", true));
-            this.cboCondicion.DataSource = this.dsNeo;
-            this.cboCondicion.DisplayMember = "tbFrecuencia.Nombre";
-            this.cboCondicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCondicion.FormattingEnabled = true;
-            this.cboCondicion.Location = new System.Drawing.Point(75, 52);
-            this.cboCondicion.Name = "cboCondicion";
-            this.cboCondicion.Size = new System.Drawing.Size(123, 21);
-            this.cboCondicion.TabIndex = 29;
-            this.cboCondicion.ValueMember = "tbFrecuencia.Nombre";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsFactura, "Fecha", true));
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(75, 25);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(121, 20);
-            this.dtpFecha.TabIndex = 28;
-            // 
-            // kryptonLabel2
-            // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(5, 52);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(68, 20);
-            this.kryptonLabel2.TabIndex = 27;
-            this.kryptonLabel2.Values.Text = "Condición:";
-            // 
-            // kryptonLabel8
-            // 
-            this.kryptonLabel8.Location = new System.Drawing.Point(5, 26);
-            this.kryptonLabel8.Name = "kryptonLabel8";
-            this.kryptonLabel8.Size = new System.Drawing.Size(45, 20);
-            this.kryptonLabel8.TabIndex = 26;
-            this.kryptonLabel8.Values.Text = "Fecha:";
-            // 
-            // kryptonLabel20
-            // 
-            this.kryptonLabel20.Location = new System.Drawing.Point(7, 106);
-            this.kryptonLabel20.Name = "kryptonLabel20";
-            this.kryptonLabel20.Size = new System.Drawing.Size(36, 20);
-            this.kryptonLabel20.TabIndex = 32;
-            this.kryptonLabel20.Values.Text = "Caja:";
+            this.txtNota.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "Nota", true));
+            this.txtNota.Location = new System.Drawing.Point(314, 26);
+            this.txtNota.MaxLength = 100;
+            this.txtNota.Multiline = true;
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(194, 102);
+            this.txtNota.TabIndex = 35;
             // 
             // FrmTscFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1016, 595);
+            this.ClientSize = new System.Drawing.Size(1016, 538);
             this.Controls.Add(this.pnlFormaPago);
             this.Controls.Add(this.pnlServicio);
             this.Controls.Add(this.grdCliente);
@@ -2285,7 +2311,8 @@
             this.pnl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).EndInit();
             this.pnl2.ResumeLayout(false);
-            this.pnl2.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturaCobro)).EndInit();
@@ -2317,8 +2344,6 @@
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdFormaPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFormaPago)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2327,24 +2352,24 @@
 
         private System.Windows.Forms.Panel pnl1;
         private System.Windows.Forms.BindingNavigator bnCita;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripLabel lblRegistro;
+        private System.Windows.Forms.ToolStripButton btnPrimero;
+        private System.Windows.Forms.ToolStripButton btnAnterior;
+        private System.Windows.Forms.ToolStripSeparator spd1;
+        private System.Windows.Forms.ToolStripTextBox txtPosicion;
+        private System.Windows.Forms.ToolStripSeparator spd2;
+        private System.Windows.Forms.ToolStripButton btnSiguiente;
+        private System.Windows.Forms.ToolStripButton btnUltimo;
+        private System.Windows.Forms.ToolStripSeparator spd3;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripDropDownButton btnImprimir;
         private System.Windows.Forms.ToolStripMenuItem mnuImpresora;
         private System.Windows.Forms.ToolStripMenuItem mnuPantalla;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator spd4;
         private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator spd5;
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.Panel pnl3;
         private System.Windows.Forms.Panel pnl8;
@@ -2396,8 +2421,6 @@
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Label lblNumero;
         private DsNeoTableAdapters.taFactura taFactura;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
-        private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.TextBox txtNombre;
         private DsNeoTableAdapters.taFacturaDetalle taFacturaDetalle;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdDetalle;
@@ -2528,5 +2551,10 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel8;
         private System.Windows.Forms.Label label11;
+        private DsNeoTableAdapters.taFnFactura taFnFactura;
+        private System.Windows.Forms.ComboBox cboCaja;
+        private DsNeoTableAdapters.taCaja taCaja;
+        private System.Windows.Forms.TextBox txtNota;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
     }
 }
