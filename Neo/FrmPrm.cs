@@ -534,7 +534,18 @@ namespace Neo
             Utilidad.rptHistorial.Show();
         }
 
-        private void mnuRptCitaPendiemte_Click(object sender, EventArgs e)
+        private void mnuMtoCaja_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.mtoCaja == null)
+            {
+                Utilidad.mtoCaja = new FrmMtoCaja();
+                Utilidad.mtoCaja.MdiParent = this;
+            }
+            Utilidad.mtoCaja.BringToFront();
+            Utilidad.mtoCaja.Show();
+        }
+
+        private void mnuCstCitaPendiente_Click(object sender, EventArgs e)
         {
             if (Utilidad.rptCitaPendiente == null)
             {
@@ -546,15 +557,9 @@ namespace Neo
             Utilidad.rptCitaPendiente.Show();
         }
 
-        private void mnuMtoCaja_Click(object sender, EventArgs e)
+        private void mnuTscReciboIngreso_Click(object sender, EventArgs e)
         {
-            if (Utilidad.mtoCaja == null)
-            {
-                Utilidad.mtoCaja = new FrmMtoCaja();
-                Utilidad.mtoCaja.MdiParent = this;
-            }
-            Utilidad.mtoCaja.BringToFront();
-            Utilidad.mtoCaja.Show();
+
         }
     }
 }

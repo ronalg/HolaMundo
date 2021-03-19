@@ -33,6 +33,7 @@ namespace Neo
             btnBuscar.Available = configura;
             spd4.Available = configura;
             btnImprimir.Available = configura;
+            btnLimpiar.Available = configura;
             spd5.Available = configura;
             btnSalir.Available = configura;
         }
@@ -358,11 +359,7 @@ namespace Neo
             grdFacturaCobro.BeginEdit(true);
 
             btnCancelarFp_Click(sender, EventArgs.Empty);
-        }
-
-        private void kryptonButton2_Click(object sender, EventArgs e)
-        {
-
+            lblDevuelta.Text = devuelta().ToString("N2");
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
@@ -416,6 +413,62 @@ namespace Neo
                 grdDetalle.CurrentRow.Cells["dImporte"].Value = importe;
                 total();
             }               
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.bscFactura == null)
+                Utilidad.bscFactura = new FrmBscFactura();
+            Utilidad.bscFactura.BringToFront();
+            Utilidad.bscFactura.Show();
+        }
+
+        private void cboCondicion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCondicion.SelectedIndex > -1)
+            {
+                taFrecuencia.FillByNombre(dataSet.tbFrecuencia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboCondicion.Text);
+                short i = short.Parse(dataSet.tbFrecuencia.Rows[0]["cantidad"].ToString());
+                if (i == 0)
+                {
+                    btnNuevoCobro.Available = true;
+                    txtRecibido.ReadOnly = false;
+                }
+                else
+                {
+                    btnNuevoCobro.Available = false;
+                    txtRecibido.ReadOnly = true;
+                }
+            }
+        }
+
+        private decimal devuelta ()
+        {
+            decimal resultado = 0.00M;
+            decimal total = decimal.Parse(lblTotal.Text);
+            decimal cobro = decimal.Parse(dsNeo.tbFacturaCobro.Compute("SUM(Monto)", null).ToString());
+
+            return resultado;
+        }
+
+        private void btnEliminaCobro_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(lblNumero.Text))
+            {
+                grdFacturaCobro.Rows.Remove(grdFacturaCobro.CurrentRow);
+            }
+            else
+            {
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombrePrograma, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dr == DialogResult.OK)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    DsNeoTableAdapters.taFacturaCobro ta = new DsNeoTableAdapters.taFacturaCobro();
+                    
+                    this.Cursor = Cursors.Default;
+                }
+            }
         }
     }
 }

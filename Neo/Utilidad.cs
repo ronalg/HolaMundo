@@ -10,6 +10,7 @@ namespace Neo
     class Utilidad
     {
         //formulario de busquedad
+        public static FrmBscFactura bscFactura = null;
         public static FrmBscOrdenPedido bscOrdenPedido = null;
         //formulario transacciones
         //veternaria
