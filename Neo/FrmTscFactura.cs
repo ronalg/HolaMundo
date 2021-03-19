@@ -199,6 +199,7 @@ namespace Neo
                 grdServicio.Rows[grdDetalle.RowCount - 1].Selected = true;
                 grdDetalle.Rows[grdDetalle.RowCount - 1].Cells["dCantidad"].Selected = true;
                 grdDetalle.BeginEdit(true);
+                total();
             }
         }
 
@@ -391,6 +392,30 @@ namespace Neo
             {
                 ConfiguraBoton(true);
             }
+        }
+
+        private void total()
+        {
+            decimal subTotal = decimal.Parse(dsNeo.tbFacturaDetalle.Compute("SUM(SubTotal)", null).ToString());
+            lblSubTotal.Text = subTotal.ToString("N2");
+            decimal importe = decimal.Parse(dsNeo.tbFacturaDetalle.Compute("SUM(Importe)", null).ToString());
+            lblTotal.Text = importe.ToString("N2");
+        }
+
+        private void grdDetalle_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            string columna = grdDetalle.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name;
+            if (columna == "dCantidad" || columna == "dVenta" || columna == "dDescuento")
+            {
+                decimal cantidad = decimal.Parse(grdDetalle.CurrentRow.Cells["dCantidad"].Value.ToString());
+                decimal precio = decimal.Parse(grdDetalle.CurrentRow.Cells["dVenta"].Value.ToString());
+                decimal descuento = decimal.Parse(grdDetalle.CurrentRow.Cells["dDescuento"].Value.ToString());
+                decimal subTotal = cantidad * precio - descuento;
+                grdDetalle.CurrentRow.Cells["dSubTotal"].Value = subTotal;
+                decimal importe = cantidad * precio - descuento;
+                grdDetalle.CurrentRow.Cells["dImporte"].Value = importe;
+                total();
+            }               
         }
     }
 }
