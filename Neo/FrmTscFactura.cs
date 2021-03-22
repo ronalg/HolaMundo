@@ -148,6 +148,7 @@ namespace Neo
             cboCondicion.SelectedIndex = cboCondicion.Items.Count == 0 ? -1 : 0;
             cboVendedor.SelectedIndex = cboVendedor.Items.Count == 0 ? -1 : 0;
             cboCaja.SelectedIndex = cboCaja.Items.Count == 0 ? -1 : 0;
+            cboCondicion.SelectedIndex = -1;
             ConfiguraBoton(false);
         }
 
@@ -270,6 +271,17 @@ namespace Neo
                 }
             }
 
+            taFrecuencia.FillByNombre(dataSet.tbFrecuencia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboCondicion.Text);
+            short cantidadDias = short.Parse(dataSet.tbFrecuencia.Rows[0]["Cantidad"].ToString());
+            decimal totalCobro = dsNeo.tbFacturaCobro.Rows.Count == 0 ? 0.00M : decimal.Parse(dsNeo.tbFacturaCobro.Rows[0]["Monto"].ToString());
+
+            if (cantidadDias == 0 && totalCobro == 0.00M)
+            {
+                MessageBox.Show("Ingrese cobro", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                btnNuevoCobro_Click(sender, EventArgs.Empty);
+                return;
+            }
+
             try
             {
                 this.Cursor = Cursors.WaitCursor;
@@ -277,7 +289,7 @@ namespace Neo
                 short? codigoCliente = null;
                 if (!string.IsNullOrEmpty(lblCodigo.Text))
                     codigoCliente = short.Parse(lblCodigo.Text);
-                short codigoEmpleado = short.Parse(cboVendedor.Text);
+                short codigoEmpleado = short.Parse(cboVendedor.SelectedValue.ToString());
                 string nombre = !string.IsNullOrEmpty(txtNombre.Text) ? txtNombre.Text.Trim() : null;
                 decimal descuento = decimal.Parse(txtDescuento.Text);
                 string nota = !string.IsNullOrEmpty(txtNota.Text) ? txtNota.Text : null;
@@ -285,32 +297,34 @@ namespace Neo
                 if (numero == 0)
                 {
                     DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
-                    numero = cp.fnSiguienteNumero("factura", Utilidad.codigoSucursal, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
-                    taFactura.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoCliente, "Cliente", codigoEmpleado, cboCondicion.Text, null, null, Utilidad.nombreUsuario, null, null, DateTime.Today.ToShortDateString(), nombre, dtpFecha.Value.ToShortDateString(), null, descuento, nota); 
+                    numero = cp.fnSiguienteNumero("factura", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
+                    taFactura.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoCliente, "Cliente", codigoEmpleado, cboCondicion.Text, null, null, Utilidad.nombreUsuario, null, null, DateTime.Today.ToShortDateString(), nombre, dtpFecha.Value.ToShortDateString(), null, descuento, nota, cboCaja.Text); 
                     lblNumero.Text = numero.ToString();
                 }
                 else
                 {
                     taFactura.Edita(codigoCliente, codigoEmpleado, cboCondicion.Text, nombre, dtpFecha.Value.ToShortDateString(), descuento, nota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    taFacturaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 }
 
-                taFacturaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
-                
+                short i = 0;
                 foreach (DataRow dr in dsNeo.tbFacturaDetalle.Rows)
                 {
-                    short secuencia = short.Parse(dr["Secuencia"].ToString());
+                    i++;
+                    short secuencia = i;
                     int codigo = int.Parse(dr["CodigoArticulo"].ToString());
                     string codigoPrecio = dr["CodigoPrecioVenta"].ToString();
                     string descripcion = dr["Descripcion"].ToString();
                     short cantidad = short.Parse(dr["Cantidad"].ToString());
-                    short empleado = short.Parse(dr["CodigoEmpleado"].ToString());
-                    bool pendiente = bool.Parse(dr["Pendiente"].ToString());
                     decimal costo = decimal.Parse(dr["Costo"].ToString());
                     decimal venta = decimal.Parse(dr["Venta"].ToString());
                     descuento = decimal.Parse(dr["DescuentoArticulo"].ToString());
                    
                     taFacturaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, secuencia, codigo, codigoPrecio, descripcion, cantidad, costo, venta, descuento);
                 }
+
+                ConfiguraBoton(true);
+                MessageBox.Show("Factura guardada", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             catch (SqlException sqlEx)
             {
@@ -416,6 +430,37 @@ namespace Neo
                 grdDetalle.CurrentRow.Cells["dImporte"].Value = importe;
                 total();
             }               
+        }
+
+        private void grdFormaPago_DoubleClick(object sender, EventArgs e)
+        {
+            btnAceptarFg_Click(sender, EventArgs.Empty);
+        }
+
+        private decimal devuelta()
+        {
+            decimal venta = decimal.Parse(lblTotal.Text);
+            decimal recibido = decimal.Parse(txtRecibido.Text);
+            decimal total = venta - recibido;
+
+            return total;
+        }
+
+        private void txtRecibido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(txtRecibido.Text))
+                lblDevuelta.Text = devuelta().ToString("N2");            
+        }
+
+        private void cboVendedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRecibido_Validated(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtRecibido.Text))
+                lblDevuelta.Text = devuelta().ToString("N2");
         }
     }
 }
