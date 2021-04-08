@@ -95,6 +95,7 @@
             this.kryptonLabel14 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblRazonSocial = new System.Windows.Forms.Label();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.lblLimite = new System.Windows.Forms.Label();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -103,7 +104,6 @@
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescuento = new System.Windows.Forms.TextBox();
-            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.pnl11 = new System.Windows.Forms.Panel();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -131,7 +131,7 @@
             this.cMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsCobroFactura = new System.Windows.Forms.BindingSource(this.components);
+            this.bsFacturaCobro = new System.Windows.Forms.BindingSource(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
             this.bnCobro = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -252,6 +252,11 @@
             this.taFormaPago = new Neo.DsNeoTableAdapters.taFormaPago();
             this.taFnFactura = new Neo.DsNeoTableAdapters.taFnFactura();
             this.taCaja = new Neo.DsNeoTableAdapters.taCaja();
+<<<<<<< HEAD
+            this.taFacturaCobro = new Neo.DsNeoTableAdapters.taFacturaCobro();
+=======
+            this.btnLimpiar = new System.Windows.Forms.ToolStripButton();
+>>>>>>> d10643eaa9b8906793189f9d0b1f17a5b1617753
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCita)).BeginInit();
             this.bnCita.SuspendLayout();
@@ -269,7 +274,7 @@
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturaCobro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCobroFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFacturaCobro)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCobro)).BeginInit();
             this.bnCobro.SuspendLayout();
@@ -325,6 +330,7 @@
             this.btnImprimir,
             this.spd4,
             this.btnBuscar,
+            this.btnLimpiar,
             this.spd5,
             this.btnSalir});
             this.bnCita.Location = new System.Drawing.Point(0, 0);
@@ -468,6 +474,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(62, 22);
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // spd5
             // 
@@ -540,6 +547,7 @@
             // 
             this.lblSucursal.BackColor = System.Drawing.Color.Gainsboro;
             this.lblSucursal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSucursal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "CodigoSucursal", true));
             this.lblSucursal.Location = new System.Drawing.Point(72, 51);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(126, 20);
@@ -738,6 +746,7 @@
             // 
             this.lblCodigo.BackColor = System.Drawing.Color.LightGray;
             this.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "CodigoCliente", true));
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.Location = new System.Drawing.Point(258, 107);
             this.lblCodigo.Name = "lblCodigo";
@@ -755,6 +764,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "Nombre", true));
             this.txtNombre.Location = new System.Drawing.Point(101, 54);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
@@ -765,15 +775,22 @@
             // 
             this.lblRazonSocial.BackColor = System.Drawing.Color.LightGray;
             this.lblRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRazonSocial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "RazonSocial", true));
             this.lblRazonSocial.Location = new System.Drawing.Point(101, 80);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(245, 20);
             this.lblRazonSocial.TabIndex = 25;
             // 
+            // bsCliente
+            // 
+            this.bsCliente.DataMember = "tbCliente";
+            this.bsCliente.DataSource = this.dsNeo;
+            // 
             // lblLimite
             // 
             this.lblLimite.BackColor = System.Drawing.Color.LightGray;
             this.lblLimite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblLimite.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "LimiteCredito", true));
             this.lblLimite.Location = new System.Drawing.Point(101, 106);
             this.lblLimite.Name = "lblLimite";
             this.lblLimite.Size = new System.Drawing.Size(88, 20);
@@ -839,15 +856,11 @@
             this.txtDescuento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "Descuento", true));
             this.txtDescuento.Location = new System.Drawing.Point(77, 49);
             this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.ReadOnly = true;
             this.txtDescuento.Size = new System.Drawing.Size(48, 20);
             this.txtDescuento.TabIndex = 27;
             this.txtDescuento.Text = "0.00";
             this.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // bsCliente
-            // 
-            this.bsCliente.DataMember = "tbCliente";
-            this.bsCliente.DataSource = this.dsNeo;
             // 
             // pnl11
             // 
@@ -915,15 +928,19 @@
             // 
             // cboCaja
             // 
+<<<<<<< HEAD
+            this.cboCaja.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFactura, "NombreCaja", true));
             this.cboCaja.DataSource = this.dsNeo;
             this.cboCaja.DisplayMember = "tbCaja.NombreCaja";
+=======
+>>>>>>> d10643eaa9b8906793189f9d0b1f17a5b1617753
             this.cboCaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCaja.FormattingEnabled = true;
             this.cboCaja.Location = new System.Drawing.Point(75, 107);
             this.cboCaja.Name = "cboCaja";
             this.cboCaja.Size = new System.Drawing.Size(180, 21);
             this.cboCaja.TabIndex = 33;
-            this.cboCaja.ValueMember = "tbCaja.NombreCaja";
+            this.cboCaja.ValueMember = "CodigoTrabajo";
             // 
             // kryptonLabel20
             // 
@@ -967,6 +984,7 @@
             this.cboCondicion.Size = new System.Drawing.Size(182, 21);
             this.cboCondicion.TabIndex = 29;
             this.cboCondicion.ValueMember = "tbFrecuencia.Nombre";
+            this.cboCondicion.SelectedIndexChanged += new System.EventHandler(this.cboCondicion_SelectedIndexChanged);
             // 
             // dtpFecha
             // 
@@ -1048,7 +1066,7 @@
             this.cMonto,
             this.cConcepto,
             this.cUsuario});
-            this.grdFacturaCobro.DataSource = this.bsCobroFactura;
+            this.grdFacturaCobro.DataSource = this.bsFacturaCobro;
             this.grdFacturaCobro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdFacturaCobro.Location = new System.Drawing.Point(0, 0);
             this.grdFacturaCobro.MultiSelect = false;
@@ -1056,6 +1074,7 @@
             this.grdFacturaCobro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grdFacturaCobro.Size = new System.Drawing.Size(327, 106);
             this.grdFacturaCobro.TabIndex = 4;
+            this.grdFacturaCobro.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdFacturaCobro_DataError);
             this.grdFacturaCobro.DoubleClick += new System.EventHandler(this.grdCobroFactura_DoubleClick);
             // 
             // codigoTrabajoDataGridViewTextBoxColumn2
@@ -1144,10 +1163,10 @@
             this.cUsuario.Name = "cUsuario";
             this.cUsuario.Visible = false;
             // 
-            // bsCobroFactura
+            // bsFacturaCobro
             // 
-            this.bsCobroFactura.DataMember = "tbFacturaCobro";
-            this.bsCobroFactura.DataSource = this.dsNeo;
+            this.bsFacturaCobro.DataMember = "tbFacturaCobro";
+            this.bsFacturaCobro.DataSource = this.dsNeo;
             // 
             // panel6
             // 
@@ -1162,7 +1181,7 @@
             // bnCobro
             // 
             this.bnCobro.AddNewItem = null;
-            this.bnCobro.BindingSource = this.bsCobroFactura;
+            this.bnCobro.BindingSource = this.bsFacturaCobro;
             this.bnCobro.CountItem = this.bindingNavigatorCountItem1;
             this.bnCobro.DeleteItem = null;
             this.bnCobro.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -1187,7 +1206,7 @@
             this.bnCobro.PositionItem = this.bindingNavigatorPositionItem1;
             this.bnCobro.Size = new System.Drawing.Size(327, 25);
             this.bnCobro.TabIndex = 5;
-            this.bnCobro.Text = "bindingNavigator1";
+            this.bnCobro.Text = "Nuevo";
             // 
             // bindingNavigatorCountItem1
             // 
@@ -1275,6 +1294,7 @@
             this.btnEliminaCobro.RightToLeftAutoMirrorImage = true;
             this.btnEliminaCobro.Size = new System.Drawing.Size(23, 22);
             this.btnEliminaCobro.Text = "Eliminar";
+            this.btnEliminaCobro.Click += new System.EventHandler(this.btnEliminaCobro_Click);
             // 
             // label2
             // 
@@ -1315,7 +1335,7 @@
             // lblDevuelta
             // 
             this.lblDevuelta.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.lblDevuelta.Location = new System.Drawing.Point(77, 101);
+            this.lblDevuelta.Location = new System.Drawing.Point(78, 127);
             this.lblDevuelta.Name = "lblDevuelta";
             this.lblDevuelta.Size = new System.Drawing.Size(35, 20);
             this.lblDevuelta.TabIndex = 33;
@@ -1324,7 +1344,7 @@
             // kryptonLabel19
             // 
             this.kryptonLabel19.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel19.Location = new System.Drawing.Point(15, 100);
+            this.kryptonLabel19.Location = new System.Drawing.Point(16, 126);
             this.kryptonLabel19.Name = "kryptonLabel19";
             this.kryptonLabel19.Size = new System.Drawing.Size(65, 20);
             this.kryptonLabel19.TabIndex = 32;
@@ -1389,7 +1409,7 @@
             // lblTotal
             // 
             this.lblTotal.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.lblTotal.Location = new System.Drawing.Point(77, 126);
+            this.lblTotal.Location = new System.Drawing.Point(77, 102);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(35, 20);
             this.lblTotal.TabIndex = 4;
@@ -1398,7 +1418,7 @@
             // kryptonLabel10
             // 
             this.kryptonLabel10.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel10.Location = new System.Drawing.Point(35, 126);
+            this.kryptonLabel10.Location = new System.Drawing.Point(35, 102);
             this.kryptonLabel10.Name = "kryptonLabel10";
             this.kryptonLabel10.Size = new System.Drawing.Size(44, 20);
             this.kryptonLabel10.TabIndex = 3;
@@ -1466,6 +1486,7 @@
             this.grdDetalle.Size = new System.Drawing.Size(1012, 165);
             this.grdDetalle.TabIndex = 0;
             this.grdDetalle.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalle_CellLeave);
+            this.grdDetalle.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grdDetalle_RowsAdded);
             // 
             // codigoTrabajoDataGridViewTextBoxColumn1
             // 
@@ -1595,6 +1616,7 @@
             // 
             this.bsFacturaDetalle.DataMember = "tbFacturaDetalle";
             this.bsFacturaDetalle.DataSource = this.dsNeo;
+            this.bsFacturaDetalle.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.bsFacturaDetalle_AddingNew);
             // 
             // pnl6
             // 
@@ -1754,7 +1776,7 @@
             this.codigoEmpresaDataGridViewTextBoxColumn});
             this.grdCliente.DataMember = "tbCliente";
             this.grdCliente.DataSource = this.dataSet;
-            this.grdCliente.Location = new System.Drawing.Point(102, 79);
+            this.grdCliente.Location = new System.Drawing.Point(101, 79);
             this.grdCliente.MultiSelect = false;
             this.grdCliente.Name = "grdCliente";
             this.grdCliente.ReadOnly = true;
@@ -1989,7 +2011,7 @@
             this.pnlServicio.Controls.Add(this.btnCancelaServicio);
             this.pnlServicio.Controls.Add(this.pnlTipoContactoSub);
             this.pnlServicio.Controls.Add(this.label8);
-            this.pnlServicio.Location = new System.Drawing.Point(241, 100);
+            this.pnlServicio.Location = new System.Drawing.Point(376, 100);
             this.pnlServicio.Name = "pnlServicio";
             this.pnlServicio.Size = new System.Drawing.Size(536, 289);
             this.pnlServicio.TabIndex = 28;
@@ -2047,7 +2069,7 @@
             // kryptonLabel11
             // 
             this.kryptonLabel11.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
-            this.kryptonLabel11.Location = new System.Drawing.Point(8, 9);
+            this.kryptonLabel11.Location = new System.Drawing.Point(9, 9);
             this.kryptonLabel11.Name = "kryptonLabel11";
             this.kryptonLabel11.Size = new System.Drawing.Size(52, 20);
             this.kryptonLabel11.TabIndex = 5;
@@ -2160,7 +2182,7 @@
             this.pnlFormaPago.Controls.Add(this.btnCancelarFp);
             this.pnlFormaPago.Controls.Add(this.panel9);
             this.pnlFormaPago.Controls.Add(this.label7);
-            this.pnlFormaPago.Location = new System.Drawing.Point(355, 177);
+            this.pnlFormaPago.Location = new System.Drawing.Point(491, 177);
             this.pnlFormaPago.Name = "pnlFormaPago";
             this.pnlFormaPago.Size = new System.Drawing.Size(324, 206);
             this.pnlFormaPago.TabIndex = 31;
@@ -2282,6 +2304,20 @@
             // 
             this.taCaja.ClearBeforeFill = true;
             // 
+<<<<<<< HEAD
+            // taFacturaCobro
+            // 
+            this.taFacturaCobro.ClearBeforeFill = true;
+=======
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+            this.btnLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(67, 22);
+            this.btnLimpiar.Text = "Limpiar";
+>>>>>>> d10643eaa9b8906793189f9d0b1f17a5b1617753
+            // 
             // FrmTscFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2322,7 +2358,7 @@
             this.panel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturaCobro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCobroFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFacturaCobro)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCobro)).EndInit();
@@ -2410,9 +2446,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel16;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel17;
         private System.Windows.Forms.Label label4;
-        private DsNeo dsNeo;
         private System.Windows.Forms.BindingSource bsCliente;
-        private DsNeoTableAdapters.taCliente taCliente;
         private System.Windows.Forms.Label lblRazonSocial;
         private System.Windows.Forms.Label lblLimite;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
@@ -2426,9 +2460,7 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Label lblNumero;
-        private DsNeoTableAdapters.taFactura taFactura;
         private System.Windows.Forms.TextBox txtNombre;
-        private DsNeoTableAdapters.taFacturaDetalle taFacturaDetalle;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -2486,7 +2518,7 @@
         private System.Windows.Forms.Label label8;
         private DsNeoTableAdapters.TaFnArticuloPrecioVenta taFnArticuloPrecioVenta;
         private System.Windows.Forms.ErrorProvider ep;
-        private System.Windows.Forms.BindingSource bsCobroFactura;
+        private System.Windows.Forms.BindingSource bsFacturaCobro;
         private DsNeoTableAdapters.taFacturaCobro taCobro;
         private System.Windows.Forms.DataGridViewTextBoxColumn sCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDescripcion;
@@ -2520,7 +2552,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn3;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel18;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblDevuelta;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel19;
         private System.Windows.Forms.TextBox txtRecibido;
         private System.Windows.Forms.Panel panel7;
@@ -2550,7 +2581,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cUsuario;
         private System.Windows.Forms.Panel panel8;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel20;
-        private System.Windows.Forms.ComboBox cboVendedor;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
         private System.Windows.Forms.ComboBox cboCondicion;
         private System.Windows.Forms.DateTimePicker dtpFecha;
@@ -2562,5 +2592,16 @@
         private DsNeoTableAdapters.taCaja taCaja;
         private System.Windows.Forms.TextBox txtNota;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
+<<<<<<< HEAD
+        public DsNeo dsNeo;
+        public DsNeoTableAdapters.taFactura taFactura;
+        public DsNeoTableAdapters.taCliente taCliente;
+        public DsNeoTableAdapters.taFacturaDetalle taFacturaDetalle;
+        public System.Windows.Forms.ComboBox cboVendedor;
+        public DsNeoTableAdapters.taFacturaCobro taFacturaCobro;
+        public ComponentFactory.Krypton.Toolkit.KryptonLabel lblDevuelta;
+=======
+        private System.Windows.Forms.ToolStripButton btnLimpiar;
+>>>>>>> d10643eaa9b8906793189f9d0b1f17a5b1617753
     }
 }

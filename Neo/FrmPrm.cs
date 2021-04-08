@@ -495,26 +495,12 @@ namespace Neo
 
         private void mnuRptCita_Click(object sender, EventArgs e)
         {
-            if (Utilidad.rptCita == null)
-            {
-                Utilidad.rptCita = new FrmRptCita();
-                Utilidad.rptCita.WindowState = FormWindowState.Maximized;
-                Utilidad.rptCita.MdiParent = this;
-            }
-            Utilidad.rptCita.BringToFront();
-            Utilidad.rptCita.Show();
+            
         }
 
         private void mnuTscHistorial_Click(object sender, EventArgs e)
         {
-            if (Utilidad.tscHistorial == null)
-            {
-                Utilidad.tscHistorial = new FrmTscHistorial();
-                Utilidad.tscHistorial.MdiParent = this;
-            }
-            Utilidad.tscHistorial.btnNuevo_Click(sender, EventArgs.Empty);
-            Utilidad.tscHistorial.BringToFront();
-            Utilidad.tscHistorial.Show();
+            
         }
 
         private void mnHistorial_Click(object sender, EventArgs e)
@@ -534,18 +520,6 @@ namespace Neo
             Utilidad.rptHistorial.Show();
         }
 
-        private void mnuRptCitaPendiemte_Click(object sender, EventArgs e)
-        {
-            if (Utilidad.rptCitaPendiente == null)
-            {
-                Utilidad.rptCitaPendiente = new FrmRptCitaPendiente();
-                Utilidad.rptCitaPendiente.WindowState = FormWindowState.Maximized;
-                Utilidad.rptCitaPendiente.MdiParent = this;
-            }
-            Utilidad.rptCitaPendiente.BringToFront();
-            Utilidad.rptCitaPendiente.Show();
-        }
-
         private void mnuMtoCaja_Click(object sender, EventArgs e)
         {
             if (Utilidad.mtoCaja == null)
@@ -555,6 +529,40 @@ namespace Neo
             }
             Utilidad.mtoCaja.BringToFront();
             Utilidad.mtoCaja.Show();
+        }
+
+        private void mnuCstCitaPendiente_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void mnuTscReciboIngreso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuRptCitDtl_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.rptCita == null)
+            {
+                Utilidad.rptCita = new FrmRptCita();
+                Utilidad.rptCita.WindowState = FormWindowState.Maximized;
+                Utilidad.rptCita.MdiParent = this;
+            }
+            Utilidad.rptCita.BringToFront();
+            Utilidad.rptCita.Show();
+        }
+
+        private void mnuRptCitPdt_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.rptCitaPendiente == null)
+            {
+                Utilidad.rptCitaPendiente = new FrmRptCitaPendiente();
+                Utilidad.rptCitaPendiente.WindowState = FormWindowState.Maximized;
+                Utilidad.rptCitaPendiente.MdiParent = this;
+            }
+            Utilidad.rptCitaPendiente.BringToFront();
+            Utilidad.rptCitaPendiente.Show();
         }
     }
 }

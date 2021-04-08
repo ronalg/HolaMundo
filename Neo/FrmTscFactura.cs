@@ -33,6 +33,7 @@ namespace Neo
             btnBuscar.Available = configura;
             spd4.Available = configura;
             btnImprimir.Available = configura;
+            btnLimpiar.Available = configura;
             spd5.Available = configura;
             btnSalir.Available = configura;
         }
@@ -275,12 +276,22 @@ namespace Neo
             short cantidadDias = short.Parse(dataSet.tbFrecuencia.Rows[0]["Cantidad"].ToString());
             decimal totalCobro = dsNeo.tbFacturaCobro.Rows.Count == 0 ? 0.00M : decimal.Parse(dsNeo.tbFacturaCobro.Rows[0]["Monto"].ToString());
 
-            if (cantidadDias == 0 && totalCobro == 0.00M)
+            if (cantidadDias == 0.00M)
             {
-                MessageBox.Show("Ingrese cobro", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                btnNuevoCobro_Click(sender, EventArgs.Empty);
-                return;
-            }
+                if (totalCobro == 0.00M)
+                {
+                    MessageBox.Show("Ingrese cobro", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    btnNuevoCobro_Click(sender, EventArgs.Empty);
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtRecibido.Text))
+                {
+                    MessageBox.Show("Ingrese cantidad recibida", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    btnNuevoCobro_Click(sender, EventArgs.Empty);
+                    return;
+                }
+            }          
 
             try
             {
@@ -293,18 +304,22 @@ namespace Neo
                 string nombre = !string.IsNullOrEmpty(txtNombre.Text) ? txtNombre.Text.Trim() : null;
                 decimal descuento = decimal.Parse(txtDescuento.Text);
                 string nota = !string.IsNullOrEmpty(txtNota.Text) ? txtNota.Text : null;
+                decimal? recibido = null;
+                if (!string.IsNullOrWhiteSpace(txtRecibido.Text))
+                    recibido = decimal.Parse(txtRecibido.Text);
 
                 if (numero == 0)
                 {
                     DsNeoTableAdapters.ConsultasProgramadas cp = new DsNeoTableAdapters.ConsultasProgramadas();
                     numero = cp.fnSiguienteNumero("factura", Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal).Value;
-                    taFactura.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoCliente, "Cliente", codigoEmpleado, cboCondicion.Text, null, null, Utilidad.nombreUsuario, null, null, DateTime.Today.ToShortDateString(), nombre, dtpFecha.Value.ToShortDateString(), null, descuento, nota, cboCaja.Text); 
+                    taFactura.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, codigoCliente, "Cliente", codigoEmpleado, cboCondicion.Text, null, null, Utilidad.nombreUsuario, null, null, DateTime.Today.ToShortDateString(), nombre, dtpFecha.Value.ToShortDateString(), null, descuento, nota, cboCaja.Text, recibido); 
                     lblNumero.Text = numero.ToString();
                 }
                 else
                 {
                     taFactura.Edita(codigoCliente, codigoEmpleado, cboCondicion.Text, nombre, dtpFecha.Value.ToShortDateString(), descuento, nota, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                     taFacturaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    taFacturaCobro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 }
 
                 short i = 0;
@@ -321,6 +336,17 @@ namespace Neo
                     descuento = decimal.Parse(dr["DescuentoArticulo"].ToString());
                    
                     taFacturaDetalle.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, secuencia, codigo, codigoPrecio, descripcion, cantidad, costo, venta, descuento);
+                }
+
+                i = 0;
+                foreach (DataRow dr in dsNeo.tbFacturaCobro)
+                {
+                    i++;
+                    string nombreFormaPago = dr["NombreFormaPago"].ToString();
+                    decimal monto = decimal.Parse(dr["Monto"].ToString());
+                    string fecha = dtpFecha.Value.ToShortDateString();
+                    string concepto = string.Concat("Cobro ", txtNombre.Text.Trim());
+                    taFacturaCobro.Inserta(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, i, nombreFormaPago, Utilidad.nombreUsuario,fecha, concepto, monto);
                 }
 
                 ConfiguraBoton(true);
@@ -360,23 +386,41 @@ namespace Neo
             dr["CodigoSucursal"] = Utilidad.codigoSucursal;
             dr["NumeroFactura"] = numero;
             dr["SecuenciaCobro"] = 1;
-            dr["NombreFormaPago"] = grdFormaPago.CurrentRow.Cells["fpNombre"].Value.ToString();
-            dr["Monto"] = 0.00M;
+            dr["NombreFormaPago"] = grdFormaPago.CurrentRow.Cells["fpNombre"].Value.ToString();           
             dr["FechaCobro"] = DateTime.Today.ToShortDateString();
             dr["Concepto"] = "Cobro";
-            dr["UsuarioCobro"] = Utilidad.nombreUsuario;
+            dr["UsuarioCobro"] = Utilidad.nombreUsuario;          
+
+            decimal monto = 0.00M;
+            if (cboCondicion.SelectedIndex > -1 && dsNeo.tbFacturaCobro.Rows.Count == 0)
+            {    
+                string nombre = cboCondicion.Text;
+                taFrecuencia.FillByNombre(dataSet.tbFrecuencia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, nombre);
+                short cantidad = short.Parse(dataSet.tbFrecuencia.Rows[0]["cantidad"].ToString());
+                if (cantidad == 0)
+                    monto = decimal.Parse(lblTotal.Text);      
+            }
+            dr["Monto"] = monto;
             dsNeo.tbFacturaCobro.Rows.Add(dr);
 
-            grdFacturaCobro.Rows[grdFacturaCobro.RowCount - 1].Selected = true;
-            grdFacturaCobro.Rows[grdFacturaCobro.RowCount - 1].Cells["cMonto"].Selected = true;
-            grdFacturaCobro.BeginEdit(true);
+            if (dsNeo.tbFacturaCobro.Rows.Count == 1)
+            {
+                txtRecibido.Focus();
+            }
+            else
+            {
+                grdFacturaCobro.Rows[grdFacturaCobro.RowCount - 1].Selected = true;
+                grdFacturaCobro.Rows[grdFacturaCobro.RowCount - 1].Cells["cMonto"].Selected = true;
+                grdFacturaCobro.BeginEdit(true);
+            }
 
             btnCancelarFp_Click(sender, EventArgs.Empty);
-        }
-
-        private void kryptonButton2_Click(object sender, EventArgs e)
-        {
-
+<<<<<<< HEAD
+            if (!string.IsNullOrEmpty(txtRecibido.Text))
+                lblDevuelta.Text = devuelta().ToString("N2");
+=======
+            lblDevuelta.Text = devuelta().ToString("N2");
+>>>>>>> d10643eaa9b8906793189f9d0b1f17a5b1617753
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
@@ -400,7 +444,17 @@ namespace Neo
         {
             if (btnNuevo.Available)
             {
-
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombrePrograma, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dr == DialogResult.Yes)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    int numero = int.Parse(lblNumero.Text);
+                    taFacturaCobro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    taFacturaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    taFactura.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    this.Cursor = Cursors.Default;
+                }
             }
             else
             {
@@ -408,7 +462,7 @@ namespace Neo
             }
         }
 
-        private void total()
+        public void total()
         {
             decimal subTotal = decimal.Parse(dsNeo.tbFacturaDetalle.Compute("SUM(SubTotal)", null).ToString());
             lblSubTotal.Text = subTotal.ToString("N2");
@@ -432,12 +486,13 @@ namespace Neo
             }               
         }
 
+<<<<<<< HEAD
         private void grdFormaPago_DoubleClick(object sender, EventArgs e)
         {
             btnAceptarFg_Click(sender, EventArgs.Empty);
         }
 
-        private decimal devuelta()
+        public decimal devuelta()
         {
             decimal venta = decimal.Parse(lblTotal.Text);
             decimal recibido = decimal.Parse(txtRecibido.Text);
@@ -461,6 +516,97 @@ namespace Neo
         {
             if (!string.IsNullOrEmpty(txtRecibido.Text))
                 lblDevuelta.Text = devuelta().ToString("N2");
+        }
+
+=======
+>>>>>>> d10643eaa9b8906793189f9d0b1f17a5b1617753
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.bscFactura == null)
+                Utilidad.bscFactura = new FrmBscFactura();
+            Utilidad.bscFactura.BringToFront();
+            Utilidad.bscFactura.Show();
+        }
+
+<<<<<<< HEAD
+        private void grdFacturaCobro_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void btnEliminaCobro_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombrePrograma, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (dr == DialogResult.Yes)
+            {
+                int numero = string.IsNullOrEmpty(lblNumero.Text) ? 0 : int.Parse(lblNumero.Text);
+                short secuencia = short.Parse(grdFacturaCobro.CurrentRow.Cells["cSecuencia"].Value.ToString());
+                taFacturaCobro.EliminaSecuencia(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, secuencia);
+                grdFacturaCobro.Rows.Remove(grdFacturaCobro.CurrentRow);
+            }
+        }
+
+        private void bsFacturaDetalle_AddingNew(object sender, AddingNewEventArgs e)
+        {
+           
+        }
+
+        private void grdDetalle_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            decimal cantidad = decimal.Parse(grdDetalle.Rows[e.RowIndex].Cells["dCantidad"].Value.ToString());
+            decimal precio = decimal.Parse(grdDetalle.Rows[e.RowIndex].Cells["dVenta"].Value.ToString());
+            decimal descuento = decimal.Parse(grdDetalle.Rows[e.RowIndex].Cells["dDescuento"].Value.ToString());
+            grdDetalle.Rows[e.RowIndex].Cells["dSubTotal"].Value = cantidad * precio;
+            grdDetalle.Rows[e.RowIndex].Cells["dImporte"].Value = cantidad * precio - descuento;
+=======
+        private void cboCondicion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCondicion.SelectedIndex > -1)
+            {
+                taFrecuencia.FillByNombre(dataSet.tbFrecuencia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, cboCondicion.Text);
+                short i = short.Parse(dataSet.tbFrecuencia.Rows[0]["cantidad"].ToString());
+                if (i == 0)
+                {
+                    btnNuevoCobro.Available = true;
+                    txtRecibido.ReadOnly = false;
+                }
+                else
+                {
+                    btnNuevoCobro.Available = false;
+                    txtRecibido.ReadOnly = true;
+                }
+            }
+        }
+
+        private decimal devuelta ()
+        {
+            decimal resultado = 0.00M;
+            decimal total = decimal.Parse(lblTotal.Text);
+            decimal cobro = decimal.Parse(dsNeo.tbFacturaCobro.Compute("SUM(Monto)", null).ToString());
+
+            return resultado;
+        }
+
+        private void btnEliminaCobro_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(lblNumero.Text))
+            {
+                grdFacturaCobro.Rows.Remove(grdFacturaCobro.CurrentRow);
+            }
+            else
+            {
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombrePrograma, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dr == DialogResult.OK)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    DsNeoTableAdapters.taFacturaCobro ta = new DsNeoTableAdapters.taFacturaCobro();
+                    
+                    this.Cursor = Cursors.Default;
+                }
+            }
+>>>>>>> d10643eaa9b8906793189f9d0b1f17a5b1617753
         }
     }
 }
