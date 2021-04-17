@@ -14,6 +14,8 @@ namespace Neo
         public static FrmBscOrdenPedido bscOrdenPedido = null;
         //formulario transacciones
         //veternaria
+        public static FrmRptFacturaDetalle rptFacturaDetalle = null;
+        public static FrmRptFacturaResumen rptFacturaResumen = null;
         public static FrmRptCitaPendiente rptCitaPendiente = null;
         public static FrmRptHistorial rptHistorial = null;
         public static FrmBscHistorial bscHistorial = null;
@@ -76,6 +78,7 @@ namespace Neo
         public const string nombrePrograma = "Neo";
         public const string mensajeNoEncontrado = "No se ha encontrado resgistro de ";
         public const string mensajeGuardado = "Se han guardado exitosamente";
+        public const string mensajeIngrese = "Ingrese ";
 
         public static string Ceros(string valor)
         {

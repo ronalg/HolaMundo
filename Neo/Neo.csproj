@@ -39,7 +39,7 @@
       <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -337,11 +337,17 @@
     <Compile Include="FrmRptCitaPendiente.Designer.cs">
       <DependentUpon>FrmRptCitaPendiente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRptFctGnr.cs">
+    <Compile Include="FrmRptFacturaDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRptFctGnr.Designer.cs">
-      <DependentUpon>FrmRptFctGnr.cs</DependentUpon>
+    <Compile Include="FrmRptFacturaDetalle.Designer.cs">
+      <DependentUpon>FrmRptFacturaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRptFacturaResumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRptFacturaResumen.Designer.cs">
+      <DependentUpon>FrmRptFacturaResumen.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRptHistorial.cs">
       <SubType>Form</SubType>
@@ -387,7 +393,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBscFactura.resx">
       <DependentUpon>FrmBscFactura.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBscHistorial.resx">
       <DependentUpon>FrmBscHistorial.cs</DependentUpon>
@@ -505,7 +510,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrm.resx">
       <DependentUpon>FrmPrm.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRpt.resx">
       <DependentUpon>FrmRpt.cs</DependentUpon>
@@ -516,8 +520,11 @@
     <EmbeddedResource Include="FrmRptCitaPendiente.resx">
       <DependentUpon>FrmRptCitaPendiente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRptFctGnr.resx">
-      <DependentUpon>FrmRptFctGnr.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRptFacturaDetalle.resx">
+      <DependentUpon>FrmRptFacturaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRptFacturaResumen.resx">
+      <DependentUpon>FrmRptFacturaResumen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRptHistorial.resx">
       <DependentUpon>FrmRptHistorial.cs</DependentUpon>
