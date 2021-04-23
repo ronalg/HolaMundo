@@ -66,7 +66,7 @@
     <Shape ID="DesignTable:tbHistorialDetalle" ZOrder="15" X="2133" Y="1973" Height="476" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:tbHistorialMascota" ZOrder="16" X="2459" Y="2088" Height="362" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="294" />
     <Shape ID="DesignTable:tbCitaMascotaPendiente" ZOrder="10" X="2773" Y="1958" Height="495" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="330" />
-    <Shape ID="DesignTable:tbFactura" ZOrder="3" X="854" Y="2460" Height="440" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="334" />
+    <Shape ID="DesignTable:tbFactura" ZOrder="3" X="854" Y="2460" Height="438" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="332" />
     <Shape ID="DesignTable:fnFactura" ZOrder="9" X="531" Y="2460" Height="438" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="370" />
     <Shape ID="DesignTable:tbFacturaDetalle" ZOrder="1" X="1175" Y="2464" Height="438" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="349" />
     <Shape ID="DesignTable:fnArticuloPrecioVenta" ZOrder="6" X="2781" Y="34" Height="172" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />

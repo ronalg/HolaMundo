@@ -162,6 +162,7 @@ namespace Neo
         private void btnCancelaServicio_Click(object sender, EventArgs e)
         {
             pnlServicio.Visible = false;
+            quitaFila();
         }
 
         private void txtServicio_KeyDown(object sender, KeyEventArgs e)
@@ -183,7 +184,7 @@ namespace Neo
 
         private void btnAceptaServicio_Click(object sender, EventArgs e)
         {
-            if (grdServicio.CurrentRow.Cells["sCodigo"].Value != DBNull.Value)
+            if (grdServicio.RowCount > 0)
             {
                 string codigo = grdServicio.CurrentRow.Cells["sCodigo"].Value.ToString();
                 string descripcion = grdServicio.CurrentRow.Cells["sDescripcion"].Value.ToString();
@@ -195,14 +196,12 @@ namespace Neo
                 grdDetalle.CurrentRow.Cells["dCodigoPrecio"].Value = codigoPrecio;
                 grdDetalle.CurrentRow.Cells["dVenta"].Value = precio;
                 grdDetalle.CurrentRow.Cells["dCosto"].Value = costo;
-                //grdDetalle.CurrentRow.Cells["dSubTotal"].Value = precio;
-                //grdDetalle.CurrentRow.Cells["dImporte"].Value = precio;
                 pnlServicio.Visible = false;
 
-                grdServicio.Rows[grdDetalle.RowCount - 1].Selected = true;
+                grdDetalle.Rows[grdDetalle.RowCount - 1].Selected = true;
                 grdDetalle.Rows[grdDetalle.RowCount - 1].Cells["dCantidad"].Selected = true;
                 grdDetalle.BeginEdit(true);
-                //total();
+                quitaFila();
             }
         }
 
@@ -213,7 +212,6 @@ namespace Neo
             dr["CodigoEmpresa"] = Utilidad.codigoEmpresa;
             dr["CodigoSucursal"] = Utilidad.codigoSucursal;
             dr["NumeroFactura"] = 0;
-            //dr["Secuencia"] = DBNull.Value;
             dr["CodigoArticulo"] = DBNull.Value;
             dr["CodigoPrecioVenta"] = DBNull.Value;
             dr["Descripcion"] = DBNull.Value;
@@ -243,6 +241,8 @@ namespace Neo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            quitaFila();
+
             if (string.IsNullOrEmpty(cboCondicion.Text))
             {
                 ep.SetError(cboCondicion, Utilidad.campoVacio);
@@ -458,7 +458,18 @@ namespace Neo
         {
             if (btnNuevo.Available)
             {
-
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombrePrograma, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dr == DialogResult.Yes)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    int numero = int.Parse(lblNumero.Text);
+                    taFacturaCobro.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    taFacturaDetalle.EliminaNumero(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    taFactura.Elimina(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                    btnLimpiar_Click(sender, EventArgs.Empty);
+                    this.Cursor = Cursors.Default;
+                }
             }
             else
             {
@@ -478,16 +489,7 @@ namespace Neo
         {
             string columna = grdDetalle.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name;
             if (columna == "dCantidad" || columna == "dVenta" || columna == "dDescuento")
-            {
-                //decimal cantidad = decimal.Parse(grdDetalle.CurrentRow.Cells["dCantidad"].Value.ToString());
-                //decimal precio = decimal.Parse(grdDetalle.CurrentRow.Cells["dVenta"].Value.ToString());
-                //decimal descuento = decimal.Parse(grdDetalle.CurrentRow.Cells["dDescuento"].Value.ToString());
-                //decimal subTotal = cantidad * precio - descuento;
-                //grdDetalle.CurrentRow.Cells["dSubTotal"].Value = subTotal;
-                //decimal importe = cantidad * precio - descuento;
-                //grdDetalle.CurrentRow.Cells["dImporte"].Value = importe;
-                 total();
-            }               
+                total();                           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -566,15 +568,6 @@ namespace Neo
                 lblDevuelta.Text = devuelta().ToString("N2");
         }
 
-        private void grdDetalle_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-           
-        }
-
-        private void grdDetalle_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-        }
-
         private void grdDetalle_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
@@ -593,11 +586,59 @@ namespace Neo
             lblSubTotal.Text = "0.00";
             txtDescuento.Text = "0.00";
             lblDevuelta.Text = "0.00";
-            lblTotal.Text = "0.00";
+            lblTotal.Text = "0.00";            
         }
 
-        private void grdDetalle_RowsAdded_1(object sender, DataGridViewRowsAddedEventArgs e)
+        private void quitaFila()
         {
+            foreach (DataGridViewRow dgrv in grdDetalle.Rows)
+            {
+                string v = dgrv.Cells["dCodigo"].Value.ToString();
+                if (string.IsNullOrWhiteSpace(v))
+                    grdDetalle.Rows.Remove(dgrv);
+            }
+        }
+
+        private void mnuImpresora_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                CrearTicket ticket = new CrearTicket();
+
+                ticket.TextoIzquierda(" ");
+                ticket.TextoCentro("TICKET CIERRE DE CAJA");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoExtremos("FECHA : " + dtpFecha.Value.ToShortDateString(), "HORA : " + DateTime.Today.ToLocalTime());
+                ticket.TextoIzquierda(" ");
+                ticket.EncabezadoVenta();
+                ticket.lineasGuio();
+                foreach (DataGridViewRow fila in grdDetalle.Rows)
+                {
+                    ticket.AgregaArticulo(fila.Cells[1].Value.ToString(), int.Parse(fila.Cells[0].Value.ToString()), decimal.Parse(fila.Cells[3].Value.ToString()));
+                }
+                ticket.lineasIgual();
+                ticket.AgregarTotales("          TOTAL COMPRADO : $ ", decimal.Parse("0,00"));
+                ticket.AgregarTotales("          TOTAL VENDIDO  : $ ", decimal.Parse(lblTotal.Text));
+                ticket.TextoIzquierda(" ");
+                ticket.AgregarTotales("          GANANCIA       : $ ", decimal.Parse("0.00"));
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.CortaTicket();
+                ticket.ImprimirTicket("EPSON TM-T20II Receipt");
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
         }
     }
 }

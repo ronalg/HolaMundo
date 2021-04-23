@@ -45,6 +45,6 @@ namespace Neo
                 cboDepartamento.Text = null;
                 dsNeo.tbCategoria.Rows.Clear();
             }
-        }
+        }        
     }
 }

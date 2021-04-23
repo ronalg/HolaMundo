@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnFactura = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -81,6 +82,7 @@
             this.fVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recibidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).BeginInit();
             this.bnFactura.SuspendLayout();
@@ -98,7 +100,7 @@
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(594, 28);
+            this.pnl1.Size = new System.Drawing.Size(671, 28);
             this.pnl1.TabIndex = 2;
             // 
             // bnFactura
@@ -128,7 +130,7 @@
             this.bnFactura.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnFactura.Name = "bnFactura";
             this.bnFactura.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnFactura.Size = new System.Drawing.Size(592, 25);
+            this.bnFactura.Size = new System.Drawing.Size(669, 25);
             this.bnFactura.TabIndex = 5;
             this.bnFactura.Text = "bindingNavigator1";
             // 
@@ -245,7 +247,7 @@
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl2.Location = new System.Drawing.Point(0, 28);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(594, 42);
+            this.pnl2.Size = new System.Drawing.Size(671, 42);
             this.pnl2.TabIndex = 3;
             // 
             // txtNombre
@@ -307,7 +309,7 @@
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl4.Location = new System.Drawing.Point(0, 70);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(594, 10);
+            this.pnl4.Size = new System.Drawing.Size(671, 10);
             this.pnl4.TabIndex = 5;
             // 
             // pnl5
@@ -317,7 +319,7 @@
             this.pnl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl5.Location = new System.Drawing.Point(0, 80);
             this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(594, 359);
+            this.pnl5.Size = new System.Drawing.Size(671, 359);
             this.pnl5.TabIndex = 6;
             // 
             // grdFactura
@@ -348,14 +350,15 @@
             this.notaDataGridViewTextBoxColumn,
             this.fVendedor,
             this.recibidoDataGridViewTextBoxColumn,
-            this.nombreCajaDataGridViewTextBoxColumn});
+            this.nombreCajaDataGridViewTextBoxColumn,
+            this.TotalVenta});
             this.grdFactura.DataSource = this.bsFactura;
             this.grdFactura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdFactura.Location = new System.Drawing.Point(0, 0);
             this.grdFactura.MultiSelect = false;
             this.grdFactura.Name = "grdFactura";
             this.grdFactura.ReadOnly = true;
-            this.grdFactura.Size = new System.Drawing.Size(592, 357);
+            this.grdFactura.Size = new System.Drawing.Size(669, 357);
             this.grdFactura.TabIndex = 0;
             this.grdFactura.DoubleClick += new System.EventHandler(this.grdFactura_DoubleClick);
             // 
@@ -537,11 +540,21 @@
             this.nombreCajaDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreCajaDataGridViewTextBoxColumn.Width = 110;
             // 
+            // TotalVenta
+            // 
+            this.TotalVenta.DataPropertyName = "TotalVenta";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            this.TotalVenta.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TotalVenta.HeaderText = "Total";
+            this.TotalVenta.Name = "TotalVenta";
+            this.TotalVenta.ReadOnly = true;
+            // 
             // FrmBscFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 439);
+            this.ClientSize = new System.Drawing.Size(671, 439);
             this.Controls.Add(this.pnl5);
             this.Controls.Add(this.pnl4);
             this.Controls.Add(this.pnl2);
@@ -616,5 +629,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fVendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn recibidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCajaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalVenta;
     }
 }

@@ -55,8 +55,8 @@ namespace Neo
 
         private void FrmIniSsn_Load(object sender, EventArgs e)
         {
-            //Neo.Properties.Settings.Default["csNeo"] = "Data Source=ronalgemmanuel.database.windows.net;Initial Catalog=Neo;User ID=administrador;Password=BA7297();Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
-            Neo.Properties.Settings.Default["csNeo"] = @"Data Source=DESKTOP-7T00K3A\SQLEXPRESS;Initial Catalog=Neo;Integrated Security=True";
+            Neo.Properties.Settings.Default["csNeo"] = "Data Source=ronalgemmanuel.database.windows.net;Initial Catalog=Neo;User ID=administrador;Password=BA7297();Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+            //Neo.Properties.Settings.Default["csNeo"] = @"Data Source=DESKTOP-7T00K3A\SQLEXPRESS;Initial Catalog=Neo;Integrated Security=True";
             txtUsuario.Text = "bienestar";
             txtContrasena.Text = "animal";
             btnIniciar_Click(sender, EventArgs.Empty);

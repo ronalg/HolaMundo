@@ -28,6 +28,15 @@ namespace Neo
         {
             this.Cursor = Cursors.WaitCursor;
             taFactura.Fill(dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, null, dtpDesde.Value.Date, dtpHasta.Value.Date, null, codigoCliente);
+            if (dsNeo.tbFactura.Rows.Count > 0)
+            {
+                decimal totalVenta = decimal.Parse(dsNeo.tbFactura.Compute("SUM(TotalVenta)", null).ToString());
+                lblVenta.Text = totalVenta.ToString("N2");
+            }
+            else
+            {
+                lblVenta.Text = null;
+            }
             this.Cursor = Cursors.Default;
         }
 
@@ -36,9 +45,9 @@ namespace Neo
             if (dsNeo.tbFactura.Rows.Count > 0)
             {
                 this.Cursor = Cursors.WaitCursor;
-                int numero = int.Parse(grdFactura.CurrentRow.Cells["fNumero"].Value.ToString());
                 if (Utilidad.tscFactura == null)
                     Utilidad.tscFactura = new FrmTscFactura();
+                int numero = int.Parse(grdFactura.CurrentRow.Cells["fNumero"].Value.ToString());
                 Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null);
                 short? codigoCliente = null;
                 string codigo = Utilidad.tscFactura.dsNeo.tbFactura.Rows[0]["CodigoCliente"].ToString();
@@ -55,8 +64,9 @@ namespace Neo
                     Utilidad.tscFactura.txtRecibido.Text = r.ToString("N2");
                     Utilidad.tscFactura.lblDevuelta.Text = Utilidad.tscFactura.devuelta().ToString("N2");
                 }
+                Utilidad.tscFactura.total();
                 Utilidad.tscFactura.Show();
-                this.Cursor = Cursors.Default;                
+                this.Cursor = Cursors.Default;
             }
         }
 

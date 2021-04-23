@@ -51,12 +51,14 @@ namespace Neo
                 Utilidad.tscFactura.taFacturaCobro.Fill(Utilidad.tscFactura.dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 Utilidad.tscFactura.cboVendedor.Text = grdFactura.CurrentRow.Cells["fVendedor"].Value.ToString();
                 Utilidad.tscFactura.btnLimpiar.Available = false;
+                Utilidad.tscFactura.total();
                 if (!string.IsNullOrEmpty(Utilidad.tscFactura.txtRecibido.Text))
                 {
                     decimal r = decimal.Parse(Utilidad.tscFactura.txtRecibido.Text);
                     Utilidad.tscFactura.txtRecibido.Text = r.ToString("N2");
                     Utilidad.tscFactura.lblDevuelta.Text = Utilidad.tscFactura.devuelta().ToString("N2");
                 }
+                
                 this.Cursor = Cursors.Default;
                 this.Close();
             }
