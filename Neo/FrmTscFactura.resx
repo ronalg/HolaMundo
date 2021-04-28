@@ -120,9 +120,6 @@
   <metadata name="bnCita.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>113, 17</value>
   </metadata>
-  <metadata name="bnCita.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>113, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPrimero.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -236,9 +233,9 @@
         wZr+/fsHFgMBEBtm2JfPX8BiP/7/+5+Tlb8U7I3yktrV37//BEv8/PkTq60gsR8/foDZ74EWaqvqrQZr
         hoGGutbJf35DNIL8je6CX79+gdmf3n/6ryKvORmqDRU42bntACkCeQNkCMzZf0A0UAwEdFQNdkCVYwIb
         M4dNIEVfv337/wNoI8jJIC+BbP8Kdb6mks4mqHJMkJqYfgWk6O3rd/8/Aw2BAVDgvnv7DswO8Aq9AlWO
-        ARQ62jv//vj5Gxi+ENDW1PZ/xvQ5UB7Qa3///c/IyPoLUgvRggQEeCTsNm3ZCVY4Z9a8/8ICwmvk5eU5
-        QFhKUmbNooVLwXKLly0HJWs7iC4kwMMhYB8WHPlfRUV9BZCrDBFFASq6OgZrQ4IigQaw2EOEGBgAlSbe
-        FNSKszIAAAAASUVORK5CYII=
+        ARQ62jv//vj5Gxi+ENDW1PZ/xvQ5UB7Qa3///U9Pz/wLUgvRggQEeCTsNm3ZCVY4Z9a8/8ICwmvk5eU5
+        QFhKUmbNooVLwXKLly0HJWs7iC4kwMMhYB8WHPlfRUV9BZCrDBFFASq6OgZrQ4IigQaw2EOEGBgAk3Pe
+        ERW/mxwAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -259,17 +256,8 @@
   <metadata name="bsFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1002, 17</value>
   </metadata>
-  <metadata name="bsFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1002, 17</value>
-  </metadata>
   <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>304, 17</value>
-  </metadata>
-  <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>304, 17</value>
-  </metadata>
-  <metadata name="bsSucursalContacto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>686, 17</value>
   </metadata>
   <metadata name="bsSucursalContacto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>686, 17</value>
@@ -277,20 +265,11 @@
   <metadata name="bsCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>391, 17</value>
   </metadata>
-  <metadata name="bsCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>391, 17</value>
-  </metadata>
   <metadata name="bsFacturaCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>984, 56</value>
-  </metadata>
-  <metadata name="bsFacturaCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>984, 56</value>
+    <value>989, 56</value>
   </metadata>
   <metadata name="bnCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>141, 95</value>
-  </metadata>
-  <metadata name="bnCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>141, 95</value>
+    <value>1377, 56</value>
   </metadata>
   <data name="bindingNavigatorMoveFirstItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -369,18 +348,6 @@
   <metadata name="bsFacturaDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1106, 17</value>
   </metadata>
-  <metadata name="dSubTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dImporte.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="bsFacturaDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1106, 17</value>
-  </metadata>
-  <metadata name="bnDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>200, 17</value>
-  </metadata>
   <metadata name="bnDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>200, 17</value>
   </metadata>
@@ -451,9 +418,6 @@
   <metadata name="dataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>593, 17</value>
   </metadata>
-  <metadata name="dataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>593, 17</value>
-  </metadata>
   <metadata name="taCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>493, 17</value>
   </metadata>
@@ -461,16 +425,16 @@
     <value>845, 17</value>
   </metadata>
   <metadata name="taFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>1356, 17</value>
   </metadata>
   <metadata name="taFacturaDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>239, 56</value>
+    <value>244, 56</value>
   </metadata>
   <metadata name="taFrecuencia.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>119, 56</value>
+    <value>124, 56</value>
   </metadata>
   <metadata name="taEmpleado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>379, 56</value>
+    <value>384, 56</value>
   </metadata>
   <data name="btnServicioAceptarNuevo.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -528,13 +492,13 @@
     <value>True</value>
   </metadata>
   <metadata name="bsArticulo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>495, 56</value>
+    <value>500, 56</value>
   </metadata>
   <metadata name="taFnArticuloPrecioVenta.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>736, 56</value>
+    <value>741, 56</value>
   </metadata>
   <metadata name="ep.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>919, 56</value>
+    <value>924, 56</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>58</value>
@@ -591,22 +555,28 @@
         BC6IIArkpwWeTMFqtEABAAEBADs=
 </value>
   </data>
+  <metadata name="bsFormaPago.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1127, 56</value>
+  </metadata>
   <metadata name="taCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="bsFormaPago.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1122, 56</value>
-  </metadata>
   <metadata name="taFormaPago.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
+    <value>1253, 56</value>
   </metadata>
   <metadata name="taFnFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>325, 95</value>
+    <value>102, 95</value>
   </metadata>
   <metadata name="taCaja.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>240, 95</value>
+    <value>17, 95</value>
   </metadata>
   <metadata name="taFacturaCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>601, 56</value>
+    <value>606, 56</value>
+  </metadata>
+  <metadata name="taEmpresa.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1248, 17</value>
+  </metadata>
+  <metadata name="taSucursal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
   </metadata>
 </root>

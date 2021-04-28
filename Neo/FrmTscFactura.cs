@@ -105,7 +105,7 @@ namespace Neo
             }
         }
 
-        private void FrmTscFactura_Load(object sender, EventArgs e)
+        public void FrmTscFactura_Load(object sender, EventArgs e)
         {
             taCaja.Fill(dsNeo.tbCaja, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
             taFormaPago.Fill(dsNeo.tbFormaPago, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
@@ -632,6 +632,54 @@ namespace Neo
                 ticket.ImprimirTicket("EPSON TM-T20II Receipt");
             }
             catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void mnuImpresoraPersonal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                CrearTicket ticket = new CrearTicket();
+                taEmpresa.FillByCodigo(dsNeo.tbEmpresa, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+                string nombreEmpresa = dsNeo.tbEmpresa.Rows[0]["Nombre"].ToString();
+                taSucursal.FillByCodigo(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
+                string nombreSucursal = dsNeo.tbSucursal.Rows[0]["Nombre"].ToString();
+
+                ticket.TextoIzquierda(" ");
+                ticket.TextoCentro(nombreEmpresa);
+                ticket.TextoIzquierda(" ");
+                ticket.TextoCentro(nombreSucursal);
+                ticket.TextoIzquierda(" ");
+                ticket.TextoCentro(DateTime.Today.ToLongDateString());
+                ticket.TextoIzquierda(" ");
+                ticket.EncabezadoVenta();
+                ticket.lineasGuio();
+                foreach (DataGridViewRow fila in grdDetalle.Rows)
+                {
+                    ticket.AgregaArticulo(fila.Cells[1].Value.ToString(), int.Parse(fila.Cells[0].Value.ToString()), decimal.Parse(fila.Cells[3].Value.ToString()));
+                }
+                ticket.lineasIgual();
+                ticket.AgregarTotales("          TOTAL COMPRADO : $ ", decimal.Parse("0,00"));
+                ticket.AgregarTotales("          TOTAL VENDIDO  : $ ", decimal.Parse(lblTotal.Text));
+                ticket.TextoIzquierda(" ");
+                ticket.AgregarTotales("          GANANCIA       : $ ", decimal.Parse("0.00"));
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.CortaTicket();
+                ticket.ImprimirTicket("EPSON TM-T20II Receipt");
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }

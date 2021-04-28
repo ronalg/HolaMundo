@@ -387,6 +387,12 @@
       <DependentUpon>RptTscCita.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RptTscFacturaPersonal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTscFacturaPersonal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilidad.cs" />
     <EmbeddedResource Include="FrmBscCita.resx">
       <DependentUpon>FrmBscCita.cs</DependentUpon>
@@ -553,6 +559,10 @@
     <EmbeddedResource Include="RptTscCita.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptTscCita.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTscFacturaPersonal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTscFacturaPersonal.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="DsNeo.xsc">
       <DependentUpon>DsNeo.xsd</DependentUpon>

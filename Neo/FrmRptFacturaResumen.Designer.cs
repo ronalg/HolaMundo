@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRptFacturaResumen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnFactura = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -84,7 +84,7 @@
             this.codigoClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fCondicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroOrdenPedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroCotizacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,7 +96,7 @@
             this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recibidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).BeginInit();
@@ -188,7 +188,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -309,6 +308,7 @@
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHasta.Location = new System.Drawing.Point(198, 7);
             this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpHasta.Size = new System.Drawing.Size(94, 21);
             this.dtpHasta.TabIndex = 13;
             // 
@@ -326,6 +326,7 @@
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDesde.Location = new System.Drawing.Point(54, 7);
             this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpDesde.Size = new System.Drawing.Size(94, 21);
             this.dtpDesde.TabIndex = 12;
             // 
@@ -446,8 +447,8 @@
             // 
             this.grdFactura.AllowUserToAddRows = false;
             this.grdFactura.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdFactura.AutoGenerateColumns = false;
             this.grdFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -458,7 +459,7 @@
             this.codigoClienteDataGridViewTextBoxColumn,
             this.codigoEmpleadoDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
-            this.condicionDataGridViewTextBoxColumn,
+            this.fCondicion,
             this.usuarioDataGridViewTextBoxColumn,
             this.numeroOrdenPedidoDataGridViewTextBoxColumn,
             this.numeroCotizacionDataGridViewTextBoxColumn,
@@ -470,7 +471,7 @@
             this.notaDataGridViewTextBoxColumn,
             this.fVendedor,
             this.recibidoDataGridViewTextBoxColumn,
-            this.nombreCajaDataGridViewTextBoxColumn,
+            this.fCaja,
             this.TotalVenta});
             this.grdFactura.DataSource = this.bsFactura;
             this.grdFactura.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -569,8 +570,8 @@
             // fNumero
             // 
             this.fNumero.DataPropertyName = "NumeroFactura";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fNumero.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fNumero.DefaultCellStyle = dataGridViewCellStyle2;
             this.fNumero.HeaderText = "Número";
             this.fNumero.Name = "fNumero";
             this.fNumero.ReadOnly = true;
@@ -600,12 +601,12 @@
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreDataGridViewTextBoxColumn.Width = 250;
             // 
-            // condicionDataGridViewTextBoxColumn
+            // fCondicion
             // 
-            this.condicionDataGridViewTextBoxColumn.DataPropertyName = "Condicion";
-            this.condicionDataGridViewTextBoxColumn.HeaderText = "Condición";
-            this.condicionDataGridViewTextBoxColumn.Name = "condicionDataGridViewTextBoxColumn";
-            this.condicionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fCondicion.DataPropertyName = "Condicion";
+            this.fCondicion.HeaderText = "Condición";
+            this.fCondicion.Name = "fCondicion";
+            this.fCondicion.ReadOnly = true;
             // 
             // usuarioDataGridViewTextBoxColumn
             // 
@@ -641,9 +642,9 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "d";
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -697,19 +698,19 @@
             this.recibidoDataGridViewTextBoxColumn.ReadOnly = true;
             this.recibidoDataGridViewTextBoxColumn.Visible = false;
             // 
-            // nombreCajaDataGridViewTextBoxColumn
+            // fCaja
             // 
-            this.nombreCajaDataGridViewTextBoxColumn.DataPropertyName = "NombreCaja";
-            this.nombreCajaDataGridViewTextBoxColumn.HeaderText = "Caja";
-            this.nombreCajaDataGridViewTextBoxColumn.Name = "nombreCajaDataGridViewTextBoxColumn";
-            this.nombreCajaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fCaja.DataPropertyName = "NombreCaja";
+            this.fCaja.HeaderText = "Caja";
+            this.fCaja.Name = "fCaja";
+            this.fCaja.ReadOnly = true;
             // 
             // TotalVenta
             // 
             this.TotalVenta.DataPropertyName = "TotalVenta";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            this.TotalVenta.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            this.TotalVenta.DefaultCellStyle = dataGridViewCellStyle4;
             this.TotalVenta.HeaderText = "Total Venta";
             this.TotalVenta.Name = "TotalVenta";
             this.TotalVenta.ReadOnly = true;
@@ -800,7 +801,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn condicionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fCondicion;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroOrdenPedidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroCotizacionDataGridViewTextBoxColumn;
@@ -812,7 +813,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fVendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn recibidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCajaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fCaja;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalVenta;
     }
 }

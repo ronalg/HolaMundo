@@ -47,6 +47,7 @@ namespace Neo
                 this.Cursor = Cursors.WaitCursor;
                 if (Utilidad.tscFactura == null)
                     Utilidad.tscFactura = new FrmTscFactura();
+                Utilidad.tscFactura.FrmTscFactura_Load(sender, EventArgs.Empty);
                 int numero = int.Parse(grdFactura.CurrentRow.Cells["fNumero"].Value.ToString());
                 Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null);
                 short? codigoCliente = null;
@@ -55,17 +56,19 @@ namespace Neo
                     codigoCliente = short.Parse(codigo);
                 Utilidad.tscFactura.taCliente.FillByCodigo(Utilidad.tscFactura.dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente);
                 Utilidad.tscFactura.taFacturaDetalle.Fill(Utilidad.tscFactura.dsNeo.tbFacturaDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
-                Utilidad.tscFactura.taFacturaCobro.Fill(Utilidad.tscFactura.dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
-                Utilidad.tscFactura.cboVendedor.Text = grdFactura.CurrentRow.Cells["fVendedor"].Value.ToString();
+                Utilidad.tscFactura.taFacturaCobro.Fill(Utilidad.tscFactura.dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);                
                 Utilidad.tscFactura.btnLimpiar.Available = false;
+                Utilidad.tscFactura.total();
                 if (!string.IsNullOrEmpty(Utilidad.tscFactura.txtRecibido.Text))
                 {
                     decimal r = decimal.Parse(Utilidad.tscFactura.txtRecibido.Text);
                     Utilidad.tscFactura.txtRecibido.Text = r.ToString("N2");
                     Utilidad.tscFactura.lblDevuelta.Text = Utilidad.tscFactura.devuelta().ToString("N2");
                 }
-                Utilidad.tscFactura.total();
                 Utilidad.tscFactura.Show();
+                Utilidad.tscFactura.cboVendedor.Text = grdFactura.CurrentRow.Cells["fVendedor"].Value.ToString();
+                Utilidad.tscFactura.cboCondicion.Text = grdFactura.CurrentRow.Cells["fCondicion"].Value.ToString();
+                Utilidad.tscFactura.cboCaja.Text = grdFactura.CurrentRow.Cells["fCaja"].Value.ToString();
                 this.Cursor = Cursors.Default;
             }
         }
