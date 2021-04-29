@@ -271,7 +271,9 @@ namespace Neo
             {
                 short codigoArticulo = short.Parse(grdMto.CurrentRow.Cells["aId"].Value.ToString());
                 taArticuloPrecioVenta.Fill(dsNeo.tbArticuloPrecioVenta, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
-                taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);                
+                taArticuloProveedor.Fill(dsNeo.tbArticuloProveedor, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoArticulo);
+                if (cboCategoria.SelectedIndex == -1)
+                    cboCategoria.Text = grdMto.CurrentRow.Cells["aNombreCategoria"].Value.ToString();
             }
         }
 
