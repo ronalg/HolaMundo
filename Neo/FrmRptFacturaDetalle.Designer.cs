@@ -30,14 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRptFacturaDetalle));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnFactura = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -72,7 +74,7 @@
             this.pnl5 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblBeneficio = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblCosto = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -80,6 +82,21 @@
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl4 = new System.Windows.Forms.Panel();
             this.grdFactura = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.bsDetalle = new System.Windows.Forms.BindingSource(this.components);
+            this.taFactura = new Neo.DsNeoTableAdapters.taFactura();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
+            this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
+            this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taFnFactura = new Neo.DsNeoTableAdapters.taFnFactura();
+            this.grdArticulo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.aCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsArticulo = new System.Windows.Forms.BindingSource(this.components);
+            this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
+            this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
+            this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +120,8 @@
             this.codigoArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoPrecioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,21 +129,6 @@
             this.montoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recibidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsDetalle = new System.Windows.Forms.BindingSource(this.components);
-            this.taFactura = new Neo.DsNeoTableAdapters.taFactura();
-            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
-            this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
-            this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.taFnFactura = new Neo.DsNeoTableAdapters.taFnFactura();
-            this.grdArticulo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
-            this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
-            this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
-            this.bsArticulo = new System.Windows.Forms.BindingSource(this.components);
-            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).BeginInit();
             this.bnFactura.SuspendLayout();
@@ -219,6 +223,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -282,7 +287,7 @@
             // mnuPantalla
             // 
             this.mnuPantalla.Name = "mnuPantalla";
-            this.mnuPantalla.Size = new System.Drawing.Size(116, 22);
+            this.mnuPantalla.Size = new System.Drawing.Size(180, 22);
             this.mnuPantalla.Text = "Pantalla";
             // 
             // toolStripSeparator1
@@ -461,7 +466,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.kryptonLabel4);
+            this.panel1.Controls.Add(this.lblBeneficio);
             this.panel1.Controls.Add(this.kryptonLabel5);
             this.panel1.Controls.Add(this.lblCosto);
             this.panel1.Controls.Add(this.kryptonLabel10);
@@ -473,14 +478,14 @@
             this.panel1.Size = new System.Drawing.Size(1212, 46);
             this.panel1.TabIndex = 6;
             // 
-            // kryptonLabel4
+            // lblBeneficio
             // 
-            this.kryptonLabel4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel4.Location = new System.Drawing.Point(875, 14);
-            this.kryptonLabel4.Name = "kryptonLabel4";
-            this.kryptonLabel4.Size = new System.Drawing.Size(35, 20);
-            this.kryptonLabel4.TabIndex = 7;
-            this.kryptonLabel4.Values.Text = "0.00";
+            this.lblBeneficio.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.lblBeneficio.Location = new System.Drawing.Point(875, 14);
+            this.lblBeneficio.Name = "lblBeneficio";
+            this.lblBeneficio.Size = new System.Drawing.Size(6, 2);
+            this.lblBeneficio.TabIndex = 7;
+            this.lblBeneficio.Values.Text = "";
             // 
             // kryptonLabel5
             // 
@@ -496,9 +501,9 @@
             this.lblCosto.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
             this.lblCosto.Location = new System.Drawing.Point(595, 14);
             this.lblCosto.Name = "lblCosto";
-            this.lblCosto.Size = new System.Drawing.Size(35, 20);
+            this.lblCosto.Size = new System.Drawing.Size(6, 2);
             this.lblCosto.TabIndex = 5;
-            this.lblCosto.Values.Text = "0.00";
+            this.lblCosto.Values.Text = "";
             // 
             // kryptonLabel10
             // 
@@ -514,9 +519,9 @@
             this.lblVenta.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
             this.lblVenta.Location = new System.Drawing.Point(727, 14);
             this.lblVenta.Name = "lblVenta";
-            this.lblVenta.Size = new System.Drawing.Size(35, 20);
+            this.lblVenta.Size = new System.Drawing.Size(6, 2);
             this.lblVenta.TabIndex = 3;
-            this.lblVenta.Values.Text = "0.00";
+            this.lblVenta.Values.Text = "";
             // 
             // kryptonLabel8
             // 
@@ -541,8 +546,8 @@
             // 
             this.grdFactura.AllowUserToAddRows = false;
             this.grdFactura.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdFactura.AutoGenerateColumns = false;
             this.grdFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -569,6 +574,8 @@
             this.codigoArticuloDataGridViewTextBoxColumn,
             this.codigoPrecioVentaDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
+            this.NombreDepartamento,
+            this.NombreCategoria,
             this.cantidadDataGridViewTextBoxColumn,
             this.costoDataGridViewTextBoxColumn,
             this.ventaDataGridViewTextBoxColumn,
@@ -583,6 +590,125 @@
             this.grdFactura.ReadOnly = true;
             this.grdFactura.Size = new System.Drawing.Size(1210, 384);
             this.grdFactura.TabIndex = 6;
+            // 
+            // bsDetalle
+            // 
+            this.bsDetalle.DataMember = "fnFactura";
+            this.bsDetalle.DataSource = this.dsNeo;
+            // 
+            // taFactura
+            // 
+            this.taFactura.ClearBeforeFill = true;
+            // 
+            // bsCliente
+            // 
+            this.bsCliente.DataMember = "tbCliente";
+            this.bsCliente.DataSource = this.dsNeo;
+            // 
+            // taCliente
+            // 
+            this.taCliente.ClearBeforeFill = true;
+            // 
+            // grdCliente
+            // 
+            this.grdCliente.AllowUserToAddRows = false;
+            this.grdCliente.AllowUserToDeleteRows = false;
+            this.grdCliente.AutoGenerateColumns = false;
+            this.grdCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCliente.ColumnHeadersVisible = false;
+            this.grdCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cCodigo,
+            this.cNombre});
+            this.grdCliente.DataSource = this.bsCliente;
+            this.grdCliente.Location = new System.Drawing.Point(350, 59);
+            this.grdCliente.MultiSelect = false;
+            this.grdCliente.Name = "grdCliente";
+            this.grdCliente.ReadOnly = true;
+            this.grdCliente.RowHeadersVisible = false;
+            this.grdCliente.Size = new System.Drawing.Size(389, 131);
+            this.grdCliente.TabIndex = 31;
+            this.grdCliente.Visible = false;
+            this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
+            this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
+            // 
+            // cCodigo
+            // 
+            this.cCodigo.DataPropertyName = "CodigoCliente";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle9;
+            this.cCodigo.HeaderText = "CodigoCliente";
+            this.cCodigo.Name = "cCodigo";
+            this.cCodigo.ReadOnly = true;
+            this.cCodigo.Width = 70;
+            // 
+            // cNombre
+            // 
+            this.cNombre.DataPropertyName = "Nombre";
+            this.cNombre.HeaderText = "Nombre";
+            this.cNombre.Name = "cNombre";
+            this.cNombre.ReadOnly = true;
+            this.cNombre.Width = 300;
+            // 
+            // taFnFactura
+            // 
+            this.taFnFactura.ClearBeforeFill = true;
+            // 
+            // grdArticulo
+            // 
+            this.grdArticulo.AllowUserToAddRows = false;
+            this.grdArticulo.AllowUserToDeleteRows = false;
+            this.grdArticulo.AutoGenerateColumns = false;
+            this.grdArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdArticulo.ColumnHeadersVisible = false;
+            this.grdArticulo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aCodigo,
+            this.aDescripcion});
+            this.grdArticulo.DataSource = this.bsArticulo;
+            this.grdArticulo.Location = new System.Drawing.Point(613, 58);
+            this.grdArticulo.MultiSelect = false;
+            this.grdArticulo.Name = "grdArticulo";
+            this.grdArticulo.ReadOnly = true;
+            this.grdArticulo.RowHeadersVisible = false;
+            this.grdArticulo.Size = new System.Drawing.Size(338, 131);
+            this.grdArticulo.TabIndex = 32;
+            this.grdArticulo.Visible = false;
+            this.grdArticulo.DoubleClick += new System.EventHandler(this.grdArticulo_DoubleClick);
+            this.grdArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdArticulo_KeyDown);
+            // 
+            // aCodigo
+            // 
+            this.aCodigo.DataPropertyName = "CodigoArticulo";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle10;
+            this.aCodigo.HeaderText = "CodigoArticulo";
+            this.aCodigo.Name = "aCodigo";
+            this.aCodigo.ReadOnly = true;
+            this.aCodigo.Width = 70;
+            // 
+            // aDescripcion
+            // 
+            this.aDescripcion.DataPropertyName = "Descripcion";
+            this.aDescripcion.HeaderText = "Descripcion";
+            this.aDescripcion.Name = "aDescripcion";
+            this.aDescripcion.ReadOnly = true;
+            this.aDescripcion.Width = 250;
+            // 
+            // bsArticulo
+            // 
+            this.bsArticulo.DataMember = "tbArticulo";
+            this.bsArticulo.DataSource = this.dsNeo;
+            // 
+            // taDepartamento
+            // 
+            this.taDepartamento.ClearBeforeFill = true;
+            // 
+            // taCategoria
+            // 
+            this.taCategoria.ClearBeforeFill = true;
+            // 
+            // taArticulo
+            // 
+            this.taArticulo.ClearBeforeFill = true;
             // 
             // codigoTrabajoDataGridViewTextBoxColumn
             // 
@@ -611,22 +737,22 @@
             // numeroFacturaDataGridViewTextBoxColumn
             // 
             this.numeroFacturaDataGridViewTextBoxColumn.DataPropertyName = "NumeroFactura";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroFacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numeroFacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.numeroFacturaDataGridViewTextBoxColumn.HeaderText = "Número";
             this.numeroFacturaDataGridViewTextBoxColumn.Name = "numeroFacturaDataGridViewTextBoxColumn";
             this.numeroFacturaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroFacturaDataGridViewTextBoxColumn.Width = 80;
+            this.numeroFacturaDataGridViewTextBoxColumn.Width = 70;
             // 
             // secuenciaDataGridViewTextBoxColumn
             // 
             this.secuenciaDataGridViewTextBoxColumn.DataPropertyName = "Secuencia";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.secuenciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.secuenciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.secuenciaDataGridViewTextBoxColumn.HeaderText = "Sec";
             this.secuenciaDataGridViewTextBoxColumn.Name = "secuenciaDataGridViewTextBoxColumn";
             this.secuenciaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.secuenciaDataGridViewTextBoxColumn.Width = 50;
+            this.secuenciaDataGridViewTextBoxColumn.Width = 35;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -695,9 +821,13 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "d";
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 80;
             // 
             // codigoComprobanteDataGridViewTextBoxColumn
             // 
@@ -721,6 +851,7 @@
             this.descuentoFacturaDataGridViewTextBoxColumn.HeaderText = "DescuentoFactura";
             this.descuentoFacturaDataGridViewTextBoxColumn.Name = "descuentoFacturaDataGridViewTextBoxColumn";
             this.descuentoFacturaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descuentoFacturaDataGridViewTextBoxColumn.Visible = false;
             // 
             // notaDataGridViewTextBoxColumn
             // 
@@ -741,12 +872,13 @@
             // descuentoArticuloDataGridViewTextBoxColumn
             // 
             this.descuentoArticuloDataGridViewTextBoxColumn.DataPropertyName = "DescuentoArticulo";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle28.Format = "N2";
-            this.descuentoArticuloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            this.descuentoArticuloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.descuentoArticuloDataGridViewTextBoxColumn.HeaderText = "Desc";
             this.descuentoArticuloDataGridViewTextBoxColumn.Name = "descuentoArticuloDataGridViewTextBoxColumn";
             this.descuentoArticuloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descuentoArticuloDataGridViewTextBoxColumn.Visible = false;
             // 
             // codigoArticuloDataGridViewTextBoxColumn
             // 
@@ -754,6 +886,7 @@
             this.codigoArticuloDataGridViewTextBoxColumn.HeaderText = "Código";
             this.codigoArticuloDataGridViewTextBoxColumn.Name = "codigoArticuloDataGridViewTextBoxColumn";
             this.codigoArticuloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoArticuloDataGridViewTextBoxColumn.Visible = false;
             this.codigoArticuloDataGridViewTextBoxColumn.Width = 80;
             // 
             // codigoPrecioVentaDataGridViewTextBoxColumn
@@ -767,25 +900,42 @@
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 150;
+            this.descripcionDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // NombreDepartamento
+            // 
+            this.NombreDepartamento.DataPropertyName = "NombreDepartamento";
+            this.NombreDepartamento.HeaderText = "Departamento";
+            this.NombreDepartamento.Name = "NombreDepartamento";
+            this.NombreDepartamento.ReadOnly = true;
+            this.NombreDepartamento.Width = 130;
+            // 
+            // NombreCategoria
+            // 
+            this.NombreCategoria.DataPropertyName = "NombreCategoria";
+            this.NombreCategoria.HeaderText = "Categoria";
+            this.NombreCategoria.Name = "NombreCategoria";
+            this.NombreCategoria.ReadOnly = true;
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cnt";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cantidadDataGridViewTextBoxColumn.Width = 60;
+            this.cantidadDataGridViewTextBoxColumn.Width = 40;
             // 
             // costoDataGridViewTextBoxColumn
             // 
             this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle29.Format = "N2";
-            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
             this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
             this.costoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -794,9 +944,9 @@
             // ventaDataGridViewTextBoxColumn
             // 
             this.ventaDataGridViewTextBoxColumn.DataPropertyName = "Venta";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle30.Format = "N2";
-            this.ventaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            this.ventaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.ventaDataGridViewTextBoxColumn.HeaderText = "Venta";
             this.ventaDataGridViewTextBoxColumn.Name = "ventaDataGridViewTextBoxColumn";
             this.ventaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -833,125 +983,6 @@
             this.nombreCajaDataGridViewTextBoxColumn.Name = "nombreCajaDataGridViewTextBoxColumn";
             this.nombreCajaDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreCajaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // bsDetalle
-            // 
-            this.bsDetalle.DataMember = "fnFactura";
-            this.bsDetalle.DataSource = this.dsNeo;
-            // 
-            // taFactura
-            // 
-            this.taFactura.ClearBeforeFill = true;
-            // 
-            // bsCliente
-            // 
-            this.bsCliente.DataMember = "tbCliente";
-            this.bsCliente.DataSource = this.dsNeo;
-            // 
-            // taCliente
-            // 
-            this.taCliente.ClearBeforeFill = true;
-            // 
-            // grdCliente
-            // 
-            this.grdCliente.AllowUserToAddRows = false;
-            this.grdCliente.AllowUserToDeleteRows = false;
-            this.grdCliente.AutoGenerateColumns = false;
-            this.grdCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCliente.ColumnHeadersVisible = false;
-            this.grdCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cCodigo,
-            this.cNombre});
-            this.grdCliente.DataSource = this.bsCliente;
-            this.grdCliente.Location = new System.Drawing.Point(350, 59);
-            this.grdCliente.MultiSelect = false;
-            this.grdCliente.Name = "grdCliente";
-            this.grdCliente.ReadOnly = true;
-            this.grdCliente.RowHeadersVisible = false;
-            this.grdCliente.Size = new System.Drawing.Size(389, 131);
-            this.grdCliente.TabIndex = 31;
-            this.grdCliente.Visible = false;
-            this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
-            this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
-            // 
-            // taFnFactura
-            // 
-            this.taFnFactura.ClearBeforeFill = true;
-            // 
-            // grdArticulo
-            // 
-            this.grdArticulo.AllowUserToAddRows = false;
-            this.grdArticulo.AllowUserToDeleteRows = false;
-            this.grdArticulo.AutoGenerateColumns = false;
-            this.grdArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdArticulo.ColumnHeadersVisible = false;
-            this.grdArticulo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.aCodigo,
-            this.aDescripcion});
-            this.grdArticulo.DataSource = this.bsArticulo;
-            this.grdArticulo.Location = new System.Drawing.Point(613, 58);
-            this.grdArticulo.MultiSelect = false;
-            this.grdArticulo.Name = "grdArticulo";
-            this.grdArticulo.ReadOnly = true;
-            this.grdArticulo.RowHeadersVisible = false;
-            this.grdArticulo.Size = new System.Drawing.Size(338, 131);
-            this.grdArticulo.TabIndex = 32;
-            this.grdArticulo.Visible = false;
-            this.grdArticulo.DoubleClick += new System.EventHandler(this.grdArticulo_DoubleClick);
-            this.grdArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdArticulo_KeyDown);
-            // 
-            // taDepartamento
-            // 
-            this.taDepartamento.ClearBeforeFill = true;
-            // 
-            // taCategoria
-            // 
-            this.taCategoria.ClearBeforeFill = true;
-            // 
-            // taArticulo
-            // 
-            this.taArticulo.ClearBeforeFill = true;
-            // 
-            // bsArticulo
-            // 
-            this.bsArticulo.DataMember = "tbArticulo";
-            this.bsArticulo.DataSource = this.dsNeo;
-            // 
-            // cCodigo
-            // 
-            this.cCodigo.DataPropertyName = "CodigoCliente";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle31;
-            this.cCodigo.HeaderText = "CodigoCliente";
-            this.cCodigo.Name = "cCodigo";
-            this.cCodigo.ReadOnly = true;
-            this.cCodigo.Width = 70;
-            // 
-            // cNombre
-            // 
-            this.cNombre.DataPropertyName = "Nombre";
-            this.cNombre.HeaderText = "Nombre";
-            this.cNombre.Name = "cNombre";
-            this.cNombre.ReadOnly = true;
-            this.cNombre.Width = 300;
-            // 
-            // aCodigo
-            // 
-            this.aCodigo.DataPropertyName = "CodigoArticulo";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle32;
-            this.aCodigo.HeaderText = "CodigoArticulo";
-            this.aCodigo.Name = "aCodigo";
-            this.aCodigo.ReadOnly = true;
-            this.aCodigo.Width = 70;
-            // 
-            // aDescripcion
-            // 
-            this.aDescripcion.DataPropertyName = "Descripcion";
-            this.aDescripcion.HeaderText = "Descripcion";
-            this.aDescripcion.Name = "aDescripcion";
-            this.aDescripcion.ReadOnly = true;
-            this.aDescripcion.Width = 250;
             // 
             // FrmRptFacturaDetalle
             // 
@@ -1019,7 +1050,7 @@
         private System.Windows.Forms.Panel pnl4;
         private System.Windows.Forms.Panel pnl6;
         private System.Windows.Forms.Panel panel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblBeneficio;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblCosto;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel10;
@@ -1032,6 +1063,22 @@
         private DsNeoTableAdapters.taCliente taCliente;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtArticulo;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private System.Windows.Forms.BindingSource bsDetalle;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
+        private DsNeoTableAdapters.taFnFactura taFnFactura;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdArticulo;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboCategoria;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboDepartamento;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
+        private DsNeoTableAdapters.taDepartamento taDepartamento;
+        private DsNeoTableAdapters.taCategoria taCategoria;
+        private DsNeoTableAdapters.taArticulo taArticulo;
+        private System.Windows.Forms.BindingSource bsArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn;
@@ -1055,6 +1102,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoArticuloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoPrecioVentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreDepartamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventaDataGridViewTextBoxColumn;
@@ -1062,21 +1111,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn montoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn recibidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCajaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bsDetalle;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
-        private DsNeoTableAdapters.taFnFactura taFnFactura;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdArticulo;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboCategoria;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboDepartamento;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
-        private DsNeoTableAdapters.taDepartamento taDepartamento;
-        private DsNeoTableAdapters.taCategoria taCategoria;
-        private DsNeoTableAdapters.taArticulo taArticulo;
-        private System.Windows.Forms.BindingSource bsArticulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aDescripcion;
     }
 }

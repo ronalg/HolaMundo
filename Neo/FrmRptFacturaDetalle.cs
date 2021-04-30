@@ -168,7 +168,24 @@ namespace Neo
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            taFnFactura.Fill(dsNeo.fnFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
+            string departamento = string.IsNullOrEmpty(cboDepartamento.Text) ? null : cboDepartamento.Text;
+            string categoria = string.IsNullOrEmpty(cboCategoria.Text) ? null : cboCategoria.Text;
+            taFnFactura.Fill(dsNeo.fnFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, dtpDesde.Value.Date, dtpHasta.Value.Date, codigoCliente, codigoArticulo, departamento, categoria);
+            if (dsNeo.fnFactura.Rows.Count > 0)
+            {
+                decimal costo = decimal.Parse(dsNeo.fnFactura.Compute("SUM(Costo)", null).ToString());
+                decimal venta = decimal.Parse(dsNeo.fnFactura.Compute("SUM(TotalVenta)", null).ToString());
+                lblCosto.Text = costo.ToString("N2");
+                lblVenta.Text = venta.ToString("N2");
+                decimal beneficio = venta - costo;
+                lblBeneficio.Text = beneficio.ToString("N2");
+            }
+            else
+            {
+                lblCosto.Text = null;
+                lblVenta.Text = null;
+                lblBeneficio.Text = null;
+            }
             this.Cursor = Cursors.Default;
         }
     }
