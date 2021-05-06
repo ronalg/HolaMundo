@@ -61,7 +61,13 @@ namespace Neo
                     codigoCliente = short.Parse(codigo);
                 Utilidad.tscFactura.taCliente.FillByCodigo(Utilidad.tscFactura.dsNeo.tbCliente, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, codigoCliente);
                 Utilidad.tscFactura.taFacturaDetalle.Fill(Utilidad.tscFactura.dsNeo.tbFacturaDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
-                Utilidad.tscFactura.taFacturaCobro.Fill(Utilidad.tscFactura.dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);                
+                string frecuencia = dsNeo.tbFactura.Rows[0]["Condicion"].ToString();
+                taFrecuencia.FillByNombre(dsNeo.tbFrecuencia, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, frecuencia);
+                short cantidad = short.Parse(dsNeo.tbFrecuencia.Rows[0]["Cantidad"].ToString());
+                if (cantidad == 0)
+                    Utilidad.tscFactura.taFacturaCobro.Fill(Utilidad.tscFactura.dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                else
+                    Utilidad.tscFactura.dsNeo.tbFacturaCobro.Rows.Clear();
                 Utilidad.tscFactura.btnLimpiar.Available = false;
                 Utilidad.tscFactura.total();
                 if (!string.IsNullOrEmpty(Utilidad.tscFactura.txtRecibido.Text))

@@ -100,6 +100,7 @@
             this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.taFactura = new Neo.DsNeoTableAdapters.taFactura();
             this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
+            this.taFrecuencia = new Neo.DsNeoTableAdapters.taFrecuencia();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).BeginInit();
             this.bnFactura.SuspendLayout();
@@ -741,6 +742,10 @@
             // 
             this.taCliente.ClearBeforeFill = true;
             // 
+            // taFrecuencia
+            // 
+            this.taFrecuencia.ClearBeforeFill = true;
+            // 
             // FrmRptFacturaResumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -844,5 +849,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalVenta;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cboModo;
+        private DsNeoTableAdapters.taFrecuencia taFrecuencia;
     }
 }

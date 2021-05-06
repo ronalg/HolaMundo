@@ -59,9 +59,6 @@
             this.pnl4 = new System.Windows.Forms.Panel();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.grdFactura = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bsFactura = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
-            this.taFactura = new Neo.DsNeoTableAdapters.taFactura();
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +80,10 @@
             this.recibidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsFactura = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
+            this.taFactura = new Neo.DsNeoTableAdapters.taFactura();
+            this.taFrecuencia = new Neo.DsNeoTableAdapters.taFrecuencia();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).BeginInit();
             this.bnFactura.SuspendLayout();
@@ -362,20 +363,6 @@
             this.grdFactura.TabIndex = 0;
             this.grdFactura.DoubleClick += new System.EventHandler(this.grdFactura_DoubleClick);
             // 
-            // bsFactura
-            // 
-            this.bsFactura.DataMember = "tbFactura";
-            this.bsFactura.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // taFactura
-            // 
-            this.taFactura.ClearBeforeFill = true;
-            // 
             // codigoTrabajoDataGridViewTextBoxColumn
             // 
             this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
@@ -550,6 +537,24 @@
             this.TotalVenta.Name = "TotalVenta";
             this.TotalVenta.ReadOnly = true;
             // 
+            // bsFactura
+            // 
+            this.bsFactura.DataMember = "tbFactura";
+            this.bsFactura.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // taFactura
+            // 
+            this.taFactura.ClearBeforeFill = true;
+            // 
+            // taFrecuencia
+            // 
+            this.taFrecuencia.ClearBeforeFill = true;
+            // 
             // FrmBscFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,5 +635,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn recibidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCajaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalVenta;
+        private DsNeoTableAdapters.taFrecuencia taFrecuencia;
     }
 }

@@ -359,7 +359,10 @@ namespace Neo
                 
                 ConfiguraBoton(true);
                 taFacturaDetalle.Fill(dsNeo.tbFacturaDetalle, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero); //recarga para mostrar secuencias
-                taFacturaCobro.Fill(dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                if (!txtRecibido.ReadOnly)
+                    taFacturaCobro.Fill(dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
+                else
+                    dsNeo.tbFacturaCobro.Rows.Clear();
                 taFactura.Fill(dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null);
                 cboVendedor.Text = dsNeo.tbFactura.Rows[0]["Vendedor"].ToString();
             }
