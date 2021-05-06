@@ -27,7 +27,12 @@ namespace Neo
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            taFactura.Fill(dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, null, dtpDesde.Value.Date, dtpHasta.Value.Date, null, codigoCliente);
+            short? modo = null;
+            if (cboModo.SelectedIndex == 1)
+                modo = 0;
+            else if (cboModo.SelectedIndex == 2)
+                modo = 1;
+            taFactura.Fill(dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, null, dtpDesde.Value.Date, dtpHasta.Value.Date, null, codigoCliente, modo);
             if (dsNeo.tbFactura.Rows.Count > 0)
             {
                 decimal totalVenta = decimal.Parse(dsNeo.tbFactura.Compute("SUM(TotalVenta)", null).ToString());
@@ -49,7 +54,7 @@ namespace Neo
                     Utilidad.tscFactura = new FrmTscFactura();
                 Utilidad.tscFactura.FrmTscFactura_Load(sender, EventArgs.Empty);
                 int numero = int.Parse(grdFactura.CurrentRow.Cells["fNumero"].Value.ToString());
-                Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null);
+                Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null);
                 short? codigoCliente = null;
                 string codigo = Utilidad.tscFactura.dsNeo.tbFactura.Rows[0]["CodigoCliente"].ToString();
                 if (!string.IsNullOrEmpty(codigo))

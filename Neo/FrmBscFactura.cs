@@ -31,7 +31,7 @@ namespace Neo
         {
             this.Cursor = Cursors.WaitCursor;
             string nombre = string.IsNullOrEmpty(txtNombre.Text) ? null : txtNombre.Text;
-            taFactura.Fill(dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, null, dtpDesde.Value.Date, dtpHasta.Value.Date, nombre, null);
+            taFactura.Fill(dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, null, dtpDesde.Value.Date, dtpHasta.Value.Date, nombre, null, null);
             this.Cursor = Cursors.Default;
         }
 
@@ -41,7 +41,7 @@ namespace Neo
             {
                 this.Cursor = Cursors.WaitCursor;
                 int numero = int.Parse(grdFactura.CurrentRow.Cells["fNumero"].Value.ToString());
-                Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null);
+                Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null);
                 short? codigoCliente = null;
                 string codigo = Utilidad.tscFactura.dsNeo.tbFactura.Rows[0]["CodigoCliente"].ToString();
                 if (!string.IsNullOrEmpty(codigo))
