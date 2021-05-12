@@ -97,6 +97,12 @@
     <Compile Include="FrmBscOrdenPedido.Designer.cs">
       <DependentUpon>FrmBscOrdenPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCstCuentaCobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCstCuentaCobrar.Designer.cs">
+      <DependentUpon>FrmCstCuentaCobrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmIniSsn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBscOrdenPedido.resx">
       <DependentUpon>FrmBscOrdenPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCstCuentaCobrar.resx">
+      <DependentUpon>FrmCstCuentaCobrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIniSsn.resx">
       <DependentUpon>FrmIniSsn.cs</DependentUpon>

@@ -147,5 +147,12 @@ namespace Neo
         {
             btnVerFactura_Click(sender, EventArgs.Empty);
         }
+
+        private void grdFactura_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            string columna = "fVenta";
+            decimal valor = decimal.Parse(grdFactura.Rows[e.RowIndex].Cells[columna].Value.ToString());
+            grdFactura.Rows[e.RowIndex].Cells[columna].Style.ForeColor = valor >= 0.00M ? Color.Black : Color.Red;
+        }
     }
 }

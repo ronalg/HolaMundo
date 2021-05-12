@@ -188,5 +188,24 @@ namespace Neo
             }
             this.Cursor = Cursors.Default;
         }
+
+        private void grdFactura_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            string columna = "fCosto";
+            decimal valor = decimal.Parse(grdFactura.Rows[e.RowIndex].Cells[columna].Value.ToString());
+            grdFactura.Rows[e.RowIndex].Cells[columna].Style.ForeColor = valor >= 0.00M ? Color.Black : Color.Red;
+
+            columna = "fVenta";
+            valor = decimal.Parse(grdFactura.Rows[e.RowIndex].Cells[columna].Value.ToString());
+            grdFactura.Rows[e.RowIndex].Cells[columna].Style.ForeColor = valor >= 0.00M ? Color.Black : Color.Red;
+
+            columna = "fRecibido";
+            valor = decimal.Parse(grdFactura.Rows[e.RowIndex].Cells[columna].Value.ToString());
+            grdFactura.Rows[e.RowIndex].Cells[columna].Style.ForeColor = valor >= 0.00M ? Color.Black : Color.Red;
+
+            columna = "fMonto";
+            valor = decimal.Parse(grdFactura.Rows[e.RowIndex].Cells[columna].Value.ToString());
+            grdFactura.Rows[e.RowIndex].Cells[columna].Style.ForeColor = valor >= 0.00M ? Color.Black : Color.Red;
+        }
     }
 }
