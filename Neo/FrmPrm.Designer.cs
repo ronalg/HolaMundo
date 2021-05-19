@@ -123,16 +123,6 @@
             this.dsNeo = new Neo.DsNeo();
             this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
             this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
-            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuRptVenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptVentaResumen = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptVentaDetalle = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuConsulta = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCstCuentaCobrar = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCstCuadreCaja = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCstCitaPendiente = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuTscReciboIngreso = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -617,7 +607,7 @@
             // 
             this.mnuTscReciboIngreso.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscReciboIngreso.Image")));
             this.mnuTscReciboIngreso.Name = "mnuTscReciboIngreso";
-            this.mnuTscReciboIngreso.Size = new System.Drawing.Size(179, 22);
+            this.mnuTscReciboIngreso.Size = new System.Drawing.Size(180, 22);
             this.mnuTscReciboIngreso.Text = "Recibos de Ingresos";
             this.mnuTscReciboIngreso.Visible = false;
             this.mnuTscReciboIngreso.Click += new System.EventHandler(this.mnuTscReciboIngreso_Click);
@@ -671,26 +661,27 @@
             // 
             this.mnuCstCuadreCaja.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCuadreCaja.Image")));
             this.mnuCstCuadreCaja.Name = "mnuCstCuadreCaja";
-            this.mnuCstCuadreCaja.Size = new System.Drawing.Size(165, 22);
+            this.mnuCstCuadreCaja.Size = new System.Drawing.Size(180, 22);
             this.mnuCstCuadreCaja.Text = "Cuadre de Caja";
             // 
             // mnuCstCuentaCobrar
             // 
             this.mnuCstCuentaCobrar.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCuentaCobrar.Image")));
             this.mnuCstCuentaCobrar.Name = "mnuCstCuentaCobrar";
-            this.mnuCstCuentaCobrar.Size = new System.Drawing.Size(165, 22);
+            this.mnuCstCuentaCobrar.Size = new System.Drawing.Size(180, 22);
             this.mnuCstCuentaCobrar.Text = "Cuentas x Cobrar";
+            this.mnuCstCuentaCobrar.Click += new System.EventHandler(this.mnuCstCuentaCobrar_Click);
             // 
             // toolStripSeparator16
             // 
             this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(162, 6);
+            this.toolStripSeparator16.Size = new System.Drawing.Size(177, 6);
             // 
             // mnuCstCitaPendiente
             // 
             this.mnuCstCitaPendiente.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCitaPendiente.Image")));
             this.mnuCstCitaPendiente.Name = "mnuCstCitaPendiente";
-            this.mnuCstCitaPendiente.Size = new System.Drawing.Size(165, 22);
+            this.mnuCstCitaPendiente.Size = new System.Drawing.Size(180, 22);
             this.mnuCstCitaPendiente.Text = "Citas Pendientes";
             this.mnuCstCitaPendiente.Click += new System.EventHandler(this.mnuCstCitaPendiente_Click);
             // 
@@ -711,14 +702,14 @@
             this.mnuRptVentaDetalle});
             this.mnuRptVenta.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVenta.Image")));
             this.mnuRptVenta.Name = "mnuRptVenta";
-            this.mnuRptVenta.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptVenta.Size = new System.Drawing.Size(108, 22);
             this.mnuRptVenta.Text = "Ventas";
             // 
             // mnuRptVentaResumen
             // 
             this.mnuRptVentaResumen.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVentaResumen.Image")));
             this.mnuRptVentaResumen.Name = "mnuRptVentaResumen";
-            this.mnuRptVentaResumen.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptVentaResumen.Size = new System.Drawing.Size(123, 22);
             this.mnuRptVentaResumen.Text = "Resumen";
             this.mnuRptVentaResumen.Click += new System.EventHandler(this.mnuRptVentaResumen_Click);
             // 
@@ -726,20 +717,20 @@
             // 
             this.mnuRptVentaDetalle.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVentaDetalle.Image")));
             this.mnuRptVentaDetalle.Name = "mnuRptVentaDetalle";
-            this.mnuRptVentaDetalle.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptVentaDetalle.Size = new System.Drawing.Size(123, 22);
             this.mnuRptVentaDetalle.Text = "Detalles";
             this.mnuRptVentaDetalle.Click += new System.EventHandler(this.mnuRptVentaDetalle_Click);
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(105, 6);
             // 
             // mnuRptCita
             // 
             this.mnuRptCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCita.Image")));
             this.mnuRptCita.Name = "mnuRptCita";
-            this.mnuRptCita.Size = new System.Drawing.Size(180, 22);
+            this.mnuRptCita.Size = new System.Drawing.Size(108, 22);
             this.mnuRptCita.Text = "Citas";
             this.mnuRptCita.Click += new System.EventHandler(this.mnuRptCita_Click);
             // 
@@ -894,82 +885,6 @@
             // taSucursal
             // 
             this.taSucursal.ClearBeforeFill = true;
-            // 
-            // toolStripSeparator15
-            // 
-            this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(177, 6);
-            // 
-            // mnuRptVenta
-            // 
-            this.mnuRptVenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuRptVentaResumen,
-            this.mnuRptVentaDetalle});
-            this.mnuRptVenta.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVenta.Image")));
-            this.mnuRptVenta.Name = "mnuRptVenta";
-            this.mnuRptVenta.Size = new System.Drawing.Size(180, 22);
-            this.mnuRptVenta.Text = "Ventas";
-            // 
-            // mnuRptVentaResumen
-            // 
-            this.mnuRptVentaResumen.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVentaResumen.Image")));
-            this.mnuRptVentaResumen.Name = "mnuRptVentaResumen";
-            this.mnuRptVentaResumen.Size = new System.Drawing.Size(180, 22);
-            this.mnuRptVentaResumen.Text = "Resumen";
-            // 
-            // mnuRptVentaDetalle
-            // 
-            this.mnuRptVentaDetalle.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVentaDetalle.Image")));
-            this.mnuRptVentaDetalle.Name = "mnuRptVentaDetalle";
-            this.mnuRptVentaDetalle.Size = new System.Drawing.Size(180, 22);
-            this.mnuRptVentaDetalle.Text = "Detalles";
-            // 
-            // mnuConsulta
-            // 
-            this.mnuConsulta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuCstCuadreCaja,
-            this.mnuCstCuentaCobrar,
-            this.toolStripSeparator16,
-            this.mnuCstCitaPendiente});
-            this.mnuConsulta.Name = "mnuConsulta";
-            this.mnuConsulta.Size = new System.Drawing.Size(71, 20);
-            this.mnuConsulta.Text = "Consultas";
-            // 
-            // mnuCstCuentaCobrar
-            // 
-            this.mnuCstCuentaCobrar.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCuentaCobrar.Image")));
-            this.mnuCstCuentaCobrar.Name = "mnuCstCuentaCobrar";
-            this.mnuCstCuentaCobrar.Size = new System.Drawing.Size(180, 22);
-            this.mnuCstCuentaCobrar.Text = "Cuentas x Cobrar";
-            // 
-            // mnuCstCuadreCaja
-            // 
-            this.mnuCstCuadreCaja.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCuadreCaja.Image")));
-            this.mnuCstCuadreCaja.Name = "mnuCstCuadreCaja";
-            this.mnuCstCuadreCaja.Size = new System.Drawing.Size(180, 22);
-            this.mnuCstCuadreCaja.Text = "Cuadre de Caja";
-            // 
-            // mnuCstCitaPendiente
-            // 
-            this.mnuCstCitaPendiente.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCitaPendiente.Image")));
-            this.mnuCstCitaPendiente.Name = "mnuCstCitaPendiente";
-            this.mnuCstCitaPendiente.Size = new System.Drawing.Size(180, 22);
-            this.mnuCstCitaPendiente.Text = "Citas Pendientes";
-            this.mnuCstCitaPendiente.Click += new System.EventHandler(this.mnuCstCitaPendiente_Click);
-            // 
-            // toolStripSeparator16
-            // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(177, 6);
-            // 
-            // mnuTscReciboIngreso
-            // 
-            this.mnuTscReciboIngreso.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscReciboIngreso.Image")));
-            this.mnuTscReciboIngreso.Name = "mnuTscReciboIngreso";
-            this.mnuTscReciboIngreso.Size = new System.Drawing.Size(180, 22);
-            this.mnuTscReciboIngreso.Text = "Recibos de Ingresos";
-            this.mnuTscReciboIngreso.Visible = false;
-            this.mnuTscReciboIngreso.Click += new System.EventHandler(this.mnuTscReciboIngreso_Click);
             // 
             // FrmPrm
             // 

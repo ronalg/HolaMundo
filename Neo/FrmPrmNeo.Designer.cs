@@ -1,0 +1,998 @@
+﻿namespace Neo
+{
+    partial class FrmPrmNeo
+    {
+        /// <summary>
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrmNeo));
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.mnuRptVentaResumen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRpt = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptVenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptVentaDetalle = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuRptCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCstCitaPendiente = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuCstCuentaCobrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCstCuadreCaja = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuConsulta = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscHistorial = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscIncripcion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscOrdenPedido = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscReciboIngreso = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTscFactura = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTransacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoNmnPuesto = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoNmnEmpleado = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoNomina = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoTipoFinanciera = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoPerfilFinanciera = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoFinanciera = new System.Windows.Forms.ToolStripMenuItem();
+            this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
+            this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
+            this.dsNeo = new Neo.DsNeo();
+            this.taTrabajo = new Neo.DsNeoTableAdapters.taTrabajo();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMascta = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoEmpresa = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVeterinaria = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mnuCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnArticulo = new System.Windows.Forms.ToolStripButton();
+            this.btnProveedor = new System.Windows.Forms.ToolStripButton();
+            this.btnCliente = new System.Windows.Forms.ToolStripButton();
+            this.cboSucursal = new System.Windows.Forms.ToolStripComboBox();
+            this.cboEmpresa = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.mnuMtoSucursal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoProveedor = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoPerfilCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoNacionalidad = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuPrecioVenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoPerfilArticulo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoArticulo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoVtnPropiedad = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoVtnPelo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoVtnCaracter = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoVtnGrupo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mntoVtnGrupoSanguineo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoVtnRaza = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoVtnMascota = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoVeterinaria = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoGeografia = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoProvincia = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoPais = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoCategoria = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoDepartamento = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoOcupacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoEstado = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoFrecuencia = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoIdentificacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoContacto = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoPerfilContacto = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoTipoContacto = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMtoFormaPago = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoCaja = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoMoneda = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoTipo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMtoTributos = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
+            this.statusStrip.SuspendLayout();
+            this.toolStrip.SuspendLayout();
+            this.mnuPrincipal.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // mnuRptVentaResumen
+            // 
+            this.mnuRptVentaResumen.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVentaResumen.Image")));
+            this.mnuRptVentaResumen.Name = "mnuRptVentaResumen";
+            this.mnuRptVentaResumen.Size = new System.Drawing.Size(123, 22);
+            this.mnuRptVentaResumen.Text = "Resumen";
+            this.mnuRptVentaResumen.Click += new System.EventHandler(this.mnuRptVentaResumen_Click);
+            // 
+            // mnuRpt
+            // 
+            this.mnuRpt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuRptVenta,
+            this.toolStripSeparator15,
+            this.mnuRptCita});
+            this.mnuRpt.Name = "mnuRpt";
+            this.mnuRpt.Size = new System.Drawing.Size(65, 20);
+            this.mnuRpt.Text = "Reportes";
+            // 
+            // mnuRptVenta
+            // 
+            this.mnuRptVenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuRptVentaResumen,
+            this.mnuRptVentaDetalle});
+            this.mnuRptVenta.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVenta.Image")));
+            this.mnuRptVenta.Name = "mnuRptVenta";
+            this.mnuRptVenta.Size = new System.Drawing.Size(108, 22);
+            this.mnuRptVenta.Text = "Ventas";
+            // 
+            // mnuRptVentaDetalle
+            // 
+            this.mnuRptVentaDetalle.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptVentaDetalle.Image")));
+            this.mnuRptVentaDetalle.Name = "mnuRptVentaDetalle";
+            this.mnuRptVentaDetalle.Size = new System.Drawing.Size(123, 22);
+            this.mnuRptVentaDetalle.Text = "Detalles";
+            this.mnuRptVentaDetalle.Click += new System.EventHandler(this.mnuRptVentaDetalle_Click);
+            // 
+            // toolStripSeparator15
+            // 
+            this.toolStripSeparator15.Name = "toolStripSeparator15";
+            this.toolStripSeparator15.Size = new System.Drawing.Size(105, 6);
+            // 
+            // mnuRptCita
+            // 
+            this.mnuRptCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCita.Image")));
+            this.mnuRptCita.Name = "mnuRptCita";
+            this.mnuRptCita.Size = new System.Drawing.Size(108, 22);
+            this.mnuRptCita.Text = "Citas";
+            this.mnuRptCita.Click += new System.EventHandler(this.mnuRptCita_Click);
+            // 
+            // mnuCstCitaPendiente
+            // 
+            this.mnuCstCitaPendiente.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCitaPendiente.Image")));
+            this.mnuCstCitaPendiente.Name = "mnuCstCitaPendiente";
+            this.mnuCstCitaPendiente.Size = new System.Drawing.Size(165, 22);
+            this.mnuCstCitaPendiente.Text = "Citas Pendientes";
+            this.mnuCstCitaPendiente.Click += new System.EventHandler(this.mnuCstCitaPendiente_Click);
+            // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size(162, 6);
+            // 
+            // mnuCstCuentaCobrar
+            // 
+            this.mnuCstCuentaCobrar.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCuentaCobrar.Image")));
+            this.mnuCstCuentaCobrar.Name = "mnuCstCuentaCobrar";
+            this.mnuCstCuentaCobrar.Size = new System.Drawing.Size(165, 22);
+            this.mnuCstCuentaCobrar.Text = "Cuentas x Cobrar";
+            this.mnuCstCuentaCobrar.Click += new System.EventHandler(this.mnuCstCuentaCobrar_Click);
+            // 
+            // mnuCstCuadreCaja
+            // 
+            this.mnuCstCuadreCaja.Image = ((System.Drawing.Image)(resources.GetObject("mnuCstCuadreCaja.Image")));
+            this.mnuCstCuadreCaja.Name = "mnuCstCuadreCaja";
+            this.mnuCstCuadreCaja.Size = new System.Drawing.Size(165, 22);
+            this.mnuCstCuadreCaja.Text = "Cuadre de Caja";
+            // 
+            // mnuConsulta
+            // 
+            this.mnuConsulta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCstCuadreCaja,
+            this.mnuCstCuentaCobrar,
+            this.toolStripSeparator16,
+            this.mnuCstCitaPendiente});
+            this.mnuConsulta.Name = "mnuConsulta";
+            this.mnuConsulta.Size = new System.Drawing.Size(71, 20);
+            this.mnuConsulta.Text = "Consultas";
+            // 
+            // mnuTscHistorial
+            // 
+            this.mnuTscHistorial.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscHistorial.Image")));
+            this.mnuTscHistorial.Name = "mnuTscHistorial";
+            this.mnuTscHistorial.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscHistorial.Text = "Historial";
+            this.mnuTscHistorial.Visible = false;
+            // 
+            // mnuTscCita
+            // 
+            this.mnuTscCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscCita.Image")));
+            this.mnuTscCita.Name = "mnuTscCita";
+            this.mnuTscCita.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscCita.Text = "Citas";
+            this.mnuTscCita.Click += new System.EventHandler(this.mnuTscCita_Click);
+            // 
+            // mnuTscIncripcion
+            // 
+            this.mnuTscIncripcion.Enabled = false;
+            this.mnuTscIncripcion.Name = "mnuTscIncripcion";
+            this.mnuTscIncripcion.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscIncripcion.Text = "Incripciones";
+            this.mnuTscIncripcion.Visible = false;
+            // 
+            // mnuTscOrdenPedido
+            // 
+            this.mnuTscOrdenPedido.Enabled = false;
+            this.mnuTscOrdenPedido.Name = "mnuTscOrdenPedido";
+            this.mnuTscOrdenPedido.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscOrdenPedido.Text = "Ordenes de Pedidos";
+            this.mnuTscOrdenPedido.Visible = false;
+            // 
+            // mnuTscReciboIngreso
+            // 
+            this.mnuTscReciboIngreso.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscReciboIngreso.Image")));
+            this.mnuTscReciboIngreso.Name = "mnuTscReciboIngreso";
+            this.mnuTscReciboIngreso.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscReciboIngreso.Text = "Recibos de Ingresos";
+            this.mnuTscReciboIngreso.Visible = false;
+            // 
+            // mnuTscFactura
+            // 
+            this.mnuTscFactura.Image = ((System.Drawing.Image)(resources.GetObject("mnuTscFactura.Image")));
+            this.mnuTscFactura.Name = "mnuTscFactura";
+            this.mnuTscFactura.Size = new System.Drawing.Size(180, 22);
+            this.mnuTscFactura.Text = "Facturas";
+            this.mnuTscFactura.Click += new System.EventHandler(this.mnuTscFactura_Click);
+            // 
+            // mnuTransacion
+            // 
+            this.mnuTransacion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTscFactura,
+            this.mnuTscReciboIngreso,
+            this.mnuTscOrdenPedido,
+            this.mnuTscIncripcion,
+            this.mnuTscCita,
+            this.mnuTscHistorial});
+            this.mnuTransacion.Name = "mnuTransacion";
+            this.mnuTransacion.Size = new System.Drawing.Size(92, 20);
+            this.mnuTransacion.Text = "Transacciones";
+            // 
+            // mnuMtoNmnPuesto
+            // 
+            this.mnuMtoNmnPuesto.Name = "mnuMtoNmnPuesto";
+            this.mnuMtoNmnPuesto.Size = new System.Drawing.Size(132, 22);
+            this.mnuMtoNmnPuesto.Text = "Puestos";
+            this.mnuMtoNmnPuesto.Click += new System.EventHandler(this.mnuMtoNmnPuesto_Click);
+            // 
+            // mnuMtoNmnEmpleado
+            // 
+            this.mnuMtoNmnEmpleado.Name = "mnuMtoNmnEmpleado";
+            this.mnuMtoNmnEmpleado.Size = new System.Drawing.Size(132, 22);
+            this.mnuMtoNmnEmpleado.Text = "Empleados";
+            this.mnuMtoNmnEmpleado.Click += new System.EventHandler(this.mnuMtoNmnEmpleado_Click);
+            // 
+            // mnuMtoNomina
+            // 
+            this.mnuMtoNomina.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoNmnEmpleado,
+            this.mnuMtoNmnPuesto});
+            this.mnuMtoNomina.Name = "mnuMtoNomina";
+            this.mnuMtoNomina.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoNomina.Text = "Nomina";
+            // 
+            // mnuMtoTipoFinanciera
+            // 
+            this.mnuMtoTipoFinanciera.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoTipoFinanciera.Image")));
+            this.mnuMtoTipoFinanciera.Name = "mnuMtoTipoFinanciera";
+            this.mnuMtoTipoFinanciera.Size = new System.Drawing.Size(102, 22);
+            this.mnuMtoTipoFinanciera.Text = "Tipos";
+            this.mnuMtoTipoFinanciera.Click += new System.EventHandler(this.mnuMtoTipoFinanciera_Click);
+            // 
+            // mnuMtoPerfilFinanciera
+            // 
+            this.mnuMtoPerfilFinanciera.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilFinanciera.Image")));
+            this.mnuMtoPerfilFinanciera.Name = "mnuMtoPerfilFinanciera";
+            this.mnuMtoPerfilFinanciera.Size = new System.Drawing.Size(102, 22);
+            this.mnuMtoPerfilFinanciera.Text = "Perfil";
+            this.mnuMtoPerfilFinanciera.Click += new System.EventHandler(this.mnuMtoPerfilFinanciera_Click);
+            // 
+            // mnuMtoFinanciera
+            // 
+            this.mnuMtoFinanciera.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoPerfilFinanciera,
+            this.mnuMtoTipoFinanciera});
+            this.mnuMtoFinanciera.Enabled = false;
+            this.mnuMtoFinanciera.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoFinanciera.Image")));
+            this.mnuMtoFinanciera.Name = "mnuMtoFinanciera";
+            this.mnuMtoFinanciera.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoFinanciera.Text = "Financieras";
+            // 
+            // taEmpresa
+            // 
+            this.taEmpresa.ClearBeforeFill = true;
+            // 
+            // taSucursal
+            // 
+            this.taSucursal.ClearBeforeFill = true;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // taTrabajo
+            // 
+            this.taTrabajo.ClearBeforeFill = true;
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabel.Text = "Estado";
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 663);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(1191, 22);
+            this.statusStrip.TabIndex = 6;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(49, 22);
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
+            // 
+            // mnuMascta
+            // 
+            this.mnuMascta.Name = "mnuMascta";
+            this.mnuMascta.Size = new System.Drawing.Size(124, 22);
+            this.mnuMascta.Text = "Mascotas";
+            this.mnuMascta.Click += new System.EventHandler(this.mnuMascta_Click);
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(121, 6);
+            // 
+            // mnuMtoEmpresa
+            // 
+            this.mnuMtoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoEmpresa.Image")));
+            this.mnuMtoEmpresa.Name = "mnuMtoEmpresa";
+            this.mnuMtoEmpresa.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoEmpresa.Text = "Empresas";
+            this.mnuMtoEmpresa.Click += new System.EventHandler(this.mnuMtoEmpresa_Click);
+            // 
+            // btnVeterinaria
+            // 
+            this.btnVeterinaria.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCita,
+            this.toolStripSeparator14,
+            this.mnuMascta});
+            this.btnVeterinaria.Image = ((System.Drawing.Image)(resources.GetObject("btnVeterinaria.Image")));
+            this.btnVeterinaria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnVeterinaria.Name = "btnVeterinaria";
+            this.btnVeterinaria.Size = new System.Drawing.Size(91, 22);
+            this.btnVeterinaria.Text = "Veterinaria";
+            // 
+            // mnuCita
+            // 
+            this.mnuCita.Image = ((System.Drawing.Image)(resources.GetObject("mnuCita.Image")));
+            this.mnuCita.Name = "mnuCita";
+            this.mnuCita.Size = new System.Drawing.Size(124, 22);
+            this.mnuCita.Text = "Citas";
+            this.mnuCita.Click += new System.EventHandler(this.mnuCita_Click);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnArticulo
+            // 
+            this.btnArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnArticulo.Image")));
+            this.btnArticulo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnArticulo.Name = "btnArticulo";
+            this.btnArticulo.Size = new System.Drawing.Size(74, 22);
+            this.btnArticulo.Text = "Artículos";
+            this.btnArticulo.Click += new System.EventHandler(this.btnArticulo_Click);
+            // 
+            // btnProveedor
+            // 
+            this.btnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedor.Image")));
+            this.btnProveedor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(92, 22);
+            this.btnProveedor.Text = "Proveedores";
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
+            this.btnCliente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(69, 22);
+            this.btnCliente.Text = "Clientes";
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // cboSucursal
+            // 
+            this.cboSucursal.Name = "cboSucursal";
+            this.cboSucursal.Size = new System.Drawing.Size(200, 25);
+            // 
+            // cboEmpresa
+            // 
+            this.cboEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEmpresa.Name = "cboEmpresa";
+            this.cboEmpresa.Size = new System.Drawing.Size(200, 25);
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cboEmpresa,
+            this.cboSucursal,
+            this.btnCliente,
+            this.btnProveedor,
+            this.btnArticulo,
+            this.toolStripSeparator12,
+            this.btnVeterinaria,
+            this.toolStripSeparator13,
+            this.btnSalir});
+            this.toolStrip.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(1191, 25);
+            this.toolStrip.TabIndex = 5;
+            this.toolStrip.Text = "ToolStrip";
+            // 
+            // mnuMtoSucursal
+            // 
+            this.mnuMtoSucursal.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoSucursal.Image")));
+            this.mnuMtoSucursal.Name = "mnuMtoSucursal";
+            this.mnuMtoSucursal.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoSucursal.Text = "Sucursales";
+            this.mnuMtoSucursal.Click += new System.EventHandler(this.mnuMtoSucursal_Click);
+            // 
+            // mnuMtoProveedor
+            // 
+            this.mnuMtoProveedor.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoProveedor.Image")));
+            this.mnuMtoProveedor.Name = "mnuMtoProveedor";
+            this.mnuMtoProveedor.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoProveedor.Text = "Proveedores";
+            this.mnuMtoProveedor.Click += new System.EventHandler(this.mnuMtoProveedor_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(152, 6);
+            // 
+            // mnuMtoPerfilCliente
+            // 
+            this.mnuMtoPerfilCliente.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilCliente.Image")));
+            this.mnuMtoPerfilCliente.Name = "mnuMtoPerfilCliente";
+            this.mnuMtoPerfilCliente.Size = new System.Drawing.Size(155, 22);
+            this.mnuMtoPerfilCliente.Text = "Perfil";
+            this.mnuMtoPerfilCliente.Click += new System.EventHandler(this.mnuMtoPerfilCliente_Click);
+            // 
+            // mnuMtoCliente
+            // 
+            this.mnuMtoCliente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoPerfilCliente,
+            this.toolStripSeparator9,
+            this.mnuMtoNacionalidad});
+            this.mnuMtoCliente.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoCliente.Image")));
+            this.mnuMtoCliente.Name = "mnuMtoCliente";
+            this.mnuMtoCliente.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoCliente.Text = "Clientes";
+            // 
+            // mnuMtoNacionalidad
+            // 
+            this.mnuMtoNacionalidad.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoNacionalidad.Image")));
+            this.mnuMtoNacionalidad.Name = "mnuMtoNacionalidad";
+            this.mnuMtoNacionalidad.Size = new System.Drawing.Size(155, 22);
+            this.mnuMtoNacionalidad.Text = "Nacionalidades";
+            this.mnuMtoNacionalidad.Click += new System.EventHandler(this.mnuMtoNacionalidad_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(161, 6);
+            // 
+            // mnuPrecioVenta
+            // 
+            this.mnuPrecioVenta.Image = ((System.Drawing.Image)(resources.GetObject("mnuPrecioVenta.Image")));
+            this.mnuPrecioVenta.Name = "mnuPrecioVenta";
+            this.mnuPrecioVenta.Size = new System.Drawing.Size(165, 22);
+            this.mnuPrecioVenta.Text = "Precios de Ventas";
+            this.mnuPrecioVenta.Click += new System.EventHandler(this.mnuPrecioVenta_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(162, 6);
+            // 
+            // mnuMtoPerfilArticulo
+            // 
+            this.mnuMtoPerfilArticulo.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilArticulo.Image")));
+            this.mnuMtoPerfilArticulo.Name = "mnuMtoPerfilArticulo";
+            this.mnuMtoPerfilArticulo.Size = new System.Drawing.Size(165, 22);
+            this.mnuMtoPerfilArticulo.Text = "Perfil";
+            this.mnuMtoPerfilArticulo.Click += new System.EventHandler(this.mnuMtoPerfilArticulo_Click);
+            // 
+            // mnuMtoArticulo
+            // 
+            this.mnuMtoArticulo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoPerfilArticulo,
+            this.toolStripSeparator3,
+            this.mnuPrecioVenta});
+            this.mnuMtoArticulo.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoArticulo.Image")));
+            this.mnuMtoArticulo.Name = "mnuMtoArticulo";
+            this.mnuMtoArticulo.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoArticulo.Text = "Artículos";
+            // 
+            // mnuMtoVtnPropiedad
+            // 
+            this.mnuMtoVtnPropiedad.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoVtnPropiedad.Image")));
+            this.mnuMtoVtnPropiedad.Name = "mnuMtoVtnPropiedad";
+            this.mnuMtoVtnPropiedad.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnPropiedad.Text = "Propiedades";
+            this.mnuMtoVtnPropiedad.Click += new System.EventHandler(this.mnuMtoVtnPropiedad_Click);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(173, 6);
+            // 
+            // mnuMtoVtnPelo
+            // 
+            this.mnuMtoVtnPelo.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoVtnPelo.Image")));
+            this.mnuMtoVtnPelo.Name = "mnuMtoVtnPelo";
+            this.mnuMtoVtnPelo.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnPelo.Text = "Tipos de Pelo";
+            this.mnuMtoVtnPelo.Click += new System.EventHandler(this.mnuMtoVtnPelo_Click);
+            // 
+            // mnuMtoVtnCaracter
+            // 
+            this.mnuMtoVtnCaracter.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoVtnCaracter.Image")));
+            this.mnuMtoVtnCaracter.Name = "mnuMtoVtnCaracter";
+            this.mnuMtoVtnCaracter.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnCaracter.Text = "Caracter";
+            this.mnuMtoVtnCaracter.Click += new System.EventHandler(this.mnuMtoVtnCaracter_Click);
+            // 
+            // mnuMtoVtnGrupo
+            // 
+            this.mnuMtoVtnGrupo.Name = "mnuMtoVtnGrupo";
+            this.mnuMtoVtnGrupo.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnGrupo.Text = "Grupos Razas";
+            this.mnuMtoVtnGrupo.Click += new System.EventHandler(this.mnuMtoVtnGrupo_Click);
+            // 
+            // mntoVtnGrupoSanguineo
+            // 
+            this.mntoVtnGrupoSanguineo.Name = "mntoVtnGrupoSanguineo";
+            this.mntoVtnGrupoSanguineo.Size = new System.Drawing.Size(176, 22);
+            this.mntoVtnGrupoSanguineo.Text = "Grupos Sanguineos";
+            this.mntoVtnGrupoSanguineo.Click += new System.EventHandler(this.mntoVtnGrupoSanguineo_Click);
+            // 
+            // mnuMtoVtnRaza
+            // 
+            this.mnuMtoVtnRaza.Name = "mnuMtoVtnRaza";
+            this.mnuMtoVtnRaza.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnRaza.Text = "Razas";
+            this.mnuMtoVtnRaza.Click += new System.EventHandler(this.mnuMtoVtnRaza_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(173, 6);
+            // 
+            // mnuMtoVtnMascota
+            // 
+            this.mnuMtoVtnMascota.Name = "mnuMtoVtnMascota";
+            this.mnuMtoVtnMascota.Size = new System.Drawing.Size(176, 22);
+            this.mnuMtoVtnMascota.Text = "Mascotas";
+            this.mnuMtoVtnMascota.Click += new System.EventHandler(this.mnuMtoVtnMascota_Click);
+            // 
+            // mnuMtoVeterinaria
+            // 
+            this.mnuMtoVeterinaria.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoVtnMascota,
+            this.toolStripSeparator10,
+            this.mnuMtoVtnRaza,
+            this.mntoVtnGrupoSanguineo,
+            this.mnuMtoVtnGrupo,
+            this.mnuMtoVtnCaracter,
+            this.mnuMtoVtnPelo,
+            this.toolStripSeparator11,
+            this.mnuMtoVtnPropiedad});
+            this.mnuMtoVeterinaria.Name = "mnuMtoVeterinaria";
+            this.mnuMtoVeterinaria.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoVeterinaria.Text = "Veterinaria";
+            // 
+            // mnuMantenimiento
+            // 
+            this.mnuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoVeterinaria,
+            this.mnuMtoArticulo,
+            this.toolStripSeparator4,
+            this.mnuMtoCliente,
+            this.mnuMtoProveedor,
+            this.toolStripSeparator5,
+            this.mnuMtoGeografia,
+            this.toolStripSeparator6,
+            this.mnuMtoCategoria,
+            this.mnuMtoDepartamento,
+            this.mnuMtoOcupacion,
+            this.mnuMtoEstado,
+            this.mnuMtoFrecuencia,
+            this.toolStripSeparator1,
+            this.mnuMtoIdentificacion,
+            this.mnuMtoContacto,
+            this.toolStripSeparator2,
+            this.mnuMtoFormaPago,
+            this.mnuMtoCaja,
+            this.mnuMtoMoneda,
+            this.clientesToolStripMenuItem,
+            this.toolStripSeparator7,
+            this.mnuMtoSucursal,
+            this.mnuMtoEmpresa,
+            this.mnuMtoFinanciera,
+            this.mnuMtoNomina});
+            this.mnuMantenimiento.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
+            this.mnuMantenimiento.Name = "mnuMantenimiento";
+            this.mnuMantenimiento.Size = new System.Drawing.Size(106, 20);
+            this.mnuMantenimiento.Text = "Mantenimientos";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(161, 6);
+            // 
+            // mnuMtoGeografia
+            // 
+            this.mnuMtoGeografia.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoProvincia,
+            this.mnuMtoPais});
+            this.mnuMtoGeografia.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoGeografia.Image")));
+            this.mnuMtoGeografia.Name = "mnuMtoGeografia";
+            this.mnuMtoGeografia.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoGeografia.Text = "Geografías";
+            // 
+            // mnuMtoProvincia
+            // 
+            this.mnuMtoProvincia.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoProvincia.Image")));
+            this.mnuMtoProvincia.Name = "mnuMtoProvincia";
+            this.mnuMtoProvincia.Size = new System.Drawing.Size(128, 22);
+            this.mnuMtoProvincia.Text = "Provincias";
+            this.mnuMtoProvincia.Click += new System.EventHandler(this.mnuMtoProvincia_Click);
+            // 
+            // mnuMtoPais
+            // 
+            this.mnuMtoPais.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPais.Image")));
+            this.mnuMtoPais.Name = "mnuMtoPais";
+            this.mnuMtoPais.Size = new System.Drawing.Size(128, 22);
+            this.mnuMtoPais.Text = "Paises";
+            this.mnuMtoPais.Click += new System.EventHandler(this.mnuMtoPais_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(161, 6);
+            // 
+            // mnuMtoCategoria
+            // 
+            this.mnuMtoCategoria.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoCategoria.Image")));
+            this.mnuMtoCategoria.Name = "mnuMtoCategoria";
+            this.mnuMtoCategoria.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoCategoria.Text = "Categorias";
+            this.mnuMtoCategoria.Click += new System.EventHandler(this.mnuMtoCategoria_Click);
+            // 
+            // mnuMtoDepartamento
+            // 
+            this.mnuMtoDepartamento.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoDepartamento.Image")));
+            this.mnuMtoDepartamento.Name = "mnuMtoDepartamento";
+            this.mnuMtoDepartamento.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoDepartamento.Text = "Departamentos";
+            this.mnuMtoDepartamento.Click += new System.EventHandler(this.mnuMtoDepartamento_Click);
+            // 
+            // mnuMtoOcupacion
+            // 
+            this.mnuMtoOcupacion.Enabled = false;
+            this.mnuMtoOcupacion.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoOcupacion.Image")));
+            this.mnuMtoOcupacion.Name = "mnuMtoOcupacion";
+            this.mnuMtoOcupacion.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoOcupacion.Text = "Ocupaciones";
+            this.mnuMtoOcupacion.Click += new System.EventHandler(this.mnuMtoOcupacion_Click);
+            // 
+            // mnuMtoEstado
+            // 
+            this.mnuMtoEstado.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoEstado.Image")));
+            this.mnuMtoEstado.Name = "mnuMtoEstado";
+            this.mnuMtoEstado.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoEstado.Text = "Estados";
+            this.mnuMtoEstado.Click += new System.EventHandler(this.mnuMtoEstado_Click);
+            // 
+            // mnuMtoFrecuencia
+            // 
+            this.mnuMtoFrecuencia.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoFrecuencia.Image")));
+            this.mnuMtoFrecuencia.Name = "mnuMtoFrecuencia";
+            this.mnuMtoFrecuencia.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoFrecuencia.Text = "Frecuencias";
+            this.mnuMtoFrecuencia.Click += new System.EventHandler(this.mnuMtoFrecuencia_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(161, 6);
+            // 
+            // mnuMtoIdentificacion
+            // 
+            this.mnuMtoIdentificacion.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoIdentificacion.Image")));
+            this.mnuMtoIdentificacion.Name = "mnuMtoIdentificacion";
+            this.mnuMtoIdentificacion.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoIdentificacion.Text = "Identificaciones";
+            this.mnuMtoIdentificacion.Click += new System.EventHandler(this.mnuMtoIdentificacion_Click);
+            // 
+            // mnuMtoContacto
+            // 
+            this.mnuMtoContacto.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoPerfilContacto,
+            this.toolStripSeparator8,
+            this.mnuMtoTipoContacto});
+            this.mnuMtoContacto.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoContacto.Image")));
+            this.mnuMtoContacto.Name = "mnuMtoContacto";
+            this.mnuMtoContacto.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoContacto.Text = "Contactos";
+            // 
+            // mnuMtoPerfilContacto
+            // 
+            this.mnuMtoPerfilContacto.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoPerfilContacto.Image")));
+            this.mnuMtoPerfilContacto.Name = "mnuMtoPerfilContacto";
+            this.mnuMtoPerfilContacto.Size = new System.Drawing.Size(102, 22);
+            this.mnuMtoPerfilContacto.Text = "Perfil";
+            this.mnuMtoPerfilContacto.Click += new System.EventHandler(this.mnuMtoPerfilContacto_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(99, 6);
+            // 
+            // mnuMtoTipoContacto
+            // 
+            this.mnuMtoTipoContacto.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoTipoContacto.Image")));
+            this.mnuMtoTipoContacto.Name = "mnuMtoTipoContacto";
+            this.mnuMtoTipoContacto.Size = new System.Drawing.Size(102, 22);
+            this.mnuMtoTipoContacto.Text = "Tipos";
+            this.mnuMtoTipoContacto.Click += new System.EventHandler(this.mnuMtoTipoContacto_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(161, 6);
+            // 
+            // mnuMtoFormaPago
+            // 
+            this.mnuMtoFormaPago.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoFormaPago.Image")));
+            this.mnuMtoFormaPago.Name = "mnuMtoFormaPago";
+            this.mnuMtoFormaPago.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoFormaPago.Text = "Formas de Pagos";
+            this.mnuMtoFormaPago.Click += new System.EventHandler(this.mnuMtoFormaPago_Click);
+            // 
+            // mnuMtoCaja
+            // 
+            this.mnuMtoCaja.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoCaja.Image")));
+            this.mnuMtoCaja.Name = "mnuMtoCaja";
+            this.mnuMtoCaja.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoCaja.Text = "Cajas";
+            this.mnuMtoCaja.Click += new System.EventHandler(this.mnuMtoCaja_Click);
+            // 
+            // mnuMtoMoneda
+            // 
+            this.mnuMtoMoneda.Enabled = false;
+            this.mnuMtoMoneda.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoMoneda.Image")));
+            this.mnuMtoMoneda.Name = "mnuMtoMoneda";
+            this.mnuMtoMoneda.Size = new System.Drawing.Size(164, 22);
+            this.mnuMtoMoneda.Text = "Monedas";
+            this.mnuMtoMoneda.Click += new System.EventHandler(this.mnuMtoMoneda_Click);
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMtoTipo,
+            this.mnuMtoTributos});
+            this.clientesToolStripMenuItem.Enabled = false;
+            this.clientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clientesToolStripMenuItem.Image")));
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.clientesToolStripMenuItem.Text = "Tributos";
+            // 
+            // mnuMtoTipo
+            // 
+            this.mnuMtoTipo.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoTipo.Image")));
+            this.mnuMtoTipo.Name = "mnuMtoTipo";
+            this.mnuMtoTipo.Size = new System.Drawing.Size(116, 22);
+            this.mnuMtoTipo.Text = "Tipos";
+            this.mnuMtoTipo.Click += new System.EventHandler(this.mnuMtoTipo_Click);
+            // 
+            // mnuMtoTributos
+            // 
+            this.mnuMtoTributos.Image = ((System.Drawing.Image)(resources.GetObject("mnuMtoTributos.Image")));
+            this.mnuMtoTributos.Name = "mnuMtoTributos";
+            this.mnuMtoTributos.Size = new System.Drawing.Size(116, 22);
+            this.mnuMtoTributos.Text = "Tributos";
+            this.mnuMtoTributos.Click += new System.EventHandler(this.mnuMtoTributos_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(161, 6);
+            // 
+            // mnuPrincipal
+            // 
+            this.mnuPrincipal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMantenimiento,
+            this.mnuTransacion,
+            this.mnuConsulta,
+            this.mnuRpt});
+            this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.mnuPrincipal.Name = "mnuPrincipal";
+            this.mnuPrincipal.Size = new System.Drawing.Size(1191, 24);
+            this.mnuPrincipal.TabIndex = 4;
+            this.mnuPrincipal.Text = "MenuStrip";
+            // 
+            // FrmPrmNeo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1191, 685);
+            this.Controls.Add(this.statusStrip);
+            this.Controls.Add(this.toolStrip);
+            this.Controls.Add(this.mnuPrincipal);
+            this.IsMdiContainer = true;
+            this.Name = "FrmPrmNeo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmPrmNeo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
+            this.mnuPrincipal.ResumeLayout(false);
+            this.mnuPrincipal.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+        #endregion
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem mnuRptVentaResumen;
+        private System.Windows.Forms.ToolStripMenuItem mnuRpt;
+        private System.Windows.Forms.ToolStripMenuItem mnuRptVenta;
+        private System.Windows.Forms.ToolStripMenuItem mnuRptVentaDetalle;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+        private System.Windows.Forms.ToolStripMenuItem mnuRptCita;
+        private System.Windows.Forms.ToolStripMenuItem mnuCstCitaPendiente;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+        private System.Windows.Forms.ToolStripMenuItem mnuCstCuentaCobrar;
+        private System.Windows.Forms.ToolStripMenuItem mnuCstCuadreCaja;
+        private System.Windows.Forms.ToolStripMenuItem mnuConsulta;
+        private System.Windows.Forms.ToolStripMenuItem mnuTscHistorial;
+        private System.Windows.Forms.ToolStripMenuItem mnuTscCita;
+        private System.Windows.Forms.ToolStripMenuItem mnuTscIncripcion;
+        private System.Windows.Forms.ToolStripMenuItem mnuTscOrdenPedido;
+        private System.Windows.Forms.ToolStripMenuItem mnuTscReciboIngreso;
+        private System.Windows.Forms.ToolStripMenuItem mnuTscFactura;
+        private System.Windows.Forms.ToolStripMenuItem mnuTransacion;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoNmnPuesto;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoNmnEmpleado;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoNomina;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoTipoFinanciera;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoPerfilFinanciera;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoFinanciera;
+        private DsNeoTableAdapters.taEmpresa taEmpresa;
+        private DsNeoTableAdapters.taSucursal taSucursal;
+        private DsNeo dsNeo;
+        private DsNeoTableAdapters.taTrabajo taTrabajo;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripButton btnSalir;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripMenuItem mnuMascta;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoEmpresa;
+        private System.Windows.Forms.ToolStripDropDownButton btnVeterinaria;
+        private System.Windows.Forms.ToolStripMenuItem mnuCita;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripButton btnArticulo;
+        private System.Windows.Forms.ToolStripButton btnProveedor;
+        private System.Windows.Forms.ToolStripButton btnCliente;
+        private System.Windows.Forms.ToolStripComboBox cboSucursal;
+        private System.Windows.Forms.ToolStripComboBox cboEmpresa;
+        private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoSucursal;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoProveedor;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoPerfilCliente;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoCliente;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoNacionalidad;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem mnuPrecioVenta;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoPerfilArticulo;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoArticulo;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnPropiedad;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnPelo;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnCaracter;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnGrupo;
+        private System.Windows.Forms.ToolStripMenuItem mntoVtnGrupoSanguineo;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnRaza;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVtnMascota;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoVeterinaria;
+        private System.Windows.Forms.ToolStripMenuItem mnuMantenimiento;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoGeografia;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoProvincia;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoPais;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoCategoria;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoDepartamento;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoOcupacion;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoEstado;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoFrecuencia;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoIdentificacion;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoContacto;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoPerfilContacto;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoTipoContacto;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoFormaPago;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoCaja;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoMoneda;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoTipo;
+        private System.Windows.Forms.ToolStripMenuItem mnuMtoTributos;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.MenuStrip mnuPrincipal;
+    }
+}
+
+
+

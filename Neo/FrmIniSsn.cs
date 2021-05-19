@@ -31,7 +31,7 @@ namespace Neo
 
             if (dsNeo.tbUsuario.Rows.Count > 0)
             {
-                Utilidad.frmPrimario = new FrmPrm();
+                Utilidad.frmPrimario = new FrmPrmNeo();
                 Utilidad.codigoTrabajo = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoTrabajo"].ToString());
                 Utilidad.codigoEmpresa = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoEmpresa"].ToString());
                 Utilidad.codigoUsuario = short.Parse(dsNeo.tbUsuario.Rows[0]["CodigoUsuario"].ToString());

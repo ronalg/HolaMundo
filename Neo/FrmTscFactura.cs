@@ -691,5 +691,22 @@ namespace Neo
                 this.Cursor = Cursors.Default;
             }
         }
+
+        private void mnuImpresoraCoorporativo_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void mnuPantallaCoorporativo_Click(object sender, EventArgs e)
+        {
+            taEmpresa.FillByCodigo(dsNeo.tbEmpresa, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taSucursal.FillByCodigo(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
+
+            RptTscFacturaCoorporativa rpt = new RptTscFacturaCoorporativa();
+            rpt.SetDataSource(dsNeo);
+            FrmRpt frm = new FrmRpt();
+            frm.crv.ReportSource = rpt;
+            frm.ShowDialog();
+        }
     }
 }

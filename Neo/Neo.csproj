@@ -325,6 +325,12 @@
     <Compile Include="FrmPrm.Designer.cs">
       <DependentUpon>FrmPrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPrmNeo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrmNeo.Designer.cs">
+      <DependentUpon>FrmPrmNeo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRpt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +403,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptTscCita.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptTscFacturaCoorporativa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTscFacturaCoorporativa.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RptTscFacturaPersonal.cs">
@@ -532,6 +544,9 @@
     <EmbeddedResource Include="FrmPrm.resx">
       <DependentUpon>FrmPrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrmNeo.resx">
+      <DependentUpon>FrmPrmNeo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRpt.resx">
       <DependentUpon>FrmRpt.cs</DependentUpon>
     </EmbeddedResource>
@@ -577,6 +592,10 @@
     <EmbeddedResource Include="RptTscCita.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptTscCita.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTscFacturaCoorporativa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTscFacturaCoorporativa.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RptTscFacturaPersonal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

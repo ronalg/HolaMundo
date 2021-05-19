@@ -12,6 +12,7 @@ namespace Neo
     class Utilidad
     {
         //formulario de busquedad
+        public static FrmCstCuentaCobrar cstCuentaCobrar = null;
         public static FrmBscFactura bscFactura = null;
         public static FrmBscOrdenPedido bscOrdenPedido = null;
         //formulario transacciones
@@ -65,7 +66,7 @@ namespace Neo
         public static FrmMtoPais mtoPais = null;
         public static FrmMtoIdentificacion mtoIdentificacion = null;
         public static FrmMtoTrabajo mtoTrabajo = null;
-        public static FrmPrm frmPrimario = null;
+        public static FrmPrmNeo frmPrimario = null;
         //variables de control
         public static short codigoEmpresa = 0;
         public static short codigoTrabajo = 0;

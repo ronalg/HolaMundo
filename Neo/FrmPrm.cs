@@ -335,7 +335,6 @@ namespace Neo
             if (Utilidad.tscFactura == null)
             {
                 Utilidad.tscFactura = new FrmTscFactura();
-                //Utilidad.tscFactura.WindowState = FormWindowState.Maximized;
                 Utilidad.tscFactura.MdiParent = this;
             }
             Utilidad.tscFactura.BringToFront();
@@ -584,6 +583,17 @@ namespace Neo
             }
             Utilidad.rptFacturaDetalle.BringToFront();
             Utilidad.rptFacturaDetalle.Show();
+        }
+
+        private void mnuCstCuentaCobrar_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.cstCuentaCobrar == null)
+            {
+                Utilidad.cstCuentaCobrar = new FrmCstCuentaCobrar();
+                Utilidad.cstCuentaCobrar.MdiParent = this;
+            }
+            Utilidad.cstCuentaCobrar.BringToFront();
+            Utilidad.cstCuentaCobrar.Show();
         }
     }
 }
