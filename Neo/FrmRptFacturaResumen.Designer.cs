@@ -63,7 +63,7 @@
             this.pnl4 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblBeneficio = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblCosto = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -71,15 +71,6 @@
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.grdFactura = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bsFactura = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
-            this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
-            this.taFactura = new Neo.DsNeoTableAdapters.taFactura();
-            this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
-            this.taFrecuencia = new Neo.DsNeoTableAdapters.taFrecuencia();
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,6 +92,15 @@
             this.recibidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsFactura = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
+            this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
+            this.taFactura = new Neo.DsNeoTableAdapters.taFactura();
+            this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
+            this.taFrecuencia = new Neo.DsNeoTableAdapters.taFrecuencia();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).BeginInit();
             this.bnFactura.SuspendLayout();
@@ -192,7 +192,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -391,7 +390,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.kryptonLabel4);
+            this.panel1.Controls.Add(this.lblBeneficio);
             this.panel1.Controls.Add(this.kryptonLabel5);
             this.panel1.Controls.Add(this.lblCosto);
             this.panel1.Controls.Add(this.kryptonLabel10);
@@ -403,15 +402,15 @@
             this.panel1.Size = new System.Drawing.Size(1017, 46);
             this.panel1.TabIndex = 3;
             // 
-            // kryptonLabel4
+            // lblBeneficio
             // 
-            this.kryptonLabel4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel4.Location = new System.Drawing.Point(875, 14);
-            this.kryptonLabel4.Name = "kryptonLabel4";
-            this.kryptonLabel4.Size = new System.Drawing.Size(35, 20);
-            this.kryptonLabel4.TabIndex = 7;
-            this.kryptonLabel4.Values.Text = "0.00";
-            this.kryptonLabel4.Visible = false;
+            this.lblBeneficio.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.lblBeneficio.Location = new System.Drawing.Point(875, 14);
+            this.lblBeneficio.Name = "lblBeneficio";
+            this.lblBeneficio.Size = new System.Drawing.Size(35, 20);
+            this.lblBeneficio.TabIndex = 7;
+            this.lblBeneficio.Values.Text = "0.00";
+            this.lblBeneficio.Visible = false;
             // 
             // kryptonLabel5
             // 
@@ -448,9 +447,9 @@
             this.lblVenta.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
             this.lblVenta.Location = new System.Drawing.Point(727, 14);
             this.lblVenta.Name = "lblVenta";
-            this.lblVenta.Size = new System.Drawing.Size(6, 2);
+            this.lblVenta.Size = new System.Drawing.Size(35, 20);
             this.lblVenta.TabIndex = 3;
-            this.lblVenta.Values.Text = "";
+            this.lblVenta.Values.Text = "0.00";
             // 
             // kryptonLabel8
             // 
@@ -509,71 +508,6 @@
             this.grdFactura.TabIndex = 5;
             this.grdFactura.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.grdFactura_RowPostPaint);
             this.grdFactura.DoubleClick += new System.EventHandler(this.grdFactura_DoubleClick);
-            // 
-            // bsFactura
-            // 
-            this.bsFactura.DataMember = "tbFactura";
-            this.bsFactura.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // grdCliente
-            // 
-            this.grdCliente.AllowUserToAddRows = false;
-            this.grdCliente.AllowUserToDeleteRows = false;
-            this.grdCliente.AutoGenerateColumns = false;
-            this.grdCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCliente.ColumnHeadersVisible = false;
-            this.grdCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cCodigo,
-            this.cNombre});
-            this.grdCliente.DataSource = this.bsCliente;
-            this.grdCliente.Location = new System.Drawing.Point(350, 58);
-            this.grdCliente.MultiSelect = false;
-            this.grdCliente.Name = "grdCliente";
-            this.grdCliente.ReadOnly = true;
-            this.grdCliente.RowHeadersVisible = false;
-            this.grdCliente.Size = new System.Drawing.Size(329, 131);
-            this.grdCliente.TabIndex = 29;
-            this.grdCliente.Visible = false;
-            this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
-            this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
-            // 
-            // cCodigo
-            // 
-            this.cCodigo.DataPropertyName = "CodigoCliente";
-            this.cCodigo.HeaderText = "CodigoCliente";
-            this.cCodigo.Name = "cCodigo";
-            this.cCodigo.ReadOnly = true;
-            this.cCodigo.Width = 90;
-            // 
-            // cNombre
-            // 
-            this.cNombre.DataPropertyName = "Nombre";
-            this.cNombre.HeaderText = "Nombre";
-            this.cNombre.Name = "cNombre";
-            this.cNombre.ReadOnly = true;
-            this.cNombre.Width = 200;
-            // 
-            // bsCliente
-            // 
-            this.bsCliente.DataMember = "tbCliente";
-            this.bsCliente.DataSource = this.dsNeo;
-            // 
-            // taFactura
-            // 
-            this.taFactura.ClearBeforeFill = true;
-            // 
-            // taCliente
-            // 
-            this.taCliente.ClearBeforeFill = true;
-            // 
-            // taFrecuencia
-            // 
-            this.taFrecuencia.ClearBeforeFill = true;
             // 
             // codigoTrabajoDataGridViewTextBoxColumn
             // 
@@ -747,6 +681,71 @@
             this.fVenta.Name = "fVenta";
             this.fVenta.ReadOnly = true;
             // 
+            // bsFactura
+            // 
+            this.bsFactura.DataMember = "tbFactura";
+            this.bsFactura.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // grdCliente
+            // 
+            this.grdCliente.AllowUserToAddRows = false;
+            this.grdCliente.AllowUserToDeleteRows = false;
+            this.grdCliente.AutoGenerateColumns = false;
+            this.grdCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCliente.ColumnHeadersVisible = false;
+            this.grdCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cCodigo,
+            this.cNombre});
+            this.grdCliente.DataSource = this.bsCliente;
+            this.grdCliente.Location = new System.Drawing.Point(350, 58);
+            this.grdCliente.MultiSelect = false;
+            this.grdCliente.Name = "grdCliente";
+            this.grdCliente.ReadOnly = true;
+            this.grdCliente.RowHeadersVisible = false;
+            this.grdCliente.Size = new System.Drawing.Size(329, 131);
+            this.grdCliente.TabIndex = 29;
+            this.grdCliente.Visible = false;
+            this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
+            this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
+            // 
+            // cCodigo
+            // 
+            this.cCodigo.DataPropertyName = "CodigoCliente";
+            this.cCodigo.HeaderText = "CodigoCliente";
+            this.cCodigo.Name = "cCodigo";
+            this.cCodigo.ReadOnly = true;
+            this.cCodigo.Width = 90;
+            // 
+            // cNombre
+            // 
+            this.cNombre.DataPropertyName = "Nombre";
+            this.cNombre.HeaderText = "Nombre";
+            this.cNombre.Name = "cNombre";
+            this.cNombre.ReadOnly = true;
+            this.cNombre.Width = 200;
+            // 
+            // bsCliente
+            // 
+            this.bsCliente.DataMember = "tbCliente";
+            this.bsCliente.DataSource = this.dsNeo;
+            // 
+            // taFactura
+            // 
+            this.taFactura.ClearBeforeFill = true;
+            // 
+            // taCliente
+            // 
+            this.taCliente.ClearBeforeFill = true;
+            // 
+            // taFrecuencia
+            // 
+            this.taFrecuencia.ClearBeforeFill = true;
+            // 
             // FrmRptFacturaResumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -820,7 +819,7 @@
         private DsNeo dsNeo;
         private System.Windows.Forms.BindingSource bsFactura;
         private DsNeoTableAdapters.taFactura taFactura;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblBeneficio;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView grdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCodigo;

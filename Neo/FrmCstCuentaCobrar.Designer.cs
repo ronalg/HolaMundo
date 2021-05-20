@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCstCuentaCobrar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCstCuentaCobrar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.pnl6 = new System.Windows.Forms.Panel();
@@ -49,7 +49,24 @@
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pnl5 = new System.Windows.Forms.Panel();
             this.grdFactura = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cVence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCondicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cDias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsCuentaCobrar = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNeo = new Neo.DsNeo();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.txtCliente = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -70,46 +87,31 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.btnVerFactura = new System.Windows.Forms.ToolStripButton();
+            this.btnImprimir = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mnuPantalla = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalr = new System.Windows.Forms.ToolStripButton();
             this.grdCliente = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNeo = new Neo.DsNeo();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cVence = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCondicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cDias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsCuentaCobrar = new System.Windows.Forms.BindingSource(this.components);
             this.taCuentaCobrar = new Neo.DsNeoTableAdapters.taCuentaCobrar();
             this.taFrecuencia = new Neo.DsNeoTableAdapters.taFrecuencia();
             this.taCliente = new Neo.DsNeoTableAdapters.taCliente();
-            this.cCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnImprimir = new System.Windows.Forms.ToolStripDropDownButton();
-            this.mnuPantalla = new System.Windows.Forms.ToolStripMenuItem();
+            this.taEmpresa = new Neo.DsNeoTableAdapters.taEmpresa();
+            this.taSucursal = new Neo.DsNeoTableAdapters.taSucursal();
             this.pnl3.SuspendLayout();
             this.pnl6.SuspendLayout();
             this.pnl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCuentaCobrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
             this.pnl2.SuspendLayout();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnCuentaCobrar)).BeginInit();
             this.bnCuentaCobrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCuentaCobrar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl3
@@ -160,7 +162,7 @@
             // lblCobro
             // 
             this.lblCobro.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.lblCobro.Location = new System.Drawing.Point(1090, 13);
+            this.lblCobro.Location = new System.Drawing.Point(1086, 13);
             this.lblCobro.Name = "lblCobro";
             this.lblCobro.Size = new System.Drawing.Size(35, 20);
             this.lblCobro.TabIndex = 12;
@@ -169,7 +171,7 @@
             // kryptonLabel5
             // 
             this.kryptonLabel5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel5.Location = new System.Drawing.Point(1031, 13);
+            this.kryptonLabel5.Location = new System.Drawing.Point(1027, 13);
             this.kryptonLabel5.Name = "kryptonLabel5";
             this.kryptonLabel5.Size = new System.Drawing.Size(49, 20);
             this.kryptonLabel5.TabIndex = 11;
@@ -237,6 +239,140 @@
             this.grdFactura.TabIndex = 0;
             this.grdFactura.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.grdFactura_RowPostPaint);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CodigoTrabajo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "CodigoTrabajo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CodigoEmpresa";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CodigoEmpresa";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CodigoSucursal";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CodigoSucursal";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // cNumero
+            // 
+            this.cNumero.DataPropertyName = "NumeroFactura";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cNumero.DefaultCellStyle = dataGridViewCellStyle2;
+            this.cNumero.HeaderText = "Nro Factura";
+            this.cNumero.Name = "cNumero";
+            this.cNumero.ReadOnly = true;
+            // 
+            // cNombre
+            // 
+            this.cNombre.DataPropertyName = "Nombre";
+            this.cNombre.HeaderText = "Nombre";
+            this.cNombre.Name = "cNombre";
+            this.cNombre.ReadOnly = true;
+            this.cNombre.Width = 200;
+            // 
+            // cFecha
+            // 
+            this.cFecha.DataPropertyName = "Fecha";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "d";
+            this.cFecha.DefaultCellStyle = dataGridViewCellStyle3;
+            this.cFecha.HeaderText = "Fecha";
+            this.cFecha.Name = "cFecha";
+            this.cFecha.ReadOnly = true;
+            this.cFecha.Width = 80;
+            // 
+            // cVence
+            // 
+            this.cVence.DataPropertyName = "Vence";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "d";
+            this.cVence.DefaultCellStyle = dataGridViewCellStyle4;
+            this.cVence.HeaderText = "Vence";
+            this.cVence.Name = "cVence";
+            this.cVence.ReadOnly = true;
+            this.cVence.Width = 80;
+            // 
+            // cCondicion
+            // 
+            this.cCondicion.DataPropertyName = "Condicion";
+            this.cCondicion.HeaderText = "Condición";
+            this.cCondicion.Name = "cCondicion";
+            this.cCondicion.ReadOnly = true;
+            // 
+            // cDias
+            // 
+            this.cDias.DataPropertyName = "CantidadDias";
+            this.cDias.HeaderText = "Dias";
+            this.cDias.Name = "cDias";
+            this.cDias.ReadOnly = true;
+            this.cDias.Width = 50;
+            // 
+            // cCaja
+            // 
+            this.cCaja.DataPropertyName = "NombreCaja";
+            this.cCaja.HeaderText = "Caja";
+            this.cCaja.Name = "cCaja";
+            this.cCaja.ReadOnly = true;
+            // 
+            // cUsuario
+            // 
+            this.cUsuario.DataPropertyName = "Usuario";
+            this.cUsuario.HeaderText = "Usuario";
+            this.cUsuario.Name = "cUsuario";
+            this.cUsuario.ReadOnly = true;
+            // 
+            // cVendedor
+            // 
+            this.cVendedor.DataPropertyName = "Vendedor";
+            this.cVendedor.HeaderText = "Vendedor";
+            this.cVendedor.Name = "cVendedor";
+            this.cVendedor.ReadOnly = true;
+            this.cVendedor.Width = 160;
+            // 
+            // cVenta
+            // 
+            this.cVenta.DataPropertyName = "TotalVenta";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            this.cVenta.DefaultCellStyle = dataGridViewCellStyle5;
+            this.cVenta.HeaderText = "Venta";
+            this.cVenta.Name = "cVenta";
+            this.cVenta.ReadOnly = true;
+            this.cVenta.Width = 80;
+            // 
+            // cCobro
+            // 
+            this.cCobro.DataPropertyName = "TotalCobro";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            this.cCobro.DefaultCellStyle = dataGridViewCellStyle6;
+            this.cCobro.HeaderText = "Cobro";
+            this.cCobro.Name = "cCobro";
+            this.cCobro.ReadOnly = true;
+            this.cCobro.Width = 80;
+            // 
+            // cCosto
+            // 
+            this.cCosto.DataPropertyName = "TotalCosto";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            this.cCosto.DefaultCellStyle = dataGridViewCellStyle7;
+            this.cCosto.HeaderText = "Costo";
+            this.cCosto.Name = "cCosto";
+            this.cCosto.ReadOnly = true;
+            this.cCosto.Visible = false;
+            this.cCosto.Width = 80;
+            // 
             // cBalance
             // 
             this.cBalance.DataPropertyName = "Balance";
@@ -247,6 +383,16 @@
             this.cBalance.Name = "cBalance";
             this.cBalance.ReadOnly = true;
             this.cBalance.Width = 80;
+            // 
+            // bsCuentaCobrar
+            // 
+            this.bsCuentaCobrar.DataMember = "tbCuentaCobrar";
+            this.bsCuentaCobrar.DataSource = this.dsNeo;
+            // 
+            // dsNeo
+            // 
+            this.dsNeo.DataSetName = "DsNeo";
+            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnl2
             // 
@@ -446,6 +592,23 @@
             this.btnVerFactura.Text = "Ver Factura";
             this.btnVerFactura.Click += new System.EventHandler(this.btnVerFactura_Click);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuPantalla});
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(82, 22);
+            this.btnImprimir.Text = "Imprimir";
+            // 
+            // mnuPantalla
+            // 
+            this.mnuPantalla.Name = "mnuPantalla";
+            this.mnuPantalla.Size = new System.Drawing.Size(180, 22);
+            this.mnuPantalla.Text = "Pantalla";
+            this.mnuPantalla.Click += new System.EventHandler(this.mnuPantalla_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -482,167 +645,6 @@
             this.grdCliente.DoubleClick += new System.EventHandler(this.grdCliente_DoubleClick);
             this.grdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdCliente_KeyDown);
             // 
-            // bsCliente
-            // 
-            this.bsCliente.DataMember = "tbCliente";
-            this.bsCliente.DataSource = this.dsNeo;
-            // 
-            // dsNeo
-            // 
-            this.dsNeo.DataSetName = "DsNeo";
-            this.dsNeo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CodigoTrabajo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "CodigoTrabajo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CodigoEmpresa";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CodigoEmpresa";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CodigoSucursal";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CodigoSucursal";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // cNumero
-            // 
-            this.cNumero.DataPropertyName = "NumeroFactura";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cNumero.DefaultCellStyle = dataGridViewCellStyle2;
-            this.cNumero.HeaderText = "Nro Factura";
-            this.cNumero.Name = "cNumero";
-            this.cNumero.ReadOnly = true;
-            // 
-            // cNombre
-            // 
-            this.cNombre.DataPropertyName = "Nombre";
-            this.cNombre.HeaderText = "Nombre";
-            this.cNombre.Name = "cNombre";
-            this.cNombre.ReadOnly = true;
-            this.cNombre.Width = 200;
-            // 
-            // cFecha
-            // 
-            this.cFecha.DataPropertyName = "Fecha";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "d";
-            this.cFecha.DefaultCellStyle = dataGridViewCellStyle3;
-            this.cFecha.HeaderText = "Fecha";
-            this.cFecha.Name = "cFecha";
-            this.cFecha.ReadOnly = true;
-            this.cFecha.Width = 80;
-            // 
-            // cVence
-            // 
-            this.cVence.DataPropertyName = "Vence";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "d";
-            this.cVence.DefaultCellStyle = dataGridViewCellStyle4;
-            this.cVence.HeaderText = "Vence";
-            this.cVence.Name = "cVence";
-            this.cVence.ReadOnly = true;
-            this.cVence.Width = 80;
-            // 
-            // cCondicion
-            // 
-            this.cCondicion.DataPropertyName = "Condicion";
-            this.cCondicion.HeaderText = "Condición";
-            this.cCondicion.Name = "cCondicion";
-            this.cCondicion.ReadOnly = true;
-            // 
-            // cDias
-            // 
-            this.cDias.DataPropertyName = "CantidadDias";
-            this.cDias.HeaderText = "Dias";
-            this.cDias.Name = "cDias";
-            this.cDias.ReadOnly = true;
-            this.cDias.Width = 50;
-            // 
-            // cCaja
-            // 
-            this.cCaja.DataPropertyName = "NombreCaja";
-            this.cCaja.HeaderText = "Caja";
-            this.cCaja.Name = "cCaja";
-            this.cCaja.ReadOnly = true;
-            // 
-            // cUsuario
-            // 
-            this.cUsuario.DataPropertyName = "Usuario";
-            this.cUsuario.HeaderText = "Usuario";
-            this.cUsuario.Name = "cUsuario";
-            this.cUsuario.ReadOnly = true;
-            // 
-            // cVendedor
-            // 
-            this.cVendedor.DataPropertyName = "Vendedor";
-            this.cVendedor.HeaderText = "Vendedor";
-            this.cVendedor.Name = "cVendedor";
-            this.cVendedor.ReadOnly = true;
-            this.cVendedor.Width = 160;
-            // 
-            // cVenta
-            // 
-            this.cVenta.DataPropertyName = "TotalVenta";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            this.cVenta.DefaultCellStyle = dataGridViewCellStyle5;
-            this.cVenta.HeaderText = "Venta";
-            this.cVenta.Name = "cVenta";
-            this.cVenta.ReadOnly = true;
-            this.cVenta.Width = 80;
-            // 
-            // cCobro
-            // 
-            this.cCobro.DataPropertyName = "TotalCobro";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N2";
-            this.cCobro.DefaultCellStyle = dataGridViewCellStyle6;
-            this.cCobro.HeaderText = "Cobro";
-            this.cCobro.Name = "cCobro";
-            this.cCobro.ReadOnly = true;
-            this.cCobro.Width = 80;
-            // 
-            // cCosto
-            // 
-            this.cCosto.DataPropertyName = "TotalCosto";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N2";
-            this.cCosto.DefaultCellStyle = dataGridViewCellStyle7;
-            this.cCosto.HeaderText = "Costo";
-            this.cCosto.Name = "cCosto";
-            this.cCosto.ReadOnly = true;
-            this.cCosto.Visible = false;
-            this.cCosto.Width = 80;
-            // 
-            // bsCuentaCobrar
-            // 
-            this.bsCuentaCobrar.DataMember = "tbCuentaCobrar";
-            this.bsCuentaCobrar.DataSource = this.dsNeo;
-            // 
-            // taCuentaCobrar
-            // 
-            this.taCuentaCobrar.ClearBeforeFill = true;
-            // 
-            // taFrecuencia
-            // 
-            this.taFrecuencia.ClearBeforeFill = true;
-            // 
-            // taCliente
-            // 
-            this.taCliente.ClearBeforeFill = true;
-            // 
             // cCodigo
             // 
             this.cCodigo.DataPropertyName = "CodigoCliente";
@@ -661,21 +663,30 @@
             this.ccNombre.ReadOnly = true;
             this.ccNombre.Width = 200;
             // 
-            // btnImprimir
+            // bsCliente
             // 
-            this.btnImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuPantalla});
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(82, 22);
-            this.btnImprimir.Text = "Imprimir";
+            this.bsCliente.DataMember = "tbCliente";
+            this.bsCliente.DataSource = this.dsNeo;
             // 
-            // mnuPantalla
+            // taCuentaCobrar
             // 
-            this.mnuPantalla.Name = "mnuPantalla";
-            this.mnuPantalla.Size = new System.Drawing.Size(180, 22);
-            this.mnuPantalla.Text = "Pantalla";
+            this.taCuentaCobrar.ClearBeforeFill = true;
+            // 
+            // taFrecuencia
+            // 
+            this.taFrecuencia.ClearBeforeFill = true;
+            // 
+            // taCliente
+            // 
+            this.taCliente.ClearBeforeFill = true;
+            // 
+            // taEmpresa
+            // 
+            this.taEmpresa.ClearBeforeFill = true;
+            // 
+            // taSucursal
+            // 
+            this.taSucursal.ClearBeforeFill = true;
             // 
             // FrmCstCuentaCobrar
             // 
@@ -696,6 +707,8 @@
             this.pnl6.PerformLayout();
             this.pnl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCuentaCobrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
             this.pnl1.ResumeLayout(false);
@@ -705,8 +718,6 @@
             this.bnCuentaCobrar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNeo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCuentaCobrar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -772,5 +783,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ccNombre;
         private System.Windows.Forms.ToolStripDropDownButton btnImprimir;
         private System.Windows.Forms.ToolStripMenuItem mnuPantalla;
+        private DsNeoTableAdapters.taEmpresa taEmpresa;
+        private DsNeoTableAdapters.taSucursal taSucursal;
     }
 }

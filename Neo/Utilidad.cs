@@ -16,6 +16,8 @@ namespace Neo
         public static FrmBscFactura bscFactura = null;
         public static FrmBscOrdenPedido bscOrdenPedido = null;
         //formulario transacciones
+        //Venta
+        public static FrmTscReciboIngreso tscReciboIngreso = null;
         //veternaria
         public static FrmRptFacturaDetalle rptFacturaDetalle = null;
         public static FrmRptFacturaResumen rptFacturaResumen = null;

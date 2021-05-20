@@ -164,17 +164,17 @@
   <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJASURBVDhPjVNNTxNRFJ2FC2NcGMPvcOvaf9Gdv8FFN26a
-        fmBj27TTmSkFqcYGSGtFjQiNG6xNx1CIxSofCoJWLQEkoPjBvGdLj/eOjxCkfpzkZN7kvXPvuffdp/0O
-        XdcvW5a17fP5OsxUKtUyTbMei8V61JHu4AOGYWz5AvGO8biJK/Y3BGyBWGUHfcU6dLMPyWTygjp+HJR5
-        Mz0xi+SMwN2XAuW3AiUir/trAlF7F9ZgtnsQEtvW7Un0zwqs7rTQ3G3j2XoLpVUHD187eLAska5JGJVN
-        UFltJTsE1bwfrXzGk/c/sPF1HyvbbdTWJEpvHIwvORhdEBhdlIhPk5t7ZVDCQSXVtEQicd7IDCFSFZh6
-        J1D9IDBNtBsOJlccjL1ykJ8XKCxIcihhPWqAGruu5K79i+bwfSQoOtfMIs7M3+KygzuLDkZeCAw/F7hG
-        AfTyBqjh35X80MHVKUH1Cjcj2+Yvi3NzAjfrgoJIpJ52ccA46MHInMTYkkSBLLNtzsziDDV3iAJEqcwB
-        6gHdxA0l/QW6/2qam0Nl5Oal27AsWb5OwiwFYLE+I2HaW3wLHSU7Cpq2Lzww3MwBqpVFzAytuT88B6lM
-        FuFwWPr9/uOzwJNIta35/PFOstREyN5zJzFS+eROImeORiMoToy760AgUFXSo6BbucRTyX1Rb2Hv4C3Q
-        fyOfz8GulP8e5E8gUU8wFJSFwi03SG9vCGrrnzhFPMv0eDzngsGgZAfEj+7uf+AE8TTxDNEN5PV6w5qm
-        nfwJZcP5YNJiiugAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJASURBVDhPjVNNTxNRFJ2FC2NcGMPvcOvaf9Gdv8FFN25q
+        P7CxLXY6M6Ug1dgAaa2oEaFxg7XpGAqxWOVDQdCqJYAEFD+Y92zp8d7xEYLUj5OczJu8d+499777tN+h
+        6/pFy7K2fD5fm5lMJpumadZisViXOtIZfMAwjE2fv6dtPG7gsv0NAVsgVt5Gb6EG3exFIpE4p44fBWXe
+        SI3PIDEtcPelQOmtQJHI676qQNTegTWQ6RyExLZ1ewJ9MwIr2000dlp4ttZEccXBw9cOHixJpKoSRnkD
+        VFZLyQ5ANe9Fy5/x5P0PrH/dw/JWC9VVieIbB2OLDkbmBUYWJK5OkZt7JVDCASXVtHg8ftZIDyJSEZh8
+        J1D5IDBFtOsOJpYdjL5ykJsTyM9LcihhPaqDGrum5K798+bQfcQpOtfMIs7M38KSgzsLDoZfCAw9F7hG
+        AfTSOqjh35X8wMGVSUH1Cjcj2+Yvi7OzAjdrgoJIJJ92cMDY78HwrMTookSeLLNtzsziNDV3kAJEqcx+
+        6gHdxA0l/QW6/0qKm0NlZOek27AMWb5OwgwFYLE+LWHam3wLbSU7DJq2Lzww3Mx+qpVFzDStuT88B8l0
+        BuFwWPr9/qOzwJNIta36LvW0E8UGQvauO4mR8id3EjlzNBpBYXzMXQcCgYqSHgbdygWeSu6Legu7+2+B
+        /uu5XBZ2ufT3IH8CibqCoaDM52+5Qbq7Q1Bb/8QJ4mmmx+M5EwwGJTsgfnR3/wPHiCeJp4huIK/XG9Y0
+        7fhPW+X5XEoHaWQAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnVerFactura.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -37,10 +37,14 @@ namespace Neo
             {
                 decimal totalVenta = decimal.Parse(dsNeo.tbFactura.Compute("SUM(TotalVenta)", null).ToString());
                 lblVenta.Text = totalVenta.ToString("N2");
+                decimal totalCoste = decimal.Parse(dsNeo.tbFactura.Compute("SUM(TotalCoste)", null).ToString());
+                lblCosto.Text = totalCoste.ToString("N2");
             }
             else
             {
-                lblVenta.Text = null;
+                lblVenta.Text = "0.00";
+                lblCosto.Text = "0.00";
+                lblBeneficio.Text = "0.00";
             }
             this.Cursor = Cursors.Default;
         }

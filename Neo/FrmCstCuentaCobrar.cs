@@ -168,5 +168,19 @@ namespace Neo
             dtpDesde.Value = DateTime.Today.AddDays(-30);
             dtpHasta.Value = DateTime.Today.Date;
         }
+
+        private void mnuPantalla_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            taEmpresa.FillByCodigo(dsNeo.tbEmpresa, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taSucursal.FillByCodigo(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
+
+            RptCstCuentaCobrar rpt = new RptCstCuentaCobrar();
+            rpt.SetDataSource(dsNeo);
+            FrmRpt frm = new FrmRpt();
+            frm.crv.ReportSource = rpt;
+            frm.ShowDialog();
+            this.Cursor = Cursors.Default;
+        }
     }
 }

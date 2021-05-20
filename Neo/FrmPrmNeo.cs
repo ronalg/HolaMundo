@@ -544,5 +544,16 @@ namespace Neo
             Utilidad.tscFactura.BringToFront();
             Utilidad.tscFactura.Show();
         }
+
+        private void mnuTscReciboIngreso_Click(object sender, EventArgs e)
+        {
+            if (Utilidad.tscReciboIngreso == null)
+            {
+                Utilidad.tscReciboIngreso = new FrmTscReciboIngreso();
+                Utilidad.tscReciboIngreso.MdiParent = this;
+            }
+            Utilidad.tscReciboIngreso.BringToFront();
+            Utilidad.tscReciboIngreso.Show();
+        }
     }
 }
