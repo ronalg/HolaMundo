@@ -708,5 +708,17 @@ namespace Neo
             frm.crv.ReportSource = rpt;
             frm.ShowDialog();
         }
+
+        private void mnuPantallaPersonal_Click(object sender, EventArgs e)
+        {
+            taEmpresa.FillByCodigo(dsNeo.tbEmpresa, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa);
+            taSucursal.FillByCodigo(dsNeo.tbSucursal, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal);
+
+            RptTscFacturaPersonal rpt = new RptTscFacturaPersonal();
+            rpt.SetDataSource(dsNeo);
+            FrmRpt frm = new FrmRpt();
+            frm.crv.ReportSource = rpt;
+            frm.ShowDialog();
+        }
     }
 }

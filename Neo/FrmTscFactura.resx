@@ -233,9 +233,9 @@
         wZr+/fsHFgMBEBtm2JfPX8BiP/7/+5+Tlb8U7I3yktrV37//BEv8/PkTq60gsR8/foDZ74EWaqvqrQZr
         hoGGutbJf35DNIL8je6CX79+gdmf3n/6ryKvORmqDRU42bntACkCeQNkCMzZf0A0UAwEdFQNdkCVYwIb
         M4dNIEVfv337/wNoI8jJIC+BbP8Kdb6mks4mqHJMkJqYfgWk6O3rd/8/Aw2BAVDgvnv7DswO8Aq9AlWO
-        ARQ62jv//vj5Gxi+ENDW1PZ/xvQ5UB7Qa3///U9Ly/gLUgvRggQEeCTsNm3ZCVY4Z9a8/8ICwmvk5eU5
-        QFhKUmbNooVLwXKLly0HJWs7iC4kwMMhYB8WHPlfRUV9BZCrDBFFASq6OgZrQ4IigQaw2EOEGBgAkcDe
-        Dji34XsAAAAASUVORK5CYII=
+        ARQ62jv//vj5Gxi+ENDW1PZ/xvQ5UB7Qa3///U9NTf8LUgvRggQEeCTsNm3ZCVY4Z9a8/8ICwmvk5eU5
+        QFhKUmbNooVLwXKLly0HJWs7iC4kwMMhYB8WHPlfRUV9BZCrDBFFASq6OgZrQ4IigQaw2EOEGBgAkA3e
+        C72zWJoAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -256,17 +256,8 @@
   <metadata name="bsFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1002, 17</value>
   </metadata>
-  <metadata name="bsFactura.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1002, 17</value>
-  </metadata>
   <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>304, 17</value>
-  </metadata>
-  <metadata name="dsNeo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>304, 17</value>
-  </metadata>
-  <metadata name="bsSucursalContacto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>686, 17</value>
   </metadata>
   <metadata name="bsSucursalContacto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>686, 17</value>
@@ -274,17 +265,8 @@
   <metadata name="bsCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>391, 17</value>
   </metadata>
-  <metadata name="bsCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>391, 17</value>
-  </metadata>
   <metadata name="bsFacturaCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>989, 56</value>
-  </metadata>
-  <metadata name="bsFacturaCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>989, 56</value>
-  </metadata>
-  <metadata name="bnCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1377, 56</value>
   </metadata>
   <metadata name="bnCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1377, 56</value>
@@ -366,18 +348,6 @@
   <metadata name="bsFacturaDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1106, 17</value>
   </metadata>
-  <metadata name="dSubTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dImporte.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="bsFacturaDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1106, 17</value>
-  </metadata>
-  <metadata name="bnDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>200, 17</value>
-  </metadata>
   <metadata name="bnDetalle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>200, 17</value>
   </metadata>
@@ -445,9 +415,6 @@
         bO+G80MFwKUTxgfgcO/b8D9IpXoFiiMDHIQm0skAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="dataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>593, 17</value>
-  </metadata>
   <metadata name="dataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>593, 17</value>
   </metadata>
@@ -536,9 +503,6 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>58</value>
   </metadata>
-  <metadata name="taCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="btnAceptarNuevoFp.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhEAAQAIYAAAEAAP///+3y9QhNe0F7nvv6+u3z9eXv8hFWhOTu8qnB0QhHdipokPz8/MPU4Pb3
@@ -593,6 +557,9 @@
   </data>
   <metadata name="bsFormaPago.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1127, 56</value>
+  </metadata>
+  <metadata name="taCobro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="taFormaPago.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1253, 56</value>
