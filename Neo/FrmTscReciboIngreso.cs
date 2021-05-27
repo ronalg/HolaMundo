@@ -50,7 +50,7 @@ namespace Neo
                     Utilidad.tscFactura = new FrmTscFactura();
                 Utilidad.tscFactura.FrmTscFactura_Load(sender, EventArgs.Empty);
                 int numero = int.Parse(grdFactura.CurrentRow.Cells["rNumero"].Value.ToString());
-                Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null);
+                Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null, null, null);
                 short? codigoCliente = null;
                 string codigo = Utilidad.tscFactura.dsNeo.tbFactura.Rows[0]["CodigoCliente"].ToString();
                 if (!string.IsNullOrEmpty(codigo))

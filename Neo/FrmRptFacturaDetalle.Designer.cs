@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRptFacturaDetalle));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.bnFactura = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -97,10 +97,11 @@
             this.taDepartamento = new Neo.DsNeoTableAdapters.taDepartamento();
             this.taCategoria = new Neo.DsNeoTableAdapters.taCategoria();
             this.taArticulo = new Neo.DsNeoTableAdapters.taArticulo();
+            this.taFrecuencia = new Neo.DsNeoTableAdapters.taFrecuencia();
             this.codigoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroFacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secuenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,7 +116,7 @@
             this.numeroComprobanteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descuentoFacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descuentoArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoPrecioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,7 +129,7 @@
             this.nombreFormaPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fRecibido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bnFactura)).BeginInit();
             this.bnFactura.SuspendLayout();
@@ -273,6 +274,7 @@
             this.btnVerFactura.Name = "btnVerFactura";
             this.btnVerFactura.Size = new System.Drawing.Size(85, 22);
             this.btnVerFactura.Text = "Ver Factura";
+            this.btnVerFactura.Click += new System.EventHandler(this.btnVerFactura_Click);
             // 
             // btnImprimir
             // 
@@ -546,15 +548,15 @@
             // 
             this.grdFactura.AllowUserToAddRows = false;
             this.grdFactura.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
-            this.grdFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.grdFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdFactura.AutoGenerateColumns = false;
             this.grdFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoTrabajoDataGridViewTextBoxColumn,
             this.codigoEmpresaDataGridViewTextBoxColumn,
             this.codigoSucursalDataGridViewTextBoxColumn,
-            this.numeroFacturaDataGridViewTextBoxColumn,
+            this.fNumero,
             this.secuenciaDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.codigoClienteDataGridViewTextBoxColumn,
@@ -569,7 +571,7 @@
             this.numeroComprobanteDataGridViewTextBoxColumn,
             this.descuentoFacturaDataGridViewTextBoxColumn,
             this.notaDataGridViewTextBoxColumn,
-            this.vendedorDataGridViewTextBoxColumn,
+            this.fVendedor,
             this.descuentoArticuloDataGridViewTextBoxColumn,
             this.codigoArticuloDataGridViewTextBoxColumn,
             this.codigoPrecioVentaDataGridViewTextBoxColumn,
@@ -582,7 +584,7 @@
             this.nombreFormaPagoDataGridViewTextBoxColumn,
             this.fMonto,
             this.fRecibido,
-            this.nombreCajaDataGridViewTextBoxColumn});
+            this.fCaja});
             this.grdFactura.DataSource = this.bsDetalle;
             this.grdFactura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdFactura.Location = new System.Drawing.Point(0, 0);
@@ -635,8 +637,8 @@
             // cCodigo
             // 
             this.cCodigo.DataPropertyName = "CodigoCliente";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cCodigo.DefaultCellStyle = dataGridViewCellStyle9;
             this.cCodigo.HeaderText = "CodigoCliente";
             this.cCodigo.Name = "cCodigo";
             this.cCodigo.ReadOnly = true;
@@ -679,8 +681,8 @@
             // aCodigo
             // 
             this.aCodigo.DataPropertyName = "CodigoArticulo";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.aCodigo.DefaultCellStyle = dataGridViewCellStyle10;
             this.aCodigo.HeaderText = "CodigoArticulo";
             this.aCodigo.Name = "aCodigo";
             this.aCodigo.ReadOnly = true;
@@ -711,6 +713,10 @@
             // 
             this.taArticulo.ClearBeforeFill = true;
             // 
+            // taFrecuencia
+            // 
+            this.taFrecuencia.ClearBeforeFill = true;
+            // 
             // codigoTrabajoDataGridViewTextBoxColumn
             // 
             this.codigoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTrabajo";
@@ -735,21 +741,21 @@
             this.codigoSucursalDataGridViewTextBoxColumn.ReadOnly = true;
             this.codigoSucursalDataGridViewTextBoxColumn.Visible = false;
             // 
-            // numeroFacturaDataGridViewTextBoxColumn
+            // fNumero
             // 
-            this.numeroFacturaDataGridViewTextBoxColumn.DataPropertyName = "NumeroFactura";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numeroFacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
-            this.numeroFacturaDataGridViewTextBoxColumn.HeaderText = "Número";
-            this.numeroFacturaDataGridViewTextBoxColumn.Name = "numeroFacturaDataGridViewTextBoxColumn";
-            this.numeroFacturaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroFacturaDataGridViewTextBoxColumn.Width = 70;
+            this.fNumero.DataPropertyName = "NumeroFactura";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fNumero.DefaultCellStyle = dataGridViewCellStyle2;
+            this.fNumero.HeaderText = "Número";
+            this.fNumero.Name = "fNumero";
+            this.fNumero.ReadOnly = true;
+            this.fNumero.Width = 70;
             // 
             // secuenciaDataGridViewTextBoxColumn
             // 
             this.secuenciaDataGridViewTextBoxColumn.DataPropertyName = "Secuencia";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.secuenciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.secuenciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.secuenciaDataGridViewTextBoxColumn.HeaderText = "Sec";
             this.secuenciaDataGridViewTextBoxColumn.Name = "secuenciaDataGridViewTextBoxColumn";
             this.secuenciaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -822,9 +828,9 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Format = "d";
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "d";
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -862,20 +868,20 @@
             this.notaDataGridViewTextBoxColumn.ReadOnly = true;
             this.notaDataGridViewTextBoxColumn.Visible = false;
             // 
-            // vendedorDataGridViewTextBoxColumn
+            // fVendedor
             // 
-            this.vendedorDataGridViewTextBoxColumn.DataPropertyName = "Vendedor";
-            this.vendedorDataGridViewTextBoxColumn.HeaderText = "Vendedor";
-            this.vendedorDataGridViewTextBoxColumn.Name = "vendedorDataGridViewTextBoxColumn";
-            this.vendedorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vendedorDataGridViewTextBoxColumn.Visible = false;
+            this.fVendedor.DataPropertyName = "Vendedor";
+            this.fVendedor.HeaderText = "Vendedor";
+            this.fVendedor.Name = "fVendedor";
+            this.fVendedor.ReadOnly = true;
+            this.fVendedor.Visible = false;
             // 
             // descuentoArticuloDataGridViewTextBoxColumn
             // 
             this.descuentoArticuloDataGridViewTextBoxColumn.DataPropertyName = "DescuentoArticulo";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "N2";
-            this.descuentoArticuloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            this.descuentoArticuloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.descuentoArticuloDataGridViewTextBoxColumn.HeaderText = "Desc";
             this.descuentoArticuloDataGridViewTextBoxColumn.Name = "descuentoArticuloDataGridViewTextBoxColumn";
             this.descuentoArticuloDataGridViewTextBoxColumn.ReadOnly = true;
@@ -924,8 +930,8 @@
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cnt";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
@@ -934,9 +940,9 @@
             // fCosto
             // 
             this.fCosto.DataPropertyName = "Costo";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "N2";
-            this.fCosto.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            this.fCosto.DefaultCellStyle = dataGridViewCellStyle7;
             this.fCosto.HeaderText = "Costo";
             this.fCosto.Name = "fCosto";
             this.fCosto.ReadOnly = true;
@@ -945,9 +951,9 @@
             // fVenta
             // 
             this.fVenta.DataPropertyName = "Venta";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "N2";
-            this.fVenta.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            this.fVenta.DefaultCellStyle = dataGridViewCellStyle8;
             this.fVenta.HeaderText = "Venta";
             this.fVenta.Name = "fVenta";
             this.fVenta.ReadOnly = true;
@@ -977,13 +983,13 @@
             this.fRecibido.ReadOnly = true;
             this.fRecibido.Visible = false;
             // 
-            // nombreCajaDataGridViewTextBoxColumn
+            // fCaja
             // 
-            this.nombreCajaDataGridViewTextBoxColumn.DataPropertyName = "NombreCaja";
-            this.nombreCajaDataGridViewTextBoxColumn.HeaderText = "NombreCaja";
-            this.nombreCajaDataGridViewTextBoxColumn.Name = "nombreCajaDataGridViewTextBoxColumn";
-            this.nombreCajaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreCajaDataGridViewTextBoxColumn.Visible = false;
+            this.fCaja.DataPropertyName = "NombreCaja";
+            this.fCaja.HeaderText = "NombreCaja";
+            this.fCaja.Name = "fCaja";
+            this.fCaja.ReadOnly = true;
+            this.fCaja.Visible = false;
             // 
             // FrmRptFacturaDetalle
             // 
@@ -1080,10 +1086,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn aCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn aDescripcion;
+        private DsNeoTableAdapters.taFrecuencia taFrecuencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoSucursalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroFacturaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn secuenciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoClienteDataGridViewTextBoxColumn;
@@ -1098,7 +1105,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroComprobanteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentoFacturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vendedorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fVendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentoArticuloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoArticuloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoPrecioVentaDataGridViewTextBoxColumn;
@@ -1111,6 +1118,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreFormaPagoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fMonto;
         private System.Windows.Forms.DataGridViewTextBoxColumn fRecibido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCajaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fCaja;
     }
 }

@@ -78,7 +78,7 @@ namespace Neo
                     Utilidad.tscFactura = new FrmTscFactura();
                 Utilidad.tscFactura.FrmTscFactura_Load(sender, EventArgs.Empty);
                 int numero = int.Parse(grdFactura.CurrentRow.Cells["cNumero"].Value.ToString());
-                Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null);
+                Utilidad.tscFactura.taFactura.Fill(Utilidad.tscFactura.dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null, null, null);
                 short? codigoCliente = null;
                 string codigo = Utilidad.tscFactura.dsNeo.tbFactura.Rows[0]["CodigoCliente"].ToString();
                 if (!string.IsNullOrEmpty(codigo))
@@ -100,6 +100,7 @@ namespace Neo
                     Utilidad.tscFactura.txtRecibido.Text = r.ToString("N2");
                     Utilidad.tscFactura.lblDevuelta.Text = Utilidad.tscFactura.devuelta().ToString("N2");
                 }
+                Utilidad.tscFactura.taFacturaCobro.Fill(Utilidad.tscFactura.dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 Utilidad.tscFactura.Show();
                 Utilidad.tscFactura.cboVendedor.Text = grdFactura.CurrentRow.Cells["cVendedor"].Value.ToString();
                 Utilidad.tscFactura.cboCondicion.Text = grdFactura.CurrentRow.Cells["cCondicion"].Value.ToString();

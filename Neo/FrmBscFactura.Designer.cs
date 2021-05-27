@@ -217,8 +217,8 @@
             this.btnVer.Image = ((System.Drawing.Image)(resources.GetObject("btnVer.Image")));
             this.btnVer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(43, 22);
-            this.btnVer.Text = "Ver";
+            this.btnVer.Size = new System.Drawing.Size(85, 22);
+            this.btnVer.Text = "Ver Factura";
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // toolStripSeparator1

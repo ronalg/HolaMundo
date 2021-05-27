@@ -242,7 +242,8 @@ namespace Neo
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             quitaFila();
-
+            total();
+            
             if (string.IsNullOrEmpty(cboCondicion.Text))
             {
                 ep.SetError(cboCondicion, Utilidad.campoVacio);
@@ -304,6 +305,13 @@ namespace Neo
                     txtRecibido.SelectAll();
                     return;
                 }
+
+                decimal cobrado = decimal.Parse(dsNeo.tbFacturaCobro.Compute("SUM(Monto)", null).ToString());
+                if (cobrado != total)
+                {
+                    MessageBox.Show("Total cobrado y total de venta son disferentes", Utilidad.nombrePrograma, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    return;
+                }
             }
 
             try
@@ -363,7 +371,7 @@ namespace Neo
                     taFacturaCobro.Fill(dsNeo.tbFacturaCobro, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero);
                 else
                     dsNeo.tbFacturaCobro.Rows.Clear();
-                taFactura.Fill(dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null);
+                taFactura.Fill(dsNeo.tbFactura, Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, null, null, null, null, null, null, null);
                 cboVendedor.Text = dsNeo.tbFactura.Rows[0]["Vendedor"].ToString();
             }
             catch (SqlException sqlEx)
@@ -489,10 +497,8 @@ namespace Neo
         }
 
         private void grdDetalle_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            string columna = grdDetalle.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name;
-            if (columna == "dCantidad" || columna == "dVenta" || columna == "dDescuento")
-                total();                           
+        {            
+                                       
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -571,12 +577,6 @@ namespace Neo
                 lblDevuelta.Text = devuelta().ToString("N2");
         }
 
-        private void grdDetalle_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-           
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtBusca.Clear();
@@ -599,7 +599,7 @@ namespace Neo
                 string v = dgrv.Cells["dCodigo"].Value.ToString();
                 if (string.IsNullOrWhiteSpace(v))
                     grdDetalle.Rows.Remove(dgrv);
-            }
+            }            
         }
 
         private void mnuImpresora_Click(object sender, EventArgs e)
@@ -719,6 +719,48 @@ namespace Neo
             FrmRpt frm = new FrmRpt();
             frm.crv.ReportSource = rpt;
             frm.ShowDialog();
+        }
+
+        private void btnEliminaServicio_Click(object sender, EventArgs e)
+        {
+            if (dsNeo.tbFacturaDetalle.Rows.Count > 0)
+            {
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show(Utilidad.mensajeElimina, Utilidad.nombrePrograma, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dr == DialogResult.Yes)
+                {
+                    if (!string.IsNullOrEmpty(lblNumero.Text))
+                    {
+                        short secuencia = short.Parse(grdDetalle.CurrentRow.Cells["dSecuencia"].Value.ToString());
+                        int numero = int.Parse(lblNumero.Text);
+                        taFacturaDetalle.EliminaSecuencia(Utilidad.codigoTrabajo, Utilidad.codigoEmpresa, Utilidad.codigoSucursal, numero, secuencia);                       
+                    }
+                    grdDetalle.Rows.Remove(grdDetalle.CurrentRow);
+                    total();
+                }
+            }
+        }
+
+        private void grdDetalle_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void grdDetalle_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+          
+        }
+
+        private void grdDetalle_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void grdDetalle_CellValidated_1(object sender, DataGridViewCellEventArgs e)
+        {
+            string nombre = grdDetalle.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name;
+            if (nombre == "dCantidad" || nombre == "dVenta" || nombre == "dDescuento")
+                total();
         }
     }
 }
