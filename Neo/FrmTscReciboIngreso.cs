@@ -77,7 +77,6 @@ namespace Neo
                 Utilidad.tscFactura.cboCondicion.Text = grdFactura.CurrentRow.Cells["rCondicion"].Value.ToString();
                 Utilidad.tscFactura.cboCaja.Text = grdFactura.CurrentRow.Cells["rCaja"].Value.ToString();
                 this.Cursor = Cursors.Default;
-
             }
         }
 

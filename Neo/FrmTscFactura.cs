@@ -441,10 +441,6 @@ namespace Neo
             }
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnNuevoCobro_Click(object sender, EventArgs e)
         {
